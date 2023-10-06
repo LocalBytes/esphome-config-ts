@@ -1,0 +1,160 @@
+{
+  "cs5460a.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "cs5460a::CS5460AComponent",
+                "parents": [
+                  "spi::SPIDevice",
+                  "Component"
+                ]
+              }
+            },
+            "samples": {
+              "key": "Optional",
+              "default": "4000",
+              "type": "integer"
+            },
+            "phase_offset": {
+              "key": "Optional",
+              "default": "0",
+              "type": "integer"
+            },
+            "pga_gain": {
+              "key": "Optional",
+              "default": "10X",
+              "type": "enum",
+              "values": {
+                "10X": null,
+                "50X": null
+              }
+            },
+            "current_gain": {
+              "key": "Optional",
+              "default": "0.001",
+              "type": "schema",
+              "schema": {}
+            },
+            "voltage_gain": {
+              "key": "Optional",
+              "default": "0.001",
+              "data_type": "zero_to_one_float"
+            },
+            "current_hpf": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "voltage_hpf": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "pulse_energy": {
+              "key": "Optional",
+              "default": "10.0"
+            },
+            "voltage": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "V"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "device_class": {
+                    "default": "voltage"
+                  }
+                }
+              }
+            },
+            "current": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "A"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "current"
+                  }
+                }
+              }
+            },
+            "power": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "W"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "device_class": {
+                    "default": "power"
+                  }
+                }
+              }
+            },
+            "spi_id": {
+              "key": "GeneratedID",
+              "use_id_type": "spi::SPIComponent",
+              "type": "use_id"
+            },
+            "cs_pin": {
+              "key": "Optional",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  },
+  "cs5460a": {
+    "action": {
+      "restart": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "cs5460a::CS5460AComponent",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

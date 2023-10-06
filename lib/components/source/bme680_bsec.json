@@ -1,0 +1,317 @@
+{
+  "bme680_bsec": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "bme680_bsec::BME680BSECComponent",
+                "parents": [
+                  "Component",
+                  "i2c::I2CDevice"
+                ]
+              }
+            },
+            "temperature_offset": {
+              "key": "Optional",
+              "default": "0"
+            },
+            "iaq_mode": {
+              "key": "Optional",
+              "default": "STATIC",
+              "type": "enum",
+              "values": {
+                "STATIC": null,
+                "MOBILE": null
+              }
+            },
+            "sample_rate": {
+              "key": "Optional",
+              "default": "LP",
+              "type": "enum",
+              "values": {
+                "LP": null,
+                "ULP": null
+              }
+            },
+            "state_save_interval": {
+              "key": "Optional",
+              "default": "6hours",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_minutes"
+                ]
+              }
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "118",
+              "data_type": "hex_uint8_t"
+            }
+          }
+        },
+        "is_list": true
+      }
+    }
+  },
+  "bme680_bsec.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "bme680_bsec_id": {
+              "key": "GeneratedID",
+              "use_id_type": "bme680_bsec::BME680BSECComponent",
+              "type": "use_id"
+            },
+            "temperature": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "\u00b0C"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "temperature"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "sample_rate": {
+                    "key": "Optional",
+                    "type": "enum",
+                    "values": {
+                      "LP": null,
+                      "ULP": null
+                    }
+                  }
+                }
+              }
+            },
+            "pressure": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "hPa"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "atmospheric_pressure"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "sample_rate": {
+                    "key": "Optional",
+                    "type": "enum",
+                    "values": {
+                      "LP": null,
+                      "ULP": null
+                    }
+                  }
+                }
+              }
+            },
+            "humidity": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "%"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "humidity"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "sample_rate": {
+                    "key": "Optional",
+                    "type": "enum",
+                    "values": {
+                      "LP": null,
+                      "ULP": null
+                    }
+                  }
+                }
+              }
+            },
+            "gas_resistance": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "\u03a9"
+                  },
+                  "icon": {
+                    "default": "mdi:gas-cylinder"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "iaq": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "IAQ"
+                  },
+                  "icon": {
+                    "default": "mdi:gauge"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "iaq_accuracy": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "icon": {
+                    "default": "mdi:checkbox-marked-circle-outline"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "co2_equivalent": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "ppm"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "carbon_dioxide"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "breath_voc_equivalent": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "ppm"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "volatile_organic_compounds_parts"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "bme680_bsec.text_sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "bme680_bsec_id": {
+              "key": "GeneratedID",
+              "use_id_type": "bme680_bsec::BME680BSECComponent",
+              "type": "use_id"
+            },
+            "iaq_accuracy": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "text_sensor.TEXT_SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "icon": {
+                    "default": "mdi:checkbox-marked-circle-outline"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "interval": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "trigger",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "interval::IntervalTrigger",
+                "parents": [
+                  "Trigger<>",
+                  "Trigger",
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "interval": {
+              "key": "Required",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "setup_priority": {
+              "key": "Optional"
+            },
+            "then": {
+              "type": "trigger"
+            }
+          }
+        },
+        "has_required_var": true
+      }
+    }
+  }
+}

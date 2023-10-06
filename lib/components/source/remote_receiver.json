@@ -1,0 +1,702 @@
+{
+  "remote_receiver": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "remote_receiver::RemoteReceiverComponent",
+                "parents": [
+                  "remote_base::RemoteReceiverBase",
+                  "Component"
+                ]
+              }
+            },
+            "pin": {
+              "key": "Required",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "input"
+              ],
+              "type": "pin"
+            },
+            "dump": {
+              "key": "Optional",
+              "default": "[]"
+            },
+            "tolerance": {
+              "key": "Optional",
+              "default": "25"
+            },
+            "buffer_size": {
+              "key": "Optional",
+              "default": "1000b"
+            },
+            "filter": {
+              "key": "Optional",
+              "default": "50us",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_microseconds"
+                ]
+              }
+            },
+            "idle": {
+              "key": "Optional",
+              "default": "10ms",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_microseconds"
+                ]
+              }
+            },
+            "memory_blocks": {
+              "key": "Optional",
+              "default": "3"
+            },
+            "on_canalsat": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_canalsatld": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_coolix": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_dish": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_jvc": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_lg": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_magiquest": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_nec": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_pioneer": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_pronto": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_sony": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_raw": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_drayton": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_rc5": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_rc6": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_rc_switch": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_samsung": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_samsung36": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_toshiba_ac": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_panasonic": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_nexa": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_midea": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_aeha": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "is_list": true
+      }
+    }
+  },
+  "remote_receiver.binary_sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "binary_sensor.BINARY_SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "canalsat": {
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "remote_base.CANALSAT_SCHEMA"
+                ]
+              }
+            },
+            "canalsatld": {
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "remote_base.CANALSAT_SCHEMA"
+                ]
+              }
+            },
+            "coolix": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "first": {
+                    "key": "Required"
+                  },
+                  "second": {
+                    "key": "Optional",
+                    "default": "0"
+                  }
+                }
+              }
+            },
+            "dish": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "address": {
+                    "key": "Optional",
+                    "default": "1",
+                    "type": "integer"
+                  },
+                  "command": {
+                    "key": "Required",
+                    "type": "integer"
+                  }
+                }
+              }
+            },
+            "jvc": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "data": {
+                    "key": "Required",
+                    "data_type": "hex_uint32_t"
+                  }
+                }
+              }
+            },
+            "lg": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "data": {
+                    "key": "Required",
+                    "data_type": "hex_uint32_t"
+                  },
+                  "nbits": {
+                    "key": "Optional",
+                    "default": "28",
+                    "type": "enum",
+                    "values": {
+                      "28": null,
+                      "32": null
+                    }
+                  }
+                }
+              }
+            },
+            "magiquest": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "wand_id": {
+                    "key": "Required",
+                    "data_type": "hex_uint32_t"
+                  },
+                  "magnitude": {
+                    "key": "Optional",
+                    "default": "65535",
+                    "data_type": "hex_uint16_t"
+                  }
+                }
+              }
+            },
+            "nec": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "address": {
+                    "key": "Required",
+                    "data_type": "hex_uint16_t"
+                  },
+                  "command": {
+                    "key": "Required",
+                    "data_type": "hex_uint16_t"
+                  }
+                }
+              }
+            },
+            "pioneer": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "rc_code_1": {
+                    "key": "Required",
+                    "data_type": "hex_uint16_t"
+                  },
+                  "rc_code_2": {
+                    "key": "Optional",
+                    "default": "0",
+                    "data_type": "hex_uint16_t"
+                  }
+                }
+              }
+            },
+            "pronto": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "data": {
+                    "key": "Required",
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "sony": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "data": {
+                    "key": "Required",
+                    "data_type": "hex_uint32_t"
+                  },
+                  "nbits": {
+                    "key": "Optional",
+                    "default": "12",
+                    "type": "enum",
+                    "values": {
+                      "12": null,
+                      "15": null,
+                      "20": null
+                    }
+                  }
+                }
+              }
+            },
+            "raw": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "code": {
+                    "key": "Required"
+                  },
+                  "code_storage_id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "int32_t",
+                      "parents": null
+                    }
+                  }
+                }
+              }
+            },
+            "drayton": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "address": {
+                    "key": "Required"
+                  },
+                  "channel": {
+                    "key": "Required"
+                  },
+                  "command": {
+                    "key": "Required"
+                  }
+                }
+              }
+            },
+            "rc5": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "address": {
+                    "key": "Required"
+                  },
+                  "command": {
+                    "key": "Required"
+                  }
+                }
+              }
+            },
+            "rc6": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "address": {
+                    "key": "Required",
+                    "data_type": "hex_uint8_t"
+                  },
+                  "command": {
+                    "key": "Required",
+                    "data_type": "hex_uint8_t"
+                  }
+                }
+              }
+            },
+            "rc_switch_raw": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "code": {
+                    "key": "Required"
+                  },
+                  "protocol": {
+                    "key": "Optional",
+                    "default": "1",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "remote_base.RC_SWITCH_PROTOCOL_SCHEMA"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "rc_switch_type_a": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "group": {
+                    "key": "Required"
+                  },
+                  "device": {
+                    "key": "Required"
+                  },
+                  "state": {
+                    "key": "Required",
+                    "type": "boolean"
+                  },
+                  "protocol": {
+                    "key": "Optional",
+                    "default": "1",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "remote_base.RC_SWITCH_PROTOCOL_SCHEMA"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "rc_switch_type_b": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "address": {
+                    "key": "Required",
+                    "type": "integer"
+                  },
+                  "channel": {
+                    "key": "Required",
+                    "type": "integer"
+                  },
+                  "state": {
+                    "key": "Required",
+                    "type": "boolean"
+                  },
+                  "protocol": {
+                    "key": "Optional",
+                    "default": "1",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "remote_base.RC_SWITCH_PROTOCOL_SCHEMA"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "rc_switch_type_c": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "family": {
+                    "key": "Required",
+                    "type": "enum",
+                    "values": {
+                      "a": null,
+                      "b": null,
+                      "c": null,
+                      "d": null,
+                      "e": null,
+                      "f": null,
+                      "g": null,
+                      "h": null,
+                      "i": null,
+                      "j": null,
+                      "k": null,
+                      "l": null,
+                      "m": null,
+                      "n": null,
+                      "o": null,
+                      "p": null
+                    }
+                  },
+                  "group": {
+                    "key": "Required",
+                    "type": "integer"
+                  },
+                  "device": {
+                    "key": "Required",
+                    "type": "integer"
+                  },
+                  "state": {
+                    "key": "Required",
+                    "type": "boolean"
+                  },
+                  "protocol": {
+                    "key": "Optional",
+                    "default": "1",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "remote_base.RC_SWITCH_PROTOCOL_SCHEMA"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "rc_switch_type_d": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "group": {
+                    "key": "Required",
+                    "type": "enum",
+                    "values": {
+                      "a": null,
+                      "b": null,
+                      "c": null,
+                      "d": null
+                    }
+                  },
+                  "device": {
+                    "key": "Required",
+                    "type": "integer"
+                  },
+                  "state": {
+                    "key": "Required",
+                    "type": "boolean"
+                  },
+                  "protocol": {
+                    "key": "Optional",
+                    "default": "1",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "remote_base.RC_SWITCH_PROTOCOL_SCHEMA"
+                      ]
+                    }
+                  },
+                  "repeat": {
+                    "key": "Optional",
+                    "default": "{'times': 5}",
+                    "type": "schema",
+                    "schema": {
+                      "config_vars": {
+                        "times": {
+                          "key": "Required",
+                          "templatable": true,
+                          "type": "integer",
+                          "data_type": "positive_int"
+                        },
+                        "wait_time": {
+                          "key": "Optional",
+                          "default": "0us",
+                          "templatable": true,
+                          "type": "schema",
+                          "schema": {
+                            "extends": [
+                              "core.positive_time_period_microseconds"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "samsung": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "data": {
+                    "key": "Required",
+                    "data_type": "hex_uint64_t"
+                  },
+                  "nbits": {
+                    "key": "Optional",
+                    "default": "32",
+                    "type": "integer"
+                  }
+                }
+              }
+            },
+            "samsung36": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "address": {
+                    "key": "Required",
+                    "data_type": "hex_uint16_t"
+                  },
+                  "command": {
+                    "key": "Required",
+                    "data_type": "hex_uint32_t"
+                  }
+                }
+              }
+            },
+            "toshiba_ac": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "rc_code_1": {
+                    "key": "Required",
+                    "data_type": "hex_uint64_t"
+                  },
+                  "rc_code_2": {
+                    "key": "Optional",
+                    "default": "0",
+                    "data_type": "hex_uint64_t"
+                  }
+                }
+              }
+            },
+            "panasonic": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "address": {
+                    "key": "Required",
+                    "data_type": "hex_uint16_t"
+                  },
+                  "command": {
+                    "key": "Required",
+                    "data_type": "hex_uint32_t"
+                  }
+                }
+              }
+            },
+            "nexa": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "device": {
+                    "key": "Required",
+                    "data_type": "hex_uint32_t"
+                  },
+                  "group": {
+                    "key": "Required",
+                    "data_type": "hex_uint8_t"
+                  },
+                  "state": {
+                    "key": "Required",
+                    "data_type": "hex_uint8_t"
+                  },
+                  "channel": {
+                    "key": "Required",
+                    "data_type": "hex_uint8_t"
+                  },
+                  "level": {
+                    "key": "Required",
+                    "data_type": "hex_uint8_t"
+                  }
+                }
+              }
+            },
+            "midea": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "code": {
+                    "key": "Required"
+                  }
+                }
+              }
+            },
+            "aeha": {
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "address": {
+                    "key": "Required",
+                    "data_type": "hex_uint16_t"
+                  },
+                  "data": {
+                    "key": "Required"
+                  }
+                }
+              }
+            },
+            "receiver_id": {
+              "key": "GeneratedID",
+              "use_id_type": "remote_base::RemoteReceiverBase",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

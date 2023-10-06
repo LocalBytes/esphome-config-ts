@@ -1,0 +1,135 @@
+{
+  "max7219digit.display": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display.BASIC_DISPLAY_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "max7219digit::MAX7219Component",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "spi::SPIDevice",
+                  "display::DisplayBuffer"
+                ]
+              }
+            },
+            "num_chips": {
+              "key": "Optional",
+              "default": "4",
+              "type": "integer"
+            },
+            "num_chip_lines": {
+              "key": "Optional",
+              "default": "1",
+              "type": "integer"
+            },
+            "chip_lines_style": {
+              "key": "Optional",
+              "default": "SNAKE",
+              "type": "enum",
+              "values": {
+                "ZIGZAG": null,
+                "SNAKE": null
+              }
+            },
+            "intensity": {
+              "key": "Optional",
+              "default": "15",
+              "type": "integer"
+            },
+            "rotate_chip": {
+              "key": "Optional",
+              "default": "0",
+              "type": "enum",
+              "values": {
+                "0": null,
+                "90": null,
+                "180": null,
+                "270": null
+              }
+            },
+            "scroll_mode": {
+              "key": "Optional",
+              "default": "CONTINUOUS",
+              "type": "enum",
+              "values": {
+                "CONTINUOUS": null,
+                "STOP": null
+              }
+            },
+            "scroll_enable": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "scroll_speed": {
+              "key": "Optional",
+              "default": "250ms",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "scroll_delay": {
+              "key": "Optional",
+              "default": "1000ms",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "scroll_dwell": {
+              "key": "Optional",
+              "default": "1000ms",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "reverse_enable": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "flip_x": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "500ms"
+            },
+            "spi_id": {
+              "key": "GeneratedID",
+              "use_id_type": "spi::SPIComponent",
+              "type": "use_id"
+            },
+            "cs_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            }
+          }
+        }
+      }
+    }
+  }
+}

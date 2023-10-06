@@ -1,0 +1,178 @@
+{
+  "deep_sleep": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "deep_sleep::DeepSleepComponent",
+                "parents": [
+                  "Component"
+                ]
+              }
+            },
+            "run_duration": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "default": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "core.positive_time_period_milliseconds"
+                      ]
+                    }
+                  },
+                  "touch_wakeup_reason": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "core.positive_time_period_milliseconds"
+                      ]
+                    }
+                  },
+                  "gpio_wakeup_reason": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "core.positive_time_period_milliseconds"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "sleep_duration": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "wakeup_pin": {
+              "key": "Optional",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "input"
+              ],
+              "type": "pin"
+            },
+            "wakeup_pin_mode": {
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "IGNORE": null,
+                "KEEP_AWAKE": null,
+                "INVERT_WAKEUP": null
+              }
+            },
+            "esp32_ext1_wakeup": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "pins": {
+                    "key": "Required",
+                    "is_list": true,
+                    "schema": true,
+                    "internal": true,
+                    "modes": [
+                      "input"
+                    ],
+                    "type": "pin"
+                  },
+                  "mode": {
+                    "key": "Required",
+                    "type": "enum",
+                    "values": {
+                      "ALL_LOW": null,
+                      "ANY_HIGH": null
+                    }
+                  }
+                }
+              }
+            },
+            "touch_wakeup": {
+              "key": "Optional",
+              "type": "boolean"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      },
+      "DEEP_SLEEP_ACTION_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "deep_sleep::DeepSleepComponent",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "enter": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "deep_sleep.DEEP_SLEEP_ACTION_SCHEMA"
+          ],
+          "config_vars": {
+            "sleep_duration": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "until": {
+              "key": "Optional"
+            },
+            "time_id": {
+              "key": "Optional",
+              "use_id_type": "time::RealTimeClock",
+              "type": "use_id"
+            }
+          }
+        },
+        "maybe": "id"
+      },
+      "allow": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "extends": [
+            "deep_sleep.DEEP_SLEEP_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "prevent": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "extends": [
+            "deep_sleep.DEEP_SLEEP_ACTION_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

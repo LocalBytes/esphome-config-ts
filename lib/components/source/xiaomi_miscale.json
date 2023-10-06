@@ -1,0 +1,81 @@
+{
+  "xiaomi_miscale.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "xiaomi_miscale::XiaomiMiscale",
+                "parents": [
+                  "esp32_ble_tracker::ESPBTDeviceListener",
+                  "Component"
+                ]
+              }
+            },
+            "mac_address": {
+              "key": "Required"
+            },
+            "clear_impedance": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "weight": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "kg"
+                  },
+                  "icon": {
+                    "default": "mdi:scale-bathroom"
+                  },
+                  "accuracy_decimals": {
+                    "default": "2"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "impedance": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "\u03a9"
+                  },
+                  "icon": {
+                    "default": "mdi:omega"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            }
+          },
+          "extends": [
+            "esp32_ble_tracker.ESP_BLE_DEVICE_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

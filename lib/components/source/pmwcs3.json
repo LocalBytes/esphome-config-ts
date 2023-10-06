@@ -1,0 +1,183 @@
+{
+  "pmwcs3.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "pmwcs3::PMWCS3Component",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "i2c::I2CDevice"
+                ]
+              }
+            },
+            "e25": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "dS/m"
+                  },
+                  "icon": {
+                    "default": "mdi:epsilon"
+                  },
+                  "accuracy_decimals": {
+                    "default": "3"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "ec": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "mS/m"
+                  },
+                  "icon": {
+                    "default": "mdi:sigma-lower"
+                  },
+                  "accuracy_decimals": {
+                    "default": "2"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "temperature": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "\u00b0C"
+                  },
+                  "icon": {
+                    "default": "mdi:thermometer"
+                  },
+                  "accuracy_decimals": {
+                    "default": "3"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "vwc": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "cm3cm\u22123"
+                  },
+                  "icon": {
+                    "default": "mdi:alpha-h-circle-outline"
+                  },
+                  "accuracy_decimals": {
+                    "default": "3"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "99",
+              "data_type": "hex_uint8_t"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      },
+      "PMWCS3_CALIBRATION_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "pmwcs3::PMWCS3Component",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  },
+  "pmwcs3": {
+    "action": {
+      "water_calibration": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "pmwcs3.sensor.PMWCS3_CALIBRATION_SCHEMA"
+          ]
+        }
+      },
+      "air_calibration": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "pmwcs3.sensor.PMWCS3_CALIBRATION_SCHEMA"
+          ]
+        }
+      },
+      "new_i2c_address": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "pmwcs3::PMWCS3Component",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Required",
+              "templatable": true,
+              "data_type": "hex_uint8_t"
+            }
+          }
+        },
+        "maybe": "address"
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "lcd_menu": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display_menu_base.DISPLAY_MENU_BASE_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "lcd_menu::LCDCharacterMenuComponent",
+                "parents": [
+                  "display_menu_base::DisplayMenuComponent",
+                  "Component"
+                ]
+              }
+            },
+            "display_id": {
+              "key": "GeneratedID",
+              "use_id_type": "lcd_base::LCDDisplay",
+              "type": "use_id"
+            },
+            "mark_selected": {
+              "key": "Optional",
+              "default": "62",
+              "type": "integer",
+              "data_type": "uint8_t"
+            },
+            "mark_editing": {
+              "key": "Optional",
+              "default": "42",
+              "type": "integer",
+              "data_type": "uint8_t"
+            },
+            "mark_submenu": {
+              "key": "Optional",
+              "default": "126",
+              "type": "integer",
+              "data_type": "uint8_t"
+            },
+            "mark_back": {
+              "key": "Optional",
+              "default": "94",
+              "type": "integer",
+              "data_type": "uint8_t"
+            }
+          }
+        },
+        "is_list": true
+      }
+    }
+  }
+}

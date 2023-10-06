@@ -1,0 +1,50 @@
+{
+  "rgbw.light": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "light.RGB_LIGHT_SCHEMA"
+          ],
+          "config_vars": {
+            "output_id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "rgbw::RGBWLightOutput",
+                "parents": [
+                  "light::LightOutput"
+                ]
+              }
+            },
+            "red": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            },
+            "green": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            },
+            "blue": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            },
+            "white": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            },
+            "color_interlock": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
+}

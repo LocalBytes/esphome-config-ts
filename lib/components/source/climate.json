@@ -1,0 +1,288 @@
+{
+  "climate": {
+    "components": {
+      "anova": {
+        "dependencies": [
+          "ble_client"
+        ]
+      },
+      "ballu": {},
+      "bang_bang": {},
+      "bedjet": {
+        "dependencies": [
+          "bedjet"
+        ]
+      },
+      "climate_ir_lg": {},
+      "coolix": {},
+      "custom": {},
+      "daikin": {},
+      "daikin_brc": {},
+      "delonghi": {},
+      "fujitsu_general": {},
+      "haier": {
+        "dependencies": [
+          "climate",
+          "uart"
+        ]
+      },
+      "heatpumpir": {},
+      "hitachi_ac344": {},
+      "hitachi_ac424": {},
+      "midea": {
+        "dependencies": [
+          "climate",
+          "uart",
+          "wifi"
+        ]
+      },
+      "midea_ac": {},
+      "midea_ir": {},
+      "mitsubishi": {},
+      "pid": {},
+      "tcl112": {},
+      "thermostat": {},
+      "toshiba": {},
+      "tuya": {
+        "dependencies": [
+          "tuya"
+        ]
+      },
+      "whirlpool": {},
+      "whynter": {},
+      "yashima": {}
+    },
+    "schemas": {
+      "VISUAL_TEMPERATURE_STEP_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "target_temperature": {
+              "key": "Required"
+            },
+            "current_temperature": {
+              "key": "Required"
+            }
+          }
+        }
+      },
+      "CLIMATE_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.ENTITY_BASE_SCHEMA",
+            "core.MQTT_COMMAND_COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "climate::Climate",
+                "parents": [
+                  "EntityBase"
+                ]
+              }
+            },
+            "mqtt_id": {
+              "key": "Optional",
+              "id_type": {
+                "class": "mqtt::MQTTClimateComponent",
+                "parents": [
+                  "mqtt::MQTTComponent",
+                  "Component"
+                ]
+              }
+            },
+            "visual": {
+              "key": "Optional",
+              "default": "{}",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "min_temperature": {
+                    "key": "Optional"
+                  },
+                  "max_temperature": {
+                    "key": "Optional"
+                  },
+                  "temperature_step": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "climate.VISUAL_TEMPERATURE_STEP_SCHEMA"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "action_state_topic": {
+              "key": "Optional"
+            },
+            "away_command_topic": {
+              "key": "Optional"
+            },
+            "away_state_topic": {
+              "key": "Optional"
+            },
+            "current_temperature_state_topic": {
+              "key": "Optional"
+            },
+            "fan_mode_command_topic": {
+              "key": "Optional"
+            },
+            "fan_mode_state_topic": {
+              "key": "Optional"
+            },
+            "mode_command_topic": {
+              "key": "Optional"
+            },
+            "mode_state_topic": {
+              "key": "Optional"
+            },
+            "preset_command_topic": {
+              "key": "Optional"
+            },
+            "preset_state_topic": {
+              "key": "Optional"
+            },
+            "swing_mode_command_topic": {
+              "key": "Optional"
+            },
+            "swing_mode_state_topic": {
+              "key": "Optional"
+            },
+            "target_temperature_command_topic": {
+              "key": "Optional"
+            },
+            "target_temperature_state_topic": {
+              "key": "Optional"
+            },
+            "target_temperature_high_command_topic": {
+              "key": "Optional"
+            },
+            "target_temperature_high_state_topic": {
+              "key": "Optional"
+            },
+            "target_temperature_low_command_topic": {
+              "key": "Optional"
+            },
+            "target_temperature_low_state_topic": {
+              "key": "Optional"
+            },
+            "on_control": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_state": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          }
+        }
+      },
+      "CLIMATE_CONTROL_ACTION_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "climate::Climate",
+              "type": "use_id"
+            },
+            "mode": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "enum",
+              "values": {
+                "OFF": null,
+                "HEAT_COOL": null,
+                "COOL": null,
+                "HEAT": null,
+                "DRY": null,
+                "FAN_ONLY": null,
+                "AUTO": null
+              }
+            },
+            "target_temperature": {
+              "key": "Optional",
+              "templatable": true
+            },
+            "target_temperature_low": {
+              "key": "Optional",
+              "templatable": true
+            },
+            "target_temperature_high": {
+              "key": "Optional",
+              "templatable": true
+            },
+            "fan_mode": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "enum",
+              "values": {
+                "ON": null,
+                "OFF": null,
+                "AUTO": null,
+                "LOW": null,
+                "MEDIUM": null,
+                "HIGH": null,
+                "MIDDLE": null,
+                "FOCUS": null,
+                "DIFFUSE": null,
+                "QUIET": null
+              }
+            },
+            "custom_fan_mode": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "string"
+            },
+            "preset": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "enum",
+              "values": {
+                "NONE": null,
+                "ECO": null,
+                "AWAY": null,
+                "BOOST": null,
+                "COMFORT": null,
+                "HOME": null,
+                "SLEEP": null,
+                "ACTIVITY": null
+              }
+            },
+            "custom_preset": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "string"
+            },
+            "swing_mode": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "enum",
+              "values": {
+                "OFF": null,
+                "BOTH": null,
+                "VERTICAL": null,
+                "HORIZONTAL": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "control": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "climate.CLIMATE_CONTROL_ACTION_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "wake_on_lan.button": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "button.BUTTON_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "wake_on_lan::WakeOnLanButton",
+                "parents": [
+                  "button::Button",
+                  "EntityBase",
+                  "Component"
+                ]
+              }
+            },
+            "target_mac_address": {
+              "key": "Required"
+            }
+          }
+        }
+      }
+    }
+  }
+}

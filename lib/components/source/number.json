@@ -1,0 +1,303 @@
+{
+  "number": {
+    "components": {
+      "copy": {},
+      "ld2410": {},
+      "modbus_controller": {
+        "dependencies": [
+          "modbus_controller"
+        ]
+      },
+      "template": {},
+      "tuya": {
+        "dependencies": [
+          "tuya"
+        ]
+      }
+    },
+    "schemas": {
+      "NUMBER_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.ENTITY_BASE_SCHEMA",
+            "core.MQTT_COMMAND_COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "mqtt_id": {
+              "key": "Optional",
+              "id_type": {
+                "class": "mqtt::MQTTNumberComponent",
+                "parents": [
+                  "mqtt::MQTTComponent",
+                  "Component"
+                ]
+              }
+            },
+            "on_value": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_value_range": {
+              "key": "Optional",
+              "type": "trigger",
+              "schema": {
+                "config_vars": {
+                  "above": {
+                    "key": "Optional",
+                    "templatable": true
+                  },
+                  "below": {
+                    "key": "Optional",
+                    "templatable": true
+                  },
+                  "then": {
+                    "type": "trigger"
+                  }
+                }
+              },
+              "has_required_var": true
+            },
+            "unit_of_measurement": {
+              "key": "Optional",
+              "type": "string"
+            },
+            "mode": {
+              "key": "Optional",
+              "default": "AUTO",
+              "type": "enum",
+              "values": {
+                "AUTO": null,
+                "BOX": null,
+                "SLIDER": null
+              }
+            },
+            "device_class": {
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "apparent_power": null,
+                "aqi": null,
+                "atmospheric_pressure": null,
+                "battery": null,
+                "carbon_dioxide": null,
+                "carbon_monoxide": null,
+                "current": null,
+                "data_rate": null,
+                "data_size": null,
+                "distance": null,
+                "duration": null,
+                "": null,
+                "energy": null,
+                "energy_storage": null,
+                "frequency": null,
+                "gas": null,
+                "humidity": null,
+                "illuminance": null,
+                "irradiance": null,
+                "moisture": null,
+                "monetary": null,
+                "nitrogen_dioxide": null,
+                "nitrogen_monoxide": null,
+                "nitrous_oxide": null,
+                "ozone": null,
+                "ph": null,
+                "pm1": null,
+                "pm10": null,
+                "pm25": null,
+                "power": null,
+                "power_factor": null,
+                "precipitation": null,
+                "precipitation_intensity": null,
+                "pressure": null,
+                "reactive_power": null,
+                "signal_strength": null,
+                "sound_pressure": null,
+                "speed": null,
+                "sulphur_dioxide": null,
+                "temperature": null,
+                "volatile_organic_compounds": null,
+                "volatile_organic_compounds_parts": null,
+                "voltage": null,
+                "volume": null,
+                "volume_storage": null,
+                "water": null,
+                "weight": null,
+                "wind_speed": null
+              }
+            }
+          }
+        }
+      },
+      "NUMBER_IN_RANGE_CONDITION_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "number::Number",
+              "type": "use_id"
+            },
+            "above": {
+              "key": "Optional"
+            },
+            "below": {
+              "key": "Optional"
+            }
+          }
+        }
+      },
+      "OPERATION_BASE_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "number::Number",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "set": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "number.OPERATION_BASE_SCHEMA"
+          ],
+          "config_vars": {
+            "value": {
+              "key": "Required",
+              "templatable": true
+            }
+          }
+        }
+      },
+      "operation": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "number.OPERATION_BASE_SCHEMA"
+          ],
+          "config_vars": {
+            "operation": {
+              "key": "Required",
+              "templatable": true,
+              "type": "enum",
+              "values": {
+                "INCREMENT": null,
+                "DECREMENT": null,
+                "TO_MIN": null,
+                "TO_MAX": null
+              }
+            },
+            "cycle": {
+              "key": "Optional",
+              "default": "True",
+              "templatable": true,
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "to_max": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "extends": [
+            "number.OPERATION_BASE_SCHEMA"
+          ],
+          "config_vars": {
+            "mode": {
+              "key": "Optional",
+              "default": "TO_MAX",
+              "type": "enum",
+              "values": {
+                "TO_MAX": null
+              }
+            }
+          }
+        }
+      },
+      "to_min": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "extends": [
+            "number.OPERATION_BASE_SCHEMA"
+          ],
+          "config_vars": {
+            "mode": {
+              "key": "Optional",
+              "default": "TO_MIN",
+              "type": "enum",
+              "values": {
+                "TO_MIN": null
+              }
+            }
+          }
+        }
+      },
+      "decrement": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "extends": [
+            "number.OPERATION_BASE_SCHEMA"
+          ],
+          "config_vars": {
+            "mode": {
+              "key": "Optional",
+              "default": "DECREMENT",
+              "type": "enum",
+              "values": {
+                "DECREMENT": null
+              }
+            },
+            "cycle": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "increment": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "extends": [
+            "number.OPERATION_BASE_SCHEMA"
+          ],
+          "config_vars": {
+            "mode": {
+              "key": "Optional",
+              "default": "INCREMENT",
+              "type": "enum",
+              "values": {
+                "INCREMENT": null
+              }
+            },
+            "cycle": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "in_range": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "number.NUMBER_IN_RANGE_CONDITION_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

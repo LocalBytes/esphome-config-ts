@@ -1,0 +1,73 @@
+{
+  "integration.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "integration::IntegrationSensor",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "Component"
+                ]
+              }
+            },
+            "sensor": {
+              "key": "Required",
+              "use_id_type": "sensor::Sensor",
+              "type": "use_id"
+            },
+            "time_unit": {
+              "key": "Required",
+              "type": "enum",
+              "values": {
+                "ms": null,
+                "s": null,
+                "min": null,
+                "h": null,
+                "d": null
+              }
+            },
+            "integration_method": {
+              "key": "Optional",
+              "default": "trapezoid",
+              "type": "enum",
+              "values": {
+                "trapezoid": null,
+                "left": null,
+                "right": null
+              }
+            },
+            "restore": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "reset": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "integration::IntegrationSensor",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

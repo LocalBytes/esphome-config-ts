@@ -1,0 +1,64 @@
+{
+  "mdns": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "mdns::MDNSComponent",
+                "parents": [
+                  "Component"
+                ]
+              }
+            },
+            "disabled": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "services": {
+              "key": "Optional",
+              "default": "[]",
+              "is_list": true,
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "service": {
+                    "key": "Required",
+                    "type": "string"
+                  },
+                  "protocol": {
+                    "key": "Required",
+                    "type": "string"
+                  },
+                  "port": {
+                    "key": "Optional",
+                    "default": "0",
+                    "type": "integer",
+                    "data_type": "port"
+                  },
+                  "txt": {
+                    "key": "String",
+                    "default": "{}",
+                    "key_type": "string",
+                    "type": "schema",
+                    "schema": {
+                      "config_vars": {
+                        "string": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

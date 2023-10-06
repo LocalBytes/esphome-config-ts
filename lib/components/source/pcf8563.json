@@ -1,0 +1,68 @@
+{
+  "pcf8563.time": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "time.TIME_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "pcf8563::PCF8563Component",
+                "parents": [
+                  "time::RealTimeClock",
+                  "PollingComponent",
+                  "Component",
+                  "i2c::I2CDevice"
+                ]
+              }
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "163",
+              "data_type": "hex_uint8_t"
+            }
+          }
+        }
+      }
+    }
+  },
+  "pcf8563": {
+    "action": {
+      "write_time": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "pcf8563::PCF8563Component",
+              "type": "use_id"
+            }
+          }
+        }
+      },
+      "read_time": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "pcf8563::PCF8563Component",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

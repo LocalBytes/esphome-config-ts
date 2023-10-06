@@ -1,0 +1,172 @@
+{
+  "text_sensor": {
+    "components": {
+      "ble_client": {
+        "dependencies": [
+          "ble_client"
+        ]
+      },
+      "ble_scanner": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "bme680_bsec": {
+        "dependencies": [
+          "bme680_bsec"
+        ]
+      },
+      "copy": {},
+      "custom": {},
+      "daly_bms": {},
+      "debug": {
+        "dependencies": [
+          "debug"
+        ]
+      },
+      "dsmr": {},
+      "ethernet_info": {
+        "dependencies": [
+          "ethernet"
+        ]
+      },
+      "ezo_pmp": {
+        "dependencies": [
+          "ezo_pmp"
+        ]
+      },
+      "homeassistant": {
+        "dependencies": [
+          "api"
+        ]
+      },
+      "ld2410": {
+        "dependencies": [
+          "ld2410"
+        ]
+      },
+      "modbus_controller": {
+        "dependencies": [
+          "modbus_controller"
+        ]
+      },
+      "mqtt_subscribe": {
+        "dependencies": [
+          "mqtt"
+        ]
+      },
+      "nextion": {},
+      "pipsolar": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "sml": {},
+      "sun": {
+        "dependencies": [
+          "sun"
+        ]
+      },
+      "teleinfo": {},
+      "template": {},
+      "tuya": {
+        "dependencies": [
+          "tuya"
+        ]
+      },
+      "version": {},
+      "wifi_info": {
+        "dependencies": [
+          "wifi"
+        ]
+      },
+      "wl_134": {
+        "dependencies": [
+          "uart"
+        ]
+      }
+    },
+    "schemas": {
+      "TEXT_SENSOR_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.ENTITY_BASE_SCHEMA",
+            "core.MQTT_COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "mqtt_id": {
+              "key": "Optional",
+              "id_type": {
+                "class": "mqtt::MQTTTextSensor",
+                "parents": [
+                  "mqtt::MQTTComponent",
+                  "Component"
+                ]
+              }
+            },
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "text_sensor::TextSensor",
+                "parents": [
+                  "EntityBase"
+                ]
+              }
+            },
+            "filters": {
+              "key": "Optional",
+              "type": "registry",
+              "is_list": true,
+              "registry": "text_sensor.filter"
+            },
+            "on_value": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_raw_value": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "state": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "text_sensor::TextSensor",
+              "type": "use_id"
+            },
+            "state": {
+              "key": "Required",
+              "templatable": true,
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "filter": {
+      "lambda": {},
+      "to_upper": {},
+      "to_lower": {},
+      "append": {
+        "type": "string"
+      },
+      "prepend": {
+        "type": "string"
+      },
+      "substitute": {
+        "is_list": true
+      },
+      "map": {
+        "is_list": true
+      }
+    }
+  }
+}

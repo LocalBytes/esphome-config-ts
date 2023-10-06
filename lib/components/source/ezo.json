@@ -1,0 +1,66 @@
+{
+  "ezo.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "ezo::EZOSensor",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "PollingComponent",
+                  "Component",
+                  "i2c::I2CDevice"
+                ]
+              }
+            },
+            "on_custom": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_calibration": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_slope": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_t": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_device_information": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_led": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Required",
+              "data_type": "hex_uint8_t"
+            }
+          }
+        }
+      }
+    }
+  }
+}

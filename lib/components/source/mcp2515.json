@@ -1,0 +1,60 @@
+{
+  "mcp2515.canbus": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "canbus.CANBUS_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "mcp2515::MCP2515",
+                "parents": [
+                  "canbus::CanbusComponent",
+                  "Component",
+                  "spi::SPIDevice"
+                ]
+              }
+            },
+            "clock": {
+              "key": "Optional",
+              "default": "8MHZ",
+              "type": "enum",
+              "values": {
+                "8MHZ": null,
+                "12MHZ": null,
+                "16MHZ": null,
+                "20MHZ": null
+              }
+            },
+            "mode": {
+              "key": "Optional",
+              "default": "NORMAL",
+              "type": "enum",
+              "values": {
+                "NORMAL": null,
+                "LOOPBACK": null,
+                "LISTENONLY": null
+              }
+            },
+            "spi_id": {
+              "key": "GeneratedID",
+              "use_id_type": "spi::SPIComponent",
+              "type": "use_id"
+            },
+            "cs_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            }
+          }
+        }
+      }
+    }
+  }
+}

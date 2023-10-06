@@ -1,0 +1,201 @@
+{
+  "sun": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "sun::Sun",
+                "parents": []
+              }
+            },
+            "time_id": {
+              "key": "GeneratedID",
+              "use_id_type": "time::RealTimeClock",
+              "type": "use_id"
+            },
+            "latitude": {
+              "key": "Required"
+            },
+            "longitude": {
+              "key": "Required"
+            },
+            "on_sunrise": {
+              "key": "Optional",
+              "type": "trigger",
+              "schema": {
+                "config_vars": {
+                  "elevation": {
+                    "key": "Optional",
+                    "default": "-0.83333"
+                  },
+                  "then": {
+                    "type": "trigger"
+                  }
+                }
+              }
+            },
+            "on_sunset": {
+              "key": "Optional",
+              "type": "trigger",
+              "schema": {
+                "config_vars": {
+                  "elevation": {
+                    "key": "Optional",
+                    "default": "-0.83333"
+                  },
+                  "then": {
+                    "type": "trigger"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "is_above_horizon": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "sun::Sun",
+              "type": "use_id"
+            },
+            "elevation": {
+              "key": "Optional",
+              "default": "-0.83333",
+              "templatable": true
+            }
+          }
+        }
+      },
+      "is_below_horizon": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "sun::Sun",
+              "type": "use_id"
+            },
+            "elevation": {
+              "key": "Optional",
+              "default": "-0.83333",
+              "templatable": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "sun.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "sun::SunSensor",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "unit_of_measurement": {
+              "default": "\u00b0"
+            },
+            "icon": {
+              "default": "mdi:weather-sunset"
+            },
+            "accuracy_decimals": {
+              "default": "1"
+            },
+            "sun_id": {
+              "key": "GeneratedID",
+              "use_id_type": "sun::Sun",
+              "type": "use_id"
+            },
+            "type": {
+              "key": "Required",
+              "type": "enum",
+              "values": {
+                "elevation": null,
+                "azimuth": null
+              }
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sun.text_sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "text_sensor.TEXT_SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "sun::SunTextSensor",
+                "parents": [
+                  "text_sensor::TextSensor",
+                  "EntityBase",
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "sun_id": {
+              "key": "GeneratedID",
+              "use_id_type": "sun::Sun",
+              "type": "use_id"
+            },
+            "type": {
+              "key": "Required",
+              "type": "enum",
+              "values": {
+                "sunset": null,
+                "sunrise": null
+              }
+            },
+            "elevation": {
+              "key": "Optional",
+              "default": "-0.83333"
+            },
+            "format": {
+              "key": "Optional",
+              "default": "%X",
+              "type": "string"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            }
+          }
+        }
+      }
+    }
+  }
+}

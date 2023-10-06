@@ -1,0 +1,40 @@
+{
+  "rgb.light": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "light.RGB_LIGHT_SCHEMA"
+          ],
+          "config_vars": {
+            "output_id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "rgb::RGBLightOutput",
+                "parents": [
+                  "light::LightOutput"
+                ]
+              }
+            },
+            "red": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            },
+            "green": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            },
+            "blue": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

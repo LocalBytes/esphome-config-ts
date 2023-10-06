@@ -1,0 +1,56 @@
+{
+  "ble_presence.binary_sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "binary_sensor.BINARY_SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "ble_presence::BLEPresenceDevice",
+                "parents": [
+                  "binary_sensor::BinarySensor",
+                  "EntityBase",
+                  "Component",
+                  "esp32_ble_tracker::ESPBTDeviceListener"
+                ]
+              }
+            },
+            "mac_address": {
+              "key": "Optional"
+            },
+            "service_uuid": {
+              "key": "Optional"
+            },
+            "ibeacon_major": {
+              "key": "Optional",
+              "type": "integer",
+              "data_type": "uint16_t"
+            },
+            "ibeacon_minor": {
+              "key": "Optional",
+              "type": "integer",
+              "data_type": "uint16_t"
+            },
+            "ibeacon_uuid": {
+              "key": "Optional"
+            },
+            "min_rssi": {
+              "key": "Optional",
+              "type": "integer"
+            },
+            "esp32_ble_id": {
+              "key": "GeneratedID",
+              "use_id_type": "esp32_ble_tracker::ESP32BLETracker",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

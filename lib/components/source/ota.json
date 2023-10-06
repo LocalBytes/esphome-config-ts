@@ -1,0 +1,76 @@
+{
+  "ota": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "ota::OTAComponent",
+                "parents": [
+                  "Component"
+                ]
+              }
+            },
+            "safe_mode": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "port": {
+              "key": "Optional",
+              "default": "8266",
+              "type": "integer",
+              "data_type": "port"
+            },
+            "password": {
+              "key": "Optional",
+              "type": "string"
+            },
+            "reboot_timeout": {
+              "key": "Optional",
+              "default": "5min",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "num_attempts": {
+              "key": "Optional",
+              "default": "10",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            },
+            "on_state_change": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_begin": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_error": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_progress": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_end": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

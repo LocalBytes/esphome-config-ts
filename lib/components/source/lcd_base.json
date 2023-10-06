@@ -1,0 +1,42 @@
+{
+  "lcd_base": {
+    "schemas": {
+      "LCD_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display.BASIC_DISPLAY_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "dimensions": {
+              "key": "Required"
+            },
+            "user_characters": {
+              "key": "Optional",
+              "is_list": true,
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "position": {
+                    "key": "Required",
+                    "type": "integer"
+                  },
+                  "data": {
+                    "key": "Required",
+                    "is_list": true,
+                    "type": "integer"
+                  }
+                }
+              }
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "1s"
+            }
+          }
+        }
+      }
+    }
+  }
+}

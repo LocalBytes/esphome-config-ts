@@ -1,0 +1,107 @@
+{
+  "st7789v.display": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display.FULL_DISPLAY_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "st7789v::ST7789V",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "spi::SPIDevice",
+                  "display::DisplayBuffer"
+                ]
+              }
+            },
+            "model": {
+              "key": "Required",
+              "type": "enum",
+              "values": {
+                "TTGO_TDISPLAY_135X240": null,
+                "ADAFRUIT_FUNHOUSE_240X240": null,
+                "ADAFRUIT_RR_280X240": null,
+                "ADAFRUIT_S2_TFT_FEATHER_240X135": null,
+                "CUSTOM": null
+              }
+            },
+            "reset_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "dc_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "backlight_pin": {
+              "key": "Optional",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "power_supply": {
+              "key": "Optional",
+              "use_id_type": "power_supply::PowerSupply",
+              "type": "use_id"
+            },
+            "eightbitcolor": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "height": {
+              "key": "Optional",
+              "type": "integer"
+            },
+            "width": {
+              "key": "Optional",
+              "type": "integer"
+            },
+            "offset_height": {
+              "key": "Optional",
+              "type": "integer"
+            },
+            "offset_width": {
+              "key": "Optional",
+              "type": "integer"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "5s"
+            },
+            "spi_id": {
+              "key": "GeneratedID",
+              "use_id_type": "spi::SPIComponent",
+              "type": "use_id"
+            },
+            "cs_pin": {
+              "key": "Optional",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            }
+          }
+        }
+      }
+    }
+  }
+}

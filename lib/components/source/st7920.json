@@ -1,0 +1,54 @@
+{
+  "st7920.display": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display.FULL_DISPLAY_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "st7920::ST7920",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "display::DisplayBuffer",
+                  "spi::SPIDevice"
+                ]
+              }
+            },
+            "width": {
+              "key": "Required",
+              "type": "integer"
+            },
+            "height": {
+              "key": "Required",
+              "type": "integer"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            },
+            "spi_id": {
+              "key": "GeneratedID",
+              "use_id_type": "spi::SPIComponent",
+              "type": "use_id"
+            },
+            "cs_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            }
+          }
+        }
+      }
+    }
+  }
+}

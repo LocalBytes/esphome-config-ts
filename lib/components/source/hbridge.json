@@ -1,0 +1,106 @@
+{
+  "hbridge.fan": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "fan.FAN_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "hbridge::HBridgeFan",
+                "parents": [
+                  "Component",
+                  "fan::Fan",
+                  "EntityBase"
+                ]
+              }
+            },
+            "pin_a": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            },
+            "pin_b": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            },
+            "decay_mode": {
+              "key": "Optional",
+              "default": "SLOW",
+              "type": "enum",
+              "values": {
+                "SLOW": null,
+                "FAST": null
+              }
+            },
+            "speed_count": {
+              "key": "Optional",
+              "default": "100",
+              "type": "integer"
+            },
+            "enable_pin": {
+              "key": "Optional",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "brake": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "hbridge::HBridgeFan",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  },
+  "hbridge.light": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "light.RGB_LIGHT_SCHEMA"
+          ],
+          "config_vars": {
+            "output_id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "hbridge::HBridgeLightOutput",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "light::LightOutput"
+                ]
+              }
+            },
+            "pin_a": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            },
+            "pin_b": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

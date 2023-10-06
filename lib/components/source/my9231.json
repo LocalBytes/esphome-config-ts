@@ -1,0 +1,98 @@
+{
+  "my9231": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "my9231::MY9231OutputComponent",
+                "parents": [
+                  "Component"
+                ]
+              }
+            },
+            "data_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "clock_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "num_channels": {
+              "key": "Optional",
+              "default": "6",
+              "type": "integer"
+            },
+            "num_chips": {
+              "key": "Optional",
+              "default": "2",
+              "type": "integer"
+            },
+            "bit_depth": {
+              "key": "Optional",
+              "default": "16",
+              "type": "enum",
+              "values": {
+                "8": null,
+                "12": null,
+                "14": null,
+                "16": null
+              }
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "is_list": true
+      }
+    }
+  },
+  "my9231.output": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "output.FLOAT_OUTPUT_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "my9231_id": {
+              "key": "GeneratedID",
+              "use_id_type": "my9231::MY9231OutputComponent",
+              "type": "use_id"
+            },
+            "id": {
+              "key": "Required",
+              "id_type": {
+                "class": "my9231::MY9231OutputComponent::Channel",
+                "parents": [
+                  "output::FloatOutput",
+                  "output::BinaryOutput"
+                ]
+              }
+            },
+            "channel": {
+              "key": "Required",
+              "type": "integer",
+              "data_type": "uint16_t"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "sdp3x.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "sdp3x::SDP3XComponent",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "sensirion_common::SensirionI2CDevice",
+                  "i2c::I2CDevice"
+                ]
+              }
+            },
+            "unit_of_measurement": {
+              "default": "hPa"
+            },
+            "accuracy_decimals": {
+              "default": "3"
+            },
+            "device_class": {
+              "default": "pressure"
+            },
+            "state_class": {
+              "default": "measurement"
+            },
+            "measurement_mode": {
+              "key": "Optional",
+              "default": "differential_pressure",
+              "type": "enum",
+              "values": {
+                "mass_flow": null,
+                "differential_pressure": null
+              }
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "33",
+              "data_type": "hex_uint8_t"
+            }
+          }
+        }
+      }
+    }
+  }
+}

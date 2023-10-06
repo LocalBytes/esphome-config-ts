@@ -1,0 +1,347 @@
+{
+  "display_menu_base": {
+    "schemas": {
+      "MENU_ITEM_COMMON_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "text": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "string"
+            }
+          }
+        }
+      },
+      "DISPLAY_MENU_BASE_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "active": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "root_item_id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "display_menu_base::MenuItemMenu",
+                "parents": []
+              }
+            },
+            "mode": {
+              "key": "Optional",
+              "default": "rotary",
+              "type": "enum",
+              "values": {
+                "rotary": null,
+                "joystick": null
+              }
+            },
+            "on_enter": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_leave": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA",
+            "display_menu_base.MENU_TYPES"
+          ]
+        }
+      },
+      "MENU_ACTION_SCHEMA": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "display_menu_base::DisplayMenuComponent",
+              "type": "use_id"
+            }
+          }
+        }
+      },
+      "MENU_TYPES": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "items": {
+              "key": "Required",
+              "is_list": true,
+              "type": "typed",
+              "types": {
+                "label": {
+                  "config_vars": {
+                    "text": {
+                      "key": "Optional",
+                      "templatable": true,
+                      "type": "string"
+                    },
+                    "id": {
+                      "key": "GeneratedID",
+                      "id_type": {
+                        "class": "display_menu_base::MenuItem",
+                        "parents": []
+                      }
+                    }
+                  }
+                },
+                "back": {
+                  "config_vars": {
+                    "text": {
+                      "key": "Optional",
+                      "templatable": true,
+                      "type": "string"
+                    },
+                    "id": {
+                      "key": "GeneratedID",
+                      "id_type": {
+                        "class": "display_menu_base::MenuItem",
+                        "parents": []
+                      }
+                    }
+                  }
+                },
+                "menu": {
+                  "config_vars": {
+                    "text": {
+                      "key": "Optional",
+                      "templatable": true,
+                      "type": "string"
+                    },
+                    "on_enter": {
+                      "key": "Optional",
+                      "type": "trigger"
+                    },
+                    "on_leave": {
+                      "key": "Optional",
+                      "type": "trigger"
+                    },
+                    "id": {
+                      "key": "GeneratedID",
+                      "id_type": {
+                        "class": "display_menu_base::MenuItemMenu",
+                        "parents": []
+                      }
+                    }
+                  },
+                  "extends": [
+                    "display_menu_base.MENU_TYPES"
+                  ]
+                },
+                "select": {
+                  "config_vars": {
+                    "text": {
+                      "key": "Optional",
+                      "templatable": true,
+                      "type": "string"
+                    },
+                    "on_enter": {
+                      "key": "Optional",
+                      "type": "trigger"
+                    },
+                    "on_leave": {
+                      "key": "Optional",
+                      "type": "trigger"
+                    },
+                    "on_value": {
+                      "key": "Optional",
+                      "type": "trigger"
+                    },
+                    "id": {
+                      "key": "GeneratedID",
+                      "id_type": {
+                        "class": "display_menu_base::MenuItemSelect",
+                        "parents": []
+                      }
+                    },
+                    "select": {
+                      "key": "Required",
+                      "use_id_type": "select::Select",
+                      "type": "use_id"
+                    },
+                    "immediate_edit": {
+                      "key": "Optional",
+                      "default": "False",
+                      "type": "boolean"
+                    },
+                    "value_lambda": {
+                      "key": "Optional"
+                    }
+                  }
+                },
+                "number": {
+                  "config_vars": {
+                    "text": {
+                      "key": "Optional",
+                      "templatable": true,
+                      "type": "string"
+                    },
+                    "on_enter": {
+                      "key": "Optional",
+                      "type": "trigger"
+                    },
+                    "on_leave": {
+                      "key": "Optional",
+                      "type": "trigger"
+                    },
+                    "on_value": {
+                      "key": "Optional",
+                      "type": "trigger"
+                    },
+                    "id": {
+                      "key": "GeneratedID",
+                      "id_type": {
+                        "class": "display_menu_base::MenuItemNumber",
+                        "parents": []
+                      }
+                    },
+                    "number": {
+                      "key": "Required",
+                      "use_id_type": "number::Number",
+                      "type": "use_id"
+                    },
+                    "immediate_edit": {
+                      "key": "Optional",
+                      "default": "False",
+                      "type": "boolean"
+                    },
+                    "format": {
+                      "key": "Optional",
+                      "default": "%.1f",
+                      "type": "string"
+                    },
+                    "value_lambda": {
+                      "key": "Optional"
+                    }
+                  }
+                },
+                "switch": {
+                  "config_vars": {
+                    "text": {
+                      "key": "Optional",
+                      "templatable": true,
+                      "type": "string"
+                    },
+                    "on_enter": {
+                      "key": "Optional",
+                      "type": "trigger"
+                    },
+                    "on_leave": {
+                      "key": "Optional",
+                      "type": "trigger"
+                    },
+                    "on_value": {
+                      "key": "Optional",
+                      "type": "trigger"
+                    },
+                    "id": {
+                      "key": "GeneratedID",
+                      "id_type": {
+                        "class": "display_menu_base::MenuItemSwitch",
+                        "parents": []
+                      }
+                    },
+                    "switch": {
+                      "key": "Required",
+                      "use_id_type": "switch_::Switch",
+                      "type": "use_id"
+                    },
+                    "immediate_edit": {
+                      "key": "Optional",
+                      "default": "False",
+                      "type": "boolean"
+                    },
+                    "on_text": {
+                      "key": "Optional",
+                      "default": "On",
+                      "type": "string"
+                    },
+                    "off_text": {
+                      "key": "Optional",
+                      "default": "Off",
+                      "type": "string"
+                    },
+                    "value_lambda": {
+                      "key": "Optional"
+                    }
+                  }
+                },
+                "command": {
+                  "config_vars": {
+                    "text": {
+                      "key": "Optional",
+                      "templatable": true,
+                      "type": "string"
+                    },
+                    "on_value": {
+                      "key": "Optional",
+                      "type": "trigger"
+                    },
+                    "id": {
+                      "key": "GeneratedID",
+                      "id_type": {
+                        "class": "display_menu_base::MenuItemCommand",
+                        "parents": []
+                      }
+                    }
+                  }
+                },
+                "custom": {
+                  "config_vars": {
+                    "text": {
+                      "key": "Optional",
+                      "templatable": true,
+                      "type": "string"
+                    },
+                    "on_enter": {
+                      "key": "Optional",
+                      "type": "trigger"
+                    },
+                    "on_leave": {
+                      "key": "Optional",
+                      "type": "trigger"
+                    },
+                    "on_value": {
+                      "key": "Optional",
+                      "type": "trigger"
+                    },
+                    "id": {
+                      "key": "GeneratedID",
+                      "id_type": {
+                        "class": "display_menu_base::MenuItemCustom",
+                        "parents": []
+                      }
+                    },
+                    "immediate_edit": {
+                      "key": "Optional",
+                      "default": "False",
+                      "type": "boolean"
+                    },
+                    "value_lambda": {
+                      "key": "Optional"
+                    },
+                    "on_next": {
+                      "key": "Optional",
+                      "type": "trigger"
+                    },
+                    "on_prev": {
+                      "key": "Optional",
+                      "type": "trigger"
+                    }
+                  }
+                }
+              },
+              "typed_key": "type"
+            }
+          }
+        }
+      }
+    }
+  }
+}

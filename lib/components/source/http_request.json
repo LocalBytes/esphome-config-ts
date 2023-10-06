@@ -1,0 +1,190 @@
+{
+  "http_request": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "http_request::HttpRequestComponent",
+                "parents": [
+                  "Component"
+                ]
+              }
+            },
+            "useragent": {
+              "key": "Optional",
+              "default": "ESPHome",
+              "type": "string"
+            },
+            "follow_redirects": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "redirect_limit": {
+              "key": "Optional",
+              "default": "3",
+              "type": "integer"
+            },
+            "timeout": {
+              "key": "Optional",
+              "default": "5s",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "esp8266_disable_ssl_support": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      },
+      "HTTP_REQUEST_ACTION_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "http_request::HttpRequestComponent",
+              "type": "use_id"
+            },
+            "url": {
+              "key": "Required",
+              "templatable": true
+            },
+            "headers": {
+              "key": "String",
+              "key_type": "string",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "string": {
+                    "templatable": true,
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "verify_ssl": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "on_response": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "send": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "http_request.HTTP_REQUEST_ACTION_SCHEMA"
+          ],
+          "config_vars": {
+            "method": {
+              "key": "Required",
+              "type": "enum",
+              "values": {
+                "GET": null,
+                "POST": null,
+                "PUT": null,
+                "DELETE": null,
+                "PATCH": null
+              }
+            },
+            "body": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "string"
+            },
+            "json": {
+              "key": "String",
+              "key_type": "string",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "string": {
+                    "templatable": true,
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "http_request.HTTP_REQUEST_ACTION_SCHEMA"
+          ],
+          "config_vars": {
+            "method": {
+              "key": "Optional",
+              "default": "POST",
+              "type": "enum",
+              "values": {
+                "POST": null
+              }
+            },
+            "body": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "string"
+            },
+            "json": {
+              "key": "String",
+              "key_type": "string",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "string": {
+                    "templatable": true,
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "maybe": "url"
+      },
+      "get": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "http_request.HTTP_REQUEST_ACTION_SCHEMA"
+          ],
+          "config_vars": {
+            "method": {
+              "key": "Optional",
+              "default": "GET",
+              "type": "enum",
+              "values": {
+                "GET": null
+              }
+            }
+          }
+        },
+        "maybe": "url"
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "ultrasonic.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "ultrasonic::UltrasonicSensorComponent",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "unit_of_measurement": {
+              "default": "m"
+            },
+            "icon": {
+              "default": "mdi:arrow-expand-vertical"
+            },
+            "accuracy_decimals": {
+              "default": "2"
+            },
+            "state_class": {
+              "default": "measurement"
+            },
+            "trigger_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "echo_pin": {
+              "key": "Required",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "input"
+              ],
+              "type": "pin"
+            },
+            "timeout": {
+              "key": "Optional",
+              "default": "2m"
+            },
+            "pulse_time": {
+              "key": "Optional",
+              "default": "10us",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_microseconds"
+                ]
+              }
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            }
+          }
+        }
+      }
+    }
+  }
+}

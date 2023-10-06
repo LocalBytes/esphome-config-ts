@@ -1,0 +1,111 @@
+{
+  "ethernet": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "ethernet::EthernetComponent",
+                "parents": [
+                  "Component"
+                ]
+              }
+            },
+            "type": {
+              "key": "Required",
+              "type": "enum",
+              "values": {
+                "LAN8720": null,
+                "RTL8201": null,
+                "DP83848": null,
+                "IP101": null,
+                "JL1101": null,
+                "KSZ8081": null,
+                "KSZ8081RNA": null
+              }
+            },
+            "mdc_pin": {
+              "key": "Required",
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "mdio_pin": {
+              "key": "Required",
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "clk_mode": {
+              "key": "Optional",
+              "default": "GPIO0_IN",
+              "type": "enum",
+              "values": {
+                "GPIO0_IN": null,
+                "GPIO0_OUT": null,
+                "GPIO16_OUT": null,
+                "GPIO17_OUT": null
+              }
+            },
+            "phy_addr": {
+              "key": "Optional",
+              "default": "0",
+              "type": "integer"
+            },
+            "power_pin": {
+              "key": "Optional",
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "manual_ip": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "static_ip": {
+                    "key": "Required"
+                  },
+                  "gateway": {
+                    "key": "Required"
+                  },
+                  "subnet": {
+                    "key": "Required"
+                  },
+                  "dns1": {
+                    "key": "Optional",
+                    "default": "0.0.0.0"
+                  },
+                  "dns2": {
+                    "key": "Optional",
+                    "default": "0.0.0.0"
+                  }
+                }
+              }
+            },
+            "domain": {
+              "key": "Optional",
+              "default": ".local"
+            },
+            "use_address": {
+              "key": "Optional",
+              "type": "string"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "rotary_encoder.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "rotary_encoder::RotaryEncoderSensor",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "Component"
+                ]
+              }
+            },
+            "unit_of_measurement": {
+              "default": "steps"
+            },
+            "icon": {
+              "default": "mdi:rotate-right"
+            },
+            "accuracy_decimals": {
+              "default": "0"
+            },
+            "pin_a": {
+              "key": "Required",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "input"
+              ],
+              "type": "pin"
+            },
+            "pin_b": {
+              "key": "Required",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "input"
+              ],
+              "type": "pin"
+            },
+            "pin_reset": {
+              "key": "Optional",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "resolution": {
+              "key": "Optional",
+              "default": "1",
+              "type": "enum",
+              "values": {
+                "1": null,
+                "2": null,
+                "4": null
+              }
+            },
+            "min_value": {
+              "key": "Optional",
+              "type": "integer"
+            },
+            "max_value": {
+              "key": "Optional",
+              "type": "integer"
+            },
+            "publish_initial_value": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "restore_mode": {
+              "key": "Optional",
+              "default": "RESTORE_DEFAULT_ZERO",
+              "type": "enum",
+              "values": {
+                "RESTORE_DEFAULT_ZERO": null,
+                "ALWAYS_ZERO": null
+              }
+            },
+            "on_clockwise": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_anticlockwise": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "set_value": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "sensor::Sensor",
+              "type": "use_id"
+            },
+            "value": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "rf_bridge": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "rf_bridge::RFBridgeComponent",
+                "parents": [
+                  "Component",
+                  "uart::UARTDevice"
+                ]
+              }
+            },
+            "on_code_received": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_advanced_code_received": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "uart_id": {
+              "key": "GeneratedID",
+              "use_id_type": "uart::UARTComponent",
+              "type": "use_id"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      },
+      "RFBRIDGE_ID_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "rf_bridge::RFBridgeComponent",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "send_code": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "rf_bridge::RFBridgeComponent",
+              "type": "use_id"
+            },
+            "sync": {
+              "key": "Required",
+              "templatable": true,
+              "data_type": "hex_uint16_t"
+            },
+            "low": {
+              "key": "Required",
+              "templatable": true,
+              "data_type": "hex_uint16_t"
+            },
+            "high": {
+              "key": "Required",
+              "templatable": true,
+              "data_type": "hex_uint16_t"
+            },
+            "code": {
+              "key": "Required",
+              "templatable": true,
+              "data_type": "hex_uint32_t"
+            }
+          }
+        }
+      },
+      "learn": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "rf_bridge.RFBRIDGE_ID_SCHEMA"
+          ]
+        }
+      },
+      "start_advanced_sniffing": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "rf_bridge.RFBRIDGE_ID_SCHEMA"
+          ]
+        }
+      },
+      "stop_advanced_sniffing": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "rf_bridge.RFBRIDGE_ID_SCHEMA"
+          ]
+        }
+      },
+      "start_bucket_sniffing": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "rf_bridge.RFBRIDGE_ID_SCHEMA"
+          ]
+        }
+      },
+      "send_advanced_code": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "rf_bridge::RFBridgeComponent",
+              "type": "use_id"
+            },
+            "length": {
+              "key": "Required",
+              "templatable": true,
+              "data_type": "hex_uint8_t"
+            },
+            "protocol": {
+              "key": "Required",
+              "templatable": true,
+              "data_type": "hex_uint8_t"
+            },
+            "code": {
+              "key": "Required",
+              "templatable": true,
+              "type": "string"
+            }
+          }
+        }
+      },
+      "send_raw": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "rf_bridge::RFBridgeComponent",
+              "type": "use_id"
+            },
+            "raw": {
+              "key": "Required",
+              "templatable": true,
+              "type": "string"
+            }
+          }
+        }
+      },
+      "beep": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "rf_bridge::RFBridgeComponent",
+              "type": "use_id"
+            },
+            "duration": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer",
+              "data_type": "uint16_t"
+            }
+          }
+        }
+      }
+    }
+  }
+}

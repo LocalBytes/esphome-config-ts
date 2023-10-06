@@ -1,0 +1,63 @@
+{
+  "ledc.output": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "output.FLOAT_OUTPUT_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "id_type": {
+                "class": "ledc::LEDCOutput",
+                "parents": [
+                  "output::FloatOutput",
+                  "output::BinaryOutput",
+                  "Component"
+                ]
+              }
+            },
+            "pin": {
+              "key": "Required",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "frequency": {
+              "key": "Optional",
+              "default": "1kHz"
+            },
+            "channel": {
+              "key": "Optional",
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "set_frequency": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "ledc::LEDCOutput",
+              "type": "use_id"
+            },
+            "frequency": {
+              "key": "Required",
+              "templatable": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

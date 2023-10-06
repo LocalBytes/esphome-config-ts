@@ -1,0 +1,78 @@
+{
+  "pca9685": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "pca9685::PCA9685Output",
+                "parents": [
+                  "Component",
+                  "i2c::I2CDevice"
+                ]
+              }
+            },
+            "frequency": {
+              "key": "Optional"
+            },
+            "external_clock_input": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "64",
+              "data_type": "hex_uint8_t"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "is_list": true
+      }
+    }
+  },
+  "pca9685.output": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "output.FLOAT_OUTPUT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "id_type": {
+                "class": "pca9685::PCA9685Channel",
+                "parents": [
+                  "output::FloatOutput",
+                  "output::BinaryOutput"
+                ]
+              }
+            },
+            "pca9685_id": {
+              "key": "GeneratedID",
+              "use_id_type": "pca9685::PCA9685Output",
+              "type": "use_id"
+            },
+            "channel": {
+              "key": "Required",
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  }
+}

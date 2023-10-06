@@ -1,0 +1,343 @@
+{
+  "nextion.sensor": {
+    "schemas": {
+      "CONFIG_SENSOR_COMPONENT_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "nextion_id": {
+              "key": "GeneratedID",
+              "use_id_type": "nextion::Nextion",
+              "type": "use_id"
+            },
+            "background_color": {
+              "key": "Optional",
+              "use_id_type": "Color",
+              "type": "use_id"
+            },
+            "foreground_color": {
+              "key": "Optional",
+              "use_id_type": "Color",
+              "type": "use_id"
+            },
+            "visible": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "component_name": {
+              "key": "Optional"
+            },
+            "variable_name": {
+              "key": "Optional"
+            },
+            "font_id": {
+              "key": "Optional",
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "nextion.sensor.CONFIG_SENSOR_COMPONENT_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "nextion::NextionSensor",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "accuracy_decimals": {
+              "default": "2"
+            },
+            "precision": {
+              "key": "Optional",
+              "default": "0",
+              "type": "integer"
+            },
+            "wave_channel_id": {
+              "key": "Optional"
+            },
+            "component_id": {
+              "key": "Optional",
+              "type": "integer",
+              "data_type": "uint8_t"
+            },
+            "wave_max_length": {
+              "key": "Optional",
+              "default": "255",
+              "type": "integer"
+            },
+            "wave_max_value": {
+              "key": "Optional",
+              "default": "100",
+              "type": "integer"
+            },
+            "waveform_send_last_value": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "never"
+            }
+          }
+        }
+      }
+    }
+  },
+  "nextion.binary_sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "nextion::NextionBinarySensor",
+                "parents": [
+                  "binary_sensor::BinarySensor",
+                  "EntityBase",
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "page_id": {
+              "key": "Optional",
+              "type": "integer",
+              "data_type": "uint8_t"
+            },
+            "component_id": {
+              "key": "Optional",
+              "type": "integer",
+              "data_type": "uint8_t"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "never"
+            },
+            "nextion_id": {
+              "key": "GeneratedID",
+              "use_id_type": "nextion::Nextion",
+              "type": "use_id"
+            },
+            "background_color": {
+              "key": "Optional",
+              "use_id_type": "Color",
+              "type": "use_id"
+            },
+            "foreground_color": {
+              "key": "Optional",
+              "use_id_type": "Color",
+              "type": "use_id"
+            },
+            "visible": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "component_name": {
+              "key": "Optional"
+            },
+            "variable_name": {
+              "key": "Optional"
+            }
+          }
+        }
+      }
+    }
+  },
+  "nextion.display": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display.BASIC_DISPLAY_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "nextion::Nextion",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "uart::UARTDevice"
+                ]
+              }
+            },
+            "tft_url": {
+              "key": "Optional",
+              "type": "string"
+            },
+            "brightness": {
+              "key": "Optional",
+              "default": "1.0"
+            },
+            "on_setup": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_sleep": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_wake": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_page": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "touch_sleep_timeout": {
+              "key": "Optional",
+              "type": "integer"
+            },
+            "wake_up_page": {
+              "key": "Optional",
+              "type": "integer",
+              "data_type": "positive_int"
+            },
+            "auto_wake_on_touch": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "5s"
+            },
+            "uart_id": {
+              "key": "GeneratedID",
+              "use_id_type": "uart::UARTComponent",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  },
+  "nextion.switch": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "restore_mode": {
+              "key": "Optional",
+              "default": "ALWAYS_OFF",
+              "type": "enum",
+              "values": {
+                "RESTORE_DEFAULT_OFF": null,
+                "RESTORE_DEFAULT_ON": null,
+                "ALWAYS_OFF": null,
+                "ALWAYS_ON": null,
+                "RESTORE_INVERTED_DEFAULT_OFF": null,
+                "RESTORE_INVERTED_DEFAULT_ON": null,
+                "DISABLED": null
+              }
+            },
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "nextion::NextionSwitch",
+                "parents": [
+                  "switch_::Switch",
+                  "EntityBase",
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "never"
+            },
+            "foreground_pressed_color": {
+              "key": "Optional",
+              "use_id_type": "Color",
+              "type": "use_id"
+            },
+            "background_pressed_color": {
+              "key": "Optional",
+              "use_id_type": "Color",
+              "type": "use_id"
+            }
+          },
+          "extends": [
+            "nextion.sensor.CONFIG_SENSOR_COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  },
+  "nextion.text_sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "nextion::NextionTextSensor",
+                "parents": [
+                  "text_sensor::TextSensor",
+                  "EntityBase",
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "never"
+            },
+            "nextion_id": {
+              "key": "GeneratedID",
+              "use_id_type": "nextion::Nextion",
+              "type": "use_id"
+            },
+            "background_color": {
+              "key": "Optional",
+              "use_id_type": "Color",
+              "type": "use_id"
+            },
+            "foreground_color": {
+              "key": "Optional",
+              "use_id_type": "Color",
+              "type": "use_id"
+            },
+            "visible": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "component_name": {
+              "key": "Required"
+            },
+            "font_id": {
+              "key": "Optional",
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  }
+}

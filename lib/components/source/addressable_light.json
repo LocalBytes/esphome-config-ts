@@ -1,0 +1,55 @@
+{
+  "addressable_light.display": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display.FULL_DISPLAY_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "addressable_light::AddressableLightDisplay",
+                "parents": [
+                  "display::DisplayBuffer",
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "addressable_light_id": {
+              "key": "Required",
+              "use_id_type": "light::AddressableLightState",
+              "type": "use_id"
+            },
+            "width": {
+              "key": "Required",
+              "type": "integer",
+              "data_type": "positive_int"
+            },
+            "height": {
+              "key": "Required",
+              "type": "integer",
+              "data_type": "positive_int"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "16ms",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "pixel_mapper": {
+              "key": "Optional"
+            }
+          }
+        }
+      }
+    }
+  }
+}

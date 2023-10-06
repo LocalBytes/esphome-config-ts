@@ -1,0 +1,81 @@
+{
+  "mcp3008": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "mcp3008::MCP3008",
+                "parents": [
+                  "Component",
+                  "spi::SPIDevice"
+                ]
+              }
+            },
+            "spi_id": {
+              "key": "GeneratedID",
+              "use_id_type": "spi::SPIComponent",
+              "type": "use_id"
+            },
+            "cs_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            }
+          }
+        },
+        "is_list": true
+      }
+    }
+  },
+  "mcp3008.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "mcp3008::MCP3008Sensor",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "PollingComponent",
+                  "Component",
+                  "voltage_sampler::VoltageSampler"
+                ]
+              }
+            },
+            "mcp3008_id": {
+              "key": "GeneratedID",
+              "use_id_type": "mcp3008::MCP3008",
+              "type": "use_id"
+            },
+            "number": {
+              "key": "Required",
+              "type": "integer"
+            },
+            "reference_voltage": {
+              "key": "Optional",
+              "default": "3.3V"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "1s"
+            }
+          }
+        }
+      }
+    }
+  }
+}

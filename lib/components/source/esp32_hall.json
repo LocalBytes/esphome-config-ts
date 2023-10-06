@@ -1,0 +1,44 @@
+{
+  "esp32_hall.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "esp32_hall::ESP32HallSensor",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "unit_of_measurement": {
+              "default": "\u00b5T"
+            },
+            "icon": {
+              "default": "mdi:magnet"
+            },
+            "accuracy_decimals": {
+              "default": "1"
+            },
+            "state_class": {
+              "default": "measurement"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            }
+          }
+        }
+      }
+    }
+  }
+}

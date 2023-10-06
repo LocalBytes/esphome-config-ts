@@ -1,0 +1,181 @@
+{
+  "cover": {
+    "components": {
+      "am43": {
+        "dependencies": [
+          "ble_client"
+        ]
+      },
+      "copy": {},
+      "current_based": {},
+      "custom": {},
+      "endstop": {},
+      "feedback": {},
+      "template": {},
+      "time_based": {},
+      "tuya": {
+        "dependencies": [
+          "tuya"
+        ]
+      }
+    },
+    "schemas": {
+      "COVER_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.ENTITY_BASE_SCHEMA",
+            "core.MQTT_COMMAND_COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "cover::Cover",
+                "parents": [
+                  "EntityBase"
+                ]
+              }
+            },
+            "mqtt_id": {
+              "key": "Optional",
+              "id_type": {
+                "class": "mqtt::MQTTCoverComponent",
+                "parents": [
+                  "mqtt::MQTTComponent",
+                  "Component"
+                ]
+              }
+            },
+            "device_class": {
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "awning": null,
+                "blind": null,
+                "curtain": null,
+                "damper": null,
+                "door": null,
+                "": null,
+                "garage": null,
+                "gate": null,
+                "shade": null,
+                "shutter": null,
+                "window": null
+              }
+            },
+            "position_command_topic": {
+              "key": "Optional"
+            },
+            "position_state_topic": {
+              "key": "Optional"
+            },
+            "tilt_command_topic": {
+              "key": "Optional"
+            },
+            "tilt_state_topic": {
+              "key": "Optional"
+            },
+            "on_open": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_closed": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          }
+        }
+      },
+      "COVER_ACTION_SCHEMA": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "cover::Cover",
+              "type": "use_id"
+            }
+          }
+        }
+      },
+      "COVER_CONTROL_ACTION_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "cover::Cover",
+              "type": "use_id"
+            },
+            "stop": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "boolean"
+            },
+            "state": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "enum",
+              "values": {
+                "OPEN": null,
+                "CLOSED": null
+              }
+            },
+            "position": {
+              "key": "Optional",
+              "templatable": true
+            },
+            "tilt": {
+              "key": "Optional",
+              "templatable": true
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "open": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "cover.COVER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "close": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "cover.COVER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "stop": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "cover.COVER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "toggle": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "cover.COVER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "control": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "cover.COVER_CONTROL_ACTION_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

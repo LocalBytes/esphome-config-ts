@@ -1,0 +1,58 @@
+{
+  "total_daily_energy.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "total_daily_energy::TotalDailyEnergy",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "Component"
+                ]
+              }
+            },
+            "device_class": {
+              "default": "energy"
+            },
+            "state_class": {
+              "default": "total_increasing"
+            },
+            "time_id": {
+              "key": "GeneratedID",
+              "use_id_type": "time::RealTimeClock",
+              "type": "use_id"
+            },
+            "power_id": {
+              "key": "Required",
+              "use_id_type": "sensor::Sensor",
+              "type": "use_id"
+            },
+            "restore": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "method": {
+              "key": "Optional",
+              "default": "right",
+              "type": "enum",
+              "values": {
+                "trapezoid": null,
+                "left": null,
+                "right": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

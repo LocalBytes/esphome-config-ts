@@ -1,0 +1,195 @@
+{
+  "fan": {
+    "components": {
+      "bedjet": {
+        "dependencies": [
+          "bedjet"
+        ]
+      },
+      "binary": {},
+      "copy": {},
+      "hbridge": {},
+      "speed": {},
+      "tuya": {
+        "dependencies": [
+          "tuya"
+        ]
+      }
+    },
+    "schemas": {
+      "FAN_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.ENTITY_BASE_SCHEMA",
+            "core.MQTT_COMMAND_COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "fan::Fan",
+                "parents": [
+                  "EntityBase"
+                ]
+              }
+            },
+            "restore_mode": {
+              "key": "Optional",
+              "default": "ALWAYS_OFF",
+              "type": "enum",
+              "values": {
+                "NO_RESTORE": null,
+                "ALWAYS_OFF": null,
+                "ALWAYS_ON": null,
+                "RESTORE_DEFAULT_OFF": null,
+                "RESTORE_DEFAULT_ON": null,
+                "RESTORE_INVERTED_DEFAULT_OFF": null,
+                "RESTORE_INVERTED_DEFAULT_ON": null
+              }
+            },
+            "mqtt_id": {
+              "key": "Optional",
+              "id_type": {
+                "class": "mqtt::MQTTFanComponent",
+                "parents": [
+                  "mqtt::MQTTComponent",
+                  "Component"
+                ]
+              }
+            },
+            "oscillation_state_topic": {
+              "key": "Optional"
+            },
+            "oscillation_command_topic": {
+              "key": "Optional"
+            },
+            "speed_level_state_topic": {
+              "key": "Optional"
+            },
+            "speed_level_command_topic": {
+              "key": "Optional"
+            },
+            "speed_state_topic": {
+              "key": "Optional"
+            },
+            "speed_command_topic": {
+              "key": "Optional"
+            },
+            "on_turn_on": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_turn_off": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_speed_set": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          }
+        }
+      },
+      "FAN_ACTION_SCHEMA": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "fan::Fan",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "toggle": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "fan.FAN_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "turn_off": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "fan.FAN_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "turn_on": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "fan::Fan",
+              "type": "use_id"
+            },
+            "oscillating": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "boolean"
+            },
+            "speed": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "integer"
+            },
+            "direction": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "enum",
+              "values": {
+                "FORWARD": null,
+                "REVERSE": null
+              }
+            }
+          }
+        }
+      },
+      "cycle_speed": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "fan.FAN_ACTION_SCHEMA"
+          ]
+        }
+      }
+    },
+    "condition": {
+      "is_off": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "fan::Fan",
+              "type": "use_id"
+            }
+          }
+        }
+      },
+      "is_on": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "fan::Fan",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

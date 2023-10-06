@@ -1,0 +1,82 @@
+{
+  "midea_ac": {
+    "action": {
+      "follow_me": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "temperature": {
+              "key": "Required",
+              "templatable": true
+            },
+            "beeper": {
+              "key": "Optional",
+              "default": "False",
+              "templatable": true,
+              "type": "boolean"
+            }
+          },
+          "extends": [
+            "midea.climate.MIDEA_ACTION_BASE_SCHEMA"
+          ]
+        }
+      },
+      "display_toggle": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "midea.climate.MIDEA_ACTION_BASE_SCHEMA"
+          ]
+        }
+      },
+      "swing_step": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "midea.climate.MIDEA_ACTION_BASE_SCHEMA"
+          ]
+        }
+      },
+      "beeper_on": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "midea.climate.MIDEA_ACTION_BASE_SCHEMA"
+          ]
+        }
+      },
+      "beeper_off": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "midea.climate.MIDEA_ACTION_BASE_SCHEMA"
+          ]
+        }
+      },
+      "power_on": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "midea.climate.MIDEA_ACTION_BASE_SCHEMA"
+          ]
+        }
+      },
+      "power_off": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "midea.climate.MIDEA_ACTION_BASE_SCHEMA"
+          ]
+        }
+      },
+      "power_toggle": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "midea.climate.MIDEA_ACTION_BASE_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "bh1750.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "bh1750::BH1750Sensor",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "PollingComponent",
+                  "Component",
+                  "i2c::I2CDevice"
+                ]
+              }
+            },
+            "unit_of_measurement": {
+              "default": "lx"
+            },
+            "accuracy_decimals": {
+              "default": "1"
+            },
+            "device_class": {
+              "default": "illuminance"
+            },
+            "state_class": {
+              "default": "measurement"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "35",
+              "data_type": "hex_uint8_t"
+            }
+          }
+        }
+      }
+    }
+  }
+}

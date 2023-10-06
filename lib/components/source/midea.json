@@ -1,0 +1,211 @@
+{
+  "midea.climate": {
+    "schemas": {
+      "MIDEA_ACTION_BASE_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "midea::ac::AirConditioner",
+              "type": "use_id"
+            }
+          }
+        }
+      },
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "climate.CLIMATE_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "midea::ac::AirConditioner",
+                "parents": [
+                  "climate::Climate",
+                  "EntityBase",
+                  "Component"
+                ]
+              }
+            },
+            "period": {
+              "key": "Optional",
+              "default": "1s",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.time_period_dict"
+                ]
+              }
+            },
+            "timeout": {
+              "key": "Optional",
+              "default": "2s",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.time_period_dict"
+                ]
+              }
+            },
+            "num_attempts": {
+              "key": "Optional",
+              "default": "3",
+              "type": "integer"
+            },
+            "transmitter_id": {
+              "key": "Optional",
+              "use_id_type": "remote_transmitter::RemoteTransmitterComponent",
+              "type": "use_id"
+            },
+            "beeper": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "autoconf": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "supported_modes": {
+              "key": "Optional",
+              "is_list": true,
+              "type": "enum",
+              "values": {
+                "HEAT_COOL": null,
+                "COOL": null,
+                "HEAT": null,
+                "DRY": null,
+                "FAN_ONLY": null
+              }
+            },
+            "supported_swing_modes": {
+              "key": "Optional",
+              "is_list": true,
+              "type": "enum",
+              "values": {
+                "BOTH": null,
+                "VERTICAL": null,
+                "HORIZONTAL": null
+              }
+            },
+            "supported_presets": {
+              "key": "Optional",
+              "is_list": true,
+              "type": "enum",
+              "values": {
+                "ECO": null,
+                "BOOST": null,
+                "SLEEP": null
+              }
+            },
+            "custom_presets": {
+              "key": "Optional",
+              "is_list": true,
+              "type": "enum",
+              "values": {
+                "FREEZE_PROTECTION": null
+              }
+            },
+            "custom_fan_modes": {
+              "key": "Optional",
+              "is_list": true,
+              "type": "enum",
+              "values": {
+                "SILENT": null,
+                "TURBO": null
+              }
+            },
+            "outdoor_temperature": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "\u00b0C"
+                  },
+                  "icon": {
+                    "default": "mdi:thermometer"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "device_class": {
+                    "default": "temperature"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "power_usage": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "W"
+                  },
+                  "icon": {
+                    "default": "mdi:power"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "device_class": {
+                    "default": "power"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "humidity_setpoint": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "%"
+                  },
+                  "icon": {
+                    "default": "mdi:water-percent"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "device_class": {
+                    "default": "humidity"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "uart_id": {
+              "key": "GeneratedID",
+              "use_id_type": "uart::UARTComponent",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "sigma_delta_output.output": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "output.FLOAT_OUTPUT_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            },
+            "id": {
+              "key": "Required",
+              "id_type": {
+                "class": "sigma_delta_output::SigmaDeltaOutput",
+                "parents": [
+                  "output::FloatOutput",
+                  "output::BinaryOutput",
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "pin": {
+              "key": "Optional",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "state_change_action": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "turn_on_action": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "turn_off_action": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          }
+        }
+      }
+    }
+  }
+}

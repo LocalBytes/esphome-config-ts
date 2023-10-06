@@ -1,0 +1,65 @@
+{
+  "speaker": {
+    "components": {
+      "i2s_audio": {
+        "dependencies": [
+          "i2s_audio"
+        ]
+      }
+    },
+    "schemas": {
+      "SPEAKER_AUTOMATION_SCHEMA": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "speaker::Speaker",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "play": {
+        "type": "schema",
+        "maybe": "data",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "speaker::Speaker",
+              "type": "use_id"
+            },
+            "data": {
+              "key": "Required",
+              "templatable": true,
+              "is_list": true,
+              "data_type": "hex_uint8_t"
+            }
+          }
+        }
+      },
+      "stop": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "speaker.SPEAKER_AUTOMATION_SCHEMA"
+          ]
+        }
+      }
+    },
+    "condition": {
+      "is_playing": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "speaker.SPEAKER_AUTOMATION_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

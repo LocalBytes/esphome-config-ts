@@ -1,0 +1,41 @@
+{
+  "color_temperature.light": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "light.RGB_LIGHT_SCHEMA"
+          ],
+          "config_vars": {
+            "output_id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "color_temperature::CTLightOutput",
+                "parents": [
+                  "light::LightOutput"
+                ]
+              }
+            },
+            "color_temperature": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            },
+            "brightness": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            },
+            "cold_white_color_temperature": {
+              "key": "Required"
+            },
+            "warm_white_color_temperature": {
+              "key": "Required"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "tsl2591.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "tsl2591::TSL2591Component",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "i2c::I2CDevice"
+                ]
+              }
+            },
+            "infrared": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "icon": {
+                    "default": "mdi:brightness-6"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "visible": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "icon": {
+                    "default": "mdi:brightness-6"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "full_spectrum": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "icon": {
+                    "default": "mdi:brightness-6"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "calculated_lux": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "lx"
+                  },
+                  "icon": {
+                    "default": "mdi:brightness-6"
+                  },
+                  "accuracy_decimals": {
+                    "default": "4"
+                  },
+                  "device_class": {
+                    "default": "illuminance"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "actual_gain": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "icon": {
+                    "default": "mdi:brightness-6"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "device_class": {
+                    "default": "illuminance"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "integration_time": {
+              "key": "Optional",
+              "default": "100ms"
+            },
+            "name": {
+              "key": "Optional",
+              "default": "TLS2591",
+              "type": "string"
+            },
+            "gain": {
+              "key": "Optional",
+              "default": "AUTO",
+              "type": "enum",
+              "values": {
+                "1X": null,
+                "LOW": null,
+                "25X": null,
+                "MED": null,
+                "MEDIUM": null,
+                "400X": null,
+                "HIGH": null,
+                "9500X": null,
+                "MAX": null,
+                "MAXIMUM": null,
+                "AUTO": null
+              }
+            },
+            "power_save_mode": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "device_factor": {
+              "key": "Optional",
+              "default": "53.0"
+            },
+            "glass_attenuation_factor": {
+              "key": "Optional",
+              "default": "7.7"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "41",
+              "data_type": "hex_uint8_t"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "external_components": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "is_list": true,
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "source": {
+              "key": "Required",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.SOURCE_SCHEMA"
+                ]
+              }
+            },
+            "refresh": {
+              "key": "Optional",
+              "default": "1d",
+              "type": "string"
+            },
+            "components": {
+              "key": "Optional",
+              "default": "all",
+              "is_list": true,
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

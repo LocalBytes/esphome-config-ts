@@ -1,0 +1,47 @@
+{
+  "wifi_signal.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "wifi_signal::WiFiSignalSensor",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "unit_of_measurement": {
+              "default": "dBm"
+            },
+            "accuracy_decimals": {
+              "default": "0"
+            },
+            "device_class": {
+              "default": "signal_strength"
+            },
+            "state_class": {
+              "default": "measurement"
+            },
+            "entity_category": {
+              "default": "diagnostic"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            }
+          }
+        }
+      }
+    }
+  }
+}

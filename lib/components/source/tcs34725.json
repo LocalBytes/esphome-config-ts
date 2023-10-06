@@ -1,0 +1,186 @@
+{
+  "tcs34725.sensor": {
+    "schemas": {
+      "color_channel_schema": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA"
+          ],
+          "config_vars": {
+            "unit_of_measurement": {
+              "default": "%"
+            },
+            "icon": {
+              "default": "mdi:lightbulb"
+            },
+            "accuracy_decimals": {
+              "default": "1"
+            },
+            "state_class": {
+              "default": "measurement"
+            }
+          }
+        }
+      },
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "tcs34725::TCS34725Component",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "i2c::I2CDevice"
+                ]
+              }
+            },
+            "red_channel": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "tcs34725.sensor.color_channel_schema"
+                ]
+              }
+            },
+            "green_channel": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "tcs34725.sensor.color_channel_schema"
+                ]
+              }
+            },
+            "blue_channel": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "tcs34725.sensor.color_channel_schema"
+                ]
+              }
+            },
+            "clear_channel": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "tcs34725.sensor.color_channel_schema"
+                ]
+              }
+            },
+            "illuminance": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "lx"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "illuminance"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "color_temperature": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "K"
+                  },
+                  "icon": {
+                    "default": "mdi:thermometer"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "integration_time": {
+              "key": "Optional",
+              "default": "auto",
+              "type": "enum",
+              "values": {
+                "auto": null,
+                "2.4ms": null,
+                "24ms": null,
+                "50ms": null,
+                "101ms": null,
+                "120ms": null,
+                "154ms": null,
+                "180ms": null,
+                "199ms": null,
+                "240ms": null,
+                "300ms": null,
+                "360ms": null,
+                "401ms": null,
+                "420ms": null,
+                "480ms": null,
+                "499ms": null,
+                "540ms": null,
+                "600ms": null,
+                "614ms": null
+              }
+            },
+            "gain": {
+              "key": "Optional",
+              "default": "1X",
+              "type": "enum",
+              "values": {
+                "1X": null,
+                "4X": null,
+                "16X": null,
+                "60X": null
+              }
+            },
+            "glass_attenuation_factor": {
+              "key": "Optional",
+              "default": "1.0"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "41",
+              "data_type": "hex_uint8_t"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

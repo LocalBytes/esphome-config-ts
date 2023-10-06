@@ -1,0 +1,204 @@
+{
+  "mlx90393.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "mlx90393::MLX90393Cls",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "i2c::I2CDevice"
+                ]
+              }
+            },
+            "gain": {
+              "key": "Optional",
+              "default": "2_5X",
+              "type": "enum",
+              "values": {
+                "1X": null,
+                "1_33X": null,
+                "1_67X": null,
+                "2X": null,
+                "2_5X": null,
+                "3X": null,
+                "4X": null,
+                "5X": null
+              }
+            },
+            "drdy_pin": {
+              "key": "Optional",
+              "schema": true,
+              "modes": [
+                "input"
+              ],
+              "type": "pin"
+            },
+            "oversampling": {
+              "key": "Optional",
+              "default": "2",
+              "type": "integer"
+            },
+            "filter": {
+              "key": "Optional",
+              "default": "6",
+              "type": "integer"
+            },
+            "x_axis": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "\u00b5T"
+                  },
+                  "icon": {
+                    "default": "mdi:magnet"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "resolution": {
+                    "key": "Optional",
+                    "default": "19BIT",
+                    "type": "enum",
+                    "values": {
+                      "16BIT": null,
+                      "17BIT": null,
+                      "18BIT": null,
+                      "19BIT": null
+                    }
+                  }
+                }
+              }
+            },
+            "y_axis": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "\u00b5T"
+                  },
+                  "icon": {
+                    "default": "mdi:magnet"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "resolution": {
+                    "key": "Optional",
+                    "default": "19BIT",
+                    "type": "enum",
+                    "values": {
+                      "16BIT": null,
+                      "17BIT": null,
+                      "18BIT": null,
+                      "19BIT": null
+                    }
+                  }
+                }
+              }
+            },
+            "z_axis": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "\u00b5T"
+                  },
+                  "icon": {
+                    "default": "mdi:magnet"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "resolution": {
+                    "key": "Optional",
+                    "default": "16BIT",
+                    "type": "enum",
+                    "values": {
+                      "16BIT": null,
+                      "17BIT": null,
+                      "18BIT": null,
+                      "19BIT": null
+                    }
+                  }
+                }
+              }
+            },
+            "temperature": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "\u00b0C"
+                  },
+                  "icon": {
+                    "default": "mdi:thermometer"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "oversampling": {
+                    "key": "Optional",
+                    "default": "0",
+                    "type": "integer"
+                  }
+                }
+              }
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "12",
+              "data_type": "hex_uint8_t"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

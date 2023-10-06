@@ -1,0 +1,154 @@
+{
+  "media_player": {
+    "components": {
+      "i2s_audio": {
+        "dependencies": [
+          "i2s_audio"
+        ]
+      }
+    },
+    "schemas": {
+      "MEDIA_PLAYER_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.ENTITY_BASE_SCHEMA"
+          ],
+          "config_vars": {
+            "on_state": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_idle": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_play": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_pause": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          }
+        }
+      },
+      "MEDIA_PLAYER_ACTION_SCHEMA": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "media_player::MediaPlayer",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "play_media": {
+        "type": "schema",
+        "maybe": "media_url",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "media_player::MediaPlayer",
+              "type": "use_id"
+            },
+            "media_url": {
+              "key": "Required",
+              "templatable": true
+            }
+          }
+        }
+      },
+      "volume_down": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "media_player.MEDIA_PLAYER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "volume_up": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "media_player.MEDIA_PLAYER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "stop": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "media_player.MEDIA_PLAYER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "pause": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "media_player.MEDIA_PLAYER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "toggle": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "media_player.MEDIA_PLAYER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "play": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "media_player.MEDIA_PLAYER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "volume_set": {
+        "type": "schema",
+        "maybe": "volume",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "media_player::MediaPlayer",
+              "type": "use_id"
+            },
+            "volume": {
+              "key": "Required",
+              "templatable": true
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "is_playing": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "media_player.MEDIA_PLAYER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "is_idle": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "media_player.MEDIA_PLAYER_ACTION_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

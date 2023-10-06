@@ -1,0 +1,61 @@
+{
+  "ac_dimmer.output": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "output.FLOAT_OUTPUT_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "id_type": {
+                "class": "ac_dimmer::AcDimmer",
+                "parents": [
+                  "output::FloatOutput",
+                  "output::BinaryOutput",
+                  "Component"
+                ]
+              }
+            },
+            "gate_pin": {
+              "key": "Required",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "zero_cross_pin": {
+              "key": "Required",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "input"
+              ],
+              "type": "pin"
+            },
+            "init_with_half_cycle": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "method": {
+              "key": "Optional",
+              "default": "leading pulse",
+              "type": "enum",
+              "values": {
+                "LEADING_PULSE": null,
+                "LEADING": null,
+                "TRAILING": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

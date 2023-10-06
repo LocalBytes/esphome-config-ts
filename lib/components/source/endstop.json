@@ -1,0 +1,76 @@
+{
+  "endstop.cover": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "cover.COVER_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "endstop::EndstopCover",
+                "parents": [
+                  "cover::Cover",
+                  "EntityBase",
+                  "Component"
+                ]
+              }
+            },
+            "stop_action": {
+              "key": "Required",
+              "type": "trigger"
+            },
+            "open_endstop": {
+              "key": "Required",
+              "use_id_type": "binary_sensor::BinarySensor",
+              "type": "use_id"
+            },
+            "open_action": {
+              "key": "Required",
+              "type": "trigger"
+            },
+            "open_duration": {
+              "key": "Required",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "close_action": {
+              "key": "Required",
+              "type": "trigger"
+            },
+            "close_endstop": {
+              "key": "Required",
+              "use_id_type": "binary_sensor::BinarySensor",
+              "type": "use_id"
+            },
+            "close_duration": {
+              "key": "Required",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "max_duration": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

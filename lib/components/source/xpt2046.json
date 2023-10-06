@@ -1,0 +1,94 @@
+{
+  "xpt2046": {
+    "schemas": {
+      "CONFIG_SCHEMA": {}
+    }
+  },
+  "xpt2046.touchscreen": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "touchscreen.TOUCHSCREEN_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "xpt2046::XPT2046Component",
+                "parents": [
+                  "touchscreen::Touchscreen",
+                  "PollingComponent",
+                  "Component",
+                  "spi::SPIDevice"
+                ]
+              }
+            },
+            "interrupt_pin": {
+              "key": "Optional",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "input"
+              ],
+              "type": "pin"
+            },
+            "calibration_x_min": {
+              "key": "Optional",
+              "default": "0",
+              "type": "integer"
+            },
+            "calibration_x_max": {
+              "key": "Optional",
+              "default": "4095",
+              "type": "integer"
+            },
+            "calibration_y_min": {
+              "key": "Optional",
+              "default": "0",
+              "type": "integer"
+            },
+            "calibration_y_max": {
+              "key": "Optional",
+              "default": "4095",
+              "type": "integer"
+            },
+            "threshold": {
+              "key": "Optional",
+              "default": "400",
+              "type": "integer"
+            },
+            "report_interval": {
+              "key": "Optional",
+              "default": "never"
+            },
+            "swap_x_y": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "50ms"
+            },
+            "spi_id": {
+              "key": "GeneratedID",
+              "use_id_type": "spi::SPIComponent",
+              "type": "use_id"
+            },
+            "cs_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            }
+          }
+        }
+      }
+    }
+  }
+}

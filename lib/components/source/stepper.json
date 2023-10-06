@@ -1,0 +1,112 @@
+{
+  "stepper": {
+    "components": {
+      "a4988": {},
+      "uln2003": {}
+    },
+    "schemas": {
+      "STEPPER_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "max_speed": {
+              "key": "Required"
+            },
+            "acceleration": {
+              "key": "Optional",
+              "default": "inf"
+            },
+            "deceleration": {
+              "key": "Optional",
+              "default": "inf"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "set_target": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "stepper::Stepper",
+              "type": "use_id"
+            },
+            "target": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "report_position": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "stepper::Stepper",
+              "type": "use_id"
+            },
+            "position": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "set_speed": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "stepper::Stepper",
+              "type": "use_id"
+            },
+            "speed": {
+              "key": "Required",
+              "templatable": true
+            }
+          }
+        }
+      },
+      "set_acceleration": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "stepper::Stepper",
+              "type": "use_id"
+            },
+            "acceleration": {
+              "key": "Required",
+              "templatable": true
+            }
+          }
+        }
+      },
+      "set_deceleration": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "stepper::Stepper",
+              "type": "use_id"
+            },
+            "deceleration": {
+              "key": "Required",
+              "templatable": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

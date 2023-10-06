@@ -1,0 +1,173 @@
+{
+  "sgp30.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "sgp30::SGP30Component",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "sensirion_common::SensirionI2CDevice",
+                  "i2c::I2CDevice"
+                ]
+              }
+            },
+            "eco2": {
+              "key": "Required",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "ppm"
+                  },
+                  "icon": {
+                    "default": "mdi:molecule-co2"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "device_class": {
+                    "default": "carbon_dioxide"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "tvoc": {
+              "key": "Required",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "ppb"
+                  },
+                  "icon": {
+                    "default": "mdi:radiator"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "device_class": {
+                    "default": "volatile_organic_compounds_parts"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "eco2_baseline": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "icon": {
+                    "default": "mdi:molecule-co2"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "entity_category": {
+                    "default": "diagnostic"
+                  }
+                }
+              }
+            },
+            "tvoc_baseline": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "icon": {
+                    "default": "mdi:radiator"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "entity_category": {
+                    "default": "diagnostic"
+                  }
+                }
+              }
+            },
+            "store_baseline": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "baseline": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "eco2_baseline": {
+                    "key": "Required",
+                    "data_type": "hex_uint16_t"
+                  },
+                  "tvoc_baseline": {
+                    "key": "Required",
+                    "data_type": "hex_uint16_t"
+                  }
+                }
+              }
+            },
+            "compensation": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "humidity_source": {
+                    "key": "Required",
+                    "use_id_type": "sensor::Sensor",
+                    "type": "use_id"
+                  },
+                  "temperature_source": {
+                    "key": "Required",
+                    "use_id_type": "sensor::Sensor",
+                    "type": "use_id"
+                  }
+                }
+              }
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "1s"
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "88",
+              "data_type": "hex_uint8_t"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

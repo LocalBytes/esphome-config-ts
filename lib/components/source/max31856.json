@@ -1,0 +1,67 @@
+{
+  "max31856.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "max31856::MAX31856Sensor",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "PollingComponent",
+                  "Component",
+                  "spi::SPIDevice"
+                ]
+              }
+            },
+            "unit_of_measurement": {
+              "default": "\u00b0C"
+            },
+            "accuracy_decimals": {
+              "default": "1"
+            },
+            "device_class": {
+              "default": "temperature"
+            },
+            "state_class": {
+              "default": "measurement"
+            },
+            "mains_filter": {
+              "key": "Optional",
+              "default": "60HZ",
+              "type": "enum",
+              "values": {
+                "50HZ": null,
+                "60HZ": null
+              }
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            },
+            "spi_id": {
+              "key": "GeneratedID",
+              "use_id_type": "spi::SPIComponent",
+              "type": "use_id"
+            },
+            "cs_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            }
+          }
+        }
+      }
+    }
+  }
+}

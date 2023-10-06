@@ -1,0 +1,82 @@
+{
+  "ssd1325_spi.display": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "ssd1325_spi::SPISSD1325",
+                "parents": [
+                  "ssd1325_base::SSD1325",
+                  "PollingComponent",
+                  "Component",
+                  "display::DisplayBuffer",
+                  "spi::SPIDevice"
+                ]
+              }
+            },
+            "dc_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "spi_id": {
+              "key": "GeneratedID",
+              "use_id_type": "spi::SPIComponent",
+              "type": "use_id"
+            },
+            "cs_pin": {
+              "key": "Optional",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "model": {
+              "key": "Required",
+              "type": "enum",
+              "values": {
+                "SSD1325_128X32": null,
+                "SSD1325_128X64": null,
+                "SSD1325_96X16": null,
+                "SSD1325_64X48": null,
+                "SSD1327_128X128": null
+              }
+            },
+            "reset_pin": {
+              "key": "Optional",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "brightness": {
+              "key": "Optional",
+              "default": "1.0"
+            },
+            "external_vcc": {
+              "key": "Optional",
+              "type": "boolean"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "1s"
+            }
+          },
+          "extends": [
+            "display.FULL_DISPLAY_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "select": {
+    "components": {
+      "copy": {},
+      "ld2410": {},
+      "modbus_controller": {
+        "dependencies": [
+          "modbus_controller"
+        ]
+      },
+      "template": {},
+      "tuya": {
+        "dependencies": [
+          "tuya"
+        ]
+      }
+    },
+    "schemas": {
+      "SELECT_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.ENTITY_BASE_SCHEMA",
+            "core.MQTT_COMMAND_COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "mqtt_id": {
+              "key": "Optional",
+              "id_type": {
+                "class": "mqtt::MQTTSelectComponent",
+                "parents": [
+                  "mqtt::MQTTComponent",
+                  "Component"
+                ]
+              }
+            },
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "select::Select",
+                "parents": [
+                  "EntityBase"
+                ]
+              }
+            },
+            "on_value": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          }
+        }
+      },
+      "OPERATION_BASE_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "select::Select",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "set": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "select.OPERATION_BASE_SCHEMA"
+          ],
+          "config_vars": {
+            "option": {
+              "key": "Required",
+              "templatable": true,
+              "type": "string"
+            }
+          }
+        }
+      },
+      "set_index": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "select.OPERATION_BASE_SCHEMA"
+          ],
+          "config_vars": {
+            "index": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer",
+              "data_type": "positive_int"
+            }
+          }
+        }
+      },
+      "last": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "extends": [
+            "select.OPERATION_BASE_SCHEMA"
+          ],
+          "config_vars": {
+            "mode": {
+              "key": "Optional",
+              "default": "LAST",
+              "type": "enum",
+              "values": {
+                "LAST": null
+              }
+            }
+          }
+        }
+      },
+      "first": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "extends": [
+            "select.OPERATION_BASE_SCHEMA"
+          ],
+          "config_vars": {
+            "mode": {
+              "key": "Optional",
+              "default": "FIRST",
+              "type": "enum",
+              "values": {
+                "FIRST": null
+              }
+            }
+          }
+        }
+      },
+      "previous": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "extends": [
+            "select.OPERATION_BASE_SCHEMA"
+          ],
+          "config_vars": {
+            "mode": {
+              "key": "Optional",
+              "default": "PREVIOUS",
+              "type": "enum",
+              "values": {
+                "PREVIOUS": null
+              }
+            },
+            "cycle": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "next": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "extends": [
+            "select.OPERATION_BASE_SCHEMA"
+          ],
+          "config_vars": {
+            "mode": {
+              "key": "Optional",
+              "default": "NEXT",
+              "type": "enum",
+              "values": {
+                "NEXT": null
+              }
+            },
+            "cycle": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "operation": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "select.OPERATION_BASE_SCHEMA"
+          ],
+          "config_vars": {
+            "operation": {
+              "key": "Required",
+              "templatable": true,
+              "type": "enum",
+              "values": {
+                "NEXT": null,
+                "PREVIOUS": null,
+                "FIRST": null,
+                "LAST": null
+              }
+            },
+            "cycle": {
+              "key": "Optional",
+              "default": "True",
+              "templatable": true,
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "mpu6886.sensor": {
+    "schemas": {
+      "accel_schema": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA"
+          ],
+          "config_vars": {
+            "unit_of_measurement": {
+              "default": "m/s\u00b2"
+            },
+            "icon": {
+              "default": "mdi:briefcase-download"
+            },
+            "accuracy_decimals": {
+              "default": "2"
+            },
+            "state_class": {
+              "default": "measurement"
+            }
+          }
+        }
+      },
+      "gyro_schema": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA"
+          ],
+          "config_vars": {
+            "unit_of_measurement": {
+              "default": "\u00b0/s"
+            },
+            "icon": {
+              "default": "mdi:screen-rotation"
+            },
+            "accuracy_decimals": {
+              "default": "2"
+            },
+            "state_class": {
+              "default": "measurement"
+            }
+          }
+        }
+      },
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "mpu6886::MPU6886Component",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "i2c::I2CDevice"
+                ]
+              }
+            },
+            "accel_x": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "mpu6886.sensor.accel_schema"
+                ]
+              }
+            },
+            "accel_y": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "mpu6886.sensor.accel_schema"
+                ]
+              }
+            },
+            "accel_z": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "mpu6886.sensor.accel_schema"
+                ]
+              }
+            },
+            "gyro_x": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "mpu6886.sensor.gyro_schema"
+                ]
+              }
+            },
+            "gyro_y": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "mpu6886.sensor.gyro_schema"
+                ]
+              }
+            },
+            "gyro_z": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "mpu6886.sensor.gyro_schema"
+                ]
+              }
+            },
+            "temperature": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "\u00b0C"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "temperature"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "104",
+              "data_type": "hex_uint8_t"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

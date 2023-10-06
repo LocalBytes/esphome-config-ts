@@ -1,0 +1,48 @@
+{
+  "speed.fan": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "fan.FAN_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "output_id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "speed::SpeedFan",
+                "parents": [
+                  "Component",
+                  "fan::Fan",
+                  "EntityBase"
+                ]
+              }
+            },
+            "output": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            },
+            "oscillation_output": {
+              "key": "Optional",
+              "use_id_type": "output::BinaryOutput",
+              "type": "use_id"
+            },
+            "direction_output": {
+              "key": "Optional",
+              "use_id_type": "output::BinaryOutput",
+              "type": "use_id"
+            },
+            "speed_count": {
+              "key": "Optional",
+              "default": "100",
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  }
+}

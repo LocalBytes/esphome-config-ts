@@ -1,0 +1,64 @@
+{
+  "ble_rssi.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "ble_rssi::BLERSSISensor",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "Component",
+                  "esp32_ble_tracker::ESPBTDeviceListener"
+                ]
+              }
+            },
+            "unit_of_measurement": {
+              "default": "dBm"
+            },
+            "accuracy_decimals": {
+              "default": "0"
+            },
+            "device_class": {
+              "default": "signal_strength"
+            },
+            "state_class": {
+              "default": "measurement"
+            },
+            "mac_address": {
+              "key": "Optional"
+            },
+            "service_uuid": {
+              "key": "Optional"
+            },
+            "ibeacon_major": {
+              "key": "Optional",
+              "type": "integer",
+              "data_type": "uint16_t"
+            },
+            "ibeacon_minor": {
+              "key": "Optional",
+              "type": "integer",
+              "data_type": "uint16_t"
+            },
+            "ibeacon_uuid": {
+              "key": "Optional"
+            },
+            "esp32_ble_id": {
+              "key": "GeneratedID",
+              "use_id_type": "esp32_ble_tracker::ESP32BLETracker",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

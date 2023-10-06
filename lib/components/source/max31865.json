@@ -1,0 +1,78 @@
+{
+  "max31865.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "max31865::MAX31865Sensor",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "PollingComponent",
+                  "Component",
+                  "spi::SPIDevice"
+                ]
+              }
+            },
+            "unit_of_measurement": {
+              "default": "\u00b0C"
+            },
+            "accuracy_decimals": {
+              "default": "2"
+            },
+            "device_class": {
+              "default": "temperature"
+            },
+            "state_class": {
+              "default": "measurement"
+            },
+            "reference_resistance": {
+              "key": "Required"
+            },
+            "rtd_nominal_resistance": {
+              "key": "Required"
+            },
+            "mains_filter": {
+              "key": "Optional",
+              "default": "60HZ",
+              "type": "enum",
+              "values": {
+                "50HZ": null,
+                "60HZ": null
+              }
+            },
+            "rtd_wires": {
+              "key": "Optional",
+              "default": "4",
+              "type": "integer"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            },
+            "spi_id": {
+              "key": "GeneratedID",
+              "use_id_type": "spi::SPIComponent",
+              "type": "use_id"
+            },
+            "cs_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            }
+          }
+        }
+      }
+    }
+  }
+}

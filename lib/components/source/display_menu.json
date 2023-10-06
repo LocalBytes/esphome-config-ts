@@ -1,0 +1,85 @@
+{
+  "display_menu": {
+    "action": {
+      "up": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display_menu_base.MENU_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "down": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display_menu_base.MENU_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "left": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display_menu_base.MENU_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "right": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display_menu_base.MENU_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "enter": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display_menu_base.MENU_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "show": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display_menu_base.MENU_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "hide": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display_menu_base.MENU_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "show_main": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display_menu_base.MENU_ACTION_SCHEMA"
+          ]
+        }
+      }
+    },
+    "condition": {
+      "is_active": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "display_menu_base::DisplayMenuComponent",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

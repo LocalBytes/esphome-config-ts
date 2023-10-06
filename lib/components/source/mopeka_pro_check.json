@@ -1,0 +1,144 @@
+{
+  "mopeka_pro_check.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "mopeka_pro_check::MopekaProCheck",
+                "parents": [
+                  "esp32_ble_tracker::ESPBTDeviceListener",
+                  "Component"
+                ]
+              }
+            },
+            "mac_address": {
+              "key": "Required"
+            },
+            "custom_distance_full": {
+              "key": "Optional"
+            },
+            "custom_distance_empty": {
+              "key": "Optional"
+            },
+            "tank_type": {
+              "key": "Required",
+              "type": "enum",
+              "values": {
+                "CUSTOM": null,
+                "20LB_V": null,
+                "30LB_V": null,
+                "40LB_V": null,
+                "EUROPE_6KG": null,
+                "EUROPE_11KG": null,
+                "EUROPE_14KG": null
+              }
+            },
+            "temperature": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "\u00b0C"
+                  },
+                  "icon": {
+                    "default": "mdi:thermometer"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "device_class": {
+                    "default": "temperature"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "level": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "%"
+                  },
+                  "icon": {
+                    "default": "mdi:propane-tank"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "distance": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "mm"
+                  },
+                  "icon": {
+                    "default": "mdi:ruler"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "battery_level": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "%"
+                  },
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "device_class": {
+                    "default": "battery"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            }
+          },
+          "extends": [
+            "esp32_ble_tracker.ESP_BLE_DEVICE_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

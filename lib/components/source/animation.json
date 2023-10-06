@@ -1,0 +1,122 @@
+{
+  "animation": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "id_type": {
+                "class": "animation::Animation",
+                "parents": [
+                  "image::Image"
+                ]
+              }
+            },
+            "file": {
+              "key": "Required"
+            },
+            "resize": {
+              "key": "Optional"
+            },
+            "type": {
+              "key": "Optional",
+              "default": "BINARY",
+              "type": "enum",
+              "values": {
+                "BINARY": null,
+                "TRANSPARENT_BINARY": null,
+                "GRAYSCALE": null,
+                "RGB565": null,
+                "RGB24": null,
+                "RGBA": null
+              }
+            },
+            "use_transparency": {
+              "key": "Optional",
+              "type": "boolean"
+            },
+            "loop": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "start_frame": {
+                    "key": "Optional",
+                    "default": "0",
+                    "type": "integer",
+                    "data_type": "positive_int"
+                  },
+                  "end_frame": {
+                    "key": "Optional",
+                    "type": "integer",
+                    "data_type": "positive_int"
+                  },
+                  "repeat": {
+                    "key": "Optional",
+                    "type": "integer",
+                    "data_type": "positive_int"
+                  }
+                }
+              }
+            },
+            "raw_data_id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "uint8_t",
+                "parents": null
+              }
+            }
+          }
+        },
+        "is_list": true
+      }
+    },
+    "action": {
+      "set_frame": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "animation::Animation",
+              "type": "use_id"
+            },
+            "frame": {
+              "key": "Required",
+              "type": "integer",
+              "data_type": "uint16_t"
+            }
+          }
+        }
+      },
+      "prev_frame": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "animation::Animation",
+              "type": "use_id"
+            }
+          }
+        },
+        "maybe": "id"
+      },
+      "next_frame": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "animation::Animation",
+              "type": "use_id"
+            }
+          }
+        },
+        "maybe": "id"
+      }
+    }
+  }
+}

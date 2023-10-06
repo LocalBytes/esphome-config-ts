@@ -1,0 +1,61 @@
+{
+  "esp32_improv": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "esp32_improv::ESP32ImprovComponent",
+                "parents": [
+                  "Component",
+                  "esp32_ble_server::BLEServiceComponent"
+                ]
+              }
+            },
+            "ble_server_id": {
+              "key": "GeneratedID",
+              "use_id_type": "esp32_ble_server::BLEServer",
+              "type": "use_id"
+            },
+            "authorizer": {
+              "key": "Required",
+              "use_id_type": "binary_sensor::BinarySensor",
+              "type": "use_id"
+            },
+            "status_indicator": {
+              "key": "Optional",
+              "use_id_type": "output::BinaryOutput",
+              "type": "use_id"
+            },
+            "identify_duration": {
+              "key": "Optional",
+              "default": "10s",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "authorized_duration": {
+              "key": "Optional",
+              "default": "1min",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

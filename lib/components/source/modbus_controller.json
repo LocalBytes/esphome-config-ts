@@ -1,0 +1,589 @@
+{
+  "modbus_controller": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "modbus_controller::ModbusController",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "modbus::ModbusDevice"
+                ]
+              }
+            },
+            "command_throttle": {
+              "key": "Optional",
+              "default": "0ms",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            },
+            "modbus_id": {
+              "key": "GeneratedID",
+              "use_id_type": "modbus::Modbus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "1",
+              "data_type": "hex_uint8_t"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "is_list": true
+      },
+      "ModbusItemBaseSchema": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "modbus_controller_id": {
+              "key": "GeneratedID",
+              "use_id_type": "modbus_controller::ModbusController",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "type": "integer",
+              "data_type": "positive_int"
+            },
+            "custom_command": {
+              "key": "Optional",
+              "is_list": true,
+              "data_type": "hex_uint8_t"
+            },
+            "offset": {
+              "key": "Optional",
+              "type": "integer",
+              "data_type": "positive_int"
+            },
+            "byte_offset": {
+              "key": "Optional",
+              "type": "integer",
+              "data_type": "positive_int"
+            },
+            "bitmask": {
+              "key": "Optional",
+              "default": "4294967295",
+              "data_type": "hex_uint32_t"
+            },
+            "skip_updates": {
+              "key": "Optional",
+              "default": "0",
+              "type": "integer",
+              "data_type": "positive_int"
+            },
+            "force_new_range": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "lambda": {
+              "key": "Optional"
+            },
+            "response_size": {
+              "key": "Optional",
+              "default": "0",
+              "type": "integer",
+              "data_type": "positive_int"
+            }
+          }
+        }
+      }
+    }
+  },
+  "modbus_controller.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA",
+            "modbus_controller.ModbusItemBaseSchema"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "modbus_controller::ModbusSensor",
+                "parents": [
+                  "Component",
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "modbus_controller::SensorItem"
+                ]
+              }
+            },
+            "register_type": {
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "custom": null,
+                "coil": null,
+                "holding": null,
+                "discrete_input": null,
+                "read": null
+              }
+            },
+            "value_type": {
+              "key": "Optional",
+              "default": "U_WORD",
+              "type": "enum",
+              "values": {
+                "RAW": null,
+                "U_WORD": null,
+                "S_WORD": null,
+                "U_DWORD": null,
+                "U_DWORD_R": null,
+                "S_DWORD": null,
+                "S_DWORD_R": null,
+                "U_QWORD": null,
+                "U_QWORD_R": null,
+                "S_QWORD": null,
+                "S_QWORD_R": null,
+                "FP32": null,
+                "FP32_R": null
+              }
+            },
+            "register_count": {
+              "key": "Optional",
+              "default": "0",
+              "type": "integer",
+              "data_type": "positive_int"
+            }
+          }
+        }
+      }
+    }
+  },
+  "modbus_controller.binary_sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "binary_sensor.BINARY_SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA",
+            "modbus_controller.ModbusItemBaseSchema"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "modbus_controller::ModbusBinarySensor",
+                "parents": [
+                  "Component",
+                  "binary_sensor::BinarySensor",
+                  "EntityBase",
+                  "modbus_controller::SensorItem"
+                ]
+              }
+            },
+            "register_type": {
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "custom": null,
+                "coil": null,
+                "holding": null,
+                "discrete_input": null,
+                "read": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "modbus_controller.number": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "number.NUMBER_SCHEMA",
+            "modbus_controller.ModbusItemBaseSchema"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "modbus_controller::ModbusNumber",
+                "parents": [
+                  "Component",
+                  "number::Number",
+                  "EntityBase",
+                  "modbus_controller::SensorItem"
+                ]
+              }
+            },
+            "register_type": {
+              "key": "Optional",
+              "default": "holding",
+              "type": "enum",
+              "values": {
+                "custom": null,
+                "coil": null,
+                "holding": null
+              }
+            },
+            "value_type": {
+              "key": "Optional",
+              "default": "U_WORD",
+              "type": "enum",
+              "values": {
+                "RAW": null,
+                "U_WORD": null,
+                "S_WORD": null,
+                "U_DWORD": null,
+                "U_DWORD_R": null,
+                "S_DWORD": null,
+                "S_DWORD_R": null,
+                "U_QWORD": null,
+                "U_QWORD_R": null,
+                "S_QWORD": null,
+                "S_QWORD_R": null,
+                "FP32": null,
+                "FP32_R": null
+              }
+            },
+            "write_lambda": {
+              "key": "Optional"
+            },
+            "max_value": {
+              "key": "Optional",
+              "default": "16777215.0"
+            },
+            "min_value": {
+              "key": "Optional",
+              "default": "-16777215.0"
+            },
+            "step": {
+              "key": "Optional",
+              "default": "1",
+              "data_type": "positive_float"
+            },
+            "multiply": {
+              "key": "Optional",
+              "default": "1.0"
+            },
+            "use_write_multiple": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  },
+  "modbus_controller.output": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "typed",
+        "types": {
+          "coil": {
+            "extends": [
+              "output.BINARY_OUTPUT_SCHEMA",
+              "modbus_controller.ModbusItemBaseSchema"
+            ],
+            "config_vars": {
+              "id": {
+                "key": "GeneratedID",
+                "id_type": {
+                  "class": "modbus_controller::ModbusBinaryOutput",
+                  "parents": [
+                    "Component",
+                    "output::BinaryOutput",
+                    "modbus_controller::SensorItem"
+                  ]
+                }
+              },
+              "write_lambda": {
+                "key": "Optional"
+              },
+              "use_write_multiple": {
+                "key": "Optional",
+                "default": "False",
+                "type": "boolean"
+              }
+            }
+          },
+          "holding": {
+            "extends": [
+              "output.FLOAT_OUTPUT_SCHEMA",
+              "modbus_controller.ModbusItemBaseSchema"
+            ],
+            "config_vars": {
+              "id": {
+                "key": "GeneratedID",
+                "id_type": {
+                  "class": "modbus_controller::ModbusFloatOutput",
+                  "parents": [
+                    "Component",
+                    "output::FloatOutput",
+                    "output::BinaryOutput",
+                    "modbus_controller::SensorItem"
+                  ]
+                }
+              },
+              "value_type": {
+                "key": "Optional",
+                "default": "U_WORD",
+                "type": "enum",
+                "values": {
+                  "RAW": null,
+                  "U_WORD": null,
+                  "S_WORD": null,
+                  "U_DWORD": null,
+                  "U_DWORD_R": null,
+                  "S_DWORD": null,
+                  "S_DWORD_R": null,
+                  "U_QWORD": null,
+                  "U_QWORD_R": null,
+                  "S_QWORD": null,
+                  "S_QWORD_R": null,
+                  "FP32": null,
+                  "FP32_R": null
+                }
+              },
+              "write_lambda": {
+                "key": "Optional"
+              },
+              "multiply": {
+                "key": "Optional",
+                "default": "1.0"
+              },
+              "use_write_multiple": {
+                "key": "Optional",
+                "default": "False",
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "typed_key": "register_type"
+      }
+    }
+  },
+  "modbus_controller.select": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "select.SELECT_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "modbus_controller::ModbusSelect",
+                "parents": [
+                  "Component",
+                  "select::Select",
+                  "EntityBase",
+                  "modbus_controller::SensorItem"
+                ]
+              }
+            },
+            "modbus_controller_id": {
+              "key": "GeneratedID",
+              "use_id_type": "modbus_controller::ModbusController",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Required",
+              "type": "integer",
+              "data_type": "positive_int"
+            },
+            "value_type": {
+              "key": "Optional",
+              "default": "U_WORD",
+              "type": "enum",
+              "values": {
+                "RAW": null,
+                "U_WORD": null,
+                "S_WORD": null,
+                "U_DWORD": null,
+                "U_DWORD_R": null,
+                "S_DWORD": null,
+                "S_DWORD_R": null,
+                "U_QWORD": null,
+                "U_QWORD_R": null,
+                "S_QWORD": null,
+                "S_QWORD_R": null
+              }
+            },
+            "register_count": {
+              "key": "Optional",
+              "type": "integer",
+              "data_type": "positive_int"
+            },
+            "skip_updates": {
+              "key": "Optional",
+              "default": "0",
+              "type": "integer",
+              "data_type": "positive_int"
+            },
+            "force_new_range": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "optionsmap": {
+              "key": "Required"
+            },
+            "use_write_multiple": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "optimistic": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "lambda": {
+              "key": "Optional"
+            },
+            "write_lambda": {
+              "key": "Optional"
+            }
+          }
+        }
+      }
+    }
+  },
+  "modbus_controller.switch": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "switch._SWITCH_SCHEMA",
+            "core.COMPONENT_SCHEMA",
+            "modbus_controller.ModbusItemBaseSchema"
+          ],
+          "config_vars": {
+            "restore_mode": {
+              "key": "Optional",
+              "default": "DISABLED",
+              "type": "enum",
+              "values": {
+                "RESTORE_DEFAULT_OFF": null,
+                "RESTORE_DEFAULT_ON": null,
+                "ALWAYS_OFF": null,
+                "ALWAYS_ON": null,
+                "RESTORE_INVERTED_DEFAULT_OFF": null,
+                "RESTORE_INVERTED_DEFAULT_ON": null,
+                "DISABLED": null
+              }
+            },
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "modbus_controller::ModbusSwitch",
+                "parents": [
+                  "Component",
+                  "switch_::Switch",
+                  "EntityBase",
+                  "modbus_controller::SensorItem"
+                ]
+              }
+            },
+            "register_type": {
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "custom": null,
+                "coil": null,
+                "holding": null,
+                "discrete_input": null,
+                "read": null
+              }
+            },
+            "use_write_multiple": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "write_lambda": {
+              "key": "Optional"
+            }
+          }
+        }
+      }
+    }
+  },
+  "modbus_controller.text_sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "text_sensor.TEXT_SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA",
+            "modbus_controller.ModbusItemBaseSchema"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "modbus_controller::ModbusTextSensor",
+                "parents": [
+                  "Component",
+                  "text_sensor::TextSensor",
+                  "EntityBase",
+                  "modbus_controller::SensorItem"
+                ]
+              }
+            },
+            "register_type": {
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "custom": null,
+                "coil": null,
+                "holding": null,
+                "discrete_input": null,
+                "read": null
+              }
+            },
+            "register_count": {
+              "key": "Optional",
+              "default": "0",
+              "type": "integer",
+              "data_type": "positive_int"
+            },
+            "response_size": {
+              "default": "2"
+            },
+            "raw_encode": {
+              "key": "Optional",
+              "default": "NONE",
+              "type": "enum",
+              "values": {
+                "NONE": null,
+                "HEXBYTES": null,
+                "COMMA": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

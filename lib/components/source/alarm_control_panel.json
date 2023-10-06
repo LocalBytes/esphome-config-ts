@@ -1,0 +1,155 @@
+{
+  "alarm_control_panel": {
+    "components": {
+      "template": {}
+    },
+    "schemas": {
+      "ALARM_CONTROL_PANEL_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.ENTITY_BASE_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "alarm_control_panel::AlarmControlPanel",
+                "parents": [
+                  "EntityBase"
+                ]
+              }
+            },
+            "on_state": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_triggered": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_arming": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_pending": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_armed_home": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_armed_night": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_armed_away": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_disarmed": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_cleared": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          }
+        }
+      },
+      "ALARM_CONTROL_PANEL_ACTION_SCHEMA": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "alarm_control_panel::AlarmControlPanel",
+              "type": "use_id"
+            },
+            "code": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ALARM_CONTROL_PANEL_CONDITION_SCHEMA": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "alarm_control_panel::AlarmControlPanel",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "arm_away": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "alarm_control_panel.ALARM_CONTROL_PANEL_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "arm_home": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "alarm_control_panel.ALARM_CONTROL_PANEL_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "arm_night": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "alarm_control_panel.ALARM_CONTROL_PANEL_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "disarm": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "alarm_control_panel.ALARM_CONTROL_PANEL_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "pending": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "alarm_control_panel.ALARM_CONTROL_PANEL_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "triggered": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "alarm_control_panel.ALARM_CONTROL_PANEL_ACTION_SCHEMA"
+          ]
+        }
+      }
+    },
+    "condition": {
+      "is_armed": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "alarm_control_panel.ALARM_CONTROL_PANEL_CONDITION_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

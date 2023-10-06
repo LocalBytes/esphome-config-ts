@@ -1,0 +1,158 @@
+{
+  "as3935": {
+    "schemas": {
+      "AS3935_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "as3935::AS3935Component",
+                "parents": [
+                  "Component"
+                ]
+              }
+            },
+            "irq_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "input"
+              ],
+              "type": "pin"
+            },
+            "indoor": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "noise_level": {
+              "key": "Optional",
+              "default": "2",
+              "type": "integer"
+            },
+            "watchdog_threshold": {
+              "key": "Optional",
+              "default": "2",
+              "type": "integer"
+            },
+            "spike_rejection": {
+              "key": "Optional",
+              "default": "2",
+              "type": "integer"
+            },
+            "lightning_threshold": {
+              "key": "Optional",
+              "default": "1",
+              "type": "enum",
+              "values": {
+                "1": null,
+                "5": null,
+                "9": null,
+                "16": null
+              }
+            },
+            "mask_disturber": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "div_ratio": {
+              "key": "Optional",
+              "default": "0",
+              "type": "enum",
+              "values": {
+                "0": null,
+                "16": null,
+                "32": null,
+                "64": null,
+                "128": null
+              }
+            },
+            "capacitance": {
+              "key": "Optional",
+              "default": "0",
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  },
+  "as3935.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "as3935_id": {
+              "key": "GeneratedID",
+              "use_id_type": "as3935::AS3935Component",
+              "type": "use_id"
+            },
+            "distance": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "km"
+                  },
+                  "icon": {
+                    "default": "mdi:signal"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  }
+                }
+              }
+            },
+            "lightning_energy": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "icon": {
+                    "default": "mdi:flash"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  }
+                }
+              }
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  },
+  "as3935.binary_sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "binary_sensor.BINARY_SENSOR_SCHEMA"
+          ],
+          "config_vars": {
+            "as3935_id": {
+              "key": "GeneratedID",
+              "use_id_type": "as3935::AS3935Component",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

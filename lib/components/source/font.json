@@ -1,0 +1,83 @@
+{
+  "font": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "id_type": {
+                "class": "font::Font",
+                "parents": []
+              }
+            },
+            "file": {
+              "key": "Required",
+              "type": "typed",
+              "types": {
+                "local": {
+                  "config_vars": {
+                    "path": {
+                      "key": "Required"
+                    }
+                  }
+                },
+                "gfonts": {
+                  "config_vars": {
+                    "family": {
+                      "key": "Required",
+                      "type": "string"
+                    },
+                    "weight": {
+                      "key": "Optional",
+                      "default": "regular",
+                      "type": "integer"
+                    },
+                    "italic": {
+                      "key": "Optional",
+                      "default": "False",
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "local_bitmap": {
+                  "config_vars": {
+                    "path": {
+                      "key": "Required"
+                    }
+                  }
+                }
+              },
+              "typed_key": "type"
+            },
+            "glyphs": {
+              "key": "Optional",
+              "default": " !\"%()+=,-.:/0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz\u00b0"
+            },
+            "size": {
+              "key": "Optional",
+              "default": "20",
+              "type": "integer"
+            },
+            "raw_data_id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "uint8_t",
+                "parents": null
+              }
+            },
+            "raw_glyph_id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "font::GlyphData",
+                "parents": []
+              }
+            }
+          }
+        },
+        "is_list": true
+      }
+    }
+  }
+}

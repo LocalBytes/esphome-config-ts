@@ -1,0 +1,301 @@
+{
+  "dfplayer": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "dfplayer::DFPlayer",
+                "parents": [
+                  "Component"
+                ]
+              }
+            },
+            "on_finished_playback": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "uart_id": {
+              "key": "GeneratedID",
+              "use_id_type": "uart::UARTComponent",
+              "type": "use_id"
+            }
+          }
+        },
+        "is_list": true
+      }
+    },
+    "action": {
+      "play_next": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "dfplayer::DFPlayer",
+              "type": "use_id"
+            }
+          }
+        }
+      },
+      "play_previous": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "dfplayer::DFPlayer",
+              "type": "use_id"
+            }
+          }
+        }
+      },
+      "play_mp3": {
+        "type": "schema",
+        "maybe": "file",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "dfplayer::DFPlayer",
+              "type": "use_id"
+            },
+            "file": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "play": {
+        "type": "schema",
+        "maybe": "file",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "dfplayer::DFPlayer",
+              "type": "use_id"
+            },
+            "file": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer"
+            },
+            "loop": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "play_folder": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "dfplayer::DFPlayer",
+              "type": "use_id"
+            },
+            "folder": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer"
+            },
+            "file": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "integer"
+            },
+            "loop": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "set_device": {
+        "type": "schema",
+        "maybe": "device",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "dfplayer::DFPlayer",
+              "type": "use_id"
+            },
+            "device": {
+              "key": "Required",
+              "type": "enum",
+              "values": {
+                "USB": null,
+                "TF_CARD": null
+              }
+            }
+          }
+        }
+      },
+      "set_volume": {
+        "type": "schema",
+        "maybe": "volume",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "dfplayer::DFPlayer",
+              "type": "use_id"
+            },
+            "volume": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "volume_up": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "dfplayer::DFPlayer",
+              "type": "use_id"
+            }
+          }
+        }
+      },
+      "volume_down": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "dfplayer::DFPlayer",
+              "type": "use_id"
+            }
+          }
+        }
+      },
+      "set_eq": {
+        "type": "schema",
+        "maybe": "eq_preset",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "dfplayer::DFPlayer",
+              "type": "use_id"
+            },
+            "eq_preset": {
+              "key": "Required",
+              "templatable": true,
+              "type": "enum",
+              "values": {
+                "NORMAL": null,
+                "POP": null,
+                "ROCK": null,
+                "JAZZ": null,
+                "CLASSIC": null,
+                "BASS": null
+              }
+            }
+          }
+        }
+      },
+      "sleep": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "dfplayer::DFPlayer",
+              "type": "use_id"
+            }
+          }
+        }
+      },
+      "reset": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "dfplayer::DFPlayer",
+              "type": "use_id"
+            }
+          }
+        }
+      },
+      "start": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "dfplayer::DFPlayer",
+              "type": "use_id"
+            }
+          }
+        }
+      },
+      "pause": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "dfplayer::DFPlayer",
+              "type": "use_id"
+            }
+          }
+        }
+      },
+      "stop": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "dfplayer::DFPlayer",
+              "type": "use_id"
+            }
+          }
+        }
+      },
+      "random": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "dfplayer::DFPlayer",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "is_playing": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "dfplayer::DFPlayer",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

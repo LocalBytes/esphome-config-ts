@@ -1,0 +1,59 @@
+{
+  "resistance.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "resistance::ResistanceSensor",
+                "parents": [
+                  "Component",
+                  "sensor::Sensor",
+                  "EntityBase"
+                ]
+              }
+            },
+            "unit_of_measurement": {
+              "default": "\u03a9"
+            },
+            "icon": {
+              "default": "mdi:flash"
+            },
+            "accuracy_decimals": {
+              "default": "1"
+            },
+            "state_class": {
+              "default": "measurement"
+            },
+            "sensor": {
+              "key": "Required",
+              "use_id_type": "sensor::Sensor",
+              "type": "use_id"
+            },
+            "configuration": {
+              "key": "Required",
+              "type": "enum",
+              "values": {
+                "DOWNSTREAM": null,
+                "UPSTREAM": null
+              }
+            },
+            "resistor": {
+              "key": "Required"
+            },
+            "reference_voltage": {
+              "key": "Optional",
+              "default": "3.3V"
+            }
+          }
+        }
+      }
+    }
+  }
+}

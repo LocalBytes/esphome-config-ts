@@ -1,0 +1,291 @@
+{
+  "esp32_camera": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.ENTITY_BASE_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "esp32_camera::ESP32Camera",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "EntityBase"
+                ]
+              }
+            },
+            "data_pins": {
+              "key": "Required"
+            },
+            "vsync_pin": {
+              "key": "Required",
+              "internal": true,
+              "modes": [
+                "input"
+              ],
+              "type": "pin"
+            },
+            "href_pin": {
+              "key": "Required",
+              "internal": true,
+              "modes": [
+                "input"
+              ],
+              "type": "pin"
+            },
+            "pixel_clock_pin": {
+              "key": "Required",
+              "internal": true,
+              "modes": [
+                "input"
+              ],
+              "type": "pin"
+            },
+            "external_clock": {
+              "key": "Required",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "pin": {
+                    "key": "Required",
+                    "internal": true,
+                    "modes": [
+                      "input"
+                    ],
+                    "type": "pin"
+                  },
+                  "frequency": {
+                    "key": "Optional",
+                    "default": "20MHz"
+                  }
+                }
+              }
+            },
+            "i2c_pins": {
+              "key": "Required",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "sda": {
+                    "key": "Required",
+                    "internal": true,
+                    "modes": [
+                      "output"
+                    ],
+                    "type": "pin"
+                  },
+                  "scl": {
+                    "key": "Required",
+                    "internal": true,
+                    "modes": [
+                      "output"
+                    ],
+                    "type": "pin"
+                  }
+                }
+              }
+            },
+            "reset_pin": {
+              "key": "Optional",
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "power_down_pin": {
+              "key": "Optional",
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "resolution": {
+              "key": "Optional",
+              "default": "640X480",
+              "type": "enum",
+              "values": {
+                "160X120": null,
+                "QQVGA": null,
+                "176X144": null,
+                "QCIF": null,
+                "240X176": null,
+                "HQVGA": null,
+                "320X240": null,
+                "QVGA": null,
+                "400X296": null,
+                "CIF": null,
+                "640X480": null,
+                "VGA": null,
+                "800X600": null,
+                "SVGA": null,
+                "1024X768": null,
+                "XGA": null,
+                "1280X1024": null,
+                "SXGA": null,
+                "1600X1200": null,
+                "UXGA": null,
+                "1920X1080": null,
+                "FHD": null,
+                "720X1280": null,
+                "PHD": null,
+                "864X1536": null,
+                "P3MP": null,
+                "2048X1536": null,
+                "QXGA": null,
+                "2560X1440": null,
+                "QHD": null,
+                "2560X1600": null,
+                "WQXGA": null,
+                "1080X1920": null,
+                "PFHD": null,
+                "2560X1920": null,
+                "QSXGA": null
+              }
+            },
+            "jpeg_quality": {
+              "key": "Optional",
+              "default": "10",
+              "type": "integer"
+            },
+            "contrast": {
+              "key": "Optional",
+              "default": "0",
+              "type": "integer",
+              "data_type": "camera_range_param"
+            },
+            "brightness": {
+              "key": "Optional",
+              "default": "0",
+              "type": "integer",
+              "data_type": "camera_range_param"
+            },
+            "saturation": {
+              "key": "Optional",
+              "default": "0",
+              "type": "integer",
+              "data_type": "camera_range_param"
+            },
+            "vertical_flip": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "horizontal_mirror": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "special_effect": {
+              "key": "Optional",
+              "default": "NONE",
+              "type": "enum",
+              "values": {
+                "NONE": null,
+                "NEGATIVE": null,
+                "GRAYSCALE": null,
+                "RED_TINT": null,
+                "GREEN_TINT": null,
+                "BLUE_TINT": null,
+                "SEPIA": null
+              }
+            },
+            "agc_mode": {
+              "key": "Optional",
+              "default": "AUTO",
+              "type": "enum",
+              "values": {
+                "MANUAL": null,
+                "AUTO": null
+              }
+            },
+            "aec2": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "ae_level": {
+              "key": "Optional",
+              "default": "0",
+              "type": "integer",
+              "data_type": "camera_range_param"
+            },
+            "aec_value": {
+              "key": "Optional",
+              "default": "300",
+              "type": "integer"
+            },
+            "aec_mode": {
+              "key": "Optional",
+              "default": "AUTO",
+              "type": "enum",
+              "values": {
+                "MANUAL": null,
+                "AUTO": null
+              }
+            },
+            "agc_value": {
+              "key": "Optional",
+              "default": "0",
+              "type": "integer"
+            },
+            "agc_gain_ceiling": {
+              "key": "Optional",
+              "default": "2X",
+              "type": "enum",
+              "values": {
+                "2X": null,
+                "4X": null,
+                "8X": null,
+                "16X": null,
+                "32X": null,
+                "64X": null,
+                "128X": null
+              }
+            },
+            "wb_mode": {
+              "key": "Optional",
+              "default": "AUTO",
+              "type": "enum",
+              "values": {
+                "AUTO": null,
+                "SUNNY": null,
+                "CLOUDY": null,
+                "OFFICE": null,
+                "HOME": null
+              }
+            },
+            "test_pattern": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "max_framerate": {
+              "key": "Optional",
+              "default": "10 fps"
+            },
+            "idle_framerate": {
+              "key": "Optional",
+              "default": "0.1 fps"
+            },
+            "on_stream_start": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_stream_stop": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          }
+        }
+      }
+    }
+  }
+}

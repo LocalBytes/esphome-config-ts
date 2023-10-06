@@ -1,0 +1,1870 @@
+{
+  "ld2410": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "ld2410::LD2410Component",
+                "parents": [
+                  "Component",
+                  "uart::UARTDevice"
+                ]
+              }
+            },
+            "throttle": {
+              "key": "Optional",
+              "default": "1000ms",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "uart_id": {
+              "key": "GeneratedID",
+              "use_id_type": "uart::UARTComponent",
+              "type": "use_id"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "is_list": true
+      }
+    }
+  },
+  "ld2410.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "ld2410_id": {
+              "key": "GeneratedID",
+              "use_id_type": "ld2410::LD2410Component",
+              "type": "use_id"
+            },
+            "moving_distance": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "cm"
+                  },
+                  "icon": {
+                    "default": "mdi:signal-distance-variant"
+                  },
+                  "device_class": {
+                    "default": "distance"
+                  }
+                }
+              }
+            },
+            "still_distance": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "cm"
+                  },
+                  "icon": {
+                    "default": "mdi:signal-distance-variant"
+                  },
+                  "device_class": {
+                    "default": "distance"
+                  }
+                }
+              }
+            },
+            "moving_energy": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "%"
+                  },
+                  "icon": {
+                    "default": "mdi:motion-sensor"
+                  }
+                }
+              }
+            },
+            "still_energy": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "%"
+                  },
+                  "icon": {
+                    "default": "mdi:flash"
+                  }
+                }
+              }
+            },
+            "light": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "icon": {
+                    "default": "mdi:lightbulb"
+                  },
+                  "device_class": {
+                    "default": "illuminance"
+                  },
+                  "entity_category": {
+                    "default": "diagnostic"
+                  }
+                }
+              }
+            },
+            "detection_distance": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "cm"
+                  },
+                  "icon": {
+                    "default": "mdi:signal-distance-variant"
+                  },
+                  "device_class": {
+                    "default": "distance"
+                  }
+                }
+              }
+            },
+            "g0": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  },
+                  "still_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:flash"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g1": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  },
+                  "still_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:flash"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g2": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  },
+                  "still_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:flash"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g3": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  },
+                  "still_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:flash"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g4": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  },
+                  "still_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:flash"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g5": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  },
+                  "still_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:flash"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g6": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  },
+                  "still_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:flash"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g7": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  },
+                  "still_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:flash"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g8": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  },
+                  "still_energy": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "sensor.SENSOR_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "unit_of_measurement": {
+                          "default": "%"
+                        },
+                        "icon": {
+                          "default": "mdi:flash"
+                        },
+                        "entity_category": {
+                          "default": "diagnostic"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ld2410.binary_sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "ld2410_id": {
+              "key": "GeneratedID",
+              "use_id_type": "ld2410::LD2410Component",
+              "type": "use_id"
+            },
+            "has_target": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "binary_sensor.BINARY_SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "icon": {
+                    "default": "mdi:account"
+                  },
+                  "device_class": {
+                    "default": "occupancy"
+                  }
+                }
+              }
+            },
+            "has_moving_target": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "binary_sensor.BINARY_SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "icon": {
+                    "default": "mdi:motion-sensor"
+                  },
+                  "device_class": {
+                    "default": "motion"
+                  }
+                }
+              }
+            },
+            "has_still_target": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "binary_sensor.BINARY_SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "icon": {
+                    "default": "mdi:motion-sensor"
+                  },
+                  "device_class": {
+                    "default": "occupancy"
+                  }
+                }
+              }
+            },
+            "out_pin_presence_status": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "binary_sensor.BINARY_SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "icon": {
+                    "default": "mdi:account"
+                  },
+                  "entity_category": {
+                    "default": "diagnostic"
+                  },
+                  "device_class": {
+                    "default": "presence"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ld2410.button": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "ld2410_id": {
+              "key": "GeneratedID",
+              "use_id_type": "ld2410::LD2410Component",
+              "type": "use_id"
+            },
+            "factory_reset": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "button.BUTTON_SCHEMA"
+                ],
+                "config_vars": {
+                  "id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "ld2410::ResetButton",
+                      "parents": [
+                        "button::Button",
+                        "EntityBase"
+                      ]
+                    }
+                  },
+                  "icon": {
+                    "default": "mdi:restart-alert"
+                  },
+                  "entity_category": {
+                    "default": "config"
+                  },
+                  "device_class": {
+                    "default": "restart"
+                  }
+                }
+              }
+            },
+            "restart": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "button.BUTTON_SCHEMA"
+                ],
+                "config_vars": {
+                  "id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "ld2410::RestartButton",
+                      "parents": [
+                        "button::Button",
+                        "EntityBase"
+                      ]
+                    }
+                  },
+                  "icon": {
+                    "default": "mdi:restart"
+                  },
+                  "entity_category": {
+                    "default": "diagnostic"
+                  },
+                  "device_class": {
+                    "default": "restart"
+                  }
+                }
+              }
+            },
+            "query_params": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "button.BUTTON_SCHEMA"
+                ],
+                "config_vars": {
+                  "id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "ld2410::QueryButton",
+                      "parents": [
+                        "button::Button",
+                        "EntityBase"
+                      ]
+                    }
+                  },
+                  "icon": {
+                    "default": "mdi:database"
+                  },
+                  "entity_category": {
+                    "default": "diagnostic"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ld2410.number": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "ld2410_id": {
+              "key": "GeneratedID",
+              "use_id_type": "ld2410::LD2410Component",
+              "type": "use_id"
+            },
+            "timeout": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "number.NUMBER_SCHEMA"
+                ],
+                "config_vars": {
+                  "id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "ld2410::MaxDistanceTimeoutNumber",
+                      "parents": [
+                        "number::Number",
+                        "EntityBase"
+                      ]
+                    }
+                  },
+                  "icon": {
+                    "default": "mdi:timelapse"
+                  },
+                  "entity_category": {
+                    "default": "config"
+                  },
+                  "unit_of_measurement": {
+                    "default": "s"
+                  }
+                }
+              }
+            },
+            "max_move_distance_gate": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "number.NUMBER_SCHEMA"
+                ],
+                "config_vars": {
+                  "id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "ld2410::MaxDistanceTimeoutNumber",
+                      "parents": [
+                        "number::Number",
+                        "EntityBase"
+                      ]
+                    }
+                  },
+                  "icon": {
+                    "default": "mdi:motion-sensor"
+                  },
+                  "entity_category": {
+                    "default": "config"
+                  },
+                  "device_class": {
+                    "default": "distance"
+                  }
+                }
+              }
+            },
+            "max_still_distance_gate": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "number.NUMBER_SCHEMA"
+                ],
+                "config_vars": {
+                  "id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "ld2410::MaxDistanceTimeoutNumber",
+                      "parents": [
+                        "number::Number",
+                        "EntityBase"
+                      ]
+                    }
+                  },
+                  "icon": {
+                    "default": "mdi:motion-sensor"
+                  },
+                  "entity_category": {
+                    "default": "config"
+                  },
+                  "device_class": {
+                    "default": "distance"
+                  }
+                }
+              }
+            },
+            "light_threshold": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "number.NUMBER_SCHEMA"
+                ],
+                "config_vars": {
+                  "id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "ld2410::LightThresholdNumber",
+                      "parents": [
+                        "number::Number",
+                        "EntityBase"
+                      ]
+                    }
+                  },
+                  "icon": {
+                    "default": "mdi:lightbulb"
+                  },
+                  "entity_category": {
+                    "default": "config"
+                  },
+                  "device_class": {
+                    "default": "illuminance"
+                  }
+                }
+              }
+            },
+            "g0": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  },
+                  "still_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g1": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  },
+                  "still_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g2": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  },
+                  "still_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g3": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  },
+                  "still_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g4": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  },
+                  "still_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g5": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  },
+                  "still_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g6": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  },
+                  "still_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g7": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  },
+                  "still_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "g8": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "move_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  },
+                  "still_threshold": {
+                    "key": "Required",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "ld2410::GateThresholdNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase"
+                            ]
+                          }
+                        },
+                        "icon": {
+                          "default": "mdi:motion-sensor"
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "device_class": {
+                          "default": "signal_strength"
+                        },
+                        "unit_of_measurement": {
+                          "default": "%"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ld2410.select": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "ld2410_id": {
+              "key": "GeneratedID",
+              "use_id_type": "ld2410::LD2410Component",
+              "type": "use_id"
+            },
+            "distance_resolution": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "select.SELECT_SCHEMA"
+                ],
+                "config_vars": {
+                  "id": {
+                    "id_type": {
+                      "class": "ld2410::DistanceResolutionSelect",
+                      "parents": [
+                        "select::Select",
+                        "EntityBase"
+                      ]
+                    }
+                  },
+                  "entity_category": {
+                    "default": "config"
+                  },
+                  "icon": {
+                    "default": "mdi:ruler"
+                  }
+                }
+              }
+            },
+            "light_function": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "select.SELECT_SCHEMA"
+                ],
+                "config_vars": {
+                  "id": {
+                    "id_type": {
+                      "class": "ld2410::LightOutControlSelect",
+                      "parents": [
+                        "select::Select",
+                        "EntityBase"
+                      ]
+                    }
+                  },
+                  "entity_category": {
+                    "default": "config"
+                  },
+                  "icon": {
+                    "default": "mdi:lightbulb"
+                  }
+                }
+              }
+            },
+            "out_pin_level": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "select.SELECT_SCHEMA"
+                ],
+                "config_vars": {
+                  "id": {
+                    "id_type": {
+                      "class": "ld2410::LightOutControlSelect",
+                      "parents": [
+                        "select::Select",
+                        "EntityBase"
+                      ]
+                    }
+                  },
+                  "entity_category": {
+                    "default": "config"
+                  },
+                  "icon": {
+                    "default": "mdi:scale"
+                  }
+                }
+              }
+            },
+            "baud_rate": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "select.SELECT_SCHEMA"
+                ],
+                "config_vars": {
+                  "id": {
+                    "id_type": {
+                      "class": "ld2410::BaudRateSelect",
+                      "parents": [
+                        "select::Select",
+                        "EntityBase"
+                      ]
+                    }
+                  },
+                  "entity_category": {
+                    "default": "config"
+                  },
+                  "icon": {
+                    "default": "mdi:thermometer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ld2410.switch": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "ld2410_id": {
+              "key": "GeneratedID",
+              "use_id_type": "ld2410::LD2410Component",
+              "type": "use_id"
+            },
+            "engineering_mode": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "switch._SWITCH_SCHEMA"
+                ],
+                "config_vars": {
+                  "restore_mode": {
+                    "key": "Optional",
+                    "default": "ALWAYS_OFF",
+                    "type": "enum",
+                    "values": {
+                      "RESTORE_DEFAULT_OFF": null,
+                      "RESTORE_DEFAULT_ON": null,
+                      "ALWAYS_OFF": null,
+                      "ALWAYS_ON": null,
+                      "RESTORE_INVERTED_DEFAULT_OFF": null,
+                      "RESTORE_INVERTED_DEFAULT_ON": null,
+                      "DISABLED": null
+                    }
+                  },
+                  "id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "ld2410::EngineeringModeSwitch",
+                      "parents": [
+                        "switch_::Switch",
+                        "EntityBase"
+                      ]
+                    }
+                  },
+                  "entity_category": {
+                    "default": "config"
+                  },
+                  "device_class": {
+                    "default": "switch"
+                  },
+                  "icon": {
+                    "default": "mdi:pulse"
+                  }
+                }
+              }
+            },
+            "bluetooth": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "switch._SWITCH_SCHEMA"
+                ],
+                "config_vars": {
+                  "restore_mode": {
+                    "key": "Optional",
+                    "default": "ALWAYS_OFF",
+                    "type": "enum",
+                    "values": {
+                      "RESTORE_DEFAULT_OFF": null,
+                      "RESTORE_DEFAULT_ON": null,
+                      "ALWAYS_OFF": null,
+                      "ALWAYS_ON": null,
+                      "RESTORE_INVERTED_DEFAULT_OFF": null,
+                      "RESTORE_INVERTED_DEFAULT_ON": null,
+                      "DISABLED": null
+                    }
+                  },
+                  "id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "ld2410::BluetoothSwitch",
+                      "parents": [
+                        "switch_::Switch",
+                        "EntityBase"
+                      ]
+                    }
+                  },
+                  "entity_category": {
+                    "default": "config"
+                  },
+                  "device_class": {
+                    "default": "switch"
+                  },
+                  "icon": {
+                    "default": "mdi:bluetooth"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ld2410.text_sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "ld2410_id": {
+              "key": "GeneratedID",
+              "use_id_type": "ld2410::LD2410Component",
+              "type": "use_id"
+            },
+            "version": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "text_sensor.TEXT_SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "icon": {
+                    "default": "mdi:chip"
+                  },
+                  "entity_category": {
+                    "default": "diagnostic"
+                  }
+                }
+              }
+            },
+            "mac_address": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "text_sensor.TEXT_SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "icon": {
+                    "default": "mdi:bluetooth"
+                  },
+                  "entity_category": {
+                    "default": "diagnostic"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

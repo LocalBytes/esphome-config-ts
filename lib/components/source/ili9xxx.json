@@ -1,0 +1,125 @@
+{
+  "ili9xxx.display": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display.FULL_DISPLAY_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "ili9xxx::ILI9XXXDisplay",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "spi::SPIDevice",
+                  "display::DisplayBuffer"
+                ]
+              }
+            },
+            "model": {
+              "key": "Required",
+              "type": "enum",
+              "values": {
+                "M5STACK": null,
+                "M5CORE": null,
+                "TFT_2.4": null,
+                "TFT_2.4R": null,
+                "ILI9341": null,
+                "ILI9342": null,
+                "ILI9481": null,
+                "ILI9486": null,
+                "ILI9488": null,
+                "ILI9488_A": null,
+                "ST7796": null,
+                "S3BOX": null,
+                "S3BOX_LITE": null
+              }
+            },
+            "dimensions": {
+              "key": "Optional"
+            },
+            "dc_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "reset_pin": {
+              "key": "Optional",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "color_palette": {
+              "key": "Optional",
+              "default": "NONE",
+              "type": "enum",
+              "values": {
+                "NONE": null,
+                "GRAYSCALE": null,
+                "IMAGE_ADAPTIVE": null
+              }
+            },
+            "raw_data_id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "uint8_t",
+                "parents": null
+              }
+            },
+            "color_palette_images": {
+              "key": "Optional",
+              "default": "[]",
+              "is_list": true
+            },
+            "data_rate": {
+              "key": "Optional",
+              "default": "40MHz",
+              "type": "enum",
+              "values": {
+                "80000000.0": null,
+                "40000000.0": null,
+                "20000000.0": null,
+                "10000000.0": null,
+                "8000000.0": null,
+                "5000000.0": null,
+                "4000000.0": null,
+                "2000000.0": null,
+                "1000000.0": null,
+                "200000.0": null,
+                "75000.0": null,
+                "1000.0": null
+              }
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "1s"
+            },
+            "spi_id": {
+              "key": "GeneratedID",
+              "use_id_type": "spi::SPIComponent",
+              "type": "use_id"
+            },
+            "cs_pin": {
+              "key": "Optional",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            }
+          }
+        }
+      }
+    }
+  }
+}

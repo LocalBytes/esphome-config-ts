@@ -1,0 +1,184 @@
+{
+  "hlw8012.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "hlw8012::HLW8012Component",
+                "parents": [
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "sel_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "cf_pin": {
+              "key": "Required",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "input",
+                "pullup"
+              ],
+              "type": "pin"
+            },
+            "cf1_pin": {
+              "key": "Required",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "input",
+                "pullup"
+              ],
+              "type": "pin"
+            },
+            "voltage": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "V"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "voltage"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "current": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "A"
+                  },
+                  "accuracy_decimals": {
+                    "default": "2"
+                  },
+                  "device_class": {
+                    "default": "current"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "power": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "W"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "power"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              }
+            },
+            "energy": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "Wh"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "energy"
+                  },
+                  "state_class": {
+                    "default": "total_increasing"
+                  }
+                }
+              }
+            },
+            "current_resistor": {
+              "key": "Optional",
+              "default": "0.001"
+            },
+            "voltage_divider": {
+              "key": "Optional",
+              "default": "2351",
+              "data_type": "positive_float"
+            },
+            "model": {
+              "key": "Optional",
+              "default": "HLW8012",
+              "type": "enum",
+              "values": {
+                "HLW8012": null,
+                "CSE7759": null,
+                "BL0937": null
+              }
+            },
+            "change_mode_every": {
+              "key": "Optional",
+              "default": "8",
+              "type": "integer",
+              "data_type": "uint32_t"
+            },
+            "initial_mode": {
+              "key": "Optional",
+              "default": "voltage",
+              "type": "enum",
+              "values": {
+                "current": null,
+                "voltage": null
+              }
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

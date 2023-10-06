@@ -1,0 +1,62 @@
+{
+  "slow_pwm.output": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "output.FLOAT_OUTPUT_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "id_type": {
+                "class": "slow_pwm::SlowPWMOutput",
+                "parents": [
+                  "output::FloatOutput",
+                  "output::BinaryOutput",
+                  "Component"
+                ]
+              }
+            },
+            "pin": {
+              "key": "Optional",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "turn_on_action": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "turn_off_action": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "state_change_action": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "period": {
+              "key": "Required",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "restart_cycle_on_state_change": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,860 @@
+{
+  "sprinkler": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "is_list": true,
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "sprinkler::Sprinkler",
+                "parents": [
+                  "Component"
+                ]
+              }
+            },
+            "name": {
+              "key": "Optional",
+              "type": "string"
+            },
+            "auto_advance_switch": {
+              "key": "Optional",
+              "type": "schema",
+              "maybe": "name",
+              "schema": {
+                "extends": [
+                  "switch._SWITCH_SCHEMA"
+                ],
+                "config_vars": {
+                  "restore_mode": {
+                    "key": "Optional",
+                    "default": "RESTORE_DEFAULT_OFF",
+                    "type": "enum",
+                    "values": {
+                      "RESTORE_DEFAULT_OFF": null,
+                      "RESTORE_DEFAULT_ON": null,
+                      "ALWAYS_OFF": null,
+                      "ALWAYS_ON": null,
+                      "RESTORE_INVERTED_DEFAULT_OFF": null,
+                      "RESTORE_INVERTED_DEFAULT_ON": null,
+                      "DISABLED": null
+                    }
+                  },
+                  "id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "sprinkler::SprinklerControllerSwitch",
+                      "parents": [
+                        "switch_::Switch",
+                        "EntityBase",
+                        "Component"
+                      ]
+                    }
+                  },
+                  "entity_category": {
+                    "default": "config"
+                  }
+                }
+              }
+            },
+            "main_switch": {
+              "key": "Optional",
+              "type": "schema",
+              "maybe": "name",
+              "schema": {
+                "extends": [
+                  "switch._SWITCH_SCHEMA"
+                ],
+                "config_vars": {
+                  "restore_mode": {
+                    "key": "Optional",
+                    "default": "ALWAYS_OFF",
+                    "type": "enum",
+                    "values": {
+                      "RESTORE_DEFAULT_OFF": null,
+                      "RESTORE_DEFAULT_ON": null,
+                      "ALWAYS_OFF": null,
+                      "ALWAYS_ON": null,
+                      "RESTORE_INVERTED_DEFAULT_OFF": null,
+                      "RESTORE_INVERTED_DEFAULT_ON": null,
+                      "DISABLED": null
+                    }
+                  },
+                  "id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "sprinkler::SprinklerControllerSwitch",
+                      "parents": [
+                        "switch_::Switch",
+                        "EntityBase",
+                        "Component"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "queue_enable_switch": {
+              "key": "Optional",
+              "type": "schema",
+              "maybe": "name",
+              "schema": {
+                "extends": [
+                  "switch._SWITCH_SCHEMA"
+                ],
+                "config_vars": {
+                  "restore_mode": {
+                    "key": "Optional",
+                    "default": "RESTORE_DEFAULT_OFF",
+                    "type": "enum",
+                    "values": {
+                      "RESTORE_DEFAULT_OFF": null,
+                      "RESTORE_DEFAULT_ON": null,
+                      "ALWAYS_OFF": null,
+                      "ALWAYS_ON": null,
+                      "RESTORE_INVERTED_DEFAULT_OFF": null,
+                      "RESTORE_INVERTED_DEFAULT_ON": null,
+                      "DISABLED": null
+                    }
+                  },
+                  "id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "sprinkler::SprinklerControllerSwitch",
+                      "parents": [
+                        "switch_::Switch",
+                        "EntityBase",
+                        "Component"
+                      ]
+                    }
+                  },
+                  "entity_category": {
+                    "default": "config"
+                  }
+                }
+              }
+            },
+            "reverse_switch": {
+              "key": "Optional",
+              "type": "schema",
+              "maybe": "name",
+              "schema": {
+                "extends": [
+                  "switch._SWITCH_SCHEMA"
+                ],
+                "config_vars": {
+                  "restore_mode": {
+                    "key": "Optional",
+                    "default": "RESTORE_DEFAULT_OFF",
+                    "type": "enum",
+                    "values": {
+                      "RESTORE_DEFAULT_OFF": null,
+                      "RESTORE_DEFAULT_ON": null,
+                      "ALWAYS_OFF": null,
+                      "ALWAYS_ON": null,
+                      "RESTORE_INVERTED_DEFAULT_OFF": null,
+                      "RESTORE_INVERTED_DEFAULT_ON": null,
+                      "DISABLED": null
+                    }
+                  },
+                  "id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "sprinkler::SprinklerControllerSwitch",
+                      "parents": [
+                        "switch_::Switch",
+                        "EntityBase",
+                        "Component"
+                      ]
+                    }
+                  },
+                  "entity_category": {
+                    "default": "config"
+                  }
+                }
+              }
+            },
+            "standby_switch": {
+              "key": "Optional",
+              "type": "schema",
+              "maybe": "name",
+              "schema": {
+                "extends": [
+                  "switch._SWITCH_SCHEMA"
+                ],
+                "config_vars": {
+                  "restore_mode": {
+                    "key": "Optional",
+                    "default": "RESTORE_DEFAULT_OFF",
+                    "type": "enum",
+                    "values": {
+                      "RESTORE_DEFAULT_OFF": null,
+                      "RESTORE_DEFAULT_ON": null,
+                      "ALWAYS_OFF": null,
+                      "ALWAYS_ON": null,
+                      "RESTORE_INVERTED_DEFAULT_OFF": null,
+                      "RESTORE_INVERTED_DEFAULT_ON": null,
+                      "DISABLED": null
+                    }
+                  },
+                  "id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "sprinkler::SprinklerControllerSwitch",
+                      "parents": [
+                        "switch_::Switch",
+                        "EntityBase",
+                        "Component"
+                      ]
+                    }
+                  },
+                  "entity_category": {
+                    "default": "config"
+                  }
+                }
+              }
+            },
+            "next_prev_ignore_disabled": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "manual_selection_delay": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_seconds"
+                ]
+              }
+            },
+            "multiplier_number": {
+              "key": "Optional",
+              "type": "schema",
+              "maybe": "name",
+              "schema": {
+                "extends": [
+                  "number.NUMBER_SCHEMA",
+                  "core.COMPONENT_SCHEMA"
+                ],
+                "config_vars": {
+                  "id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "sprinkler::SprinklerControllerNumber",
+                      "parents": [
+                        "number::Number",
+                        "EntityBase",
+                        "Component"
+                      ]
+                    }
+                  },
+                  "entity_category": {
+                    "default": "config"
+                  },
+                  "initial_value": {
+                    "key": "Optional",
+                    "default": "1",
+                    "data_type": "positive_float"
+                  },
+                  "max_value": {
+                    "key": "Optional",
+                    "default": "10",
+                    "data_type": "positive_float"
+                  },
+                  "min_value": {
+                    "key": "Optional",
+                    "default": "0",
+                    "data_type": "positive_float"
+                  },
+                  "restore_value": {
+                    "key": "Optional",
+                    "default": "True",
+                    "type": "boolean"
+                  },
+                  "step": {
+                    "key": "Optional",
+                    "default": "0.1",
+                    "data_type": "positive_float"
+                  },
+                  "set_action": {
+                    "key": "Optional",
+                    "type": "trigger"
+                  }
+                }
+              }
+            },
+            "repeat": {
+              "key": "Optional",
+              "type": "integer",
+              "data_type": "positive_int"
+            },
+            "repeat_number": {
+              "key": "Optional",
+              "type": "schema",
+              "maybe": "name",
+              "schema": {
+                "extends": [
+                  "number.NUMBER_SCHEMA",
+                  "core.COMPONENT_SCHEMA"
+                ],
+                "config_vars": {
+                  "id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "sprinkler::SprinklerControllerNumber",
+                      "parents": [
+                        "number::Number",
+                        "EntityBase",
+                        "Component"
+                      ]
+                    }
+                  },
+                  "entity_category": {
+                    "default": "config"
+                  },
+                  "initial_value": {
+                    "key": "Optional",
+                    "default": "0",
+                    "type": "integer",
+                    "data_type": "positive_int"
+                  },
+                  "max_value": {
+                    "key": "Optional",
+                    "default": "10",
+                    "type": "integer",
+                    "data_type": "positive_int"
+                  },
+                  "min_value": {
+                    "key": "Optional",
+                    "default": "0",
+                    "type": "integer",
+                    "data_type": "positive_int"
+                  },
+                  "restore_value": {
+                    "key": "Optional",
+                    "default": "True",
+                    "type": "boolean"
+                  },
+                  "step": {
+                    "key": "Optional",
+                    "default": "1",
+                    "type": "integer",
+                    "data_type": "positive_int"
+                  },
+                  "set_action": {
+                    "key": "Optional",
+                    "type": "trigger"
+                  }
+                }
+              }
+            },
+            "pump_pulse_duration": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "valve_pulse_duration": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "pump_start_pump_delay": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_seconds"
+                ]
+              }
+            },
+            "pump_stop_pump_delay": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_seconds"
+                ]
+              }
+            },
+            "pump_switch_off_during_valve_open_delay": {
+              "key": "Optional",
+              "type": "boolean"
+            },
+            "pump_start_valve_delay": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_seconds"
+                ]
+              }
+            },
+            "pump_stop_valve_delay": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_seconds"
+                ]
+              }
+            },
+            "valve_overlap": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_seconds"
+                ]
+              }
+            },
+            "valve_open_delay": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_seconds"
+                ]
+              }
+            },
+            "valves": {
+              "key": "Required",
+              "is_list": true,
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "enable_switch": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "maybe": "name",
+                    "schema": {
+                      "extends": [
+                        "switch._SWITCH_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "restore_mode": {
+                          "key": "Optional",
+                          "default": "RESTORE_DEFAULT_OFF",
+                          "type": "enum",
+                          "values": {
+                            "RESTORE_DEFAULT_OFF": null,
+                            "RESTORE_DEFAULT_ON": null,
+                            "ALWAYS_OFF": null,
+                            "ALWAYS_ON": null,
+                            "RESTORE_INVERTED_DEFAULT_OFF": null,
+                            "RESTORE_INVERTED_DEFAULT_ON": null,
+                            "DISABLED": null
+                          }
+                        },
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "sprinkler::SprinklerControllerSwitch",
+                            "parents": [
+                              "switch_::Switch",
+                              "EntityBase",
+                              "Component"
+                            ]
+                          }
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        }
+                      }
+                    }
+                  },
+                  "pump_off_switch_id": {
+                    "key": "Optional",
+                    "use_id_type": "switch_::Switch",
+                    "type": "use_id"
+                  },
+                  "pump_on_switch_id": {
+                    "key": "Optional",
+                    "use_id_type": "switch_::Switch",
+                    "type": "use_id"
+                  },
+                  "pump_switch_id": {
+                    "key": "Optional",
+                    "use_id_type": "switch_::Switch",
+                    "type": "use_id"
+                  },
+                  "run_duration": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "core.positive_time_period_seconds"
+                      ]
+                    }
+                  },
+                  "run_duration_number": {
+                    "key": "Optional",
+                    "type": "schema",
+                    "maybe": "name",
+                    "schema": {
+                      "extends": [
+                        "number.NUMBER_SCHEMA",
+                        "core.COMPONENT_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "sprinkler::SprinklerControllerNumber",
+                            "parents": [
+                              "number::Number",
+                              "EntityBase",
+                              "Component"
+                            ]
+                          }
+                        },
+                        "entity_category": {
+                          "default": "config"
+                        },
+                        "initial_value": {
+                          "key": "Optional",
+                          "default": "900",
+                          "type": "integer",
+                          "data_type": "positive_int"
+                        },
+                        "max_value": {
+                          "key": "Optional",
+                          "default": "86400",
+                          "type": "integer",
+                          "data_type": "positive_int"
+                        },
+                        "min_value": {
+                          "key": "Optional",
+                          "default": "1",
+                          "type": "integer",
+                          "data_type": "positive_int"
+                        },
+                        "restore_value": {
+                          "key": "Optional",
+                          "default": "True",
+                          "type": "boolean"
+                        },
+                        "step": {
+                          "key": "Optional",
+                          "default": "1",
+                          "type": "integer",
+                          "data_type": "positive_int"
+                        },
+                        "set_action": {
+                          "key": "Optional",
+                          "type": "trigger"
+                        },
+                        "unit_of_measurement": {
+                          "default": "s",
+                          "type": "enum",
+                          "values": {
+                            "min": null,
+                            "s": null
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "valve_switch": {
+                    "key": "Required",
+                    "type": "schema",
+                    "maybe": "name",
+                    "schema": {
+                      "extends": [
+                        "switch._SWITCH_SCHEMA"
+                      ],
+                      "config_vars": {
+                        "restore_mode": {
+                          "key": "Optional",
+                          "default": "ALWAYS_OFF",
+                          "type": "enum",
+                          "values": {
+                            "RESTORE_DEFAULT_OFF": null,
+                            "RESTORE_DEFAULT_ON": null,
+                            "ALWAYS_OFF": null,
+                            "ALWAYS_ON": null,
+                            "RESTORE_INVERTED_DEFAULT_OFF": null,
+                            "RESTORE_INVERTED_DEFAULT_ON": null,
+                            "DISABLED": null
+                          }
+                        },
+                        "id": {
+                          "key": "GeneratedID",
+                          "id_type": {
+                            "class": "sprinkler::SprinklerControllerSwitch",
+                            "parents": [
+                              "switch_::Switch",
+                              "EntityBase",
+                              "Component"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "valve_off_switch_id": {
+                    "key": "Optional",
+                    "use_id_type": "switch_::Switch",
+                    "type": "use_id"
+                  },
+                  "valve_on_switch_id": {
+                    "key": "Optional",
+                    "use_id_type": "switch_::Switch",
+                    "type": "use_id"
+                  },
+                  "valve_switch_id": {
+                    "key": "Optional",
+                    "use_id_type": "switch_::Switch",
+                    "type": "use_id"
+                  }
+                }
+              }
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      },
+      "SPRINKLER_ACTION_SCHEMA": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "sprinkler::Sprinkler",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "set_divider": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "sprinkler::Sprinkler",
+              "type": "use_id"
+            },
+            "divider": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer",
+              "data_type": "positive_int"
+            }
+          }
+        },
+        "maybe": "divider"
+      },
+      "set_multiplier": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "sprinkler::Sprinkler",
+              "type": "use_id"
+            },
+            "multiplier": {
+              "key": "Required",
+              "templatable": true,
+              "data_type": "positive_float"
+            }
+          }
+        },
+        "maybe": "multiplier"
+      },
+      "queue_valve": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "sprinkler::Sprinkler",
+              "type": "use_id"
+            },
+            "run_duration": {
+              "key": "Optional",
+              "default": "0s",
+              "templatable": true,
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_seconds"
+                ]
+              }
+            },
+            "valve_number": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer",
+              "data_type": "positive_int"
+            }
+          }
+        }
+      },
+      "set_repeat": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "sprinkler::Sprinkler",
+              "type": "use_id"
+            },
+            "repeat": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer",
+              "data_type": "positive_int"
+            }
+          }
+        },
+        "maybe": "repeat"
+      },
+      "set_valve_run_duration": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "sprinkler::Sprinkler",
+              "type": "use_id"
+            },
+            "run_duration": {
+              "key": "Required",
+              "templatable": true,
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_seconds"
+                ]
+              }
+            },
+            "valve_number": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer",
+              "data_type": "positive_int"
+            }
+          }
+        }
+      },
+      "start_from_queue": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sprinkler.SPRINKLER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "start_full_cycle": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sprinkler.SPRINKLER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "start_single_valve": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "sprinkler::Sprinkler",
+              "type": "use_id"
+            },
+            "run_duration": {
+              "key": "Optional",
+              "templatable": true,
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_seconds"
+                ]
+              }
+            },
+            "valve_number": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer",
+              "data_type": "positive_int"
+            }
+          }
+        },
+        "maybe": "valve_number"
+      },
+      "shutdown": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sprinkler.SPRINKLER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "resume_or_start_full_cycle": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sprinkler.SPRINKLER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "resume": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sprinkler.SPRINKLER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "pause": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sprinkler.SPRINKLER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "previous_valve": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sprinkler.SPRINKLER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "next_valve": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sprinkler.SPRINKLER_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "clear_queued_valves": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sprinkler.SPRINKLER_ACTION_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

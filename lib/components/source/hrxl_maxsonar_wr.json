@@ -1,0 +1,44 @@
+{
+  "hrxl_maxsonar_wr.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "hrxl_maxsonar_wr::HrxlMaxsonarWrComponent",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "Component",
+                  "uart::UARTDevice"
+                ]
+              }
+            },
+            "unit_of_measurement": {
+              "default": "m"
+            },
+            "icon": {
+              "default": "mdi:arrow-expand-vertical"
+            },
+            "accuracy_decimals": {
+              "default": "3"
+            },
+            "state_class": {
+              "default": "measurement"
+            },
+            "uart_id": {
+              "key": "GeneratedID",
+              "use_id_type": "uart::UARTComponent",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

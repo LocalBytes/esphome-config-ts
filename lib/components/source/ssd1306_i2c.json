@@ -1,0 +1,40 @@
+{
+  "ssd1306_i2c.display": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "ssd1306_base.SSD1306_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "ssd1306_i2c::I2CSSD1306",
+                "parents": [
+                  "ssd1306_base::SSD1306",
+                  "PollingComponent",
+                  "Component",
+                  "display::DisplayBuffer",
+                  "i2c::I2CDevice"
+                ]
+              }
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "60",
+              "data_type": "hex_uint8_t"
+            }
+          }
+        }
+      }
+    }
+  }
+}

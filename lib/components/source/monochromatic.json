@@ -1,0 +1,30 @@
+{
+  "monochromatic.light": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "light.BRIGHTNESS_ONLY_LIGHT_SCHEMA"
+          ],
+          "config_vars": {
+            "output_id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "monochromatic::MonochromaticLightOutput",
+                "parents": [
+                  "light::LightOutput"
+                ]
+              }
+            },
+            "output": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

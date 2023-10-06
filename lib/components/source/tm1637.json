@@ -1,0 +1,96 @@
+{
+  "tm1637.binary_sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "binary_sensor.BINARY_SENSOR_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "tm1637::TM1637Key",
+                "parents": [
+                  "binary_sensor::BinarySensor",
+                  "EntityBase"
+                ]
+              }
+            },
+            "tm1637_id": {
+              "key": "GeneratedID",
+              "use_id_type": "tm1637::TM1637Display",
+              "type": "use_id"
+            },
+            "key": {
+              "key": "Required",
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  },
+  "tm1637.display": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display.BASIC_DISPLAY_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "tm1637::TM1637Display",
+                "parents": [
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "intensity": {
+              "key": "Optional",
+              "default": "7",
+              "type": "integer",
+              "data_type": "uint8_t"
+            },
+            "inverted": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "length": {
+              "key": "Optional",
+              "default": "6",
+              "type": "integer",
+              "data_type": "uint8_t"
+            },
+            "clk_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "dio_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "1s"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "hx711.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "hx711::HX711Sensor",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "icon": {
+              "default": "mdi:scale"
+            },
+            "accuracy_decimals": {
+              "default": "0"
+            },
+            "state_class": {
+              "default": "measurement"
+            },
+            "dout_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "input"
+              ],
+              "type": "pin"
+            },
+            "clk_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "gain": {
+              "key": "Optional",
+              "default": "128",
+              "type": "enum",
+              "values": {
+                "128": null,
+                "32": null,
+                "64": null
+              }
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            }
+          }
+        }
+      }
+    }
+  }
+}

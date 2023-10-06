@@ -1,0 +1,84 @@
+{
+  "key_collector": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "key_collector::KeyCollector",
+                "parents": [
+                  "Component"
+                ]
+              }
+            },
+            "source_id": {
+              "key": "Optional",
+              "use_id_type": "key_provider::KeyProvider",
+              "type": "use_id"
+            },
+            "min_length": {
+              "key": "Optional",
+              "type": "integer"
+            },
+            "max_length": {
+              "key": "Optional",
+              "type": "integer"
+            },
+            "start_keys": {
+              "key": "Optional",
+              "type": "string"
+            },
+            "end_keys": {
+              "key": "Optional",
+              "type": "string"
+            },
+            "end_key_required": {
+              "key": "Optional",
+              "type": "boolean"
+            },
+            "back_keys": {
+              "key": "Optional",
+              "type": "string"
+            },
+            "clear_keys": {
+              "key": "Optional",
+              "type": "string"
+            },
+            "allowed_keys": {
+              "key": "Optional",
+              "type": "string"
+            },
+            "on_progress": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_result": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_timeout": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "timeout": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            }
+          }
+        },
+        "is_list": true
+      }
+    }
+  }
+}

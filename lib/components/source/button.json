@@ -1,0 +1,83 @@
+{
+  "button": {
+    "components": {
+      "copy": {},
+      "factory_reset": {},
+      "ld2410": {},
+      "output": {},
+      "restart": {},
+      "safe_mode": {
+        "dependencies": [
+          "ota"
+        ]
+      },
+      "shutdown": {},
+      "template": {},
+      "wake_on_lan": {
+        "dependencies": [
+          "network"
+        ]
+      }
+    },
+    "schemas": {
+      "BUTTON_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.ENTITY_BASE_SCHEMA",
+            "core.MQTT_COMMAND_COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "mqtt_id": {
+              "key": "Optional",
+              "id_type": {
+                "class": "mqtt::MQTTButtonComponent",
+                "parents": [
+                  "mqtt::MQTTComponent",
+                  "Component"
+                ]
+              }
+            },
+            "device_class": {
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "": null,
+                "identify": null,
+                "restart": null,
+                "update": null
+              }
+            },
+            "on_press": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          }
+        }
+      },
+      "BUTTON_PRESS_SCHEMA": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "button::Button",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "press": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "button.BUTTON_PRESS_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

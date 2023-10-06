@@ -1,0 +1,54 @@
+{
+  "lcd_gpio.display": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "lcd_base.LCD_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "lcd_gpio::GPIOLCDDisplay",
+                "parents": [
+                  "lcd_base::LCDDisplay",
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "data_pins": {
+              "key": "Required"
+            },
+            "enable_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "rs_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "rw_pin": {
+              "key": "Optional",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            }
+          }
+        }
+      }
+    }
+  }
+}

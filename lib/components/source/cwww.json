@@ -1,0 +1,46 @@
+{
+  "cwww.light": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "light.RGB_LIGHT_SCHEMA"
+          ],
+          "config_vars": {
+            "output_id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "cwww::CWWWLightOutput",
+                "parents": [
+                  "light::LightOutput"
+                ]
+              }
+            },
+            "cold_white": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            },
+            "warm_white": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            },
+            "cold_white_color_temperature": {
+              "key": "Optional"
+            },
+            "warm_white_color_temperature": {
+              "key": "Optional"
+            },
+            "constant_brightness": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
+}

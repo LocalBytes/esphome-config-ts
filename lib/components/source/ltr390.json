@@ -1,0 +1,162 @@
+{
+  "ltr390.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "ltr390::LTR390Component",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "i2c::I2CDevice"
+                ]
+              }
+            },
+            "light": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "lx"
+                  },
+                  "icon": {
+                    "default": "mdi:brightness-5"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "illuminance"
+                  }
+                }
+              }
+            },
+            "ambient_light": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "#"
+                  },
+                  "icon": {
+                    "default": "mdi:brightness-5"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "illuminance"
+                  }
+                }
+              }
+            },
+            "uv_index": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "UVI"
+                  },
+                  "icon": {
+                    "default": "mdi:brightness-5"
+                  },
+                  "accuracy_decimals": {
+                    "default": "5"
+                  },
+                  "device_class": {
+                    "default": "illuminance"
+                  }
+                }
+              }
+            },
+            "uv": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "#"
+                  },
+                  "icon": {
+                    "default": "mdi:brightness-5"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "illuminance"
+                  }
+                }
+              }
+            },
+            "gain": {
+              "key": "Optional",
+              "default": "X3",
+              "type": "enum",
+              "values": {
+                "X1": null,
+                "X3": null,
+                "X6": null,
+                "X9": null,
+                "X18": null
+              }
+            },
+            "resolution": {
+              "key": "Optional",
+              "default": "18",
+              "type": "enum",
+              "values": {
+                "20": null,
+                "19": null,
+                "18": null,
+                "17": null,
+                "16": null,
+                "13": null
+              }
+            },
+            "window_correction_factor": {
+              "key": "Optional",
+              "default": "1.0"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "83",
+              "data_type": "hex_uint8_t"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

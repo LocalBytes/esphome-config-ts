@@ -1,0 +1,49 @@
+{
+  "fastled_spi.light": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "fastled_base.BASE_SCHEMA"
+          ],
+          "config_vars": {
+            "chipset": {
+              "key": "Required",
+              "type": "enum",
+              "values": {
+                "LPD8806": null,
+                "WS2801": null,
+                "WS2803": null,
+                "SM16716": null,
+                "P9813": null,
+                "APA102": null,
+                "SK9822": null,
+                "DOTSTAR": null
+              }
+            },
+            "data_pin": {
+              "key": "Required",
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "clock_pin": {
+              "key": "Required",
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "data_rate": {
+              "key": "Optional"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "touchscreen": {
+    "components": {
+      "ektf2232": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "lilygo_t5_47": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "tt21100": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "xpt2046": {
+        "dependencies": [
+          "spi"
+        ]
+      }
+    },
+    "schemas": {
+      "TOUCHSCREEN_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "display": {
+              "key": "GeneratedID",
+              "use_id_type": "display::DisplayBuffer",
+              "type": "use_id"
+            },
+            "on_touch": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          }
+        }
+      }
+    }
+  },
+  "touchscreen.binary_sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "binary_sensor.BINARY_SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "touchscreen::TouchscreenBinarySensor",
+                "parents": [
+                  "binary_sensor::BinarySensor",
+                  "EntityBase",
+                  "Component",
+                  "touchscreen::TouchListener",
+                  "Parented<touchscreen::Touchscreen>",
+                  "Parented"
+                ]
+              }
+            },
+            "touchscreen_id": {
+              "key": "GeneratedID",
+              "use_id_type": "touchscreen::Touchscreen",
+              "type": "use_id"
+            },
+            "x_min": {
+              "key": "Required",
+              "type": "integer"
+            },
+            "x_max": {
+              "key": "Required",
+              "type": "integer"
+            },
+            "y_min": {
+              "key": "Required",
+              "type": "integer"
+            },
+            "y_max": {
+              "key": "Required",
+              "type": "integer"
+            },
+            "page_id": {
+              "key": "Optional",
+              "use_id_type": "display::DisplayPage",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

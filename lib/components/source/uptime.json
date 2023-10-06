@@ -1,0 +1,50 @@
+{
+  "uptime.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "uptime::UptimeSensor",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "unit_of_measurement": {
+              "default": "s"
+            },
+            "icon": {
+              "default": "mdi:timer-outline"
+            },
+            "accuracy_decimals": {
+              "default": "0"
+            },
+            "device_class": {
+              "default": "duration"
+            },
+            "state_class": {
+              "default": "total_increasing"
+            },
+            "entity_category": {
+              "default": "diagnostic"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "absolute_humidity.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "unit_of_measurement": {
+              "default": "g/m\u00b3"
+            },
+            "icon": {
+              "default": "mdi:water"
+            },
+            "accuracy_decimals": {
+              "default": "2"
+            },
+            "state_class": {
+              "default": "measurement"
+            },
+            "id": {
+              "id_type": {
+                "class": "absolute_humidity::AbsoluteHumidityComponent",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "Component"
+                ]
+              }
+            },
+            "temperature": {
+              "key": "Required",
+              "use_id_type": "sensor::Sensor",
+              "type": "use_id"
+            },
+            "humidity": {
+              "key": "Required",
+              "use_id_type": "sensor::Sensor",
+              "type": "use_id"
+            },
+            "equation": {
+              "key": "Optional",
+              "default": "WOBUS",
+              "type": "enum",
+              "values": {
+                "BUCK": null,
+                "TETENS": null,
+                "WOBUS": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

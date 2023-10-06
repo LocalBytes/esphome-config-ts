@@ -1,0 +1,105 @@
+{
+  "st7735.display": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "st7735::ST7735",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "display::DisplayBuffer",
+                  "spi::SPIDevice"
+                ]
+              }
+            },
+            "dc_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "device_width": {
+              "key": "Required",
+              "type": "integer"
+            },
+            "device_height": {
+              "key": "Required",
+              "type": "integer"
+            },
+            "col_start": {
+              "key": "Required",
+              "type": "integer"
+            },
+            "row_start": {
+              "key": "Required",
+              "type": "integer"
+            },
+            "eight_bit_color": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "use_bgr": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "invert_colors": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "spi_id": {
+              "key": "GeneratedID",
+              "use_id_type": "spi::SPIComponent",
+              "type": "use_id"
+            },
+            "cs_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "model": {
+              "key": "Required",
+              "type": "enum",
+              "values": {
+                "INITR_GREENTAB": null,
+                "INITR_REDTAB": null,
+                "INITR_BLACKTAB": null,
+                "INITR_MINI160X80": null,
+                "INITR_18BLACKTAB": null,
+                "INITR_18REDTAB": null
+              }
+            },
+            "reset_pin": {
+              "key": "Optional",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "1s"
+            }
+          },
+          "extends": [
+            "display.FULL_DISPLAY_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

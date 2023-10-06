@@ -1,0 +1,54 @@
+{
+  "ballu.climate": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "climate.CLIMATE_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "transmitter_id": {
+              "key": "GeneratedID",
+              "use_id_type": "remote_transmitter::RemoteTransmitterComponent",
+              "type": "use_id"
+            },
+            "supports_cool": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "supports_heat": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "sensor": {
+              "key": "Optional",
+              "use_id_type": "sensor::Sensor",
+              "type": "use_id"
+            },
+            "receiver_id": {
+              "key": "Optional",
+              "use_id_type": "remote_receiver::RemoteReceiverComponent",
+              "type": "use_id"
+            },
+            "id": {
+              "id_type": {
+                "class": "ballu::BalluClimate",
+                "parents": [
+                  "climate_ir::ClimateIR",
+                  "climate::Climate",
+                  "EntityBase",
+                  "Component",
+                  "remote_base::RemoteReceiverListener"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

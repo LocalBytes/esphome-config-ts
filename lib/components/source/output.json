@@ -1,0 +1,336 @@
+{
+  "output": {
+    "components": {
+      "ac_dimmer": {},
+      "ble_client": {
+        "dependencies": [
+          "ble_client"
+        ]
+      },
+      "bp1658cj": {
+        "dependencies": [
+          "bp1658cj"
+        ]
+      },
+      "bp5758d": {
+        "dependencies": [
+          "bp5758d"
+        ]
+      },
+      "custom": {},
+      "dac7678": {
+        "dependencies": [
+          "dac7678"
+        ]
+      },
+      "esp32_dac": {
+        "dependencies": [
+          "esp32"
+        ]
+      },
+      "esp8266_pwm": {
+        "dependencies": [
+          "esp8266"
+        ]
+      },
+      "gp8403": {
+        "dependencies": [
+          "gp8403"
+        ]
+      },
+      "gpio": {},
+      "ledc": {
+        "dependencies": [
+          "esp32"
+        ]
+      },
+      "max6956": {
+        "dependencies": [
+          "max6956"
+        ]
+      },
+      "mcp4725": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "mcp4728": {
+        "dependencies": [
+          "mcp4728"
+        ]
+      },
+      "mcp47a1": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "modbus_controller": {
+        "dependencies": [
+          "modbus_controller"
+        ]
+      },
+      "my9231": {
+        "dependencies": [
+          "my9231"
+        ]
+      },
+      "pca9685": {
+        "dependencies": [
+          "pca9685"
+        ]
+      },
+      "pipsolar": {
+        "dependencies": [
+          "pipsolar"
+        ]
+      },
+      "rp2040_pwm": {
+        "dependencies": [
+          "rp2040"
+        ]
+      },
+      "sigma_delta_output": {},
+      "slow_pwm": {},
+      "sm16716": {
+        "dependencies": [
+          "sm16716"
+        ]
+      },
+      "sm2135": {
+        "dependencies": [
+          "sm2135"
+        ]
+      },
+      "sm2235": {
+        "dependencies": [
+          "sm2235"
+        ]
+      },
+      "sm2335": {
+        "dependencies": [
+          "sm2335"
+        ]
+      },
+      "sx1509": {
+        "dependencies": [
+          "sx1509"
+        ]
+      },
+      "template": {},
+      "tlc59208f": {
+        "dependencies": [
+          "tlc59208f"
+        ]
+      },
+      "tlc5947": {
+        "dependencies": [
+          "tlc5947"
+        ]
+      },
+      "tm1638": {},
+      "x9c": {}
+    },
+    "schemas": {
+      "BINARY_OUTPUT_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "power_supply": {
+              "key": "Optional",
+              "use_id_type": "power_supply::PowerSupply",
+              "type": "use_id"
+            },
+            "inverted": {
+              "key": "Optional",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "FLOAT_OUTPUT_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "output.BINARY_OUTPUT_SCHEMA"
+          ],
+          "config_vars": {
+            "max_power": {
+              "key": "Optional"
+            },
+            "min_power": {
+              "key": "Optional"
+            },
+            "zero_means_zero": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "BINARY_OUTPUT_ACTION_SCHEMA": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "output::BinaryOutput",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "turn_on": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "output.BINARY_OUTPUT_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "turn_off": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "output.BINARY_OUTPUT_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "set_level": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            },
+            "level": {
+              "key": "Required",
+              "templatable": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "output.button": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "button.BUTTON_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "output::OutputButton",
+                "parents": [
+                  "button::Button",
+                  "EntityBase",
+                  "Component"
+                ]
+              }
+            },
+            "output": {
+              "key": "Required",
+              "use_id_type": "output::BinaryOutput",
+              "type": "use_id"
+            },
+            "duration": {
+              "key": "Required",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "output.lock": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "lock.LOCK_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "output::OutputLock",
+                "parents": [
+                  "lock::Lock",
+                  "EntityBase",
+                  "Component"
+                ]
+              }
+            },
+            "output": {
+              "key": "Required",
+              "use_id_type": "output::BinaryOutput",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  },
+  "output.switch": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "switch._SWITCH_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "restore_mode": {
+              "key": "Optional",
+              "default": "ALWAYS_OFF",
+              "type": "enum",
+              "values": {
+                "RESTORE_DEFAULT_OFF": null,
+                "RESTORE_DEFAULT_ON": null,
+                "ALWAYS_OFF": null,
+                "ALWAYS_ON": null,
+                "RESTORE_INVERTED_DEFAULT_OFF": null,
+                "RESTORE_INVERTED_DEFAULT_ON": null,
+                "DISABLED": null
+              }
+            },
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "output::OutputSwitch",
+                "parents": [
+                  "switch_::Switch",
+                  "EntityBase",
+                  "Component"
+                ]
+              }
+            },
+            "output": {
+              "key": "Required",
+              "use_id_type": "output::BinaryOutput",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

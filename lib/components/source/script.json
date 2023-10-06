@@ -1,0 +1,112 @@
+{
+  "script": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "type": "string",
+              "id_type": {
+                "class": "script::Script"
+              }
+            },
+            "mode": {
+              "key": "Optional",
+              "default": "single",
+              "type": "enum",
+              "values": {
+                "single": null,
+                "restart": null,
+                "queued": null,
+                "parallel": null
+              }
+            },
+            "max_runs": {
+              "key": "Optional",
+              "type": "integer",
+              "data_type": "positive_int"
+            },
+            "parameters": {
+              "key": "String",
+              "default": "{}",
+              "key_type": "validate_parameter_name",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "string": {}
+                }
+              }
+            },
+            "then": {
+              "type": "trigger"
+            }
+          }
+        },
+        "has_required_var": true,
+        "is_list": true
+      }
+    },
+    "action": {
+      "execute": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "script::Script",
+              "type": "use_id"
+            },
+            "<function validate_parameter_name at 0x000002946A6C3880>": {
+              "key": "Optional",
+              "templatable": true
+            }
+          }
+        }
+      },
+      "stop": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "script::Script",
+              "type": "use_id"
+            }
+          }
+        }
+      },
+      "wait": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "script::Script",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "is_running": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "script::Script",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

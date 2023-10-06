@@ -1,0 +1,65 @@
+{
+  "microphone": {
+    "components": {
+      "i2s_audio": {
+        "dependencies": [
+          "i2s_audio"
+        ]
+      }
+    },
+    "schemas": {
+      "MICROPHONE_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "on_data": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          }
+        }
+      },
+      "MICROPHONE_ACTION_SCHEMA": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "microphone::Microphone",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "capture": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "microphone.MICROPHONE_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "stop_capture": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "microphone.MICROPHONE_ACTION_SCHEMA"
+          ]
+        }
+      }
+    },
+    "condition": {
+      "is_capturing": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "microphone.MICROPHONE_ACTION_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

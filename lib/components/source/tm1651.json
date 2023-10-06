@@ -1,0 +1,131 @@
+{
+  "tm1651": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "tm1651::TM1651Display",
+                "parents": [
+                  "Component"
+                ]
+              }
+            },
+            "clk_pin": {
+              "key": "Required",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "dio_pin": {
+              "key": "Required",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            }
+          }
+        }
+      },
+      "BINARY_OUTPUT_ACTION_SCHEMA": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "tm1651::TM1651Display",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "turn_on": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "tm1651.BINARY_OUTPUT_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "turn_off": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "tm1651.BINARY_OUTPUT_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "set_level_percent": {
+        "type": "schema",
+        "maybe": "level_percent",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "tm1651::TM1651Display",
+              "type": "use_id"
+            },
+            "level_percent": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer",
+              "schema": {}
+            }
+          }
+        }
+      },
+      "set_level": {
+        "type": "schema",
+        "maybe": "level",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "tm1651::TM1651Display",
+              "type": "use_id"
+            },
+            "level": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "set_brightness": {
+        "type": "schema",
+        "maybe": "brightness",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "tm1651::TM1651Display",
+              "type": "use_id"
+            },
+            "brightness": {
+              "key": "Required",
+              "templatable": true,
+              "type": "enum",
+              "values": {
+                "1": null,
+                "2": null,
+                "3": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

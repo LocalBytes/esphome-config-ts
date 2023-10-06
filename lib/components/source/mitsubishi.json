@@ -1,0 +1,28 @@
+{
+  "mitsubishi.climate": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "climate_ir.CLIMATE_IR_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "mitsubishi::MitsubishiClimate",
+                "parents": [
+                  "climate_ir::ClimateIR",
+                  "climate::Climate",
+                  "EntityBase",
+                  "Component",
+                  "remote_base::RemoteReceiverListener"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

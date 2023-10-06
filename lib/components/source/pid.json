@@ -1,0 +1,241 @@
+{
+  "pid.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "pid::PIDClimateSensor",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "Component"
+                ]
+              }
+            },
+            "unit_of_measurement": {
+              "default": "%"
+            },
+            "icon": {
+              "default": "mdi:gauge"
+            },
+            "accuracy_decimals": {
+              "default": "1"
+            },
+            "state_class": {
+              "default": "measurement"
+            },
+            "climate_id": {
+              "key": "GeneratedID",
+              "use_id_type": "pid::PIDClimate",
+              "type": "use_id"
+            },
+            "type": {
+              "key": "Required",
+              "type": "enum",
+              "values": {
+                "RESULT": null,
+                "ERROR": null,
+                "PROPORTIONAL": null,
+                "INTEGRAL": null,
+                "DERIVATIVE": null,
+                "HEAT": null,
+                "COOL": null,
+                "KP": null,
+                "KI": null,
+                "KD": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "pid.climate": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "climate.CLIMATE_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "pid::PIDClimate",
+                "parents": [
+                  "climate::Climate",
+                  "EntityBase",
+                  "Component"
+                ]
+              }
+            },
+            "sensor": {
+              "key": "Required",
+              "use_id_type": "sensor::Sensor",
+              "type": "use_id"
+            },
+            "default_target_temperature": {
+              "key": "Required"
+            },
+            "cool_output": {
+              "key": "Optional",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            },
+            "heat_output": {
+              "key": "Optional",
+              "use_id_type": "output::FloatOutput",
+              "type": "use_id"
+            },
+            "deadband_parameters": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "threshold_high": {
+                    "key": "Required"
+                  },
+                  "threshold_low": {
+                    "key": "Required"
+                  },
+                  "kp_multiplier": {
+                    "key": "Optional",
+                    "default": "0.1"
+                  },
+                  "ki_multiplier": {
+                    "key": "Optional",
+                    "default": "0.0"
+                  },
+                  "kd_multiplier": {
+                    "key": "Optional",
+                    "default": "0.0"
+                  },
+                  "deadband_output_averaging_samples": {
+                    "key": "Optional",
+                    "default": "1",
+                    "type": "integer"
+                  }
+                }
+              }
+            },
+            "control_parameters": {
+              "key": "Required",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "kp": {
+                    "key": "Required"
+                  },
+                  "ki": {
+                    "key": "Optional",
+                    "default": "0.0"
+                  },
+                  "kd": {
+                    "key": "Optional",
+                    "default": "0.0"
+                  },
+                  "starting_integral_term": {
+                    "key": "Optional",
+                    "default": "0.0"
+                  },
+                  "min_integral": {
+                    "key": "Optional",
+                    "default": "-1"
+                  },
+                  "max_integral": {
+                    "key": "Optional",
+                    "default": "1"
+                  },
+                  "derivative_averaging_samples": {
+                    "key": "Optional",
+                    "default": "1",
+                    "type": "integer"
+                  },
+                  "output_averaging_samples": {
+                    "key": "Optional",
+                    "default": "1",
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "reset_integral_term": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "pid::PIDClimate",
+              "type": "use_id"
+            }
+          }
+        }
+      },
+      "autotune": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "pid::PIDClimate",
+              "type": "use_id"
+            },
+            "noiseband": {
+              "key": "Optional",
+              "default": "0.25"
+            },
+            "positive_output": {
+              "key": "Optional",
+              "default": "1.0"
+            },
+            "negative_output": {
+              "key": "Optional",
+              "default": "-1.0"
+            }
+          }
+        }
+      },
+      "set_control_parameters": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "pid::PIDClimate",
+              "type": "use_id"
+            },
+            "kp": {
+              "key": "Required",
+              "templatable": true
+            },
+            "ki": {
+              "key": "Optional",
+              "default": "0.0",
+              "templatable": true
+            },
+            "kd": {
+              "key": "Optional",
+              "default": "0.0",
+              "templatable": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

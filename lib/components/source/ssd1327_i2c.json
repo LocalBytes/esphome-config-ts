@@ -1,0 +1,40 @@
+{
+  "ssd1327_i2c.display": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "ssd1327_base.SSD1327_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "ssd1327_i2c::I2CSSD1327",
+                "parents": [
+                  "ssd1327_base::SSD1327",
+                  "PollingComponent",
+                  "Component",
+                  "display::DisplayBuffer",
+                  "i2c::I2CDevice"
+                ]
+              }
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "61",
+              "data_type": "hex_uint8_t"
+            }
+          }
+        }
+      }
+    }
+  }
+}

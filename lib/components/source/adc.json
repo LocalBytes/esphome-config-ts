@@ -1,0 +1,69 @@
+{
+  "adc.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "adc::ADCSensor",
+                "parents": [
+                  "sensor::Sensor",
+                  "EntityBase",
+                  "PollingComponent",
+                  "Component",
+                  "voltage_sampler::VoltageSampler"
+                ]
+              }
+            },
+            "unit_of_measurement": {
+              "default": "V"
+            },
+            "accuracy_decimals": {
+              "default": "2"
+            },
+            "device_class": {
+              "default": "voltage"
+            },
+            "state_class": {
+              "default": "measurement"
+            },
+            "pin": {
+              "key": "Required",
+              "internal": true,
+              "modes": [
+                "input"
+              ],
+              "type": "pin"
+            },
+            "raw": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "attenuation": {
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "0db": null,
+                "2.5db": null,
+                "6db": null,
+                "11db": null,
+                "auto": null
+              }
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            }
+          }
+        }
+      }
+    }
+  }
+}

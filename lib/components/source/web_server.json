@@ -1,0 +1,95 @@
+{
+  "web_server": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "web_server::WebServer",
+                "parents": [
+                  "Component",
+                  "Controller"
+                ]
+              }
+            },
+            "port": {
+              "key": "Optional",
+              "default": "80",
+              "type": "integer",
+              "data_type": "port"
+            },
+            "version": {
+              "key": "Optional",
+              "default": "2",
+              "type": "enum",
+              "values": {
+                "1": null,
+                "2": null
+              }
+            },
+            "css_url": {
+              "key": "Optional",
+              "type": "string"
+            },
+            "css_include": {
+              "key": "Optional"
+            },
+            "js_url": {
+              "key": "Optional",
+              "type": "string"
+            },
+            "js_include": {
+              "key": "Optional"
+            },
+            "auth": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "username": {
+                    "key": "Required",
+                    "type": "string"
+                  },
+                  "password": {
+                    "key": "Required",
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "web_server_base_id": {
+              "key": "GeneratedID",
+              "use_id_type": "web_server_base::WebServerBase",
+              "type": "use_id"
+            },
+            "include_internal": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "ota": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "log": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "local": {
+              "key": "Optional",
+              "type": "boolean"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "esp32_ble_tracker": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "esp32_ble_tracker::ESP32BLETracker",
+                "parents": [
+                  "Component",
+                  "esp32_ble::GAPEventHandler",
+                  "esp32_ble::GATTcEventHandler",
+                  "Parented<esp32_ble::ESP32BLE>",
+                  "Parented"
+                ]
+              }
+            },
+            "ble_id": {
+              "key": "GeneratedID",
+              "use_id_type": "esp32_ble::ESP32BLE",
+              "type": "use_id"
+            },
+            "scan_parameters": {
+              "key": "Optional",
+              "default": "{}",
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "duration": {
+                    "key": "Optional",
+                    "default": "5min",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "core.positive_time_period_seconds"
+                      ]
+                    }
+                  },
+                  "interval": {
+                    "key": "Optional",
+                    "default": "320ms",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "core.positive_time_period_milliseconds"
+                      ]
+                    }
+                  },
+                  "window": {
+                    "key": "Optional",
+                    "default": "30ms",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "core.positive_time_period_milliseconds"
+                      ]
+                    }
+                  },
+                  "active": {
+                    "key": "Optional",
+                    "default": "True",
+                    "type": "boolean"
+                  },
+                  "continuous": {
+                    "key": "Optional",
+                    "default": "True",
+                    "type": "boolean"
+                  }
+                }
+              }
+            },
+            "on_ble_advertise": {
+              "key": "Optional",
+              "type": "trigger",
+              "schema": {
+                "config_vars": {
+                  "mac_address": {
+                    "key": "Optional",
+                    "is_list": true
+                  },
+                  "then": {
+                    "type": "trigger"
+                  }
+                }
+              }
+            },
+            "on_ble_service_data_advertise": {
+              "key": "Optional",
+              "type": "trigger",
+              "schema": {
+                "config_vars": {
+                  "mac_address": {
+                    "key": "Optional"
+                  },
+                  "service_uuid": {
+                    "key": "Required"
+                  },
+                  "then": {
+                    "type": "trigger"
+                  }
+                }
+              },
+              "has_required_var": true
+            },
+            "on_ble_manufacturer_data_advertise": {
+              "key": "Optional",
+              "type": "trigger",
+              "schema": {
+                "config_vars": {
+                  "mac_address": {
+                    "key": "Optional"
+                  },
+                  "manufacturer_id": {
+                    "key": "Required"
+                  },
+                  "then": {
+                    "type": "trigger"
+                  }
+                }
+              },
+              "has_required_var": true
+            },
+            "on_scan_end": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        }
+      },
+      "ESP_BLE_DEVICE_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "esp32_ble_id": {
+              "key": "GeneratedID",
+              "use_id_type": "esp32_ble_tracker::ESP32BLETracker",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "start_scan": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "esp32_ble_tracker::ESP32BLETracker",
+              "type": "use_id"
+            },
+            "continuous": {
+              "key": "Optional",
+              "default": "False",
+              "templatable": true,
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "stop_scan": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "esp32_ble_tracker::ESP32BLETracker",
+              "type": "use_id"
+            }
+          }
+        },
+        "maybe": "id"
+      }
+    }
+  }
+}

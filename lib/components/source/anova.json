@@ -1,0 +1,46 @@
+{
+  "anova.climate": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "climate.CLIMATE_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "anova::Anova",
+                "parents": [
+                  "climate::Climate",
+                  "EntityBase",
+                  "ble_client::BLEClientNode",
+                  "PollingComponent",
+                  "Component"
+                ]
+              }
+            },
+            "unit_of_measurement": {
+              "key": "Required",
+              "type": "enum",
+              "values": {
+                "f": null,
+                "c": null
+              }
+            },
+            "ble_client_id": {
+              "key": "GeneratedID",
+              "use_id_type": "ble_client::BLEClient",
+              "type": "use_id"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "60s"
+            }
+          }
+        }
+      }
+    }
+  }
+}

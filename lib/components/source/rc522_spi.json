@@ -1,0 +1,73 @@
+{
+  "rc522_spi": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "rc522.RC522_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "rc522_spi::RC522Spi",
+                "parents": [
+                  "rc522::RC522",
+                  "PollingComponent",
+                  "Component",
+                  "i2c::I2CDevice",
+                  "spi::SPIDevice"
+                ]
+              }
+            },
+            "spi_id": {
+              "key": "GeneratedID",
+              "use_id_type": "spi::SPIComponent",
+              "type": "use_id"
+            },
+            "cs_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            }
+          }
+        },
+        "is_list": true
+      }
+    }
+  },
+  "rc522_spi.binary_sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "binary_sensor.BINARY_SENSOR_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "rc522::RC522BinarySensor",
+                "parents": [
+                  "binary_sensor::BinarySensor",
+                  "EntityBase"
+                ]
+              }
+            },
+            "rc522_id": {
+              "key": "GeneratedID",
+              "use_id_type": "rc522::RC522",
+              "type": "use_id"
+            },
+            "uid": {
+              "key": "Required"
+            }
+          }
+        }
+      }
+    }
+  }
+}

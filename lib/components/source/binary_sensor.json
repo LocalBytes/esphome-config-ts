@@ -1,0 +1,493 @@
+{
+  "binary_sensor": {
+    "components": {
+      "analog_threshold": {},
+      "apds9960": {
+        "dependencies": [
+          "apds9960"
+        ]
+      },
+      "as3935": {
+        "dependencies": [
+          "as3935"
+        ]
+      },
+      "ble_presence": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "cap1188": {
+        "dependencies": [
+          "cap1188"
+        ]
+      },
+      "copy": {},
+      "custom": {},
+      "daly_bms": {},
+      "esp32_touch": {
+        "dependencies": [
+          "esp32_touch",
+          "esp32"
+        ]
+      },
+      "ezo_pmp": {
+        "dependencies": [
+          "ezo_pmp"
+        ]
+      },
+      "fingerprint_grow": {
+        "dependencies": [
+          "fingerprint_grow"
+        ]
+      },
+      "gpio": {},
+      "homeassistant": {
+        "dependencies": [
+          "api"
+        ]
+      },
+      "hydreon_rgxx": {},
+      "ld2410": {
+        "dependencies": [
+          "ld2410"
+        ]
+      },
+      "matrix_keypad": {
+        "dependencies": [
+          "matrix_keypad"
+        ]
+      },
+      "modbus_controller": {
+        "dependencies": [
+          "modbus_controller"
+        ]
+      },
+      "mpr121": {
+        "dependencies": [
+          "mpr121"
+        ]
+      },
+      "nextion": {},
+      "pipsolar": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "pn532": {
+        "dependencies": [
+          "pn532"
+        ]
+      },
+      "rc522": {
+        "dependencies": [
+          "rc522"
+        ]
+      },
+      "rc522_spi": {
+        "dependencies": [
+          "rc522"
+        ]
+      },
+      "rdm6300": {
+        "dependencies": [
+          "rdm6300"
+        ]
+      },
+      "remote_receiver": {
+        "dependencies": [
+          "remote_receiver"
+        ]
+      },
+      "sim800l": {
+        "dependencies": [
+          "sim800l"
+        ]
+      },
+      "status": {},
+      "sx1509": {
+        "dependencies": [
+          "sx1509"
+        ]
+      },
+      "template": {},
+      "tm1637": {},
+      "tm1638": {},
+      "touchscreen": {
+        "dependencies": [
+          "touchscreen"
+        ]
+      },
+      "tt21100": {},
+      "ttp229_bsf": {
+        "dependencies": [
+          "ttp229_bsf"
+        ]
+      },
+      "ttp229_lsf": {
+        "dependencies": [
+          "ttp229_lsf"
+        ]
+      },
+      "tuya": {
+        "dependencies": [
+          "tuya"
+        ]
+      },
+      "vbus": {},
+      "xiaomi_cgpr1": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "xiaomi_mjyd02yla": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "xiaomi_mue4094rt": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "xiaomi_rtcgq02lm": {
+        "dependencies": [
+          "xiaomi_rtcgq02lm"
+        ]
+      },
+      "xiaomi_wx08zm": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "xpt2046": {}
+    },
+    "schemas": {
+      "MULTI_CLICK_TIMING_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "state": {
+              "key": "Optional",
+              "type": "boolean"
+            },
+            "min_length": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "max_length": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "BINARY_SENSOR_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.ENTITY_BASE_SCHEMA",
+            "core.MQTT_COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "binary_sensor::BinarySensor",
+                "parents": [
+                  "EntityBase"
+                ]
+              }
+            },
+            "mqtt_id": {
+              "key": "Optional",
+              "id_type": {
+                "class": "mqtt::MQTTBinarySensorComponent",
+                "parents": [
+                  "mqtt::MQTTComponent",
+                  "Component"
+                ]
+              }
+            },
+            "publish_initial_state": {
+              "key": "Optional",
+              "type": "boolean"
+            },
+            "device_class": {
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "battery": null,
+                "battery_charging": null,
+                "carbon_monoxide": null,
+                "cold": null,
+                "connectivity": null,
+                "door": null,
+                "": null,
+                "garage_door": null,
+                "gas": null,
+                "heat": null,
+                "light": null,
+                "lock": null,
+                "moisture": null,
+                "motion": null,
+                "moving": null,
+                "occupancy": null,
+                "opening": null,
+                "plug": null,
+                "power": null,
+                "presence": null,
+                "problem": null,
+                "running": null,
+                "safety": null,
+                "smoke": null,
+                "sound": null,
+                "tamper": null,
+                "update": null,
+                "vibration": null,
+                "window": null
+              }
+            },
+            "filters": {
+              "key": "Optional",
+              "type": "registry",
+              "is_list": true,
+              "registry": "binary_sensor.filter"
+            },
+            "on_press": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_release": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_click": {
+              "key": "Optional",
+              "type": "trigger",
+              "schema": {
+                "config_vars": {
+                  "min_length": {
+                    "key": "Optional",
+                    "default": "50ms",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "core.positive_time_period_milliseconds"
+                      ]
+                    }
+                  },
+                  "max_length": {
+                    "key": "Optional",
+                    "default": "350ms",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "core.positive_time_period_milliseconds"
+                      ]
+                    }
+                  },
+                  "then": {
+                    "type": "trigger"
+                  }
+                }
+              }
+            },
+            "on_double_click": {
+              "key": "Optional",
+              "type": "trigger",
+              "schema": {
+                "config_vars": {
+                  "min_length": {
+                    "key": "Optional",
+                    "default": "50ms",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "core.positive_time_period_milliseconds"
+                      ]
+                    }
+                  },
+                  "max_length": {
+                    "key": "Optional",
+                    "default": "350ms",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "core.positive_time_period_milliseconds"
+                      ]
+                    }
+                  },
+                  "then": {
+                    "type": "trigger"
+                  }
+                }
+              }
+            },
+            "on_multi_click": {
+              "key": "Optional",
+              "type": "trigger",
+              "schema": {
+                "config_vars": {
+                  "timing": {
+                    "key": "Required"
+                  },
+                  "invalid_cooldown": {
+                    "key": "Optional",
+                    "default": "1s",
+                    "type": "schema",
+                    "schema": {
+                      "extends": [
+                        "core.positive_time_period_milliseconds"
+                      ]
+                    }
+                  },
+                  "then": {
+                    "type": "trigger"
+                  }
+                }
+              },
+              "has_required_var": true
+            },
+            "on_state": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          }
+        }
+      },
+      "BINARY_SENSOR_CONDITION_SCHEMA": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "binary_sensor::BinarySensor",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "is_on": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "binary_sensor.BINARY_SENSOR_CONDITION_SCHEMA"
+          ]
+        }
+      },
+      "is_off": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "binary_sensor.BINARY_SENSOR_CONDITION_SCHEMA"
+          ]
+        }
+      }
+    },
+    "filter": {
+      "invert": {},
+      "delayed_on_off": {
+        "templatable": true,
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.positive_time_period_milliseconds"
+          ],
+          "config_vars": {
+            "time_on": {
+              "key": "Required",
+              "templatable": true,
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "time_off": {
+              "key": "Required",
+              "templatable": true,
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "delayed_on": {
+        "templatable": true,
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.positive_time_period_milliseconds"
+          ]
+        }
+      },
+      "delayed_off": {
+        "templatable": true,
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.positive_time_period_milliseconds"
+          ]
+        }
+      },
+      "autorepeat": {
+        "is_list": true,
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "delay": {
+              "key": "Optional",
+              "default": "1s",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "time_off": {
+              "key": "Optional",
+              "default": "100ms",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "time_on": {
+              "key": "Optional",
+              "default": "900ms",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "lambda": {}
+    }
+  }
+}

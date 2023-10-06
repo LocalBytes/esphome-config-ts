@@ -1,0 +1,22 @@
+{
+  "name": "esphome-config-ts",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build:generator": "node --loader ts-node/esm ./lib/build.ts",
+    "build:tsc": "tsc",
+    "build": "npm run build:generator && npm run build:tsc",
+    "test": "node --loader ts-node/esm ./tests/esp8266_blink.ts"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/js-yaml": "^4.0.5",
+    "ts-morph": "^19.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}

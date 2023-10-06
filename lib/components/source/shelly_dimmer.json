@@ -1,0 +1,166 @@
+{
+  "shelly_dimmer.light": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "light.BRIGHTNESS_ONLY_LIGHT_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "output_id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "shelly_dimmer::ShellyDimmer",
+                "parents": [
+                  "light::LightOutput",
+                  "PollingComponent",
+                  "Component",
+                  "uart::UARTDevice"
+                ]
+              }
+            },
+            "firmware": {
+              "key": "Optional",
+              "default": "51.6",
+              "type": "schema",
+              "maybe": "version",
+              "schema": {
+                "config_vars": {
+                  "url": {
+                    "key": "Optional"
+                  },
+                  "sha256": {
+                    "key": "Optional"
+                  },
+                  "version": {
+                    "key": "Required"
+                  },
+                  "update": {
+                    "key": "Optional",
+                    "default": "False",
+                    "type": "boolean"
+                  }
+                }
+              }
+            },
+            "nrst_pin": {
+              "key": "Optional",
+              "default": "GPIO5",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "boot0_pin": {
+              "key": "Optional",
+              "default": "GPIO4",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "leading_edge": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "warmup_brightness": {
+              "key": "Optional",
+              "default": "100",
+              "type": "integer",
+              "data_type": "uint16_t"
+            },
+            "min_brightness": {
+              "key": "Optional",
+              "default": "0",
+              "type": "integer",
+              "data_type": "uint16_t"
+            },
+            "max_brightness": {
+              "key": "Optional",
+              "default": "1000",
+              "type": "integer",
+              "data_type": "uint16_t"
+            },
+            "power": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "W"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "power"
+                  }
+                }
+              }
+            },
+            "voltage": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "V"
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "voltage"
+                  }
+                }
+              }
+            },
+            "current": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": "A"
+                  },
+                  "accuracy_decimals": {
+                    "default": "2"
+                  },
+                  "device_class": {
+                    "default": "current"
+                  }
+                }
+              }
+            },
+            "gamma_correct": {
+              "default": "1.0"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "10s"
+            },
+            "uart_id": {
+              "key": "GeneratedID",
+              "use_id_type": "uart::UARTComponent",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

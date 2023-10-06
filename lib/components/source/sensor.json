@@ -1,0 +1,1298 @@
+{
+  "sensor": {
+    "components": {
+      "a01nyub": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "absolute_humidity": {},
+      "adc": {},
+      "adc128s102": {
+        "dependencies": [
+          "adc128s102"
+        ]
+      },
+      "ade7953": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "ads1115": {
+        "dependencies": [
+          "ads1115"
+        ]
+      },
+      "aht10": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "airthings_wave_mini": {
+        "dependencies": [
+          "ble_client"
+        ]
+      },
+      "airthings_wave_plus": {
+        "dependencies": [
+          "ble_client"
+        ]
+      },
+      "alpha3": {},
+      "am2320": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "am43": {},
+      "apds9960": {
+        "dependencies": [
+          "apds9960"
+        ]
+      },
+      "as3935": {
+        "dependencies": [
+          "as3935"
+        ]
+      },
+      "as7341": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "atc_mithermometer": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "atm90e26": {},
+      "atm90e32": {},
+      "bh1750": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "binary_sensor_map": {
+        "dependencies": [
+          "binary_sensor"
+        ]
+      },
+      "bl0939": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "bl0940": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "bl0942": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "ble_client": {
+        "dependencies": [
+          "ble_client"
+        ]
+      },
+      "ble_rssi": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "bme280": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "bme680": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "bme680_bsec": {
+        "dependencies": [
+          "bme680_bsec"
+        ]
+      },
+      "bmp085": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "bmp280": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "bmp3xx": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "bmp581": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "b_parasite": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "ccs811": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "cd74hc4067": {
+        "dependencies": [
+          "cd74hc4067"
+        ]
+      },
+      "copy": {},
+      "cs5460a": {
+        "dependencies": [
+          "spi"
+        ]
+      },
+      "cse7761": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "cse7766": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "ct_clamp": {},
+      "custom": {},
+      "dallas": {},
+      "daly_bms": {},
+      "debug": {
+        "dependencies": [
+          "debug"
+        ]
+      },
+      "dht": {},
+      "dht12": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "dps310": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "dsmr": {},
+      "duty_cycle": {},
+      "duty_time": {},
+      "ee895": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "ens210": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "esp32_hall": {
+        "dependencies": [
+          "esp32"
+        ]
+      },
+      "ezo": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "ezo_pmp": {
+        "dependencies": [
+          "ezo_pmp"
+        ]
+      },
+      "fingerprint_grow": {
+        "dependencies": [
+          "fingerprint_grow"
+        ]
+      },
+      "fs3000": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "gcja5": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "growatt_solar": {},
+      "havells_solar": {},
+      "hdc1080": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "hlw8012": {},
+      "hm3301": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "hmc5883l": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "homeassistant": {
+        "dependencies": [
+          "api"
+        ]
+      },
+      "honeywellabp": {
+        "dependencies": [
+          "spi"
+        ]
+      },
+      "hrxl_maxsonar_wr": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "hte501": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "htu21d": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "hx711": {},
+      "hydreon_rgxx": {},
+      "hyt271": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "ina219": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "ina226": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "ina260": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "ina3221": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "inkbird_ibsth1_mini": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "integration": {},
+      "internal_temperature": {},
+      "kalman_combinator": {},
+      "kmeteriso": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "kuntze": {},
+      "ld2410": {
+        "dependencies": [
+          "ld2410"
+        ]
+      },
+      "ltr390": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "max31855": {},
+      "max31856": {},
+      "max31865": {
+        "dependencies": [
+          "spi"
+        ]
+      },
+      "max44009": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "max6675": {},
+      "max9611": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "mcp3008": {
+        "dependencies": [
+          "mcp3008"
+        ]
+      },
+      "mcp3204": {
+        "dependencies": [
+          "mcp3204"
+        ]
+      },
+      "mcp9600": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "mcp9808": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "mhz19": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "mics_4514": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "mlx90393": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "mlx90614": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "mmc5603": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "modbus_controller": {
+        "dependencies": [
+          "modbus_controller"
+        ]
+      },
+      "mopeka_pro_check": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "mopeka_std_check": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "mpl3115a2": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "mpu6050": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "mpu6886": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "mqtt_subscribe": {
+        "dependencies": [
+          "mqtt"
+        ]
+      },
+      "ms5611": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "nextion": {},
+      "ntc": {},
+      "pid": {},
+      "pipsolar": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "pm1006": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "pmsa003i": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "pmsx003": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "pmwcs3": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "pulse_counter": {},
+      "pulse_meter": {},
+      "pulse_width": {},
+      "pvvx_mithermometer": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "pzem004t": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "pzemac": {},
+      "pzemdc": {},
+      "qmc5883l": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "qmp6988": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "radon_eye_rd200": {
+        "dependencies": [
+          "ble_client"
+        ]
+      },
+      "resistance": {},
+      "rotary_encoder": {},
+      "ruuvitag": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "scd30": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "scd4x": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "sdm_meter": {},
+      "sdp3x": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "sds011": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "selec_meter": {},
+      "sen21231": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "sen5x": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "senseair": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "sgp30": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "sgp40": {},
+      "sgp4x": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "sht3xd": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "sht4x": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "shtcx": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "sim800l": {
+        "dependencies": [
+          "sim800l"
+        ]
+      },
+      "sm300d2": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "sml": {},
+      "smt100": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "sps30": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "sts3x": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "sun": {
+        "dependencies": [
+          "sun"
+        ]
+      },
+      "t6615": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "tcs34725": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "tee501": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "teleinfo": {},
+      "template": {},
+      "tmp102": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "tmp1075": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "tmp117": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "tof10120": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "total_daily_energy": {
+        "dependencies": [
+          "time"
+        ]
+      },
+      "tsl2561": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "tsl2591": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "tuya": {
+        "dependencies": [
+          "tuya"
+        ]
+      },
+      "tx20": {},
+      "ufire_ec": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "ufire_ise": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "ultrasonic": {},
+      "uptime": {},
+      "vbus": {},
+      "vl53l0x": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "wifi_signal": {
+        "dependencies": [
+          "wifi"
+        ]
+      },
+      "xiaomi_cgd1": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "xiaomi_cgdk2": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "xiaomi_cgg1": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "xiaomi_gcls002": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "xiaomi_hhccjcy01": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "xiaomi_hhccpot002": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "xiaomi_jqjcy01ym": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "xiaomi_lywsd02": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "xiaomi_lywsd03mmc": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "xiaomi_lywsdcgq": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "xiaomi_mhoc303": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "xiaomi_mhoc401": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "xiaomi_miscale": {
+        "dependencies": [
+          "esp32_ble_tracker"
+        ]
+      },
+      "xiaomi_miscale2": {},
+      "xiaomi_rtcgq02lm": {
+        "dependencies": [
+          "xiaomi_rtcgq02lm"
+        ]
+      },
+      "zio_ultrasonic": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "zyaura": {}
+    },
+    "schemas": {
+      "SENSOR_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.ENTITY_BASE_SCHEMA",
+            "core.MQTT_COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "mqtt_id": {
+              "key": "Optional",
+              "id_type": {
+                "class": "mqtt::MQTTSensorComponent",
+                "parents": [
+                  "mqtt::MQTTComponent",
+                  "Component"
+                ]
+              }
+            },
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "sensor::Sensor",
+                "parents": [
+                  "EntityBase"
+                ]
+              }
+            },
+            "unit_of_measurement": {
+              "key": "Optional",
+              "type": "string"
+            },
+            "accuracy_decimals": {
+              "key": "Optional",
+              "type": "integer"
+            },
+            "device_class": {
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "apparent_power": null,
+                "aqi": null,
+                "atmospheric_pressure": null,
+                "battery": null,
+                "carbon_dioxide": null,
+                "carbon_monoxide": null,
+                "current": null,
+                "data_rate": null,
+                "data_size": null,
+                "date": null,
+                "distance": null,
+                "duration": null,
+                "": null,
+                "energy": null,
+                "energy_storage": null,
+                "frequency": null,
+                "gas": null,
+                "humidity": null,
+                "illuminance": null,
+                "irradiance": null,
+                "moisture": null,
+                "monetary": null,
+                "nitrogen_dioxide": null,
+                "nitrogen_monoxide": null,
+                "nitrous_oxide": null,
+                "ozone": null,
+                "ph": null,
+                "pm1": null,
+                "pm10": null,
+                "pm25": null,
+                "power": null,
+                "power_factor": null,
+                "precipitation": null,
+                "precipitation_intensity": null,
+                "pressure": null,
+                "reactive_power": null,
+                "signal_strength": null,
+                "sound_pressure": null,
+                "speed": null,
+                "sulphur_dioxide": null,
+                "temperature": null,
+                "timestamp": null,
+                "volatile_organic_compounds": null,
+                "volatile_organic_compounds_parts": null,
+                "voltage": null,
+                "volume": null,
+                "volume_storage": null,
+                "water": null,
+                "weight": null,
+                "wind_speed": null
+              }
+            },
+            "state_class": {
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "": null,
+                "measurement": null,
+                "total_increasing": null,
+                "total": null
+              }
+            },
+            "force_update": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "expire_after": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "filters": {
+              "key": "Optional",
+              "type": "registry",
+              "is_list": true,
+              "registry": "sensor.filter"
+            },
+            "on_value": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_raw_value": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_value_range": {
+              "key": "Optional",
+              "type": "trigger",
+              "schema": {
+                "config_vars": {
+                  "above": {
+                    "key": "Optional",
+                    "templatable": true
+                  },
+                  "below": {
+                    "key": "Optional",
+                    "templatable": true
+                  },
+                  "then": {
+                    "type": "trigger"
+                  }
+                }
+              },
+              "has_required_var": true
+            }
+          }
+        }
+      },
+      "QUANTILE_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "window_size": {
+              "key": "Optional",
+              "default": "5",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            },
+            "send_every": {
+              "key": "Optional",
+              "default": "5",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            },
+            "send_first_at": {
+              "key": "Optional",
+              "default": "1",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            },
+            "quantile": {
+              "key": "Optional",
+              "default": "0.9",
+              "data_type": "zero_to_one_float"
+            }
+          }
+        }
+      },
+      "MEDIAN_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "window_size": {
+              "key": "Optional",
+              "default": "5",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            },
+            "send_every": {
+              "key": "Optional",
+              "default": "5",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            },
+            "send_first_at": {
+              "key": "Optional",
+              "default": "1",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            }
+          }
+        }
+      },
+      "MIN_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "window_size": {
+              "key": "Optional",
+              "default": "5",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            },
+            "send_every": {
+              "key": "Optional",
+              "default": "5",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            },
+            "send_first_at": {
+              "key": "Optional",
+              "default": "1",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            }
+          }
+        }
+      },
+      "MAX_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "window_size": {
+              "key": "Optional",
+              "default": "5",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            },
+            "send_every": {
+              "key": "Optional",
+              "default": "5",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            },
+            "send_first_at": {
+              "key": "Optional",
+              "default": "1",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            }
+          }
+        }
+      },
+      "SLIDING_AVERAGE_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "window_size": {
+              "key": "Optional",
+              "default": "15",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            },
+            "send_every": {
+              "key": "Optional",
+              "default": "15",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            },
+            "send_first_at": {
+              "key": "Optional",
+              "default": "1",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            }
+          }
+        }
+      },
+      "EXPONENTIAL_AVERAGE_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "alpha": {
+              "key": "Optional",
+              "default": "0.1",
+              "data_type": "positive_float"
+            },
+            "send_every": {
+              "key": "Optional",
+              "default": "15",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            },
+            "send_first_at": {
+              "key": "Optional",
+              "default": "1",
+              "type": "integer",
+              "data_type": "positive_not_null_int"
+            }
+          }
+        }
+      },
+      "DELTA_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "value": {
+              "key": "Required",
+              "data_type": "positive_float"
+            },
+            "type": {
+              "key": "Optional",
+              "default": "absolute",
+              "type": "enum",
+              "values": {
+                "absolute": null,
+                "percentage": null
+              }
+            }
+          }
+        }
+      },
+      "TIMEOUT_SCHEMA": {
+        "type": "schema",
+        "maybe": "timeout",
+        "schema": {
+          "config_vars": {
+            "timeout": {
+              "key": "Required",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "value": {
+              "key": "Optional",
+              "default": "nan"
+            }
+          }
+        }
+      },
+      "CLAMP_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "min_value": {
+              "key": "Optional",
+              "default": "NaN"
+            },
+            "max_value": {
+              "key": "Optional",
+              "default": "NaN"
+            }
+          }
+        }
+      },
+      "SENSOR_IN_RANGE_CONDITION_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "sensor::Sensor",
+              "type": "use_id"
+            },
+            "above": {
+              "key": "Optional"
+            },
+            "below": {
+              "key": "Optional"
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "in_range": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SENSOR_IN_RANGE_CONDITION_SCHEMA"
+          ]
+        }
+      }
+    },
+    "filter": {
+      "offset": {},
+      "multiply": {},
+      "filter_out": {},
+      "quantile": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.QUANTILE_SCHEMA"
+          ]
+        }
+      },
+      "median": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.MEDIAN_SCHEMA"
+          ]
+        }
+      },
+      "skip_initial": {
+        "type": "integer",
+        "data_type": "positive_not_null_int"
+      },
+      "min": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.MIN_SCHEMA"
+          ]
+        }
+      },
+      "max": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.MAX_SCHEMA"
+          ]
+        }
+      },
+      "sliding_window_moving_average": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.SLIDING_AVERAGE_SCHEMA"
+          ]
+        }
+      },
+      "exponential_moving_average": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.EXPONENTIAL_AVERAGE_SCHEMA"
+          ]
+        }
+      },
+      "throttle_average": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.positive_time_period_milliseconds"
+          ]
+        }
+      },
+      "lambda": {},
+      "delta": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.DELTA_SCHEMA"
+          ]
+        }
+      },
+      "or": {
+        "type": "registry",
+        "is_list": true,
+        "registry": "sensor.filter"
+      },
+      "throttle": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.positive_time_period_milliseconds"
+          ]
+        }
+      },
+      "heartbeat": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.positive_time_period_milliseconds"
+          ]
+        }
+      },
+      "timeout": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.TIMEOUT_SCHEMA"
+          ]
+        }
+      },
+      "debounce": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.positive_time_period_milliseconds"
+          ]
+        }
+      },
+      "calibrate_linear": {
+        "type": "schema",
+        "maybe": "datapoints",
+        "schema": {
+          "config_vars": {
+            "datapoints": {
+              "key": "Required",
+              "is_list": true
+            },
+            "method": {
+              "key": "Optional",
+              "default": "least_squares",
+              "type": "enum",
+              "values": {
+                "least_squares": null,
+                "exact": null
+              }
+            }
+          }
+        }
+      },
+      "calibrate_polynomial": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "datapoints": {
+              "key": "Required",
+              "is_list": true
+            },
+            "degree": {
+              "key": "Required",
+              "type": "integer",
+              "data_type": "positive_int"
+            }
+          }
+        }
+      },
+      "clamp": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "sensor.CLAMP_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

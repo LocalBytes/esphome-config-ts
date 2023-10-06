@@ -1,0 +1,203 @@
+{
+  "display": {
+    "components": {
+      "addressable_light": {},
+      "ili9341": {},
+      "ili9xxx": {
+        "dependencies": [
+          "spi"
+        ]
+      },
+      "inkplate6": {
+        "dependencies": [
+          "i2c",
+          "esp32"
+        ]
+      },
+      "lcd_gpio": {},
+      "lcd_pcf8574": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "max7219": {
+        "dependencies": [
+          "spi"
+        ]
+      },
+      "max7219digit": {
+        "dependencies": [
+          "spi"
+        ]
+      },
+      "nextion": {
+        "dependencies": [
+          "uart"
+        ]
+      },
+      "pcd8544": {
+        "dependencies": [
+          "spi"
+        ]
+      },
+      "pvvx_mithermometer": {
+        "dependencies": [
+          "ble_client"
+        ]
+      },
+      "ssd1306_i2c": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "ssd1306_spi": {
+        "dependencies": [
+          "spi"
+        ]
+      },
+      "ssd1322_spi": {
+        "dependencies": [
+          "spi"
+        ]
+      },
+      "ssd1325_spi": {
+        "dependencies": [
+          "spi"
+        ]
+      },
+      "ssd1327_i2c": {
+        "dependencies": [
+          "i2c"
+        ]
+      },
+      "ssd1327_spi": {
+        "dependencies": [
+          "spi"
+        ]
+      },
+      "ssd1331_spi": {
+        "dependencies": [
+          "spi"
+        ]
+      },
+      "ssd1351_spi": {
+        "dependencies": [
+          "spi"
+        ]
+      },
+      "st7735": {
+        "dependencies": [
+          "spi"
+        ]
+      },
+      "st7789v": {
+        "dependencies": [
+          "spi"
+        ]
+      },
+      "st7920": {
+        "dependencies": [
+          "spi"
+        ]
+      },
+      "tm1621": {},
+      "tm1637": {},
+      "tm1638": {},
+      "waveshare_epaper": {
+        "dependencies": [
+          "spi"
+        ]
+      }
+    },
+    "schemas": {
+      "BASIC_DISPLAY_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "config_vars": {
+            "lambda": {
+              "key": "Optional"
+            }
+          }
+        }
+      },
+      "FULL_DISPLAY_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display.BASIC_DISPLAY_SCHEMA"
+          ],
+          "config_vars": {
+            "rotation": {
+              "key": "Optional"
+            },
+            "pages": {
+              "key": "Optional",
+              "is_list": true,
+              "type": "schema",
+              "schema": {
+                "config_vars": {
+                  "id": {
+                    "key": "GeneratedID",
+                    "id_type": {
+                      "class": "display::DisplayPage",
+                      "parents": []
+                    }
+                  },
+                  "lambda": {
+                    "key": "Required"
+                  }
+                }
+              }
+            },
+            "on_page_change": {
+              "key": "Optional",
+              "type": "trigger",
+              "schema": {
+                "config_vars": {
+                  "from": {
+                    "key": "Optional",
+                    "use_id_type": "display::DisplayPage",
+                    "type": "use_id"
+                  },
+                  "to": {
+                    "key": "Optional",
+                    "use_id_type": "display::DisplayPage",
+                    "type": "use_id"
+                  },
+                  "then": {
+                    "type": "trigger"
+                  }
+                }
+              }
+            },
+            "auto_clear_enabled": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "is_displaying_page": {
+        "type": "schema",
+        "maybe": "page_id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "display::DisplayBuffer",
+              "type": "use_id"
+            },
+            "page_id": {
+              "key": "Required",
+              "use_id_type": "display::DisplayPage",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

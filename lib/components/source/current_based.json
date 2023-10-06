@@ -1,0 +1,111 @@
+{
+  "current_based.cover": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "cover.COVER_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "current_based::CurrentBasedCover",
+                "parents": [
+                  "cover::Cover",
+                  "EntityBase",
+                  "Component"
+                ]
+              }
+            },
+            "stop_action": {
+              "key": "Required",
+              "type": "trigger"
+            },
+            "open_sensor": {
+              "key": "Required",
+              "use_id_type": "sensor::Sensor",
+              "type": "use_id"
+            },
+            "open_moving_current_threshold": {
+              "key": "Required"
+            },
+            "open_obstacle_current_threshold": {
+              "key": "Optional"
+            },
+            "open_action": {
+              "key": "Required",
+              "type": "trigger"
+            },
+            "open_duration": {
+              "key": "Required",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "close_sensor": {
+              "key": "Required",
+              "use_id_type": "sensor::Sensor",
+              "type": "use_id"
+            },
+            "close_moving_current_threshold": {
+              "key": "Required"
+            },
+            "close_obstacle_current_threshold": {
+              "key": "Optional"
+            },
+            "close_action": {
+              "key": "Required",
+              "type": "trigger"
+            },
+            "close_duration": {
+              "key": "Required",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "obstacle_rollback": {
+              "key": "Optional",
+              "default": "10%"
+            },
+            "max_duration": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            },
+            "malfunction_detection": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "malfunction_action": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "start_sensing_delay": {
+              "key": "Optional",
+              "default": "500ms",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

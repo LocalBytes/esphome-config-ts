@@ -1,0 +1,242 @@
+{
+  "inkplate6.display": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "display.FULL_DISPLAY_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "inkplate6::Inkplate6",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "i2c::I2CDevice",
+                  "display::DisplayBuffer"
+                ]
+              }
+            },
+            "greyscale": {
+              "key": "Optional",
+              "default": "False",
+              "type": "boolean"
+            },
+            "partial_updating": {
+              "key": "Optional",
+              "default": "True",
+              "type": "boolean"
+            },
+            "full_update_every": {
+              "key": "Optional",
+              "default": "10",
+              "type": "integer",
+              "data_type": "uint32_t"
+            },
+            "model": {
+              "key": "Optional",
+              "default": "inkplate_6",
+              "type": "enum",
+              "values": {
+                "inkplate_6": null,
+                "inkplate_10": null,
+                "inkplate_6_plus": null,
+                "inkplate_6_v2": null
+              }
+            },
+            "ckv_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "gmod_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "gpio0_enable_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "oe_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "powerup_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "sph_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "spv_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "vcom_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "wakeup_pin": {
+              "key": "Required",
+              "schema": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "cl_pin": {
+              "key": "Optional",
+              "default": "0",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "le_pin": {
+              "key": "Optional",
+              "default": "2",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "display_data_0_pin": {
+              "key": "Optional",
+              "default": "4",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "display_data_1_pin": {
+              "key": "Optional",
+              "default": "5",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "display_data_2_pin": {
+              "key": "Optional",
+              "default": "18",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "display_data_3_pin": {
+              "key": "Optional",
+              "default": "19",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "display_data_4_pin": {
+              "key": "Optional",
+              "default": "23",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "display_data_5_pin": {
+              "key": "Optional",
+              "default": "25",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "display_data_6_pin": {
+              "key": "Optional",
+              "default": "26",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "display_data_7_pin": {
+              "key": "Optional",
+              "default": "27",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "output"
+              ],
+              "type": "pin"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "default": "5s"
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "72",
+              "data_type": "hex_uint8_t"
+            }
+          }
+        }
+      }
+    }
+  }
+}

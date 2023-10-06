@@ -1,0 +1,47 @@
+{
+  "lilygo_t5_47.touchscreen": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "touchscreen.TOUCHSCREEN_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "id_type": {
+                "class": "lilygo_t5_47::LilygoT547Touchscreen",
+                "parents": [
+                  "touchscreen::Touchscreen",
+                  "Component",
+                  "i2c::I2CDevice"
+                ]
+              }
+            },
+            "interrupt_pin": {
+              "key": "Required",
+              "schema": true,
+              "internal": true,
+              "modes": [
+                "input"
+              ],
+              "type": "pin"
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "90",
+              "data_type": "hex_uint8_t"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "lock": {
+    "components": {
+      "copy": {},
+      "output": {},
+      "template": {}
+    },
+    "schemas": {
+      "LOCK_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "core.ENTITY_BASE_SCHEMA",
+            "core.MQTT_COMMAND_COMPONENT_SCHEMA"
+          ],
+          "config_vars": {
+            "mqtt_id": {
+              "key": "Optional",
+              "id_type": {
+                "class": "mqtt::MQTTLockComponent",
+                "parents": [
+                  "mqtt::MQTTComponent",
+                  "Component"
+                ]
+              }
+            },
+            "on_lock": {
+              "key": "Optional",
+              "type": "trigger"
+            },
+            "on_unlock": {
+              "key": "Optional",
+              "type": "trigger"
+            }
+          }
+        }
+      },
+      "LOCK_ACTION_SCHEMA": {
+        "type": "schema",
+        "maybe": "id",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "Required",
+              "use_id_type": "lock::Lock",
+              "type": "use_id"
+            }
+          }
+        }
+      }
+    },
+    "action": {
+      "open": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "lock.LOCK_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "lock": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "lock.LOCK_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "unlock": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "lock.LOCK_ACTION_SCHEMA"
+          ]
+        }
+      }
+    },
+    "condition": {
+      "is_locked": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "lock.LOCK_ACTION_SCHEMA"
+          ]
+        }
+      },
+      "is_unlocked": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "lock.LOCK_ACTION_SCHEMA"
+          ]
+        }
+      }
+    }
+  }
+}

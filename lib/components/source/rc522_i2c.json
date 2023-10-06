@@ -1,0 +1,39 @@
+{
+  "rc522_i2c": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "type": "schema",
+        "schema": {
+          "extends": [
+            "rc522.RC522_SCHEMA"
+          ],
+          "config_vars": {
+            "id": {
+              "id_type": {
+                "class": "rc522_i2c::RC522I2C",
+                "parents": [
+                  "rc522::RC522",
+                  "PollingComponent",
+                  "Component",
+                  "i2c::I2CDevice",
+                  "i2c::I2CDevice"
+                ]
+              }
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "use_id_type": "i2c::I2CBus",
+              "type": "use_id"
+            },
+            "address": {
+              "key": "Optional",
+              "default": "44",
+              "data_type": "hex_uint8_t"
+            }
+          }
+        },
+        "is_list": true
+      }
+    }
+  }
+}

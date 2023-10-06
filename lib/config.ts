@@ -25,7 +25,9 @@ export class Configuration {
             } else {
                 this.addComponent(component);
             }
-        })
+        });
+
+        return this;
     }
 
     addComponent(component: Component | Component[]) {

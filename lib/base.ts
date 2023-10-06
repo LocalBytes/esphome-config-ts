@@ -29,6 +29,11 @@ export abstract class BaseComponent<TConfig extends Object = {}> {
             ...this.config
         }];
     }
+
+    addTo(config: Configuration, update: boolean = false) {
+        config[update ? "updateComponent" : "addComponent"](this);
+        return this;
+    }
 }
 
 export abstract class VirtualComponent<TConfig extends Object = {}> extends BaseComponent<TConfig> {

@@ -1,6 +1,6 @@
 {
   "name": "esphome-config-ts",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "scripts": {
     "build:generator": "node --loader ts-node/esm ./lib/build.ts",

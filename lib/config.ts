@@ -1,7 +1,6 @@
 import * as yaml from "js-yaml";
 
 import {BaseComponent, SynthComponent, VirtualComponent} from "./base.js";
-import {lambdaYamlType} from "./lambda.js";
 
 import {Wifi} from "./components/wifi.js";
 import {CaptivePortal} from "./components/captive_portal.js";
@@ -9,6 +8,9 @@ import {Logger} from "./components/logger.js";
 import {WebServer} from "./components/web_server.js";
 import {Api} from "./components/api.js";
 import {Ota} from "./components/ota.js";
+import {extendYamlType} from "./yaml/extend.js";
+import {lambdaYamlType} from "./yaml/lambda.js";
+import {secretYamlType} from "./yaml/secret.js";
 
 type Component = BaseComponent | VirtualComponent;
 
@@ -63,7 +65,13 @@ export class Configuration {
     }
 
     synthYaml(): string {
-        return yaml.dump(this.synth(), {schema: yaml.DEFAULT_SCHEMA.extend([lambdaYamlType])})
+        return yaml.dump(this.synth(), {
+            schema: yaml.DEFAULT_SCHEMA.extend([
+                extendYamlType,
+                lambdaYamlType,
+                secretYamlType,
+            ])
+        })
     }
 
     private synthRecursive(components: BaseComponent[]): SynthComponent[] {

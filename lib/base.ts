@@ -1,8 +1,9 @@
-import {Configuration} from "./config.js";
+import type {Configuration} from "./config.js";
 
 export type ID = string;
 export type Pin = string;
 
+export type Component = BaseComponent | VirtualComponent;
 export type ComponentName = `${string}.${string}`;
 
 export type SynthPreamble = { _domain: string, platform?: string };

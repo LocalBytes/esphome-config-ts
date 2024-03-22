@@ -6,17 +6,29 @@
     "build:generator": "node --loader ts-node/esm ./lib/build.ts",
     "build:tsc": "tsc",
     "build": "npm run build:generator && npm run build:tsc",
-    "test": "node --loader ts-node/esm ./tests/esp8266_blink.ts"
+    "test": "node --loader ts-node/esm ./tests/esp8266_blink.ts",
+    "madge": "madge --circular --extensions ts ./lib"
   },
   "type": "module",
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.2",
     "@types/js-yaml": "^4.0.5",
+    "madge": "^6.1.0",
     "ts-morph": "^22.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
+  },
+  "madge": {
+    "detectiveOptions": {
+      "es6": {
+        "skipTypeImports": true
+      },
+      "ts": {
+        "skipTypeImports": true
+      }
+    }
   }
 }

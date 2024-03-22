@@ -1,6 +1,6 @@
 import * as yaml from "js-yaml";
 
-import {BaseComponent, type SynthComponent, VirtualComponent} from "./base.js";
+import {BaseComponent, type Component, type SynthComponent} from "./base.js";
 
 import {Wifi} from "./components/wifi.js";
 import {CaptivePortal} from "./components/captive_portal.js";
@@ -11,8 +11,6 @@ import {Ota} from "./components/ota.js";
 import {extendYamlType} from "./yaml/extend.js";
 import {lambdaYamlType} from "./yaml/lambda.js";
 import {secretYamlType} from "./yaml/secret.js";
-
-type Component = BaseComponent | VirtualComponent;
 
 export class Configuration {
     components: Component[] = [];

@@ -8,9 +8,10 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { CorePositiveTimePeriodMilliseconds } from "./esphome.js";
-import { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { CorePositiveTimePeriodMilliseconds } from "./esphome.js";
+import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
 
 export class AddressableLightDisplay extends BaseComponent<AddressableLightDisplayConfig> {
     componentName: string = "addressable_light.display";

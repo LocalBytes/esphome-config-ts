@@ -8,9 +8,10 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
-import { Switch_SWITCH_SCHEMA } from "./switch.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
+import type { Switch_SWITCH_SCHEMA } from "./switch.js";
 
 export class Uart extends BaseComponent<UartConfig> {
     componentName: string = "uart";

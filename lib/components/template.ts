@@ -8,18 +8,19 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { SensorSENSOR_SCHEMA } from "./sensor.js";
-import { CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
-import { AlarmControlPanelALARM_CONTROL_PANEL_SCHEMA } from "./alarm_control_panel.js";
-import { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import { ButtonBUTTON_SCHEMA } from "./button.js";
-import { CoverCOVER_SCHEMA } from "./cover.js";
-import { LockLOCK_SCHEMA } from "./lock.js";
-import { NumberNUMBER_SCHEMA } from "./number.js";
-import { SelectSELECT_SCHEMA } from "./select.js";
-import { Switch_SWITCH_SCHEMA } from "./switch.js";
-import { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
+import type { AlarmControlPanelALARM_CONTROL_PANEL_SCHEMA } from "./alarm_control_panel.js";
+import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { ButtonBUTTON_SCHEMA } from "./button.js";
+import type { CoverCOVER_SCHEMA } from "./cover.js";
+import type { LockLOCK_SCHEMA } from "./lock.js";
+import type { NumberNUMBER_SCHEMA } from "./number.js";
+import type { SelectSELECT_SCHEMA } from "./select.js";
+import type { Switch_SWITCH_SCHEMA } from "./switch.js";
+import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
 export class TemplateSensor extends BaseComponent<TemplateSensorConfig> {
     componentName: string = "template.sensor";

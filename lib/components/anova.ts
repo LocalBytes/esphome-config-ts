@@ -8,9 +8,10 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { ClimateCLIMATE_SCHEMA } from "./climate.js";
-import { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { ClimateCLIMATE_SCHEMA } from "./climate.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class AnovaClimate extends BaseComponent<AnovaClimateConfig> {
     componentName: string = "anova.climate";

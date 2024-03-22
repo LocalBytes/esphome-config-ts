@@ -8,10 +8,11 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { UartUART_DEVICE_SCHEMA } from "./uart.js";
-import { SensorSENSOR_SCHEMA } from "./sensor.js";
-import { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { UartUART_DEVICE_SCHEMA } from "./uart.js";
+import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
 export class Vbus extends BaseComponent<VbusConfig> {
     componentName: string = "vbus";

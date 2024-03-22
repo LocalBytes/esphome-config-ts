@@ -8,10 +8,11 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { CorePositiveTimePeriodMicroseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import { RemoteBaseCANALSAT_SCHEMA, RemoteBaseRC_SWITCH_PROTOCOL_SCHEMA } from "./remote_base.js";
-import { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { CorePositiveTimePeriodMicroseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { RemoteBaseCANALSAT_SCHEMA, RemoteBaseRC_SWITCH_PROTOCOL_SCHEMA } from "./remote_base.js";
+import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
 export class RemoteReceiver extends BaseComponent<RemoteReceiverConfig> {
     componentName: string = "remote_receiver";

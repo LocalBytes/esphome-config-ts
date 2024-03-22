@@ -8,8 +8,9 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 
 export class A01nyubSensor extends BaseComponent<A01nyubSensorConfig> {
     componentName: string = "a01nyub.sensor";

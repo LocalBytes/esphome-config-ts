@@ -8,9 +8,10 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { Ssd1327BaseSSD1327_SCHEMA } from "./ssd1327_base.js";
-import { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { Ssd1327BaseSSD1327_SCHEMA } from "./ssd1327_base.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Ssd1327I2cDisplay extends BaseComponent<Ssd1327I2cDisplayConfig> {
     componentName: string = "ssd1327_i2c.display";

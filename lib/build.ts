@@ -36,10 +36,8 @@ files.forEach(file => {
 
     console.debug(`Generating ${file}...`);
 
-    source.addImportDeclaration({
-        namedImports: ["ID", "Pin", "BaseComponent"],
-        moduleSpecifier: "../base.js",
-    })
+    source.addImportDeclaration({namedImports: ["ID", "Pin"], moduleSpecifier: "../base.js", isTypeOnly: true})
+    source.addImportDeclaration({namedImports: ["BaseComponent"], moduleSpecifier: "../base.js"})
 
     Object.entries(config).forEach(([key, value]) => {
 

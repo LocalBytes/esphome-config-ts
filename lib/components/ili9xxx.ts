@@ -8,9 +8,10 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
-import { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Ili9xxxDisplay extends BaseComponent<Ili9xxxDisplayConfig> {
     componentName: string = "ili9xxx.display";

@@ -8,8 +8,9 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { LcdBaseLCD_SCHEMA } from "./lcd_base.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { LcdBaseLCD_SCHEMA } from "./lcd_base.js";
 
 export class LcdPcf8574Display extends BaseComponent<LcdPcf8574DisplayConfig> {
     componentName: string = "lcd_pcf8574.display";

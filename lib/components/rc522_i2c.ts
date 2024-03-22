@@ -8,8 +8,9 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { Rc522RC522_SCHEMA } from "./rc522.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { Rc522RC522_SCHEMA } from "./rc522.js";
 
 export class Rc522I2c extends BaseComponent<Rc522I2cConfig> {
     componentName: string = "rc522_i2c";

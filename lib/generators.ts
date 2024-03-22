@@ -1,11 +1,11 @@
 import {
     ClassDeclaration,
-    OptionalKind,
-    PropertySignatureStructure,
+    type OptionalKind,
+    type PropertySignatureStructure,
     SourceFile,
     TypeAliasDeclaration,
-    WriterFunction,
-    WriterFunctionOrValue,
+    type WriterFunction,
+    type WriterFunctionOrValue,
     Writers
 } from "ts-morph";
 import {fileNameFromComponent, notEmpty, toUpperCamelCase} from "./utils.js";
@@ -102,15 +102,14 @@ function generateConfig(project: SourceFile, name: string, json: any) {
     return "any";
 }
 
-function generateSchema(project: SourceFile, name: string, json: any) {
-    let addedInterface = project.addInterface({
+function generateSchema(file: SourceFile, name: string, json: any) {
+    let addedInterface = file.addInterface({
         name, isExported: true,
-
     });
 
     let properties = Object.entries((json.schema ?? json).config_vars ?? {})
         .map(([key, value]: [string, any]) => {
-            let type = generateConfig(project, name + toUpperCamelCase(key), value);
+            let type = generateConfig(file, name + toUpperCamelCase(key), value);
 
             if (!type) {
                 return null;
@@ -130,12 +129,16 @@ function generateSchema(project: SourceFile, name: string, json: any) {
         let extensionName = toUpperCamelCase(extension).replace(".", "");
         let firstDot = fileNameFromComponent(extension);
 
-        if (project.getBaseNameWithoutExtension() !== firstDot) {
-            let imp = project.getImportDeclaration(`./${firstDot}.js`)
-                ?? project.addImportDeclaration({moduleSpecifier: `./${firstDot}.js`});
-
-            if (!imp.getNamedImports().find(e => e.getName() === extensionName)) {
+        if (file.getBaseNameWithoutExtension() !== firstDot) {
+            let imp = file.getImportDeclaration(`./${firstDot}.js`)
+            if (imp && !imp.getNamedImports().find(i => i.getName() === extensionName)){
                 imp.addNamedImport(extensionName);
+            } else if (!imp) {
+                file.addImportDeclaration({
+                    moduleSpecifier: `./${firstDot}.js`,
+                    namedImports: [extensionName],
+                    isTypeOnly: true
+                });
             }
         }
         addedInterface.addExtends(extensionName);

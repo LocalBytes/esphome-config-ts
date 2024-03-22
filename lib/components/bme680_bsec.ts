@@ -8,10 +8,11 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { CorePositiveTimePeriodMinutes } from "./esphome.js";
-import { SensorSENSOR_SCHEMA } from "./sensor.js";
-import { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { CorePositiveTimePeriodMinutes } from "./esphome.js";
+import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
 export class Bme680Bsec extends BaseComponent<Bme680BsecConfig> {
     componentName: string = "bme680_bsec";

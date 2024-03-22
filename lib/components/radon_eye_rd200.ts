@@ -8,10 +8,11 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { SensorSENSOR_SCHEMA } from "./sensor.js";
-import { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import { BleClientBLE_CLIENT_SCHEMA } from "./ble_client.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { BleClientBLE_CLIENT_SCHEMA } from "./ble_client.js";
 
 export class RadonEyeRd200Sensor extends BaseComponent<RadonEyeRd200SensorConfig> {
     componentName: string = "radon_eye_rd200.sensor";

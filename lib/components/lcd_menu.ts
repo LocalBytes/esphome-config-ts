@@ -8,8 +8,9 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { DisplayMenuBaseDISPLAY_MENU_BASE_SCHEMA } from "./display_menu_base.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { DisplayMenuBaseDISPLAY_MENU_BASE_SCHEMA } from "./display_menu_base.js";
 
 export class LcdMenu extends BaseComponent<LcdMenuConfig> {
     componentName: string = "lcd_menu";

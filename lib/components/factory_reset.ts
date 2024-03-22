@@ -8,10 +8,11 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { ButtonBUTTON_SCHEMA } from "./button.js";
-import { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import { SwitchSWITCH_SCHEMA } from "./switch.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { ButtonBUTTON_SCHEMA } from "./button.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SwitchSWITCH_SCHEMA } from "./switch.js";
 
 export class FactoryResetButton extends BaseComponent<FactoryResetButtonConfig> {
     componentName: string = "factory_reset.button";

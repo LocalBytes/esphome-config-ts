@@ -1,6 +1,6 @@
 import * as yaml from "js-yaml";
 
-import {BaseComponent, SynthComponent, VirtualComponent} from "./base.js";
+import {BaseComponent, type SynthComponent, VirtualComponent} from "./base.js";
 
 import {Wifi} from "./components/wifi.js";
 import {CaptivePortal} from "./components/captive_portal.js";

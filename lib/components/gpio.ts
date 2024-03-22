@@ -8,11 +8,12 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import { CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
-import { OutputBINARY_OUTPUT_SCHEMA } from "./output.js";
-import { Switch_SWITCH_SCHEMA } from "./switch.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
+import type { OutputBINARY_OUTPUT_SCHEMA } from "./output.js";
+import type { Switch_SWITCH_SCHEMA } from "./switch.js";
 
 export class GpioBinarySensor extends BaseComponent<GpioBinarySensorConfig> {
     componentName: string = "gpio.binary_sensor";

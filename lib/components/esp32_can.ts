@@ -8,8 +8,9 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { CanbusCANBUS_SCHEMA } from "./canbus.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { CanbusCANBUS_SCHEMA } from "./canbus.js";
 
 export class Esp32CanCanbus extends BaseComponent<Esp32CanCanbusConfig> {
     componentName: string = "esp32_can.canbus";

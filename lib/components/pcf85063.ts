@@ -8,8 +8,9 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { TimeTIME_SCHEMA } from "./time.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { TimeTIME_SCHEMA } from "./time.js";
 
 export class Pcf85063Time extends BaseComponent<Pcf85063TimeConfig> {
     componentName: string = "pcf85063.time";

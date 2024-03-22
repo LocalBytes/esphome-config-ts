@@ -8,9 +8,10 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { DisplayBASIC_DISPLAY_SCHEMA } from "./display.js";
-import { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { DisplayBASIC_DISPLAY_SCHEMA } from "./display.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Max7219Display extends BaseComponent<Max7219DisplayConfig> {
     componentName: string = "max7219.display";

@@ -8,10 +8,11 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { Sm10bitBaseSM10BIT_BASE_CONFIG_SCHEMA } from "./sm10bit_base.js";
-import { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
-import { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { Sm10bitBaseSM10BIT_BASE_CONFIG_SCHEMA } from "./sm10bit_base.js";
+import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Sm2235 extends BaseComponent<Sm2235Config> {
     componentName: string = "sm2235";

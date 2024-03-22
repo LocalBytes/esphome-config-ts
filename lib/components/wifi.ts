@@ -8,8 +8,9 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { CorePositiveTimePeriodMilliseconds } from "./esphome.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { CorePositiveTimePeriodMilliseconds } from "./esphome.js";
 
 export class Wifi extends BaseComponent<WifiConfig> {
     componentName: string = "wifi";

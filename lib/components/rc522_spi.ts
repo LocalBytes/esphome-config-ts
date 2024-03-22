@@ -8,9 +8,10 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { Rc522RC522_SCHEMA } from "./rc522.js";
-import { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { Rc522RC522_SCHEMA } from "./rc522.js";
+import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
 export class Rc522Spi extends BaseComponent<Rc522SpiConfig> {
     componentName: string = "rc522_spi";

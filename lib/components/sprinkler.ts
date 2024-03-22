@@ -8,10 +8,11 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { Switch_SWITCH_SCHEMA } from "./switch.js";
-import { CorePositiveTimePeriodSeconds, CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
-import { NumberNUMBER_SCHEMA } from "./number.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { Switch_SWITCH_SCHEMA } from "./switch.js";
+import type { CorePositiveTimePeriodSeconds, CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
+import type { NumberNUMBER_SCHEMA } from "./number.js";
 
 export class Sprinkler extends BaseComponent<SprinklerConfig> {
     componentName: string = "sprinkler";

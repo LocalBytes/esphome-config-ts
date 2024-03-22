@@ -8,9 +8,10 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import { LightADDRESSABLE_LIGHT_SCHEMA } from "./light.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { LightADDRESSABLE_LIGHT_SCHEMA } from "./light.js";
 
 export class PartitionLight extends BaseComponent<PartitionLightConfig> {
     componentName: string = "partition.light";

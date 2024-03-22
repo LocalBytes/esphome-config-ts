@@ -8,8 +8,9 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { Pn532PN532_SCHEMA } from "./pn532.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { Pn532PN532_SCHEMA } from "./pn532.js";
 
 export class Pn532Spi extends BaseComponent<Pn532SpiConfig> {
     componentName: string = "pn532_spi";

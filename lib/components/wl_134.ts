@@ -8,9 +8,10 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
-import { UartUART_DEVICE_SCHEMA } from "./uart.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { UartUART_DEVICE_SCHEMA } from "./uart.js";
 
 export class Wl_134TextSensor extends BaseComponent<Wl_134TextSensorConfig> {
     componentName: string = "wl_134.text_sensor";

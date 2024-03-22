@@ -8,15 +8,16 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { SensorSENSOR_SCHEMA } from "./sensor.js";
-import { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import { ClimateCLIMATE_SCHEMA } from "./climate.js";
-import { CoverCOVER_SCHEMA } from "./cover.js";
-import { LightADDRESSABLE_LIGHT_SCHEMA } from "./light.js";
-import { OutputBINARY_OUTPUT_SCHEMA, OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
-import { Switch_SWITCH_SCHEMA } from "./switch.js";
-import { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { ClimateCLIMATE_SCHEMA } from "./climate.js";
+import type { CoverCOVER_SCHEMA } from "./cover.js";
+import type { LightADDRESSABLE_LIGHT_SCHEMA } from "./light.js";
+import type { OutputBINARY_OUTPUT_SCHEMA, OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
+import type { Switch_SWITCH_SCHEMA } from "./switch.js";
+import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
 export class CustomSensor extends BaseComponent<CustomSensorConfig> {
     componentName: string = "custom.sensor";

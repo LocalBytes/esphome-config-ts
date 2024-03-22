@@ -8,10 +8,11 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { CoreTimePeriodDict, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import { SensorSENSOR_SCHEMA } from "./sensor.js";
-import { ClimateCLIMATE_SCHEMA } from "./climate.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { CoreTimePeriodDict, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { ClimateCLIMATE_SCHEMA } from "./climate.js";
 
 export class MideaClimate extends BaseComponent<MideaClimateConfig> {
     componentName: string = "midea.climate";

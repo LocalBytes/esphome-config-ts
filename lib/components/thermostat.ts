@@ -8,9 +8,10 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { CorePositiveTimePeriodSeconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import { ClimateCLIMATE_SCHEMA } from "./climate.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { CorePositiveTimePeriodSeconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { ClimateCLIMATE_SCHEMA } from "./climate.js";
 
 export class ThermostatClimate extends BaseComponent<ThermostatClimateConfig> {
     componentName: string = "thermostat.climate";

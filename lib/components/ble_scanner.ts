@@ -8,9 +8,10 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
-import { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class BleScannerTextSensor extends BaseComponent<BleScannerTextSensorConfig> {
     componentName: string = "ble_scanner.text_sensor";

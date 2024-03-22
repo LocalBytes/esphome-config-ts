@@ -8,10 +8,11 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { SensorSENSOR_SCHEMA } from "./sensor.js";
-import { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
 export class HydreonRgxxSensor extends BaseComponent<HydreonRgxxSensorConfig> {
     componentName: string = "hydreon_rgxx.sensor";

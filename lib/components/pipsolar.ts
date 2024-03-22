@@ -8,13 +8,14 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import { SensorSENSOR_SCHEMA } from "./sensor.js";
-import { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
-import { Switch_SWITCH_SCHEMA } from "./switch.js";
-import { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
+import type { Switch_SWITCH_SCHEMA } from "./switch.js";
+import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
 export class Pipsolar extends BaseComponent<PipsolarConfig> {
     componentName: string = "pipsolar";

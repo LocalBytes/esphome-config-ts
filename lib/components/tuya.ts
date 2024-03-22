@@ -8,18 +8,19 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import { SensorSENSOR_SCHEMA } from "./sensor.js";
-import { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import { ClimateCLIMATE_SCHEMA } from "./climate.js";
-import { CoverCOVER_SCHEMA } from "./cover.js";
-import { FanFAN_SCHEMA } from "./fan.js";
-import { LightBRIGHTNESS_ONLY_LIGHT_SCHEMA } from "./light.js";
-import { NumberNUMBER_SCHEMA } from "./number.js";
-import { SelectSELECT_SCHEMA } from "./select.js";
-import { Switch_SWITCH_SCHEMA } from "./switch.js";
-import { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { ClimateCLIMATE_SCHEMA } from "./climate.js";
+import type { CoverCOVER_SCHEMA } from "./cover.js";
+import type { FanFAN_SCHEMA } from "./fan.js";
+import type { LightBRIGHTNESS_ONLY_LIGHT_SCHEMA } from "./light.js";
+import type { NumberNUMBER_SCHEMA } from "./number.js";
+import type { SelectSELECT_SCHEMA } from "./select.js";
+import type { Switch_SWITCH_SCHEMA } from "./switch.js";
+import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
 export class Tuya extends BaseComponent<TuyaConfig> {
     componentName: string = "tuya";

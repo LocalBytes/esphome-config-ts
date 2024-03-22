@@ -8,8 +8,9 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { CoreSOURCE_SCHEMA } from "./esphome.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { CoreSOURCE_SCHEMA } from "./esphome.js";
 
 export class ExternalComponents extends BaseComponent<ExternalComponentsConfig> {
     componentName: string = "external_components";
@@ -21,4 +22,5 @@ export interface ExternalComponentsConfig {
     components?: string[];
 }
 
-export type ExternalComponentsConfigSource = CoreSOURCE_SCHEMA & {};
+export type ExternalComponentsConfigSource = CoreSOURCE_SCHEMA & {
+}

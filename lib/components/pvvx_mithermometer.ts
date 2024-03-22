@@ -8,12 +8,13 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { SensorSENSOR_SCHEMA } from "./sensor.js";
-import { Esp32BleTrackerESP_BLE_DEVICE_SCHEMA } from "./esp32_ble_tracker.js";
-import { CoreCOMPONENT_SCHEMA, CoreTimePeriodDict, CorePositiveTimePeriodSeconds } from "./esphome.js";
-import { DisplayBASIC_DISPLAY_SCHEMA } from "./display.js";
-import { BleClientBLE_CLIENT_SCHEMA } from "./ble_client.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Esp32BleTrackerESP_BLE_DEVICE_SCHEMA } from "./esp32_ble_tracker.js";
+import type { CoreCOMPONENT_SCHEMA, CoreTimePeriodDict, CorePositiveTimePeriodSeconds } from "./esphome.js";
+import type { DisplayBASIC_DISPLAY_SCHEMA } from "./display.js";
+import type { BleClientBLE_CLIENT_SCHEMA } from "./ble_client.js";
 
 export class PvvxMithermometerSensor extends BaseComponent<PvvxMithermometerSensorConfig> {
     componentName: string = "pvvx_mithermometer.sensor";

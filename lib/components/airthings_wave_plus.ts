@@ -8,9 +8,10 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { SensorSENSOR_SCHEMA } from "./sensor.js";
-import { AirthingsWaveBaseBASE_SCHEMA } from "./airthings_wave_base.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { AirthingsWaveBaseBASE_SCHEMA } from "./airthings_wave_base.js";
 
 export class AirthingsWavePlusSensor extends BaseComponent<AirthingsWavePlusSensorConfig> {
     componentName: string = "airthings_wave_plus.sensor";

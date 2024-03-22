@@ -8,8 +8,9 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Sn74hc595 extends BaseComponent<Sn74hc595Config> {
     componentName: string = "sn74hc595";

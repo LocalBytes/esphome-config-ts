@@ -8,9 +8,10 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { Ssd1306BaseSSD1306_SCHEMA } from "./ssd1306_base.js";
-import { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { Ssd1306BaseSSD1306_SCHEMA } from "./ssd1306_base.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Ssd1306SpiDisplay extends BaseComponent<Ssd1306SpiDisplayConfig> {
     componentName: string = "ssd1306_spi.display";

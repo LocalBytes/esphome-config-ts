@@ -8,10 +8,11 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import { TouchscreenTOUCHSCREEN_SCHEMA } from "./touchscreen.js";
-import { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { TouchscreenTOUCHSCREEN_SCHEMA } from "./touchscreen.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Tt21100BinarySensor extends BaseComponent<Tt21100BinarySensorConfig> {
     componentName: string = "tt21100.binary_sensor";

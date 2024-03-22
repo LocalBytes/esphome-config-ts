@@ -8,8 +8,9 @@
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes) 2023
  **/
-import { ID, Pin, BaseComponent } from "../base.js";
-import { LightADDRESSABLE_LIGHT_SCHEMA } from "./light.js";
+import type { ID, Pin } from "../base.js";
+import { BaseComponent } from "../base.js";
+import type { LightADDRESSABLE_LIGHT_SCHEMA } from "./light.js";
 
 export class Rp2040PioLedStripLight extends BaseComponent<Rp2040PioLedStripLightConfig> {
     componentName: string = "rp2040_pio_led_strip.light";

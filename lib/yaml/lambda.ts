@@ -12,9 +12,7 @@ export const lambda = (content: string) => new Lambda(content);
 
 export const lambdaYamlType = new yaml.Type("!lambda", {
     kind: "scalar",
-    represent: (data: object) => {
-        let tData = data as unknown as Lambda;
-        return tData.content;
-    },
+    construct: (data: string) => lambda(data),
+    represent: (data: object) => (data as unknown as Lambda).content,
     instanceOf: Lambda,
 })

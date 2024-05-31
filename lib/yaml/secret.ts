@@ -12,9 +12,7 @@ export const secret = (content: string) => new Secret(content);
 
 export const secretYamlType = new yaml.Type("!secret", {
     kind: "scalar",
-    represent: (data: object) => {
-        let tData = data as unknown as Secret;
-        return tData.content;
-    },
+    construct: (data: string) => secret(data),
+    represent: (data: object) => (data as unknown as Secret).content,
     instanceOf: Secret,
 })

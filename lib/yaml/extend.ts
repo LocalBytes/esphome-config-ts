@@ -12,9 +12,7 @@ export const extend = (content: string) => new Extend(content);
 
 export const extendYamlType = new yaml.Type("!extend", {
     kind: "scalar",
-    represent: (data: object) => {
-        let tData = data as unknown as Extend;
-        return tData.content;
-    },
+    construct: (data: string) => extend(data),
+    represent: (data: object) => (data as unknown as Extend).content,
     instanceOf: Extend,
 })

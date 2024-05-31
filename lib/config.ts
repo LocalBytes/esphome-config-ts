@@ -1,5 +1,3 @@
-import * as yaml from "js-yaml";
-
 import {BaseComponent, type Component, type SynthComponent} from "./base.js";
 
 import {Wifi} from "./components/wifi.js";
@@ -8,9 +6,8 @@ import {Logger} from "./components/logger.js";
 import {WebServer} from "./components/web_server.js";
 import {Api} from "./components/api.js";
 import {Ota} from "./components/ota.js";
-import {extendYamlType} from "./yaml/extend.js";
-import {lambdaYamlType} from "./yaml/lambda.js";
-import {secretYamlType} from "./yaml/secret.js";
+
+import espHomeYaml from "./yaml/index.js";
 
 export class Configuration {
     components: Component[] = [];
@@ -63,13 +60,7 @@ export class Configuration {
     }
 
     synthYaml(): string {
-        return yaml.dump(this.synth(), {
-            schema: yaml.DEFAULT_SCHEMA.extend([
-                extendYamlType,
-                lambdaYamlType,
-                secretYamlType,
-            ])
-        })
+        return espHomeYaml.dump(this.synth());
     }
 
     private synthRecursive(components: BaseComponent[]): SynthComponent[] {

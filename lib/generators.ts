@@ -131,7 +131,7 @@ function generateSchema(file: SourceFile, name: string, json: any) {
 
         if (file.getBaseNameWithoutExtension() !== firstDot) {
             let imp = file.getImportDeclaration(`./${firstDot}.js`)
-            if (imp && !imp.getNamedImports().find(i => i.getName() === extensionName)){
+            if (imp && !imp.getNamedImports().find(i => i.getName() === extensionName)) {
                 imp.addNamedImport(extensionName);
             } else if (!imp) {
                 file.addImportDeclaration({

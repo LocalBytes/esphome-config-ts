@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: cse7761.json 
+ *
+ * Schema: cse7761.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/cse7761
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Cse7761Sensor extends BaseComponent<Cse7761SensorConfig> {
+export class Cse7761Sensor extends EsphomeComponent<Cse7761SensorConfig> {
     componentName: string = "cse7761.sensor";
 }
 

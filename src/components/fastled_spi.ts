@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: fastled_spi.json 
+ *
+ * Schema: fastled_spi.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/fastled_spi
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { FastledBaseBASE_SCHEMA } from "./fastled_base.js";
 
-export class FastledSpiLight extends BaseComponent<FastledSpiLightConfig> {
+export class FastledSpiLight extends EsphomeComponent<FastledSpiLightConfig> {
     componentName: string = "fastled_spi.light";
 }
 

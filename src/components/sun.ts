@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: sun.json 
+ *
+ * Schema: sun.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sun
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
-export class Sun extends BaseComponent<SunConfig> {
+export class Sun extends EsphomeComponent<SunConfig> {
     componentName: string = "sun";
 }
 
@@ -26,7 +26,7 @@ export interface SunConfig {
     on_sunset?: object[];
 }
 
-export class SunSensor extends BaseComponent<SunSensorConfig> {
+export class SunSensor extends EsphomeComponent<SunSensorConfig> {
     componentName: string = "sun.sensor";
 }
 
@@ -41,7 +41,7 @@ export type SunSensorConfig = {
         update_interval?: any;
     } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class SunTextSensor extends BaseComponent<SunTextSensorConfig> {
+export class SunTextSensor extends EsphomeComponent<SunTextSensorConfig> {
     componentName: string = "sun.text_sensor";
 }
 

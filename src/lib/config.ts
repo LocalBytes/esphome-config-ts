@@ -1,4 +1,4 @@
-import {Component, type SynthComponent} from "./base.js";
+import {BaseComponent, type SynthComponent} from "./base.js";
 
 import {Wifi} from "@/components/wifi.js";
 import {CaptivePortal} from "@/components/captive_portal.js";
@@ -11,9 +11,9 @@ import espHomeYaml from "@/yaml/index.js";
 import {type ArrayMaybe, ensureArray} from "@/generator/utils.js";
 
 export class Configuration {
-    components: Component[] = [];
+    components: BaseComponent[] = [];
 
-    updateComponent(component: ArrayMaybe<Component>) {
+    updateComponent(component: ArrayMaybe<BaseComponent>) {
         let components = ensureArray(component);
 
         components.forEach(component => {
@@ -28,7 +28,7 @@ export class Configuration {
         return this;
     }
 
-    addComponent(component: Component | Component[]) {
+    addComponent(component: BaseComponent | BaseComponent[]) {
         this.components.push(...(Array.isArray(component) ? component : [component]));
         return this;
     }
@@ -65,10 +65,10 @@ export class Configuration {
         return espHomeYaml.dump(this.synth());
     }
 
-    private synthRecursive(components: Component[]): Array<SynthComponent> {
+    private synthRecursive(components: BaseComponent[]): Array<SynthComponent> {
         return components.flatMap(component => {
             return component.synth().flatMap(result => {
-                return result instanceof Component ? this.synthRecursive([result]) : [result];
+                return result instanceof BaseComponent ? this.synthRecursive([result]) : [result];
             });
         });
     }

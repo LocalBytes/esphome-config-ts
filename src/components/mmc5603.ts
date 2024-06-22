@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: mmc5603.json 
+ *
+ * Schema: mmc5603.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/mmc5603
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Mmc5603Sensor extends BaseComponent<Mmc5603SensorConfig> {
+export class Mmc5603Sensor extends EsphomeComponent<Mmc5603SensorConfig> {
     componentName: string = "mmc5603.sensor";
 }
 

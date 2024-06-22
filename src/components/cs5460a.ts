@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: cs5460a.json 
+ *
+ * Schema: cs5460a.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/cs5460a
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Cs5460aSensor extends BaseComponent<Cs5460aSensorConfig> {
+export class Cs5460aSensor extends EsphomeComponent<Cs5460aSensorConfig> {
     componentName: string = "cs5460a.sensor";
 }
 
@@ -54,6 +54,6 @@ export interface Cs5460aSensorConfig extends CoreCOMPONENT_SCHEMA {
     cs_pin?: Pin;
 }
 
-export abstract class Cs5460a extends BaseComponent {
+export abstract class Cs5460a extends EsphomeComponent {
     componentName: string = "cs5460a";
 }

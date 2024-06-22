@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: as3935.json 
+ *
+ * Schema: as3935.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/as3935
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
-export abstract class As3935 extends BaseComponent {
+export abstract class As3935 extends EsphomeComponent {
     componentName: string = "as3935";
 }
 
@@ -33,7 +33,7 @@ export interface As3935AS3935_SCHEMA {
     capacitance?: number;
 }
 
-export class As3935Sensor extends BaseComponent<As3935SensorConfig> {
+export class As3935Sensor extends EsphomeComponent<As3935SensorConfig> {
     componentName: string = "as3935.sensor";
 }
 
@@ -54,7 +54,7 @@ export interface As3935SensorConfig extends CoreCOMPONENT_SCHEMA {
     lightning_energy?: As3935SensorConfigLightningEnergy;
 }
 
-export class As3935BinarySensor extends BaseComponent<As3935BinarySensorConfig> {
+export class As3935BinarySensor extends EsphomeComponent<As3935BinarySensorConfig> {
     componentName: string = "as3935.binary_sensor";
 }
 

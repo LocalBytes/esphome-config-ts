@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: alarm_control_panel.json 
+ *
+ * Schema: alarm_control_panel.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/alarm_control_panel
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreENTITY_BASE_SCHEMA } from "./esphome.js";
 
-export abstract class AlarmControlPanel extends BaseComponent {
+export abstract class AlarmControlPanel extends EsphomeComponent {
     componentName: string = "alarm_control_panel";
 }
 

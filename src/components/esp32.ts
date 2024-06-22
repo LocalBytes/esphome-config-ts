@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: esp32.json 
+ *
+ * Schema: esp32.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/esp32
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreSOURCE_SCHEMA } from "./esphome.js";
 
-export class Esp32 extends BaseComponent<Esp32Config> {
+export class Esp32 extends EsphomeComponent<Esp32Config> {
     componentName: string = "esp32";
 }
 

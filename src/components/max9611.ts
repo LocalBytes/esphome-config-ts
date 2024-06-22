@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: max9611.json 
+ *
+ * Schema: max9611.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/max9611
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Max9611Sensor extends BaseComponent<Max9611SensorConfig> {
+export class Max9611Sensor extends EsphomeComponent<Max9611SensorConfig> {
     componentName: string = "max9611.sensor";
 }
 

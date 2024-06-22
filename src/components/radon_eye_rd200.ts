@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: radon_eye_rd200.json 
+ *
+ * Schema: radon_eye_rd200.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/radon_eye_rd200
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { BleClientBLE_CLIENT_SCHEMA } from "./ble_client.js";
 
-export class RadonEyeRd200Sensor extends BaseComponent<RadonEyeRd200SensorConfig> {
+export class RadonEyeRd200Sensor extends EsphomeComponent<RadonEyeRd200SensorConfig> {
     componentName: string = "radon_eye_rd200.sensor";
 }
 

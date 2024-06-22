@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: am43.json 
+ *
+ * Schema: am43.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/am43
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { CoverCOVER_SCHEMA } from "./cover.js";
 
-export class Am43Sensor extends BaseComponent<Am43SensorConfig> {
+export class Am43Sensor extends EsphomeComponent<Am43SensorConfig> {
     componentName: string = "am43.sensor";
 }
 
@@ -38,7 +38,7 @@ export interface Am43SensorConfig extends CoreCOMPONENT_SCHEMA {
     update_interval?: any;
 }
 
-export class Am43Cover extends BaseComponent<Am43CoverConfig> {
+export class Am43Cover extends EsphomeComponent<Am43CoverConfig> {
     componentName: string = "am43.cover";
 }
 

@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: hdc1080.json 
+ *
+ * Schema: hdc1080.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/hdc1080
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Hdc1080Sensor extends BaseComponent<Hdc1080SensorConfig> {
+export class Hdc1080Sensor extends EsphomeComponent<Hdc1080SensorConfig> {
     componentName: string = "hdc1080.sensor";
 }
 

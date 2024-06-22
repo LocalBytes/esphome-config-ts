@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: debug.json 
+ *
+ * Schema: debug.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/debug
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
-export class Debug extends BaseComponent<DebugConfig> {
+export class Debug extends EsphomeComponent<DebugConfig> {
     componentName: string = "debug";
 }
 
@@ -22,7 +22,7 @@ export interface DebugConfig extends CoreCOMPONENT_SCHEMA {
     update_interval?: any;
 }
 
-export class DebugSensor extends BaseComponent<DebugSensorConfig> {
+export class DebugSensor extends EsphomeComponent<DebugSensorConfig> {
     componentName: string = "debug.sensor";
 }
 
@@ -62,7 +62,7 @@ export interface DebugSensorConfig {
     loop_time?: DebugSensorConfigLoopTime;
 }
 
-export class DebugTextSensor extends BaseComponent<DebugTextSensorConfig> {
+export class DebugTextSensor extends EsphomeComponent<DebugTextSensorConfig> {
     componentName: string = "debug.text_sensor";
 }
 

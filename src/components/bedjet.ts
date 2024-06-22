@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: bedjet.json 
+ *
+ * Schema: bedjet.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/bedjet
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { ClimateCLIMATE_SCHEMA } from "./climate.js";
 import type { FanFAN_SCHEMA } from "./fan.js";
 
-export class Bedjet extends BaseComponent<BedjetConfig> {
+export class Bedjet extends EsphomeComponent<BedjetConfig> {
     componentName: string = "bedjet";
 }
 
@@ -31,7 +31,7 @@ export interface BedjetBEDJET_CLIENT_SCHEMA {
     bedjet_id: ID;
 }
 
-export class BedjetClimate extends BaseComponent<BedjetClimateConfig> {
+export class BedjetClimate extends EsphomeComponent<BedjetClimateConfig> {
     componentName: string = "bedjet.climate";
 }
 
@@ -42,7 +42,7 @@ export type BedjetClimateConfig = {
         update_interval?: any;
     } & ClimateCLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA & BedjetBEDJET_CLIENT_SCHEMA;
 
-export class BedjetFan extends BaseComponent<BedjetFanConfig> {
+export class BedjetFan extends EsphomeComponent<BedjetFanConfig> {
     componentName: string = "bedjet.fan";
 }
 

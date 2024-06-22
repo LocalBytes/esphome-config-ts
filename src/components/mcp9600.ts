@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: mcp9600.json 
+ *
+ * Schema: mcp9600.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/mcp9600
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Mcp9600Sensor extends BaseComponent<Mcp9600SensorConfig> {
+export class Mcp9600Sensor extends EsphomeComponent<Mcp9600SensorConfig> {
     componentName: string = "mcp9600.sensor";
 }
 

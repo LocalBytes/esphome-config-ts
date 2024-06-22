@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: time_based.json 
+ *
+ * Schema: time_based.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/time_based
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { CoverCOVER_SCHEMA } from "./cover.js";
 
-export class TimeBasedCover extends BaseComponent<TimeBasedCoverConfig> {
+export class TimeBasedCover extends EsphomeComponent<TimeBasedCoverConfig> {
     componentName: string = "time_based.cover";
 }
 

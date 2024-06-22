@@ -1,20 +1,20 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: gpio.json 
+ *
+ * Schema: gpio.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/gpio
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 import type { CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
 import type { OutputBINARY_OUTPUT_SCHEMA } from "./output.js";
 import type { Switch_SWITCH_SCHEMA } from "./switch.js";
 
-export class GpioBinarySensor extends BaseComponent<GpioBinarySensorConfig> {
+export class GpioBinarySensor extends EsphomeComponent<GpioBinarySensorConfig> {
     componentName: string = "gpio.binary_sensor";
 }
 
@@ -23,7 +23,7 @@ export type GpioBinarySensorConfig = {
         pin: Pin;
     } & BinarySensorBINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class GpioOutput extends BaseComponent<GpioOutputConfig> {
+export class GpioOutput extends EsphomeComponent<GpioOutputConfig> {
     componentName: string = "gpio.output";
 }
 
@@ -32,7 +32,7 @@ export type GpioOutputConfig = {
         pin: Pin;
     } & OutputBINARY_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class GpioSwitch extends BaseComponent<GpioSwitchConfig> {
+export class GpioSwitch extends EsphomeComponent<GpioSwitchConfig> {
     componentName: string = "gpio.switch";
 }
 

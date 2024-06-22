@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: hlw8012.json 
+ *
+ * Schema: hlw8012.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/hlw8012
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Hlw8012Sensor extends BaseComponent<Hlw8012SensorConfig> {
+export class Hlw8012Sensor extends EsphomeComponent<Hlw8012SensorConfig> {
     componentName: string = "hlw8012.sensor";
 }
 

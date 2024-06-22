@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: servo.json 
+ *
+ * Schema: servo.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/servo
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Servo extends BaseComponent<ServoConfig> {
+export class Servo extends EsphomeComponent<ServoConfig> {
     componentName: string = "servo";
 }
 

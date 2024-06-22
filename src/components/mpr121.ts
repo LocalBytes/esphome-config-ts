@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: mpr121.json 
+ *
+ * Schema: mpr121.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/mpr121
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
-export class Mpr121 extends BaseComponent<Mpr121Config> {
+export class Mpr121 extends EsphomeComponent<Mpr121Config> {
     componentName: string = "mpr121";
 }
 
@@ -26,7 +26,7 @@ export interface Mpr121Config extends CoreCOMPONENT_SCHEMA {
     address?: any;
 }
 
-export class Mpr121BinarySensor extends BaseComponent<Mpr121BinarySensorConfig> {
+export class Mpr121BinarySensor extends EsphomeComponent<Mpr121BinarySensorConfig> {
     componentName: string = "mpr121.binary_sensor";
 }
 

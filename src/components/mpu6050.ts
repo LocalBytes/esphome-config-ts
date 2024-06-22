@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: mpu6050.json 
+ *
+ * Schema: mpu6050.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/mpu6050
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Mpu6050Sensor extends BaseComponent<Mpu6050SensorConfig> {
+export class Mpu6050Sensor extends EsphomeComponent<Mpu6050SensorConfig> {
     componentName: string = "mpu6050.sensor";
 }
 

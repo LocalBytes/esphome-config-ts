@@ -1,16 +1,16 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: binary_sensor_map.json 
+ *
+ * Schema: binary_sensor_map.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/binary_sensor_map
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 
-export class BinarySensorMapSensor extends BaseComponent<BinarySensorMapSensorConfig> {
+export class BinarySensorMapSensor extends EsphomeComponent<BinarySensorMapSensorConfig> {
     componentName: string = "binary_sensor_map.sensor";
 }
 

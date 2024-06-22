@@ -1,14 +1,14 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: custom.json 
+ *
+ * Schema: custom.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/custom
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 import type { ClimateCLIMATE_SCHEMA } from "./climate.js";
@@ -18,7 +18,7 @@ import type { OutputBINARY_OUTPUT_SCHEMA, OutputFLOAT_OUTPUT_SCHEMA } from "./ou
 import type { Switch_SWITCH_SCHEMA } from "./switch.js";
 import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
-export class CustomSensor extends BaseComponent<CustomSensorConfig> {
+export class CustomSensor extends EsphomeComponent<CustomSensorConfig> {
     componentName: string = "custom.sensor";
 }
 
@@ -30,7 +30,7 @@ export interface CustomSensorConfig {
     sensors: CustomSensorConfigSensors[];
 }
 
-export class CustomBinarySensor extends BaseComponent<CustomBinarySensorConfig> {
+export class CustomBinarySensor extends EsphomeComponent<CustomBinarySensorConfig> {
     componentName: string = "custom.binary_sensor";
 }
 
@@ -42,7 +42,7 @@ export interface CustomBinarySensorConfig {
     binary_sensors: CustomBinarySensorConfigBinarySensors[];
 }
 
-export class CustomClimate extends BaseComponent<CustomClimateConfig> {
+export class CustomClimate extends EsphomeComponent<CustomClimateConfig> {
     componentName: string = "custom.climate";
 }
 
@@ -54,7 +54,7 @@ export interface CustomClimateConfig {
     climates: CustomClimateConfigClimates[];
 }
 
-export class CustomCover extends BaseComponent<CustomCoverConfig> {
+export class CustomCover extends EsphomeComponent<CustomCoverConfig> {
     componentName: string = "custom.cover";
 }
 
@@ -66,7 +66,7 @@ export interface CustomCoverConfig {
     covers: CustomCoverConfigCovers[];
 }
 
-export class CustomLight extends BaseComponent<CustomLightConfig> {
+export class CustomLight extends EsphomeComponent<CustomLightConfig> {
     componentName: string = "custom.light";
 }
 
@@ -78,7 +78,7 @@ export interface CustomLightConfig {
     lights: CustomLightConfigLights[];
 }
 
-export class CustomOutput extends BaseComponent<CustomOutputConfig> {
+export class CustomOutput extends EsphomeComponent<CustomOutputConfig> {
     componentName: string = "custom.output";
 }
 
@@ -106,7 +106,7 @@ export interface CustomOutputConfigFloat {
     outputs: CustomOutputConfigFloatOutputs[];
 }
 
-export class CustomSwitch extends BaseComponent<CustomSwitchConfig> {
+export class CustomSwitch extends EsphomeComponent<CustomSwitchConfig> {
     componentName: string = "custom.switch";
 }
 
@@ -123,7 +123,7 @@ export interface CustomSwitchConfig {
     switches: CustomSwitchConfigSwitches[];
 }
 
-export class CustomTextSensor extends BaseComponent<CustomTextSensorConfig> {
+export class CustomTextSensor extends EsphomeComponent<CustomTextSensorConfig> {
     componentName: string = "custom.text_sensor";
 }
 

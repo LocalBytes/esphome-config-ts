@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: ble_scanner.json 
+ *
+ * Schema: ble_scanner.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ble_scanner
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class BleScannerTextSensor extends BaseComponent<BleScannerTextSensorConfig> {
+export class BleScannerTextSensor extends EsphomeComponent<BleScannerTextSensorConfig> {
     componentName: string = "ble_scanner.text_sensor";
 }
 

@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: sm2135.json 
+ *
+ * Schema: sm2135.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sm2135
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
 
-export class Sm2135 extends BaseComponent<Sm2135Config> {
+export class Sm2135 extends EsphomeComponent<Sm2135Config> {
     componentName: string = "sm2135";
 }
 
@@ -27,7 +27,7 @@ export interface Sm2135Config extends CoreCOMPONENT_SCHEMA {
     cw_current?: Sm2135ConfigCwCurrent;
 }
 
-export class Sm2135Output extends BaseComponent<Sm2135OutputConfig> {
+export class Sm2135Output extends EsphomeComponent<Sm2135OutputConfig> {
     componentName: string = "sm2135.output";
 }
 

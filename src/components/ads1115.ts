@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: ads1115.json 
+ *
+ * Schema: ads1115.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ads1115
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 
-export class Ads1115 extends BaseComponent<Ads1115Config> {
+export class Ads1115 extends EsphomeComponent<Ads1115Config> {
     componentName: string = "ads1115";
 }
 
@@ -23,7 +23,7 @@ export interface Ads1115Config extends CoreCOMPONENT_SCHEMA {
     address: string;
 }
 
-export class Ads1115Sensor extends BaseComponent<Ads1115SensorConfig> {
+export class Ads1115Sensor extends EsphomeComponent<Ads1115SensorConfig> {
     componentName: string = "ads1115.sensor";
 }
 

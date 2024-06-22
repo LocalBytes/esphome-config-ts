@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: qmc5883l.json 
+ *
+ * Schema: qmc5883l.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/qmc5883l
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Qmc5883lSensor extends BaseComponent<Qmc5883lSensorConfig> {
+export class Qmc5883lSensor extends EsphomeComponent<Qmc5883lSensorConfig> {
     componentName: string = "qmc5883l.sensor";
 }
 

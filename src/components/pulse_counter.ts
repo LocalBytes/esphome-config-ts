@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: pulse_counter.json 
+ *
+ * Schema: pulse_counter.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/pulse_counter
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMicroseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 
-export class PulseCounterSensor extends BaseComponent<PulseCounterSensorConfig> {
+export class PulseCounterSensor extends EsphomeComponent<PulseCounterSensorConfig> {
     componentName: string = "pulse_counter.sensor";
 }
 
@@ -47,6 +47,6 @@ export type PulseCounterSensorConfig = {
         update_interval?: any;
     } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export abstract class PulseCounter extends BaseComponent {
+export abstract class PulseCounter extends EsphomeComponent {
     componentName: string = "pulse_counter";
 }

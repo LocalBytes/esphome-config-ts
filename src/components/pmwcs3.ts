@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: pmwcs3.json 
+ *
+ * Schema: pmwcs3.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/pmwcs3
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Pmwcs3Sensor extends BaseComponent<Pmwcs3SensorConfig> {
+export class Pmwcs3Sensor extends EsphomeComponent<Pmwcs3SensorConfig> {
     componentName: string = "pmwcs3.sensor";
 }
 
@@ -59,6 +59,6 @@ export interface Pmwcs3SensorPMWCS3_CALIBRATION_SCHEMA {
     id?: ID;
 }
 
-export abstract class Pmwcs3 extends BaseComponent {
+export abstract class Pmwcs3 extends EsphomeComponent {
     componentName: string = "pmwcs3";
 }

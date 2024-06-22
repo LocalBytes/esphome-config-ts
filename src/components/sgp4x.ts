@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: sgp4x.json 
+ *
+ * Schema: sgp4x.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sgp4x
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Sgp4xSensor extends BaseComponent<Sgp4xSensorConfig> {
+export class Sgp4xSensor extends EsphomeComponent<Sgp4xSensorConfig> {
     componentName: string = "sgp4x.sensor";
 }
 

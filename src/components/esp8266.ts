@@ -1,16 +1,16 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: esp8266.json 
+ *
+ * Schema: esp8266.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/esp8266
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 
-export class Esp8266 extends BaseComponent<Esp8266Config> {
+export class Esp8266 extends EsphomeComponent<Esp8266Config> {
     componentName: string = "esp8266";
 }
 

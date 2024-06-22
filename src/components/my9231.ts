@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: my9231.json 
+ *
+ * Schema: my9231.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/my9231
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
 
-export class My9231 extends BaseComponent<My9231Config> {
+export class My9231 extends EsphomeComponent<My9231Config> {
     componentName: string = "my9231";
 }
 
@@ -27,7 +27,7 @@ export interface My9231Config extends CoreCOMPONENT_SCHEMA {
     bit_depth?: My9231ConfigBitDepth;
 }
 
-export class My9231Output extends BaseComponent<My9231OutputConfig> {
+export class My9231Output extends EsphomeComponent<My9231OutputConfig> {
     componentName: string = "my9231.output";
 }
 

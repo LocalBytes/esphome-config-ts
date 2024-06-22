@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: esp32_rmt_led_strip.json 
+ *
+ * Schema: esp32_rmt_led_strip.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/esp32_rmt_led_strip
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMicroseconds } from "./esphome.js";
 import type { LightADDRESSABLE_LIGHT_SCHEMA } from "./light.js";
 
-export class Esp32RmtLedStripLight extends BaseComponent<Esp32RmtLedStripLightConfig> {
+export class Esp32RmtLedStripLight extends EsphomeComponent<Esp32RmtLedStripLightConfig> {
     componentName: string = "esp32_rmt_led_strip.light";
 }
 

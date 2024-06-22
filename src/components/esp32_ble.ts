@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: esp32_ble.json 
+ *
+ * Schema: esp32_ble.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/esp32_ble
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Esp32Ble extends BaseComponent<Esp32BleConfig> {
+export class Esp32Ble extends EsphomeComponent<Esp32BleConfig> {
     componentName: string = "esp32_ble";
 }
 

@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: ble_rssi.json 
+ *
+ * Schema: ble_rssi.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ble_rssi
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class BleRssiSensor extends BaseComponent<BleRssiSensorConfig> {
+export class BleRssiSensor extends EsphomeComponent<BleRssiSensorConfig> {
     componentName: string = "ble_rssi.sensor";
 }
 

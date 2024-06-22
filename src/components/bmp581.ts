@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: bmp581.json 
+ *
+ * Schema: bmp581.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/bmp581
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Bmp581Sensor extends BaseComponent<Bmp581SensorConfig> {
+export class Bmp581Sensor extends EsphomeComponent<Bmp581SensorConfig> {
     componentName: string = "bmp581.sensor";
 }
 

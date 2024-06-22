@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: fastled_base.json 
+ *
+ * Schema: fastled_base.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/fastled_base
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMicroseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { LightADDRESSABLE_LIGHT_SCHEMA } from "./light.js";
 
-export abstract class FastledBase extends BaseComponent {
+export abstract class FastledBase extends EsphomeComponent {
     componentName: string = "fastled_base";
 }
 

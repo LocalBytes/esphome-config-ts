@@ -18,7 +18,7 @@ export function handleIndex(project: SourceFile) {
     types = {
         idType: project.getTypeAliasOrThrow("ID"),
         pinType: project.getTypeAliasOrThrow("Pin"),
-        classType: project.getClassOrThrow("BaseComponent"),
+        classType: project.getClassOrThrow("EsphomeComponent"),
     };
 }
 

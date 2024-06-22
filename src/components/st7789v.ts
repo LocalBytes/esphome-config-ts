@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: st7789v.json 
+ *
+ * Schema: st7789v.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/st7789v
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class St7789vDisplay extends BaseComponent<St7789vDisplayConfig> {
+export class St7789vDisplay extends EsphomeComponent<St7789vDisplayConfig> {
     componentName: string = "st7789v.display";
 }
 

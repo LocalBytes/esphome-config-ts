@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: mpu6886.json 
+ *
+ * Schema: mpu6886.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/mpu6886
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Mpu6886Sensor extends BaseComponent<Mpu6886SensorConfig> {
+export class Mpu6886Sensor extends EsphomeComponent<Mpu6886SensorConfig> {
     componentName: string = "mpu6886.sensor";
 }
 

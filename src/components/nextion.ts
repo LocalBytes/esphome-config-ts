@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: nextion.json 
+ *
+ * Schema: nextion.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/nextion
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { DisplayBASIC_DISPLAY_SCHEMA } from "./display.js";
 
-export class NextionSensor extends BaseComponent<NextionSensorConfig> {
+export class NextionSensor extends EsphomeComponent<NextionSensorConfig> {
     componentName: string = "nextion.sensor";
 }
 
@@ -39,7 +39,7 @@ export type NextionSensorConfig = {
         update_interval?: any;
     } & SensorSENSOR_SCHEMA & NextionSensorCONFIG_SENSOR_COMPONENT_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class NextionBinarySensor extends BaseComponent<NextionBinarySensorConfig> {
+export class NextionBinarySensor extends EsphomeComponent<NextionBinarySensorConfig> {
     componentName: string = "nextion.binary_sensor";
 }
 
@@ -56,7 +56,7 @@ export interface NextionBinarySensorConfig {
     variable_name?: any;
 }
 
-export class NextionDisplay extends BaseComponent<NextionDisplayConfig> {
+export class NextionDisplay extends EsphomeComponent<NextionDisplayConfig> {
     componentName: string = "nextion.display";
 }
 
@@ -75,7 +75,7 @@ export type NextionDisplayConfig = {
         uart_id?: ID;
     } & DisplayBASIC_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class NextionSwitch extends BaseComponent<NextionSwitchConfig> {
+export class NextionSwitch extends EsphomeComponent<NextionSwitchConfig> {
     componentName: string = "nextion.switch";
 }
 
@@ -89,7 +89,7 @@ export interface NextionSwitchConfig extends NextionSensorCONFIG_SENSOR_COMPONEN
     background_pressed_color?: ID;
 }
 
-export class NextionTextSensor extends BaseComponent<NextionTextSensorConfig> {
+export class NextionTextSensor extends EsphomeComponent<NextionTextSensorConfig> {
     componentName: string = "nextion.text_sensor";
 }
 

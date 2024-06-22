@@ -1,21 +1,21 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: pvvx_mithermometer.json 
+ *
+ * Schema: pvvx_mithermometer.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/pvvx_mithermometer
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { Esp32BleTrackerESP_BLE_DEVICE_SCHEMA } from "./esp32_ble_tracker.js";
 import type { CoreCOMPONENT_SCHEMA, CoreTimePeriodDict, CorePositiveTimePeriodSeconds } from "./esphome.js";
 import type { DisplayBASIC_DISPLAY_SCHEMA } from "./display.js";
 import type { BleClientBLE_CLIENT_SCHEMA } from "./ble_client.js";
 
-export class PvvxMithermometerSensor extends BaseComponent<PvvxMithermometerSensorConfig> {
+export class PvvxMithermometerSensor extends EsphomeComponent<PvvxMithermometerSensorConfig> {
     componentName: string = "pvvx_mithermometer.sensor";
 }
 
@@ -67,7 +67,7 @@ export type PvvxMithermometerSensorConfig = {
         signal_strength?: PvvxMithermometerSensorConfigSignalStrength;
     } & Esp32BleTrackerESP_BLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class PvvxMithermometerDisplay extends BaseComponent<PvvxMithermometerDisplayConfig> {
+export class PvvxMithermometerDisplay extends EsphomeComponent<PvvxMithermometerDisplayConfig> {
     componentName: string = "pvvx_mithermometer.display";
 }
 

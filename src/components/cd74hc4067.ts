@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: cd74hc4067.json 
+ *
+ * Schema: cd74hc4067.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/cd74hc4067
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 
-export class Cd74hc4067 extends BaseComponent<Cd74hc4067Config> {
+export class Cd74hc4067 extends EsphomeComponent<Cd74hc4067Config> {
     componentName: string = "cd74hc4067";
 }
 
@@ -27,7 +27,7 @@ export interface Cd74hc4067Config extends CoreCOMPONENT_SCHEMA {
     delay?: Cd74hc4067ConfigDelay;
 }
 
-export class Cd74hc4067Sensor extends BaseComponent<Cd74hc4067SensorConfig> {
+export class Cd74hc4067Sensor extends EsphomeComponent<Cd74hc4067SensorConfig> {
     componentName: string = "cd74hc4067.sensor";
 }
 

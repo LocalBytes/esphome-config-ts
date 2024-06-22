@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: tsl2591.json 
+ *
+ * Schema: tsl2591.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/tsl2591
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Tsl2591Sensor extends BaseComponent<Tsl2591SensorConfig> {
+export class Tsl2591Sensor extends EsphomeComponent<Tsl2591SensorConfig> {
     componentName: string = "tsl2591.sensor";
 }
 

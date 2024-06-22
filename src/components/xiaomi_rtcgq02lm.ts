@@ -1,20 +1,20 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: xiaomi_rtcgq02lm.json 
+ *
+ * Schema: xiaomi_rtcgq02lm.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/xiaomi_rtcgq02lm
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { Esp32BleTrackerESP_BLE_DEVICE_SCHEMA } from "./esp32_ble_tracker.js";
 import type { CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
-export class XiaomiRtcgq02lm extends BaseComponent<XiaomiRtcgq02lmConfig> {
+export class XiaomiRtcgq02lm extends EsphomeComponent<XiaomiRtcgq02lmConfig> {
     componentName: string = "xiaomi_rtcgq02lm";
 }
 
@@ -24,7 +24,7 @@ export type XiaomiRtcgq02lmConfig = {
         mac_address: string;
     } & Esp32BleTrackerESP_BLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class XiaomiRtcgq02lmSensor extends BaseComponent<XiaomiRtcgq02lmSensorConfig> {
+export class XiaomiRtcgq02lmSensor extends EsphomeComponent<XiaomiRtcgq02lmSensorConfig> {
     componentName: string = "xiaomi_rtcgq02lm.sensor";
 }
 
@@ -41,7 +41,7 @@ export interface XiaomiRtcgq02lmSensorConfig {
     battery_level?: XiaomiRtcgq02lmSensorConfigBatteryLevel;
 }
 
-export class XiaomiRtcgq02lmBinarySensor extends BaseComponent<XiaomiRtcgq02lmBinarySensorConfig> {
+export class XiaomiRtcgq02lmBinarySensor extends EsphomeComponent<XiaomiRtcgq02lmBinarySensorConfig> {
     componentName: string = "xiaomi_rtcgq02lm.binary_sensor";
 }
 

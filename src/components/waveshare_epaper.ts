@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: waveshare_epaper.json 
+ *
+ * Schema: waveshare_epaper.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/waveshare_epaper
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
 
-export class WaveshareEpaperDisplay extends BaseComponent<WaveshareEpaperDisplayConfig> {
+export class WaveshareEpaperDisplay extends EsphomeComponent<WaveshareEpaperDisplayConfig> {
     componentName: string = "waveshare_epaper.display";
 }
 

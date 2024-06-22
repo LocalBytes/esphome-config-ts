@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: xiaomi_jqjcy01ym.json 
+ *
+ * Schema: xiaomi_jqjcy01ym.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/xiaomi_jqjcy01ym
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { Esp32BleTrackerESP_BLE_DEVICE_SCHEMA } from "./esp32_ble_tracker.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class XiaomiJqjcy01ymSensor extends BaseComponent<XiaomiJqjcy01ymSensorConfig> {
+export class XiaomiJqjcy01ymSensor extends EsphomeComponent<XiaomiJqjcy01ymSensorConfig> {
     componentName: string = "xiaomi_jqjcy01ym.sensor";
 }
 

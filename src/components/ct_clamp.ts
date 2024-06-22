@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: ct_clamp.json 
+ *
+ * Schema: ct_clamp.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ct_clamp
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 
-export class CtClampSensor extends BaseComponent<CtClampSensorConfig> {
+export class CtClampSensor extends EsphomeComponent<CtClampSensorConfig> {
     componentName: string = "ct_clamp.sensor";
 }
 

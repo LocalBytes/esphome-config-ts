@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: as3935_i2c.json 
+ *
+ * Schema: as3935_i2c.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/as3935_i2c
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { As3935AS3935_SCHEMA } from "./as3935.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class As3935I2c extends BaseComponent<As3935I2cConfig> {
+export class As3935I2c extends EsphomeComponent<As3935I2cConfig> {
     componentName: string = "as3935_i2c";
 }
 

@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: pn532.json 
+ *
+ * Schema: pn532.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/pn532
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
-export class Pn532 extends BaseComponent<any> {
+export class Pn532 extends EsphomeComponent<any> {
     componentName: string = "pn532";
 }
 
@@ -24,7 +24,7 @@ export interface Pn532PN532_SCHEMA extends CoreCOMPONENT_SCHEMA {
     update_interval?: any;
 }
 
-export class Pn532BinarySensor extends BaseComponent<Pn532BinarySensorConfig> {
+export class Pn532BinarySensor extends EsphomeComponent<Pn532BinarySensorConfig> {
     componentName: string = "pn532.binary_sensor";
 }
 

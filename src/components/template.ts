@@ -1,14 +1,14 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: template.json 
+ *
+ * Schema: template.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/template
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
 import type { AlarmControlPanelALARM_CONTROL_PANEL_SCHEMA } from "./alarm_control_panel.js";
@@ -21,7 +21,7 @@ import type { SelectSELECT_SCHEMA } from "./select.js";
 import type { Switch_SWITCH_SCHEMA } from "./switch.js";
 import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
-export class TemplateSensor extends BaseComponent<TemplateSensorConfig> {
+export class TemplateSensor extends EsphomeComponent<TemplateSensorConfig> {
     componentName: string = "template.sensor";
 }
 
@@ -32,7 +32,7 @@ export type TemplateSensorConfig = {
         update_interval?: any;
     } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class TemplateAlarmControlPanel extends BaseComponent<TemplateAlarmControlPanelConfig> {
+export class TemplateAlarmControlPanel extends EsphomeComponent<TemplateAlarmControlPanelConfig> {
     componentName: string = "template.alarm_control_panel";
 }
 
@@ -62,7 +62,7 @@ export type TemplateAlarmControlPanelConfig = {
         restore_mode?: TemplateAlarmControlPanelConfigRestoreMode;
     } & AlarmControlPanelALARM_CONTROL_PANEL_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class TemplateBinarySensor extends BaseComponent<TemplateBinarySensorConfig> {
+export class TemplateBinarySensor extends EsphomeComponent<TemplateBinarySensorConfig> {
     componentName: string = "template.binary_sensor";
 }
 
@@ -71,7 +71,7 @@ export type TemplateBinarySensorConfig = {
         lambda?: any;
     } & BinarySensorBINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class TemplateButton extends BaseComponent<TemplateButtonConfig> {
+export class TemplateButton extends EsphomeComponent<TemplateButtonConfig> {
     componentName: string = "template.button";
 }
 
@@ -79,7 +79,7 @@ export interface TemplateButtonConfig extends ButtonBUTTON_SCHEMA {
     id?: ID;
 }
 
-export class TemplateCover extends BaseComponent<TemplateCoverConfig> {
+export class TemplateCover extends EsphomeComponent<TemplateCoverConfig> {
     componentName: string = "template.cover";
 }
 
@@ -99,7 +99,7 @@ export type TemplateCoverConfig = {
         restore_mode?: TemplateCoverConfigRestoreMode;
     } & CoverCOVER_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class TemplateLock extends BaseComponent<TemplateLockConfig> {
+export class TemplateLock extends EsphomeComponent<TemplateLockConfig> {
     componentName: string = "template.lock";
 }
 
@@ -113,7 +113,7 @@ export type TemplateLockConfig = {
         open_action?: object[];
     } & LockLOCK_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class TemplateNumber extends BaseComponent<TemplateNumberConfig> {
+export class TemplateNumber extends EsphomeComponent<TemplateNumberConfig> {
     componentName: string = "template.number";
 }
 
@@ -130,7 +130,7 @@ export type TemplateNumberConfig = {
         update_interval?: any;
     } & NumberNUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class TemplateOutput extends BaseComponent<TemplateOutputConfig> {
+export class TemplateOutput extends EsphomeComponent<TemplateOutputConfig> {
     componentName: string = "template.output";
 }
 
@@ -148,7 +148,7 @@ export interface TemplateOutputConfigFloat {
     write_action: object[];
 }
 
-export class TemplateSelect extends BaseComponent<TemplateSelectConfig> {
+export class TemplateSelect extends EsphomeComponent<TemplateSelectConfig> {
     componentName: string = "template.select";
 }
 
@@ -163,7 +163,7 @@ export type TemplateSelectConfig = {
         update_interval?: any;
     } & SelectSELECT_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class TemplateSwitch extends BaseComponent<TemplateSwitchConfig> {
+export class TemplateSwitch extends EsphomeComponent<TemplateSwitchConfig> {
     componentName: string = "template.switch";
 }
 
@@ -178,7 +178,7 @@ export type TemplateSwitchConfig = {
         turn_on_action?: object[];
     } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class TemplateTextSensor extends BaseComponent<TemplateTextSensorConfig> {
+export class TemplateTextSensor extends EsphomeComponent<TemplateTextSensorConfig> {
     componentName: string = "template.text_sensor";
 }
 

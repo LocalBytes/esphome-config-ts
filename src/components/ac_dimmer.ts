@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: ac_dimmer.json 
+ *
+ * Schema: ac_dimmer.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ac_dimmer
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class AcDimmerOutput extends BaseComponent<AcDimmerOutputConfig> {
+export class AcDimmerOutput extends EsphomeComponent<AcDimmerOutputConfig> {
     componentName: string = "ac_dimmer.output";
 }
 

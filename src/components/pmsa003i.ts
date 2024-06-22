@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: pmsa003i.json 
+ *
+ * Schema: pmsa003i.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/pmsa003i
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Pmsa003iSensor extends BaseComponent<Pmsa003iSensorConfig> {
+export class Pmsa003iSensor extends EsphomeComponent<Pmsa003iSensorConfig> {
     componentName: string = "pmsa003i.sensor";
 }
 

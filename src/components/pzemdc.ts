@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: pzemdc.json 
+ *
+ * Schema: pzemdc.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/pzemdc
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class PzemdcSensor extends BaseComponent<PzemdcSensorConfig> {
+export class PzemdcSensor extends EsphomeComponent<PzemdcSensorConfig> {
     componentName: string = "pzemdc.sensor";
 }
 
@@ -55,6 +55,6 @@ export interface PzemdcSensorConfig extends CoreCOMPONENT_SCHEMA {
     address?: any;
 }
 
-export abstract class Pzemdc extends BaseComponent {
+export abstract class Pzemdc extends EsphomeComponent {
     componentName: string = "pzemdc";
 }

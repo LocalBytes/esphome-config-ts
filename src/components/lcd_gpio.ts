@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: lcd_gpio.json 
+ *
+ * Schema: lcd_gpio.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/lcd_gpio
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { LcdBaseLCD_SCHEMA } from "./lcd_base.js";
 
-export class LcdGpioDisplay extends BaseComponent<LcdGpioDisplayConfig> {
+export class LcdGpioDisplay extends EsphomeComponent<LcdGpioDisplayConfig> {
     componentName: string = "lcd_gpio.display";
 }
 

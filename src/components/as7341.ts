@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: as7341.json 
+ *
+ * Schema: as7341.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/as7341
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class As7341Sensor extends BaseComponent<As7341SensorConfig> {
+export class As7341Sensor extends EsphomeComponent<As7341SensorConfig> {
     componentName: string = "as7341.sensor";
 }
 

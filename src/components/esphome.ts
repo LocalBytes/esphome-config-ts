@@ -1,16 +1,16 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: esphome.json 
+ *
+ * Schema: esphome.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/esphome
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 
-export class Esphome extends BaseComponent<EsphomeConfig> {
+export class Esphome extends EsphomeComponent<EsphomeConfig> {
     componentName: string = "esphome";
 }
 
@@ -38,7 +38,7 @@ export interface EsphomeConfig {
     compile_process_limit?: number;
 }
 
-export abstract class Core extends BaseComponent {
+export abstract class Core extends EsphomeComponent {
     componentName: string = "core";
 }
 

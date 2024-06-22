@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: dallas.json 
+ *
+ * Schema: dallas.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/dallas
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 
-export class Dallas extends BaseComponent<DallasConfig> {
+export class Dallas extends EsphomeComponent<DallasConfig> {
     componentName: string = "dallas";
 }
 
@@ -22,7 +22,7 @@ export interface DallasConfig extends CoreCOMPONENT_SCHEMA {
     update_interval?: any;
 }
 
-export class DallasSensor extends BaseComponent<DallasSensorConfig> {
+export class DallasSensor extends EsphomeComponent<DallasSensorConfig> {
     componentName: string = "dallas.sensor";
 }
 

@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: climate_ir.json 
+ *
+ * Schema: climate_ir.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/climate_ir
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { ClimateCLIMATE_SCHEMA } from "./climate.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export abstract class ClimateIr extends BaseComponent {
+export abstract class ClimateIr extends EsphomeComponent {
     componentName: string = "climate_ir";
 }
 

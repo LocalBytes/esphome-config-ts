@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: uln2003.json 
+ *
+ * Schema: uln2003.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/uln2003
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { StepperSTEPPER_SCHEMA } from "./stepper.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Uln2003Stepper extends BaseComponent<Uln2003StepperConfig> {
+export class Uln2003Stepper extends EsphomeComponent<Uln2003StepperConfig> {
     componentName: string = "uln2003.stepper";
 }
 

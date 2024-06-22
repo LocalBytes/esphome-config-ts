@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: sen5x.json 
+ *
+ * Schema: sen5x.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sen5x
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Sen5xSensor extends BaseComponent<Sen5xSensorConfig> {
+export class Sen5xSensor extends EsphomeComponent<Sen5xSensorConfig> {
     componentName: string = "sen5x.sensor";
 }
 
@@ -117,6 +117,6 @@ export interface Sen5xSensorConfig extends CoreCOMPONENT_SCHEMA {
     address?: any;
 }
 
-export abstract class Sen5x extends BaseComponent {
+export abstract class Sen5x extends EsphomeComponent {
     componentName: string = "sen5x";
 }

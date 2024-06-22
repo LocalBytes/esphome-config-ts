@@ -1,14 +1,14 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: copy.json 
+ *
+ * Schema: copy.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/copy
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
@@ -21,7 +21,7 @@ import type { SelectSELECT_SCHEMA } from "./select.js";
 import type { Switch_SWITCH_SCHEMA } from "./switch.js";
 import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
-export class CopySensor extends BaseComponent<CopySensorConfig> {
+export class CopySensor extends EsphomeComponent<CopySensorConfig> {
     componentName: string = "copy.sensor";
 }
 
@@ -30,7 +30,7 @@ export type CopySensorConfig = {
         source_id: ID;
     } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class CopyBinarySensor extends BaseComponent<CopyBinarySensorConfig> {
+export class CopyBinarySensor extends EsphomeComponent<CopyBinarySensorConfig> {
     componentName: string = "copy.binary_sensor";
 }
 
@@ -39,7 +39,7 @@ export type CopyBinarySensorConfig = {
         source_id: ID;
     } & BinarySensorBINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class CopyButton extends BaseComponent<CopyButtonConfig> {
+export class CopyButton extends EsphomeComponent<CopyButtonConfig> {
     componentName: string = "copy.button";
 }
 
@@ -48,7 +48,7 @@ export type CopyButtonConfig = {
         source_id: ID;
     } & ButtonBUTTON_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class CopyCover extends BaseComponent<CopyCoverConfig> {
+export class CopyCover extends EsphomeComponent<CopyCoverConfig> {
     componentName: string = "copy.cover";
 }
 
@@ -57,7 +57,7 @@ export type CopyCoverConfig = {
         source_id: ID;
     } & CoverCOVER_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class CopyFan extends BaseComponent<CopyFanConfig> {
+export class CopyFan extends EsphomeComponent<CopyFanConfig> {
     componentName: string = "copy.fan";
 }
 
@@ -66,7 +66,7 @@ export type CopyFanConfig = {
         source_id: ID;
     } & FanFAN_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class CopyLock extends BaseComponent<CopyLockConfig> {
+export class CopyLock extends EsphomeComponent<CopyLockConfig> {
     componentName: string = "copy.lock";
 }
 
@@ -75,7 +75,7 @@ export type CopyLockConfig = {
         source_id: ID;
     } & LockLOCK_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class CopyNumber extends BaseComponent<CopyNumberConfig> {
+export class CopyNumber extends EsphomeComponent<CopyNumberConfig> {
     componentName: string = "copy.number";
 }
 
@@ -84,7 +84,7 @@ export type CopyNumberConfig = {
         source_id: ID;
     } & NumberNUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class CopySelect extends BaseComponent<CopySelectConfig> {
+export class CopySelect extends EsphomeComponent<CopySelectConfig> {
     componentName: string = "copy.select";
 }
 
@@ -93,7 +93,7 @@ export type CopySelectConfig = {
         source_id: ID;
     } & SelectSELECT_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class CopySwitch extends BaseComponent<CopySwitchConfig> {
+export class CopySwitch extends EsphomeComponent<CopySwitchConfig> {
     componentName: string = "copy.switch";
 }
 
@@ -104,7 +104,7 @@ export type CopySwitchConfig = {
         source_id: ID;
     } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class CopyTextSensor extends BaseComponent<CopyTextSensorConfig> {
+export class CopyTextSensor extends EsphomeComponent<CopyTextSensorConfig> {
     componentName: string = "copy.text_sensor";
 }
 

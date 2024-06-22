@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: pulse_meter.json 
+ *
+ * Schema: pulse_meter.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/pulse_meter
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 
-export class PulseMeterSensor extends BaseComponent<PulseMeterSensorConfig> {
+export class PulseMeterSensor extends EsphomeComponent<PulseMeterSensorConfig> {
     componentName: string = "pulse_meter.sensor";
 }
 
@@ -37,6 +37,6 @@ export interface PulseMeterSensorConfig extends SensorSENSOR_SCHEMA {
     internal_filter_mode?: PulseMeterSensorConfigInternalFilterMode;
 }
 
-export abstract class PulseMeter extends BaseComponent {
+export abstract class PulseMeter extends EsphomeComponent {
     componentName: string = "pulse_meter";
 }

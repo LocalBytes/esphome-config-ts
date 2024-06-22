@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: shutdown.json 
+ *
+ * Schema: shutdown.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/shutdown
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { ButtonBUTTON_SCHEMA } from "./button.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { Switch_SWITCH_SCHEMA } from "./switch.js";
 
-export class ShutdownButton extends BaseComponent<ShutdownButtonConfig> {
+export class ShutdownButton extends EsphomeComponent<ShutdownButtonConfig> {
     componentName: string = "shutdown.button";
 }
 
@@ -23,7 +23,7 @@ export type ShutdownButtonConfig = {
         entity_category?: any;
     } & ButtonBUTTON_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class ShutdownSwitch extends BaseComponent<ShutdownSwitchConfig> {
+export class ShutdownSwitch extends EsphomeComponent<ShutdownSwitchConfig> {
     componentName: string = "shutdown.switch";
 }
 

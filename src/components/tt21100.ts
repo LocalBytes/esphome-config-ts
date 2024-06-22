@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: tt21100.json 
+ *
+ * Schema: tt21100.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/tt21100
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 import type { TouchscreenTOUCHSCREEN_SCHEMA } from "./touchscreen.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Tt21100BinarySensor extends BaseComponent<Tt21100BinarySensorConfig> {
+export class Tt21100BinarySensor extends EsphomeComponent<Tt21100BinarySensorConfig> {
     componentName: string = "tt21100.binary_sensor";
 }
 
@@ -23,7 +23,7 @@ export interface Tt21100BinarySensorConfig extends BinarySensorBINARY_SENSOR_SCH
     index: number;
 }
 
-export class Tt21100Touchscreen extends BaseComponent<Tt21100TouchscreenConfig> {
+export class Tt21100Touchscreen extends EsphomeComponent<Tt21100TouchscreenConfig> {
     componentName: string = "tt21100.touchscreen";
 }
 

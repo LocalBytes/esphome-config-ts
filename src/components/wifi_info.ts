@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: wifi_info.json 
+ *
+ * Schema: wifi_info.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/wifi_info
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class WifiInfoTextSensor extends BaseComponent<WifiInfoTextSensorConfig> {
+export class WifiInfoTextSensor extends EsphomeComponent<WifiInfoTextSensorConfig> {
     componentName: string = "wifi_info.text_sensor";
 }
 

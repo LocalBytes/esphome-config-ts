@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: mcp4728.json 
+ *
+ * Schema: mcp4728.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/mcp4728
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
 
-export class Mcp4728 extends BaseComponent<Mcp4728Config> {
+export class Mcp4728 extends EsphomeComponent<Mcp4728Config> {
     componentName: string = "mcp4728";
 }
 
@@ -23,7 +23,7 @@ export interface Mcp4728Config extends CoreCOMPONENT_SCHEMA {
     address?: any;
 }
 
-export class Mcp4728Output extends BaseComponent<Mcp4728OutputConfig> {
+export class Mcp4728Output extends EsphomeComponent<Mcp4728OutputConfig> {
     componentName: string = "mcp4728.output";
 }
 

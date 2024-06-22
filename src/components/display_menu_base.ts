@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: display_menu_base.json 
+ *
+ * Schema: display_menu_base.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/display_menu_base
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export abstract class DisplayMenuBase extends BaseComponent {
+export abstract class DisplayMenuBase extends EsphomeComponent {
     componentName: string = "display_menu_base";
 }
 

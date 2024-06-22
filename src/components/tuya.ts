@@ -1,14 +1,14 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: tuya.json 
+ *
+ * Schema: tuya.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/tuya
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
@@ -21,7 +21,7 @@ import type { SelectSELECT_SCHEMA } from "./select.js";
 import type { Switch_SWITCH_SCHEMA } from "./switch.js";
 import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
-export class Tuya extends BaseComponent<TuyaConfig> {
+export class Tuya extends EsphomeComponent<TuyaConfig> {
     componentName: string = "tuya";
 }
 
@@ -34,7 +34,7 @@ export interface TuyaConfig extends CoreCOMPONENT_SCHEMA {
     uart_id?: ID;
 }
 
-export class TuyaSensor extends BaseComponent<TuyaSensorConfig> {
+export class TuyaSensor extends EsphomeComponent<TuyaSensorConfig> {
     componentName: string = "tuya.sensor";
 }
 
@@ -44,7 +44,7 @@ export type TuyaSensorConfig = {
         sensor_datapoint: number;
     } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class TuyaBinarySensor extends BaseComponent<TuyaBinarySensorConfig> {
+export class TuyaBinarySensor extends EsphomeComponent<TuyaBinarySensorConfig> {
     componentName: string = "tuya.binary_sensor";
 }
 
@@ -54,7 +54,7 @@ export type TuyaBinarySensorConfig = {
         sensor_datapoint: number;
     } & BinarySensorBINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class TuyaClimate extends BaseComponent<TuyaClimateConfig> {
+export class TuyaClimate extends EsphomeComponent<TuyaClimateConfig> {
     componentName: string = "tuya.climate";
 }
 
@@ -79,7 +79,7 @@ export type TuyaClimateConfig = {
         reports_fahrenheit?: boolean;
     } & ClimateCLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class TuyaCover extends BaseComponent<TuyaCoverConfig> {
+export class TuyaCover extends EsphomeComponent<TuyaCoverConfig> {
     componentName: string = "tuya.cover";
 }
 
@@ -97,7 +97,7 @@ export type TuyaCoverConfig = {
         restore_mode?: TuyaCoverConfigRestoreMode;
     } & CoverCOVER_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class TuyaFan extends BaseComponent<TuyaFanConfig> {
+export class TuyaFan extends EsphomeComponent<TuyaFanConfig> {
     componentName: string = "tuya.fan";
 }
 
@@ -111,7 +111,7 @@ export type TuyaFanConfig = {
         speed_count?: number;
     } & FanFAN_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class TuyaLight extends BaseComponent<TuyaLightConfig> {
+export class TuyaLight extends EsphomeComponent<TuyaLightConfig> {
     componentName: string = "tuya.light";
 }
 
@@ -136,7 +136,7 @@ export type TuyaLightConfig = {
         default_transition_length?: any;
     } & LightBRIGHTNESS_ONLY_LIGHT_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class TuyaNumber extends BaseComponent<TuyaNumberConfig> {
+export class TuyaNumber extends EsphomeComponent<TuyaNumberConfig> {
     componentName: string = "tuya.number";
 }
 
@@ -149,7 +149,7 @@ export type TuyaNumberConfig = {
         step: string;
     } & NumberNUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class TuyaSelect extends BaseComponent<TuyaSelectConfig> {
+export class TuyaSelect extends EsphomeComponent<TuyaSelectConfig> {
     componentName: string = "tuya.select";
 }
 
@@ -161,7 +161,7 @@ export type TuyaSelectConfig = {
         optimistic?: boolean;
     } & SelectSELECT_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class TuyaSwitch extends BaseComponent<TuyaSwitchConfig> {
+export class TuyaSwitch extends EsphomeComponent<TuyaSwitchConfig> {
     componentName: string = "tuya.switch";
 }
 
@@ -173,7 +173,7 @@ export type TuyaSwitchConfig = {
         switch_datapoint: number;
     } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class TuyaTextSensor extends BaseComponent<TuyaTextSensorConfig> {
+export class TuyaTextSensor extends EsphomeComponent<TuyaTextSensorConfig> {
     componentName: string = "tuya.text_sensor";
 }
 

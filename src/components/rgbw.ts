@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: rgbw.json 
+ *
+ * Schema: rgbw.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/rgbw
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { LightRGB_LIGHT_SCHEMA } from "./light.js";
 
-export class RgbwLight extends BaseComponent<RgbwLightConfig> {
+export class RgbwLight extends EsphomeComponent<RgbwLightConfig> {
     componentName: string = "rgbw.light";
 }
 

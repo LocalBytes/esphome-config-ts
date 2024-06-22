@@ -1,14 +1,14 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: pipsolar.json 
+ *
+ * Schema: pipsolar.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/pipsolar
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
@@ -16,7 +16,7 @@ import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
 import type { Switch_SWITCH_SCHEMA } from "./switch.js";
 import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
-export class Pipsolar extends BaseComponent<PipsolarConfig> {
+export class Pipsolar extends EsphomeComponent<PipsolarConfig> {
     componentName: string = "pipsolar";
 }
 
@@ -30,7 +30,7 @@ export interface PipsolarPIPSOLAR_COMPONENT_SCHEMA {
     pipsolar_id: ID;
 }
 
-export class PipsolarSensor extends BaseComponent<PipsolarSensorConfig> {
+export class PipsolarSensor extends EsphomeComponent<PipsolarSensorConfig> {
     componentName: string = "pipsolar.sensor";
 }
 
@@ -317,7 +317,7 @@ export interface PipsolarSensorConfig extends PipsolarPIPSOLAR_COMPONENT_SCHEMA 
     pv_charging_power?: PipsolarSensorConfigPvChargingPower;
 }
 
-export class PipsolarBinarySensor extends BaseComponent<PipsolarBinarySensorConfig> {
+export class PipsolarBinarySensor extends EsphomeComponent<PipsolarBinarySensorConfig> {
     componentName: string = "pipsolar.binary_sensor";
 }
 
@@ -437,7 +437,7 @@ export interface PipsolarBinarySensorConfig extends PipsolarPIPSOLAR_COMPONENT_S
     warning_battery_equalization?: PipsolarBinarySensorConfigWarningBatteryEqualization;
 }
 
-export class PipsolarOutput extends BaseComponent<PipsolarOutputConfig> {
+export class PipsolarOutput extends EsphomeComponent<PipsolarOutputConfig> {
     componentName: string = "pipsolar.output";
 }
 
@@ -498,7 +498,7 @@ export interface PipsolarOutputConfig extends PipsolarPIPSOLAR_COMPONENT_SCHEMA 
     battery_redischarge_voltage?: PipsolarOutputConfigBatteryRedischargeVoltage;
 }
 
-export class PipsolarSwitch extends BaseComponent<PipsolarSwitchConfig> {
+export class PipsolarSwitch extends EsphomeComponent<PipsolarSwitchConfig> {
     componentName: string = "pipsolar.switch";
 }
 
@@ -524,7 +524,7 @@ export interface PipsolarSwitchConfig extends PipsolarPIPSOLAR_COMPONENT_SCHEMA 
     pv_power_balance?: PipsolarSwitchConfigPvPowerBalance;
 }
 
-export class PipsolarTextSensor extends BaseComponent<PipsolarTextSensorConfig> {
+export class PipsolarTextSensor extends EsphomeComponent<PipsolarTextSensorConfig> {
     componentName: string = "pipsolar.text_sensor";
 }
 

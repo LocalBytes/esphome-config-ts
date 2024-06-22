@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: ledc.json 
+ *
+ * Schema: ledc.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ledc
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class LedcOutput extends BaseComponent<LedcOutputConfig> {
+export class LedcOutput extends EsphomeComponent<LedcOutputConfig> {
     componentName: string = "ledc.output";
 }
 

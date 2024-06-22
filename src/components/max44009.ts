@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: max44009.json 
+ *
+ * Schema: max44009.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/max44009
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Max44009Sensor extends BaseComponent<Max44009SensorConfig> {
+export class Max44009Sensor extends EsphomeComponent<Max44009SensorConfig> {
     componentName: string = "max44009.sensor";
 }
 

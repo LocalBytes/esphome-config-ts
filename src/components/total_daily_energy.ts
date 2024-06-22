@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: total_daily_energy.json 
+ *
+ * Schema: total_daily_energy.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/total_daily_energy
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class TotalDailyEnergySensor extends BaseComponent<TotalDailyEnergySensorConfig> {
+export class TotalDailyEnergySensor extends EsphomeComponent<TotalDailyEnergySensorConfig> {
     componentName: string = "total_daily_energy.sensor";
 }
 

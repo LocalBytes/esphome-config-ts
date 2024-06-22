@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: shelly_dimmer.json 
+ *
+ * Schema: shelly_dimmer.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/shelly_dimmer
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { LightBRIGHTNESS_ONLY_LIGHT_SCHEMA } from "./light.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class ShellyDimmerLight extends BaseComponent<ShellyDimmerLightConfig> {
+export class ShellyDimmerLight extends EsphomeComponent<ShellyDimmerLightConfig> {
     componentName: string = "shelly_dimmer.light";
 }
 

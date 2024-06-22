@@ -1,20 +1,20 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: ezo_pmp.json 
+ *
+ * Schema: ezo_pmp.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ezo_pmp
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
-export class EzoPmp extends BaseComponent<EzoPmpConfig> {
+export class EzoPmp extends EsphomeComponent<EzoPmpConfig> {
     componentName: string = "ezo_pmp";
 }
 
@@ -29,7 +29,7 @@ export interface EzoPmpEZO_PMP_NO_ARGS_ACTION_SCHEMA {
     id: ID;
 }
 
-export class EzoPmpSensor extends BaseComponent<EzoPmpSensorConfig> {
+export class EzoPmpSensor extends EsphomeComponent<EzoPmpSensorConfig> {
     componentName: string = "ezo_pmp.sensor";
 }
 
@@ -91,7 +91,7 @@ export interface EzoPmpSensorConfig {
     pump_voltage?: EzoPmpSensorConfigPumpVoltage;
 }
 
-export class EzoPmpBinarySensor extends BaseComponent<EzoPmpBinarySensorConfig> {
+export class EzoPmpBinarySensor extends EsphomeComponent<EzoPmpBinarySensorConfig> {
     componentName: string = "ezo_pmp.binary_sensor";
 }
 
@@ -111,7 +111,7 @@ export interface EzoPmpBinarySensorConfig {
     is_paused?: EzoPmpBinarySensorConfigIsPaused;
 }
 
-export class EzoPmpTextSensor extends BaseComponent<EzoPmpTextSensorConfig> {
+export class EzoPmpTextSensor extends EsphomeComponent<EzoPmpTextSensorConfig> {
     componentName: string = "ezo_pmp.text_sensor";
 }
 

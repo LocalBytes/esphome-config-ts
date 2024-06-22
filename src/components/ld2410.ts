@@ -1,14 +1,14 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: ld2410.json 
+ *
+ * Schema: ld2410.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ld2410
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
@@ -18,7 +18,7 @@ import type { SelectSELECT_SCHEMA } from "./select.js";
 import type { Switch_SWITCH_SCHEMA } from "./switch.js";
 import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
-export class Ld2410 extends BaseComponent<Ld2410Config> {
+export class Ld2410 extends EsphomeComponent<Ld2410Config> {
     componentName: string = "ld2410";
 }
 
@@ -30,7 +30,7 @@ export interface Ld2410Config extends CoreCOMPONENT_SCHEMA {
     uart_id?: ID;
 }
 
-export class Ld2410Sensor extends BaseComponent<Ld2410SensorConfig> {
+export class Ld2410Sensor extends EsphomeComponent<Ld2410SensorConfig> {
     componentName: string = "ld2410.sensor";
 }
 
@@ -240,7 +240,7 @@ export interface Ld2410SensorConfig {
     g8?: Ld2410SensorConfigG8;
 }
 
-export class Ld2410BinarySensor extends BaseComponent<Ld2410BinarySensorConfig> {
+export class Ld2410BinarySensor extends EsphomeComponent<Ld2410BinarySensorConfig> {
     componentName: string = "ld2410.binary_sensor";
 }
 
@@ -273,7 +273,7 @@ export interface Ld2410BinarySensorConfig {
     out_pin_presence_status?: Ld2410BinarySensorConfigOutPinPresenceStatus;
 }
 
-export class Ld2410Button extends BaseComponent<Ld2410ButtonConfig> {
+export class Ld2410Button extends EsphomeComponent<Ld2410ButtonConfig> {
     componentName: string = "ld2410.button";
 }
 
@@ -304,7 +304,7 @@ export interface Ld2410ButtonConfig {
     query_params?: Ld2410ButtonConfigQueryParams;
 }
 
-export class Ld2410Number extends BaseComponent<Ld2410NumberConfig> {
+export class Ld2410Number extends EsphomeComponent<Ld2410NumberConfig> {
     componentName: string = "ld2410.number";
 }
 
@@ -542,7 +542,7 @@ export interface Ld2410NumberConfig {
     g8?: Ld2410NumberConfigG8;
 }
 
-export class Ld2410Select extends BaseComponent<Ld2410SelectConfig> {
+export class Ld2410Select extends EsphomeComponent<Ld2410SelectConfig> {
     componentName: string = "ld2410.select";
 }
 
@@ -578,7 +578,7 @@ export interface Ld2410SelectConfig {
     baud_rate?: Ld2410SelectConfigBaudRate;
 }
 
-export class Ld2410Switch extends BaseComponent<Ld2410SwitchConfig> {
+export class Ld2410Switch extends EsphomeComponent<Ld2410SwitchConfig> {
     componentName: string = "ld2410.switch";
 }
 
@@ -608,7 +608,7 @@ export interface Ld2410SwitchConfig {
     bluetooth?: Ld2410SwitchConfigBluetooth;
 }
 
-export class Ld2410TextSensor extends BaseComponent<Ld2410TextSensorConfig> {
+export class Ld2410TextSensor extends EsphomeComponent<Ld2410TextSensorConfig> {
     componentName: string = "ld2410.text_sensor";
 }
 

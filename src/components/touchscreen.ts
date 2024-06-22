@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: touchscreen.json 
+ *
+ * Schema: touchscreen.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/touchscreen
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export abstract class Touchscreen extends BaseComponent {
+export abstract class Touchscreen extends EsphomeComponent {
     componentName: string = "touchscreen";
 }
 
@@ -21,7 +21,7 @@ export interface TouchscreenTOUCHSCREEN_SCHEMA {
     on_touch?: object[];
 }
 
-export class TouchscreenBinarySensor extends BaseComponent<TouchscreenBinarySensorConfig> {
+export class TouchscreenBinarySensor extends EsphomeComponent<TouchscreenBinarySensorConfig> {
     componentName: string = "touchscreen.binary_sensor";
 }
 

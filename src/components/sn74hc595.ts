@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: sn74hc595.json 
+ *
+ * Schema: sn74hc595.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sn74hc595
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Sn74hc595 extends BaseComponent<Sn74hc595Config> {
+export class Sn74hc595 extends EsphomeComponent<Sn74hc595Config> {
     componentName: string = "sn74hc595";
 }
 

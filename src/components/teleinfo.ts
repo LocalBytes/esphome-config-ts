@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: teleinfo.json 
+ *
+ * Schema: teleinfo.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/teleinfo
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
-export class Teleinfo extends BaseComponent<TeleinfoConfig> {
+export class Teleinfo extends EsphomeComponent<TeleinfoConfig> {
     componentName: string = "teleinfo";
 }
 
@@ -29,7 +29,7 @@ export interface TeleinfoTELEINFO_LISTENER_SCHEMA {
     tag_name: string;
 }
 
-export class TeleinfoSensor extends BaseComponent<TeleinfoSensorConfig> {
+export class TeleinfoSensor extends EsphomeComponent<TeleinfoSensorConfig> {
     componentName: string = "teleinfo.sensor";
 }
 
@@ -40,7 +40,7 @@ export type TeleinfoSensorConfig = {
         accuracy_decimals?: any;
     } & SensorSENSOR_SCHEMA & TeleinfoTELEINFO_LISTENER_SCHEMA;
 
-export class TeleinfoTextSensor extends BaseComponent<TeleinfoTextSensorConfig> {
+export class TeleinfoTextSensor extends EsphomeComponent<TeleinfoTextSensorConfig> {
     componentName: string = "teleinfo.text_sensor";
 }
 

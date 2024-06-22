@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: sgp30.json 
+ *
+ * Schema: sgp30.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sgp30
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Sgp30Sensor extends BaseComponent<Sgp30SensorConfig> {
+export class Sgp30Sensor extends EsphomeComponent<Sgp30SensorConfig> {
     componentName: string = "sgp30.sensor";
 }
 

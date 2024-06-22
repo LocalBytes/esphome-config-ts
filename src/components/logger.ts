@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: logger.json 
+ *
+ * Schema: logger.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/logger
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Logger extends BaseComponent<LoggerConfig> {
+export class Logger extends EsphomeComponent<LoggerConfig> {
     componentName: string = "logger";
 }
 

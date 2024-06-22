@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: remote_receiver.json 
+ *
+ * Schema: remote_receiver.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/remote_receiver
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMicroseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { RemoteBaseCANALSAT_SCHEMA, RemoteBaseRC_SWITCH_PROTOCOL_SCHEMA } from "./remote_base.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
-export class RemoteReceiver extends BaseComponent<RemoteReceiverConfig> {
+export class RemoteReceiver extends EsphomeComponent<RemoteReceiverConfig> {
     componentName: string = "remote_receiver";
 }
 
@@ -54,7 +54,7 @@ export interface RemoteReceiverConfig extends CoreCOMPONENT_SCHEMA {
     on_aeha?: object[];
 }
 
-export class RemoteReceiverBinarySensor extends BaseComponent<RemoteReceiverBinarySensorConfig> {
+export class RemoteReceiverBinarySensor extends EsphomeComponent<RemoteReceiverBinarySensorConfig> {
     componentName: string = "remote_receiver.binary_sensor";
 }
 

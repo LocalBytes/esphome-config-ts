@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: adc128s102.json 
+ *
+ * Schema: adc128s102.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/adc128s102
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Adc128s102 extends BaseComponent<Adc128s102Config> {
+export class Adc128s102 extends EsphomeComponent<Adc128s102Config> {
     componentName: string = "adc128s102";
 }
 
@@ -22,7 +22,7 @@ export interface Adc128s102Config {
     cs_pin: Pin;
 }
 
-export class Adc128s102Sensor extends BaseComponent<Adc128s102SensorConfig> {
+export class Adc128s102Sensor extends EsphomeComponent<Adc128s102SensorConfig> {
     componentName: string = "adc128s102.sensor";
 }
 

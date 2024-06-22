@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: ili9xxx.json 
+ *
+ * Schema: ili9xxx.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ili9xxx
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Ili9xxxDisplay extends BaseComponent<Ili9xxxDisplayConfig> {
+export class Ili9xxxDisplay extends EsphomeComponent<Ili9xxxDisplayConfig> {
     componentName: string = "ili9xxx.display";
 }
 

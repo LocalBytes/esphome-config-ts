@@ -1,20 +1,20 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: output.json 
+ *
+ * Schema: output.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/output
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { ButtonBUTTON_SCHEMA } from "./button.js";
 import type { LockLOCK_SCHEMA } from "./lock.js";
 import type { Switch_SWITCH_SCHEMA } from "./switch.js";
 
-export abstract class Output extends BaseComponent {
+export abstract class Output extends EsphomeComponent {
     componentName: string = "output";
 }
 
@@ -33,7 +33,7 @@ export interface OutputBINARY_OUTPUT_ACTION_SCHEMA {
     id: ID;
 }
 
-export class OutputButton extends BaseComponent<OutputButtonConfig> {
+export class OutputButton extends EsphomeComponent<OutputButtonConfig> {
     componentName: string = "output.button";
 }
 
@@ -44,7 +44,7 @@ export type OutputButtonConfig = {
         duration: OutputButtonConfigDuration;
     } & ButtonBUTTON_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class OutputLock extends BaseComponent<OutputLockConfig> {
+export class OutputLock extends EsphomeComponent<OutputLockConfig> {
     componentName: string = "output.lock";
 }
 
@@ -53,7 +53,7 @@ export type OutputLockConfig = {
         output: ID;
     } & LockLOCK_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class OutputSwitch extends BaseComponent<OutputSwitchConfig> {
+export class OutputSwitch extends EsphomeComponent<OutputSwitchConfig> {
     componentName: string = "output.switch";
 }
 

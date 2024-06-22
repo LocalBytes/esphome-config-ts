@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: safe_mode.json 
+ *
+ * Schema: safe_mode.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/safe_mode
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { ButtonBUTTON_SCHEMA } from "./button.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { Switch_SWITCH_SCHEMA } from "./switch.js";
 
-export class SafeModeButton extends BaseComponent<SafeModeButtonConfig> {
+export class SafeModeButton extends EsphomeComponent<SafeModeButtonConfig> {
     componentName: string = "safe_mode.button";
 }
 
@@ -25,7 +25,7 @@ export type SafeModeButtonConfig = {
         ota?: ID;
     } & ButtonBUTTON_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class SafeModeSwitch extends BaseComponent<SafeModeSwitchConfig> {
+export class SafeModeSwitch extends EsphomeComponent<SafeModeSwitchConfig> {
     componentName: string = "safe_mode.switch";
 }
 

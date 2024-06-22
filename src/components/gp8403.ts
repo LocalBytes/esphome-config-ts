@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: gp8403.json 
+ *
+ * Schema: gp8403.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/gp8403
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
 
-export class Gp8403 extends BaseComponent<Gp8403Config> {
+export class Gp8403 extends EsphomeComponent<Gp8403Config> {
     componentName: string = "gp8403";
 }
 
@@ -25,7 +25,7 @@ export interface Gp8403Config extends CoreCOMPONENT_SCHEMA {
     address?: any;
 }
 
-export class Gp8403Output extends BaseComponent<Gp8403OutputConfig> {
+export class Gp8403Output extends EsphomeComponent<Gp8403OutputConfig> {
     componentName: string = "gp8403.output";
 }
 

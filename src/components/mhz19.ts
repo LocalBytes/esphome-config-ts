@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: mhz19.json 
+ *
+ * Schema: mhz19.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/mhz19
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Mhz19Sensor extends BaseComponent<Mhz19SensorConfig> {
+export class Mhz19Sensor extends EsphomeComponent<Mhz19SensorConfig> {
     componentName: string = "mhz19.sensor";
 }
 
@@ -44,6 +44,6 @@ export interface Mhz19SensorCALIBRATION_ACTION_SCHEMA {
     id: ID;
 }
 
-export abstract class Mhz19 extends BaseComponent {
+export abstract class Mhz19 extends EsphomeComponent {
     componentName: string = "mhz19";
 }

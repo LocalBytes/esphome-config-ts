@@ -1,14 +1,14 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: modbus_controller.json 
+ *
+ * Schema: modbus_controller.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/modbus_controller
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
@@ -17,7 +17,7 @@ import type { SelectSELECT_SCHEMA } from "./select.js";
 import type { Switch_SWITCH_SCHEMA } from "./switch.js";
 import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
-export class ModbusController extends BaseComponent<ModbusControllerConfig> {
+export class ModbusController extends EsphomeComponent<ModbusControllerConfig> {
     componentName: string = "modbus_controller";
 }
 
@@ -44,7 +44,7 @@ export interface ModbusControllerModbusItemBaseSchema {
     response_size?: number;
 }
 
-export class ModbusControllerSensor extends BaseComponent<ModbusControllerSensorConfig> {
+export class ModbusControllerSensor extends EsphomeComponent<ModbusControllerSensorConfig> {
     componentName: string = "modbus_controller.sensor";
 }
 
@@ -57,7 +57,7 @@ export type ModbusControllerSensorConfig = {
         register_count?: number;
     } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA & ModbusControllerModbusItemBaseSchema;
 
-export class ModbusControllerBinarySensor extends BaseComponent<ModbusControllerBinarySensorConfig> {
+export class ModbusControllerBinarySensor extends EsphomeComponent<ModbusControllerBinarySensorConfig> {
     componentName: string = "modbus_controller.binary_sensor";
 }
 
@@ -67,7 +67,7 @@ export type ModbusControllerBinarySensorConfig = {
         register_type?: ModbusControllerBinarySensorConfigRegisterType;
     } & BinarySensorBINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA & ModbusControllerModbusItemBaseSchema;
 
-export class ModbusControllerNumber extends BaseComponent<ModbusControllerNumberConfig> {
+export class ModbusControllerNumber extends EsphomeComponent<ModbusControllerNumberConfig> {
     componentName: string = "modbus_controller.number";
 }
 
@@ -85,7 +85,7 @@ export type ModbusControllerNumberConfig = {
         use_write_multiple?: boolean;
     } & NumberNUMBER_SCHEMA & ModbusControllerModbusItemBaseSchema;
 
-export class ModbusControllerOutput extends BaseComponent<ModbusControllerOutputConfig> {
+export class ModbusControllerOutput extends EsphomeComponent<ModbusControllerOutputConfig> {
     componentName: string = "modbus_controller.output";
 }
 
@@ -109,7 +109,7 @@ export interface ModbusControllerOutputConfigHolding {
     use_write_multiple?: boolean;
 }
 
-export class ModbusControllerSelect extends BaseComponent<ModbusControllerSelectConfig> {
+export class ModbusControllerSelect extends EsphomeComponent<ModbusControllerSelectConfig> {
     componentName: string = "modbus_controller.select";
 }
 
@@ -129,7 +129,7 @@ export type ModbusControllerSelectConfig = {
         write_lambda?: any;
     } & SelectSELECT_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class ModbusControllerSwitch extends BaseComponent<ModbusControllerSwitchConfig> {
+export class ModbusControllerSwitch extends EsphomeComponent<ModbusControllerSwitchConfig> {
     componentName: string = "modbus_controller.switch";
 }
 
@@ -143,7 +143,7 @@ export type ModbusControllerSwitchConfig = {
         write_lambda?: any;
     } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA & ModbusControllerModbusItemBaseSchema;
 
-export class ModbusControllerTextSensor extends BaseComponent<ModbusControllerTextSensorConfig> {
+export class ModbusControllerTextSensor extends EsphomeComponent<ModbusControllerTextSensorConfig> {
     componentName: string = "modbus_controller.text_sensor";
 }
 

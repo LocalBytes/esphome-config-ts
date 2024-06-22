@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: sigma_delta_output.json 
+ *
+ * Schema: sigma_delta_output.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sigma_delta_output
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class SigmaDeltaOutputOutput extends BaseComponent<SigmaDeltaOutputOutputConfig> {
+export class SigmaDeltaOutputOutput extends EsphomeComponent<SigmaDeltaOutputOutputConfig> {
     componentName: string = "sigma_delta_output.output";
 }
 

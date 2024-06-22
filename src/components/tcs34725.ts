@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: tcs34725.json 
+ *
+ * Schema: tcs34725.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/tcs34725
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Tcs34725Sensor extends BaseComponent<Tcs34725SensorConfig> {
+export class Tcs34725Sensor extends EsphomeComponent<Tcs34725SensorConfig> {
     componentName: string = "tcs34725.sensor";
 }
 

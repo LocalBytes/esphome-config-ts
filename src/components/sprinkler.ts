@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: sprinkler.json 
+ *
+ * Schema: sprinkler.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sprinkler
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { Switch_SWITCH_SCHEMA } from "./switch.js";
 import type { CorePositiveTimePeriodSeconds, CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
 import type { NumberNUMBER_SCHEMA } from "./number.js";
 
-export class Sprinkler extends BaseComponent<SprinklerConfig> {
+export class Sprinkler extends EsphomeComponent<SprinklerConfig> {
     componentName: string = "sprinkler";
 }
 

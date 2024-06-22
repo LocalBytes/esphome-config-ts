@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: apds9960.json 
+ *
+ * Schema: apds9960.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/apds9960
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
-export class Apds9960 extends BaseComponent<Apds9960Config> {
+export class Apds9960 extends EsphomeComponent<Apds9960Config> {
     componentName: string = "apds9960";
 }
 
@@ -37,7 +37,7 @@ export interface Apds9960Config extends CoreCOMPONENT_SCHEMA {
     address?: any;
 }
 
-export class Apds9960Sensor extends BaseComponent<Apds9960SensorConfig> {
+export class Apds9960Sensor extends EsphomeComponent<Apds9960SensorConfig> {
     componentName: string = "apds9960.sensor";
 }
 
@@ -52,7 +52,7 @@ export interface Apds9960SensorConfig extends SensorSENSOR_SCHEMA {
     apds9960_id?: ID;
 }
 
-export class Apds9960BinarySensor extends BaseComponent<Apds9960BinarySensorConfig> {
+export class Apds9960BinarySensor extends EsphomeComponent<Apds9960BinarySensorConfig> {
     componentName: string = "apds9960.binary_sensor";
 }
 

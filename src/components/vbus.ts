@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: vbus.json 
+ *
+ * Schema: vbus.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/vbus
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { UartUART_DEVICE_SCHEMA } from "./uart.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
-export class Vbus extends BaseComponent<VbusConfig> {
+export class Vbus extends EsphomeComponent<VbusConfig> {
     componentName: string = "vbus";
 }
 
@@ -21,7 +21,7 @@ export interface VbusConfig extends UartUART_DEVICE_SCHEMA {
     id?: ID;
 }
 
-export class VbusSensor extends BaseComponent<VbusSensorConfig> {
+export class VbusSensor extends EsphomeComponent<VbusSensorConfig> {
     componentName: string = "vbus.sensor";
 }
 
@@ -539,7 +539,7 @@ export interface VbusSensorConfigCustom {
     sensors?: VbusSensorConfigCustomSensors[];
 }
 
-export class VbusBinarySensor extends BaseComponent<VbusBinarySensorConfig> {
+export class VbusBinarySensor extends EsphomeComponent<VbusBinarySensorConfig> {
     componentName: string = "vbus.binary_sensor";
 }
 

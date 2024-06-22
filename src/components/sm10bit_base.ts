@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: sm10bit_base.json 
+ *
+ * Schema: sm10bit_base.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sm10bit_base
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export abstract class Sm10bitBase extends BaseComponent {
+export abstract class Sm10bitBase extends EsphomeComponent {
     componentName: string = "sm10bit_base";
 }
 

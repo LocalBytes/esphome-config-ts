@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: st7735.json 
+ *
+ * Schema: st7735.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/st7735
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class St7735Display extends BaseComponent<St7735DisplayConfig> {
+export class St7735Display extends EsphomeComponent<St7735DisplayConfig> {
     componentName: string = "st7735.display";
 }
 

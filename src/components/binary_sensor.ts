@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: binary_sensor.json 
+ *
+ * Schema: binary_sensor.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/binary_sensor
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds, CoreENTITY_BASE_SCHEMA, CoreMQTT_COMPONENT_SCHEMA } from "./esphome.js";
 
-export abstract class BinarySensor extends BaseComponent {
+export abstract class BinarySensor extends EsphomeComponent {
     componentName: string = "binary_sensor";
 }
 

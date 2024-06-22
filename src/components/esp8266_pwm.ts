@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: esp8266_pwm.json 
+ *
+ * Schema: esp8266_pwm.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/esp8266_pwm
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Esp8266PwmOutput extends BaseComponent<Esp8266PwmOutputConfig> {
+export class Esp8266PwmOutput extends EsphomeComponent<Esp8266PwmOutputConfig> {
     componentName: string = "esp8266_pwm.output";
 }
 

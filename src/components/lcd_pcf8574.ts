@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: lcd_pcf8574.json 
+ *
+ * Schema: lcd_pcf8574.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/lcd_pcf8574
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { LcdBaseLCD_SCHEMA } from "./lcd_base.js";
 
-export class LcdPcf8574Display extends BaseComponent<LcdPcf8574DisplayConfig> {
+export class LcdPcf8574Display extends EsphomeComponent<LcdPcf8574DisplayConfig> {
     componentName: string = "lcd_pcf8574.display";
 }
 

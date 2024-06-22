@@ -1,22 +1,22 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: xpt2046.json 
+ *
+ * Schema: xpt2046.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/xpt2046
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { TouchscreenTOUCHSCREEN_SCHEMA } from "./touchscreen.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Xpt2046 extends BaseComponent<any> {
+export class Xpt2046 extends EsphomeComponent<any> {
     componentName: string = "xpt2046";
 }
 
-export class Xpt2046Touchscreen extends BaseComponent<Xpt2046TouchscreenConfig> {
+export class Xpt2046Touchscreen extends EsphomeComponent<Xpt2046TouchscreenConfig> {
     componentName: string = "xpt2046.touchscreen";
 }
 

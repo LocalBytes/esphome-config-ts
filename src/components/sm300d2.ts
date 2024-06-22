@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: sm300d2.json 
+ *
+ * Schema: sm300d2.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sm300d2
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Sm300d2Sensor extends BaseComponent<Sm300d2SensorConfig> {
+export class Sm300d2Sensor extends EsphomeComponent<Sm300d2SensorConfig> {
     componentName: string = "sm300d2.sensor";
 }
 

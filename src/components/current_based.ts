@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: current_based.json 
+ *
+ * Schema: current_based.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/current_based
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { CoverCOVER_SCHEMA } from "./cover.js";
 
-export class CurrentBasedCover extends BaseComponent<CurrentBasedCoverConfig> {
+export class CurrentBasedCover extends EsphomeComponent<CurrentBasedCoverConfig> {
     componentName: string = "current_based.cover";
 }
 

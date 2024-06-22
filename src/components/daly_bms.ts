@@ -1,20 +1,20 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: daly_bms.json 
+ *
+ * Schema: daly_bms.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/daly_bms
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
-export class DalyBms extends BaseComponent<DalyBmsConfig> {
+export class DalyBms extends EsphomeComponent<DalyBmsConfig> {
     componentName: string = "daly_bms";
 }
 
@@ -25,7 +25,7 @@ export interface DalyBmsConfig extends CoreCOMPONENT_SCHEMA {
     update_interval?: any;
 }
 
-export class DalyBmsSensor extends BaseComponent<DalyBmsSensorConfig> {
+export class DalyBmsSensor extends EsphomeComponent<DalyBmsSensorConfig> {
     componentName: string = "daly_bms.sensor";
 }
 
@@ -194,7 +194,7 @@ export interface DalyBmsSensorConfig extends CoreCOMPONENT_SCHEMA {
     cell_16_voltage?: DalyBmsSensorConfigCell_16Voltage;
 }
 
-export class DalyBmsBinarySensor extends BaseComponent<DalyBmsBinarySensorConfig> {
+export class DalyBmsBinarySensor extends EsphomeComponent<DalyBmsBinarySensorConfig> {
     componentName: string = "daly_bms.binary_sensor";
 }
 
@@ -207,7 +207,7 @@ export interface DalyBmsBinarySensorConfig extends CoreCOMPONENT_SCHEMA {
     discharging_mos_enabled?: DalyBmsBinarySensorConfigDischargingMosEnabled;
 }
 
-export class DalyBmsTextSensor extends BaseComponent<DalyBmsTextSensorConfig> {
+export class DalyBmsTextSensor extends EsphomeComponent<DalyBmsTextSensorConfig> {
     componentName: string = "daly_bms.text_sensor";
 }
 

@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: ble_presence.json 
+ *
+ * Schema: ble_presence.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ble_presence
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class BlePresenceBinarySensor extends BaseComponent<BlePresenceBinarySensorConfig> {
+export class BlePresenceBinarySensor extends EsphomeComponent<BlePresenceBinarySensorConfig> {
     componentName: string = "ble_presence.binary_sensor";
 }
 

@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: tee501.json 
+ *
+ * Schema: tee501.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/tee501
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Tee501Sensor extends BaseComponent<Tee501SensorConfig> {
+export class Tee501Sensor extends EsphomeComponent<Tee501SensorConfig> {
     componentName: string = "tee501.sensor";
 }
 

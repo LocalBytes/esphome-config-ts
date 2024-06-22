@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: scd30.json 
+ *
+ * Schema: scd30.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/scd30
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CorePositiveTimePeriodSeconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Scd30Sensor extends BaseComponent<Scd30SensorConfig> {
+export class Scd30Sensor extends EsphomeComponent<Scd30SensorConfig> {
     componentName: string = "scd30.sensor";
 }
 
@@ -54,6 +54,6 @@ export interface Scd30SensorConfig extends CoreCOMPONENT_SCHEMA {
     address?: any;
 }
 
-export abstract class Scd30 extends BaseComponent {
+export abstract class Scd30 extends EsphomeComponent {
     componentName: string = "scd30";
 }

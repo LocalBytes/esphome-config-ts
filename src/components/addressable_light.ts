@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: addressable_light.json 
+ *
+ * Schema: addressable_light.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/addressable_light
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds } from "./esphome.js";
 import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
 
-export class AddressableLightDisplay extends BaseComponent<AddressableLightDisplayConfig> {
+export class AddressableLightDisplay extends EsphomeComponent<AddressableLightDisplayConfig> {
     componentName: string = "addressable_light.display";
 }
 

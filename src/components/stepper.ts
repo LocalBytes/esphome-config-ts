@@ -1,16 +1,16 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: stepper.json 
+ *
+ * Schema: stepper.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/stepper
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 
-export abstract class Stepper extends BaseComponent {
+export abstract class Stepper extends EsphomeComponent {
     componentName: string = "stepper";
 }
 

@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: i2s_audio.json 
+ *
+ * Schema: i2s_audio.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/i2s_audio
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { MicrophoneMICROPHONE_SCHEMA } from "./microphone.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class I2sAudio extends BaseComponent<I2sAudioConfig> {
+export class I2sAudio extends EsphomeComponent<I2sAudioConfig> {
     componentName: string = "i2s_audio";
 }
 
@@ -23,7 +23,7 @@ export interface I2sAudioConfig {
     i2s_mclk_pin?: Pin;
 }
 
-export class I2sAudioMediaPlayer extends BaseComponent<I2sAudioMediaPlayerConfig> {
+export class I2sAudioMediaPlayer extends EsphomeComponent<I2sAudioMediaPlayerConfig> {
     componentName: string = "i2s_audio.media_player";
 }
 
@@ -50,7 +50,7 @@ export interface I2sAudioMediaPlayerConfigExternal {
     i2s_comm_fmt?: I2sAudioMediaPlayerConfigExternalI2sCommFmt;
 }
 
-export class I2sAudioMicrophone extends BaseComponent<I2sAudioMicrophoneConfig> {
+export class I2sAudioMicrophone extends EsphomeComponent<I2sAudioMicrophoneConfig> {
     componentName: string = "i2s_audio.microphone";
 }
 
@@ -75,7 +75,7 @@ export interface I2sAudioMicrophoneConfigExternal {
     pdm: boolean;
 }
 
-export class I2sAudioSpeaker extends BaseComponent<I2sAudioSpeakerConfig> {
+export class I2sAudioSpeaker extends EsphomeComponent<I2sAudioSpeakerConfig> {
     componentName: string = "i2s_audio.speaker";
 }
 

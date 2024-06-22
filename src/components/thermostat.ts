@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: thermostat.json 
+ *
+ * Schema: thermostat.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/thermostat
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodSeconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { ClimateCLIMATE_SCHEMA } from "./climate.js";
 
-export class ThermostatClimate extends BaseComponent<ThermostatClimateConfig> {
+export class ThermostatClimate extends EsphomeComponent<ThermostatClimateConfig> {
     componentName: string = "thermostat.climate";
 }
 

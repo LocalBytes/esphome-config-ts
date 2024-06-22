@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: partition.json 
+ *
+ * Schema: partition.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/partition
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { LightADDRESSABLE_LIGHT_SCHEMA } from "./light.js";
 
-export class PartitionLight extends BaseComponent<PartitionLightConfig> {
+export class PartitionLight extends EsphomeComponent<PartitionLightConfig> {
     componentName: string = "partition.light";
 }
 

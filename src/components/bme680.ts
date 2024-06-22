@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: bme680.json 
+ *
+ * Schema: bme680.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/bme680
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Bme680Sensor extends BaseComponent<Bme680SensorConfig> {
+export class Bme680Sensor extends EsphomeComponent<Bme680SensorConfig> {
     componentName: string = "bme680.sensor";
 }
 

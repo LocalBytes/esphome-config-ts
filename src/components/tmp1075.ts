@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: tmp1075.json 
+ *
+ * Schema: tmp1075.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/tmp1075
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Tmp1075Sensor extends BaseComponent<Tmp1075SensorConfig> {
+export class Tmp1075Sensor extends EsphomeComponent<Tmp1075SensorConfig> {
     componentName: string = "tmp1075.sensor";
 }
 

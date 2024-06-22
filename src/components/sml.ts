@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: sml.json 
+ *
+ * Schema: sml.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sml
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
-export class Sml extends BaseComponent<SmlConfig> {
+export class Sml extends EsphomeComponent<SmlConfig> {
     componentName: string = "sml";
 }
 
@@ -21,7 +21,7 @@ export interface SmlConfig {
     uart_id?: ID;
 }
 
-export class SmlSensor extends BaseComponent<SmlSensorConfig> {
+export class SmlSensor extends EsphomeComponent<SmlSensorConfig> {
     componentName: string = "sml.sensor";
 }
 
@@ -32,7 +32,7 @@ export interface SmlSensorConfig extends SensorSENSOR_SCHEMA {
     server_id?: string;
 }
 
-export class SmlTextSensor extends BaseComponent<SmlTextSensorConfig> {
+export class SmlTextSensor extends EsphomeComponent<SmlTextSensorConfig> {
     componentName: string = "sml.text_sensor";
 }
 

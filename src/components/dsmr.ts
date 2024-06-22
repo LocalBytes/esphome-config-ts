@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: dsmr.json 
+ *
+ * Schema: dsmr.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/dsmr
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
-export class Dsmr extends BaseComponent<DsmrConfig> {
+export class Dsmr extends EsphomeComponent<DsmrConfig> {
     componentName: string = "dsmr";
 }
 
@@ -33,7 +33,7 @@ export interface DsmrConfig {
     uart_id?: ID;
 }
 
-export class DsmrSensor extends BaseComponent<DsmrSensorConfig> {
+export class DsmrSensor extends EsphomeComponent<DsmrSensorConfig> {
     componentName: string = "dsmr.sensor";
 }
 
@@ -367,7 +367,7 @@ export interface DsmrSensorConfig extends CoreCOMPONENT_SCHEMA {
     active_energy_import_maximum_demand_last_13_months?: DsmrSensorConfigActiveEnergyImportMaximumDemandLast_13Months;
 }
 
-export class DsmrTextSensor extends BaseComponent<DsmrTextSensorConfig> {
+export class DsmrTextSensor extends EsphomeComponent<DsmrTextSensorConfig> {
     componentName: string = "dsmr.text_sensor";
 }
 

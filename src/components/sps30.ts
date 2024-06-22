@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: sps30.json 
+ *
+ * Schema: sps30.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sps30
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Sps30Sensor extends BaseComponent<Sps30SensorConfig> {
+export class Sps30Sensor extends EsphomeComponent<Sps30SensorConfig> {
     componentName: string = "sps30.sensor";
 }
 
@@ -107,6 +107,6 @@ export interface Sps30SensorConfig extends CoreCOMPONENT_SCHEMA {
     address?: any;
 }
 
-export abstract class Sps30 extends BaseComponent {
+export abstract class Sps30 extends EsphomeComponent {
     componentName: string = "sps30";
 }

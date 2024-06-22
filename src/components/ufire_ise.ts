@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: ufire_ise.json 
+ *
+ * Schema: ufire_ise.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ufire_ise
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class UfireIseSensor extends BaseComponent<UfireIseSensorConfig> {
+export class UfireIseSensor extends EsphomeComponent<UfireIseSensorConfig> {
     componentName: string = "ufire_ise.sensor";
 }
 
@@ -46,6 +46,6 @@ export interface UfireIseSensorUFIRE_ISE_CALIBRATE_PROBE_SCHEMA {
     solution: string;
 }
 
-export abstract class UfireIse extends BaseComponent {
+export abstract class UfireIse extends EsphomeComponent {
     componentName: string = "ufire_ise";
 }

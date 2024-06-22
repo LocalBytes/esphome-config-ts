@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: switch.json 
+ *
+ * Schema: switch.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/switch
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreENTITY_BASE_SCHEMA, CoreMQTT_COMMAND_COMPONENT_SCHEMA } from "./esphome.js";
 
-export abstract class Switch extends BaseComponent {
+export abstract class Switch extends EsphomeComponent {
     componentName: string = "switch";
 }
 

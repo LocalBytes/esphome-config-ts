@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: internal_temperature.json 
+ *
+ * Schema: internal_temperature.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/internal_temperature
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class InternalTemperatureSensor extends BaseComponent<InternalTemperatureSensorConfig> {
+export class InternalTemperatureSensor extends EsphomeComponent<InternalTemperatureSensorConfig> {
     componentName: string = "internal_temperature.sensor";
 }
 

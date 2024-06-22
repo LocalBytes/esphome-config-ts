@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: sim800l.json 
+ *
+ * Schema: sim800l.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sim800l
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
-export class Sim800l extends BaseComponent<Sim800lConfig> {
+export class Sim800l extends EsphomeComponent<Sim800lConfig> {
     componentName: string = "sim800l";
 }
 
@@ -28,7 +28,7 @@ export interface Sim800lConfig extends CoreCOMPONENT_SCHEMA {
     uart_id?: ID;
 }
 
-export class Sim800lSensor extends BaseComponent<Sim800lSensorConfig> {
+export class Sim800lSensor extends EsphomeComponent<Sim800lSensorConfig> {
     componentName: string = "sim800l.sensor";
 }
 
@@ -45,7 +45,7 @@ export interface Sim800lSensorConfig {
     rssi?: Sim800lSensorConfigRssi;
 }
 
-export class Sim800lBinarySensor extends BaseComponent<Sim800lBinarySensorConfig> {
+export class Sim800lBinarySensor extends EsphomeComponent<Sim800lBinarySensorConfig> {
     componentName: string = "sim800l.binary_sensor";
 }
 

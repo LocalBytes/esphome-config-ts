@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: bme680_bsec.json 
+ *
+ * Schema: bme680_bsec.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/bme680_bsec
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMinutes } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
-export class Bme680Bsec extends BaseComponent<Bme680BsecConfig> {
+export class Bme680Bsec extends EsphomeComponent<Bme680BsecConfig> {
     componentName: string = "bme680_bsec";
 }
 
@@ -31,7 +31,7 @@ export interface Bme680BsecConfig {
     address?: any;
 }
 
-export class Bme680BsecSensor extends BaseComponent<Bme680BsecSensorConfig> {
+export class Bme680BsecSensor extends EsphomeComponent<Bme680BsecSensorConfig> {
     componentName: string = "bme680_bsec.sensor";
 }
 
@@ -111,7 +111,7 @@ export interface Bme680BsecSensorConfig {
     breath_voc_equivalent?: Bme680BsecSensorConfigBreathVocEquivalent;
 }
 
-export class Bme680BsecTextSensor extends BaseComponent<Bme680BsecTextSensorConfig> {
+export class Bme680BsecTextSensor extends EsphomeComponent<Bme680BsecTextSensorConfig> {
     componentName: string = "bme680_bsec.text_sensor";
 }
 

@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: lcd_menu.json 
+ *
+ * Schema: lcd_menu.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/lcd_menu
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { DisplayMenuBaseDISPLAY_MENU_BASE_SCHEMA } from "./display_menu_base.js";
 
-export class LcdMenu extends BaseComponent<LcdMenuConfig> {
+export class LcdMenu extends EsphomeComponent<LcdMenuConfig> {
     componentName: string = "lcd_menu";
 }
 

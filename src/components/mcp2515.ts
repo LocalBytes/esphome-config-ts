@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: mcp2515.json 
+ *
+ * Schema: mcp2515.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/mcp2515
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CanbusCANBUS_SCHEMA } from "./canbus.js";
 
-export class Mcp2515Canbus extends BaseComponent<Mcp2515CanbusConfig> {
+export class Mcp2515Canbus extends EsphomeComponent<Mcp2515CanbusConfig> {
     componentName: string = "mcp2515.canbus";
 }
 

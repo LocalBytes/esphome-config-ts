@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: pzem004t.json 
+ *
+ * Schema: pzem004t.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/pzem004t
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Pzem004tSensor extends BaseComponent<Pzem004tSensorConfig> {
+export class Pzem004tSensor extends EsphomeComponent<Pzem004tSensorConfig> {
     componentName: string = "pzem004t.sensor";
 }
 

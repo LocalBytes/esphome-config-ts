@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: esp32_ble_beacon.json 
+ *
+ * Schema: esp32_ble_beacon.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/esp32_ble_beacon
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Esp32BleBeacon extends BaseComponent<Esp32BleBeaconConfig> {
+export class Esp32BleBeacon extends EsphomeComponent<Esp32BleBeaconConfig> {
     componentName: string = "esp32_ble_beacon";
 }
 

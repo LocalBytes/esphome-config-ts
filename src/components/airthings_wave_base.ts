@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: airthings_wave_base.json 
+ *
+ * Schema: airthings_wave_base.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/airthings_wave_base
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export abstract class AirthingsWaveBase extends BaseComponent {
+export abstract class AirthingsWaveBase extends EsphomeComponent {
     componentName: string = "airthings_wave_base";
 }
 

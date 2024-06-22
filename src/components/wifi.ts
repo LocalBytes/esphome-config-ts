@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: wifi.json 
+ *
+ * Schema: wifi.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/wifi
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds } from "./esphome.js";
 
-export class Wifi extends BaseComponent<WifiConfig> {
+export class Wifi extends EsphomeComponent<WifiConfig> {
     componentName: string = "wifi";
 }
 

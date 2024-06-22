@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: fingerprint_grow.json 
+ *
+ * Schema: fingerprint_grow.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/fingerprint_grow
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
-export class FingerprintGrow extends BaseComponent<FingerprintGrowConfig> {
+export class FingerprintGrow extends EsphomeComponent<FingerprintGrowConfig> {
     componentName: string = "fingerprint_grow";
 }
 
@@ -31,7 +31,7 @@ export interface FingerprintGrowConfig extends CoreCOMPONENT_SCHEMA {
     uart_id?: ID;
 }
 
-export class FingerprintGrowSensor extends BaseComponent<FingerprintGrowSensorConfig> {
+export class FingerprintGrowSensor extends EsphomeComponent<FingerprintGrowSensorConfig> {
     componentName: string = "fingerprint_grow.sensor";
 }
 
@@ -80,7 +80,7 @@ export interface FingerprintGrowSensorConfig {
     last_confidence?: FingerprintGrowSensorConfigLastConfidence;
 }
 
-export class FingerprintGrowBinarySensor extends BaseComponent<FingerprintGrowBinarySensorConfig> {
+export class FingerprintGrowBinarySensor extends EsphomeComponent<FingerprintGrowBinarySensorConfig> {
     componentName: string = "fingerprint_grow.binary_sensor";
 }
 

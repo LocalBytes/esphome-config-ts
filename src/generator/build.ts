@@ -19,6 +19,9 @@ let totals = {
 let files = fs.readdirSync(srcPath("components/source"));
 
 handleIndex(project.getSourceFileOrThrow(srcPath("./lib/base.ts")));
+
+let barrel = project.createSourceFile(srcPath("./components/index.ts"));
+
 files.forEach(file => {
     totals.all++;
     if (!file.endsWith(".json")) {
@@ -60,6 +63,7 @@ files.forEach(file => {
         }
     });
 
+    barrel.addExportDeclaration({moduleSpecifier: `./${outName}`});
     project.saveSync();
 });
 

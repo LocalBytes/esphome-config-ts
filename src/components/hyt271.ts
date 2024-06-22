@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: hyt271.json 
+ *
+ * Schema: hyt271.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/hyt271
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Hyt271Sensor extends BaseComponent<Hyt271SensorConfig> {
+export class Hyt271Sensor extends EsphomeComponent<Hyt271SensorConfig> {
     componentName: string = "hyt271.sensor";
 }
 

@@ -1,16 +1,16 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: remote_base.json 
+ *
+ * Schema: remote_base.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/remote_base
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 
-export abstract class RemoteBase extends BaseComponent {
+export abstract class RemoteBase extends EsphomeComponent {
     componentName: string = "remote_base";
 }
 

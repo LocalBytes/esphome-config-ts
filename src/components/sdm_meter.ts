@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: sdm_meter.json 
+ *
+ * Schema: sdm_meter.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sdm_meter
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class SdmMeterSensor extends BaseComponent<SdmMeterSensorConfig> {
+export class SdmMeterSensor extends EsphomeComponent<SdmMeterSensorConfig> {
     componentName: string = "sdm_meter.sensor";
 }
 

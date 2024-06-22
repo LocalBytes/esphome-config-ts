@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: esp32_touch.json 
+ *
+ * Schema: esp32_touch.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/esp32_touch
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreTimePeriodDict, CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
-export class Esp32Touch extends BaseComponent<Esp32TouchConfig> {
+export class Esp32Touch extends EsphomeComponent<Esp32TouchConfig> {
     componentName: string = "esp32_touch";
 }
 
@@ -45,7 +45,7 @@ export interface Esp32TouchConfig extends CoreCOMPONENT_SCHEMA {
     waterproof_shield_driver?: Esp32TouchConfigWaterproofShieldDriver;
 }
 
-export class Esp32TouchBinarySensor extends BaseComponent<Esp32TouchBinarySensorConfig> {
+export class Esp32TouchBinarySensor extends EsphomeComponent<Esp32TouchBinarySensorConfig> {
     componentName: string = "esp32_touch.binary_sensor";
 }
 

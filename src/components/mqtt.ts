@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: mqtt.json 
+ *
+ * Schema: mqtt.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/mqtt
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodSeconds, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
 
-export class Mqtt extends BaseComponent<MqttConfig> {
+export class Mqtt extends EsphomeComponent<MqttConfig> {
     componentName: string = "mqtt";
 }
 

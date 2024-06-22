@@ -1,19 +1,19 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: pid.json 
+ *
+ * Schema: pid.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/pid
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { ClimateCLIMATE_SCHEMA } from "./climate.js";
 
-export class PidSensor extends BaseComponent<PidSensorConfig> {
+export class PidSensor extends EsphomeComponent<PidSensorConfig> {
     componentName: string = "pid.sensor";
 }
 
@@ -28,7 +28,7 @@ export type PidSensorConfig = {
         type: PidSensorConfigType;
     } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
 
-export class PidClimate extends BaseComponent<PidClimateConfig> {
+export class PidClimate extends EsphomeComponent<PidClimateConfig> {
     componentName: string = "pid.climate";
 }
 

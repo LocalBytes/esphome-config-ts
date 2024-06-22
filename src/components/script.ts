@@ -1,16 +1,16 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: script.json 
+ *
+ * Schema: script.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/script
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 
-export class Script extends BaseComponent<ScriptConfig> {
+export class Script extends EsphomeComponent<ScriptConfig> {
     componentName: string = "script";
 }
 

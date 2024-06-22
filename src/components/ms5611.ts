@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: ms5611.json 
+ *
+ * Schema: ms5611.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ms5611
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Ms5611Sensor extends BaseComponent<Ms5611SensorConfig> {
+export class Ms5611Sensor extends EsphomeComponent<Ms5611SensorConfig> {
     componentName: string = "ms5611.sensor";
 }
 

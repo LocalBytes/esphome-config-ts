@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: bp5758d.json 
+ *
+ * Schema: bp5758d.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/bp5758d
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
 
-export class Bp5758d extends BaseComponent<Bp5758dConfig> {
+export class Bp5758d extends EsphomeComponent<Bp5758dConfig> {
     componentName: string = "bp5758d";
 }
 
@@ -22,7 +22,7 @@ export interface Bp5758dConfig extends CoreCOMPONENT_SCHEMA {
     clock_pin: Pin;
 }
 
-export class Bp5758dOutput extends BaseComponent<Bp5758dOutputConfig> {
+export class Bp5758dOutput extends EsphomeComponent<Bp5758dOutputConfig> {
     componentName: string = "bp5758d.output";
 }
 

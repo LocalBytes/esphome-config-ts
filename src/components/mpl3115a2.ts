@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: mpl3115a2.json 
+ *
+ * Schema: mpl3115a2.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/mpl3115a2
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Mpl3115a2Sensor extends BaseComponent<Mpl3115a2SensorConfig> {
+export class Mpl3115a2Sensor extends EsphomeComponent<Mpl3115a2SensorConfig> {
     componentName: string = "mpl3115a2.sensor";
 }
 

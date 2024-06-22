@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: web_server.json 
+ *
+ * Schema: web_server.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/web_server
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class WebServer extends BaseComponent<WebServerConfig> {
+export class WebServer extends EsphomeComponent<WebServerConfig> {
     componentName: string = "web_server";
 }
 

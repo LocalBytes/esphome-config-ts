@@ -1,17 +1,17 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: fastled_clockless.json 
+ *
+ * Schema: fastled_clockless.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/fastled_clockless
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { FastledBaseBASE_SCHEMA } from "./fastled_base.js";
 
-export class FastledClocklessLight extends BaseComponent<FastledClocklessLightConfig> {
+export class FastledClocklessLight extends EsphomeComponent<FastledClocklessLightConfig> {
     componentName: string = "fastled_clockless.light";
 }
 

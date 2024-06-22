@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: alpha3.json 
+ *
+ * Schema: alpha3.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/alpha3
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Alpha3Sensor extends BaseComponent<Alpha3SensorConfig> {
+export class Alpha3Sensor extends EsphomeComponent<Alpha3SensorConfig> {
     componentName: string = "alpha3.sensor";
 }
 

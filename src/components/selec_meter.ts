@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: selec_meter.json 
+ *
+ * Schema: selec_meter.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/selec_meter
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class SelecMeterSensor extends BaseComponent<SelecMeterSensorConfig> {
+export class SelecMeterSensor extends EsphomeComponent<SelecMeterSensorConfig> {
     componentName: string = "selec_meter.sensor";
 }
 

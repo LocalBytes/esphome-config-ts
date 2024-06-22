@@ -1,18 +1,18 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- * 
- * Schema: sht4x.json 
+ *
+ * Schema: sht4x.json
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sht4x
- * 
+ *
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
-import { type ID, type Pin, BaseComponent } from "@/lib/base.js";
+import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
-export class Sht4xSensor extends BaseComponent<Sht4xSensorConfig> {
+export class Sht4xSensor extends EsphomeComponent<Sht4xSensorConfig> {
     componentName: string = "sht4x.sensor";
 }
 

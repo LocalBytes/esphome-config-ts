@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: sx1509.json
+ * 
+ * Schema: sx1509.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sx1509
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

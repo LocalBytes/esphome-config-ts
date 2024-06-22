@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: modbus_controller.json
+ * 
+ * Schema: modbus_controller.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/modbus_controller
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
@@ -26,6 +26,7 @@ export type ModbusControllerConfigCommandThrottle = CorePositiveTimePeriodMillis
 export interface ModbusControllerConfig extends CoreCOMPONENT_SCHEMA {
     id?: ID;
     command_throttle?: ModbusControllerConfigCommandThrottle;
+    offline_skip_updates?: number;
     update_interval?: any;
     modbus_id?: ID;
     address?: any;

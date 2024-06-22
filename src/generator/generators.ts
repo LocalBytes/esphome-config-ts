@@ -8,6 +8,7 @@ import {
     type WriterFunctionOrValue,
     Writers
 } from "ts-morph";
+
 import {fileNameFromComponent, notEmpty, toUpperCamelCase} from "./utils.js";
 
 let types: {
@@ -121,7 +122,10 @@ function generateSchema(file: SourceFile, name: string, json: any) {
         }).filter(notEmpty);
 
     let extensions: string[] = (json.schema?.extends ?? []).map((extension: string) => {
-        let extensionName = toUpperCamelCase(extension).replace(".", "");
+        let extensionName = toUpperCamelCase(extension)
+            .replace(".CONFIG_SCHEMA", ".Config")
+            .replace(".", "");
+
         let firstDot = fileNameFromComponent(extension);
 
         if (file.getBaseNameWithoutExtension() !== firstDot) {

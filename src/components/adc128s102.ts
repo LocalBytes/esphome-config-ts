@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: adc128s102.json
+ * 
+ * Schema: adc128s102.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/adc128s102
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

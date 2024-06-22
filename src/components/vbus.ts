@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: vbus.json
+ * 
+ * Schema: vbus.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/vbus
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
@@ -537,6 +537,7 @@ export interface VbusSensorConfigCustom {
     source?: number;
     dest?: number;
     sensors?: VbusSensorConfigCustomSensors[];
+    lambda?: any;
 }
 
 export class VbusBinarySensor extends EsphomeComponent<VbusBinarySensorConfig> {
@@ -747,4 +748,5 @@ export interface VbusBinarySensorConfigCustom {
     source?: number;
     dest?: number;
     binary_sensors?: VbusBinarySensorConfigCustomBinarySensors[];
+    lambda?: any;
 }

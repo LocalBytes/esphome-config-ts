@@ -37,7 +37,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Use the voltage value of the sensor in volts. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Peacefair PZEM-00X DC Energy Monitor](https://esphome.io/components/sensor/pzemdc.html#configuration-variables)*"
             },
             "current": {
               "key": "Optional",
@@ -60,7 +61,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Use the current value of the sensor in amperes. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Peacefair PZEM-00X DC Energy Monitor](https://esphome.io/components/sensor/pzemdc.html#configuration-variables)*"
             },
             "power": {
               "key": "Optional",
@@ -83,7 +85,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Use the power value of the sensor in watts. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Peacefair PZEM-00X DC Energy Monitor](https://esphome.io/components/sensor/pzemdc.html#configuration-variables)*"
             },
             "energy": {
               "key": "Optional",
@@ -106,11 +109,13 @@
                     "default": "total_increasing"
                   }
                 }
-              }
+              },
+              "docs": "Use the energy value of the sensor in kWh. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Peacefair PZEM-00X DC Energy Monitor](https://esphome.io/components/sensor/pzemdc.html#configuration-variables)*"
             },
             "update_interval": {
               "key": "Optional",
-              "default": "60s"
+              "default": "60s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [Peacefair PZEM-00X DC Energy Monitor](https://esphome.io/components/sensor/pzemdc.html#configuration-variables)*"
             },
             "modbus_id": {
               "key": "GeneratedID",
@@ -120,7 +125,8 @@
             "address": {
               "key": "Optional",
               "default": "1",
-              "data_type": "hex_uint8_t"
+              "data_type": "hex_uint8_t",
+              "docs": "**int**: The address of the sensor if multiple sensors are attached to the same UART bus. You will need to set the address of each device manually. Defaults to `1`.\n\n*See also: [Peacefair PZEM-00X DC Energy Monitor](https://esphome.io/components/sensor/pzemdc.html#configuration-variables)*"
             }
           },
           "extends": [
@@ -143,7 +149,8 @@
               "type": "use_id"
             }
           }
-        }
+        },
+        "docs": "This action resets the total energy value of the pzemdc device with the given ID when executed.\n\n*See also: [`pzemdc.reset_energy` Action](https://esphome.io/components/sensor/pzemdc.html#pzemdc-reset-energy-action)*"
       }
     }
   }

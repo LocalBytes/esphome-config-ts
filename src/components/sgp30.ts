@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: sgp30.json
+ * 
+ * Schema: sgp30.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sgp30
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

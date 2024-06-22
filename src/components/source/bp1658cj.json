@@ -12,7 +12,8 @@
                 "parents": [
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this `bp1658cj` component. Use this if you have multiple BP1658CJ chains connected at the same time.\n\n*See also: [bp1658cj Component/Hub](https://esphome.io/components/output/bp1658cj.html#configuration-variables)*"
             },
             "data_pin": {
               "key": "Required",
@@ -20,7 +21,8 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin used for DATA.\n\n*See also: [bp1658cj Component/Hub](https://esphome.io/components/output/bp1658cj.html#configuration-variables)*"
             },
             "clock_pin": {
               "key": "Required",
@@ -28,17 +30,20 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin which CLK is connected to.\n\n*See also: [bp1658cj Component/Hub](https://esphome.io/components/output/bp1658cj.html#configuration-variables)*"
             },
             "max_power_color_channels": {
               "key": "Optional",
               "default": "2",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int 0-15**: Adjusts the current supplied to the color channels, higher is more power.  Default is 4 per BP1658CJ datasheet. See table below.\n\n*See also: [bp1658cj Component/Hub](https://esphome.io/components/output/bp1658cj.html#configuration-variables)*"
             },
             "max_power_white_channels": {
               "key": "Optional",
               "default": "4",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int 0-15**: Adjusts the current supplied to the white channels, higher is more power.  Default is 6 per BP1658CJ datasheet. See table below.\n\n*See also: [bp1658cj Component/Hub](https://esphome.io/components/output/bp1658cj.html#configuration-variables)*"
             }
           },
           "extends": [
@@ -62,7 +67,8 @@
             "bp1658cj_id": {
               "key": "GeneratedID",
               "use_id_type": "bp1658cj::BP1658CJ",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID of the [Component/Hub](https://esphome.io/components/output/bp1658cj.html#bp1658cj-component). Use this if you have multiple BP1658CJ chains you want to use at the same time.\n\n*See also: [bp1658cj Output](https://esphome.io/components/output/bp1658cj.html#id1)*"
             },
             "id": {
               "key": "Required",
@@ -72,11 +78,13 @@
                   "output::FloatOutput",
                   "output::BinaryOutput"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this output component.\n\n*See also: [bp1658cj Output](https://esphome.io/components/output/bp1658cj.html#id1)*"
             },
             "channel": {
               "key": "Required",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int**: Chose the channel of the BP1658CJ chain of this output component.\n\n*See also: [bp1658cj Output](https://esphome.io/components/output/bp1658cj.html#id1)*"
             }
           }
         }

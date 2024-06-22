@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: waveshare_epaper.json
+ * 
+ * Schema: waveshare_epaper.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/waveshare_epaper
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

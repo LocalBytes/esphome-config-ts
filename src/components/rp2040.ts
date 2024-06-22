@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: rp2040.json
+ * 
+ * Schema: rp2040.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/rp2040
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

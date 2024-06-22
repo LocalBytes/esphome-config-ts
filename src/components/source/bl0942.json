@@ -37,7 +37,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "The voltage value of the sensor in Volts. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Belling BL0942 Energy Monitor](https://esphome.io/components/sensor/bl0942.html#configuration-variables)*"
             },
             "current": {
               "key": "Optional",
@@ -60,7 +61,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "The current value of the sensor in Amperes. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Belling BL0942 Energy Monitor](https://esphome.io/components/sensor/bl0942.html#configuration-variables)*"
             },
             "power": {
               "key": "Optional",
@@ -83,7 +85,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "The (active) power value of the sensor in Watts. Note that some power meters will report this in negative values (probably wired backwards), so you may want to use a filter to multiply it by -1. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Belling BL0942 Energy Monitor](https://esphome.io/components/sensor/bl0942.html#configuration-variables)*"
             },
             "energy": {
               "key": "Optional",
@@ -103,7 +106,8 @@
                     "default": "energy"
                   }
                 }
-              }
+              },
+              "docs": "Use the voltage value of the sensor in kWh. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Belling BL0942 Energy Monitor](https://esphome.io/components/sensor/bl0942.html#configuration-variables)*"
             },
             "frequency": {
               "key": "Optional",
@@ -126,16 +130,19 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "The frequency value of the sensor in Hertz. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Belling BL0942 Energy Monitor](https://esphome.io/components/sensor/bl0942.html#configuration-variables)*"
             },
             "update_interval": {
               "key": "Optional",
-              "default": "60s"
+              "default": "60s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [Belling BL0942 Energy Monitor](https://esphome.io/components/sensor/bl0942.html#configuration-variables)*"
             },
             "uart_id": {
               "key": "GeneratedID",
               "use_id_type": "uart::UARTComponent",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID of the [UART Component](https://esphome.io/components/uart.html#uart) if you want to use multiple UART buses.\n\n*See also: [Belling BL0942 Energy Monitor](https://esphome.io/components/sensor/bl0942.html#configuration-variables)*"
             }
           },
           "extends": [

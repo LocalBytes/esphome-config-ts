@@ -1,6 +1,7 @@
-import {Project} from "ts-morph";
 import * as fs from "node:fs";
 import * as Path from "node:path";
+
+import {Project} from "ts-morph";
 
 import {generateClass, handleIndex} from "./generators.js";
 import {makeHeader} from "./utils.js";
@@ -20,7 +21,11 @@ let files = fs.readdirSync(srcPath("components/source"));
 
 handleIndex(project.getSourceFileOrThrow(srcPath("./lib/base.ts")));
 
-let barrel = project.createSourceFile(srcPath("./components/index.ts"));
+let barrel = project.createSourceFile(
+    srcPath("./components/index.ts"),
+    "// This file is generated, do not edit it manually.",
+    {overwrite: true}
+);
 
 files.forEach(file => {
     totals.all++;
@@ -42,11 +47,12 @@ files.forEach(file => {
     console.debug(`Generating ${file}...`);
 
     source.addImportDeclaration({
+        moduleSpecifier: "@/lib/base.js",
         namedImports: [
             {name: "ID", isTypeOnly: true},
             {name: "Pin", isTypeOnly: true},
-            "BaseComponent"
-        ], moduleSpecifier: "@/lib/base.js"
+            {name: "EsphomeComponent"}
+        ],
     })
 
     Object.entries(config).forEach(([key, value]) => {
@@ -63,7 +69,7 @@ files.forEach(file => {
         }
     });
 
-    barrel.addExportDeclaration({moduleSpecifier: `./${outName}`});
+    barrel.addExportDeclaration({moduleSpecifier: `./${outName}.js`});
     project.saveSync();
 });
 

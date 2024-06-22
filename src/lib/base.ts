@@ -25,6 +25,10 @@ export abstract class BaseComponent<TConfig extends Object = {}> {
 }
 
 export abstract class EsphomeComponent<TConfig extends Object = {}> extends BaseComponent<TConfig> {
+    constructor(config: TConfig) {
+        super(config);
+    }
+
     synth(): SynthComponent<TConfig>[] {
         let parts = this.componentName.split('.');
 

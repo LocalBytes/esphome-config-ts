@@ -6,11 +6,13 @@
         "schema": {
           "config_vars": {
             "entity_id": {
-              "key": "Required"
+              "key": "Required",
+              "docs": "**string**: The entity ID to import from Home Assistant.\n\n*See also: [Home Assistant Text Sensor](https://esphome.io/components/text_sensor/homeassistant.html#configuration-variables)*"
             },
             "attribute": {
               "key": "Optional",
-              "type": "string"
+              "type": "string",
+              "docs": "**string**: The name of the state attribute to import from the specified entity. The entity state is used when this option is omitted.\n\n*See also: [Home Assistant Text Sensor](https://esphome.io/components/text_sensor/homeassistant.html#configuration-variables)*"
             },
             "internal": {
               "key": "Optional",
@@ -34,7 +36,8 @@
             "service": {
               "key": "Required",
               "templatable": true,
-              "type": "string"
+              "type": "string",
+              "docs": "**string**: The Home Assistant [Service](https://www.home-assistant.io/docs/scripts/service-calls/) to call.\n\n*See also: [Native API Component](https://esphome.io/components/api.html#homeassistant-service-action)*"
             },
             "data": {
               "key": "Optional",
@@ -44,7 +47,8 @@
                 "extends": [
                   "api.KEY_VALUE_SCHEMA"
                 ]
-              }
+              },
+              "docs": "**mapping**: Optional *static* data to pass along with the service call.\n\n*See also: [Native API Component](https://esphome.io/components/api.html#homeassistant-service-action)*"
             },
             "data_template": {
               "key": "Optional",
@@ -54,7 +58,8 @@
                 "extends": [
                   "api.KEY_VALUE_SCHEMA"
                 ]
-              }
+              },
+              "docs": "**mapping**: Optional template data to pass along with the service call. This is evaluated on the Home Assistant side with Home Assistant\u2019s templating engine.\n\n*See also: [Native API Component](https://esphome.io/components/api.html#homeassistant-service-action)*"
             },
             "variables": {
               "key": "String",
@@ -65,10 +70,12 @@
                 "config_vars": {
                   "string": {}
                 }
-              }
+              },
+              "docs": "**mapping**: Optional variables that can be used in the `data_template`. Values are [lambdas](https://esphome.io/guides/automations.html#config-lambda) and will be evaluated before sending the request.\n\n*See also: [Native API Component](https://esphome.io/components/api.html#homeassistant-service-action)*"
             }
           }
-        }
+        },
+        "docs": "When using the native API with Home Assistant, you can create Home Assistant service calls straight from ESPHome [Automations](https://esphome.io/guides/automations.html#automation).\n\n*See also: [`homeassistant.service` Action](https://esphome.io/components/api.html#homeassistant-service-action)*"
       },
       "event": {
         "type": "schema",
@@ -80,7 +87,8 @@
               "type": "use_id"
             },
             "event": {
-              "key": "Required"
+              "key": "Required",
+              "docs": "**string**: The event to create - must begin with `esphome.`\n\n*See also: [Native API Component](https://esphome.io/components/api.html#homeassistant-event-action)*"
             },
             "data": {
               "key": "Optional",
@@ -90,7 +98,8 @@
                 "extends": [
                   "api.KEY_VALUE_SCHEMA"
                 ]
-              }
+              },
+              "docs": "**mapping**: Optional *static* data to pass along with the event.\n\n*See also: [Native API Component](https://esphome.io/components/api.html#homeassistant-event-action)*"
             },
             "data_template": {
               "key": "Optional",
@@ -100,7 +109,8 @@
                 "extends": [
                   "api.KEY_VALUE_SCHEMA"
                 ]
-              }
+              },
+              "docs": "**mapping**: Optional template data to pass along with the event. This is evaluated on the Home Assistant side with Home Assistant\u2019s templating engine.\n\n*See also: [Native API Component](https://esphome.io/components/api.html#homeassistant-event-action)*"
             },
             "variables": {
               "key": "Optional",
@@ -110,10 +120,12 @@
                 "extends": [
                   "api.KEY_VALUE_SCHEMA"
                 ]
-              }
+              },
+              "docs": "**mapping**: Optional variables that can be used in the `data_template`. Values are [lambdas](https://esphome.io/guides/automations.html#config-lambda) and will be evaluated before sending the request.\n\n*See also: [Native API Component](https://esphome.io/components/api.html#homeassistant-event-action)*"
             }
           }
-        }
+        },
+        "docs": "When using the native API with Home Assistant, you can create events in the Home Assistant event bus straight from ESPHome [Automations](https://esphome.io/guides/automations.html#automation).\n\n*See also: [`homeassistant.event` Action](https://esphome.io/components/api.html#homeassistant-event-action)*"
       },
       "tag_scanned": {
         "type": "schema",
@@ -127,11 +139,13 @@
             "tag": {
               "key": "Required",
               "templatable": true,
-              "type": "string"
+              "type": "string",
+              "docs": "**[templatable](https://esphome.io/guides/automations.html#config-templatable), string**: The id of the scanned tag\n\n*See also: [Native API Component](https://esphome.io/components/api.html#homeassistant-tag-scanned-action)*"
             }
           }
         },
-        "maybe": "tag"
+        "maybe": "tag",
+        "docs": "When using the native API with Home Assistant, you can push tag_scanned to Home Assistant straight from ESPHome [Automations](https://esphome.io/guides/automations.html#automation).\n\n*See also: [`homeassistant.tag_scanned` Action](https://esphome.io/components/api.html#homeassistant-tag-scanned-action)*"
       }
     }
   },
@@ -153,7 +167,8 @@
                   "EntityBase",
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [Home Assistant Sensor](https://esphome.io/components/sensor/homeassistant.html#configuration-variables)*"
             },
             "accuracy_decimals": {
               "default": "1"
@@ -181,7 +196,8 @@
                   "EntityBase",
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [Home Assistant Binary Sensor](https://esphome.io/components/binary_sensor/homeassistant.html#configuration-variables)*"
             }
           }
         }
@@ -206,7 +222,8 @@
                   "EntityBase",
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [Home Assistant Text Sensor](https://esphome.io/components/text_sensor/homeassistant.html#configuration-variables)*"
             }
           }
         }

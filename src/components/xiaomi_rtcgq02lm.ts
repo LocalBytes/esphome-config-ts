@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: xiaomi_rtcgq02lm.json
+ * 
+ * Schema: xiaomi_rtcgq02lm.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/xiaomi_rtcgq02lm
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

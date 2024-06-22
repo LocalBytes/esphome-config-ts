@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: pn532_spi.json
+ * 
+ * Schema: pn532_spi.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/pn532_spi
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

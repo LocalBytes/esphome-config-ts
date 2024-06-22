@@ -16,7 +16,8 @@
                   "display::DisplayBuffer",
                   "spi::SPIDevice"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [SSD1331 OLED Display](https://esphome.io/components/display/ssd1331.html#configuration-variables)*"
             },
             "dc_pin": {
               "key": "Required",
@@ -24,7 +25,8 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The DC pin.\n\n*See also: [SSD1331 OLED Display](https://esphome.io/components/display/ssd1331.html#configuration-variables)*"
             },
             "spi_id": {
               "key": "GeneratedID",
@@ -37,7 +39,8 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin on the ESP that that the CS line is connected to. The CS line can be connected to GND if this is the only device on the SPI bus.\n\n*See also: [SSD1331 OLED Display](https://esphome.io/components/display/ssd1331.html#configuration-variables)*"
             },
             "reset_pin": {
               "key": "Optional",
@@ -45,7 +48,8 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The RESET pin.\n\n*See also: [SSD1331 OLED Display](https://esphome.io/components/display/ssd1331.html#configuration-variables)*"
             },
             "brightness": {
               "key": "Optional",
@@ -53,7 +57,8 @@
             },
             "update_interval": {
               "key": "Optional",
-              "default": "1s"
+              "default": "1s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to re-draw the screen. Defaults to `5s`.\n\n*See also: [SSD1331 OLED Display](https://esphome.io/components/display/ssd1331.html#configuration-variables)*"
             }
           },
           "extends": [

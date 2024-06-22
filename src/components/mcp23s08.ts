@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: mcp23s08.json
+ * 
+ * Schema: mcp23s08.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/mcp23s08
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

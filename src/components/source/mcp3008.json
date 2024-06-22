@@ -59,19 +59,23 @@
             "mcp3008_id": {
               "key": "GeneratedID",
               "use_id_type": "mcp3008::MCP3008",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id of the parent MCP3008 component.\n\n*See also: [mcp3008 Sensor](https://esphome.io/components/sensor/mcp3008.html#sensor)*"
             },
             "number": {
               "key": "Required",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int**: The pin number of the MCP3008\n\n*See also: [mcp3008 Sensor](https://esphome.io/components/sensor/mcp3008.html#sensor)*"
             },
             "reference_voltage": {
               "key": "Optional",
-              "default": "3.3V"
+              "default": "3.3V",
+              "docs": "**float**: The reference voltage. Defaults to `3.3V`.\n\n*See also: [mcp3008 Sensor](https://esphome.io/components/sensor/mcp3008.html#sensor)*"
             },
             "update_interval": {
               "key": "Optional",
-              "default": "1s"
+              "default": "1s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `1s`.\n\n*See also: [mcp3008 Sensor](https://esphome.io/components/sensor/mcp3008.html#sensor)*"
             }
           }
         }

@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: rc522_spi.json
+ * 
+ * Schema: rc522_spi.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/rc522_spi
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

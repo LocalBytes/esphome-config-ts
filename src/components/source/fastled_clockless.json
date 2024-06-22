@@ -37,7 +37,8 @@
                 "LPD1886": null,
                 "LPD1886_8BIT": null,
                 "SM16703": null
-              }
+              },
+              "docs": "**string**: Set a chipset to use. See [Supported Chipsets](https://esphome.io/components/light/fastled.html#fastled-clockless-chipsets) for options.\n\n*See also: [Clockless](https://esphome.io/components/light/fastled.html#configuration-variables)*"
             },
             "pin": {
               "key": "Required",
@@ -45,7 +46,8 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin](https://esphome.io/guides/configuration-types.html#config-pin)**: The pin for the data line of the FastLED light.\n\n*See also: [Clockless](https://esphome.io/components/light/fastled.html#configuration-variables)*"
             }
           }
         }

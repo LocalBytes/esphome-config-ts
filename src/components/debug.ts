@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: debug.json
+ * 
+ * Schema: debug.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/debug
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
@@ -54,12 +54,20 @@ export interface DebugSensorConfigLoopTime extends SensorSENSOR_SCHEMA {
     entity_category?: any;
 }
 
+export interface DebugSensorConfigPsram extends SensorSENSOR_SCHEMA {
+    unit_of_measurement?: any;
+    icon?: any;
+    accuracy_decimals?: any;
+    entity_category?: any;
+}
+
 export interface DebugSensorConfig {
     debug_id?: ID;
     free?: DebugSensorConfigFree;
     block?: DebugSensorConfigBlock;
     fragmentation?: DebugSensorConfigFragmentation;
     loop_time?: DebugSensorConfigLoopTime;
+    psram?: DebugSensorConfigPsram;
 }
 
 export class DebugTextSensor extends EsphomeComponent<DebugTextSensorConfig> {

@@ -17,7 +17,8 @@
                   "sensor::Sensor",
                   "EntityBase"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Set the ID of this sensor for use in lambdas.\n\n*See also: [Resistance Sensor](https://esphome.io/components/sensor/resistance.html#configuration-variables)*"
             },
             "unit_of_measurement": {
               "default": "\u03a9"
@@ -34,7 +35,8 @@
             "sensor": {
               "key": "Required",
               "use_id_type": "sensor::Sensor",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The sensor to read the voltage values from to convert to resistance readings.\n\n*See also: [Resistance Sensor](https://esphome.io/components/sensor/resistance.html#configuration-variables)*"
             },
             "configuration": {
               "key": "Required",
@@ -42,14 +44,17 @@
               "values": {
                 "DOWNSTREAM": null,
                 "UPSTREAM": null
-              }
+              },
+              "docs": "**string**: The type of circuit, one of `DOWNSTREAM` or `UPSTREAM`.\n\n*See also: [Resistance Sensor](https://esphome.io/components/sensor/resistance.html#configuration-variables)*"
             },
             "resistor": {
-              "key": "Required"
+              "key": "Required",
+              "docs": "**float**: The value of the resistor with a constant value.\n\n*See also: [Resistance Sensor](https://esphome.io/components/sensor/resistance.html#configuration-variables)*"
             },
             "reference_voltage": {
               "key": "Optional",
-              "default": "3.3V"
+              "default": "3.3V",
+              "docs": "**float**: The reference voltage. Defaults to `3.3V`.\n\n*See also: [Resistance Sensor](https://esphome.io/components/sensor/resistance.html#configuration-variables)*"
             }
           }
         }

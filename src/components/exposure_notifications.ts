@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: exposure_notifications.json
+ * 
+ * Schema: exposure_notifications.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/exposure_notifications
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

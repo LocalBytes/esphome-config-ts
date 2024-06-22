@@ -19,7 +19,8 @@
             "standard_units": {
               "key": "Optional",
               "default": "True",
-              "type": "boolean"
+              "type": "boolean",
+              "docs": "**boolean**: `True` to use standard units or `False` to use  environmental units. Defaults to `True`.\n\n*See also: [PMSA003I Particulate Matter Sensor](https://esphome.io/components/sensor/pmsa003i.html#configuration-variables)*"
             },
             "pm_1_0": {
               "key": "Optional",
@@ -45,7 +46,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Mass of particles with a diameter of 1 micrometres or less (\u03bcg/m^3). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [PMSA003I Particulate Matter Sensor](https://esphome.io/components/sensor/pmsa003i.html#configuration-variables)*"
             },
             "pm_2_5": {
               "key": "Optional",
@@ -71,7 +73,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Mass of particles with a diameter of 2.5 micrometres or less (\u03bcg/m^3). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [PMSA003I Particulate Matter Sensor](https://esphome.io/components/sensor/pmsa003i.html#configuration-variables)*"
             },
             "pm_10_0": {
               "key": "Optional",
@@ -97,7 +100,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Mass of particles with a diameter of 10 micrometres or less (\u03bcg/m^3). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [PMSA003I Particulate Matter Sensor](https://esphome.io/components/sensor/pmsa003i.html#configuration-variables)*"
             },
             "pmc_0_3": {
               "key": "Optional",
@@ -120,7 +124,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Count of particles with diameter > 0.3 um in 0.1 L of air (#/0.1L). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [PMSA003I Particulate Matter Sensor](https://esphome.io/components/sensor/pmsa003i.html#configuration-variables)*"
             },
             "pmc_0_5": {
               "key": "Optional",
@@ -143,7 +148,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Count of particles with diameter > 0.5 um in 0.1 L of air (#/0.1L). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [PMSA003I Particulate Matter Sensor](https://esphome.io/components/sensor/pmsa003i.html#configuration-variables)*"
             },
             "pmc_1_0": {
               "key": "Optional",
@@ -166,7 +172,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Count of particles with diameter > 1 um in 0.1 L of air (#/0.1L). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [PMSA003I Particulate Matter Sensor](https://esphome.io/components/sensor/pmsa003i.html#configuration-variables)*"
             },
             "pmc_2_5": {
               "key": "Optional",
@@ -189,7 +196,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Count of particles with diameter > 2.5 um in 0.1 L of air (#/0.1L). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [PMSA003I Particulate Matter Sensor](https://esphome.io/components/sensor/pmsa003i.html#configuration-variables)*"
             },
             "pmc_5_0": {
               "key": "Optional",
@@ -212,7 +220,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Count of particles with diameter > 5 um in 0.1 L of air (#/0.1L). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [PMSA003I Particulate Matter Sensor](https://esphome.io/components/sensor/pmsa003i.html#configuration-variables)*"
             },
             "pmc_10_0": {
               "key": "Optional",
@@ -235,11 +244,13 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Count of particles with diameter > 10 um in 0.1 L of air (#/0.1L). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [PMSA003I Particulate Matter Sensor](https://esphome.io/components/sensor/pmsa003i.html#configuration-variables)*"
             },
             "update_interval": {
               "key": "Optional",
-              "default": "60s"
+              "default": "60s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [PMSA003I Particulate Matter Sensor](https://esphome.io/components/sensor/pmsa003i.html#configuration-variables)*"
             },
             "i2c_id": {
               "key": "GeneratedID",
@@ -249,7 +260,8 @@
             "address": {
               "key": "Optional",
               "default": "18",
-              "data_type": "hex_uint8_t"
+              "data_type": "hex_uint8_t",
+              "docs": "**int**: Manually specify the I\u00b2C address of the sensor. Defaults to `0x12`.\n\n*See also: [PMSA003I Particulate Matter Sensor](https://esphome.io/components/sensor/pmsa003i.html#configuration-variables)*"
             }
           },
           "extends": [

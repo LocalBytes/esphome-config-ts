@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: lcd_menu.json
+ * 
+ * Schema: lcd_menu.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/lcd_menu
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

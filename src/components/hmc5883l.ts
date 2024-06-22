@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: hmc5883l.json
+ * 
+ * Schema: hmc5883l.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/hmc5883l
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

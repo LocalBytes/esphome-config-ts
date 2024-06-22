@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: wake_on_lan.json
+ * 
+ * Schema: wake_on_lan.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/wake_on_lan
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

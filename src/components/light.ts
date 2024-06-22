@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: light.json
+ * 
+ * Schema: light.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/light
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
@@ -23,10 +23,21 @@ export type LightLIGHT_SCHEMA = {
         on_turn_on?: object[];
         on_turn_off?: object[];
         on_state?: object[];
+        effects?: any;
+        gamma_correct?: any;
+        default_transition_length?: any;
+        flash_transition_length?: any;
+        color_correct?: any;
+        power_supply?: any;
     } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMMAND_COMPONENT_SCHEMA;
 
 export interface LightBINARY_LIGHT_SCHEMA extends LightLIGHT_SCHEMA {
     effects?: any;
+    gamma_correct?: any;
+    default_transition_length?: any;
+    flash_transition_length?: any;
+    color_correct?: any;
+    power_supply?: any;
 }
 
 export type LightBRIGHTNESS_ONLY_LIGHT_SCHEMADefaultTransitionLength = CorePositiveTimePeriodMilliseconds;
@@ -37,6 +48,8 @@ export interface LightBRIGHTNESS_ONLY_LIGHT_SCHEMA extends LightLIGHT_SCHEMA {
     default_transition_length?: LightBRIGHTNESS_ONLY_LIGHT_SCHEMADefaultTransitionLength;
     flash_transition_length?: LightBRIGHTNESS_ONLY_LIGHT_SCHEMAFlashTransitionLength;
     effects?: any;
+    color_correct?: any;
+    power_supply?: any;
 }
 
 export interface LightRGB_LIGHT_SCHEMA extends LightBRIGHTNESS_ONLY_LIGHT_SCHEMA {

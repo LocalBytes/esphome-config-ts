@@ -19,7 +19,8 @@
                   "Component",
                   "voltage_sampler::VoltageSampler"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [Analog To Digital Sensor](https://esphome.io/components/sensor/adc.html#configuration-variables)*"
             },
             "unit_of_measurement": {
               "default": "V"
@@ -39,12 +40,14 @@
               "modes": [
                 "input"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin](https://esphome.io/guides/configuration-types.html#config-pin)**: The pin to measure the voltage on. Or on the ESP8266 or Raspberry Pi Pico it could alternatively be set to `VCC`, see [Measuring VCC](https://esphome.io/components/sensor/adc.html#adc-vcc).\n\n*See also: [Analog To Digital Sensor](https://esphome.io/components/sensor/adc.html#configuration-variables)*"
             },
             "raw": {
               "key": "Optional",
               "default": "False",
-              "type": "boolean"
+              "type": "boolean",
+              "docs": "Allows to read the raw ADC output without any conversion or calibration. See [Different ESP32-ADC behavior since 2021.11](https://esphome.io/components/sensor/adc.html#adc-raw). Defaults to `false`.\n\n*See also: [Analog To Digital Sensor](https://esphome.io/components/sensor/adc.html#configuration-variables)*"
             },
             "attenuation": {
               "key": "Optional",
@@ -55,11 +58,13 @@
                 "6db": null,
                 "11db": null,
                 "auto": null
-              }
+              },
+              "docs": "Only on ESP32. Specify the ADC attenuation to use. See [ESP32 Attenuation](https://esphome.io/components/sensor/adc.html#adc-esp32-attenuation). Defaults to `0db`.\n\n*See also: [Analog To Digital Sensor](https://esphome.io/components/sensor/adc.html#configuration-variables)*"
             },
             "update_interval": {
               "key": "Optional",
-              "default": "60s"
+              "default": "60s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [Analog To Digital Sensor](https://esphome.io/components/sensor/adc.html#configuration-variables)*"
             }
           }
         }

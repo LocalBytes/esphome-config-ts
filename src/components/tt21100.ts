@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: tt21100.json
+ * 
+ * Schema: tt21100.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/tt21100
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

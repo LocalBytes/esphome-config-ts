@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: mpl3115a2.json
+ * 
+ * Schema: mpl3115a2.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/mpl3115a2
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

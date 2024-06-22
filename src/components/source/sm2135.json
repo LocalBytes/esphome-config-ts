@@ -12,7 +12,8 @@
                 "parents": [
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this `sm2135` component. Use this if you have multiple SM2135 chains connected at the same time.\n\n*See also: [sm2135 Component/Hub](https://esphome.io/components/output/sm2135.html#configuration-variables)*"
             },
             "data_pin": {
               "key": "Required",
@@ -20,7 +21,8 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin used for MOSI.\n\n*See also: [sm2135 Component/Hub](https://esphome.io/components/output/sm2135.html#configuration-variables)*"
             },
             "clock_pin": {
               "key": "Required",
@@ -28,7 +30,8 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin which SCLK is connected to.\n\n*See also: [sm2135 Component/Hub](https://esphome.io/components/output/sm2135.html#configuration-variables)*"
             },
             "rgb_current": {
               "key": "Optional",
@@ -43,7 +46,8 @@
                 "35mA": null,
                 "40mA": null,
                 "45mA": null
-              }
+              },
+              "docs": "**current**: The current used for the RGB channel. Defaults to `20mA`. Can be one of `10mA`, `15mA`, `20mA`, `25mA`, `30mA`, `35mA`, `40mA`, `45mA`.\n\n*See also: [sm2135 Component/Hub](https://esphome.io/components/output/sm2135.html#configuration-variables)*"
             },
             "cw_current": {
               "key": "Optional",
@@ -61,7 +65,8 @@
                 "50mA": null,
                 "55mA": null,
                 "60mA": null
-              }
+              },
+              "docs": "**current**: The current used for the white channel. Defaults to `10mA`. Can be one of `10mA`, `15mA`, `20mA`, `25mA`, `30mA`, `35mA`, `40mA`, `45mA`, `50mA`, `55mA`, `60mA`.\n\n*See also: [sm2135 Component/Hub](https://esphome.io/components/output/sm2135.html#configuration-variables)*"
             }
           },
           "extends": [
@@ -85,7 +90,8 @@
             "sm2135_id": {
               "key": "GeneratedID",
               "use_id_type": "sm2135::SM2135",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID of the [Component/Hub](https://esphome.io/components/output/sm2135.html#sm2135-component). Use this if you have multiple SM2135 chains you want to use at the same time.\n\n*See also: [sm2135 Output](https://esphome.io/components/output/sm2135.html#id1)*"
             },
             "id": {
               "key": "Required",
@@ -95,11 +101,13 @@
                   "output::FloatOutput",
                   "output::BinaryOutput"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this output component.\n\n*See also: [sm2135 Output](https://esphome.io/components/output/sm2135.html#id1)*"
             },
             "channel": {
               "key": "Required",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int**: Chose the channel of the SM2135 chain of this output component.\n\n*See also: [sm2135 Output](https://esphome.io/components/output/sm2135.html#id1)*"
             }
           }
         }

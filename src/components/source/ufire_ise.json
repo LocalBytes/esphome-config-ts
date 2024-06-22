@@ -14,7 +14,8 @@
                   "Component",
                   "i2c::I2CDevice"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Set the ID of this sensor for use in lambdas.\n\n*See also: [uFire ISE pH sensor](https://esphome.io/components/sensor/ufire_ise.html#configuration-variables)*"
             },
             "temperature": {
               "key": "Optional",
@@ -37,7 +38,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "**[Sensor](https://esphome.io/components/sensor/index.html#config-sensor)**: Set the onboard temperature sensor configuration. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor). Can\u2019t be used together with `temperature_sensor`.\n\n*See also: [uFire ISE pH sensor](https://esphome.io/components/sensor/ufire_ise.html#configuration-variables)*"
             },
             "ph": {
               "key": "Optional",
@@ -63,16 +65,19 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "**[Sensor](https://esphome.io/components/sensor/index.html#config-sensor)**: Set the pH sensor configuration. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [uFire ISE pH sensor](https://esphome.io/components/sensor/ufire_ise.html#configuration-variables)*"
             },
             "temperature_sensor": {
               "key": "Optional",
               "use_id_type": "sensor::Sensor",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Set the ID of the temperature sensor. Only needed if the onboard temperature sensor is not used.\n\n*See also: [uFire ISE pH sensor](https://esphome.io/components/sensor/ufire_ise.html#configuration-variables)*"
             },
             "update_interval": {
               "key": "Optional",
-              "default": "60s"
+              "default": "60s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [uFire ISE pH sensor](https://esphome.io/components/sensor/ufire_ise.html#configuration-variables)*"
             },
             "i2c_id": {
               "key": "GeneratedID",
@@ -82,7 +87,8 @@
             "address": {
               "key": "Optional",
               "default": "63",
-              "data_type": "hex_uint8_t"
+              "data_type": "hex_uint8_t",
+              "docs": "**int**: Specify the I\u00b2C address of the sensor. Defaults to `0x3f`.\n\n*See also: [uFire ISE pH sensor](https://esphome.io/components/sensor/ufire_ise.html#configuration-variables)*"
             }
           },
           "extends": [
@@ -97,11 +103,13 @@
             "id": {
               "key": "GeneratedID",
               "use_id_type": "ufire_ise::UFireISEComponent",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The ID of the ufire pH sensor.\n\n*See also: [uFire ISE pH sensor](https://esphome.io/components/sensor/ufire_ise.html#ufire-ise-calibrate-probe-low-action)*"
             },
             "solution": {
               "key": "Required",
-              "templatable": true
+              "templatable": true,
+              "docs": "**float**: Solution reference pH value.\n\n*See also: [uFire ISE pH sensor](https://esphome.io/components/sensor/ufire_ise.html#ufire-ise-calibrate-probe-low-action)*"
             }
           }
         }
@@ -116,7 +124,8 @@
           "extends": [
             "ufire_ise.sensor.UFIRE_ISE_CALIBRATE_PROBE_SCHEMA"
           ]
-        }
+        },
+        "docs": "The pH probe have to be calibrated. For this you need know the pH reference value and temperature of the calibration low solution.\n\n*See also: [`ufire_ise.calibrate_probe_low` Action](https://esphome.io/components/sensor/ufire_ise.html#ufire-ise-calibrate-probe-low-action)*"
       },
       "calibrate_probe_high": {
         "type": "schema",
@@ -124,7 +133,8 @@
           "extends": [
             "ufire_ise.sensor.UFIRE_ISE_CALIBRATE_PROBE_SCHEMA"
           ]
-        }
+        },
+        "docs": "The pH probe have to be calibrated. For this you need know the pH reference value and temperature of the calibration high solution.\n\n*See also: [`ufire_ise.calibrate_probe_high` Action](https://esphome.io/components/sensor/ufire_ise.html#ufire-ise-calibrate-probe-high-action)*"
       },
       "reset": {
         "type": "schema",
@@ -133,10 +143,12 @@
             "id": {
               "key": "GeneratedID",
               "use_id_type": "ufire_ise::UFireISEComponent",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The ID of the ufire pH sensor.\n\n*See also: [uFire ISE pH sensor](https://esphome.io/components/sensor/ufire_ise.html#ufire-ise-reset-action)*"
             }
           }
-        }
+        },
+        "docs": "Reset the current calibration on the sensor.\n\n*See also: [`ufire_ise.reset` Action](https://esphome.io/components/sensor/ufire_ise.html#ufire-ise-reset-action)*"
       }
     }
   }

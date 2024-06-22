@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: fs3000.json
+ * 
+ * Schema: fs3000.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/fs3000
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

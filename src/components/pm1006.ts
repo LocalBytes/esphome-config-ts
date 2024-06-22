@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: pm1006.json
+ * 
+ * Schema: pm1006.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/pm1006
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

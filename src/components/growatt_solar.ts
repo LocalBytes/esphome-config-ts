@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: growatt_solar.json
+ * 
+ * Schema: growatt_solar.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/growatt_solar
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

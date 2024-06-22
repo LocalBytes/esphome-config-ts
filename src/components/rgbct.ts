@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: rgbct.json
+ * 
+ * Schema: rgbct.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/rgbct
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
@@ -25,4 +25,5 @@ export interface RgbctLightConfig extends LightRGB_LIGHT_SCHEMA {
     cold_white_color_temperature: string;
     warm_white_color_temperature: string;
     color_interlock?: boolean;
+    effects?: any;
 }

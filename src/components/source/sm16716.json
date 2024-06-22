@@ -12,7 +12,8 @@
                 "parents": [
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this `sm16716` component. Use this if you have multiple SM16716 chains connected at the same time.\n\n*See also: [sm16716 Component/Hub](https://esphome.io/components/output/sm16716.html#configuration-variables)*"
             },
             "data_pin": {
               "key": "Required",
@@ -20,7 +21,8 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin used for MOSI.\n\n*See also: [sm16716 Component/Hub](https://esphome.io/components/output/sm16716.html#configuration-variables)*"
             },
             "clock_pin": {
               "key": "Required",
@@ -28,17 +30,20 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin which SCLK is connected to.\n\n*See also: [sm16716 Component/Hub](https://esphome.io/components/output/sm16716.html#configuration-variables)*"
             },
             "num_channels": {
               "key": "Optional",
               "default": "3",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int**: Total number of channels of the whole chain. Must be in range from 3 to 255. Defaults to 3.\n\n*See also: [sm16716 Component/Hub](https://esphome.io/components/output/sm16716.html#configuration-variables)*"
             },
             "num_chips": {
               "key": "Optional",
               "default": "1",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int**: Number of chips in the chain. Must be in range from 1 to 85. Defaults to 1.\n\n*See also: [sm16716 Component/Hub](https://esphome.io/components/output/sm16716.html#configuration-variables)*"
             }
           },
           "extends": [
@@ -62,7 +67,8 @@
             "sm16716_id": {
               "key": "GeneratedID",
               "use_id_type": "sm16716::SM16716",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID of the [Component/Hub](https://esphome.io/components/output/sm16716.html#sm16716-component). Use this if you have multiple SM16716 chains you want to use at the same time.\n\n*See also: [sm16716 Output](https://esphome.io/components/output/sm16716.html#id1)*"
             },
             "id": {
               "key": "Required",
@@ -72,11 +78,13 @@
                   "output::FloatOutput",
                   "output::BinaryOutput"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this output component.\n\n*See also: [sm16716 Output](https://esphome.io/components/output/sm16716.html#id1)*"
             },
             "channel": {
               "key": "Required",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int**: Chose the channel of the SM16716 chain of this output component.\n\n*See also: [sm16716 Output](https://esphome.io/components/output/sm16716.html#id1)*"
             }
           }
         }

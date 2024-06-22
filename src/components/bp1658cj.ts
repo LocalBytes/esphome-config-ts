@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: bp1658cj.json
+ * 
+ * Schema: bp1658cj.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/bp1658cj
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

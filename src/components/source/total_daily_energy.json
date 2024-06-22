@@ -17,7 +17,8 @@
                   "EntityBase",
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [Total Daily Energy Sensor](https://esphome.io/components/sensor/total_daily_energy.html#configuration-variables)*"
             },
             "device_class": {
               "default": "energy"
@@ -33,12 +34,14 @@
             "power_id": {
               "key": "Required",
               "use_id_type": "sensor::Sensor",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The ID of the power sensor to integrate over time.\n\n*See also: [Total Daily Energy Sensor](https://esphome.io/components/sensor/total_daily_energy.html#configuration-variables)*"
             },
             "restore": {
               "key": "Optional",
               "default": "True",
-              "type": "boolean"
+              "type": "boolean",
+              "docs": "**boolean**: Whether to store the intermediate result on the device so that the value can be restored upon power cycle or reboot. Defaults to `true`.\n\n*See also: [Total Daily Energy Sensor](https://esphome.io/components/sensor/total_daily_energy.html#configuration-variables)*"
             },
             "method": {
               "key": "Optional",
@@ -48,7 +51,8 @@
                 "trapezoid": null,
                 "left": null,
                 "right": null
-              }
+              },
+              "docs": "**string**: The method to use for calculating the total daily energy. One of `trapezoid`, `left` or `right`. Defaults to `right`.\n\n*See also: [Total Daily Energy Sensor](https://esphome.io/components/sensor/total_daily_energy.html#configuration-variables)*"
             }
           }
         }

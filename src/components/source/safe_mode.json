@@ -18,7 +18,8 @@
                   "EntityBase",
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [Safe Mode Button](https://esphome.io/components/button/safe_mode.html#configuration-variables)*"
             },
             "icon": {
               "default": "mdi:restart-alert"
@@ -72,7 +73,8 @@
                   "EntityBase",
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [Safe Mode Switch](https://esphome.io/components/switch/safe_mode.html#configuration-variables)*"
             },
             "entity_category": {
               "default": "config"

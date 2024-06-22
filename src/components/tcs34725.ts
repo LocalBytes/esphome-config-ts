@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: tcs34725.json
+ * 
+ * Schema: tcs34725.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/tcs34725
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

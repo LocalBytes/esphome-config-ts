@@ -33,7 +33,8 @@
                     "default": "1s"
                   }
                 }
-              }
+              },
+              "docs": "Expose the IP Address of the ESP as a text sensor. All options from [Text Sensor](https://esphome.io/components/text_sensor/index.html#config-text-sensor).\n\n*See also: [WiFi Info Text Sensor](https://esphome.io/components/text_sensor/wifi_info.html#configuration-variables)*"
             },
             "scan_results": {
               "key": "Optional",
@@ -63,7 +64,8 @@
                     "default": "60s"
                   }
                 }
-              }
+              },
+              "docs": "Expose the latest networks found during the latest scan. All options from [Text Sensor](https://esphome.io/components/text_sensor/index.html#config-text-sensor).\n\n*See also: [WiFi Info Text Sensor](https://esphome.io/components/text_sensor/wifi_info.html#configuration-variables)*"
             },
             "ssid": {
               "key": "Optional",
@@ -93,7 +95,8 @@
                     "default": "1s"
                   }
                 }
-              }
+              },
+              "docs": "Expose the SSID of the currently connected WiFi network as a text sensor. All options from [Text Sensor](https://esphome.io/components/text_sensor/index.html#config-text-sensor).\n\n*See also: [WiFi Info Text Sensor](https://esphome.io/components/text_sensor/wifi_info.html#configuration-variables)*"
             },
             "bssid": {
               "key": "Optional",
@@ -123,7 +126,8 @@
                     "default": "1s"
                   }
                 }
-              }
+              },
+              "docs": "Expose the BSSID of the currently connected WiFi network as a text sensor. All options from [Text Sensor](https://esphome.io/components/text_sensor/index.html#config-text-sensor).\n\n*See also: [WiFi Info Text Sensor](https://esphome.io/components/text_sensor/wifi_info.html#configuration-variables)*"
             },
             "mac_address": {
               "key": "Optional",
@@ -147,7 +151,8 @@
                     "default": "diagnostic"
                   }
                 }
-              }
+              },
+              "docs": "Expose the Mac Address of the WiFi card. All options from [Text Sensor](https://esphome.io/components/text_sensor/index.html#config-text-sensor).\n\n*See also: [WiFi Info Text Sensor](https://esphome.io/components/text_sensor/wifi_info.html#configuration-variables)*"
             },
             "dns_address": {
               "key": "Optional",
@@ -177,7 +182,8 @@
                     "default": "1s"
                   }
                 }
-              }
+              },
+              "docs": "Expose the DNS Address of the ESP as text sensor. [Text Sensor](https://esphome.io/components/text_sensor/index.html#config-text-sensor).\n\n*See also: [WiFi Info Text Sensor](https://esphome.io/components/text_sensor/wifi_info.html#configuration-variables)*"
             }
           }
         }

@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: pzemdc.json
+ * 
+ * Schema: pzemdc.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/pzemdc
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

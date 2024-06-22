@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: endstop.json
+ * 
+ * Schema: endstop.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/endstop
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

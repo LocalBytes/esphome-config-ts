@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: inkbird_ibsth1_mini.json
+ * 
+ * Schema: inkbird_ibsth1_mini.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/inkbird_ibsth1_mini
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

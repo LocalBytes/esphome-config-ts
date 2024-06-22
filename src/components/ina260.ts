@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: ina260.json
+ * 
+ * Schema: ina260.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ina260
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

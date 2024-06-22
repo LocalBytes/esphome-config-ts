@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: zio_ultrasonic.json
+ * 
+ * Schema: zio_ultrasonic.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/zio_ultrasonic
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

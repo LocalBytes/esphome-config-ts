@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: homeassistant.json
+ * 
+ * Schema: homeassistant.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/homeassistant
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

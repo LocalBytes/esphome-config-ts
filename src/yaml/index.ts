@@ -1,8 +1,11 @@
 import {extendYamlType} from "./extend.js";
 import {lambdaYamlType} from "./lambda.js";
 import {secretYamlType} from "./secret.js";
-
 import * as yaml from "js-yaml";
+
+export {extend, Extend} from "./extend.js";
+export {lambda, Lambda} from "./lambda.js";
+export {secret, Secret} from "./secret.js";
 
 export const yamlTypes = [
     extendYamlType,

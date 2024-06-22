@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: sprinkler.json
+ * 
+ * Schema: sprinkler.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sprinkler
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: rgbw.json
+ * 
+ * Schema: rgbw.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/rgbw
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
@@ -22,4 +22,5 @@ export interface RgbwLightConfig extends LightRGB_LIGHT_SCHEMA {
     blue: ID;
     white: ID;
     color_interlock?: boolean;
+    effects?: any;
 }

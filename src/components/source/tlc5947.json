@@ -12,7 +12,8 @@
                 "parents": [
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this `tlc5947` component. Use this if you have multiple TLC5947 chains connected at the same time.\n\n*See also: [tlc5947 Component/Hub](https://esphome.io/components/output/tlc5947.html#configuration-variables)*"
             },
             "data_pin": {
               "key": "Required",
@@ -20,7 +21,8 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin connected to DIN.\n\n*See also: [tlc5947 Component/Hub](https://esphome.io/components/output/tlc5947.html#configuration-variables)*"
             },
             "clock_pin": {
               "key": "Required",
@@ -28,7 +30,8 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin connected to CLK.\n\n*See also: [tlc5947 Component/Hub](https://esphome.io/components/output/tlc5947.html#configuration-variables)*"
             },
             "lat_pin": {
               "key": "Required",
@@ -36,7 +39,8 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin connected to LAT.\n\n*See also: [tlc5947 Component/Hub](https://esphome.io/components/output/tlc5947.html#configuration-variables)*"
             },
             "oe_pin": {
               "key": "Optional",
@@ -44,12 +48,14 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin connected to /OE (BLANK).\n\n*See also: [tlc5947 Component/Hub](https://esphome.io/components/output/tlc5947.html#configuration-variables)*"
             },
             "num_chips": {
               "key": "Optional",
               "default": "1",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int**: Number of chips in the chain. Must be in range from 1 to 85. Defaults to 1.\n\n*See also: [tlc5947 Component/Hub](https://esphome.io/components/output/tlc5947.html#configuration-variables)*"
             }
           },
           "extends": [
@@ -73,7 +79,8 @@
             "tlc5947_id": {
               "key": "GeneratedID",
               "use_id_type": "tlc5947::TLC5947",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID of the [Component/Hub](https://esphome.io/components/output/tlc5947.html#tlc5947-component). Use this if you have multiple TLC5947 chains you want to use at the same time.\n\n*See also: [tlc5947 Output](https://esphome.io/components/output/tlc5947.html#id1)*"
             },
             "id": {
               "key": "Required",
@@ -83,11 +90,13 @@
                   "output::FloatOutput",
                   "output::BinaryOutput"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this output component.\n\n*See also: [tlc5947 Output](https://esphome.io/components/output/tlc5947.html#id1)*"
             },
             "channel": {
               "key": "Required",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int**: Chose the channel of the TLC5947 chain of this output component.\n\n*See also: [tlc5947 Output](https://esphome.io/components/output/tlc5947.html#id1)*"
             }
           }
         }

@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: ble_rssi.json
+ * 
+ * Schema: ble_rssi.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ble_rssi
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: xiaomi_mue4094rt.json
+ * 
+ * Schema: xiaomi_mue4094rt.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/xiaomi_mue4094rt
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

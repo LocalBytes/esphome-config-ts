@@ -10,7 +10,8 @@
               "id_type": {
                 "class": "sun::Sun",
                 "parents": []
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [Sun](https://esphome.io/components/sun.html#configuration-variables)*"
             },
             "time_id": {
               "key": "GeneratedID",
@@ -18,10 +19,12 @@
               "type": "use_id"
             },
             "latitude": {
-              "key": "Required"
+              "key": "Required",
+              "docs": "**float**: The latitude for performing the calculation.\n\n*See also: [Sun](https://esphome.io/components/sun.html#configuration-variables)*"
             },
             "longitude": {
-              "key": "Required"
+              "key": "Required",
+              "docs": "**float**: The longitude for performing the calculation.\n\n*See also: [Sun](https://esphome.io/components/sun.html#configuration-variables)*"
             },
             "on_sunrise": {
               "key": "Optional",
@@ -30,13 +33,15 @@
                 "config_vars": {
                   "elevation": {
                     "key": "Optional",
-                    "default": "-0.83333"
+                    "default": "-0.83333",
+                    "docs": "**float**: The elevation to cross. Defaults to -0.833\u00b0 (the horizon, slightly less than 0\u00b0 to compensate for atmospheric refraction).\n\n*See also: [Sun](https://esphome.io/components/sun.html#configuration-variables)*"
                   },
                   "then": {
                     "type": "trigger"
                   }
                 }
-              }
+              },
+              "docs": "**[Automation](https://esphome.io/guides/automations.html#automation)**: An automation to perform at sunrise when the sun crosses a specified angle.\n  * **elevation** (*Optional*, float): The elevation to cross. Defaults to -0.833\u00b0 (the horizon, slightly less than 0\u00b0 to compensate for atmospheric refraction).\n  \n  \n\n*See also: [Sun](https://esphome.io/components/sun.html#configuration-variables)*"
             },
             "on_sunset": {
               "key": "Optional",
@@ -45,13 +50,15 @@
                 "config_vars": {
                   "elevation": {
                     "key": "Optional",
-                    "default": "-0.83333"
+                    "default": "-0.83333",
+                    "docs": "**float**: The elevation to cross. Defaults to -0.833\u00b0 (the horizon, slightly less than 0\u00b0 to compensate for atmospheric refraction).\n\n*See also: [Sun](https://esphome.io/components/sun.html#configuration-variables)*"
                   },
                   "then": {
                     "type": "trigger"
                   }
                 }
-              }
+              },
+              "docs": "**[Automation](https://esphome.io/guides/automations.html#automation)**: An automation to perform at sunset when the sun crosses a specified angle.\n  * **elevation** (*Optional*, float): The elevation to cross. Defaults to -0.833\u00b0 (the horizon, slightly less than 0\u00b0 to compensate for atmospheric refraction).\n  \n  \n\n*See also: [Sun](https://esphome.io/components/sun.html#configuration-variables)*"
             }
           }
         }
@@ -113,7 +120,8 @@
                   "PollingComponent",
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [sun Sensor](https://esphome.io/components/sun.html#sun-sensor)*"
             },
             "unit_of_measurement": {
               "default": "\u00b0"
@@ -135,7 +143,8 @@
               "values": {
                 "elevation": null,
                 "azimuth": null
-              }
+              },
+              "docs": "**string**: The type of value to track. One of `elevation` and `azimuth`.\n\n*See also: [sun Sensor](https://esphome.io/components/sun.html#sun-sensor)*"
             },
             "update_interval": {
               "key": "Optional",
@@ -165,7 +174,8 @@
                   "PollingComponent",
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [sun Text Sensor](https://esphome.io/components/sun.html#sun-text-sensor)*"
             },
             "sun_id": {
               "key": "GeneratedID",
@@ -178,16 +188,19 @@
               "values": {
                 "sunset": null,
                 "sunrise": null
-              }
+              },
+              "docs": "**string**: The type of value to track. One of `sunrise` and `sunset`.\n\n*See also: [sun Text Sensor](https://esphome.io/components/sun.html#sun-text-sensor)*"
             },
             "elevation": {
               "key": "Optional",
-              "default": "-0.83333"
+              "default": "-0.83333",
+              "docs": "**float**: The elevation to calculate the next sunrise/sunset event for. Defaults to -0.833\u00b0 (the horizon, slightly less than 0\u00b0 to compensate for atmospheric refraction).\n\n*See also: [sun Text Sensor](https://esphome.io/components/sun.html#sun-text-sensor)*"
             },
             "format": {
               "key": "Optional",
               "default": "%X",
-              "type": "string"
+              "type": "string",
+              "docs": "**string**: The format to format the time value with, see [strftime](https://esphome.io/components/time/index.html#strftime) for more information. Defaults to `%X`.\n\n*See also: [sun Text Sensor](https://esphome.io/components/sun.html#sun-text-sensor)*"
             },
             "update_interval": {
               "key": "Optional",

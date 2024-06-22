@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: rc522_i2c.json
+ * 
+ * Schema: rc522_i2c.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/rc522_i2c
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

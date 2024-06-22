@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: sgp4x.json
+ * 
+ * Schema: sgp4x.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sgp4x
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

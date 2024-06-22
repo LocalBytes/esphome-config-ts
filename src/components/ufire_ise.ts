@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: ufire_ise.json
+ * 
+ * Schema: ufire_ise.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ufire_ise
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

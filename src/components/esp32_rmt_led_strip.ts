@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: esp32_rmt_led_strip.json
+ * 
+ * Schema: esp32_rmt_led_strip.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/esp32_rmt_led_strip
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

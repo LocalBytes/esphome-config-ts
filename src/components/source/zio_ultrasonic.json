@@ -35,7 +35,8 @@
             },
             "update_interval": {
               "key": "Optional",
-              "default": "60s"
+              "default": "60s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [Zio Ultrasonic Distance Sensor](https://esphome.io/components/sensor/zio_ultrasonic.html#configuration-variables)*"
             },
             "i2c_id": {
               "key": "GeneratedID",
@@ -45,7 +46,8 @@
             "address": {
               "key": "Optional",
               "default": "0",
-              "data_type": "hex_uint8_t"
+              "data_type": "hex_uint8_t",
+              "docs": "**int**: Manually specifiy the I\u00b2C address of the sensor. Defaults to `0x00`.\n\n*See also: [Zio Ultrasonic Distance Sensor](https://esphome.io/components/sensor/zio_ultrasonic.html#configuration-variables)*"
             }
           }
         }

@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: slow_pwm.json
+ * 
+ * Schema: slow_pwm.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/slow_pwm
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

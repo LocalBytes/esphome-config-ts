@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: esp32_improv.json
+ * 
+ * Schema: esp32_improv.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/esp32_improv
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

@@ -17,23 +17,15 @@
                 ]
               }
             },
-            "bit_rate": {
-              "values": {
-                "50KBPS": null,
-                "100KBPS": null,
-                "125KBPS": null,
-                "250KBPS": null,
-                "500KBPS": null,
-                "1000KBPS": null
-              }
-            },
+            "bit_rate": {},
             "rx_pin": {
               "key": "Required",
               "internal": true,
               "modes": [
                 "input"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin](https://esphome.io/guides/configuration-types.html#config-pin)**: Receive pin.\n\n*See also: [ESP32 CAN Component](https://esphome.io/components/canbus.html#id2)*"
             },
             "tx_pin": {
               "key": "Required",
@@ -41,7 +33,8 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin](https://esphome.io/guides/configuration-types.html#config-pin)**: Transmit pin.\n\n*See also: [ESP32 CAN Component](https://esphome.io/components/canbus.html#id2)*"
             }
           }
         }

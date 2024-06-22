@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: tof10120.json
+ * 
+ * Schema: tof10120.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/tof10120
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: hbridge.json
+ * 
+ * Schema: hbridge.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/hbridge
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

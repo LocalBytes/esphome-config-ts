@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: airthings_wave_mini.json
+ * 
+ * Schema: airthings_wave_mini.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/airthings_wave_mini
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: matrix_keypad.json
+ * 
+ * Schema: matrix_keypad.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/matrix_keypad
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
@@ -31,6 +31,7 @@ export interface MatrixKeypadConfig extends CoreCOMPONENT_SCHEMA {
     keys?: string;
     debounce_time?: number;
     has_diodes?: boolean;
+    has_pulldowns?: boolean;
 }
 
 export class MatrixKeypadBinarySensor extends EsphomeComponent<MatrixKeypadBinarySensorConfig> {

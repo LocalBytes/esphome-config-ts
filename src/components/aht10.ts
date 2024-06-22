@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: aht10.json
+ * 
+ * Schema: aht10.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/aht10
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

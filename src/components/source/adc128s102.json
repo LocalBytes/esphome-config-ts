@@ -59,15 +59,18 @@
             "adc128s102_id": {
               "key": "GeneratedID",
               "use_id_type": "adc128s102::ADC128S102",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id of the parent ADC128S102 component.\n\n*See also: [adc128s102 Sensor](https://esphome.io/components/sensor/adc128s102.html#sensor)*"
             },
             "channel": {
               "key": "Required",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int**: The channel of the ADC128S102 to use.\n\n*See also: [adc128s102 Sensor](https://esphome.io/components/sensor/adc128s102.html#sensor)*"
             },
             "update_interval": {
               "key": "Optional",
-              "default": "60s"
+              "default": "60s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [adc128s102 Sensor](https://esphome.io/components/sensor/adc128s102.html#sensor)*"
             }
           }
         }

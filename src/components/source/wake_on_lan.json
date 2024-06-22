@@ -18,10 +18,12 @@
                   "EntityBase",
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [Wake-on-LAN Button](https://esphome.io/components/button/wake_on_lan.html#configuration-variables)*"
             },
             "target_mac_address": {
-              "key": "Required"
+              "key": "Required",
+              "docs": "**MAC Address**: The MAC Address of the target computer.\n\n*See also: [Wake-on-LAN Button](https://esphome.io/components/button/wake_on_lan.html#configuration-variables)*"
             }
           }
         }

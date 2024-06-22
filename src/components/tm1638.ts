@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: tm1638.json
+ * 
+ * Schema: tm1638.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/tm1638
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

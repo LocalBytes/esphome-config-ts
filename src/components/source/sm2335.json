@@ -13,7 +13,8 @@
                   "sm10bit_base::Sm10BitBase",
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this `sm2335` component. Use this if you have multiple SM2335 chains connected at the same time.\n\n*See also: [sm2335 Component/Hub](https://esphome.io/components/output/sm2335.html#configuration-variables)*"
             }
           },
           "extends": [
@@ -37,7 +38,8 @@
             "sm2335_id": {
               "key": "GeneratedID",
               "use_id_type": "sm2335::SM2335",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID of the [Component/Hub](https://esphome.io/components/output/sm2335.html#sm2335-component). Use this if you have multiple SM2335 chains you want to use at the same time.\n\n*See also: [sm2335 Output](https://esphome.io/components/output/sm2335.html#id1)*"
             },
             "id": {
               "key": "Required",
@@ -47,11 +49,13 @@
                   "output::FloatOutput",
                   "output::BinaryOutput"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this output component.\n\n*See also: [sm2335 Output](https://esphome.io/components/output/sm2335.html#id1)*"
             },
             "channel": {
               "key": "Required",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int**: Chose the channel of the SM2335 chain of this output component.\n\n*See also: [sm2335 Output](https://esphome.io/components/output/sm2335.html#id1)*"
             }
           }
         }

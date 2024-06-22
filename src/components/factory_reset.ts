@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: factory_reset.json
+ * 
+ * Schema: factory_reset.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/factory_reset
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

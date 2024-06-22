@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: analog_threshold.json
+ * 
+ * Schema: analog_threshold.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/analog_threshold
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

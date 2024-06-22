@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: atc_mithermometer.json
+ * 
+ * Schema: atc_mithermometer.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/atc_mithermometer
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

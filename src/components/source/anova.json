@@ -19,7 +19,8 @@
                   "PollingComponent",
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [Anova Cooker](https://esphome.io/components/climate/anova.html#configuration-variables)*"
             },
             "unit_of_measurement": {
               "key": "Required",
@@ -27,12 +28,14 @@
               "values": {
                 "f": null,
                 "c": null
-              }
+              },
+              "docs": "**string**: Units to use on the device display. \u2018c\u2019 or \u2018f\u2019.\n\n*See also: [Anova Cooker](https://esphome.io/components/climate/anova.html#configuration-variables)*"
             },
             "ble_client_id": {
               "key": "GeneratedID",
               "use_id_type": "ble_client::BLEClient",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The ID of the BLE Client.\n\n*See also: [Anova Cooker](https://esphome.io/components/climate/anova.html#configuration-variables)*"
             },
             "update_interval": {
               "key": "Optional",

@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: safe_mode.json
+ * 
+ * Schema: safe_mode.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/safe_mode
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

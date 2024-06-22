@@ -10,7 +10,8 @@
           ],
           "config_vars": {
             "dimensions": {
-              "key": "Required"
+              "key": "Required",
+              "docs": "**string**: The dimensions of the display with `COLUMNSxROWS`. If you\u2019re not sure, power the display on, turn contrast high up and just count them.\n\n*See also: [lcd_gpio Component](https://esphome.io/components/display/lcd_display.html#id1)*"
             },
             "user_characters": {
               "key": "Optional",
@@ -32,7 +33,8 @@
             },
             "update_interval": {
               "key": "Optional",
-              "default": "1s"
+              "default": "1s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to re-draw the screen. Defaults to `1s`.\n\n*See also: [lcd_gpio Component](https://esphome.io/components/display/lcd_display.html#id1)*"
             }
           }
         }

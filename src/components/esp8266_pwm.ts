@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: esp8266_pwm.json
+ * 
+ * Schema: esp8266_pwm.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/esp8266_pwm
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

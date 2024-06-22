@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: deep_sleep.json
+ * 
+ * Schema: deep_sleep.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/deep_sleep
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

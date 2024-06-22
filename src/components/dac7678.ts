@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: dac7678.json
+ * 
+ * Schema: dac7678.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/dac7678
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

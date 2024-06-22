@@ -37,7 +37,8 @@
                     "default": "total_increasing"
                   }
                 }
-              }
+              },
+              "docs": "Use the total active energy value of the sensor in kilo watt hours. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "import_active_energy": {
               "key": "Optional",
@@ -60,7 +61,8 @@
                     "default": "total_increasing"
                   }
                 }
-              }
+              },
+              "docs": "Use the import active energy value of the sensor in kilo watt hours. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "export_active_energy": {
               "key": "Optional",
@@ -83,7 +85,8 @@
                     "default": "total_increasing"
                   }
                 }
-              }
+              },
+              "docs": "Use the export active energy value of the sensor in kilo watt hours. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "total_reactive_energy": {
               "key": "Optional",
@@ -103,7 +106,8 @@
                     "default": "total_increasing"
                   }
                 }
-              }
+              },
+              "docs": "Use the total reactive energy value of the sensor in kilo volt amps reactive hours. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "import_reactive_energy": {
               "key": "Optional",
@@ -123,7 +127,8 @@
                     "default": "total_increasing"
                   }
                 }
-              }
+              },
+              "docs": "Use the import reactive energy value of the sensor in kilo volt amps reactive hours. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "export_reactive_energy": {
               "key": "Optional",
@@ -143,7 +148,8 @@
                     "default": "total_increasing"
                   }
                 }
-              }
+              },
+              "docs": "Use the export reactive energy value of the sensor in kilo volt amps reactive hours. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "apparent_energy": {
               "key": "Optional",
@@ -163,7 +169,8 @@
                     "default": "total_increasing"
                   }
                 }
-              }
+              },
+              "docs": "Use the apparent energy value of the sensor in kilo volt amps hours. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "active_power": {
               "key": "Optional",
@@ -186,7 +193,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Use the (active) power value of the sensor in watts. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "reactive_power": {
               "key": "Optional",
@@ -206,7 +214,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Use the reactive power value of the sensor in VAR. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "apparent_power": {
               "key": "Optional",
@@ -226,7 +235,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Use the apparent power value of the sensor in VA. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "voltage": {
               "key": "Optional",
@@ -249,7 +259,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Use the voltage value of the sensor in volts. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "current": {
               "key": "Optional",
@@ -272,7 +283,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Use the current value of the sensor in amperes. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "power_factor": {
               "key": "Optional",
@@ -292,7 +304,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Use the power factor value of the sensor. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "frequency": {
               "key": "Optional",
@@ -315,7 +328,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Use the frequency value of the sensor in hertz. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "maximum_demand_active_power": {
               "key": "Optional",
@@ -338,7 +352,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Use the maximum demand (active) power value of the sensor in watts. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "maximum_demand_reactive_power": {
               "key": "Optional",
@@ -358,7 +373,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Use the maximum demand reactive power value of the sensor in VAR. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "maximum_demand_apparent_power": {
               "key": "Optional",
@@ -378,11 +394,13 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Use the maximum demand apparent power value of the sensor in VA. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "update_interval": {
               "key": "Optional",
-              "default": "10s"
+              "default": "10s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             },
             "modbus_id": {
               "key": "GeneratedID",
@@ -392,7 +410,8 @@
             "address": {
               "key": "Optional",
               "default": "1",
-              "data_type": "hex_uint8_t"
+              "data_type": "hex_uint8_t",
+              "docs": "**int**: The address of the sensor if multiple sensors are attached to the same UART bus. You will need to set the address of each device manually. Defaults to `1`.\n\n*See also: [Selec Energy Monitor](https://esphome.io/components/sensor/selec_meter.html#configuration-variables)*"
             }
           },
           "extends": [

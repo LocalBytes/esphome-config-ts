@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: xiaomi_mjyd02yla.json
+ * 
+ * Schema: xiaomi_mjyd02yla.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/xiaomi_mjyd02yla
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

@@ -12,7 +12,8 @@
                 "parents": [
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [Prometheus Component](https://esphome.io/components/prometheus.html#configuration-variables)*"
             },
             "web_server_base_id": {
               "key": "GeneratedID",
@@ -22,12 +23,13 @@
             "include_internal": {
               "key": "Optional",
               "default": "False",
-              "type": "boolean"
+              "type": "boolean",
+              "docs": "**boolean**: Whether `internal` entities should be displayed on the web interface. Defaults to `false`.\n\n*See also: [Prometheus Component](https://esphome.io/components/prometheus.html#configuration-variables)*"
             },
             "relabel": {
               "key": "String",
               "default": "{}",
-              "key_type": "<function use_id.<locals>.validator at 0x000002946A655120>",
+              "key_type": "<function use_id.<locals>.validator at 0x000002411BDBE980>",
               "type": "schema",
               "schema": {
                 "config_vars": {
@@ -47,7 +49,8 @@
                     }
                   }
                 }
-              }
+              },
+              "docs": "Override metric labels. See [relabel](https://esphome.io/components/prometheus.html#prometheus-relabel)\n\n*See also: [Prometheus Component](https://esphome.io/components/prometheus.html#configuration-variables)*"
             }
           },
           "extends": [

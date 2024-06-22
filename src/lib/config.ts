@@ -1,14 +1,8 @@
-import {BaseComponent, type SynthComponent} from "./base.js";
-
-import {Wifi} from "@/components/wifi.js";
-import {CaptivePortal} from "@/components/captive_portal.js";
-import {Logger} from "@/components/logger.js";
-import {WebServer} from "@/components/web_server.js";
-import {Api} from "@/components/api.js";
-import {Ota} from "@/components/ota.js";
+import {BaseComponent, type SynthComponent} from "@/lib/base.js";
 
 import espHomeYaml from "@/yaml/index.js";
 import {type ArrayMaybe, ensureArray} from "@/generator/utils.js";
+import {Api, CaptivePortal, Logger, Ota, WebServer, Wifi} from "@/components/index.js";
 
 export class Configuration {
     components: BaseComponent[] = [];
@@ -28,8 +22,8 @@ export class Configuration {
         return this;
     }
 
-    addComponent(component: BaseComponent | BaseComponent[]) {
-        this.components.push(...(Array.isArray(component) ? component : [component]));
+    addComponent(component: ArrayMaybe<BaseComponent>) {
+        this.components.push(...(ensureArray(component)));
         return this;
     }
 

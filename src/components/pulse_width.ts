@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: pulse_width.json
+ * 
+ * Schema: pulse_width.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/pulse_width
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

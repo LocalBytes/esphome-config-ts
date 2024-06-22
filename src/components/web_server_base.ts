@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: web_server_base.json
+ * 
+ * Schema: web_server_base.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/web_server_base
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

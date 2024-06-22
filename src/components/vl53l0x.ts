@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: vl53l0x.json
+ * 
+ * Schema: vl53l0x.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/vl53l0x
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

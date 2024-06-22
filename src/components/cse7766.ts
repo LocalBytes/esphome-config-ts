@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: cse7766.json
+ * 
+ * Schema: cse7766.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/cse7766
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: canbus.json
+ * 
+ * Schema: canbus.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/canbus
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
@@ -15,7 +15,7 @@ export abstract class Canbus extends EsphomeComponent {
     componentName: string = "canbus";
 }
 
-export type CanbusCANBUS_SCHEMABitRate = '5KBPS' | '10KBPS' | '20KBPS' | '31K25BPS' | '33KBPS' | '40KBPS' | '50KBPS' | '80KBPS' | '83K3BPS' | '95KBPS' | '100KBPS' | '125KBPS' | '200KBPS' | '250KBPS' | '500KBPS' | '1000KBPS';
+export type CanbusCANBUS_SCHEMABitRate = '1KBPS' | '5KBPS' | '10KBPS' | '12K5BPS' | '16KBPS' | '20KBPS' | '25KBPS' | '31K25BPS' | '33KBPS' | '40KBPS' | '50KBPS' | '80KBPS' | '83K3BPS' | '95KBPS' | '100KBPS' | '125KBPS' | '200KBPS' | '250KBPS' | '500KBPS' | '800KBPS' | '1000KBPS';
 
 export interface CanbusCANBUS_SCHEMA extends CoreCOMPONENT_SCHEMA {
     id?: ID;

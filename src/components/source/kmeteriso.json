@@ -37,7 +37,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "The information for the temperature sensor. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [M5Stack KMeterISO I2C K-Type probe temperature sensor](https://esphome.io/components/sensor/kmeteriso.html#configuration-variables)*"
             },
             "internal_temperature": {
               "key": "Optional",
@@ -60,11 +61,13 @@
                     "default": "diagnostic"
                   }
                 }
-              }
+              },
+              "docs": "The information for the temperature sensor inside the probe. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [M5Stack KMeterISO I2C K-Type probe temperature sensor](https://esphome.io/components/sensor/kmeteriso.html#configuration-variables)*"
             },
             "update_interval": {
               "key": "Optional",
-              "default": "60s"
+              "default": "60s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `5s`.\n\n*See also: [M5Stack KMeterISO I2C K-Type probe temperature sensor](https://esphome.io/components/sensor/kmeteriso.html#configuration-variables)*"
             },
             "i2c_id": {
               "key": "GeneratedID",

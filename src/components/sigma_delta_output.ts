@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: sigma_delta_output.json
+ * 
+ * Schema: sigma_delta_output.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sigma_delta_output
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

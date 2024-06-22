@@ -8,10 +8,12 @@
             "transmitter_id": {
               "key": "GeneratedID",
               "use_id_type": "remote_base::RemoteTransmitterBase",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The remote transmitter to send the remote code with. Defaults to the first one defined in the configuration.\n\n*See also: [Remote Transmitter Actions](https://esphome.io/components/remote_transmitter.html#remote-transmitter-actions)*"
             },
             "repeat": {
-              "key": "Optional"
+              "key": "Optional",
+              "docs": "Optionally set the code to be repeated a number of times. Defaults to sending the code only once.\n  * **times** (int): The number of times to repeat the code.\n  \n  * **wait_time** ([Time](https://esphome.io/guides/configuration-types.html#config-time)): The time to wait between repeats.\n  \n  \n\n*See also: [Remote Transmitter Actions](https://esphome.io/components/remote_transmitter.html#remote-transmitter-actions)*"
             }
           }
         }
@@ -22,16 +24,19 @@
           "config_vars": {
             "device": {
               "key": "Required",
-              "data_type": "hex_uint8_t"
+              "data_type": "hex_uint8_t",
+              "docs": "**int**: The device to trigger on, see dumper output for more info.\n\n*See also: [remote_receiver Binary Sensor](https://esphome.io/components/remote_receiver.html#id1)*"
             },
             "address": {
               "key": "Optional",
               "default": "0",
-              "data_type": "hex_uint8_t"
+              "data_type": "hex_uint8_t",
+              "docs": "**int**: The address (or subdevice) to trigger on, see dumper output for more info. Defaults to `0`\n\n*See also: [remote_receiver Binary Sensor](https://esphome.io/components/remote_receiver.html#id1)*"
             },
             "command": {
               "key": "Required",
-              "data_type": "hex_uint8_t"
+              "data_type": "hex_uint8_t",
+              "docs": "**int**: The command to listen for.\n\n*See also: [remote_receiver Binary Sensor](https://esphome.io/components/remote_receiver.html#id1)*"
             }
           }
         }

@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: hitachi_ac344.json
+ * 
+ * Schema: hitachi_ac344.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/hitachi_ac344
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

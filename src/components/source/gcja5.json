@@ -40,7 +40,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Mass of particles with a diameter of 1 micrometres or less (\u03bcg/m^3). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Panasonic SN-GCJA5 Particulate Matter Sensor](https://esphome.io/components/sensor/gcja5.html#configuration-variables)*"
             },
             "pm_2_5": {
               "key": "Optional",
@@ -66,7 +67,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Mass of particles with a diameter of 2.5 micrometres or less (\u03bcg/m^3). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Panasonic SN-GCJA5 Particulate Matter Sensor](https://esphome.io/components/sensor/gcja5.html#configuration-variables)*"
             },
             "pm_10_0": {
               "key": "Optional",
@@ -92,7 +94,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Mass of particles with a diameter of 10 micrometres or less (\u03bcg/m^3). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Panasonic SN-GCJA5 Particulate Matter Sensor](https://esphome.io/components/sensor/gcja5.html#configuration-variables)*"
             },
             "pmc_0_3": {
               "key": "Optional",
@@ -115,7 +118,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Count of particles with diameter > 0.3 um in 0.1 L of air (#/0.1L). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Panasonic SN-GCJA5 Particulate Matter Sensor](https://esphome.io/components/sensor/gcja5.html#configuration-variables)*"
             },
             "pmc_0_5": {
               "key": "Optional",
@@ -138,7 +142,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Count of particles with diameter > 0.5 um in 0.1 L of air (#/0.1L). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Panasonic SN-GCJA5 Particulate Matter Sensor](https://esphome.io/components/sensor/gcja5.html#configuration-variables)*"
             },
             "pmc_1_0": {
               "key": "Optional",
@@ -161,7 +166,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Count of particles with diameter > 1 um in 0.1 L of air (#/0.1L). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Panasonic SN-GCJA5 Particulate Matter Sensor](https://esphome.io/components/sensor/gcja5.html#configuration-variables)*"
             },
             "pmc_2_5": {
               "key": "Optional",
@@ -184,7 +190,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Count of particles with diameter > 2.5 um in 0.1 L of air (#/0.1L). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Panasonic SN-GCJA5 Particulate Matter Sensor](https://esphome.io/components/sensor/gcja5.html#configuration-variables)*"
             },
             "pmc_5_0": {
               "key": "Optional",
@@ -207,7 +214,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Count of particles with diameter > 5 um in 0.1 L of air (#/0.1L). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Panasonic SN-GCJA5 Particulate Matter Sensor](https://esphome.io/components/sensor/gcja5.html#configuration-variables)*"
             },
             "pmc_10_0": {
               "key": "Optional",
@@ -230,7 +238,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Count of particles with diameter > 10 um in 0.1 L of air (#/0.1L). All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [Panasonic SN-GCJA5 Particulate Matter Sensor](https://esphome.io/components/sensor/gcja5.html#configuration-variables)*"
             },
             "uart_id": {
               "key": "GeneratedID",

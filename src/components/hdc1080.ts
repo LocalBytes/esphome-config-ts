@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: hdc1080.json
+ * 
+ * Schema: hdc1080.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/hdc1080
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

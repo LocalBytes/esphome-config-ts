@@ -22,19 +22,23 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin connected to the RST line. Some tests shows the RC522 working okay without this.\n\n*See also: [rc522 Over I\u00b2C](https://esphome.io/components/binary_sensor/rc522.html#id1)*"
             },
             "on_tag": {
               "key": "Optional",
-              "type": "trigger"
+              "type": "trigger",
+              "docs": "**[Automation](https://esphome.io/guides/automations.html#automation)**: An automation to perform when a tag is read. See [on_tag Trigger](https://esphome.io/components/binary_sensor/rc522.html#rc522-on-tag).\n\n*See also: [rc522 Over I\u00b2C](https://esphome.io/components/binary_sensor/rc522.html#id1)*"
             },
             "on_tag_removed": {
               "key": "Optional",
-              "type": "trigger"
+              "type": "trigger",
+              "docs": "**[Automation](https://esphome.io/guides/automations.html#automation)**: An automation to perform after a tag is removed. See [on_tag_removed Trigger](https://esphome.io/components/binary_sensor/rc522.html#rc522-on-tag-removed).\n\n*See also: [rc522 Over I\u00b2C](https://esphome.io/components/binary_sensor/rc522.html#id1)*"
             },
             "update_interval": {
               "key": "Optional",
-              "default": "1s"
+              "default": "1s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The duration of each scan on the RC522. This affects the duration that the individual binary sensors stay active when they\u2019re found. If a device is not found within this time window, it will be marked as not present. Defaults to `1s`.\n\n*See also: [rc522 Over I\u00b2C](https://esphome.io/components/binary_sensor/rc522.html#id1)*"
             }
           },
           "extends": [
@@ -60,7 +64,8 @@
                   "binary_sensor::BinarySensor",
                   "EntityBase"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [rc522 Binary Sensor](https://esphome.io/components/binary_sensor/rc522.html#id3)*"
             },
             "rc522_id": {
               "key": "GeneratedID",
@@ -68,7 +73,8 @@
               "type": "use_id"
             },
             "uid": {
-              "key": "Required"
+              "key": "Required",
+              "docs": "**string**: The unique ID of the NFC/RFID tag. This is a hyphen-separated list of hexadecimal values. For example `74-10-37-94`.\n\n*See also: [rc522 Binary Sensor](https://esphome.io/components/binary_sensor/rc522.html#id3)*"
             }
           }
         }

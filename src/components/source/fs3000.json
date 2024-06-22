@@ -39,11 +39,13 @@
               "values": {
                 "1005": null,
                 "1015": null
-              }
+              },
+              "docs": "**string**: Specify FS3000 model, can be `1005` or `1015`.\n\n*See also: [FS3000 Air Velocity Sensor](https://esphome.io/components/sensor/fs3000.html#configuration-variables)*"
             },
             "update_interval": {
               "key": "Optional",
-              "default": "60s"
+              "default": "60s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [FS3000 Air Velocity Sensor](https://esphome.io/components/sensor/fs3000.html#configuration-variables)*"
             },
             "i2c_id": {
               "key": "GeneratedID",
@@ -53,7 +55,8 @@
             "address": {
               "key": "Optional",
               "default": "40",
-              "data_type": "hex_uint8_t"
+              "data_type": "hex_uint8_t",
+              "docs": "**int**: Manually specifiy the I\u00b2C address of the sensor. Defaults to `0x28`.\n\n*See also: [FS3000 Air Velocity Sensor](https://esphome.io/components/sensor/fs3000.html#configuration-variables)*"
             }
           }
         }

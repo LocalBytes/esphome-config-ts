@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: bluetooth_proxy.json
+ * 
+ * Schema: bluetooth_proxy.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/bluetooth_proxy
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

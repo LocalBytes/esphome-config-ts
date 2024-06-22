@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: daly_bms.json
+ * 
+ * Schema: daly_bms.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/daly_bms
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

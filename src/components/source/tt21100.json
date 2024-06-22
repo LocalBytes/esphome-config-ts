@@ -24,11 +24,13 @@
             "tt21100_id": {
               "key": "GeneratedID",
               "use_id_type": "tt21100::TT21100Touchscreen",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID of the touchscreen.\n\n*See also: [tt21100 Binary Sensor](https://esphome.io/components/touchscreen/tt21100.html#id1)*"
             },
             "index": {
               "key": "Required",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int**: Internal index of the touch button, between 0 and 3.\n\n*See also: [tt21100 Binary Sensor](https://esphome.io/components/touchscreen/tt21100.html#id1)*"
             }
           }
         }
@@ -54,7 +56,8 @@
                   "Component",
                   "i2c::I2CDevice"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually set the ID of this touchscreen.\n\n*See also: [TT21100 Touch Screen Controller](https://esphome.io/components/touchscreen/tt21100.html#configuration-variables)*"
             },
             "interrupt_pin": {
               "key": "Required",
@@ -63,7 +66,8 @@
               "modes": [
                 "input"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The touch detection pin.\n\n*See also: [TT21100 Touch Screen Controller](https://esphome.io/components/touchscreen/tt21100.html#configuration-variables)*"
             },
             "reset_pin": {
               "key": "Optional",
@@ -71,7 +75,8 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The reset pin of the controller.\n\n*See also: [TT21100 Touch Screen Controller](https://esphome.io/components/touchscreen/tt21100.html#configuration-variables)*"
             },
             "i2c_id": {
               "key": "GeneratedID",

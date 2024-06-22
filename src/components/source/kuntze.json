@@ -40,7 +40,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Measured pH value.\n\n*See also: [Component](https://esphome.io/components/sensor/kuntze.html#component)*"
             },
             "temperature": {
               "key": "Optional",
@@ -66,7 +67,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Measured temperature value.\n\n*See also: [Component](https://esphome.io/components/sensor/kuntze.html#component)*"
             },
             "dis1": {
               "key": "Optional",
@@ -92,7 +94,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Measured DIS 1 value.\n\n*See also: [Component](https://esphome.io/components/sensor/kuntze.html#component)*"
             },
             "dis2": {
               "key": "Optional",
@@ -118,7 +121,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Measured DIS 2 value.\n\n*See also: [Component](https://esphome.io/components/sensor/kuntze.html#component)*"
             },
             "redox": {
               "key": "Optional",
@@ -144,7 +148,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Measured Redox value.\n\n*See also: [Component](https://esphome.io/components/sensor/kuntze.html#component)*"
             },
             "ec": {
               "key": "Optional",
@@ -170,7 +175,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Measured EC value.\n\n*See also: [Component](https://esphome.io/components/sensor/kuntze.html#component)*"
             },
             "oci": {
               "key": "Optional",
@@ -196,7 +202,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Measured OCI value.\n\n*See also: [Component](https://esphome.io/components/sensor/kuntze.html#component)*"
             },
             "update_interval": {
               "key": "Optional",

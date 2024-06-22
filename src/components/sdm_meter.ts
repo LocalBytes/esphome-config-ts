@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: sdm_meter.json
+ * 
+ * Schema: sdm_meter.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sdm_meter
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: mics_4514.json
+ * 
+ * Schema: mics_4514.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/mics_4514
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

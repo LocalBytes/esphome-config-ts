@@ -12,7 +12,8 @@
                 "parents": [
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The ID with which you will be able to reference the graph later in your display code.\n\n*See also: [Graph Component](https://esphome.io/components/display/index.html#graph-component)*"
             },
             "duration": {
               "key": "Required",
@@ -21,17 +22,20 @@
                 "extends": [
                   "core.positive_time_period_seconds"
                 ]
-              }
+              },
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The total graph history duration.\n\n*See also: [Graph Component](https://esphome.io/components/display/index.html#graph-component)*"
             },
             "width": {
               "key": "Required",
               "type": "integer",
-              "data_type": "positive_not_null_int"
+              "data_type": "positive_not_null_int",
+              "docs": "**int**: The graph width in pixels\n\n*See also: [Graph Component](https://esphome.io/components/display/index.html#graph-component)*"
             },
             "height": {
               "key": "Required",
               "type": "integer",
-              "data_type": "positive_not_null_int"
+              "data_type": "positive_not_null_int",
+              "docs": "**int**: The graph height in pixels\n\n*See also: [Graph Component](https://esphome.io/components/display/index.html#graph-component)*"
             },
             "x_grid": {
               "key": "Optional",
@@ -40,24 +44,29 @@
                 "extends": [
                   "core.positive_time_period_seconds"
                 ]
-              }
+              },
+              "docs": "Specifies the time per division. If not specified, no vertical grid will be drawn.\n\n*See also: [Graph Component](https://esphome.io/components/display/index.html#graph-component)*"
             },
             "y_grid": {
-              "key": "Optional"
+              "key": "Optional",
+              "docs": "**float**: Specifies the number of units per division. If not specified, no horizontal grid will be drawn.\n\n*See also: [Graph Component](https://esphome.io/components/display/index.html#graph-component)*"
             },
             "border": {
               "key": "Optional",
-              "type": "boolean"
+              "type": "boolean",
+              "docs": "**boolean**: Specifies if a border will be drawn around the graph. Default is True.\n\n*See also: [Graph Component](https://esphome.io/components/display/index.html#graph-component)*"
             },
             "sensor": {
               "key": "Optional",
               "use_id_type": "sensor::Sensor",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The sensor value to plot\n\n*See also: [Graph Component](https://esphome.io/components/display/index.html#graph-component)*"
             },
             "line_thickness": {
               "key": "Optional",
               "type": "integer",
-              "data_type": "positive_int"
+              "data_type": "positive_int",
+              "docs": "Defaults to 3\n\n*See also: [Graph Component](https://esphome.io/components/display/index.html#graph-component)*"
             },
             "line_type": {
               "key": "Optional",
@@ -66,24 +75,30 @@
                 "SOLID": null,
                 "DOTTED": null,
                 "DASHED": null
-              }
+              },
+              "docs": "Specifies the plot line-type. Can be one of the following: `SOLID`, `DOTTED`, `DASHED`. Defaults to `SOLID`.\n\n*See also: [Graph Component](https://esphome.io/components/display/index.html#graph-component)*"
             },
             "color": {
               "key": "Optional",
               "use_id_type": "Color",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "Sets the color of the sensor trace.\n\n*See also: [Graph Component](https://esphome.io/components/display/index.html#graph-component)*"
             },
             "min_value": {
-              "key": "Optional"
+              "key": "Optional",
+              "docs": "Specifies the minimum Y-axis value.\n\n*See also: [Graph Component](https://esphome.io/components/display/index.html#graph-component)*"
             },
             "max_value": {
-              "key": "Optional"
+              "key": "Optional",
+              "docs": "Specifies the maximum Y-axis value.\n\n*See also: [Graph Component](https://esphome.io/components/display/index.html#graph-component)*"
             },
             "min_range": {
-              "key": "Optional"
+              "key": "Optional",
+              "docs": "Specifies the minimum Y-axis range.\n\n*See also: [Graph Component](https://esphome.io/components/display/index.html#graph-component)*"
             },
             "max_range": {
-              "key": "Optional"
+              "key": "Optional",
+              "docs": "Specifies the maximum Y-axis range.\n\n*See also: [Graph Component](https://esphome.io/components/display/index.html#graph-component)*"
             },
             "traces": {
               "key": "Optional",
@@ -127,7 +142,8 @@
                     "type": "use_id"
                   }
                 }
-              }
+              },
+              "docs": "Use this to specify more than a single trace.\n\n*See also: [Graph Component](https://esphome.io/components/display/index.html#graph-component)*"
             },
             "legend": {
               "key": "Optional",

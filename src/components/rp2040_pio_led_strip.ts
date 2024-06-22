@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: rp2040_pio_led_strip.json
+ * 
+ * Schema: rp2040_pio_led_strip.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/rp2040_pio_led_strip
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

@@ -1,16 +1,16 @@
 {
   "extends": "@tsconfig/node-lts/tsconfig.json",
   "include": [
-    "src/**/*.ts"
+    "./src/**/*"
   ],
   "exclude": [
-    "src/generator/*"
+    "./src/generator/*"
   ],
   "compilerOptions": {
-    "verbatimModuleSyntax": true,
     "declaration": true,
+    "declarationMap": true,
     "rootDir": "./src",
-    "outDir": "dist",
+    "outDir": "./dist",
     "paths": {
       "@/*": [
         "./src/*"
@@ -24,12 +24,6 @@
         "transform": "typescript-transform-paths",
         "afterDeclarations": true
       }
-    ]
-  },
-  "ts-node": {
-    "transpileOnly": true,
-    "require": [
-      "typescript-transform-paths/register"
     ]
   }
 }

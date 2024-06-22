@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: tuya.json
+ * 
+ * Schema: tuya.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/tuya
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
@@ -147,6 +147,7 @@ export type TuyaNumberConfig = {
         max_value: string;
         min_value: string;
         step: string;
+        multiply?: any;
     } & NumberNUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
 
 export class TuyaSelect extends EsphomeComponent<TuyaSelectConfig> {

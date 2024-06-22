@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: heatpumpir.json
+ * 
+ * Schema: heatpumpir.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/heatpumpir
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

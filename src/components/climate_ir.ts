@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: climate_ir.json
+ * 
+ * Schema: climate_ir.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/climate_ir
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

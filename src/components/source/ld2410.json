@@ -13,7 +13,8 @@
                   "Component",
                   "uart::UARTDevice"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID for this [LD2410 Sensor component if you need multiple components.\n\n*See also: [ld2410 Component/Hub](https://esphome.io/components/sensor/ld2410.html#configuration-variables)*"
             },
             "throttle": {
               "key": "Optional",
@@ -23,12 +24,14 @@
                 "extends": [
                   "core.positive_time_period_milliseconds"
                 ]
-              }
+              },
+              "docs": "**int**: Time in milliseconds to control the rate of data updates. Defaults to `1000ms`.\n\n*See also: [ld2410 Component/Hub](https://esphome.io/components/sensor/ld2410.html#configuration-variables)*"
             },
             "uart_id": {
               "key": "GeneratedID",
               "use_id_type": "uart::UARTComponent",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID of the [UART Component](https://esphome.io/components/uart.html#uart) if you want to use multiple UART buses.\n\n*See also: [ld2410 Component/Hub](https://esphome.io/components/sensor/ld2410.html#configuration-variables)*"
             }
           },
           "extends": [
@@ -48,7 +51,8 @@
             "ld2410_id": {
               "key": "GeneratedID",
               "use_id_type": "ld2410::LD2410Component",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID for the [LD2410 Sensor component if you are using multiple components.\n\n*See also: [ld2410 Sensor](https://esphome.io/components/sensor/ld2410.html#ld2410-sensors)*"
             },
             "moving_distance": {
               "key": "Optional",
@@ -68,7 +72,8 @@
                     "default": "distance"
                   }
                 }
-              }
+              },
+              "docs": "**int**: Distance in cm of detected moving target. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [ld2410 Sensor](https://esphome.io/components/sensor/ld2410.html#ld2410-sensors)*"
             },
             "still_distance": {
               "key": "Optional",
@@ -88,7 +93,8 @@
                     "default": "distance"
                   }
                 }
-              }
+              },
+              "docs": "**int**: Distance in cm of detected still target. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [ld2410 Sensor](https://esphome.io/components/sensor/ld2410.html#ld2410-sensors)*"
             },
             "moving_energy": {
               "key": "Optional",
@@ -105,7 +111,8 @@
                     "default": "mdi:motion-sensor"
                   }
                 }
-              }
+              },
+              "docs": "**int**: Energy for moving target. Value between `0` and `100` inclusive. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [ld2410 Sensor](https://esphome.io/components/sensor/ld2410.html#ld2410-sensors)*"
             },
             "still_energy": {
               "key": "Optional",
@@ -122,7 +129,8 @@
                     "default": "mdi:flash"
                   }
                 }
-              }
+              },
+              "docs": "**int**: Energy for still target. Value between `0` and `100` inclusive. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [ld2410 Sensor](https://esphome.io/components/sensor/ld2410.html#ld2410-sensors)*"
             },
             "light": {
               "key": "Optional",
@@ -142,7 +150,8 @@
                     "default": "diagnostic"
                   }
                 }
-              }
+              },
+              "docs": "**int**: When in [engineering mode](https://esphome.io/components/sensor/ld2410.html#ld2410-engineering-mode), indicates the light sensitivity, otherwise `unknown`. Value between `0` and `255` inclusive. Though it seems that the value `85` is the lowest value at complete darkness. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [ld2410 Sensor](https://esphome.io/components/sensor/ld2410.html#ld2410-sensors)*"
             },
             "detection_distance": {
               "key": "Optional",
@@ -162,7 +171,8 @@
                     "default": "distance"
                   }
                 }
-              }
+              },
+              "docs": "**int**: Distance in cm of target. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [ld2410 Sensor](https://esphome.io/components/sensor/ld2410.html#ld2410-sensors)*"
             },
             "g0": {
               "key": "Optional",
@@ -610,7 +620,8 @@
             "ld2410_id": {
               "key": "GeneratedID",
               "use_id_type": "ld2410::LD2410Component",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID for the [LD2410 Sensor component if you are using multiple components.\n\n*See also: [ld2410 Binary Sensor](https://esphome.io/components/sensor/ld2410.html#id1)*"
             },
             "has_target": {
               "key": "Optional",
@@ -627,7 +638,8 @@
                     "default": "occupancy"
                   }
                 }
-              }
+              },
+              "docs": "If true target detect either still or in movement. All options from [Binary Sensor](https://esphome.io/components/binary_sensor/index.html#config-binary-sensor).\n\n*See also: [ld2410 Binary Sensor](https://esphome.io/components/sensor/ld2410.html#id1)*"
             },
             "has_moving_target": {
               "key": "Optional",
@@ -644,7 +656,8 @@
                     "default": "motion"
                   }
                 }
-              }
+              },
+              "docs": "If true a moving target is detected. All options from [Binary Sensor](https://esphome.io/components/binary_sensor/index.html#config-binary-sensor).\n\n*See also: [ld2410 Binary Sensor](https://esphome.io/components/sensor/ld2410.html#id1)*"
             },
             "has_still_target": {
               "key": "Optional",
@@ -661,7 +674,8 @@
                     "default": "occupancy"
                   }
                 }
-              }
+              },
+              "docs": "If true a still target is detected. All options from [Binary Sensor](https://esphome.io/components/binary_sensor/index.html#config-binary-sensor).\n\n*See also: [ld2410 Binary Sensor](https://esphome.io/components/sensor/ld2410.html#id1)*"
             },
             "out_pin_presence_status": {
               "key": "Optional",
@@ -681,7 +695,8 @@
                     "default": "presence"
                   }
                 }
-              }
+              },
+              "docs": "When in [engineering mode](https://esphome.io/components/sensor/ld2410.html#ld2410-engineering-mode), indicates whether the OUT pin indicates presence or not, otherwise `false`. OUT pin indication depends on the [light function](https://esphome.io/components/sensor/ld2410.html#ld2410-light-function) configuration. Might need latest firmware to work. All options from [Binary Sensor](https://esphome.io/components/binary_sensor/index.html#config-binary-sensor).\n\n*See also: [ld2410 Binary Sensor](https://esphome.io/components/sensor/ld2410.html#id1)*"
             }
           }
         }
@@ -697,7 +712,8 @@
             "ld2410_id": {
               "key": "GeneratedID",
               "use_id_type": "ld2410::LD2410Component",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID for the [LD2410 Sensor component if you are using multiple components.\n\n*See also: [ld2410 Button](https://esphome.io/components/sensor/ld2410.html#id5)*"
             },
             "factory_reset": {
               "key": "Optional",
@@ -727,7 +743,8 @@
                     "default": "restart"
                   }
                 }
-              }
+              },
+              "docs": "This command is used to restore all configuration values to their original values. All options from [Button](https://esphome.io/components/button/index.html#config-button).\n\n*See also: [ld2410 Button](https://esphome.io/components/sensor/ld2410.html#id5)*"
             },
             "restart": {
               "key": "Optional",
@@ -757,7 +774,8 @@
                     "default": "restart"
                   }
                 }
-              }
+              },
+              "docs": "Restart the device. All options from [Button](https://esphome.io/components/button/index.html#config-button).\n\n*See also: [ld2410 Button](https://esphome.io/components/sensor/ld2410.html#id5)*"
             },
             "query_params": {
               "key": "Optional",
@@ -784,7 +802,8 @@
                     "default": "diagnostic"
                   }
                 }
-              }
+              },
+              "docs": "Refresh all sensors values of the device. All options from [Button](https://esphome.io/components/button/index.html#config-button).\n\n*See also: [ld2410 Button](https://esphome.io/components/sensor/ld2410.html#id5)*"
             }
           }
         }
@@ -800,7 +819,8 @@
             "ld2410_id": {
               "key": "GeneratedID",
               "use_id_type": "ld2410::LD2410Component",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID for the [LD2410 Sensor component if you are using multiple components.\n\n*See also: [ld2410 Number](https://esphome.io/components/sensor/ld2410.html#ld2410-light-threshold)*"
             },
             "timeout": {
               "key": "Optional",
@@ -830,7 +850,8 @@
                     "default": "s"
                   }
                 }
-              }
+              },
+              "docs": "**int**: Time in seconds during which presence state will stay present after leaving. Defaults to `5s` All options from [Number](https://esphome.io/components/number/index.html#config-number).\n\n*See also: [ld2410 Number](https://esphome.io/components/sensor/ld2410.html#ld2410-light-threshold)*"
             },
             "max_move_distance_gate": {
               "key": "Optional",
@@ -860,7 +881,8 @@
                     "default": "distance"
                   }
                 }
-              }
+              },
+              "docs": "**int**: Maximum distance gate for movement detection. Value between `2` and `8` inclusive. Defaults to `8`. All options from [Number](https://esphome.io/components/number/index.html#config-number).\n\n*See also: [ld2410 Number](https://esphome.io/components/sensor/ld2410.html#ld2410-light-threshold)*"
             },
             "max_still_distance_gate": {
               "key": "Optional",
@@ -890,7 +912,8 @@
                     "default": "distance"
                   }
                 }
-              }
+              },
+              "docs": "**int**: Maximum distance gate for still detection. Value between `2` and `8` inclusive. Defaults to `8`. All options from [Number](https://esphome.io/components/number/index.html#config-number).\n\n*See also: [ld2410 Number](https://esphome.io/components/sensor/ld2410.html#ld2410-light-threshold)*"
             },
             "light_threshold": {
               "key": "Optional",
@@ -920,7 +943,8 @@
                     "default": "illuminance"
                   }
                 }
-              }
+              },
+              "docs": "**int**: Sets the light threshold for the [light function](https://esphome.io/components/sensor/ld2410.html#ld2410-light-function). Value between `0` and `255` inclusive. Defaults to `128`. All options from [Number](https://esphome.io/components/number/index.html#config-number).\n\n*See also: [ld2410 Number](https://esphome.io/components/sensor/ld2410.html#ld2410-light-threshold)*"
             },
             "g0": {
               "key": "Optional",
@@ -1602,7 +1626,8 @@
             "ld2410_id": {
               "key": "GeneratedID",
               "use_id_type": "ld2410::LD2410Component",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID for the [LD2410 Sensor component if you are using multiple components.\n\n*See also: [ld2410 Select](https://esphome.io/components/sensor/ld2410.html#ld2410-light-function)*"
             },
             "distance_resolution": {
               "key": "Optional",
@@ -1628,7 +1653,8 @@
                     "default": "mdi:ruler"
                   }
                 }
-              }
+              },
+              "docs": "Control the gates distance resolution. Can be `0.75m` or `0.2m`. Defaults to `0.75m`. All options from [Select](https://esphome.io/components/select/index.html#config-select).\n\n*See also: [ld2410 Select](https://esphome.io/components/sensor/ld2410.html#ld2410-light-function)*"
             },
             "light_function": {
               "key": "Optional",
@@ -1654,7 +1680,8 @@
                     "default": "mdi:lightbulb"
                   }
                 }
-              }
+              },
+              "docs": "If set, will affect the OUT pin value, based on [light threshold](https://esphome.io/components/sensor/ld2410.html#ld2410-light-threshold). Can be `off`, `low` or `above`. Defaults to `off`. All options from [Select](https://esphome.io/components/select/index.html#config-select).\n\n*See also: [ld2410 Select](https://esphome.io/components/sensor/ld2410.html#ld2410-light-function)*"
             },
             "out_pin_level": {
               "key": "Optional",
@@ -1680,7 +1707,8 @@
                     "default": "mdi:scale"
                   }
                 }
-              }
+              },
+              "docs": "Control OUT pin `away` value. Can be `low` or `high`. Defaults to `low`. All options from [Select](https://esphome.io/components/select/index.html#config-select).\n\n*See also: [ld2410 Select](https://esphome.io/components/sensor/ld2410.html#ld2410-light-function)*"
             },
             "baud_rate": {
               "key": "Optional",
@@ -1706,7 +1734,8 @@
                     "default": "mdi:thermometer"
                   }
                 }
-              }
+              },
+              "docs": "Control the serial port baud rate. Defaults to `256000`. Once changed, all sensors will stop working until a fresh install with an updated [UART Component](https://esphome.io/components/uart.html#uart) configuration. All options from [Select](https://esphome.io/components/select/index.html#config-select).\n\n*See also: [ld2410 Select](https://esphome.io/components/sensor/ld2410.html#ld2410-light-function)*"
             }
           }
         }
@@ -1722,7 +1751,8 @@
             "ld2410_id": {
               "key": "GeneratedID",
               "use_id_type": "ld2410::LD2410Component",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID for the [LD2410 Sensor component if you are using multiple components.\n\n*See also: [ld2410 Switch](https://esphome.io/components/sensor/ld2410.html#ld2410-engineering-mode)*"
             },
             "engineering_mode": {
               "key": "Optional",
@@ -1766,7 +1796,8 @@
                     "default": "mdi:pulse"
                   }
                 }
-              }
+              },
+              "docs": "enable/disable engineering mode. Defaults to `false`. Notice this requires more resources and is not recommended to be enabled when not necessary. All options from [Switch](https://esphome.io/components/switch/index.html#config-switch).\n\n*See also: [ld2410 Switch](https://esphome.io/components/sensor/ld2410.html#ld2410-engineering-mode)*"
             },
             "bluetooth": {
               "key": "Optional",
@@ -1810,7 +1841,8 @@
                     "default": "mdi:bluetooth"
                   }
                 }
-              }
+              },
+              "docs": "Turn on/off the bluetooth adapter. Defaults to `true`. All options from [Switch](https://esphome.io/components/switch/index.html#config-switch).\n\n*See also: [ld2410 Switch](https://esphome.io/components/sensor/ld2410.html#ld2410-engineering-mode)*"
             }
           }
         }
@@ -1826,7 +1858,8 @@
             "ld2410_id": {
               "key": "GeneratedID",
               "use_id_type": "ld2410::LD2410Component",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID for the [LD2410 Sensor component if you are using multiple components.\n\n*See also: [ld2410 Text Sensor](https://esphome.io/components/sensor/ld2410.html#id6)*"
             },
             "version": {
               "key": "Optional",
@@ -1843,7 +1876,8 @@
                     "default": "diagnostic"
                   }
                 }
-              }
+              },
+              "docs": "The firmware version. All options from [Text Sensor](https://esphome.io/components/text_sensor/index.html#config-text-sensor).\n\n*See also: [ld2410 Text Sensor](https://esphome.io/components/sensor/ld2410.html#id6)*"
             },
             "mac_address": {
               "key": "Optional",
@@ -1860,7 +1894,8 @@
                     "default": "diagnostic"
                   }
                 }
-              }
+              },
+              "docs": "The bluetooth mac address. Will be set to `unknown` when bluetooth is off. All options from [Text Sensor](https://esphome.io/components/text_sensor/index.html#config-text-sensor).\n\n*See also: [ld2410 Text Sensor](https://esphome.io/components/sensor/ld2410.html#id6)*"
             }
           }
         }

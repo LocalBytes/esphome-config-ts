@@ -12,7 +12,8 @@
                 "parents": [
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [Status LED](https://esphome.io/components/status_led.html#configuration-variables)*"
             },
             "pin": {
               "key": "Required",
@@ -20,7 +21,8 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The GPIO pin to operate the status LED on.\n\n*See also: [Status LED](https://esphome.io/components/status_led.html#configuration-variables)*"
             }
           },
           "extends": [
@@ -55,12 +57,14 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The GPIO pin to operate the LED on.\n\n*See also: [Status LED Light](https://esphome.io/components/light/status_led.html#configuration-variables)*"
             },
             "output": {
               "key": "Optional",
               "use_id_type": "output::BinaryOutput",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id of the binary [Output Component](https://esphome.io/components/output/index.html#output) to use for this light.\n\n*See also: [Status LED Light](https://esphome.io/components/light/status_led.html#configuration-variables)*"
             }
           }
         }

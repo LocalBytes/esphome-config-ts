@@ -37,7 +37,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "The information for the temperature sensor. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [HTU21D | Si7021 | SHT21 Temperature & Humidity Sensor](https://esphome.io/components/sensor/htu21d.html#configuration-variables)*"
             },
             "humidity": {
               "key": "Optional",
@@ -60,11 +61,34 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "The information for the humidity sensor. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [HTU21D | Si7021 | SHT21 Temperature & Humidity Sensor](https://esphome.io/components/sensor/htu21d.html#configuration-variables)*"
+            },
+            "heater": {
+              "key": "Optional",
+              "type": "schema",
+              "schema": {
+                "extends": [
+                  "sensor.SENSOR_SCHEMA"
+                ],
+                "config_vars": {
+                  "unit_of_measurement": {
+                    "default": ""
+                  },
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  }
+                }
+              },
+              "docs": "The information for the heater sensor. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [HTU21D | Si7021 | SHT21 Temperature & Humidity Sensor](https://esphome.io/components/sensor/htu21d.html#configuration-variables)*"
             },
             "update_interval": {
               "key": "Optional",
-              "default": "60s"
+              "default": "60s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [HTU21D | Si7021 | SHT21 Temperature & Humidity Sensor](https://esphome.io/components/sensor/htu21d.html#configuration-variables)*"
             },
             "i2c_id": {
               "key": "GeneratedID",
@@ -80,6 +104,46 @@
           "extends": [
             "core.COMPONENT_SCHEMA"
           ]
+        }
+      }
+    }
+  },
+  "htu21d": {
+    "action": {
+      "set_heater_level": {
+        "type": "schema",
+        "maybe": "level",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "htu21d::HTU21DComponent",
+              "type": "use_id"
+            },
+            "level": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "set_heater": {
+        "type": "schema",
+        "maybe": "status",
+        "schema": {
+          "config_vars": {
+            "id": {
+              "key": "GeneratedID",
+              "use_id_type": "htu21d::HTU21DComponent",
+              "type": "use_id"
+            },
+            "status": {
+              "key": "Required",
+              "templatable": true,
+              "type": "boolean"
+            }
+          }
         }
       }
     }

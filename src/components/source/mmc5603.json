@@ -36,12 +36,14 @@
                   "Component",
                   "i2c::I2CDevice"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [MMC5603 Magnetometer](https://esphome.io/components/sensor/mmc5603.html#configuration-variables)*"
             },
             "address": {
               "key": "Optional",
               "default": "30",
-              "data_type": "hex_uint8_t"
+              "data_type": "hex_uint8_t",
+              "docs": "**int**: Manually specify the I\u00b2C address of the sensor. Defaults to `0x1E`.\n\n*See also: [MMC5603 Magnetometer](https://esphome.io/components/sensor/mmc5603.html#configuration-variables)*"
             },
             "field_strength_x": {
               "key": "Optional",
@@ -50,7 +52,8 @@
                 "extends": [
                   "mmc5603.sensor.field_strength_schema"
                 ]
-              }
+              },
+              "docs": "The field strength in microtesla along the X-Axis. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [MMC5603 Magnetometer](https://esphome.io/components/sensor/mmc5603.html#configuration-variables)*"
             },
             "field_strength_y": {
               "key": "Optional",
@@ -59,7 +62,8 @@
                 "extends": [
                   "mmc5603.sensor.field_strength_schema"
                 ]
-              }
+              },
+              "docs": "The field strength in microtesla along the Y-Axis. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [MMC5603 Magnetometer](https://esphome.io/components/sensor/mmc5603.html#configuration-variables)*"
             },
             "field_strength_z": {
               "key": "Optional",
@@ -68,7 +72,8 @@
                 "extends": [
                   "mmc5603.sensor.field_strength_schema"
                 ]
-              }
+              },
+              "docs": "The field strength in microtesla along the Z-Axis. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [MMC5603 Magnetometer](https://esphome.io/components/sensor/mmc5603.html#configuration-variables)*"
             },
             "heading": {
               "key": "Optional",
@@ -88,11 +93,13 @@
                     "default": "1"
                   }
                 }
-              }
+              },
+              "docs": "The heading of the sensor in degrees. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [MMC5603 Magnetometer](https://esphome.io/components/sensor/mmc5603.html#configuration-variables)*"
             },
             "update_interval": {
               "key": "Optional",
-              "default": "60s"
+              "default": "60s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [MMC5603 Magnetometer](https://esphome.io/components/sensor/mmc5603.html#configuration-variables)*"
             },
             "i2c_id": {
               "key": "GeneratedID",

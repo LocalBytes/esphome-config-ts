@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: power_supply.json
+ * 
+ * Schema: power_supply.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/power_supply
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

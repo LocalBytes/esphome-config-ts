@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: tlc59208f.json
+ * 
+ * Schema: tlc59208f.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/tlc59208f
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

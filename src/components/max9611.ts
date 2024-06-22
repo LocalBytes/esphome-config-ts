@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: max9611.json
+ * 
+ * Schema: max9611.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/max9611
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

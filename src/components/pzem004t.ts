@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: pzem004t.json
+ * 
+ * Schema: pzem004t.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/pzem004t
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

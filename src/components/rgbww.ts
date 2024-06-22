@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: rgbww.json
+ * 
+ * Schema: rgbww.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/rgbww
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
@@ -26,4 +26,5 @@ export interface RgbwwLightConfig extends LightRGB_LIGHT_SCHEMA {
     warm_white_color_temperature?: any;
     constant_brightness?: boolean;
     color_interlock?: boolean;
+    effects?: any;
 }

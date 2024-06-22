@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: output.json
+ * 
+ * Schema: output.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/output
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
@@ -27,6 +27,7 @@ export interface OutputFLOAT_OUTPUT_SCHEMA extends OutputBINARY_OUTPUT_SCHEMA {
     max_power?: any;
     min_power?: any;
     zero_means_zero?: boolean;
+    id?: any;
 }
 
 export interface OutputBINARY_OUTPUT_ACTION_SCHEMA {

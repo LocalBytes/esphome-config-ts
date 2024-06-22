@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: ct_clamp.json
+ * 
+ * Schema: ct_clamp.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ct_clamp
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: color_temperature.json
+ * 
+ * Schema: color_temperature.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/color_temperature
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
@@ -21,4 +21,5 @@ export interface ColorTemperatureLightConfig extends LightRGB_LIGHT_SCHEMA {
     brightness: ID;
     cold_white_color_temperature: string;
     warm_white_color_temperature: string;
+    effects?: any;
 }

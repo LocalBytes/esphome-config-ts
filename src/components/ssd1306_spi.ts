@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: ssd1306_spi.json
+ * 
+ * Schema: ssd1306_spi.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ssd1306_spi
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

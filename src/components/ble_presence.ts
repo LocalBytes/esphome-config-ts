@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: ble_presence.json
+ * 
+ * Schema: ble_presence.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ble_presence
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

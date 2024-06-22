@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: max44009.json
+ * 
+ * Schema: max44009.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/max44009
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

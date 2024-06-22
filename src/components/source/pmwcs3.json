@@ -37,7 +37,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Electrical Conductivity, reference at 25\u00b0C in dS/m. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [PMWCS3 Capacitive Soil Moisture and Temperature Sensor](https://esphome.io/components/sensor/pmwcs3.html#configuration-variables)*"
             },
             "ec": {
               "key": "Optional",
@@ -60,7 +61,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Electrical Conductivity in mS/m. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [PMWCS3 Capacitive Soil Moisture and Temperature Sensor](https://esphome.io/components/sensor/pmwcs3.html#configuration-variables)*"
             },
             "temperature": {
               "key": "Optional",
@@ -83,7 +85,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Soil temperature in \u00b0C. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [PMWCS3 Capacitive Soil Moisture and Temperature Sensor](https://esphome.io/components/sensor/pmwcs3.html#configuration-variables)*"
             },
             "vwc": {
               "key": "Optional",
@@ -106,11 +109,13 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "Volumetric Water Content in cm3cm\u22123. All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n\n*See also: [PMWCS3 Capacitive Soil Moisture and Temperature Sensor](https://esphome.io/components/sensor/pmwcs3.html#configuration-variables)*"
             },
             "update_interval": {
               "key": "Optional",
-              "default": "60s"
+              "default": "60s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [PMWCS3 Capacitive Soil Moisture and Temperature Sensor](https://esphome.io/components/sensor/pmwcs3.html#configuration-variables)*"
             },
             "i2c_id": {
               "key": "GeneratedID",
@@ -120,7 +125,8 @@
             "address": {
               "key": "Optional",
               "default": "99",
-              "data_type": "hex_uint8_t"
+              "data_type": "hex_uint8_t",
+              "docs": "**int**: Manually specify the I\u00b2C address of the sensor. Defaults to `0x63`.\n\n*See also: [PMWCS3 Capacitive Soil Moisture and Temperature Sensor](https://esphome.io/components/sensor/pmwcs3.html#configuration-variables)*"
             }
           },
           "extends": [
@@ -135,7 +141,8 @@
             "id": {
               "key": "GeneratedID",
               "use_id_type": "pmwcs3::PMWCS3Component",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The ID of the pmwcs3 sensor.\n\n*See also: [PMWCS3 Capacitive Soil Moisture and Temperature Sensor](https://esphome.io/components/sensor/pmwcs3.html#pmwcs3-newi2caddress-action)*"
             }
           }
         }
@@ -150,7 +157,8 @@
           "extends": [
             "pmwcs3.sensor.PMWCS3_CALIBRATION_SCHEMA"
           ]
-        }
+        },
+        "docs": "The pmwcs3 probe can to be also calibrated in water saturated conditions. Install the probe into a glass of water. The water calibration is also a 30s procedure.\n\n*See also: [`pmwcs3.water_calibration` Action](https://esphome.io/components/sensor/pmwcs3.html#pmwcs3-water-calibration-action)*"
       },
       "air_calibration": {
         "type": "schema",
@@ -158,7 +166,8 @@
           "extends": [
             "pmwcs3.sensor.PMWCS3_CALIBRATION_SCHEMA"
           ]
-        }
+        },
+        "docs": "The pmwcs3 probe can to be calibrated in dry/air conditions. The air calibration is a 30s procedure.\n\n*See also: [`pmwcs3.air_calibration` Action](https://esphome.io/components/sensor/pmwcs3.html#pmwcs3-air-calibration-action)*"
       },
       "new_i2c_address": {
         "type": "schema",
@@ -167,16 +176,19 @@
             "id": {
               "key": "GeneratedID",
               "use_id_type": "pmwcs3::PMWCS3Component",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The ID of the pmwcs3 sensor.\n\n*See also: [PMWCS3 Capacitive Soil Moisture and Temperature Sensor](https://esphome.io/components/sensor/pmwcs3.html#pmwcs3-new-i2c-address-action)*"
             },
             "address": {
               "key": "Required",
               "templatable": true,
-              "data_type": "hex_uint8_t"
+              "data_type": "hex_uint8_t",
+              "docs": "**int**: New I2C address.\n\n*See also: [PMWCS3 Capacitive Soil Moisture and Temperature Sensor](https://esphome.io/components/sensor/pmwcs3.html#pmwcs3-new-i2c-address-action)*"
             }
           }
         },
-        "maybe": "address"
+        "maybe": "address",
+        "docs": "A new I2C address can be set (for multi-probes cases for example)\n\n*See also: [`pmwcs3.new_i2c_address` Action](https://esphome.io/components/sensor/pmwcs3.html#pmwcs3-new-i2c-address-action)*"
       }
     }
   }

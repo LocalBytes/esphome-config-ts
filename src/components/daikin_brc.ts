@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: daikin_brc.json
+ * 
+ * Schema: daikin_brc.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/daikin_brc
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

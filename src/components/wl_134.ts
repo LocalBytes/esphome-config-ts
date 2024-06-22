@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: wl_134.json
+ * 
+ * Schema: wl_134.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/wl_134
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

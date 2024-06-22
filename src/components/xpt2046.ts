@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: xpt2046.json
+ * 
+ * Schema: xpt2046.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/xpt2046
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

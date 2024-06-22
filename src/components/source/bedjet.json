@@ -17,12 +17,14 @@
                   "PollingComponent",
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [bedjet Component/Hub](https://esphome.io/components/climate/bedjet.html#configuration-variables)*"
             },
             "time_id": {
               "key": "Optional",
               "use_id_type": "time::RealTimeClock",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The ID of a [Time Component](https://esphome.io/components/time/index.html) which can be used to set the time on the BedJet device.\n\n*See also: [bedjet Component/Hub](https://esphome.io/components/climate/bedjet.html#configuration-variables)*"
             },
             "receive_timeout": {
               "key": "Optional",
@@ -37,11 +39,13 @@
             "ble_client_id": {
               "key": "GeneratedID",
               "use_id_type": "ble_client::BLEClient",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The ID of the BLE Client.\n\n*See also: [bedjet Component/Hub](https://esphome.io/components/climate/bedjet.html#configuration-variables)*"
             },
             "update_interval": {
               "key": "Optional",
-              "default": "15s"
+              "default": "15s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to dispatch status changes to child components. Defaults to `5s`. Each child component can decide whether to publish its own updated state on this interval, or use another (longer) update interval to throttle its own updates.\n\n*See also: [bedjet Component/Hub](https://esphome.io/components/climate/bedjet.html#configuration-variables)*"
             }
           }
         },
@@ -54,7 +58,8 @@
             "bedjet_id": {
               "key": "Required",
               "use_id_type": "bedjet::BedJetHub",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The ID of the Bedjet component.\n\n*See also: [bedjet Fan](https://esphome.io/components/climate/bedjet.html#id2)*"
             }
           }
         }
@@ -81,7 +86,8 @@
                   "PollingComponent",
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [bedjet Climate](https://esphome.io/components/climate/bedjet.html#id1)*"
             },
             "heat_mode": {
               "key": "Optional",
@@ -89,8 +95,11 @@
               "type": "enum",
               "values": {
                 "heat": null,
-                "extended": null
-              }
+                "extended": {
+                  "docs": "Setting `hvac_mode=heat` uses BedJet \u201cEXT HEAT\u201d mode."
+                }
+              },
+              "docs": "**string**: The primary heating mode to use for `HVACMode.HEAT`:\n  * `heat` (Default) - Setting `hvac_mode=heat` uses the BedJet \u201cHEAT\u201d mode.\n  \n  * `extended` - Setting `hvac_mode=heat` uses BedJet \u201cEXT HEAT\u201d mode.\n  \n  Whichever is not selected will be made available as a custom preset.\n\n*See also: [bedjet Climate](https://esphome.io/components/climate/bedjet.html#id1)*"
             },
             "update_interval": {
               "key": "Optional",
@@ -121,7 +130,8 @@
                   "PollingComponent",
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [bedjet Fan](https://esphome.io/components/climate/bedjet.html#id2)*"
             },
             "update_interval": {
               "key": "Optional",

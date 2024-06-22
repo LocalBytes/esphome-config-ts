@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: esphome.json
+ * 
+ * Schema: esphome.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/esphome
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
@@ -76,6 +76,7 @@ export interface CoreCOMPONENT_SCHEMA {
 export interface CoreMQTT_COMMAND_COMPONENT_SCHEMA extends CoreMQTT_COMPONENT_SCHEMA {
     command_topic?: any;
     command_retain?: boolean;
+    name?: any;
 }
 
 export interface CoreENTITY_BASE_SCHEMA {

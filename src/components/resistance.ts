@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: resistance.json
+ * 
+ * Schema: resistance.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/resistance
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

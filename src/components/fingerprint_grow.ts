@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: fingerprint_grow.json
+ * 
+ * Schema: fingerprint_grow.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/fingerprint_grow
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

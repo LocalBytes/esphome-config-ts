@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: xiaomi_lywsdcgq.json
+ * 
+ * Schema: xiaomi_lywsdcgq.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/xiaomi_lywsdcgq
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

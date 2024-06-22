@@ -23,38 +23,46 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The DC pin.\n\n*See also: [ST7735 Display](https://esphome.io/components/display/st7735.html#configuration-variables)*"
             },
             "device_width": {
               "key": "Required",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int**: The device width. 128 is default\n\n*See also: [ST7735 Display](https://esphome.io/components/display/st7735.html#configuration-variables)*"
             },
             "device_height": {
               "key": "Required",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int**: The device height. 160 is default\n\n*See also: [ST7735 Display](https://esphome.io/components/display/st7735.html#configuration-variables)*"
             },
             "col_start": {
               "key": "Required",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int**: The starting column offset. Default value depends on **model**.\n\n*See also: [ST7735 Display](https://esphome.io/components/display/st7735.html#configuration-variables)*"
             },
             "row_start": {
               "key": "Required",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int**: The starting row offset. Default value depends on **model**.\n\n*See also: [ST7735 Display](https://esphome.io/components/display/st7735.html#configuration-variables)*"
             },
             "eight_bit_color": {
               "key": "Optional",
               "default": "False",
-              "type": "boolean"
+              "type": "boolean",
+              "docs": "**boolean**: 8bit mode. Default is false. This saves 50% of the buffer required for the display.\n\n*See also: [ST7735 Display](https://esphome.io/components/display/st7735.html#configuration-variables)*"
             },
             "use_bgr": {
               "key": "Optional",
               "default": "False",
-              "type": "boolean"
+              "type": "boolean",
+              "docs": "**boolean**: Use BGR mode. Default is false.\n\n*See also: [ST7735 Display](https://esphome.io/components/display/st7735.html#configuration-variables)*"
             },
             "invert_colors": {
               "key": "Optional",
               "default": "False",
-              "type": "boolean"
+              "type": "boolean",
+              "docs": "**boolean**: Invert LCD colors. Default is false.\n\n*See also: [ST7735 Display](https://esphome.io/components/display/st7735.html#configuration-variables)*"
             },
             "spi_id": {
               "key": "GeneratedID",
@@ -67,7 +75,8 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The CS pin.\n\n*See also: [ST7735 Display](https://esphome.io/components/display/st7735.html#configuration-variables)*"
             },
             "model": {
               "key": "Required",
@@ -79,7 +88,8 @@
                 "INITR_MINI160X80": null,
                 "INITR_18BLACKTAB": null,
                 "INITR_18REDTAB": null
-              }
+              },
+              "docs": "**string**: The model to use, one of the following options:\n  * `INITR_BLACKTAB`\n  \n  * `INITR_GREENTAB`\n  \n  * `INITR_REDTAB`\n  \n  * `INITR_MINI160X80`\n  \n  * `INITR_18BLACKTAB`\n  \n  * `INITR_18REDTAB`\n  \n  \n\n*See also: [ST7735 Display](https://esphome.io/components/display/st7735.html#configuration-variables)*"
             },
             "reset_pin": {
               "key": "Optional",
@@ -87,11 +97,13 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The RESET pin.\n\n*See also: [ST7735 Display](https://esphome.io/components/display/st7735.html#configuration-variables)*"
             },
             "update_interval": {
               "key": "Optional",
-              "default": "1s"
+              "default": "1s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: Time between display updates. Default is 1s.\n\n*See also: [ST7735 Display](https://esphome.io/components/display/st7735.html#configuration-variables)*"
             }
           },
           "extends": [

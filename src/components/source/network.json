@@ -7,7 +7,9 @@
           "config_vars": {
             "enable_ipv6": {
               "key": "Optional",
-              "type": "boolean"
+              "default": "False",
+              "type": "boolean",
+              "docs": "**boolean**: Enables IPv6 support. Defaults to `false`.\n\n*See also: [Network component](https://esphome.io/components/network.html#configuration-variables)*"
             }
           }
         }

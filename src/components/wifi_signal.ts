@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: wifi_signal.json
+ * 
+ * Schema: wifi_signal.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/wifi_signal
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

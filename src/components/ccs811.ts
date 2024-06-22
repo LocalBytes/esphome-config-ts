@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: ccs811.json
+ * 
+ * Schema: ccs811.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ccs811
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: cd74hc4067.json
+ * 
+ * Schema: cd74hc4067.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/cd74hc4067
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: nextion.json
+ * 
+ * Schema: nextion.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/nextion
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
@@ -54,6 +54,7 @@ export interface NextionBinarySensorConfig {
     visible?: boolean;
     component_name?: any;
     variable_name?: any;
+    name?: any;
 }
 
 export class NextionDisplay extends EsphomeComponent<NextionDisplayConfig> {
@@ -87,6 +88,7 @@ export interface NextionSwitchConfig extends NextionSensorCONFIG_SENSOR_COMPONEN
     update_interval?: any;
     foreground_pressed_color?: ID;
     background_pressed_color?: ID;
+    name?: any;
 }
 
 export class NextionTextSensor extends EsphomeComponent<NextionTextSensorConfig> {
@@ -102,4 +104,5 @@ export interface NextionTextSensorConfig {
     visible?: boolean;
     component_name: string;
     font_id?: number;
+    name?: any;
 }

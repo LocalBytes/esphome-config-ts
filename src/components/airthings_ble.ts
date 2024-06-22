@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: airthings_ble.json
+ * 
+ * Schema: airthings_ble.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/airthings_ble
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

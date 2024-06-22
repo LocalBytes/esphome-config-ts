@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: cs5460a.json
+ * 
+ * Schema: cs5460a.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/cs5460a
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

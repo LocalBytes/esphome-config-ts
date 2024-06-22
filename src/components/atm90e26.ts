@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: atm90e26.json
+ * 
+ * Schema: atm90e26.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/atm90e26
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

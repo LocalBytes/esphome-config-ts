@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: cwww.json
+ * 
+ * Schema: cwww.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/cwww
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
@@ -22,4 +22,5 @@ export interface CwwwLightConfig extends LightRGB_LIGHT_SCHEMA {
     cold_white_color_temperature?: any;
     warm_white_color_temperature?: any;
     constant_brightness?: boolean;
+    effects?: any;
 }

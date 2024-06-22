@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: anova.json
+ * 
+ * Schema: anova.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/anova
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

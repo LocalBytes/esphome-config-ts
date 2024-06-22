@@ -12,7 +12,8 @@
                 "parents": [
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this `my9231` component. Use this if you have multiple MY9231/MY9291 chains connected at the same time.\n\n*See also: [my9231 Component/Hub](https://esphome.io/components/output/my9231.html#configuration-variables)*"
             },
             "data_pin": {
               "key": "Required",
@@ -20,7 +21,8 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin which DI is connected to.\n\n*See also: [my9231 Component/Hub](https://esphome.io/components/output/my9231.html#configuration-variables)*"
             },
             "clock_pin": {
               "key": "Required",
@@ -28,17 +30,20 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin which DCKI is connected to.\n\n*See also: [my9231 Component/Hub](https://esphome.io/components/output/my9231.html#configuration-variables)*"
             },
             "num_channels": {
               "key": "Optional",
               "default": "6",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int**: Total number of channels of the whole chain. Must be in range from 3 to 1020. Defaults to 6.\n\n*See also: [my9231 Component/Hub](https://esphome.io/components/output/my9231.html#configuration-variables)*"
             },
             "num_chips": {
               "key": "Optional",
               "default": "2",
-              "type": "integer"
+              "type": "integer",
+              "docs": "**int**: Number of chips in the chain. Must be in range from 1 to 255. Defaults to 2.\n\n*See also: [my9231 Component/Hub](https://esphome.io/components/output/my9231.html#configuration-variables)*"
             },
             "bit_depth": {
               "key": "Optional",
@@ -49,7 +54,8 @@
                 "12": null,
                 "14": null,
                 "16": null
-              }
+              },
+              "docs": "**int**: The bit depth to use for all output channels in this chain. Must be one of 8, 12, 14 or 16. Defaults to 16.\n\n*See also: [my9231 Component/Hub](https://esphome.io/components/output/my9231.html#configuration-variables)*"
             }
           },
           "extends": [
@@ -73,7 +79,8 @@
             "my9231_id": {
               "key": "GeneratedID",
               "use_id_type": "my9231::MY9231OutputComponent",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID of the [Component/Hub](https://esphome.io/components/output/my9231.html#my9231-component). Use this if you have multiple MY9231/MY9291 chains you want to use at the same time.\n\n*See also: [my9231 Output](https://esphome.io/components/output/my9231.html#id1)*"
             },
             "id": {
               "key": "Required",
@@ -83,12 +90,14 @@
                   "output::FloatOutput",
                   "output::BinaryOutput"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this output component.\n\n*See also: [my9231 Output](https://esphome.io/components/output/my9231.html#id1)*"
             },
             "channel": {
               "key": "Required",
               "type": "integer",
-              "data_type": "uint16_t"
+              "data_type": "uint16_t",
+              "docs": "**int**: Chose the channel of the MY9231/MY9291 chain of this output component. Channel 0 is the most close channel.\n\n*See also: [my9231 Output](https://esphome.io/components/output/my9231.html#id1)*"
             }
           }
         }

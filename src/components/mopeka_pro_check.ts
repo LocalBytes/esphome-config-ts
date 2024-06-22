@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: mopeka_pro_check.json
+ * 
+ * Schema: mopeka_pro_check.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/mopeka_pro_check
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

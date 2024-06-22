@@ -12,26 +12,31 @@
                 "parents": [
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [Logger Component](https://esphome.io/components/logger.html#configuration-variables)*"
             },
             "baud_rate": {
               "key": "Optional",
               "default": "115200",
               "type": "integer",
-              "data_type": "positive_int"
+              "data_type": "positive_int",
+              "docs": "**int**: The baud rate to use for the serial UART port. Defaults to `115200`. Set to `0` to disable logging via UART.\n\n*See also: [Logger Component](https://esphome.io/components/logger.html#configuration-variables)*"
             },
             "tx_buffer_size": {
               "key": "Optional",
-              "default": "512"
+              "default": "512",
+              "docs": "**int**: The size of the buffer used for log messages. Decrease this if you\u2019re having memory problems. Defaults to `512`.\n\n*See also: [Logger Component](https://esphome.io/components/logger.html#configuration-variables)*"
             },
             "deassert_rts_dtr": {
               "key": "Optional",
               "default": "False",
-              "type": "boolean"
+              "type": "boolean",
+              "docs": "**boolean**: Deasserts RTS/DTR when opening log over UART. This is useful if RTS/DTR signals are directly connected to the reset pin or strapping pins. Note: Deassert typically means high on TTL level since RTS/DTR are usually low active signals. Defaults to `false`.\n\n*See also: [Logger Component](https://esphome.io/components/logger.html#configuration-variables)*"
             },
             "hardware_uart": {
               "key": "Optional",
-              "default": "UART0"
+              "default": "UART0",
+              "docs": "**string**: The Hardware UART to use for logging. Defaults to `UART0`.\n\n*See also: [Logger Component](https://esphome.io/components/logger.html#configuration-variables)*"
             },
             "level": {
               "key": "Optional",
@@ -45,7 +50,8 @@
                 "DEBUG": null,
                 "VERBOSE": null,
                 "VERY_VERBOSE": null
-              }
+              },
+              "docs": "**string**: The global log level. Any log message with a lower severity will not be shown. Defaults to `DEBUG`.\n\n*See also: [Logger Component](https://esphome.io/components/logger.html#configuration-variables)*"
             },
             "logs": {
               "key": "String",
@@ -835,6 +841,18 @@
                     }
                   },
                   "bme680_bsec.sensor": {
+                    "type": "enum",
+                    "values": {
+                      "NONE": null,
+                      "ERROR": null,
+                      "WARN": null,
+                      "INFO": null,
+                      "DEBUG": null,
+                      "VERBOSE": null,
+                      "VERY_VERBOSE": null
+                    }
+                  },
+                  "bmi160": {
                     "type": "enum",
                     "values": {
                       "NONE": null,
@@ -2730,6 +2748,54 @@
                       "VERY_VERBOSE": null
                     }
                   },
+                  "lt.gpio": {
+                    "type": "enum",
+                    "values": {
+                      "NONE": null,
+                      "ERROR": null,
+                      "WARN": null,
+                      "INFO": null,
+                      "DEBUG": null,
+                      "VERBOSE": null,
+                      "VERY_VERBOSE": null
+                    }
+                  },
+                  "lt.component": {
+                    "type": "enum",
+                    "values": {
+                      "NONE": null,
+                      "ERROR": null,
+                      "WARN": null,
+                      "INFO": null,
+                      "DEBUG": null,
+                      "VERBOSE": null,
+                      "VERY_VERBOSE": null
+                    }
+                  },
+                  "lt.preferences": {
+                    "type": "enum",
+                    "values": {
+                      "NONE": null,
+                      "ERROR": null,
+                      "WARN": null,
+                      "INFO": null,
+                      "DEBUG": null,
+                      "VERBOSE": null,
+                      "VERY_VERBOSE": null
+                    }
+                  },
+                  "libretiny.pwm": {
+                    "type": "enum",
+                    "values": {
+                      "NONE": null,
+                      "ERROR": null,
+                      "WARN": null,
+                      "INFO": null,
+                      "DEBUG": null,
+                      "VERBOSE": null,
+                      "VERY_VERBOSE": null
+                    }
+                  },
                   "light.addressable": {
                     "type": "enum",
                     "values": {
@@ -2755,6 +2821,18 @@
                     }
                   },
                   "light": {
+                    "type": "enum",
+                    "values": {
+                      "NONE": null,
+                      "ERROR": null,
+                      "WARN": null,
+                      "INFO": null,
+                      "DEBUG": null,
+                      "VERBOSE": null,
+                      "VERY_VERBOSE": null
+                    }
+                  },
+                  "lightwaverf.sensor": {
                     "type": "enum",
                     "values": {
                       "NONE": null,
@@ -4710,6 +4788,18 @@
                       "VERY_VERBOSE": null
                     }
                   },
+                  "remote_receiver.libretiny": {
+                    "type": "enum",
+                    "values": {
+                      "NONE": null,
+                      "ERROR": null,
+                      "WARN": null,
+                      "INFO": null,
+                      "DEBUG": null,
+                      "VERBOSE": null,
+                      "VERY_VERBOSE": null
+                    }
+                  },
                   "remote_transmitter": {
                     "type": "enum",
                     "values": {
@@ -4963,6 +5053,18 @@
                     }
                   },
                   "selec_meter": {
+                    "type": "enum",
+                    "values": {
+                      "NONE": null,
+                      "ERROR": null,
+                      "WARN": null,
+                      "INFO": null,
+                      "DEBUG": null,
+                      "VERBOSE": null,
+                      "VERY_VERBOSE": null
+                    }
+                  },
+                  "sen0321_sensor.sensor": {
                     "type": "enum",
                     "values": {
                       "NONE": null,
@@ -5370,7 +5472,31 @@
                       "VERY_VERBOSE": null
                     }
                   },
-                  "spi": {
+                  "spi-esp-arduino": {
+                    "type": "enum",
+                    "values": {
+                      "NONE": null,
+                      "ERROR": null,
+                      "WARN": null,
+                      "INFO": null,
+                      "DEBUG": null,
+                      "VERBOSE": null,
+                      "VERY_VERBOSE": null
+                    }
+                  },
+                  "spi-esp-idf": {
+                    "type": "enum",
+                    "values": {
+                      "NONE": null,
+                      "ERROR": null,
+                      "WARN": null,
+                      "INFO": null,
+                      "DEBUG": null,
+                      "VERBOSE": null,
+                      "VERY_VERBOSE": null
+                    }
+                  },
+                  "spi_device": {
                     "type": "enum",
                     "values": {
                       "NONE": null,
@@ -6474,6 +6600,18 @@
                       "VERY_VERBOSE": null
                     }
                   },
+                  "uart.lt": {
+                    "type": "enum",
+                    "values": {
+                      "NONE": null,
+                      "ERROR": null,
+                      "WARN": null,
+                      "INFO": null,
+                      "DEBUG": null,
+                      "VERBOSE": null,
+                      "VERY_VERBOSE": null
+                    }
+                  },
                   "uart.arduino_rp2040": {
                     "type": "enum",
                     "values": {
@@ -6774,6 +6912,18 @@
                       "VERY_VERBOSE": null
                     }
                   },
+                  "wifi_lt": {
+                    "type": "enum",
+                    "values": {
+                      "NONE": null,
+                      "ERROR": null,
+                      "WARN": null,
+                      "INFO": null,
+                      "DEBUG": null,
+                      "VERBOSE": null,
+                      "VERY_VERBOSE": null
+                    }
+                  },
                   "wifi_pico_w": {
                     "type": "enum",
                     "values": {
@@ -6799,6 +6949,18 @@
                     }
                   },
                   "wifi_signal.sensor": {
+                    "type": "enum",
+                    "values": {
+                      "NONE": null,
+                      "ERROR": null,
+                      "WARN": null,
+                      "INFO": null,
+                      "DEBUG": null,
+                      "VERBOSE": null,
+                      "VERY_VERBOSE": null
+                    }
+                  },
+                  "wireguard": {
                     "type": "enum",
                     "values": {
                       "NONE": null,
@@ -7135,7 +7297,8 @@
                     }
                   }
                 }
-              }
+              },
+              "docs": "**mapping**: Manually set the log level for a specific component or tag. See [Manual Log Levels for more information](https://esphome.io/components/logger.html#logger-manual-tag-specific-levels).\n\n*See also: [Logger Component](https://esphome.io/components/logger.html#configuration-variables)*"
             },
             "on_message": {
               "key": "Optional",
@@ -7160,12 +7323,14 @@
                     "type": "trigger"
                   }
                 }
-              }
+              },
+              "docs": "**[Automation](https://esphome.io/guides/automations.html#automation)**: An action to be performed when a message is to be logged. The variables `int level`, `const char* tag` and `const char* message` are available for lambda processing.\n\n*See also: [Logger Component](https://esphome.io/components/logger.html#configuration-variables)*"
             },
             "esp8266_store_log_strings_in_flash": {
               "key": "Optional",
               "default": "True",
-              "type": "boolean"
+              "type": "boolean",
+              "docs": "**boolean**: If set to false, disables storing log strings in the flash section of the device (uses more memory). Defaults to true.\n\n*See also: [Logger Component](https://esphome.io/components/logger.html#configuration-variables)*"
             }
           },
           "extends": [
@@ -7181,12 +7346,14 @@
           "config_vars": {
             "format": {
               "key": "Required",
-              "type": "string"
+              "type": "string",
+              "docs": "**string**: The format for the message in [printf-style](https://esphome.io/components/display/index.html#display-printf).\n\n*See also: [Logger Component](https://esphome.io/components/logger.html#logger-log-action)*"
             },
             "args": {
               "key": "Optional",
               "default": "[]",
-              "is_list": true
+              "is_list": true,
+              "docs": "**list of [lambda](https://esphome.io/guides/automations.html#config-lambda)**: The optional arguments for the format message.\n\n*See also: [Logger Component](https://esphome.io/components/logger.html#logger-log-action)*"
             },
             "level": {
               "key": "Optional",
@@ -7199,16 +7366,19 @@
                 "DEBUG": null,
                 "VERBOSE": null,
                 "VERY_VERBOSE": null
-              }
+              },
+              "docs": "**string**: The [log level](https://esphome.io/components/logger.html#logger-log-levels) to print the message with. Defaults to `DEBUG`.\n\n*See also: [Logger Component](https://esphome.io/components/logger.html#logger-log-action)*"
             },
             "tag": {
               "key": "Optional",
               "default": "main",
-              "type": "string"
+              "type": "string",
+              "docs": "**string**: The tag (seen in front of the message in the logs) to print the message with. Defaults to `main`.\n\n*See also: [Logger Component](https://esphome.io/components/logger.html#logger-log-action)*"
             }
           }
         },
-        "maybe": "format"
+        "maybe": "format",
+        "docs": "Print a formatted message to the logs.\n\n*See also: [`logger.log` Action](https://esphome.io/components/logger.html#logger-log-action)*"
       }
     }
   }

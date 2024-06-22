@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: hrxl_maxsonar_wr.json
+ * 
+ * Schema: hrxl_maxsonar_wr.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/hrxl_maxsonar_wr
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

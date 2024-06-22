@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: globals.json
+ * 
+ * Schema: globals.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/globals
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
@@ -20,4 +20,5 @@ export interface GlobalsConfig extends CoreCOMPONENT_SCHEMA {
     type: string;
     initial_value?: string;
     restore_value?: boolean;
+    max_restore_data_length?: number;
 }

@@ -17,7 +17,8 @@
                   "EntityBase",
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [GPIO Binary Sensor](https://esphome.io/components/binary_sensor/gpio.html#configuration-variables)*"
             },
             "pin": {
               "key": "Required",
@@ -25,7 +26,8 @@
               "modes": [
                 "input"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin to periodically check.\n\n*See also: [GPIO Binary Sensor](https://esphome.io/components/binary_sensor/gpio.html#configuration-variables)*"
             }
           }
         }
@@ -50,7 +52,8 @@
                   "output::BinaryOutput",
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this output component.\n\n*See also: [GPIO Output](https://esphome.io/components/output/gpio.html#configuration-variables)*"
             },
             "pin": {
               "key": "Required",
@@ -58,7 +61,8 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin to turn on and off.\n\n*See also: [GPIO Output](https://esphome.io/components/output/gpio.html#configuration-variables)*"
             }
           }
         }
@@ -98,7 +102,8 @@
                   "EntityBase",
                   "Component"
                 ]
-              }
+              },
+              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [GPIO Switch](https://esphome.io/components/switch/gpio.html#configuration-variables)*"
             },
             "pin": {
               "key": "Required",
@@ -106,13 +111,15 @@
               "modes": [
                 "output"
               ],
-              "type": "pin"
+              "type": "pin",
+              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The GPIO pin to use for the switch.\n\n*See also: [GPIO Switch](https://esphome.io/components/switch/gpio.html#configuration-variables)*"
             },
             "interlock": {
               "key": "Optional",
               "is_list": true,
               "use_id_type": "switch_::Switch",
-              "type": "use_id"
+              "type": "use_id",
+              "docs": "**list**: A list of other GPIO switches in an interlock group. See [Interlocking](https://esphome.io/components/switch/gpio.html#switch-gpio-interlocking).\n\n*See also: [GPIO Switch](https://esphome.io/components/switch/gpio.html#configuration-variables)*"
             },
             "interlock_wait_time": {
               "key": "Optional",
@@ -122,7 +129,8 @@
                 "extends": [
                   "core.positive_time_period_milliseconds"
                 ]
-              }
+              },
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: For interlocking mode, set how long to wait after other items in an interlock group have been disabled before re-activating. Useful for motors where immediately turning on in the other direction could cause problems.\n\n*See also: [GPIO Switch](https://esphome.io/components/switch/gpio.html#configuration-variables)*"
             }
           }
         }

@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: apds9960.json
+ * 
+ * Schema: apds9960.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/apds9960
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: ektf2232.json
+ * 
+ * Schema: ektf2232.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ektf2232
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

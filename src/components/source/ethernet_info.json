@@ -33,7 +33,8 @@
                     "default": "1s"
                   }
                 }
-              }
+              },
+              "docs": "Expose the IP Address of the ESP as a text sensor. All options from [Text Sensor](https://esphome.io/components/text_sensor/index.html#config-text-sensor).\n\n*See also: [Ethernet Info Text Sensor](https://esphome.io/components/text_sensor/ethernet_info.html#configuration-variables)*"
             }
           }
         }

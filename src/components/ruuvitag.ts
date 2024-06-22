@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: ruuvitag.json
+ * 
+ * Schema: ruuvitag.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/ruuvitag
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

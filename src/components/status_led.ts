@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: status_led.json
+ * 
+ * Schema: status_led.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/status_led
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

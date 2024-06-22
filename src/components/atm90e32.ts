@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: atm90e32.json
+ * 
+ * Schema: atm90e32.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/atm90e32
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

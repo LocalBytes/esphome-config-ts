@@ -53,7 +53,8 @@
                     "default": "measurement"
                   }
                 }
-              }
+              },
+              "docs": "All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://esphome.io/components/sensor/mics_4514.html#configuration-variables)*"
             },
             "carbon_monoxide": {
               "key": "Optional",
@@ -62,7 +63,8 @@
                 "extends": [
                   "mics_4514.sensor.common_sensor_schema"
                 ]
-              }
+              },
+              "docs": "All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://esphome.io/components/sensor/mics_4514.html#configuration-variables)*"
             },
             "methane": {
               "key": "Optional",
@@ -71,7 +73,8 @@
                 "extends": [
                   "mics_4514.sensor.common_sensor_schema"
                 ]
-              }
+              },
+              "docs": "All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://esphome.io/components/sensor/mics_4514.html#configuration-variables)*"
             },
             "ethanol": {
               "key": "Optional",
@@ -80,7 +83,8 @@
                 "extends": [
                   "mics_4514.sensor.common_sensor_schema"
                 ]
-              }
+              },
+              "docs": "All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://esphome.io/components/sensor/mics_4514.html#configuration-variables)*"
             },
             "hydrogen": {
               "key": "Optional",
@@ -89,7 +93,8 @@
                 "extends": [
                   "mics_4514.sensor.common_sensor_schema"
                 ]
-              }
+              },
+              "docs": "All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://esphome.io/components/sensor/mics_4514.html#configuration-variables)*"
             },
             "ammonia": {
               "key": "Optional",
@@ -98,7 +103,8 @@
                 "extends": [
                   "mics_4514.sensor.common_sensor_schema"
                 ]
-              }
+              },
+              "docs": "All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://esphome.io/components/sensor/mics_4514.html#configuration-variables)*"
             },
             "i2c_id": {
               "key": "GeneratedID",
@@ -112,7 +118,8 @@
             },
             "update_interval": {
               "key": "Optional",
-              "default": "60s"
+              "default": "60s",
+              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [MiCS 4514 Gas Sensor](https://esphome.io/components/sensor/mics_4514.html#configuration-variables)*"
             }
           },
           "extends": [

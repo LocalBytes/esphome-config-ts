@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: tsl2591.json
+ * 
+ * Schema: tsl2591.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/tsl2591
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

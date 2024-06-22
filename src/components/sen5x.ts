@@ -1,10 +1,10 @@
 /**
  * This file was automatically generated.
  * DO NOT MODIFY BY HAND.
- *
- * Schema: sen5x.json
+ * 
+ * Schema: sen5x.json 
  * Source: https://github.com/esphome/esphome/blob/dev/esphome/components/sen5x
- *
+ * 
  * This file is part of the ESPHome TypeScript Generator.
  * © Allport-IT Ltd (t/a Local Bytes)
  **/

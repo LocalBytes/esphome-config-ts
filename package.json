@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "prepare": "ts-patch install -s",
+    "prepare": "npm run prepare:tspatch && npm run build:tsc",
+    "prepare:tspatch": "ts-patch install -s",
     "build:generator": "node --loader ts-node/esm ./src/generator/build.ts",
     "build:tsc": "tsc",
     "build": "npm run build:generator && npm run build:tsc",

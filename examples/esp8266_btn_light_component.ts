@@ -1,9 +1,7 @@
-import {Configuration} from "../lib/config";
-import {GpioBinarySensor, GpioOutput} from "../lib/components/gpio";
-import {BinaryLight} from "../lib/components/binary";
-import {VirtualComponent} from "../lib/base";
-import {Esphome} from "../lib/components/esphome";
-import {Esp8266} from "../lib/components/esp8266";
+// noinspection ES6PreferShortImport
+
+import {Configuration, VirtualComponent} from "../dist/lib/index.js";
+import {BinaryLight, Esp8266, Esphome, GpioBinarySensor, GpioOutput} from "../dist/components/index.js";
 
 class ButtonLight extends VirtualComponent<{
     id: string,

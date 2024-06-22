@@ -25,5 +25,11 @@
         "afterDeclarations": true
       }
     ]
+  },
+  "ts-node": {
+    "transpileOnly": true,
+    "require": [
+      "typescript-transform-paths/register"
+    ]
   }
 }

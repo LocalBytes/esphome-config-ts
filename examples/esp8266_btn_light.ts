@@ -1,8 +1,7 @@
-import {Configuration} from "../lib/config";
-import {Esphome} from "../lib/components/esphome";
-import {Esp8266} from "../lib/components/esp8266";
-import {GpioBinarySensor, GpioOutput} from "../lib/components/gpio";
-import {BinaryLight} from "../lib/components/binary";
+// noinspection ES6PreferShortImport
+
+import {Configuration} from "../dist/lib/index.js";
+import {BinaryLight, Esp8266, Esphome, GpioBinarySensor, GpioOutput} from "../dist/components/index.js";
 
 let config = new Configuration();
 

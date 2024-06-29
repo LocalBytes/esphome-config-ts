@@ -34,23 +34,31 @@ export class Configuration {
             .addComponent(new Logger({logs: {}}))
             .addComponent(new WebServer({}))
             .addComponent(new Api({}))
-            .addComponent(new Ota({}));
+            .addComponent(new Ota({
+                // @ts-ignore
+                platform: "esphome",
+            }));
     }
 
     synth(): object {
         return this.synthRecursive(this.components).reduce((acc, cur) => {
-            let domain = cur._domain;
-            acc[domain] ??= [];
+            let {_domain: domain, ...rest} = cur;
 
-            let {_domain, ...rest} = cur;
-
-            acc[domain].push(rest);
+            if (acc[domain] != null && !Array.isArray(acc[domain])) {
+                acc[domain] = [acc[domain], rest];
+                return acc;
+            }
 
             if (!rest.platform) {
                 // Core services don't have multiple instances, and expect a mapping.
                 // These are identifiable based on the lack of a platform.
+                // However, some do (like, script
                 acc[domain] = rest;
+                return acc;
             }
+
+            acc[domain] ??= [];
+            acc[domain].push(rest);
             return acc;
         }, {} as Record<string, any>);
     }

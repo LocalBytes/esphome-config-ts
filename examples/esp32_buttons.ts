@@ -42,7 +42,7 @@ config.addComponent(new Wifi({
     id: "wifi",
     ap: {ssid: "LocalBytes MacroPad"}
 }))
-config.addComponent(new CaptivePortal({id: "captive_portal",}))
+config.addComponent(new CaptivePortal({id: "captive_portal"}))
 
 config.addComponent(new Logger({
     id: "logger",

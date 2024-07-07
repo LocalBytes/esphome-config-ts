@@ -4,7 +4,7 @@ import * as Path from "node:path";
 import {Project} from "ts-morph";
 
 import {generateClass, handleIndex} from "./generators.js";
-import {makeHeader} from "./utils.js";
+import {makeHeader} from "../lib/utils.js";
 
 const srcPath = (path: string | Array<string>) => Path.join("./src", ...(Array.isArray(path) ? path : [path]));
 

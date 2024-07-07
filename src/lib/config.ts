@@ -1,7 +1,7 @@
 import {BaseComponent, type SynthComponent} from "@/lib/base.js";
 
 import espHomeYaml from "@/yaml/index.js";
-import {type ArrayMaybe, ensureArray} from "@/generator/utils.js";
+import {type ArrayMaybe, ensureArray} from "@/lib/utils.js";
 import {Api, CaptivePortal, Logger, Ota, WebServer, Wifi} from "@/components/index.js";
 
 export class Configuration {

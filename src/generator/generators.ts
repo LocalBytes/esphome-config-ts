@@ -8,8 +8,7 @@ import {
     type WriterFunctionOrValue,
     Writers
 } from "ts-morph";
-
-import {fileNameFromComponent, notEmpty, toUpperCamelCase} from "./utils.js";
+import {fileNameFromComponent, notEmpty, toUpperCamelCase} from "../lib/utils.js";
 
 let types: {
     idType: TypeAliasDeclaration; pinType: TypeAliasDeclaration; classType: ClassDeclaration;

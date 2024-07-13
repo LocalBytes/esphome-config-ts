@@ -24,6 +24,7 @@ const esphomeYamlSchema = yaml.DEFAULT_SCHEMA.extend(yamlTypes);
 const esphomeYamlDump = (data: any, opts?: yaml.DumpOptions) => yaml.dump(data, {
     schema: esphomeYamlSchema,
     sortKeys: esphomeYamlSortKeys,
+    lineWidth: -1,
     ...opts
 });
 const esphomeYamlParse = (data: string) => yaml.load(data, {schema: esphomeYamlSchema})

@@ -41,26 +41,28 @@ export class Configuration {
     }
 
     synth(): object {
-        return this.synthRecursive(this.components).reduce((acc, cur) => {
-            let {_domain: domain, ...rest} = cur;
+        return this
+            .synthRecursive(this.components)
+            .reduce((acc, cur) => {
+                let {_domain: domain, ...rest} = cur;
 
-            if (acc[domain] != null && !Array.isArray(acc[domain])) {
-                acc[domain] = [acc[domain], rest];
+                if (acc[domain] != null && !Array.isArray(acc[domain])) {
+                    acc[domain] = [acc[domain], rest];
+                    return acc;
+                }
+
+                if (!rest.platform) {
+                    // Core services don't have multiple instances, and expect a mapping.
+                    // These are identifiable based on the lack of a platform.
+                    // However, some do (like, script
+                    acc[domain] = rest;
+                    return acc;
+                }
+
+                acc[domain] ??= [];
+                acc[domain].push(rest);
                 return acc;
-            }
-
-            if (!rest.platform) {
-                // Core services don't have multiple instances, and expect a mapping.
-                // These are identifiable based on the lack of a platform.
-                // However, some do (like, script
-                acc[domain] = rest;
-                return acc;
-            }
-
-            acc[domain] ??= [];
-            acc[domain].push(rest);
-            return acc;
-        }, {} as Record<string, any>);
+            }, {} as Record<string, any>);
     }
 
     synthYaml(): string {

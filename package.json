@@ -16,13 +16,13 @@
   "devDependencies": {
     "@tsconfig/node-lts": "^20.1.3",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^20.14.10",
-    "madge": "^7.0.0",
-    "ts-morph": "^22.0.0",
+    "@types/node": "^22.5.5",
+    "madge": "^8.0.0",
+    "ts-morph": "^23.0.0",
     "ts-node": "^10.9.2",
     "ts-patch": "^3.2.1",
-    "typescript": "5.4.5",
-    "typescript-transform-paths": "^3.4.7"
+    "typescript": "~5.5.4",
+    "typescript-transform-paths": "^3.5.1"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
@@ -36,5 +36,6 @@
         "skipTypeImports": true
       }
     }
-  }
+  },
+  "packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c"
 }

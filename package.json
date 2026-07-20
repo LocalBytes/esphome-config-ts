@@ -25,7 +25,7 @@
     "typescript-transform-paths": "^3.5.6"
   },
   "dependencies": {
-    "js-yaml": "^4.1.1"
+    "js-yaml": "^5.0.0"
   },
   "madge": {
     "detectiveOptions": {

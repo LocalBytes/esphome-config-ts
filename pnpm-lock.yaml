@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       js-yaml:
-        specifier: ^4.1.1
-        version: 4.3.1
+        specifier: ^5.0.0
+        version: 5.2.3
     devDependencies:
       '@tsconfig/node-lts':
         specifier: ^24.0.0
@@ -564,8 +564,8 @@ packages:
     resolution: {integrity: sha512-6B3tLtFqtQS4ekarvLVMZ+X+VlvQekbe4taUkf/rhVO3d/h0M2rfARm/pXLcPEsjjMsFgrFgSrhQIxcSVrBz8w==}
     engines: {node: '>=18'}
 
-  js-yaml@4.3.1:
-    resolution: {integrity: sha512-CY6crGq313MX8GkwvB7tzgp99vjQxY1++5y10/BKN/GUfHqWaOGQMNZkBvqSzsZKWk/ijwHlWzzkLulsGHhjWQ==}
+  js-yaml@5.2.3:
+    resolution: {integrity: sha512-n+mUVyUX5bVv7G/G2zyIHOhdxfuU1dY2NOFzTQUWiMUbFss8b57NFlgCCaggU78wSw5KVS9cllzeLyzyR+n5nw==}
     hasBin: true
 
   json5@2.2.3:
@@ -1306,7 +1306,7 @@ snapshots:
 
   isexe@3.1.5: {}
 
-  js-yaml@4.3.1:
+  js-yaml@5.2.3:
     dependencies:
       argparse: 2.0.1
 

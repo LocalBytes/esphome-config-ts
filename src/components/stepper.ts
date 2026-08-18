@@ -15,7 +15,7 @@ export abstract class Stepper extends EsphomeComponent {
 }
 
 export interface StepperSTEPPER_SCHEMA {
-    max_speed: string;
     acceleration?: any;
     deceleration?: any;
+    max_speed: string;
 }

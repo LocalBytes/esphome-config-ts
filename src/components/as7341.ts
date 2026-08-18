@@ -9,21 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 
 export class As7341Sensor extends EsphomeComponent<As7341SensorConfig> {
     componentName: string = "as7341.sensor";
 }
 
-export interface As7341SensorSENSOR_SCHEMA extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
+export type As7341SensorConfigClear = As7341SensorSENSOR_SCHEMA;
 export type As7341SensorConfigF1 = As7341SensorSENSOR_SCHEMA;
 export type As7341SensorConfigF2 = As7341SensorSENSOR_SCHEMA;
 export type As7341SensorConfigF3 = As7341SensorSENSOR_SCHEMA;
@@ -32,12 +25,14 @@ export type As7341SensorConfigF5 = As7341SensorSENSOR_SCHEMA;
 export type As7341SensorConfigF6 = As7341SensorSENSOR_SCHEMA;
 export type As7341SensorConfigF7 = As7341SensorSENSOR_SCHEMA;
 export type As7341SensorConfigF8 = As7341SensorSENSOR_SCHEMA;
-export type As7341SensorConfigClear = As7341SensorSENSOR_SCHEMA;
-export type As7341SensorConfigNir = As7341SensorSENSOR_SCHEMA;
 export type As7341SensorConfigGain = 'X0.5' | 'X1' | 'X2' | 'X4' | 'X8' | 'X16' | 'X32' | 'X64' | 'X128' | 'X256' | 'X512';
+export type As7341SensorConfigNir = As7341SensorSENSOR_SCHEMA;
 
 export interface As7341SensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
+    address?: any;
+    astep?: number;
+    atime?: number;
+    clear?: As7341SensorConfigClear;
     f1?: As7341SensorConfigF1;
     f2?: As7341SensorConfigF2;
     f3?: As7341SensorConfigF3;
@@ -46,12 +41,17 @@ export interface As7341SensorConfig extends CoreCOMPONENT_SCHEMA {
     f6?: As7341SensorConfigF6;
     f7?: As7341SensorConfigF7;
     f8?: As7341SensorConfigF8;
-    clear?: As7341SensorConfigClear;
-    nir?: As7341SensorConfigNir;
     gain?: As7341SensorConfigGain;
-    atime?: number;
-    astep?: number;
-    update_interval?: any;
     i2c_id?: ID;
-    address?: any;
+    id?: ID;
+    nir?: As7341SensorConfigNir;
+    update_interval?: any;
+}
+
+export interface As7341SensorSENSOR_SCHEMA extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }

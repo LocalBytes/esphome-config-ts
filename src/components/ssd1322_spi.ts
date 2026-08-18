@@ -17,14 +17,20 @@ export class Ssd1322SpiDisplay extends EsphomeComponent<Ssd1322SpiDisplayConfig>
 }
 
 export type Ssd1322SpiDisplayConfigModel = 'SSD1322_256X64';
+export type Ssd1322SpiDisplayConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 export type Ssd1322SpiDisplayConfig = {
-        id?: ID;
-        dc_pin: Pin;
-        spi_id?: ID;
-        cs_pin?: Pin;
-        model: Ssd1322SpiDisplayConfigModel;
-        reset_pin?: Pin;
         brightness?: any;
+        cs_pin?: Pin;
+        data_rate?: any;
+        dc_pin: Pin;
         external_vcc?: boolean;
+        id?: ID;
+        model: Ssd1322SpiDisplayConfigModel;
+        release_device?: boolean;
+        reset_pin?: Pin;
+        spi_id?: ID;
+        spi_mode?: Ssd1322SpiDisplayConfigSpiMode;
         update_interval?: any;
+        lambda?: any;
+        pages?: any;
     } & DisplayFULL_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;

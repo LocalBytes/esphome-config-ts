@@ -17,9 +17,9 @@ export class Bp1658cj extends EsphomeComponent<Bp1658cjConfig> {
 }
 
 export interface Bp1658cjConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    data_pin: Pin;
     clock_pin: Pin;
+    data_pin: Pin;
+    id?: ID;
     max_power_color_channels?: number;
     max_power_white_channels?: number;
 }
@@ -30,6 +30,6 @@ export class Bp1658cjOutput extends EsphomeComponent<Bp1658cjOutputConfig> {
 
 export type Bp1658cjOutputConfig = {
         bp1658cj_id?: ID;
-        id: string;
         channel: number;
+        id: string;
     } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;

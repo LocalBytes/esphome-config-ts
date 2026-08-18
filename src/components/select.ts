@@ -15,12 +15,24 @@ export abstract class Select extends EsphomeComponent {
     componentName: string = "select";
 }
 
-export type SelectSELECT_SCHEMA = {
-        mqtt_id?: any;
-        id?: ID;
-        on_value?: object[];
-    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMMAND_COMPONENT_SCHEMA;
-
 export interface SelectOPERATION_BASE_SCHEMA {
     id: ID;
 }
+
+export interface Select_SELECT_SCHEMAWebServer {
+    sorting_group_id?: ID;
+    sorting_weight?: any;
+    web_server_id?: ID;
+}
+
+export type Select_SELECT_SCHEMA = {
+        id?: ID;
+        mqtt_id?: any;
+        on_value?: object[];
+        web_server?: Select_SELECT_SCHEMAWebServer;
+        name?: any;
+        icon?: any;
+        internal?: any;
+        disabled_by_default?: any;
+        entity_category?: any;
+    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMMAND_COMPONENT_SCHEMA;

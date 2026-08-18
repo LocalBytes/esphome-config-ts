@@ -17,9 +17,9 @@ export class Tlc59208f extends EsphomeComponent<Tlc59208fConfig> {
 }
 
 export interface Tlc59208fConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    i2c_id?: ID;
     address?: any;
+    i2c_id?: ID;
+    id?: ID;
 }
 
 export class Tlc59208fOutput extends EsphomeComponent<Tlc59208fOutputConfig> {
@@ -27,7 +27,7 @@ export class Tlc59208fOutput extends EsphomeComponent<Tlc59208fOutputConfig> {
 }
 
 export interface Tlc59208fOutputConfig extends OutputFLOAT_OUTPUT_SCHEMA {
+    channel: number;
     id: string;
     tlc59208f_id?: ID;
-    channel: number;
 }

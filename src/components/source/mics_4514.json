@@ -1,31 +1,116 @@
 {
   "mics_4514.sensor": {
     "schemas": {
-      "common_sensor_schema": {
-        "type": "schema",
-        "schema": {
-          "extends": [
-            "sensor.SENSOR_SCHEMA"
-          ],
-          "config_vars": {
-            "unit_of_measurement": {
-              "default": "ppm"
-            },
-            "accuracy_decimals": {
-              "default": "2"
-            },
-            "state_class": {
-              "default": "measurement"
-            }
-          }
-        }
-      },
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
           "config_vars": {
-            "id": {
+            "address": {
+              "data_type": "hex_uint8_t",
+              "default": "117",
+              "key": "Optional"
+            },
+            "ammonia": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "2"
+                  },
+                  "device_class": {
+                    "default": ""
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "ppm"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "All options from [Sensor](https://next.esphome.io/components/sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://next.esphome.io/components/sensor/mics_4514#configuration-variables)*"
+            },
+            "carbon_monoxide": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "2"
+                  },
+                  "device_class": {
+                    "default": "carbon_monoxide"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "ppm"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "All options from [Sensor](https://next.esphome.io/components/sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://next.esphome.io/components/sensor/mics_4514#configuration-variables)*"
+            },
+            "ethanol": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "2"
+                  },
+                  "device_class": {
+                    "default": ""
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "ppm"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "All options from [Sensor](https://next.esphome.io/components/sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://next.esphome.io/components/sensor/mics_4514#configuration-variables)*"
+            },
+            "hydrogen": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "2"
+                  },
+                  "device_class": {
+                    "default": ""
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "ppm"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "All options from [Sensor](https://next.esphome.io/components/sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://next.esphome.io/components/sensor/mics_4514#configuration-variables)*"
+            },
+            "i2c_id": {
               "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "i2c::I2CBus"
+            },
+            "id": {
               "id_type": {
                 "class": "mics_4514::MICS4514Component",
                 "parents": [
@@ -33,99 +118,68 @@
                   "Component",
                   "i2c::I2CDevice"
                 ]
-              }
-            },
-            "nitrogen_dioxide": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "ppm"
-                  },
-                  "accuracy_decimals": {
-                    "default": "2"
-                  },
-                  "state_class": {
-                    "default": "measurement"
-                  }
-                }
               },
-              "docs": "All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://esphome.io/components/sensor/mics_4514.html#configuration-variables)*"
-            },
-            "carbon_monoxide": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "mics_4514.sensor.common_sensor_schema"
-                ]
-              },
-              "docs": "All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://esphome.io/components/sensor/mics_4514.html#configuration-variables)*"
+              "key": "GeneratedID"
             },
             "methane": {
               "key": "Optional",
-              "type": "schema",
               "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "2"
+                  },
+                  "device_class": {
+                    "default": ""
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "ppm"
+                  }
+                },
                 "extends": [
-                  "mics_4514.sensor.common_sensor_schema"
+                  "sensor._SENSOR_SCHEMA"
                 ]
               },
-              "docs": "All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://esphome.io/components/sensor/mics_4514.html#configuration-variables)*"
-            },
-            "ethanol": {
-              "key": "Optional",
               "type": "schema",
+              "docs": "All options from [Sensor](https://next.esphome.io/components/sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://next.esphome.io/components/sensor/mics_4514#configuration-variables)*"
+            },
+            "nitrogen_dioxide": {
+              "key": "Optional",
               "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "2"
+                  },
+                  "device_class": {
+                    "default": ""
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "ppm"
+                  }
+                },
                 "extends": [
-                  "mics_4514.sensor.common_sensor_schema"
+                  "sensor._SENSOR_SCHEMA"
                 ]
               },
-              "docs": "All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://esphome.io/components/sensor/mics_4514.html#configuration-variables)*"
-            },
-            "hydrogen": {
-              "key": "Optional",
               "type": "schema",
-              "schema": {
-                "extends": [
-                  "mics_4514.sensor.common_sensor_schema"
-                ]
-              },
-              "docs": "All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://esphome.io/components/sensor/mics_4514.html#configuration-variables)*"
-            },
-            "ammonia": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "mics_4514.sensor.common_sensor_schema"
-                ]
-              },
-              "docs": "All options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://esphome.io/components/sensor/mics_4514.html#configuration-variables)*"
-            },
-            "i2c_id": {
-              "key": "GeneratedID",
-              "use_id_type": "i2c::I2CBus",
-              "type": "use_id"
-            },
-            "address": {
-              "key": "Optional",
-              "default": "117",
-              "data_type": "hex_uint8_t"
+              "docs": "All options from [Sensor](https://next.esphome.io/components/sensor)\n\n*See also: [MiCS 4514 Gas Sensor](https://next.esphome.io/components/sensor/mics_4514#configuration-variables)*"
             },
             "update_interval": {
-              "key": "Optional",
               "default": "60s",
-              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [MiCS 4514 Gas Sensor](https://esphome.io/components/sensor/mics_4514.html#configuration-variables)*"
+              "key": "Optional",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [MiCS 4514 Gas Sensor](https://next.esphome.io/components/sensor/mics_4514#configuration-variables)*"
             }
           },
           "extends": [
             "core.COMPONENT_SCHEMA"
           ]
-        }
+        },
+        "type": "schema"
       }
     }
   }

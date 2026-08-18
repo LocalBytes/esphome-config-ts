@@ -9,50 +9,124 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { ClimateCLIMATE_SCHEMA } from "./climate.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { Button_BUTTON_SCHEMA } from "./button.js";
+import type { CorePositiveTimePeriodMilliseconds } from "./esphome.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { Switch_SWITCH_SCHEMA } from "./switch.js";
+import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+
+export class HaierBinarySensor extends EsphomeComponent<HaierBinarySensorConfig> {
+    componentName: string = "haier.binary_sensor";
+}
+
+export interface HaierBinarySensorConfigCompressorStatus extends BinarySensor_BINARY_SENSOR_SCHEMA {
+    entity_category?: any;
+    icon?: any;
+}
+
+export interface HaierBinarySensorConfigDefrostStatus extends BinarySensor_BINARY_SENSOR_SCHEMA {
+    entity_category?: any;
+    icon?: any;
+}
+
+export interface HaierBinarySensorConfigFourWayValveStatus extends BinarySensor_BINARY_SENSOR_SCHEMA {
+    entity_category?: any;
+    icon?: any;
+}
+
+export interface HaierBinarySensorConfigIndoorElectricHeatingStatus extends BinarySensor_BINARY_SENSOR_SCHEMA {
+    entity_category?: any;
+    icon?: any;
+}
+
+export interface HaierBinarySensorConfigIndoorFanStatus extends BinarySensor_BINARY_SENSOR_SCHEMA {
+    entity_category?: any;
+    icon?: any;
+}
+
+export interface HaierBinarySensorConfigOutdoorFanStatus extends BinarySensor_BINARY_SENSOR_SCHEMA {
+    entity_category?: any;
+    icon?: any;
+}
+
+export interface HaierBinarySensorConfig {
+    compressor_status?: HaierBinarySensorConfigCompressorStatus;
+    defrost_status?: HaierBinarySensorConfigDefrostStatus;
+    four_way_valve_status?: HaierBinarySensorConfigFourWayValveStatus;
+    haier_id?: ID;
+    indoor_electric_heating_status?: HaierBinarySensorConfigIndoorElectricHeatingStatus;
+    indoor_fan_status?: HaierBinarySensorConfigIndoorFanStatus;
+    outdoor_fan_status?: HaierBinarySensorConfigOutdoorFanStatus;
+}
+
+export class HaierButton extends EsphomeComponent<HaierButtonConfig> {
+    componentName: string = "haier.button";
+}
+
+export interface HaierButtonConfigSelfCleaning extends Button_BUTTON_SCHEMA {
+    icon?: any;
+    id?: ID;
+}
+
+export interface HaierButtonConfigSteriCleaning extends Button_BUTTON_SCHEMA {
+    icon?: any;
+    id?: ID;
+}
+
+export interface HaierButtonConfig {
+    haier_id?: ID;
+    self_cleaning?: HaierButtonConfigSelfCleaning;
+    steri_cleaning?: HaierButtonConfigSteriCleaning;
+}
 
 export class HaierClimate extends EsphomeComponent<HaierClimateConfig> {
     componentName: string = "haier.climate";
 }
 
-export type HaierClimateBASE_CONFIG_SCHEMASupportedModes = 'OFF' | 'HEAT_COOL' | 'COOL' | 'HEAT' | 'DRY' | 'FAN_ONLY';
-export type HaierClimateBASE_CONFIG_SCHEMASupportedSwingModes = 'OFF' | 'VERTICAL' | 'HORIZONTAL' | 'BOTH';
-export type HaierClimateBASE_CONFIG_SCHEMAAnswerTimeout = CorePositiveTimePeriodMilliseconds;
-export type HaierClimateBASE_CONFIG_SCHEMA = {
-        supported_modes?: HaierClimateBASE_CONFIG_SCHEMASupportedModes[];
-        supported_swing_modes?: HaierClimateBASE_CONFIG_SCHEMASupportedSwingModes[];
-        wifi_signal?: boolean;
-        display?: boolean;
-        answer_timeout?: HaierClimateBASE_CONFIG_SCHEMAAnswerTimeout;
-        uart_id?: ID;
-    } & ClimateCLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA;
-export type HaierClimateConfig = HaierClimateConfigSMARTAIR2 | HaierClimateConfigHON;
-export type HaierClimateConfigSMARTAIR2SupportedPresets = 'BOOST' | 'COMFORT';
-
-export interface HaierClimateConfigSMARTAIR2 {
-    protocol: "SMARTAIR2" | "SMARTAIR2";
-    id?: ID;
-    supported_presets?: HaierClimateConfigSMARTAIR2SupportedPresets[];
-}
-
-export type HaierClimateConfigHONSupportedPresets = 'ECO' | 'BOOST' | 'SLEEP';
-
-export interface HaierClimateConfigHONOutdoorTemperature extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
+export type HaierClimateConfig = HaierClimateConfigHON | HaierClimateConfigSMARTAIR2;
+export type HaierClimateConfigHONAnswerTimeout = CorePositiveTimePeriodMilliseconds;
+export type HaierClimateConfigHONControlMethod = 'MONITOR_ONLY' | 'SET_GROUP_PARAMETERS' | 'SET_SINGLE_PARAMETER';
+export type HaierClimateConfigHONSupportedModes = 'OFF' | 'HEAT_COOL' | 'COOL' | 'HEAT' | 'DRY' | 'FAN_ONLY';
+export type HaierClimateConfigHONSupportedPresets = 'AWAY' | 'BOOST' | 'SLEEP';
+export type HaierClimateConfigHONSupportedSwingModes = 'OFF' | 'VERTICAL' | 'HORIZONTAL' | 'BOTH';
 
 export interface HaierClimateConfigHON {
     protocol: "HON" | "HON";
+    answer_timeout?: HaierClimateConfigHONAnswerTimeout;
+    control_method?: HaierClimateConfigHONControlMethod;
+    control_packet_size?: number;
+    display?: boolean;
     id?: ID;
-    beeper?: boolean;
+    on_alarm_end?: object[];
+    on_alarm_start?: object[];
+    on_status_message?: object[];
+    sensors_packet_size?: number;
+    status_message_header_size?: number;
+    supported_modes?: HaierClimateConfigHONSupportedModes[];
     supported_presets?: HaierClimateConfigHONSupportedPresets[];
-    outdoor_temperature?: HaierClimateConfigHONOutdoorTemperature;
+    supported_swing_modes?: HaierClimateConfigHONSupportedSwingModes[];
+    uart_id?: ID;
+    wifi_signal?: boolean;
+}
+
+export type HaierClimateConfigSMARTAIR2AnswerTimeout = CorePositiveTimePeriodMilliseconds;
+export type HaierClimateConfigSMARTAIR2SupportedModes = 'OFF' | 'HEAT_COOL' | 'COOL' | 'HEAT' | 'DRY' | 'FAN_ONLY';
+export type HaierClimateConfigSMARTAIR2SupportedPresets = 'AWAY' | 'BOOST' | 'COMFORT';
+export type HaierClimateConfigSMARTAIR2SupportedSwingModes = 'OFF' | 'VERTICAL' | 'HORIZONTAL' | 'BOTH';
+
+export interface HaierClimateConfigSMARTAIR2 {
+    protocol: "SMARTAIR2" | "SMARTAIR2";
+    alternative_swing_control?: boolean;
+    answer_timeout?: HaierClimateConfigSMARTAIR2AnswerTimeout;
+    display?: boolean;
+    id?: ID;
+    on_status_message?: object[];
+    supported_modes?: HaierClimateConfigSMARTAIR2SupportedModes[];
+    supported_presets?: HaierClimateConfigSMARTAIR2SupportedPresets[];
+    supported_swing_modes?: HaierClimateConfigSMARTAIR2SupportedSwingModes[];
+    uart_id?: ID;
+    wifi_signal?: boolean;
 }
 
 export interface HaierClimateHAIER_BASE_ACTION_SCHEMA {
@@ -61,4 +135,184 @@ export interface HaierClimateHAIER_BASE_ACTION_SCHEMA {
 
 export interface HaierClimateHAIER_HON_BASE_ACTION_SCHEMA {
     id?: ID;
+}
+
+export class HaierSensor extends EsphomeComponent<HaierSensorConfig> {
+    componentName: string = "haier.sensor";
+}
+
+export interface HaierSensorConfigCompressorCurrent extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HaierSensorConfigCompressorFrequency extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HaierSensorConfigExpansionValveOpenDegree extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HaierSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HaierSensorConfigIndoorCoilTemperature extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HaierSensorConfigOutdoorCoilTemperature extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HaierSensorConfigOutdoorDefrostTemperature extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HaierSensorConfigOutdoorInAirTemperature extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HaierSensorConfigOutdoorOutAirTemperature extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HaierSensorConfigOutdoorTemperature extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HaierSensorConfigPower extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HaierSensorConfig {
+    compressor_current?: HaierSensorConfigCompressorCurrent;
+    compressor_frequency?: HaierSensorConfigCompressorFrequency;
+    expansion_valve_open_degree?: HaierSensorConfigExpansionValveOpenDegree;
+    haier_id?: ID;
+    humidity?: HaierSensorConfigHumidity;
+    indoor_coil_temperature?: HaierSensorConfigIndoorCoilTemperature;
+    outdoor_coil_temperature?: HaierSensorConfigOutdoorCoilTemperature;
+    outdoor_defrost_temperature?: HaierSensorConfigOutdoorDefrostTemperature;
+    outdoor_in_air_temperature?: HaierSensorConfigOutdoorInAirTemperature;
+    outdoor_out_air_temperature?: HaierSensorConfigOutdoorOutAirTemperature;
+    outdoor_temperature?: HaierSensorConfigOutdoorTemperature;
+    power?: HaierSensorConfigPower;
+}
+
+export class HaierSwitch extends EsphomeComponent<HaierSwitchConfig> {
+    componentName: string = "haier.switch";
+}
+
+export interface HaierSwitchConfigBeeper extends Switch_SWITCH_SCHEMA {
+    entity_category?: any;
+    icon?: any;
+    id?: ID;
+    restore_mode?: any;
+}
+
+export interface HaierSwitchConfigDisplay extends Switch_SWITCH_SCHEMA {
+    entity_category?: any;
+    icon?: any;
+    id?: ID;
+    restore_mode?: any;
+}
+
+export interface HaierSwitchConfigHealthMode extends Switch_SWITCH_SCHEMA {
+    icon?: any;
+    id?: ID;
+    restore_mode?: any;
+}
+
+export interface HaierSwitchConfigQuietMode extends Switch_SWITCH_SCHEMA {
+    entity_category?: any;
+    icon?: any;
+    id?: ID;
+    restore_mode?: any;
+}
+
+export interface HaierSwitchConfig {
+    beeper?: HaierSwitchConfigBeeper;
+    display?: HaierSwitchConfigDisplay;
+    haier_id?: ID;
+    health_mode?: HaierSwitchConfigHealthMode;
+    quiet_mode?: HaierSwitchConfigQuietMode;
+}
+
+export class HaierTextSensor extends EsphomeComponent<HaierTextSensorConfig> {
+    componentName: string = "haier.text_sensor";
+}
+
+export interface HaierTextSensorConfigApplianceName extends TextSensor_TEXT_SENSOR_SCHEMA {
+    entity_category?: any;
+    icon?: any;
+}
+
+export interface HaierTextSensorConfigCleaningStatus extends TextSensor_TEXT_SENSOR_SCHEMA {
+    entity_category?: any;
+    icon?: any;
+}
+
+export interface HaierTextSensorConfigProtocolVersion extends TextSensor_TEXT_SENSOR_SCHEMA {
+    entity_category?: any;
+    icon?: any;
+}
+
+export interface HaierTextSensorConfig {
+    appliance_name?: HaierTextSensorConfigApplianceName;
+    cleaning_status?: HaierTextSensorConfigCleaningStatus;
+    haier_id?: ID;
+    protocol_version?: HaierTextSensorConfigProtocolVersion;
 }

@@ -11,16 +11,16 @@
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { TimeTIME_SCHEMA } from "./time.js";
 
+export abstract class Pcf85063 extends EsphomeComponent {
+    componentName: string = "pcf85063";
+}
+
 export class Pcf85063Time extends EsphomeComponent<Pcf85063TimeConfig> {
     componentName: string = "pcf85063.time";
 }
 
 export interface Pcf85063TimeConfig extends TimeTIME_SCHEMA {
-    id?: ID;
-    i2c_id?: ID;
     address?: any;
-}
-
-export abstract class Pcf85063 extends EsphomeComponent {
-    componentName: string = "pcf85063";
+    i2c_id?: ID;
+    id?: ID;
 }

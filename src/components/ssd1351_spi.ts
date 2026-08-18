@@ -17,13 +17,19 @@ export class Ssd1351SpiDisplay extends EsphomeComponent<Ssd1351SpiDisplayConfig>
 }
 
 export type Ssd1351SpiDisplayConfigModel = 'SSD1351_128X96' | 'SSD1351_128X128';
+export type Ssd1351SpiDisplayConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 export type Ssd1351SpiDisplayConfig = {
-        id?: ID;
-        dc_pin: Pin;
-        spi_id?: ID;
-        cs_pin: Pin;
-        model: Ssd1351SpiDisplayConfigModel;
-        reset_pin?: Pin;
         brightness?: any;
+        cs_pin: Pin;
+        data_rate?: any;
+        dc_pin: Pin;
+        id?: ID;
+        model: Ssd1351SpiDisplayConfigModel;
+        release_device?: boolean;
+        reset_pin?: Pin;
+        spi_id?: ID;
+        spi_mode?: Ssd1351SpiDisplayConfigSpiMode;
         update_interval?: any;
+        lambda?: any;
+        pages?: any;
     } & DisplayFULL_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;

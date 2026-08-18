@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { ClimateCLIMATE_SCHEMA } from "./climate.js";
+import type { Climate_CLIMATE_SCHEMA } from "./climate.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class BalluClimate extends EsphomeComponent<BalluClimateConfig> {
@@ -17,10 +17,11 @@ export class BalluClimate extends EsphomeComponent<BalluClimateConfig> {
 }
 
 export type BalluClimateConfig = {
-        transmitter_id?: ID;
+        humidity_sensor?: ID;
+        id?: ID;
+        receiver_id?: ID;
+        sensor?: ID;
         supports_cool?: boolean;
         supports_heat?: boolean;
-        sensor?: ID;
-        receiver_id?: ID;
-        id?: any;
-    } & ClimateCLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA;
+        transmitter_id?: ID;
+    } & Climate_CLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA;

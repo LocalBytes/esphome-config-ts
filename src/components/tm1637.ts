@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 import type { DisplayBASIC_DISPLAY_SCHEMA } from "./display.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
@@ -17,10 +17,11 @@ export class Tm1637BinarySensor extends EsphomeComponent<Tm1637BinarySensorConfi
     componentName: string = "tm1637.binary_sensor";
 }
 
-export interface Tm1637BinarySensorConfig extends BinarySensorBINARY_SENSOR_SCHEMA {
+export interface Tm1637BinarySensorConfig extends BinarySensor_BINARY_SENSOR_SCHEMA {
     id?: any;
-    tm1637_id?: ID;
     key: number;
+    tm1637_id?: ID;
+    name?: any;
 }
 
 export class Tm1637Display extends EsphomeComponent<Tm1637DisplayConfig> {
@@ -28,11 +29,12 @@ export class Tm1637Display extends EsphomeComponent<Tm1637DisplayConfig> {
 }
 
 export type Tm1637DisplayConfig = {
+        clk_pin: Pin;
+        dio_pin: Pin;
         id?: ID;
         intensity?: number;
         inverted?: boolean;
         length?: number;
-        clk_pin: Pin;
-        dio_pin: Pin;
         update_interval?: any;
+        lambda?: any;
     } & DisplayBASIC_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;

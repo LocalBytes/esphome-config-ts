@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class PulseWidthSensor extends EsphomeComponent<PulseWidthSensorConfig> {
@@ -17,11 +17,11 @@ export class PulseWidthSensor extends EsphomeComponent<PulseWidthSensorConfig> {
 }
 
 export type PulseWidthSensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
-        icon?: any;
         accuracy_decimals?: any;
-        state_class?: any;
+        icon?: any;
+        id?: any;
         pin: Pin;
+        state_class?: any;
+        unit_of_measurement?: any;
         update_interval?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;

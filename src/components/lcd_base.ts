@@ -17,12 +17,12 @@ export abstract class LcdBase extends EsphomeComponent {
 }
 
 export interface LcdBaseLCD_SCHEMAUserCharacters {
-    position: number;
     data: number[];
+    position: number;
 }
 
 export type LcdBaseLCD_SCHEMA = {
         dimensions: string;
-        user_characters?: LcdBaseLCD_SCHEMAUserCharacters[];
         update_interval?: any;
+        user_characters?: LcdBaseLCD_SCHEMAUserCharacters[];
     } & DisplayBASIC_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;

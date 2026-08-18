@@ -18,7 +18,7 @@ export class StatusLed extends EsphomeComponent<StatusLedConfig> {
 
 export interface StatusLedConfig extends CoreCOMPONENT_SCHEMA {
     id?: ID;
-    pin: Pin;
+    pin?: Pin;
 }
 
 export class StatusLedLight extends EsphomeComponent<StatusLedLightConfig> {
@@ -26,7 +26,7 @@ export class StatusLedLight extends EsphomeComponent<StatusLedLightConfig> {
 }
 
 export interface StatusLedLightConfig extends LightBINARY_LIGHT_SCHEMA {
+    output?: ID;
     output_id?: ID;
     pin?: Pin;
-    output?: ID;
 }

@@ -9,51 +9,60 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Alpha3Sensor extends EsphomeComponent<Alpha3SensorConfig> {
     componentName: string = "alpha3.sensor";
 }
 
-export interface Alpha3SensorConfigFlow extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Alpha3SensorConfigCurrent extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Alpha3SensorConfigHead extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Alpha3SensorConfigFlow extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Alpha3SensorConfigPower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Alpha3SensorConfigHead extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Alpha3SensorConfigCurrent extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Alpha3SensorConfigPower extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Alpha3SensorConfigSpeed extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Alpha3SensorConfigSpeed extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Alpha3SensorConfigVoltage extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Alpha3SensorConfigVoltage extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
 export interface Alpha3SensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
+    ble_client_id?: ID;
+    current?: Alpha3SensorConfigCurrent;
     flow?: Alpha3SensorConfigFlow;
     head?: Alpha3SensorConfigHead;
+    id?: ID;
     power?: Alpha3SensorConfigPower;
-    current?: Alpha3SensorConfigCurrent;
     speed?: Alpha3SensorConfigSpeed;
-    voltage?: Alpha3SensorConfigVoltage;
-    ble_client_id?: ID;
     update_interval?: any;
+    voltage?: Alpha3SensorConfigVoltage;
 }

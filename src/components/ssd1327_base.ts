@@ -18,8 +18,8 @@ export abstract class Ssd1327Base extends EsphomeComponent {
 
 export type Ssd1327BaseSSD1327_SCHEMAModel = 'SSD1327_128X128';
 export type Ssd1327BaseSSD1327_SCHEMA = {
+        brightness?: any;
         model: Ssd1327BaseSSD1327_SCHEMAModel;
         reset_pin?: Pin;
-        brightness?: any;
         update_interval?: any;
     } & DisplayFULL_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;

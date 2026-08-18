@@ -10,8 +10,8 @@
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMicroseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { RemoteBaseCANALSAT_SCHEMA, RemoteBaseRC_SWITCH_PROTOCOL_SCHEMA } from "./remote_base.js";
-import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { RemoteBaseRC_SWITCH_PROTOCOL_SCHEMA } from "./remote_base.js";
+import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
 export class RemoteReceiver extends EsphomeComponent<RemoteReceiverConfig> {
     componentName: string = "remote_receiver";
@@ -21,45 +21,105 @@ export type RemoteReceiverConfigFilter = CorePositiveTimePeriodMicroseconds;
 export type RemoteReceiverConfigIdle = CorePositiveTimePeriodMicroseconds;
 
 export interface RemoteReceiverConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    pin: Pin;
-    dump?: any;
-    tolerance?: any;
     buffer_size?: any;
+    carrier_duty_percent?: any;
+    carrier_frequency?: number;
+    clock_resolution?: any;
+    dump?: any;
     filter?: RemoteReceiverConfigFilter;
+    filter_symbols?: number;
+    id?: ID;
     idle?: RemoteReceiverConfigIdle;
-    memory_blocks?: any;
+    on_abbwelcome?: object[];
+    on_aeha?: object[];
+    on_beo4?: object[];
+    on_brennenstuhl?: object[];
+    on_byronsx?: object[];
     on_canalsat?: object[];
     on_canalsatld?: object[];
     on_coolix?: object[];
     on_dish?: object[];
+    on_dooya?: object[];
+    on_drayton?: object[];
+    on_dyson?: object[];
+    on_gobox?: object[];
+    on_haier?: object[];
     on_jvc?: object[];
+    on_keeloq?: object[];
     on_lg?: object[];
     on_magiquest?: object[];
+    on_midea?: object[];
+    on_mirage?: object[];
     on_nec?: object[];
+    on_nexa?: object[];
+    on_panasonic?: object[];
     on_pioneer?: object[];
     on_pronto?: object[];
-    on_sony?: object[];
     on_raw?: object[];
-    on_drayton?: object[];
     on_rc5?: object[];
     on_rc6?: object[];
     on_rc_switch?: object[];
+    on_roomba?: object[];
     on_samsung?: object[];
     on_samsung36?: object[];
+    on_sony?: object[];
+    on_symphony?: object[];
     on_toshiba_ac?: object[];
-    on_panasonic?: object[];
-    on_nexa?: object[];
-    on_midea?: object[];
-    on_aeha?: object[];
+    on_toto?: object[];
+    pin: Pin;
+    receive_symbols?: number;
+    rmt_symbols?: number;
+    tolerance?: any;
+    use_dma?: boolean;
 }
 
 export class RemoteReceiverBinarySensor extends EsphomeComponent<RemoteReceiverBinarySensorConfig> {
     componentName: string = "remote_receiver.binary_sensor";
 }
 
-export type RemoteReceiverBinarySensorConfigCanalsat = RemoteBaseCANALSAT_SCHEMA;
-export type RemoteReceiverBinarySensorConfigCanalsatld = RemoteBaseCANALSAT_SCHEMA;
+export interface RemoteReceiverBinarySensorConfigAbbwelcome {
+    data?: any;
+    destination_address: string;
+    message_id?: any;
+    message_type: string;
+    retransmission?: boolean;
+    source_address: string;
+    three_byte_address?: boolean;
+}
+
+export interface RemoteReceiverBinarySensorConfigAeha {
+    address: string;
+    data: string;
+}
+
+export interface RemoteReceiverBinarySensorConfigBeo4 {
+    command: string;
+    command_repeats?: number;
+    source: string;
+}
+
+export interface RemoteReceiverBinarySensorConfigBrennenstuhl {
+    code: string;
+}
+
+export type RemoteReceiverBinarySensorConfigByronsxCommand = '1' | '2' | '3' | '5' | '6' | '9' | '13' | '14' | '16';
+
+export interface RemoteReceiverBinarySensorConfigByronsx {
+    address: string;
+    command?: RemoteReceiverBinarySensorConfigByronsxCommand;
+}
+
+export interface RemoteReceiverBinarySensorConfigCanalsat {
+    address?: any;
+    command: string;
+    device: string;
+}
+
+export interface RemoteReceiverBinarySensorConfigCanalsatld {
+    address?: any;
+    command: string;
+    device: string;
+}
 
 export interface RemoteReceiverBinarySensorConfigCoolix {
     first: string;
@@ -71,8 +131,41 @@ export interface RemoteReceiverBinarySensorConfigDish {
     command: number;
 }
 
+export interface RemoteReceiverBinarySensorConfigDooya {
+    button: string;
+    channel: string;
+    check: string;
+    id: string;
+}
+
+export interface RemoteReceiverBinarySensorConfigDrayton {
+    address: string;
+    channel: string;
+    command: string;
+}
+
+export interface RemoteReceiverBinarySensorConfigDyson {
+    code: string;
+    index?: any;
+}
+
+export interface RemoteReceiverBinarySensorConfigGobox {
+    code: number;
+}
+
+export interface RemoteReceiverBinarySensorConfigHaier {
+    code: string;
+}
+
 export interface RemoteReceiverBinarySensorConfigJvc {
     data: string;
+}
+
+export interface RemoteReceiverBinarySensorConfigKeeloq {
+    address: string;
+    code: string;
+    command?: any;
+    level?: boolean;
 }
 
 export type RemoteReceiverBinarySensorConfigLgNbits = '28' | '32';
@@ -83,11 +176,33 @@ export interface RemoteReceiverBinarySensorConfigLg {
 }
 
 export interface RemoteReceiverBinarySensorConfigMagiquest {
-    wand_id: string;
     magnitude?: any;
+    wand_id: string;
+}
+
+export interface RemoteReceiverBinarySensorConfigMidea {
+    code: string;
+}
+
+export interface RemoteReceiverBinarySensorConfigMirage {
+    code: string;
 }
 
 export interface RemoteReceiverBinarySensorConfigNec {
+    address: string;
+    command: string;
+    command_repeats?: number;
+}
+
+export interface RemoteReceiverBinarySensorConfigNexa {
+    channel: string;
+    device: string;
+    group: string;
+    level: string;
+    state: string;
+}
+
+export interface RemoteReceiverBinarySensorConfigPanasonic {
     address: string;
     command: string;
 }
@@ -99,24 +214,12 @@ export interface RemoteReceiverBinarySensorConfigPioneer {
 
 export interface RemoteReceiverBinarySensorConfigPronto {
     data: string;
-}
-
-export type RemoteReceiverBinarySensorConfigSonyNbits = '12' | '15' | '20';
-
-export interface RemoteReceiverBinarySensorConfigSony {
-    data: string;
-    nbits?: RemoteReceiverBinarySensorConfigSonyNbits;
+    delta?: number;
 }
 
 export interface RemoteReceiverBinarySensorConfigRaw {
     code: string;
     code_storage_id?: ID;
-}
-
-export interface RemoteReceiverBinarySensorConfigDrayton {
-    address: string;
-    channel: string;
-    command: string;
 }
 
 export interface RemoteReceiverBinarySensorConfigRc5 {
@@ -139,10 +242,10 @@ export interface RemoteReceiverBinarySensorConfigRcSwitchRaw {
 export type RemoteReceiverBinarySensorConfigRcSwitchTypeAProtocol = RemoteBaseRC_SWITCH_PROTOCOL_SCHEMA;
 
 export interface RemoteReceiverBinarySensorConfigRcSwitchTypeA {
-    group: string;
     device: string;
-    state: boolean;
+    group: string;
     protocol?: RemoteReceiverBinarySensorConfigRcSwitchTypeAProtocol;
+    state: boolean;
 }
 
 export type RemoteReceiverBinarySensorConfigRcSwitchTypeBProtocol = RemoteBaseRC_SWITCH_PROTOCOL_SCHEMA;
@@ -150,19 +253,19 @@ export type RemoteReceiverBinarySensorConfigRcSwitchTypeBProtocol = RemoteBaseRC
 export interface RemoteReceiverBinarySensorConfigRcSwitchTypeB {
     address: number;
     channel: number;
-    state: boolean;
     protocol?: RemoteReceiverBinarySensorConfigRcSwitchTypeBProtocol;
+    state: boolean;
 }
 
 export type RemoteReceiverBinarySensorConfigRcSwitchTypeCFamily = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p';
 export type RemoteReceiverBinarySensorConfigRcSwitchTypeCProtocol = RemoteBaseRC_SWITCH_PROTOCOL_SCHEMA;
 
 export interface RemoteReceiverBinarySensorConfigRcSwitchTypeC {
+    device: number;
     family: RemoteReceiverBinarySensorConfigRcSwitchTypeCFamily;
     group: number;
-    device: number;
-    state: boolean;
     protocol?: RemoteReceiverBinarySensorConfigRcSwitchTypeCProtocol;
+    state: boolean;
 }
 
 export type RemoteReceiverBinarySensorConfigRcSwitchTypeDGroup = 'a' | 'b' | 'c' | 'd';
@@ -175,11 +278,15 @@ export interface RemoteReceiverBinarySensorConfigRcSwitchTypeDRepeat {
 }
 
 export interface RemoteReceiverBinarySensorConfigRcSwitchTypeD {
-    group: RemoteReceiverBinarySensorConfigRcSwitchTypeDGroup;
     device: number;
-    state: boolean;
+    group: RemoteReceiverBinarySensorConfigRcSwitchTypeDGroup;
     protocol?: RemoteReceiverBinarySensorConfigRcSwitchTypeDProtocol;
     repeat?: RemoteReceiverBinarySensorConfigRcSwitchTypeDRepeat;
+    state: boolean;
+}
+
+export interface RemoteReceiverBinarySensorConfigRoomba {
+    data: string;
 }
 
 export interface RemoteReceiverBinarySensorConfigSamsung {
@@ -192,47 +299,57 @@ export interface RemoteReceiverBinarySensorConfigSamsung36 {
     command: string;
 }
 
+export type RemoteReceiverBinarySensorConfigSonyNbits = '12' | '15' | '20';
+
+export interface RemoteReceiverBinarySensorConfigSony {
+    data: string;
+    nbits?: RemoteReceiverBinarySensorConfigSonyNbits;
+}
+
+export interface RemoteReceiverBinarySensorConfigSymphony {
+    command_repeats?: number;
+    data: string;
+    nbits: number;
+}
+
 export interface RemoteReceiverBinarySensorConfigToshibaAc {
     rc_code_1: string;
     rc_code_2?: any;
 }
 
-export interface RemoteReceiverBinarySensorConfigPanasonic {
-    address: string;
+export interface RemoteReceiverBinarySensorConfigToto {
     command: string;
-}
-
-export interface RemoteReceiverBinarySensorConfigNexa {
-    device: string;
-    group: string;
-    state: string;
-    channel: string;
-    level: string;
-}
-
-export interface RemoteReceiverBinarySensorConfigMidea {
-    code: string;
-}
-
-export interface RemoteReceiverBinarySensorConfigAeha {
-    address: string;
-    data: string;
+    rc_code_1?: any;
+    rc_code_2?: any;
 }
 
 export type RemoteReceiverBinarySensorConfig = {
+        abbwelcome: RemoteReceiverBinarySensorConfigAbbwelcome;
+        aeha: RemoteReceiverBinarySensorConfigAeha;
+        beo4: RemoteReceiverBinarySensorConfigBeo4;
+        brennenstuhl: RemoteReceiverBinarySensorConfigBrennenstuhl;
+        byronsx: RemoteReceiverBinarySensorConfigByronsx;
         canalsat: RemoteReceiverBinarySensorConfigCanalsat;
         canalsatld: RemoteReceiverBinarySensorConfigCanalsatld;
         coolix: RemoteReceiverBinarySensorConfigCoolix;
         dish: RemoteReceiverBinarySensorConfigDish;
+        dooya: RemoteReceiverBinarySensorConfigDooya;
+        drayton: RemoteReceiverBinarySensorConfigDrayton;
+        dyson: RemoteReceiverBinarySensorConfigDyson;
+        gobox: RemoteReceiverBinarySensorConfigGobox;
+        haier: RemoteReceiverBinarySensorConfigHaier;
         jvc: RemoteReceiverBinarySensorConfigJvc;
+        keeloq: RemoteReceiverBinarySensorConfigKeeloq;
         lg: RemoteReceiverBinarySensorConfigLg;
         magiquest: RemoteReceiverBinarySensorConfigMagiquest;
+        midea: RemoteReceiverBinarySensorConfigMidea;
+        mirage: RemoteReceiverBinarySensorConfigMirage;
         nec: RemoteReceiverBinarySensorConfigNec;
+        nexa: RemoteReceiverBinarySensorConfigNexa;
+        panasonic: RemoteReceiverBinarySensorConfigPanasonic;
         pioneer: RemoteReceiverBinarySensorConfigPioneer;
         pronto: RemoteReceiverBinarySensorConfigPronto;
-        sony: RemoteReceiverBinarySensorConfigSony;
         raw: RemoteReceiverBinarySensorConfigRaw;
-        drayton: RemoteReceiverBinarySensorConfigDrayton;
         rc5: RemoteReceiverBinarySensorConfigRc5;
         rc6: RemoteReceiverBinarySensorConfigRc6;
         rc_switch_raw: RemoteReceiverBinarySensorConfigRcSwitchRaw;
@@ -240,12 +357,12 @@ export type RemoteReceiverBinarySensorConfig = {
         rc_switch_type_b: RemoteReceiverBinarySensorConfigRcSwitchTypeB;
         rc_switch_type_c: RemoteReceiverBinarySensorConfigRcSwitchTypeC;
         rc_switch_type_d: RemoteReceiverBinarySensorConfigRcSwitchTypeD;
+        receiver_id?: ID;
+        roomba: RemoteReceiverBinarySensorConfigRoomba;
         samsung: RemoteReceiverBinarySensorConfigSamsung;
         samsung36: RemoteReceiverBinarySensorConfigSamsung36;
+        sony: RemoteReceiverBinarySensorConfigSony;
+        symphony: RemoteReceiverBinarySensorConfigSymphony;
         toshiba_ac: RemoteReceiverBinarySensorConfigToshibaAc;
-        panasonic: RemoteReceiverBinarySensorConfigPanasonic;
-        nexa: RemoteReceiverBinarySensorConfigNexa;
-        midea: RemoteReceiverBinarySensorConfigMidea;
-        aeha: RemoteReceiverBinarySensorConfigAeha;
-        receiver_id?: ID;
-    } & BinarySensorBINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+        toto: RemoteReceiverBinarySensorConfigToto;
+    } & BinarySensor_BINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;

@@ -17,7 +17,7 @@ export class As3935I2c extends EsphomeComponent<As3935I2cConfig> {
 }
 
 export type As3935I2cConfig = {
-        id?: any;
-        i2c_id?: ID;
         address?: any;
+        i2c_id?: ID;
+        id?: any;
     } & As3935AS3935_SCHEMA & CoreCOMPONENT_SCHEMA;

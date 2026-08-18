@@ -16,9 +16,8 @@ export class RgbLight extends EsphomeComponent<RgbLightConfig> {
 }
 
 export interface RgbLightConfig extends LightRGB_LIGHT_SCHEMA {
+    blue: ID;
+    green: ID;
     output_id?: ID;
     red: ID;
-    green: ID;
-    blue: ID;
-    effects?: any;
 }

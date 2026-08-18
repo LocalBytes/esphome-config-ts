@@ -9,9 +9,9 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
 export class Sun extends EsphomeComponent<SunConfig> {
     componentName: string = "sun";
@@ -19,11 +19,11 @@ export class Sun extends EsphomeComponent<SunConfig> {
 
 export interface SunConfig {
     id?: ID;
-    time_id?: ID;
     latitude: string;
     longitude: string;
     on_sunrise?: object[];
     on_sunset?: object[];
+    time_id?: ID;
 }
 
 export class SunSensor extends EsphomeComponent<SunSensorConfig> {
@@ -32,14 +32,15 @@ export class SunSensor extends EsphomeComponent<SunSensorConfig> {
 
 export type SunSensorConfigType = 'elevation' | 'azimuth';
 export type SunSensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
-        icon?: any;
         accuracy_decimals?: any;
+        icon?: any;
+        id?: any;
+        state_class?: any;
         sun_id?: ID;
         type: SunSensorConfigType;
+        unit_of_measurement?: any;
         update_interval?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
 
 export class SunTextSensor extends EsphomeComponent<SunTextSensorConfig> {
     componentName: string = "sun.text_sensor";
@@ -47,10 +48,10 @@ export class SunTextSensor extends EsphomeComponent<SunTextSensorConfig> {
 
 export type SunTextSensorConfigType = 'sunset' | 'sunrise';
 export type SunTextSensorConfig = {
+        elevation?: any;
+        format?: string;
         id?: any;
         sun_id?: ID;
         type: SunTextSensorConfigType;
-        elevation?: any;
-        format?: string;
         update_interval?: any;
-    } & TextSensorTEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;

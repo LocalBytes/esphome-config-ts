@@ -16,9 +16,13 @@ export abstract class Time extends EsphomeComponent {
 }
 
 export interface TimeTIME_SCHEMA extends CoreCOMPONENT_SCHEMA {
-    timezone?: any;
     on_time?: object[];
     on_time_sync?: object[];
+    timezone?: any;
     update_interval?: any;
     id?: any;
+}
+
+export abstract class TimeDatetime extends EsphomeComponent {
+    componentName: string = "time.datetime";
 }

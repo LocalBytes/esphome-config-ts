@@ -9,13 +9,27 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { ClimateIrCLIMATE_IR_SCHEMA } from "./climate_ir.js";
+import type { Climate_CLIMATE_SCHEMA } from "./climate.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class MitsubishiClimate extends EsphomeComponent<MitsubishiClimateConfig> {
     componentName: string = "mitsubishi.climate";
 }
 
-export interface MitsubishiClimateConfig extends ClimateIrCLIMATE_IR_SCHEMA {
-    id?: any;
-    receiver_id?: any;
-}
+export type MitsubishiClimateConfigHorizontalDefault = 'left' | 'middle-left' | 'middle' | 'middle-right' | 'right' | 'split';
+export type MitsubishiClimateConfigSetFanMode = 'quiet_4levels' | '4levels' | '3levels';
+export type MitsubishiClimateConfigVerticalDefault = 'auto' | 'up' | 'middle-up' | 'middle' | 'middle-down' | 'down';
+export type MitsubishiClimateConfig = {
+        horizontal_default?: MitsubishiClimateConfigHorizontalDefault;
+        humidity_sensor?: ID;
+        id?: ID;
+        receiver_id?: ID;
+        sensor?: ID;
+        set_fan_mode?: MitsubishiClimateConfigSetFanMode;
+        supports_cool?: boolean;
+        supports_dry?: boolean;
+        supports_fan_only?: boolean;
+        supports_heat?: boolean;
+        transmitter_id?: ID;
+        vertical_default?: MitsubishiClimateConfigVerticalDefault;
+    } & Climate_CLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA;

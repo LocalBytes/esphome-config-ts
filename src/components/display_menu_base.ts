@@ -15,102 +15,88 @@ export abstract class DisplayMenuBase extends EsphomeComponent {
     componentName: string = "display_menu_base";
 }
 
-export interface DisplayMenuBaseMENU_ITEM_COMMON_SCHEMA {
-    text?: string;
-}
-
 export type DisplayMenuBaseDISPLAY_MENU_BASE_SCHEMAMode = 'rotary' | 'joystick';
 export type DisplayMenuBaseDISPLAY_MENU_BASE_SCHEMA = {
         active?: boolean;
-        root_item_id?: ID;
         mode?: DisplayMenuBaseDISPLAY_MENU_BASE_SCHEMAMode;
         on_enter?: object[];
         on_leave?: object[];
+        root_item_id?: ID;
     } & CoreCOMPONENT_SCHEMA & DisplayMenuBaseMENU_TYPES;
 
 export interface DisplayMenuBaseMENU_ACTION_SCHEMA {
     id?: ID;
 }
 
-export type DisplayMenuBaseMENU_TYPESItems = DisplayMenuBaseMENU_TYPESItemsLabel | DisplayMenuBaseMENU_TYPESItemsBack | DisplayMenuBaseMENU_TYPESItemsMenu | DisplayMenuBaseMENU_TYPESItemsSelect | DisplayMenuBaseMENU_TYPESItemsNumber | DisplayMenuBaseMENU_TYPESItemsSwitch | DisplayMenuBaseMENU_TYPESItemsCommand | DisplayMenuBaseMENU_TYPESItemsCustom;
-
-export interface DisplayMenuBaseMENU_TYPESItemsLabel {
-    type: "label" | "LABEL";
+export interface DisplayMenuBaseMENU_ITEM_COMMON_SCHEMA {
     text?: string;
-    id?: ID;
 }
+
+export interface DisplayMenuBaseMENU_ITEM_ENTER_LEAVE_SCHEMA extends DisplayMenuBaseMENU_ITEM_COMMON_SCHEMA {
+    on_enter?: object[];
+    on_leave?: object[];
+}
+
+export interface DisplayMenuBaseMENU_ITEM_ENTER_LEAVE_VALUE_SCHEMA extends DisplayMenuBaseMENU_ITEM_ENTER_LEAVE_SCHEMA {
+    on_value?: object[];
+}
+
+export type DisplayMenuBaseMENU_TYPESItems = DisplayMenuBaseMENU_TYPESItemsBack | DisplayMenuBaseMENU_TYPESItemsCommand | DisplayMenuBaseMENU_TYPESItemsCustom | DisplayMenuBaseMENU_TYPESItemsLabel | DisplayMenuBaseMENU_TYPESItemsMenu | DisplayMenuBaseMENU_TYPESItemsNumber | DisplayMenuBaseMENU_TYPESItemsSelect | DisplayMenuBaseMENU_TYPESItemsSwitch;
 
 export interface DisplayMenuBaseMENU_TYPESItemsBack {
     type: "back" | "BACK";
-    text?: string;
+    id?: ID;
+}
+
+export interface DisplayMenuBaseMENU_TYPESItemsCommand {
+    type: "command" | "COMMAND";
+    on_value?: object[];
+}
+
+export interface DisplayMenuBaseMENU_TYPESItemsCustom {
+    type: "custom" | "CUSTOM";
+    id?: ID;
+    immediate_edit?: boolean;
+    on_next?: object[];
+    on_prev?: object[];
+    value_lambda?: any;
+}
+
+export interface DisplayMenuBaseMENU_TYPESItemsLabel {
+    type: "label" | "LABEL";
     id?: ID;
 }
 
 export interface DisplayMenuBaseMENU_TYPESItemsMenu {
     type: "menu" | "MENU";
-    text?: string;
-    on_enter?: object[];
-    on_leave?: object[];
     id?: ID;
-}
-
-export interface DisplayMenuBaseMENU_TYPESItemsSelect {
-    type: "select" | "SELECT";
-    text?: string;
-    on_enter?: object[];
-    on_leave?: object[];
-    on_value?: object[];
-    id?: ID;
-    select: ID;
-    immediate_edit?: boolean;
-    value_lambda?: any;
 }
 
 export interface DisplayMenuBaseMENU_TYPESItemsNumber {
     type: "number" | "NUMBER";
-    text?: string;
-    on_enter?: object[];
-    on_leave?: object[];
-    on_value?: object[];
-    id?: ID;
-    number: ID;
-    immediate_edit?: boolean;
     format?: string;
+    id?: ID;
+    immediate_edit?: boolean;
+    number: ID;
+    value_lambda?: any;
+}
+
+export interface DisplayMenuBaseMENU_TYPESItemsSelect {
+    type: "select" | "SELECT";
+    id?: ID;
+    immediate_edit?: boolean;
+    select: ID;
     value_lambda?: any;
 }
 
 export interface DisplayMenuBaseMENU_TYPESItemsSwitch {
     type: "switch" | "SWITCH";
-    text?: string;
-    on_enter?: object[];
-    on_leave?: object[];
-    on_value?: object[];
     id?: ID;
-    switch: ID;
     immediate_edit?: boolean;
-    on_text?: string;
     off_text?: string;
+    on_text?: string;
+    switch: ID;
     value_lambda?: any;
-}
-
-export interface DisplayMenuBaseMENU_TYPESItemsCommand {
-    type: "command" | "COMMAND";
-    text?: string;
-    on_value?: object[];
-    id?: ID;
-}
-
-export interface DisplayMenuBaseMENU_TYPESItemsCustom {
-    type: "custom" | "CUSTOM";
-    text?: string;
-    on_enter?: object[];
-    on_leave?: object[];
-    on_value?: object[];
-    id?: ID;
-    immediate_edit?: boolean;
-    value_lambda?: any;
-    on_next?: object[];
-    on_prev?: object[];
 }
 
 export interface DisplayMenuBaseMENU_TYPES {

@@ -9,17 +9,22 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Adc128s102 extends EsphomeComponent<Adc128s102Config> {
     componentName: string = "adc128s102";
 }
 
+export type Adc128s102ConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
+
 export interface Adc128s102Config {
-    id?: ID;
-    spi_id?: ID;
     cs_pin: Pin;
+    data_rate?: any;
+    id?: ID;
+    release_device?: boolean;
+    spi_id?: ID;
+    spi_mode?: Adc128s102ConfigSpiMode;
 }
 
 export class Adc128s102Sensor extends EsphomeComponent<Adc128s102SensorConfig> {
@@ -27,8 +32,8 @@ export class Adc128s102Sensor extends EsphomeComponent<Adc128s102SensorConfig> {
 }
 
 export type Adc128s102SensorConfig = {
-        id?: any;
         adc128s102_id?: ID;
         channel: number;
+        id?: any;
         update_interval?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;

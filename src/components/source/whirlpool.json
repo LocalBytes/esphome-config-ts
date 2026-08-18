@@ -2,12 +2,13 @@
   "whirlpool.climate": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "climate_ir.CLIMATE_IR_WITH_RECEIVER_SCHEMA"
-          ],
           "config_vars": {
+            "humidity_sensor": {
+              "key": "Optional",
+              "type": "use_id",
+              "use_id_type": "sensor::Sensor"
+            },
             "id": {
               "id_type": {
                 "class": "whirlpool::WhirlpoolClimate",
@@ -16,26 +17,49 @@
                   "climate::Climate",
                   "EntityBase",
                   "Component",
-                  "remote_base::RemoteReceiverListener"
+                  "remote_base::RemoteReceiverListener",
+                  "remote_base::RemoteTransmittable"
                 ]
-              }
+              },
+              "key": "GeneratedID"
             },
             "model": {
-              "key": "Optional",
               "default": "DG11J1-3A",
+              "key": "Optional",
               "type": "enum",
               "values": {
-                "DG11J1-3A": {
-                  "docs": "Temperature range is from 18 to 32 (default)"
-                },
-                "DG11J1-91": {
-                  "docs": "Temperature range is from 16 to 30"
-                }
-              },
-              "docs": "**string**: There are two valid models\n  * `DG11J1-3A`: Temperature range is from 18 to 32 (default)\n  \n  * `DG11J1-91`: Temperature range is from 16 to 30\n  \n  \n\n*See also: [whirlpool Climate](https://esphome.io/components/climate/climate_ir.html#whirlpool-climate)*"
+                "DG11J1-3A": null,
+                "DG11J1-91": null
+              }
+            },
+            "receiver_id": {
+              "key": "Optional",
+              "type": "use_id",
+              "use_id_type": "remote_base::RemoteReceiverBase"
+            },
+            "sensor": {
+              "key": "Optional",
+              "type": "use_id",
+              "use_id_type": "sensor::Sensor"
+            },
+            "supports_cool": {
+              "default": "True",
+              "key": "Optional",
+              "type": "boolean"
+            },
+            "supports_heat": {
+              "default": "True",
+              "key": "Optional",
+              "type": "boolean"
             }
-          }
-        }
+          },
+          "extends": [
+            "climate._CLIMATE_SCHEMA",
+            "core.COMPONENT_SCHEMA",
+            "remote_base.REMOTE_TRANSMITTABLE_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

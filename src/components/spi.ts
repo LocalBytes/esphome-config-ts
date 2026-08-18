@@ -14,13 +14,29 @@ export class Spi extends EsphomeComponent<SpiConfig> {
     componentName: string = "spi";
 }
 
-export type SpiConfigInterface = 'software' | 'hardware' | 'any';
+export type SpiConfig = SpiConfigOctal | SpiConfigQuad | SpiConfigSingle;
 
-export interface SpiConfig {
-    id?: ID;
+export interface SpiConfigOctal {
+    type: "octal" | "OCTAL";
     clk_pin: Pin;
+    data_pins: Pin[];
+    id?: ID;
+    interface?: string;
+}
+
+export interface SpiConfigQuad {
+    type: "quad" | "QUAD";
+    clk_pin: Pin;
+    data_pins: Pin[];
+    id?: ID;
+    interface?: string;
+}
+
+export interface SpiConfigSingle {
+    type: "single" | "SINGLE";
+    clk_pin: Pin;
+    id?: ID;
+    interface?: string;
     miso_pin?: Pin;
     mosi_pin?: Pin;
-    force_sw?: boolean;
-    interface?: SpiConfigInterface;
 }

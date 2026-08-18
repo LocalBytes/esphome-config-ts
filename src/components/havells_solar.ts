@@ -9,70 +9,86 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class HavellsSolarSensor extends EsphomeComponent<HavellsSolarSensorConfig> {
     componentName: string = "havells_solar.sensor";
 }
 
-export interface HavellsSolarSensorPHASE_SCHEMAVoltage extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-}
-
-export interface HavellsSolarSensorPHASE_SCHEMACurrent extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface HavellsSolarSensorConfigActivePower extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
-}
-
-export interface HavellsSolarSensorPHASE_SCHEMA {
-    voltage?: HavellsSolarSensorPHASE_SCHEMAVoltage;
-    current?: HavellsSolarSensorPHASE_SCHEMACurrent;
-}
-
-export interface HavellsSolarSensorPV_SCHEMAVoltage extends SensorSENSOR_SCHEMA {
     unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
 }
 
-export interface HavellsSolarSensorPV_SCHEMACurrent extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface HavellsSolarSensorConfigDciOfR extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface HavellsSolarSensorPV_SCHEMAActivePower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface HavellsSolarSensorConfigDciOfS extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface HavellsSolarSensorPV_SCHEMAVoltageSampledBySecondaryCpu extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface HavellsSolarSensorConfigDciOfT extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface HavellsSolarSensorPV_SCHEMAInsulationOfPToGround extends SensorSENSOR_SCHEMA {
+export interface HavellsSolarSensorConfigEnergyProductionDay extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
     unit_of_measurement?: any;
+}
+
+export interface HavellsSolarSensorConfigFrequency extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HavellsSolarSensorConfigGfciValue extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HavellsSolarSensorConfigInsulationOfPvNToGround extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface HavellsSolarSensorPV_SCHEMA {
-    voltage?: HavellsSolarSensorPV_SCHEMAVoltage;
-    current?: HavellsSolarSensorPV_SCHEMACurrent;
-    active_power?: HavellsSolarSensorPV_SCHEMAActivePower;
-    voltage_sampled_by_secondary_cpu?: HavellsSolarSensorPV_SCHEMAVoltageSampledBySecondaryCpu;
-    insulation_of_p_to_ground?: HavellsSolarSensorPV_SCHEMAInsulationOfPToGround;
+export interface HavellsSolarSensorConfigInverterBusVoltage extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HavellsSolarSensorConfigInverterInnerTemp extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HavellsSolarSensorConfigInverterModuleTemp extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
 export type HavellsSolarSensorConfigPhaseA = HavellsSolarSensorPHASE_SCHEMA;
@@ -81,123 +97,116 @@ export type HavellsSolarSensorConfigPhaseC = HavellsSolarSensorPHASE_SCHEMA;
 export type HavellsSolarSensorConfigPv1 = HavellsSolarSensorPV_SCHEMA;
 export type HavellsSolarSensorConfigPv2 = HavellsSolarSensorPV_SCHEMA;
 
-export interface HavellsSolarSensorConfigFrequency extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
-}
-
-export interface HavellsSolarSensorConfigActivePower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface HavellsSolarSensorConfigReactivePower extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface HavellsSolarSensorConfigReactivePower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface HavellsSolarSensorConfigTodayGenerationTime extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface HavellsSolarSensorConfigEnergyProductionDay extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export interface HavellsSolarSensorConfigTotalEnergyProduction extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface HavellsSolarSensorConfigTotalEnergyProduction extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface HavellsSolarSensorConfigTotalGenerationTime extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface HavellsSolarSensorConfigTotalGenerationTime extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
-}
-
-export interface HavellsSolarSensorConfigTodayGenerationTime extends SensorSENSOR_SCHEMA {
     unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
-}
-
-export interface HavellsSolarSensorConfigInverterModuleTemp extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
-}
-
-export interface HavellsSolarSensorConfigInverterInnerTemp extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
-}
-
-export interface HavellsSolarSensorConfigInverterBusVoltage extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
-}
-
-export interface HavellsSolarSensorConfigInsulationOfPvNToGround extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
-}
-
-export interface HavellsSolarSensorConfigGfciValue extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
-}
-
-export interface HavellsSolarSensorConfigDciOfR extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
-}
-
-export interface HavellsSolarSensorConfigDciOfS extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
-}
-
-export interface HavellsSolarSensorConfigDciOfT extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
 }
 
 export interface HavellsSolarSensorConfig extends CoreCOMPONENT_SCHEMA {
+    active_power?: HavellsSolarSensorConfigActivePower;
+    address?: any;
+    dci_of_r?: HavellsSolarSensorConfigDciOfR;
+    dci_of_s?: HavellsSolarSensorConfigDciOfS;
+    dci_of_t?: HavellsSolarSensorConfigDciOfT;
+    energy_production_day?: HavellsSolarSensorConfigEnergyProductionDay;
+    frequency?: HavellsSolarSensorConfigFrequency;
+    gfci_value?: HavellsSolarSensorConfigGfciValue;
     id?: ID;
+    insulation_of_pv_n_to_ground?: HavellsSolarSensorConfigInsulationOfPvNToGround;
+    inverter_bus_voltage?: HavellsSolarSensorConfigInverterBusVoltage;
+    inverter_inner_temp?: HavellsSolarSensorConfigInverterInnerTemp;
+    inverter_module_temp?: HavellsSolarSensorConfigInverterModuleTemp;
+    modbus_id?: ID;
     phase_a?: HavellsSolarSensorConfigPhaseA;
     phase_b?: HavellsSolarSensorConfigPhaseB;
     phase_c?: HavellsSolarSensorConfigPhaseC;
     pv1?: HavellsSolarSensorConfigPv1;
     pv2?: HavellsSolarSensorConfigPv2;
-    frequency?: HavellsSolarSensorConfigFrequency;
-    active_power?: HavellsSolarSensorConfigActivePower;
     reactive_power?: HavellsSolarSensorConfigReactivePower;
-    energy_production_day?: HavellsSolarSensorConfigEnergyProductionDay;
+    today_generation_time?: HavellsSolarSensorConfigTodayGenerationTime;
     total_energy_production?: HavellsSolarSensorConfigTotalEnergyProduction;
     total_generation_time?: HavellsSolarSensorConfigTotalGenerationTime;
-    today_generation_time?: HavellsSolarSensorConfigTodayGenerationTime;
-    inverter_module_temp?: HavellsSolarSensorConfigInverterModuleTemp;
-    inverter_inner_temp?: HavellsSolarSensorConfigInverterInnerTemp;
-    inverter_bus_voltage?: HavellsSolarSensorConfigInverterBusVoltage;
-    insulation_of_pv_n_to_ground?: HavellsSolarSensorConfigInsulationOfPvNToGround;
-    gfci_value?: HavellsSolarSensorConfigGfciValue;
-    dci_of_r?: HavellsSolarSensorConfigDciOfR;
-    dci_of_s?: HavellsSolarSensorConfigDciOfS;
-    dci_of_t?: HavellsSolarSensorConfigDciOfT;
     update_interval?: any;
-    modbus_id?: ID;
-    address?: any;
+}
+
+export interface HavellsSolarSensorPHASE_SCHEMACurrent extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HavellsSolarSensorPHASE_SCHEMAVoltage extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HavellsSolarSensorPHASE_SCHEMA {
+    current?: HavellsSolarSensorPHASE_SCHEMACurrent;
+    voltage?: HavellsSolarSensorPHASE_SCHEMAVoltage;
+}
+
+export interface HavellsSolarSensorPV_SCHEMAActivePower extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HavellsSolarSensorPV_SCHEMACurrent extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HavellsSolarSensorPV_SCHEMAInsulationOfPToGround extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HavellsSolarSensorPV_SCHEMAVoltage extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HavellsSolarSensorPV_SCHEMAVoltageSampledBySecondaryCpu extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HavellsSolarSensorPV_SCHEMA {
+    active_power?: HavellsSolarSensorPV_SCHEMAActivePower;
+    current?: HavellsSolarSensorPV_SCHEMACurrent;
+    insulation_of_p_to_ground?: HavellsSolarSensorPV_SCHEMAInsulationOfPToGround;
+    voltage?: HavellsSolarSensorPV_SCHEMAVoltage;
+    voltage_sampled_by_secondary_cpu?: HavellsSolarSensorPV_SCHEMAVoltageSampledBySecondaryCpu;
 }

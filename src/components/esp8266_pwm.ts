@@ -17,7 +17,7 @@ export class Esp8266PwmOutput extends EsphomeComponent<Esp8266PwmOutputConfig> {
 }
 
 export type Esp8266PwmOutputConfig = {
+        frequency?: any;
         id: string;
         pin: Pin;
-        frequency?: any;
     } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;

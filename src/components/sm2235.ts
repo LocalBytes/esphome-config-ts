@@ -26,7 +26,7 @@ export class Sm2235Output extends EsphomeComponent<Sm2235OutputConfig> {
 }
 
 export type Sm2235OutputConfig = {
-        sm2235_id?: ID;
-        id: string;
         channel: number;
+        id: string;
+        sm2235_id?: ID;
     } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;

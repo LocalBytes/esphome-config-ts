@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 import type { TimeTIME_SCHEMA } from "./time.js";
 
@@ -17,46 +17,65 @@ export class Gps extends EsphomeComponent<GpsConfig> {
     componentName: string = "gps";
 }
 
-export interface GpsConfigLatitude extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface GpsConfigAltitude extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface GpsConfigLongitude extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface GpsConfigCourse extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface GpsConfigSpeed extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface GpsConfigHdop extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
-}
-
-export interface GpsConfigCourse extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-}
-
-export interface GpsConfigAltitude extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-}
-
-export interface GpsConfigSatellites extends SensorSENSOR_SCHEMA {
-    accuracy_decimals?: any;
+    icon?: any;
     state_class?: any;
 }
 
+export interface GpsConfigLatitude extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface GpsConfigLongitude extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface GpsConfigSatellites extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    icon?: any;
+    state_class?: any;
+}
+
+export interface GpsConfigSpeed extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
 export interface GpsConfig extends CoreCOMPONENT_SCHEMA {
+    altitude?: GpsConfigAltitude;
+    course?: GpsConfigCourse;
+    hdop?: GpsConfigHdop;
     id?: ID;
     latitude?: GpsConfigLatitude;
     longitude?: GpsConfigLongitude;
-    speed?: GpsConfigSpeed;
-    course?: GpsConfigCourse;
-    altitude?: GpsConfigAltitude;
     satellites?: GpsConfigSatellites;
-    update_interval?: any;
+    speed?: GpsConfigSpeed;
     uart_id?: ID;
+    update_interval?: any;
 }
 
 export class GpsTime extends EsphomeComponent<GpsTimeConfig> {
@@ -64,7 +83,7 @@ export class GpsTime extends EsphomeComponent<GpsTimeConfig> {
 }
 
 export type GpsTimeConfig = {
-        id?: ID;
         gps_id?: ID;
+        id?: ID;
         update_interval?: any;
     } & TimeTIME_SCHEMA & CoreCOMPONENT_SCHEMA;

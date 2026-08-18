@@ -15,10 +15,16 @@ export class Mcp23s08 extends EsphomeComponent<Mcp23s08Config> {
     componentName: string = "mcp23s08";
 }
 
+export type Mcp23s08ConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
+
 export interface Mcp23s08Config extends CoreCOMPONENT_SCHEMA {
-    id: string;
-    deviceaddress?: number;
-    open_drain_interrupt?: boolean;
-    spi_id?: ID;
     cs_pin: Pin;
+    data_rate?: any;
+    deviceaddress?: number;
+    id: string;
+    interrupt_pin?: any;
+    open_drain_interrupt?: boolean;
+    release_device?: boolean;
+    spi_id?: ID;
+    spi_mode?: Mcp23s08ConfigSpiMode;
 }

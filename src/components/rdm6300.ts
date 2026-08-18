@@ -10,7 +10,7 @@
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
 export class Rdm6300 extends EsphomeComponent<Rdm6300Config> {
     componentName: string = "rdm6300";
@@ -26,7 +26,7 @@ export class Rdm6300BinarySensor extends EsphomeComponent<Rdm6300BinarySensorCon
     componentName: string = "rdm6300.binary_sensor";
 }
 
-export interface Rdm6300BinarySensorConfig extends BinarySensorBINARY_SENSOR_SCHEMA {
+export interface Rdm6300BinarySensorConfig extends BinarySensor_BINARY_SENSOR_SCHEMA {
     id?: any;
     rdm6300_id?: ID;
     uid: number;

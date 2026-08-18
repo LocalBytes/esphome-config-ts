@@ -16,11 +16,11 @@ export abstract class FastledBase extends EsphomeComponent {
     componentName: string = "fastled_base";
 }
 
-export type FastledBaseBASE_SCHEMARgbOrder = 'RGB' | 'RBG' | 'GRB' | 'GBR' | 'BRG' | 'BGR';
 export type FastledBaseBASE_SCHEMAMaxRefreshRate = CorePositiveTimePeriodMicroseconds;
+export type FastledBaseBASE_SCHEMARgbOrder = 'RGB' | 'RBG' | 'GRB' | 'GBR' | 'BRG' | 'BGR';
 export type FastledBaseBASE_SCHEMA = {
-        output_id?: ID;
-        num_leds: number;
-        rgb_order?: FastledBaseBASE_SCHEMARgbOrder;
         max_refresh_rate?: FastledBaseBASE_SCHEMAMaxRefreshRate;
+        num_leds: number;
+        output_id?: ID;
+        rgb_order?: FastledBaseBASE_SCHEMARgbOrder;
     } & LightADDRESSABLE_LIGHT_SCHEMA & CoreCOMPONENT_SCHEMA;

@@ -16,8 +16,12 @@ export class As3935Spi extends EsphomeComponent<As3935SpiConfig> {
     componentName: string = "as3935_spi";
 }
 
+export type As3935SpiConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 export type As3935SpiConfig = {
-        id?: any;
-        spi_id?: ID;
         cs_pin: Pin;
+        data_rate?: any;
+        id?: any;
+        release_device?: boolean;
+        spi_id?: ID;
+        spi_mode?: As3935SpiConfigSpiMode;
     } & As3935AS3935_SCHEMA & CoreCOMPONENT_SCHEMA;

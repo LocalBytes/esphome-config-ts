@@ -17,7 +17,7 @@ export class Mcp47a1Output extends EsphomeComponent<Mcp47a1OutputConfig> {
 }
 
 export type Mcp47a1OutputConfig = {
-        id: string;
-        i2c_id?: ID;
         address?: any;
+        i2c_id?: ID;
+        id: string;
     } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;

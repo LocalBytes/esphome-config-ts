@@ -16,7 +16,7 @@ export class Rc522I2c extends EsphomeComponent<Rc522I2cConfig> {
 }
 
 export interface Rc522I2cConfig extends Rc522RC522_SCHEMA {
-    id?: any;
-    i2c_id?: ID;
     address?: any;
+    i2c_id?: ID;
+    id?: any;
 }

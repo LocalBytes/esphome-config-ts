@@ -17,9 +17,9 @@ export class SonoffD1Light extends EsphomeComponent<SonoffD1LightConfig> {
 }
 
 export type SonoffD1LightConfig = {
-        output_id?: ID;
-        use_rm433_remote?: boolean;
-        min_value?: number;
         max_value?: number;
+        min_value?: number;
+        output_id?: ID;
         uart_id?: ID;
+        use_rm433_remote?: boolean;
     } & LightBRIGHTNESS_ONLY_LIGHT_SCHEMA & CoreCOMPONENT_SCHEMA;

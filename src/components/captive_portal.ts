@@ -15,7 +15,10 @@ export class CaptivePortal extends EsphomeComponent<CaptivePortalConfig> {
     componentName: string = "captive_portal";
 }
 
+export type CaptivePortalConfigCompression = 'gzip' | 'br';
+
 export interface CaptivePortalConfig extends CoreCOMPONENT_SCHEMA {
+    compression?: CaptivePortalConfigCompression;
     id?: ID;
     web_server_base_id?: ID;
 }

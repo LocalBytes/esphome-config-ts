@@ -2,11 +2,95 @@
   "kuntze.sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
           "config_vars": {
+            "address": {
+              "data_type": "hex_uint8_t",
+              "default": "1",
+              "key": "Optional"
+            },
+            "dis1": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": ""
+                  },
+                  "icon": {
+                    "default": ""
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": ""
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Measured DIS 1 value.\n\n*See also: [Kuntze pool monitor](https://next.esphome.io/components/sensor/kuntze#example-configuration-entry)*"
+            },
+            "dis2": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": ""
+                  },
+                  "icon": {
+                    "default": ""
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": ""
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Measured DIS 2 value.\n\n*See also: [Kuntze pool monitor](https://next.esphome.io/components/sensor/kuntze#example-configuration-entry)*"
+            },
+            "ec": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": ""
+                  },
+                  "icon": {
+                    "default": ""
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": ""
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Measured EC value.\n\n*See also: [Kuntze pool monitor](https://next.esphome.io/components/sensor/kuntze#example-configuration-entry)*"
+            },
             "id": {
-              "key": "GeneratedID",
               "id_type": {
                 "class": "kuntze::Kuntze",
                 "parents": [
@@ -14,216 +98,132 @@
                   "Component",
                   "modbus::ModbusDevice"
                 ]
-              }
+              },
+              "key": "GeneratedID"
             },
-            "ph": {
+            "modbus_id": {
+              "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "modbus::Modbus"
+            },
+            "oci": {
               "key": "Optional",
-              "type": "schema",
               "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
                 "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "pH"
-                  },
-                  "icon": {
-                    "default": ""
-                  },
                   "accuracy_decimals": {
                     "default": "1"
                   },
                   "device_class": {
                     "default": ""
                   },
+                  "icon": {
+                    "default": ""
+                  },
                   "state_class": {
                     "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": ""
                   }
-                }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
               },
-              "docs": "Measured pH value.\n\n*See also: [Component](https://esphome.io/components/sensor/kuntze.html#component)*"
+              "type": "schema",
+              "docs": "Measured OCI value.\n\n*See also: [Kuntze pool monitor](https://next.esphome.io/components/sensor/kuntze#example-configuration-entry)*"
+            },
+            "ph": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": ""
+                  },
+                  "icon": {
+                    "default": ""
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "pH"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Measured pH value.\n\n*See also: [Kuntze pool monitor](https://next.esphome.io/components/sensor/kuntze#example-configuration-entry)*"
+            },
+            "redox": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": ""
+                  },
+                  "icon": {
+                    "default": ""
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": ""
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Measured Redox value.\n\n*See also: [Kuntze pool monitor](https://next.esphome.io/components/sensor/kuntze#example-configuration-entry)*"
             },
             "temperature": {
               "key": "Optional",
-              "type": "schema",
               "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
                 "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "\u00b0C"
-                  },
-                  "icon": {
-                    "default": "mdi:thermometer"
-                  },
                   "accuracy_decimals": {
                     "default": "1"
                   },
                   "device_class": {
                     "default": "temperature"
                   },
-                  "state_class": {
-                    "default": "measurement"
-                  }
-                }
-              },
-              "docs": "Measured temperature value.\n\n*See also: [Component](https://esphome.io/components/sensor/kuntze.html#component)*"
-            },
-            "dis1": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
-                  "unit_of_measurement": {
-                    "default": ""
-                  },
                   "icon": {
-                    "default": ""
-                  },
-                  "accuracy_decimals": {
-                    "default": "1"
-                  },
-                  "device_class": {
-                    "default": ""
+                    "default": "mdi:thermometer"
                   },
                   "state_class": {
                     "default": "measurement"
-                  }
-                }
-              },
-              "docs": "Measured DIS 1 value.\n\n*See also: [Component](https://esphome.io/components/sensor/kuntze.html#component)*"
-            },
-            "dis2": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
+                  },
                   "unit_of_measurement": {
-                    "default": ""
-                  },
-                  "icon": {
-                    "default": ""
-                  },
-                  "accuracy_decimals": {
-                    "default": "1"
-                  },
-                  "device_class": {
-                    "default": ""
-                  },
-                  "state_class": {
-                    "default": "measurement"
+                    "default": "\u00b0C"
                   }
-                }
-              },
-              "docs": "Measured DIS 2 value.\n\n*See also: [Component](https://esphome.io/components/sensor/kuntze.html#component)*"
-            },
-            "redox": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
+                },
                 "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
-                  "unit_of_measurement": {
-                    "default": ""
-                  },
-                  "icon": {
-                    "default": ""
-                  },
-                  "accuracy_decimals": {
-                    "default": "1"
-                  },
-                  "device_class": {
-                    "default": ""
-                  },
-                  "state_class": {
-                    "default": "measurement"
-                  }
-                }
+                  "sensor._SENSOR_SCHEMA"
+                ]
               },
-              "docs": "Measured Redox value.\n\n*See also: [Component](https://esphome.io/components/sensor/kuntze.html#component)*"
-            },
-            "ec": {
-              "key": "Optional",
               "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
-                  "unit_of_measurement": {
-                    "default": ""
-                  },
-                  "icon": {
-                    "default": ""
-                  },
-                  "accuracy_decimals": {
-                    "default": "1"
-                  },
-                  "device_class": {
-                    "default": ""
-                  },
-                  "state_class": {
-                    "default": "measurement"
-                  }
-                }
-              },
-              "docs": "Measured EC value.\n\n*See also: [Component](https://esphome.io/components/sensor/kuntze.html#component)*"
-            },
-            "oci": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
-                  "unit_of_measurement": {
-                    "default": ""
-                  },
-                  "icon": {
-                    "default": ""
-                  },
-                  "accuracy_decimals": {
-                    "default": "1"
-                  },
-                  "device_class": {
-                    "default": ""
-                  },
-                  "state_class": {
-                    "default": "measurement"
-                  }
-                }
-              },
-              "docs": "Measured OCI value.\n\n*See also: [Component](https://esphome.io/components/sensor/kuntze.html#component)*"
+              "docs": "Measured temperature value.\n\n*See also: [Kuntze pool monitor](https://next.esphome.io/components/sensor/kuntze#example-configuration-entry)*"
             },
             "update_interval": {
-              "key": "Optional",
-              "default": "60s"
-            },
-            "modbus_id": {
-              "key": "GeneratedID",
-              "use_id_type": "modbus::Modbus",
-              "type": "use_id"
-            },
-            "address": {
-              "key": "Optional",
-              "default": "1",
-              "data_type": "hex_uint8_t"
+              "default": "60s",
+              "key": "Optional"
             }
           },
           "extends": [
             "core.COMPONENT_SCHEMA"
           ]
-        }
+        },
+        "type": "schema"
       }
     }
   }

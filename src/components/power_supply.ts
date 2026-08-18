@@ -19,8 +19,9 @@ export type PowerSupplyConfigEnableTime = CorePositiveTimePeriodMilliseconds;
 export type PowerSupplyConfigKeepOnTime = CorePositiveTimePeriodMilliseconds;
 
 export interface PowerSupplyConfig extends CoreCOMPONENT_SCHEMA {
-    id: string;
-    pin: Pin;
+    enable_on_boot?: boolean;
     enable_time?: PowerSupplyConfigEnableTime;
+    id: string;
     keep_on_time?: PowerSupplyConfigKeepOnTime;
+    pin: Pin;
 }

@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class BleRssiSensor extends EsphomeComponent<BleRssiSensorConfig> {
@@ -17,15 +17,16 @@ export class BleRssiSensor extends EsphomeComponent<BleRssiSensorConfig> {
 }
 
 export type BleRssiSensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
         accuracy_decimals?: any;
         device_class?: any;
-        state_class?: any;
-        mac_address?: any;
-        service_uuid?: any;
+        esp32_ble_id?: ID;
         ibeacon_major?: number;
         ibeacon_minor?: number;
         ibeacon_uuid?: any;
-        esp32_ble_id?: ID;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+        id?: any;
+        irk?: any;
+        mac_address?: any;
+        service_uuid?: any;
+        state_class?: any;
+        unit_of_measurement?: any;
+    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;

@@ -9,40 +9,40 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Ee895Sensor extends EsphomeComponent<Ee895SensorConfig> {
     componentName: string = "ee895.sensor";
 }
 
-export interface Ee895SensorConfigTemperature extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Ee895SensorConfigCo2 extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export interface Ee895SensorConfigCo2 extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
     icon?: any;
-    accuracy_decimals?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Ee895SensorConfigPressure extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Ee895SensorConfigPressure extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface Ee895SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
 export interface Ee895SensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    temperature: Ee895SensorConfigTemperature;
-    co2: Ee895SensorConfigCo2;
-    pressure: Ee895SensorConfigPressure;
-    update_interval?: any;
-    i2c_id?: ID;
     address?: any;
+    co2?: Ee895SensorConfigCo2;
+    i2c_id?: ID;
+    id?: ID;
+    pressure?: Ee895SensorConfigPressure;
+    temperature?: Ee895SensorConfigTemperature;
+    update_interval?: any;
 }

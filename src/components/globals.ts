@@ -17,8 +17,8 @@ export class Globals extends EsphomeComponent<GlobalsConfig> {
 
 export interface GlobalsConfig extends CoreCOMPONENT_SCHEMA {
     id: string;
-    type: string;
     initial_value?: string;
-    restore_value?: boolean;
     max_restore_data_length?: number;
+    restore_value?: boolean;
+    type: string;
 }

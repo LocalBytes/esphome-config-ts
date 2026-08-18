@@ -17,10 +17,12 @@ export class AcDimmerOutput extends EsphomeComponent<AcDimmerOutputConfig> {
 }
 
 export type AcDimmerOutputConfigMethod = 'LEADING_PULSE' | 'LEADING' | 'TRAILING';
+export type AcDimmerOutputConfigZeroCrossInterruptType = 'RISING' | 'FALLING' | 'ANY';
 export type AcDimmerOutputConfig = {
-        id: string;
         gate_pin: Pin;
-        zero_cross_pin: Pin;
+        id: string;
         init_with_half_cycle?: boolean;
         method?: AcDimmerOutputConfigMethod;
+        zero_cross_interrupt_type?: AcDimmerOutputConfigZeroCrossInterruptType;
+        zero_cross_pin: Pin;
     } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;

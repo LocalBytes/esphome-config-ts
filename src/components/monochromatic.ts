@@ -16,6 +16,6 @@ export class MonochromaticLight extends EsphomeComponent<MonochromaticLightConfi
 }
 
 export interface MonochromaticLightConfig extends LightBRIGHTNESS_ONLY_LIGHT_SCHEMA {
-    output_id?: ID;
     output: ID;
+    output_id?: ID;
 }

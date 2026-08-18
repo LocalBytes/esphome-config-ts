@@ -17,7 +17,7 @@ export class LibretinyPwmOutput extends EsphomeComponent<LibretinyPwmOutputConfi
 }
 
 export type LibretinyPwmOutputConfig = {
+        frequency?: any;
         id: string;
         pin: Pin;
-        frequency?: any;
     } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;

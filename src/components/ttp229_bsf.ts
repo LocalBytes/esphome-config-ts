@@ -10,7 +10,7 @@
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
 export class Ttp229Bsf extends EsphomeComponent<Ttp229BsfConfig> {
     componentName: string = "ttp229_bsf";
@@ -18,16 +18,16 @@ export class Ttp229Bsf extends EsphomeComponent<Ttp229BsfConfig> {
 
 export interface Ttp229BsfConfig extends CoreCOMPONENT_SCHEMA {
     id?: ID;
-    sdo_pin: Pin;
     scl_pin: Pin;
+    sdo_pin: Pin;
 }
 
 export class Ttp229BsfBinarySensor extends EsphomeComponent<Ttp229BsfBinarySensorConfig> {
     componentName: string = "ttp229_bsf.binary_sensor";
 }
 
-export interface Ttp229BsfBinarySensorConfig extends BinarySensorBINARY_SENSOR_SCHEMA {
+export interface Ttp229BsfBinarySensorConfig extends BinarySensor_BINARY_SENSOR_SCHEMA {
+    channel: number;
     id?: any;
     ttp229_id?: ID;
-    channel: number;
 }

@@ -2,11 +2,9 @@
   "radon_eye_rd200.sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
           "config_vars": {
             "id": {
-              "key": "GeneratedID",
               "id_type": {
                 "class": "radon_eye_rd200::RadonEyeRD200",
                 "parents": [
@@ -14,64 +12,66 @@
                   "Component",
                   "ble_client::BLEClientNode"
                 ]
-              }
+              },
+              "key": "GeneratedID"
             },
             "radon": {
               "key": "Optional",
-              "type": "schema",
               "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
                 "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "Bq/m\u00b3"
+                  "accuracy_decimals": {
+                    "default": "0"
                   },
                   "icon": {
                     "default": "mdi:radioactive"
                   },
-                  "accuracy_decimals": {
-                    "default": "0"
-                  },
                   "state_class": {
                     "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "Bq/m\u00b3"
                   }
-                }
-              }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema"
             },
             "radon_long_term": {
               "key": "Optional",
-              "type": "schema",
               "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
                 "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "Bq/m\u00b3"
+                  "accuracy_decimals": {
+                    "default": "0"
                   },
                   "icon": {
                     "default": "mdi:radioactive"
                   },
-                  "accuracy_decimals": {
-                    "default": "0"
-                  },
                   "state_class": {
                     "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "Bq/m\u00b3"
                   }
-                }
-              }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema"
             },
             "update_interval": {
-              "key": "Optional",
-              "default": "5min"
+              "default": "5min",
+              "key": "Optional"
             }
           },
           "extends": [
             "core.COMPONENT_SCHEMA",
             "ble_client.BLE_CLIENT_SCHEMA"
           ]
-        }
+        },
+        "type": "schema"
       }
     }
   }

@@ -16,5 +16,5 @@ export class AirthingsWaveMiniSensor extends EsphomeComponent<AirthingsWaveMiniS
 }
 
 export interface AirthingsWaveMiniSensorConfig extends AirthingsWaveBaseBASE_SCHEMA {
-    id?: any;
+    id?: ID;
 }

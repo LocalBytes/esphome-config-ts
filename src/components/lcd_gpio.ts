@@ -16,9 +16,12 @@ export class LcdGpioDisplay extends EsphomeComponent<LcdGpioDisplayConfig> {
 }
 
 export interface LcdGpioDisplayConfig extends LcdBaseLCD_SCHEMA {
-    id?: ID;
     data_pins: string;
     enable_pin: Pin;
+    id?: ID;
     rs_pin: Pin;
     rw_pin?: Pin;
+    dimensions: string;
+    lambda?: any;
+    update_interval?: any;
 }

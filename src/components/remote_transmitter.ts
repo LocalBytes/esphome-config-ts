@@ -16,7 +16,14 @@ export class RemoteTransmitter extends EsphomeComponent<RemoteTransmitterConfig>
 }
 
 export interface RemoteTransmitterConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    pin: Pin;
     carrier_duty_percent: string;
+    clock_resolution?: any;
+    eot_level?: boolean;
+    id?: ID;
+    non_blocking?: boolean;
+    on_complete?: object[];
+    on_transmit?: object[];
+    pin: Pin;
+    rmt_symbols?: number;
+    use_dma?: boolean;
 }

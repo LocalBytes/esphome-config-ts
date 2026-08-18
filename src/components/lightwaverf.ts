@@ -18,6 +18,6 @@ export class Lightwaverf extends EsphomeComponent<LightwaverfConfig> {
 export interface LightwaverfConfig extends CoreCOMPONENT_SCHEMA {
     id?: ID;
     read_pin?: Pin;
-    write_pin?: Pin;
     update_interval?: any;
+    write_pin?: Pin;
 }

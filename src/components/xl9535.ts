@@ -16,7 +16,7 @@ export class Xl9535 extends EsphomeComponent<Xl9535Config> {
 }
 
 export interface Xl9535Config extends CoreCOMPONENT_SCHEMA {
-    id: string;
-    i2c_id?: ID;
     address?: any;
+    i2c_id?: ID;
+    id: string;
 }

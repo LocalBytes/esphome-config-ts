@@ -16,12 +16,15 @@ export class Pca9685 extends EsphomeComponent<Pca9685Config> {
     componentName: string = "pca9685";
 }
 
+export type Pca9685ConfigPhaseBalancer = 'none' | 'linear';
+
 export interface Pca9685Config extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    frequency?: any;
-    external_clock_input?: boolean;
-    i2c_id?: ID;
     address?: any;
+    external_clock_input?: boolean;
+    frequency?: any;
+    i2c_id?: ID;
+    id?: ID;
+    phase_balancer?: Pca9685ConfigPhaseBalancer;
 }
 
 export class Pca9685Output extends EsphomeComponent<Pca9685OutputConfig> {
@@ -29,7 +32,7 @@ export class Pca9685Output extends EsphomeComponent<Pca9685OutputConfig> {
 }
 
 export interface Pca9685OutputConfig extends OutputFLOAT_OUTPUT_SCHEMA {
+    channel: number;
     id: string;
     pca9685_id?: ID;
-    channel: number;
 }

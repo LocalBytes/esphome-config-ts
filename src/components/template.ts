@@ -9,73 +9,72 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
-import type { AlarmControlPanelALARM_CONTROL_PANEL_SCHEMA } from "./alarm_control_panel.js";
-import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { ButtonBUTTON_SCHEMA } from "./button.js";
-import type { CoverCOVER_SCHEMA } from "./cover.js";
-import type { LockLOCK_SCHEMA } from "./lock.js";
-import type { NumberNUMBER_SCHEMA } from "./number.js";
-import type { SelectSELECT_SCHEMA } from "./select.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { AlarmControlPanel_ALARM_CONTROL_PANEL_SCHEMA } from "./alarm_control_panel.js";
+import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { Button_BUTTON_SCHEMA } from "./button.js";
+import type { Cover_COVER_SCHEMA } from "./cover.js";
+import type { Event_EVENT_SCHEMA } from "./event.js";
+import type { Fan_FAN_SCHEMA } from "./fan.js";
+import type { Lock_LOCK_SCHEMA } from "./lock.js";
+import type { Number_NUMBER_SCHEMA } from "./number.js";
+import type { Select_SELECT_SCHEMA } from "./select.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { Switch_SWITCH_SCHEMA } from "./switch.js";
-import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
-
-export class TemplateSensor extends EsphomeComponent<TemplateSensorConfig> {
-    componentName: string = "template.sensor";
-}
-
-export type TemplateSensorConfig = {
-        id?: any;
-        accuracy_decimals?: any;
-        lambda?: any;
-        update_interval?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+import type { Text_TEXT_SCHEMA } from "./text.js";
+import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { Valve_VALVE_SCHEMA } from "./valve.js";
+import type { WaterHeater_WATER_HEATER_SCHEMA } from "./water_heater.js";
 
 export class TemplateAlarmControlPanel extends EsphomeComponent<TemplateAlarmControlPanelConfig> {
     componentName: string = "template.alarm_control_panel";
 }
 
+export type TemplateAlarmControlPanelConfigArmingAwayTime = CorePositiveTimePeriodMilliseconds;
 export type TemplateAlarmControlPanelConfigArmingHomeTime = CorePositiveTimePeriodMilliseconds;
 export type TemplateAlarmControlPanelConfigArmingNightTime = CorePositiveTimePeriodMilliseconds;
-export type TemplateAlarmControlPanelConfigArmingAwayTime = CorePositiveTimePeriodMilliseconds;
-export type TemplateAlarmControlPanelConfigPendingTime = CorePositiveTimePeriodMilliseconds;
-export type TemplateAlarmControlPanelConfigTriggerTime = CorePositiveTimePeriodMilliseconds;
+export type TemplateAlarmControlPanelConfigBinarySensorsTriggerMode = 'DELAYED' | 'INSTANT' | 'DELAYED_FOLLOWER' | 'INSTANT_ALWAYS';
 
 export interface TemplateAlarmControlPanelConfigBinarySensors {
-    input: ID;
     bypass_armed_home?: boolean;
     bypass_armed_night?: boolean;
+    bypass_auto?: boolean;
+    chime?: boolean;
+    input: ID;
+    trigger_mode?: TemplateAlarmControlPanelConfigBinarySensorsTriggerMode;
 }
 
+export type TemplateAlarmControlPanelConfigPendingTime = CorePositiveTimePeriodMilliseconds;
 export type TemplateAlarmControlPanelConfigRestoreMode = 'ALWAYS_DISARMED' | 'RESTORE_DEFAULT_DISARMED';
+export type TemplateAlarmControlPanelConfigTriggerTime = CorePositiveTimePeriodMilliseconds;
 export type TemplateAlarmControlPanelConfig = {
-        id?: any;
-        codes?: string[];
-        requires_code_to_arm?: boolean;
+        arming_away_time?: TemplateAlarmControlPanelConfigArmingAwayTime;
         arming_home_time?: TemplateAlarmControlPanelConfigArmingHomeTime;
         arming_night_time?: TemplateAlarmControlPanelConfigArmingNightTime;
-        arming_away_time?: TemplateAlarmControlPanelConfigArmingAwayTime;
-        pending_time?: TemplateAlarmControlPanelConfigPendingTime;
-        trigger_time?: TemplateAlarmControlPanelConfigTriggerTime;
         binary_sensors?: TemplateAlarmControlPanelConfigBinarySensors[];
+        codes?: string[];
+        id?: ID;
+        pending_time?: TemplateAlarmControlPanelConfigPendingTime;
+        requires_code_to_arm?: boolean;
         restore_mode?: TemplateAlarmControlPanelConfigRestoreMode;
-    } & AlarmControlPanelALARM_CONTROL_PANEL_SCHEMA & CoreCOMPONENT_SCHEMA;
+        trigger_time?: TemplateAlarmControlPanelConfigTriggerTime;
+    } & AlarmControlPanel_ALARM_CONTROL_PANEL_SCHEMA & CoreCOMPONENT_SCHEMA;
 
 export class TemplateBinarySensor extends EsphomeComponent<TemplateBinarySensorConfig> {
     componentName: string = "template.binary_sensor";
 }
 
 export type TemplateBinarySensorConfig = {
+        condition?: any;
         id?: any;
         lambda?: any;
-    } & BinarySensorBINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BinarySensor_BINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
 
 export class TemplateButton extends EsphomeComponent<TemplateButtonConfig> {
     componentName: string = "template.button";
 }
 
-export interface TemplateButtonConfig extends ButtonBUTTON_SCHEMA {
+export interface TemplateButtonConfig extends Button_BUTTON_SCHEMA {
     id?: ID;
 }
 
@@ -85,33 +84,100 @@ export class TemplateCover extends EsphomeComponent<TemplateCoverConfig> {
 
 export type TemplateCoverConfigRestoreMode = 'NO_RESTORE' | 'RESTORE' | 'RESTORE_AND_CALL';
 export type TemplateCoverConfig = {
-        id?: any;
-        lambda?: any;
-        optimistic?: boolean;
         assumed_state?: boolean;
-        has_position?: boolean;
-        open_action?: object[];
         close_action?: object[];
+        has_position?: boolean;
+        id?: ID;
+        lambda?: any;
+        open_action?: object[];
+        optimistic?: boolean;
+        position_action?: object[];
+        restore_mode?: TemplateCoverConfigRestoreMode;
         stop_action?: object[];
         tilt_action?: object[];
         tilt_lambda?: any;
-        position_action?: object[];
-        restore_mode?: TemplateCoverConfigRestoreMode;
-    } & CoverCOVER_SCHEMA & CoreCOMPONENT_SCHEMA;
+        toggle_action?: object[];
+    } & Cover_COVER_SCHEMA & CoreCOMPONENT_SCHEMA;
+
+export class TemplateDatetime extends EsphomeComponent<TemplateDatetimeConfig> {
+    componentName: string = "template.datetime";
+}
+
+export type TemplateDatetimeConfig = TemplateDatetimeConfigDATE | TemplateDatetimeConfigDATETIME | TemplateDatetimeConfigTIME;
+export type TemplateDatetimeConfigDATEType = 'DATE';
+
+export interface TemplateDatetimeConfigDATE {
+    type: "DATE" | "DATE";
+    id?: ID;
+    initial_value?: any;
+    mqtt_id?: any;
+    type?: TemplateDatetimeConfigDATEType;
+}
+
+export type TemplateDatetimeConfigDATETIMEType = 'DATETIME';
+
+export interface TemplateDatetimeConfigDATETIME {
+    type: "DATETIME" | "DATETIME";
+    id?: ID;
+    initial_value?: any;
+    mqtt_id?: any;
+    on_time?: object[];
+    type?: TemplateDatetimeConfigDATETIMEType;
+}
+
+export type TemplateDatetimeConfigTIMEType = 'TIME';
+
+export interface TemplateDatetimeConfigTIME {
+    type: "TIME" | "TIME";
+    id?: ID;
+    initial_value?: any;
+    mqtt_id?: any;
+    on_time?: object[];
+    type?: TemplateDatetimeConfigTIMEType;
+}
+
+export interface TemplateDatetime_BASE_SCHEMA extends CoreCOMPONENT_SCHEMA {
+    lambda?: any;
+    optimistic?: boolean;
+    restore_value?: boolean;
+    set_action?: object[];
+    update_interval?: any;
+}
+
+export class TemplateEvent extends EsphomeComponent<TemplateEventConfig> {
+    componentName: string = "template.event";
+}
+
+export interface TemplateEventConfig extends Event_EVENT_SCHEMA {
+    event_types: string[];
+    id?: any;
+}
+
+export class TemplateFan extends EsphomeComponent<TemplateFanConfig> {
+    componentName: string = "template.fan";
+}
+
+export type TemplateFanConfig = {
+        has_direction?: boolean;
+        has_oscillating?: boolean;
+        id?: ID;
+        preset_modes?: any;
+        speed_count?: number;
+    } & Fan_FAN_SCHEMA & CoreCOMPONENT_SCHEMA;
 
 export class TemplateLock extends EsphomeComponent<TemplateLockConfig> {
     componentName: string = "template.lock";
 }
 
 export type TemplateLockConfig = {
+        assumed_state?: boolean;
         id?: ID;
         lambda?: any;
-        optimistic?: boolean;
-        assumed_state?: boolean;
-        unlock_action?: object[];
         lock_action?: object[];
         open_action?: object[];
-    } & LockLOCK_SCHEMA & CoreCOMPONENT_SCHEMA;
+        optimistic?: boolean;
+        unlock_action?: object[];
+    } & Lock_LOCK_SCHEMA & CoreCOMPONENT_SCHEMA;
 
 export class TemplateNumber extends EsphomeComponent<TemplateNumberConfig> {
     componentName: string = "template.number";
@@ -119,16 +185,16 @@ export class TemplateNumber extends EsphomeComponent<TemplateNumberConfig> {
 
 export type TemplateNumberConfig = {
         id?: ID;
+        initial_value?: any;
+        lambda?: any;
         max_value: string;
         min_value: string;
-        step: string;
-        lambda?: any;
         optimistic?: boolean;
-        set_action?: object[];
-        initial_value?: any;
         restore_value?: boolean;
+        set_action?: object[];
+        step: string;
         update_interval?: any;
-    } & NumberNUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
 
 export class TemplateOutput extends EsphomeComponent<TemplateOutputConfig> {
     componentName: string = "template.output";
@@ -154,29 +220,55 @@ export class TemplateSelect extends EsphomeComponent<TemplateSelectConfig> {
 
 export type TemplateSelectConfig = {
         id?: any;
-        options: string[];
+        initial_option?: string;
         lambda?: any;
         optimistic?: boolean;
-        set_action?: object[];
-        initial_option?: string;
+        options: string[];
         restore_value?: boolean;
+        set_action?: object[];
         update_interval?: any;
-    } & SelectSELECT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & Select_SELECT_SCHEMA & CoreCOMPONENT_SCHEMA;
+
+export class TemplateSensor extends EsphomeComponent<TemplateSensorConfig> {
+    componentName: string = "template.sensor";
+}
+
+export type TemplateSensorConfig = {
+        accuracy_decimals?: any;
+        id?: any;
+        lambda?: any;
+        update_interval?: any;
+    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
 
 export class TemplateSwitch extends EsphomeComponent<TemplateSwitchConfig> {
     componentName: string = "template.switch";
 }
 
-export type TemplateSwitchConfigRestoreMode = 'RESTORE_DEFAULT_OFF' | 'RESTORE_DEFAULT_ON' | 'ALWAYS_OFF' | 'ALWAYS_ON' | 'RESTORE_INVERTED_DEFAULT_OFF' | 'RESTORE_INVERTED_DEFAULT_ON' | 'DISABLED';
 export type TemplateSwitchConfig = {
-        restore_mode?: TemplateSwitchConfigRestoreMode;
+        assumed_state?: boolean;
         id?: ID;
         lambda?: any;
         optimistic?: boolean;
-        assumed_state?: boolean;
         turn_off_action?: object[];
         turn_on_action?: object[];
     } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
+
+export class TemplateText extends EsphomeComponent<TemplateTextConfig> {
+    componentName: string = "template.text";
+}
+
+export type TemplateTextConfig = {
+        id?: any;
+        initial_value?: string;
+        lambda?: any;
+        max_length?: number;
+        min_length?: number;
+        optimistic?: boolean;
+        pattern?: string;
+        restore_value?: boolean;
+        set_action?: object[];
+        update_interval?: any;
+    } & Text_TEXT_SCHEMA & CoreCOMPONENT_SCHEMA;
 
 export class TemplateTextSensor extends EsphomeComponent<TemplateTextSensorConfig> {
     componentName: string = "template.text_sensor";
@@ -186,4 +278,42 @@ export type TemplateTextSensorConfig = {
         id?: any;
         lambda?: any;
         update_interval?: any;
-    } & TextSensorTEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+
+export class TemplateValve extends EsphomeComponent<TemplateValveConfig> {
+    componentName: string = "template.valve";
+}
+
+export type TemplateValveConfigRestoreMode = 'NO_RESTORE' | 'RESTORE' | 'RESTORE_AND_CALL';
+export type TemplateValveConfig = {
+        assumed_state?: boolean;
+        close_action?: object[];
+        has_position?: boolean;
+        id?: any;
+        lambda?: any;
+        open_action?: object[];
+        optimistic?: boolean;
+        position_action?: object[];
+        restore_mode?: TemplateValveConfigRestoreMode;
+        stop_action?: object[];
+        toggle_action?: object[];
+    } & Valve_VALVE_SCHEMA & CoreCOMPONENT_SCHEMA;
+
+export class TemplateWaterHeater extends EsphomeComponent<TemplateWaterHeaterConfig> {
+    componentName: string = "template.water_heater";
+}
+
+export type TemplateWaterHeaterConfigRestoreMode = 'NO_RESTORE' | 'RESTORE' | 'RESTORE_AND_CALL';
+export type TemplateWaterHeaterConfigSupportedModes = 'OFF' | 'ECO' | 'ELECTRIC' | 'PERFORMANCE' | 'HIGH_DEMAND' | 'HEAT_PUMP' | 'GAS';
+export type TemplateWaterHeaterConfig = {
+        away?: any;
+        current_temperature?: any;
+        id?: ID;
+        is_on?: any;
+        mode?: any;
+        optimistic?: boolean;
+        restore_mode?: TemplateWaterHeaterConfigRestoreMode;
+        set_action?: object[];
+        supported_modes?: TemplateWaterHeaterConfigSupportedModes[];
+        target_temperature?: any;
+    } & WaterHeater_WATER_HEATER_SCHEMA & CoreCOMPONENT_SCHEMA;

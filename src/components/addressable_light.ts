@@ -19,10 +19,10 @@ export class AddressableLightDisplay extends EsphomeComponent<AddressableLightDi
 export type AddressableLightDisplayConfigUpdateInterval = CorePositiveTimePeriodMilliseconds;
 
 export interface AddressableLightDisplayConfig extends DisplayFULL_DISPLAY_SCHEMA {
-    id?: ID;
     addressable_light_id: ID;
-    width: number;
     height: number;
-    update_interval?: AddressableLightDisplayConfigUpdateInterval;
+    id?: ID;
     pixel_mapper?: any;
+    update_interval?: AddressableLightDisplayConfigUpdateInterval;
+    width: number;
 }

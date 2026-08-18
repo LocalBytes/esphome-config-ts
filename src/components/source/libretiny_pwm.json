@@ -1,16 +1,37 @@
 {
   "libretiny_pwm.output": {
-    "schemas": {
-      "CONFIG_SCHEMA": {
-        "type": "schema",
+    "action": {
+      "set_frequency": {
         "schema": {
-          "extends": [
-            "output.FLOAT_OUTPUT_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
+            "frequency": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer",
+              "docs": "The frequency to set in Hz.\n\n*See also: [LibreTiny PWM Output](https://next.esphome.io/components/output/libretiny_pwm#outputlibretiny_pwmset_frequency-action)*"
+            },
             "id": {
               "key": "Required",
+              "type": "use_id",
+              "use_id_type": "libretiny_pwm::LibreTinyPWM",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: The ID of the PWM output to change.\n\n*See also: [LibreTiny PWM Output](https://next.esphome.io/components/output/libretiny_pwm#outputlibretiny_pwmset_frequency-action)*"
+            }
+          }
+        },
+        "type": "schema",
+        "docs": "This [Action](https://next.esphome.io/automations/actions#all-actions) allows you to manually change the frequency of a LibreTiny PWM channel at runtime. Use cases include controlling a passive buzzer (for pitch control)."
+      }
+    },
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "schema": {
+          "config_vars": {
+            "frequency": {
+              "default": "1kHz",
+              "key": "Optional",
+              "docs": "**frequency**: The frequency to run the PWM with. Lower frequencies have more visual artifacts, but can represent much more colors. Defaults to `1kHz`.\n\n*See also: [LibreTiny PWM Output](https://next.esphome.io/components/output/libretiny_pwm#configuration-variables)*"
+            },
+            "id": {
               "id_type": {
                 "class": "libretiny_pwm::LibreTinyPWM",
                 "parents": [
@@ -19,47 +40,26 @@
                   "Component"
                 ]
               },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this output component.\n\n*See also: [LibreTiny PWM Output](https://esphome.io/components/output/libretiny_pwm.html#configuration-variables)*"
+              "key": "Required",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: The id to use for this output component.\n\n*See also: [LibreTiny PWM Output](https://next.esphome.io/components/output/libretiny_pwm#configuration-variables)*"
             },
             "pin": {
-              "key": "Required",
-              "schema": true,
               "internal": true,
+              "key": "Required",
               "modes": [
                 "output"
               ],
+              "schema": true,
               "type": "pin",
-              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin to use PWM on.\n\n*See also: [LibreTiny PWM Output](https://esphome.io/components/output/libretiny_pwm.html#configuration-variables)*"
-            },
-            "frequency": {
-              "key": "Optional",
-              "default": "1kHz",
-              "docs": "**frequency**: The frequency to run the PWM with. Lower frequencies have more visual artifacts, but can represent much more colors. Defaults to `1000 Hz`.\n\n*See also: [LibreTiny PWM Output](https://esphome.io/components/output/libretiny_pwm.html#configuration-variables)*"
+              "docs": "**[Pin Schema](https://next.esphome.io/guides/configuration-types#pin-schema)**: The pin to use PWM on.\n\n*See also: [LibreTiny PWM Output](https://next.esphome.io/components/output/libretiny_pwm#configuration-variables)*"
             }
-          }
-        }
-      }
-    },
-    "action": {
-      "set_frequency": {
-        "type": "schema",
-        "schema": {
-          "config_vars": {
-            "id": {
-              "key": "Required",
-              "use_id_type": "libretiny_pwm::LibreTinyPWM",
-              "type": "use_id",
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The ID of the PWM output to change.\n\n*See also: [LibreTiny PWM Output](https://esphome.io/components/output/libretiny_pwm.html#output-libretiny-pwm-set-frequency-action)*"
-            },
-            "frequency": {
-              "key": "Required",
-              "templatable": true,
-              "type": "integer",
-              "docs": "**[templatable](https://esphome.io/guides/automations.html#config-templatable), float**: The frequency to set in hertz.\n\n*See also: [LibreTiny PWM Output](https://esphome.io/components/output/libretiny_pwm.html#output-libretiny-pwm-set-frequency-action)*"
-            }
-          }
+          },
+          "extends": [
+            "output.FLOAT_OUTPUT_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
         },
-        "docs": "This [Action](https://esphome.io/guides/automations.html#config-action) allows you to manually change the frequency of a LibreTiny PWM channel at runtime. Use cases include controlling a passive buzzer (for pitch control).\n\n*See also: [`output.libretiny_pwm.set_frequency` Action](https://esphome.io/components/output/libretiny_pwm.html#output-libretiny-pwm-set-frequency-action)*"
+        "type": "schema"
       }
     }
   }

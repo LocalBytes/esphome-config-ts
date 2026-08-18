@@ -10,43 +10,43 @@
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMicroseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+
+export abstract class PulseCounter extends EsphomeComponent {
+    componentName: string = "pulse_counter";
+}
 
 export class PulseCounterSensor extends EsphomeComponent<PulseCounterSensorConfig> {
     componentName: string = "pulse_counter.sensor";
 }
 
-export type PulseCounterSensorConfigCountModeRisingEdge = 'DISABLE' | 'INCREMENT' | 'DECREMENT';
 export type PulseCounterSensorConfigCountModeFallingEdge = 'DISABLE' | 'INCREMENT' | 'DECREMENT';
+export type PulseCounterSensorConfigCountModeRisingEdge = 'DISABLE' | 'INCREMENT' | 'DECREMENT';
 
 export interface PulseCounterSensorConfigCountMode {
-    rising_edge: PulseCounterSensorConfigCountModeRisingEdge;
     falling_edge: PulseCounterSensorConfigCountModeFallingEdge;
+    rising_edge: PulseCounterSensorConfigCountModeRisingEdge;
 }
 
 export type PulseCounterSensorConfigInternalFilter = CorePositiveTimePeriodMicroseconds;
 
-export interface PulseCounterSensorConfigTotal extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface PulseCounterSensorConfigTotal extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
+    icon?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
 export type PulseCounterSensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
-        icon?: any;
         accuracy_decimals?: any;
-        state_class?: any;
-        pin: string;
         count_mode?: PulseCounterSensorConfigCountMode;
-        use_pcnt?: boolean;
+        icon?: any;
+        id?: any;
         internal_filter?: PulseCounterSensorConfigInternalFilter;
+        pin: string;
+        state_class?: any;
         total?: PulseCounterSensorConfigTotal;
+        unit_of_measurement?: any;
         update_interval?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
-
-export abstract class PulseCounter extends EsphomeComponent {
-    componentName: string = "pulse_counter";
-}
+        use_pcnt?: boolean;
+    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;

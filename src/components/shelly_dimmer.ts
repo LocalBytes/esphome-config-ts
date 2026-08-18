@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { LightBRIGHTNESS_ONLY_LIGHT_SCHEMA } from "./light.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
@@ -17,44 +17,47 @@ export class ShellyDimmerLight extends EsphomeComponent<ShellyDimmerLightConfig>
     componentName: string = "shelly_dimmer.light";
 }
 
+export interface ShellyDimmerLightConfigCurrent extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
 export interface ShellyDimmerLightConfigFirmware {
-    url?: any;
     sha256?: any;
-    version: string;
     update?: boolean;
+    url?: any;
+    version: string;
 }
 
-export interface ShellyDimmerLightConfigPower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface ShellyDimmerLightConfigPower extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface ShellyDimmerLightConfigVoltage extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface ShellyDimmerLightConfigVoltage extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-}
-
-export interface ShellyDimmerLightConfigCurrent extends SensorSENSOR_SCHEMA {
+    state_class?: any;
     unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
 }
 
 export type ShellyDimmerLightConfig = {
-        output_id?: ID;
-        firmware?: ShellyDimmerLightConfigFirmware;
-        nrst_pin?: Pin;
         boot0_pin?: Pin;
-        leading_edge?: boolean;
-        warmup_brightness?: number;
-        min_brightness?: number;
-        max_brightness?: number;
-        power?: ShellyDimmerLightConfigPower;
-        voltage?: ShellyDimmerLightConfigVoltage;
         current?: ShellyDimmerLightConfigCurrent;
+        firmware?: ShellyDimmerLightConfigFirmware;
         gamma_correct?: any;
-        update_interval?: any;
+        leading_edge?: boolean;
+        max_brightness?: number;
+        min_brightness?: number;
+        nrst_pin?: Pin;
+        output_id?: ID;
+        power?: ShellyDimmerLightConfigPower;
         uart_id?: ID;
+        update_interval?: any;
+        voltage?: ShellyDimmerLightConfigVoltage;
+        warmup_brightness?: number;
     } & LightBRIGHTNESS_ONLY_LIGHT_SCHEMA & CoreCOMPONENT_SCHEMA;

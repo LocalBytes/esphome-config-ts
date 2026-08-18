@@ -2,12 +2,7 @@
   "analog_threshold.binary_sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "binary_sensor.BINARY_SENSOR_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
             "id": {
               "id_type": {
@@ -21,25 +16,37 @@
             },
             "sensor_id": {
               "key": "Required",
+              "type": "use_id",
               "use_id_type": "sensor::Sensor",
-              "type": "use_id"
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: The ID of the source sensor.\n\n*See also: [Analog Threshold Binary Sensor](https://next.esphome.io/components/binary_sensor/analog_threshold#configuration-variables)*"
             },
             "threshold": {
               "key": "Required",
-              "type": "schema",
               "schema": {
                 "config_vars": {
-                  "upper": {
-                    "key": "Required"
-                  },
                   "lower": {
-                    "key": "Required"
+                    "key": "Required",
+                    "templatable": true,
+                    "docs": "**float**: Lower threshold, that needs to be crossed to transition from `high` to `low` states.\n\n*See also: [Analog Threshold Binary Sensor](https://next.esphome.io/components/binary_sensor/analog_threshold#configuration-variables)*"
+                  },
+                  "upper": {
+                    "key": "Required",
+                    "templatable": true,
+                    "docs": "**float**: Upper threshold, that needs to be crossed to transition from `low` to `high` states.\n\n*See also: [Analog Threshold Binary Sensor](https://next.esphome.io/components/binary_sensor/analog_threshold#configuration-variables)*"
                   }
                 }
-              }
+              },
+              "templatable": true,
+              "type": "schema",
+              "docs": "**float**: Configures the reference for comparison. Accepts either a shorthand\n\n*See also: [Analog Threshold Binary Sensor](https://next.esphome.io/components/binary_sensor/analog_threshold#configuration-variables)*"
             }
-          }
-        }
+          },
+          "extends": [
+            "binary_sensor._BINARY_SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

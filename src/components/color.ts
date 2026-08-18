@@ -16,14 +16,14 @@ export class Color extends EsphomeComponent<ColorConfig> {
 }
 
 export interface ColorConfig extends CoreCOMPONENT_SCHEMA {
+    blue?: any;
+    blue_int?: number;
+    green?: any;
+    green_int?: number;
+    hex?: any;
     id: string;
     red?: any;
     red_int?: number;
-    green?: any;
-    green_int?: number;
-    blue?: any;
-    blue_int?: number;
     white?: any;
     white_int?: number;
-    hex: string;
 }

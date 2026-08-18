@@ -16,7 +16,8 @@ export class Mcp23016 extends EsphomeComponent<Mcp23016Config> {
 }
 
 export interface Mcp23016Config extends CoreCOMPONENT_SCHEMA {
-    id: string;
-    i2c_id?: ID;
     address?: any;
+    i2c_id?: ID;
+    id: string;
+    interrupt_pin?: Pin;
 }

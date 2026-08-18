@@ -21,8 +21,8 @@ export interface Tca9548aConfigChannels {
 }
 
 export interface Tca9548aConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
+    address?: any;
     channels?: Tca9548aConfigChannels[];
     i2c_id?: ID;
-    address?: any;
+    id?: ID;
 }

@@ -17,8 +17,9 @@ export class LedcOutput extends EsphomeComponent<LedcOutputConfig> {
 }
 
 export type LedcOutputConfig = {
-        id: string;
-        pin: Pin;
-        frequency?: any;
         channel?: number;
+        frequency?: any;
+        id: string;
+        phase_angle?: any;
+        pin: Pin;
     } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;

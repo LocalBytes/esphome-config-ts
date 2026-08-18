@@ -2,11 +2,10 @@
   "sm2335": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
+        "is_list": true,
         "schema": {
           "config_vars": {
             "id": {
-              "key": "GeneratedID",
               "id_type": {
                 "class": "sm2335::SM2335",
                 "parents": [
@@ -14,35 +13,45 @@
                   "Component"
                 ]
               },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this `sm2335` component. Use this if you have multiple SM2335 chains connected at the same time.\n\n*See also: [sm2335 Component/Hub](https://esphome.io/components/output/sm2335.html#configuration-variables)*"
+              "key": "GeneratedID",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: The id to use for\n\n*See also: [SM2335 LED driver](https://next.esphome.io/components/output/sm2335#configuration-variables)*"
+            },
+            "data_pin": {
+              "key": "Required",
+              "docs": "**[Pin Schema](https://next.esphome.io/guides/configuration-types#pin-schema)**: The pin used for DATA.\n\n*See also: [SM2335 LED driver](https://next.esphome.io/components/output/sm2335#configuration-variables)*"
+            },
+            "clock_pin": {
+              "key": "Required",
+              "docs": "**[Pin Schema](https://next.esphome.io/guides/configuration-types#pin-schema)**: The pin which CLK is\n\n*See also: [SM2335 LED driver](https://next.esphome.io/components/output/sm2335#configuration-variables)*"
+            },
+            "max_power_color_channels": {
+              "key": "Optional",
+              "docs": "**int 0-15**: Adjusts the current supplied to the\n\n*See also: [SM2335 LED driver](https://next.esphome.io/components/output/sm2335#configuration-variables)*"
+            },
+            "max_power_white_channels": {
+              "key": "Optional",
+              "docs": "**int 0-15**: Adjusts the current supplied to the\n\n*See also: [SM2335 LED driver](https://next.esphome.io/components/output/sm2335#configuration-variables)*"
             }
           },
           "extends": [
             "sm10bit_base.SM10BIT_BASE_CONFIG_SCHEMA"
           ]
         },
-        "is_list": true
+        "type": "schema"
       }
     }
   },
   "sm2335.output": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "output.FLOAT_OUTPUT_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
-            "sm2335_id": {
-              "key": "GeneratedID",
-              "use_id_type": "sm2335::SM2335",
-              "type": "use_id",
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID of the [Component/Hub](https://esphome.io/components/output/sm2335.html#sm2335-component). Use this if you have multiple SM2335 chains you want to use at the same time.\n\n*See also: [sm2335 Output](https://esphome.io/components/output/sm2335.html#id1)*"
+            "channel": {
+              "key": "Required",
+              "type": "integer",
+              "docs": "**int**: Chose the channel of the SM2335 chain of this output component.\n\n*See also: [SM2335 LED driver](https://next.esphome.io/components/output/sm2335#configuration-variables)*"
             },
             "id": {
-              "key": "Required",
               "id_type": {
                 "class": "sm2335::SM2335::Channel",
                 "parents": [
@@ -50,15 +59,22 @@
                   "output::BinaryOutput"
                 ]
               },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this output component.\n\n*See also: [sm2335 Output](https://esphome.io/components/output/sm2335.html#id1)*"
-            },
-            "channel": {
               "key": "Required",
-              "type": "integer",
-              "docs": "**int**: Chose the channel of the SM2335 chain of this output component.\n\n*See also: [sm2335 Output](https://esphome.io/components/output/sm2335.html#id1)*"
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: The id to use for this output component.\n\n*See also: [SM2335 LED driver](https://next.esphome.io/components/output/sm2335#configuration-variables)*"
+            },
+            "sm2335_id": {
+              "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "sm2335::SM2335",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: Manually specify the ID of the [Component/Hub](https://next.esphome.io/components/output/sm2335#sm2335-component). Use this if you have multiple SM2335 chains you want to use at the same time.\n\n*See also: [SM2335 LED driver](https://next.esphome.io/components/output/sm2335#configuration-variables)*"
             }
-          }
-        }
+          },
+          "extends": [
+            "output.FLOAT_OUTPUT_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

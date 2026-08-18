@@ -17,8 +17,8 @@ export class RfBridge extends EsphomeComponent<RfBridgeConfig> {
 
 export interface RfBridgeConfig extends CoreCOMPONENT_SCHEMA {
     id?: ID;
-    on_code_received?: object[];
     on_advanced_code_received?: object[];
+    on_code_received?: object[];
     uart_id?: ID;
 }
 

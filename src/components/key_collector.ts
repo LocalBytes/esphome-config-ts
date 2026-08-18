@@ -10,6 +10,7 @@
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 
 export class KeyCollector extends EsphomeComponent<KeyCollectorConfig> {
     componentName: string = "key_collector";
@@ -18,18 +19,28 @@ export class KeyCollector extends EsphomeComponent<KeyCollectorConfig> {
 export type KeyCollectorConfigTimeout = CorePositiveTimePeriodMilliseconds;
 
 export interface KeyCollectorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    source_id?: ID;
-    min_length?: number;
-    max_length?: number;
-    start_keys?: string;
-    end_keys?: string;
-    end_key_required?: boolean;
+    allowed_keys?: string;
     back_keys?: string;
     clear_keys?: string;
-    allowed_keys?: string;
+    enable_on_boot?: boolean;
+    end_key_required?: boolean;
+    end_keys?: string;
+    id?: ID;
+    max_length?: number;
+    min_length?: number;
     on_progress?: object[];
     on_result?: object[];
     on_timeout?: object[];
+    source_id: ID[];
+    start_keys?: string;
     timeout?: KeyCollectorConfigTimeout;
+}
+
+export class KeyCollectorTextSensor extends EsphomeComponent<KeyCollectorTextSensorConfig> {
+    componentName: string = "key_collector.text_sensor";
+}
+
+export interface KeyCollectorTextSensorConfig extends TextSensor_TEXT_SENSOR_SCHEMA {
+    id?: any;
+    source_id?: ID;
 }

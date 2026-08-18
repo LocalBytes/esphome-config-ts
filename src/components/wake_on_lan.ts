@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { ButtonBUTTON_SCHEMA } from "./button.js";
+import type { Button_BUTTON_SCHEMA } from "./button.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class WakeOnLanButton extends EsphomeComponent<WakeOnLanButtonConfig> {
@@ -19,4 +19,4 @@ export class WakeOnLanButton extends EsphomeComponent<WakeOnLanButtonConfig> {
 export type WakeOnLanButtonConfig = {
         id?: ID;
         target_mac_address: string;
-    } & ButtonBUTTON_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & Button_BUTTON_SCHEMA & CoreCOMPONENT_SCHEMA;

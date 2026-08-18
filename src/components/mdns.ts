@@ -17,14 +17,14 @@ export class Mdns extends EsphomeComponent<MdnsConfig> {
 export type MdnsConfigServicesTxt = Record<string, string>;
 
 export interface MdnsConfigServices {
-    service: string;
-    protocol: string;
     port?: number;
+    protocol: string;
+    service: string;
     txt: MdnsConfigServicesTxt;
 }
 
 export interface MdnsConfig {
-    id?: ID;
     disabled?: boolean;
+    id?: ID;
     services?: MdnsConfigServices[];
 }

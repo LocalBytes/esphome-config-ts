@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Max31865Sensor extends EsphomeComponent<Max31865SensorConfig> {
@@ -17,17 +17,21 @@ export class Max31865Sensor extends EsphomeComponent<Max31865SensorConfig> {
 }
 
 export type Max31865SensorConfigMainsFilter = '50HZ' | '60HZ';
+export type Max31865SensorConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 export type Max31865SensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
         accuracy_decimals?: any;
-        device_class?: any;
-        state_class?: any;
-        reference_resistance: string;
-        rtd_nominal_resistance: string;
-        mains_filter?: Max31865SensorConfigMainsFilter;
-        rtd_wires?: number;
-        update_interval?: any;
-        spi_id?: ID;
         cs_pin: Pin;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+        data_rate?: any;
+        device_class?: any;
+        id?: any;
+        mains_filter?: Max31865SensorConfigMainsFilter;
+        reference_resistance: string;
+        release_device?: boolean;
+        rtd_nominal_resistance: string;
+        rtd_wires?: number;
+        spi_id?: ID;
+        spi_mode?: Max31865SensorConfigSpiMode;
+        state_class?: any;
+        unit_of_measurement?: any;
+        update_interval?: any;
+    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;

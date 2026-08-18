@@ -9,13 +9,15 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export abstract class Display extends EsphomeComponent {
     componentName: string = "display";
 }
 
-export interface DisplayBASIC_DISPLAY_SCHEMA {
+export interface DisplayBASIC_DISPLAY_SCHEMA extends CoreCOMPONENT_SCHEMA {
     lambda?: any;
+    update_interval?: any;
 }
 
 export interface DisplayFULL_DISPLAY_SCHEMAPages {
@@ -24,8 +26,9 @@ export interface DisplayFULL_DISPLAY_SCHEMAPages {
 }
 
 export interface DisplayFULL_DISPLAY_SCHEMA extends DisplayBASIC_DISPLAY_SCHEMA {
-    rotation?: any;
-    pages?: DisplayFULL_DISPLAY_SCHEMAPages[];
+    auto_clear_enabled?: any;
     on_page_change?: object[];
-    auto_clear_enabled?: boolean;
+    pages?: DisplayFULL_DISPLAY_SCHEMAPages[];
+    rotation?: any;
+    show_test_card?: boolean;
 }

@@ -16,7 +16,7 @@ export class Pn532I2c extends EsphomeComponent<Pn532I2cConfig> {
 }
 
 export interface Pn532I2cConfig extends Pn532PN532_SCHEMA {
-    id?: any;
-    i2c_id?: ID;
     address?: any;
+    i2c_id?: ID;
+    id?: any;
 }

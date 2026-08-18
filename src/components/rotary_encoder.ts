@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class RotaryEncoderSensor extends EsphomeComponent<RotaryEncoderSensorConfig> {
@@ -19,18 +19,19 @@ export class RotaryEncoderSensor extends EsphomeComponent<RotaryEncoderSensorCon
 export type RotaryEncoderSensorConfigResolution = '1' | '2' | '4';
 export type RotaryEncoderSensorConfigRestoreMode = 'RESTORE_DEFAULT_ZERO' | 'ALWAYS_ZERO';
 export type RotaryEncoderSensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
-        icon?: any;
         accuracy_decimals?: any;
+        icon?: any;
+        id?: any;
+        max_value?: number;
+        min_value?: number;
+        on_anticlockwise?: object[];
+        on_clockwise?: object[];
         pin_a: Pin;
         pin_b: Pin;
         pin_reset?: Pin;
-        resolution?: RotaryEncoderSensorConfigResolution;
-        min_value?: number;
-        max_value?: number;
         publish_initial_value?: boolean;
+        resolution?: RotaryEncoderSensorConfigResolution;
         restore_mode?: RotaryEncoderSensorConfigRestoreMode;
-        on_clockwise?: object[];
-        on_anticlockwise?: object[];
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+        state_class?: any;
+        unit_of_measurement?: any;
+    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;

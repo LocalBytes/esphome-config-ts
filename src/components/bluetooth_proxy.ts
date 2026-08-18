@@ -21,9 +21,10 @@ export interface BluetoothProxyConfigConnections extends CoreCOMPONENT_SCHEMA {
 }
 
 export interface BluetoothProxyConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
     active?: boolean;
     cache_services?: boolean;
+    connection_slots?: number;
     connections?: BluetoothProxyConfigConnections[];
     esp32_ble_id?: ID;
+    id?: ID;
 }

@@ -17,7 +17,7 @@ export class Rp2040PwmOutput extends EsphomeComponent<Rp2040PwmOutputConfig> {
 }
 
 export type Rp2040PwmOutputConfig = {
+        frequency?: any;
         id: string;
         pin: Pin;
-        frequency?: any;
     } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;

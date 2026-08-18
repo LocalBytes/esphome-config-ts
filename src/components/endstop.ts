@@ -10,23 +10,23 @@
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { CoverCOVER_SCHEMA } from "./cover.js";
+import type { Cover_COVER_SCHEMA } from "./cover.js";
 
 export class EndstopCover extends EsphomeComponent<EndstopCoverConfig> {
     componentName: string = "endstop.cover";
 }
 
-export type EndstopCoverConfigOpenDuration = CorePositiveTimePeriodMilliseconds;
 export type EndstopCoverConfigCloseDuration = CorePositiveTimePeriodMilliseconds;
 export type EndstopCoverConfigMaxDuration = CorePositiveTimePeriodMilliseconds;
+export type EndstopCoverConfigOpenDuration = CorePositiveTimePeriodMilliseconds;
 export type EndstopCoverConfig = {
-        id?: any;
-        stop_action: object[];
-        open_endstop: ID;
+        close_action: object[];
+        close_duration: EndstopCoverConfigCloseDuration;
+        close_endstop: ID;
+        id?: ID;
+        max_duration?: EndstopCoverConfigMaxDuration;
         open_action: object[];
         open_duration: EndstopCoverConfigOpenDuration;
-        close_action: object[];
-        close_endstop: ID;
-        close_duration: EndstopCoverConfigCloseDuration;
-        max_duration?: EndstopCoverConfigMaxDuration;
-    } & CoverCOVER_SCHEMA & CoreCOMPONENT_SCHEMA;
+        open_endstop: ID;
+        stop_action: object[];
+    } & Cover_COVER_SCHEMA & CoreCOMPONENT_SCHEMA;

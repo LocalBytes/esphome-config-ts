@@ -10,7 +10,7 @@
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
 export class Pn532 extends EsphomeComponent<any> {
     componentName: string = "pn532";
@@ -18,8 +18,8 @@ export class Pn532 extends EsphomeComponent<any> {
 
 export interface Pn532PN532_SCHEMA extends CoreCOMPONENT_SCHEMA {
     id?: ID;
-    on_tag?: object[];
     on_finished_write?: object[];
+    on_tag?: object[];
     on_tag_removed?: object[];
     update_interval?: any;
 }
@@ -28,7 +28,7 @@ export class Pn532BinarySensor extends EsphomeComponent<Pn532BinarySensorConfig>
     componentName: string = "pn532.binary_sensor";
 }
 
-export interface Pn532BinarySensorConfig extends BinarySensorBINARY_SENSOR_SCHEMA {
+export interface Pn532BinarySensorConfig extends BinarySensor_BINARY_SENSOR_SCHEMA {
     id?: any;
     pn532_id?: ID;
     uid: string;

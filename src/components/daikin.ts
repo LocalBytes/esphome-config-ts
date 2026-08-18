@@ -9,12 +9,19 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { ClimateIrCLIMATE_IR_WITH_RECEIVER_SCHEMA } from "./climate_ir.js";
+import type { Climate_CLIMATE_SCHEMA } from "./climate.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class DaikinClimate extends EsphomeComponent<DaikinClimateConfig> {
     componentName: string = "daikin.climate";
 }
 
-export interface DaikinClimateConfig extends ClimateIrCLIMATE_IR_WITH_RECEIVER_SCHEMA {
-    id?: any;
-}
+export type DaikinClimateConfig = {
+        humidity_sensor?: ID;
+        id?: ID;
+        receiver_id?: ID;
+        sensor?: ID;
+        supports_cool?: boolean;
+        supports_heat?: boolean;
+        transmitter_id?: ID;
+    } & Climate_CLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA;

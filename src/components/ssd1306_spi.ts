@@ -16,9 +16,13 @@ export class Ssd1306SpiDisplay extends EsphomeComponent<Ssd1306SpiDisplayConfig>
     componentName: string = "ssd1306_spi.display";
 }
 
+export type Ssd1306SpiDisplayConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 export type Ssd1306SpiDisplayConfig = {
-        id?: ID;
-        dc_pin: Pin;
-        spi_id?: ID;
         cs_pin: Pin;
+        data_rate?: any;
+        dc_pin: Pin;
+        id?: ID;
+        release_device?: boolean;
+        spi_id?: ID;
+        spi_mode?: Ssd1306SpiDisplayConfigSpiMode;
     } & Ssd1306BaseSSD1306_SCHEMA & CoreCOMPONENT_SCHEMA;

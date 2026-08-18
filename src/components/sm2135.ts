@@ -16,15 +16,16 @@ export class Sm2135 extends EsphomeComponent<Sm2135Config> {
     componentName: string = "sm2135";
 }
 
-export type Sm2135ConfigRgbCurrent = '10mA' | '15mA' | '20mA' | '25mA' | '30mA' | '35mA' | '40mA' | '45mA';
 export type Sm2135ConfigCwCurrent = '10mA' | '15mA' | '20mA' | '25mA' | '30mA' | '35mA' | '40mA' | '45mA' | '50mA' | '55mA' | '60mA';
+export type Sm2135ConfigRgbCurrent = '10mA' | '15mA' | '20mA' | '25mA' | '30mA' | '35mA' | '40mA' | '45mA';
 
 export interface Sm2135Config extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    data_pin: Pin;
     clock_pin: Pin;
-    rgb_current?: Sm2135ConfigRgbCurrent;
     cw_current?: Sm2135ConfigCwCurrent;
+    data_pin: Pin;
+    id?: ID;
+    rgb_current?: Sm2135ConfigRgbCurrent;
+    separate_modes?: boolean;
 }
 
 export class Sm2135Output extends EsphomeComponent<Sm2135OutputConfig> {
@@ -32,7 +33,7 @@ export class Sm2135Output extends EsphomeComponent<Sm2135OutputConfig> {
 }
 
 export type Sm2135OutputConfig = {
-        sm2135_id?: ID;
-        id: string;
         channel: number;
+        id: string;
+        sm2135_id?: ID;
     } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;

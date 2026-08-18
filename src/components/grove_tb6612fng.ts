@@ -16,8 +16,7 @@ export class GroveTb6612fng extends EsphomeComponent<GroveTb6612fngConfig> {
 }
 
 export interface GroveTb6612fngConfig extends CoreCOMPONENT_SCHEMA {
-    id: string;
-    i2c_id?: ID;
     address?: any;
-    name?: any;
+    i2c_id?: ID;
+    id: string;
 }

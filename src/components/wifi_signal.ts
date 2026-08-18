@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class WifiSignalSensor extends EsphomeComponent<WifiSignalSensorConfig> {
@@ -17,11 +17,11 @@ export class WifiSignalSensor extends EsphomeComponent<WifiSignalSensorConfig> {
 }
 
 export type WifiSignalSensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
         accuracy_decimals?: any;
         device_class?: any;
-        state_class?: any;
         entity_category?: any;
+        id?: any;
+        state_class?: any;
+        unit_of_measurement?: any;
         update_interval?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;

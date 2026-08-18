@@ -2,13 +2,13 @@
   "ble_scanner.text_sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "text_sensor.TEXT_SENSOR_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
+            "esp32_ble_id": {
+              "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "esp32_ble_tracker::ESP32BLETracker"
+            },
             "id": {
               "id_type": {
                 "class": "ble_scanner::BLEScanner",
@@ -19,14 +19,14 @@
                   "esp32_ble_tracker::ESPBTDeviceListener"
                 ]
               }
-            },
-            "esp32_ble_id": {
-              "key": "GeneratedID",
-              "use_id_type": "esp32_ble_tracker::ESP32BLETracker",
-              "type": "use_id"
             }
-          }
-        }
+          },
+          "extends": [
+            "text_sensor._TEXT_SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

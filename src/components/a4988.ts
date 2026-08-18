@@ -17,8 +17,8 @@ export class A4988Stepper extends EsphomeComponent<A4988StepperConfig> {
 }
 
 export type A4988StepperConfig = {
-        id: string;
-        step_pin: Pin;
         dir_pin: Pin;
+        id: string;
         sleep_pin?: Pin;
+        step_pin: Pin;
     } & StepperSTEPPER_SCHEMA & CoreCOMPONENT_SCHEMA;

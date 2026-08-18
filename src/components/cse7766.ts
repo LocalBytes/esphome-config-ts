@@ -9,47 +9,69 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Cse7766Sensor extends EsphomeComponent<Cse7766SensorConfig> {
     componentName: string = "cse7766.sensor";
 }
 
-export interface Cse7766SensorConfigVoltage extends SensorSENSOR_SCHEMA {
+export interface Cse7766SensorConfigApparentPower extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
     unit_of_measurement?: any;
+}
+
+export interface Cse7766SensorConfigCurrent extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface Cse7766SensorConfigEnergy extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface Cse7766SensorConfigPower extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface Cse7766SensorConfigPowerFactor extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
 }
 
-export interface Cse7766SensorConfigCurrent extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Cse7766SensorConfigReactivePower extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Cse7766SensorConfigPower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Cse7766SensorConfigVoltage extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
-}
-
-export interface Cse7766SensorConfigEnergy extends SensorSENSOR_SCHEMA {
     unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
 }
 
 export interface Cse7766SensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    voltage?: Cse7766SensorConfigVoltage;
+    apparent_power?: Cse7766SensorConfigApparentPower;
     current?: Cse7766SensorConfigCurrent;
-    power?: Cse7766SensorConfigPower;
     energy?: Cse7766SensorConfigEnergy;
-    update_interval?: any;
+    id?: ID;
+    power?: Cse7766SensorConfigPower;
+    power_factor?: Cse7766SensorConfigPowerFactor;
+    reactive_power?: Cse7766SensorConfigReactivePower;
     uart_id?: ID;
+    voltage?: Cse7766SensorConfigVoltage;
 }

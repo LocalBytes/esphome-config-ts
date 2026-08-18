@@ -19,10 +19,10 @@ export class SlowPwmOutput extends EsphomeComponent<SlowPwmOutputConfig> {
 export type SlowPwmOutputConfigPeriod = CorePositiveTimePeriodMilliseconds;
 export type SlowPwmOutputConfig = {
         id: string;
-        pin?: Pin;
-        turn_on_action?: object[];
-        turn_off_action?: object[];
-        state_change_action?: object[];
         period: SlowPwmOutputConfigPeriod;
+        pin?: Pin;
         restart_cycle_on_state_change?: boolean;
+        state_change_action?: object[];
+        turn_off_action?: object[];
+        turn_on_action?: object[];
     } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;

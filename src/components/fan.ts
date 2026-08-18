@@ -15,22 +15,41 @@ export abstract class Fan extends EsphomeComponent {
     componentName: string = "fan";
 }
 
-export type FanFAN_SCHEMARestoreMode = 'NO_RESTORE' | 'ALWAYS_OFF' | 'ALWAYS_ON' | 'RESTORE_DEFAULT_OFF' | 'RESTORE_DEFAULT_ON' | 'RESTORE_INVERTED_DEFAULT_OFF' | 'RESTORE_INVERTED_DEFAULT_ON';
-export type FanFAN_SCHEMA = {
-        id?: ID;
-        restore_mode?: FanFAN_SCHEMARestoreMode;
-        mqtt_id?: any;
-        oscillation_state_topic?: any;
-        oscillation_command_topic?: any;
-        speed_level_state_topic?: any;
-        speed_level_command_topic?: any;
-        speed_state_topic?: any;
-        speed_command_topic?: any;
-        on_turn_on?: object[];
-        on_turn_off?: object[];
-        on_speed_set?: object[];
-    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMMAND_COMPONENT_SCHEMA;
-
 export interface FanFAN_ACTION_SCHEMA {
     id: ID;
 }
+
+export type Fan_FAN_SCHEMARestoreMode = 'NO_RESTORE' | 'ALWAYS_OFF' | 'ALWAYS_ON' | 'RESTORE_DEFAULT_OFF' | 'RESTORE_DEFAULT_ON' | 'RESTORE_INVERTED_DEFAULT_OFF' | 'RESTORE_INVERTED_DEFAULT_ON';
+
+export interface Fan_FAN_SCHEMAWebServer {
+    sorting_group_id?: ID;
+    sorting_weight?: any;
+    web_server_id?: ID;
+}
+
+export type Fan_FAN_SCHEMA = {
+        direction_command_topic?: any;
+        direction_state_topic?: any;
+        mqtt_id?: any;
+        on_direction_set?: object[];
+        on_oscillating_set?: object[];
+        on_preset_set?: object[];
+        on_speed_set?: object[];
+        on_state?: object[];
+        on_turn_off?: object[];
+        on_turn_on?: object[];
+        oscillation_command_topic?: any;
+        oscillation_state_topic?: any;
+        restore_mode?: Fan_FAN_SCHEMARestoreMode;
+        speed_command_topic?: any;
+        speed_level_command_topic?: any;
+        speed_level_state_topic?: any;
+        speed_state_topic?: any;
+        web_server?: Fan_FAN_SCHEMAWebServer;
+        id?: any;
+        name?: any;
+        icon?: any;
+        internal?: any;
+        disabled_by_default?: any;
+        entity_category?: any;
+    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMMAND_COMPONENT_SCHEMA;

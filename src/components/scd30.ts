@@ -9,51 +9,51 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CorePositiveTimePeriodSeconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+
+export abstract class Scd30 extends EsphomeComponent {
+    componentName: string = "scd30";
+}
 
 export class Scd30Sensor extends EsphomeComponent<Scd30SensorConfig> {
     componentName: string = "scd30.sensor";
 }
 
-export interface Scd30SensorConfigCo2 extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Scd30SensorConfigCo2 extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
     icon?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Scd30SensorConfigTemperature extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Scd30SensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Scd30SensorConfigHumidity extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Scd30SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
 export type Scd30SensorConfigUpdateInterval = CorePositiveTimePeriodSeconds;
 
 export interface Scd30SensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    co2?: Scd30SensorConfigCo2;
-    temperature?: Scd30SensorConfigTemperature;
-    humidity?: Scd30SensorConfigHumidity;
-    automatic_self_calibration?: boolean;
+    address?: any;
     altitude_compensation?: number;
     ambient_pressure_compensation?: any;
+    automatic_self_calibration?: boolean;
+    co2?: Scd30SensorConfigCo2;
+    humidity?: Scd30SensorConfigHumidity;
+    i2c_id?: ID;
+    id?: ID;
+    temperature?: Scd30SensorConfigTemperature;
     temperature_offset?: any;
     update_interval?: Scd30SensorConfigUpdateInterval;
-    i2c_id?: ID;
-    address?: any;
-}
-
-export abstract class Scd30 extends EsphomeComponent {
-    componentName: string = "scd30";
 }

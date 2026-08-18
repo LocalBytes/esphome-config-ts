@@ -15,6 +15,6 @@ export class DashboardImport extends EsphomeComponent<DashboardImportConfig> {
 }
 
 export interface DashboardImportConfig {
-    package_import_url: string;
     import_full_config?: boolean;
+    package_import_url: string;
 }

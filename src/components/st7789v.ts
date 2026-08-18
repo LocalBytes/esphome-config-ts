@@ -16,20 +16,26 @@ export class St7789vDisplay extends EsphomeComponent<St7789vDisplayConfig> {
     componentName: string = "st7789v.display";
 }
 
-export type St7789vDisplayConfigModel = 'TTGO_TDISPLAY_135X240' | 'ADAFRUIT_FUNHOUSE_240X240' | 'ADAFRUIT_RR_280X240' | 'ADAFRUIT_S2_TFT_FEATHER_240X135' | 'LILYGO_T-EMBED_170X320' | 'CUSTOM';
+export type St7789vDisplayConfigModel = 'TTGO_TDISPLAY_135X240' | 'ADAFRUIT_FUNHOUSE_240X240' | 'ADAFRUIT_RR_280X240' | 'ADAFRUIT_S2_TFT_FEATHER_240X135' | 'LILYGO_T-EMBED_170X320' | 'WAVESHARE_1.47IN_172X320' | 'CUSTOM';
+export type St7789vDisplayConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 export type St7789vDisplayConfig = {
-        id?: ID;
-        model: St7789vDisplayConfigModel;
-        reset_pin?: Pin;
-        dc_pin?: Pin;
         backlight_pin?: Pin;
-        power_supply?: ID;
+        cs_pin?: Pin;
+        data_rate?: any;
+        dc_pin?: Pin;
         eightbitcolor?: boolean;
         height?: number;
-        width?: number;
+        id?: ID;
+        model: St7789vDisplayConfigModel;
         offset_height?: number;
         offset_width?: number;
-        update_interval?: any;
+        power_supply?: ID;
+        release_device?: boolean;
+        reset_pin?: Pin;
         spi_id?: ID;
-        cs_pin?: Pin;
+        spi_mode?: St7789vDisplayConfigSpiMode;
+        update_interval?: any;
+        width?: number;
+        lambda?: any;
+        pages?: any;
     } & DisplayFULL_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;

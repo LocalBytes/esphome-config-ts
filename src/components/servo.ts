@@ -19,12 +19,12 @@ export type ServoConfigAutoDetachTime = CorePositiveTimePeriodMilliseconds;
 export type ServoConfigTransitionLength = CorePositiveTimePeriodMilliseconds;
 
 export interface ServoConfig extends CoreCOMPONENT_SCHEMA {
+    auto_detach_time?: ServoConfigAutoDetachTime;
     id: string;
-    output: ID;
-    min_level?: any;
     idle_level?: any;
     max_level?: any;
+    min_level?: any;
+    output: ID;
     restore?: boolean;
-    auto_detach_time?: ServoConfigAutoDetachTime;
     transition_length?: ServoConfigTransitionLength;
 }

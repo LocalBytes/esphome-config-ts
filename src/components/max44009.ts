@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Max44009Sensor extends EsphomeComponent<Max44009SensorConfig> {
@@ -18,13 +18,13 @@ export class Max44009Sensor extends EsphomeComponent<Max44009SensorConfig> {
 
 export type Max44009SensorConfigMode = 'auto' | 'low_power' | 'continuous';
 export type Max44009SensorConfig = {
-        unit_of_measurement?: any;
         accuracy_decimals?: any;
+        address?: any;
         device_class?: any;
-        state_class?: any;
+        i2c_id?: ID;
         id?: any;
         mode?: Max44009SensorConfigMode;
+        state_class?: any;
+        unit_of_measurement?: any;
         update_interval?: any;
-        i2c_id?: ID;
-        address?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;

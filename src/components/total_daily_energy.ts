@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class TotalDailyEnergySensor extends EsphomeComponent<TotalDailyEnergySensorConfig> {
@@ -18,11 +18,11 @@ export class TotalDailyEnergySensor extends EsphomeComponent<TotalDailyEnergySen
 
 export type TotalDailyEnergySensorConfigMethod = 'trapezoid' | 'left' | 'right';
 export type TotalDailyEnergySensorConfig = {
-        id?: any;
         device_class?: any;
-        state_class?: any;
-        time_id?: ID;
+        id?: any;
+        method?: TotalDailyEnergySensorConfigMethod;
         power_id: ID;
         restore?: boolean;
-        method?: TotalDailyEnergySensorConfigMethod;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+        state_class?: any;
+        time_id?: ID;
+    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;

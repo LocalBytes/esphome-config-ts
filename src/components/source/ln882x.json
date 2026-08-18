@@ -1,0 +1,22 @@
+{
+  "ln882x": {
+    "pin": {
+      "schema": {
+        "extends": [
+          "bk72xx.PIN_SCHEMA"
+        ]
+      },
+      "type": "schema"
+    },
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "schema": {
+          "extends": [
+            "bk72xx.CONFIG_SCHEMA"
+          ]
+        },
+        "type": "schema"
+      }
+    }
+  }
+}

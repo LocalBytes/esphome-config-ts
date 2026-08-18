@@ -17,13 +17,13 @@ export class PartitionLight extends EsphomeComponent<PartitionLightConfig> {
 }
 
 export interface PartitionLightConfigSegments extends CoreCOMPONENT_SCHEMA {
-    id: ID;
+    addressable_light_id?: ID;
     from: number;
-    to: number;
+    id: ID;
+    light_id?: ID;
     reversed?: boolean;
     single_light_id: ID;
-    addressable_light_id?: ID;
-    light_id?: ID;
+    to: number;
 }
 
 export interface PartitionLightConfig extends LightADDRESSABLE_LIGHT_SCHEMA {

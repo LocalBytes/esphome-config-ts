@@ -2,32 +2,37 @@
   "status.binary_sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "binary_sensor.BINARY_SENSOR_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
+            "device_class": {
+              "default": "connectivity"
+            },
+            "entity_category": {
+              "default": "diagnostic"
+            },
             "id": {
               "id_type": {
                 "class": "status::StatusBinarySensor",
                 "parents": [
                   "binary_sensor::BinarySensor",
                   "EntityBase",
+                  "PollingComponent",
                   "Component"
                 ]
-              },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [Status Binary Sensor](https://esphome.io/components/binary_sensor/status.html#configuration-variables)*"
+              }
             },
-            "entity_category": {
-              "default": "diagnostic"
-            },
-            "device_class": {
-              "default": "connectivity"
+            "update_interval": {
+              "default": "1s",
+              "key": "Optional",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The interval to check the connection status. Defaults to `1s`.\n\n*See also: [Status Binary Sensor](https://next.esphome.io/components/binary_sensor/status#configuration-variables)*"
             }
-          }
-        }
+          },
+          "extends": [
+            "binary_sensor._BINARY_SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

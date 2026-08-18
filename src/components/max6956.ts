@@ -19,11 +19,11 @@ export class Max6956 extends EsphomeComponent<Max6956Config> {
 export type Max6956ConfigBrightnessMode = 'global' | 'segment';
 
 export interface Max6956Config extends CoreCOMPONENT_SCHEMA {
-    id: string;
+    address?: any;
     brightness_global?: number;
     brightness_mode?: Max6956ConfigBrightnessMode;
     i2c_id?: ID;
-    address?: any;
+    id: string;
 }
 
 export class Max6956Output extends EsphomeComponent<Max6956OutputConfig> {

@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Fs3000Sensor extends EsphomeComponent<Fs3000SensorConfig> {
@@ -18,13 +18,13 @@ export class Fs3000Sensor extends EsphomeComponent<Fs3000SensorConfig> {
 
 export type Fs3000SensorConfigModel = '1005' | '1015';
 export type Fs3000SensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
         accuracy_decimals?: any;
-        device_class?: any;
-        state_class?: any;
-        model: Fs3000SensorConfigModel;
-        update_interval?: any;
-        i2c_id?: ID;
         address?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+        device_class?: any;
+        i2c_id?: ID;
+        id?: any;
+        model: Fs3000SensorConfigModel;
+        state_class?: any;
+        unit_of_measurement?: any;
+        update_interval?: any;
+    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;

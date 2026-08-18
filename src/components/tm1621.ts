@@ -17,10 +17,11 @@ export class Tm1621Display extends EsphomeComponent<Tm1621DisplayConfig> {
 }
 
 export type Tm1621DisplayConfig = {
-        id?: ID;
         cs_pin: Pin;
         data_pin: Pin;
+        id?: ID;
         read_pin: Pin;
-        write_pin: Pin;
         update_interval?: any;
+        write_pin: Pin;
+        lambda?: any;
     } & DisplayBASIC_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;

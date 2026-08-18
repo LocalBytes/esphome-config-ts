@@ -9,12 +9,19 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { ClimateIrCLIMATE_IR_WITH_RECEIVER_SCHEMA } from "./climate_ir.js";
+import type { Climate_CLIMATE_SCHEMA } from "./climate.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { RemoteBaseREMOTE_TRANSMITTABLE_SCHEMA } from "./remote_base.js";
 
 export class Tcl112Climate extends EsphomeComponent<Tcl112ClimateConfig> {
     componentName: string = "tcl112.climate";
 }
 
-export interface Tcl112ClimateConfig extends ClimateIrCLIMATE_IR_WITH_RECEIVER_SCHEMA {
-    id?: any;
-}
+export type Tcl112ClimateConfig = {
+        humidity_sensor?: ID;
+        id?: ID;
+        receiver_id?: ID;
+        sensor?: ID;
+        supports_cool?: boolean;
+        supports_heat?: boolean;
+    } & Climate_CLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA & RemoteBaseREMOTE_TRANSMITTABLE_SCHEMA;

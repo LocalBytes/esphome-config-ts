@@ -19,6 +19,6 @@ export type Esp32CameraWebServerConfigMode = 'STREAM' | 'SNAPSHOT';
 
 export interface Esp32CameraWebServerConfig extends CoreCOMPONENT_SCHEMA {
     id?: ID;
-    port: number;
     mode: Esp32CameraWebServerConfigMode;
+    port: number;
 }

@@ -16,8 +16,9 @@ export class Mcp23008 extends EsphomeComponent<Mcp23008Config> {
 }
 
 export interface Mcp23008Config extends CoreCOMPONENT_SCHEMA {
-    id: string;
-    open_drain_interrupt?: boolean;
-    i2c_id?: ID;
     address?: any;
+    i2c_id?: ID;
+    id: string;
+    interrupt_pin?: any;
+    open_drain_interrupt?: boolean;
 }

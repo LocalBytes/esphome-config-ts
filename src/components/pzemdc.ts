@@ -9,52 +9,52 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+
+export abstract class Pzemdc extends EsphomeComponent {
+    componentName: string = "pzemdc";
+}
 
 export class PzemdcSensor extends EsphomeComponent<PzemdcSensorConfig> {
     componentName: string = "pzemdc.sensor";
 }
 
-export interface PzemdcSensorConfigVoltage extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface PzemdcSensorConfigCurrent extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface PzemdcSensorConfigCurrent extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface PzemdcSensorConfigEnergy extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface PzemdcSensorConfigPower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface PzemdcSensorConfigPower extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface PzemdcSensorConfigEnergy extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface PzemdcSensorConfigVoltage extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
 export interface PzemdcSensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    voltage?: PzemdcSensorConfigVoltage;
-    current?: PzemdcSensorConfigCurrent;
-    power?: PzemdcSensorConfigPower;
-    energy?: PzemdcSensorConfigEnergy;
-    update_interval?: any;
-    modbus_id?: ID;
     address?: any;
-}
-
-export abstract class Pzemdc extends EsphomeComponent {
-    componentName: string = "pzemdc";
+    current?: PzemdcSensorConfigCurrent;
+    energy?: PzemdcSensorConfigEnergy;
+    id?: ID;
+    modbus_id?: ID;
+    power?: PzemdcSensorConfigPower;
+    update_interval?: any;
+    voltage?: PzemdcSensorConfigVoltage;
 }

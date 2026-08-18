@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
 import type { UartUART_DEVICE_SCHEMA } from "./uart.js";
 
 export class Wl_134TextSensor extends EsphomeComponent<Wl_134TextSensorConfig> {
@@ -17,7 +17,7 @@ export class Wl_134TextSensor extends EsphomeComponent<Wl_134TextSensorConfig> {
 }
 
 export type Wl_134TextSensorConfig = {
-        id?: any;
         icon?: any;
+        id?: any;
         reset?: boolean;
-    } & TextSensorTEXT_SENSOR_SCHEMA & UartUART_DEVICE_SCHEMA;
+    } & TextSensor_TEXT_SENSOR_SCHEMA & UartUART_DEVICE_SCHEMA;

@@ -19,7 +19,7 @@ export type FastledSpiLightConfigChipset = 'LPD8806' | 'WS2801' | 'WS2803' | 'SM
 
 export interface FastledSpiLightConfig extends FastledBaseBASE_SCHEMA {
     chipset: FastledSpiLightConfigChipset;
-    data_pin: Pin;
     clock_pin: Pin;
+    data_pin: Pin;
     data_rate?: any;
 }

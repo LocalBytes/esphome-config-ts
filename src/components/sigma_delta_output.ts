@@ -17,10 +17,10 @@ export class SigmaDeltaOutputOutput extends EsphomeComponent<SigmaDeltaOutputOut
 }
 
 export type SigmaDeltaOutputOutputConfig = {
-        update_interval?: any;
         id: string;
         pin?: Pin;
         state_change_action?: object[];
-        turn_on_action?: object[];
         turn_off_action?: object[];
+        turn_on_action?: object[];
+        update_interval?: any;
     } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;

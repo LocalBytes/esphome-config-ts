@@ -2,59 +2,41 @@
   "xiaomi_cgdk2.sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
           "config_vars": {
-            "id": {
-              "key": "GeneratedID",
-              "id_type": {
-                "class": "xiaomi_cgdk2::XiaomiCGDK2",
-                "parents": [
-                  "esp32_ble_tracker::ESPBTDeviceListener",
-                  "Component"
+            "battery_level": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "device_class": {
+                    "default": "battery"
+                  },
+                  "entity_category": {
+                    "default": "diagnostic"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "%"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
                 ]
-              }
+              },
+              "type": "schema"
             },
             "bindkey": {
               "key": "Required"
             },
-            "mac_address": {
-              "key": "Required"
-            },
-            "temperature": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "\u00b0C"
-                  },
-                  "accuracy_decimals": {
-                    "default": "1"
-                  },
-                  "device_class": {
-                    "default": "temperature"
-                  },
-                  "state_class": {
-                    "default": "measurement"
-                  }
-                }
-              }
-            },
             "humidity": {
               "key": "Optional",
-              "type": "schema",
               "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
                 "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "%"
-                  },
                   "accuracy_decimals": {
                     "default": "1"
                   },
@@ -63,42 +45,60 @@
                   },
                   "state_class": {
                     "default": "measurement"
-                  }
-                }
-              }
-            },
-            "battery_level": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
+                  },
                   "unit_of_measurement": {
                     "default": "%"
-                  },
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema"
+            },
+            "id": {
+              "id_type": {
+                "class": "xiaomi_cgdk2::XiaomiCGDK2",
+                "parents": [
+                  "esp32_ble_tracker::ESPBTDeviceListener",
+                  "Component"
+                ]
+              },
+              "key": "GeneratedID"
+            },
+            "mac_address": {
+              "key": "Required"
+            },
+            "temperature": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
                   "accuracy_decimals": {
-                    "default": "0"
+                    "default": "1"
                   },
                   "device_class": {
-                    "default": "battery"
+                    "default": "temperature"
                   },
                   "state_class": {
                     "default": "measurement"
                   },
-                  "entity_category": {
-                    "default": "diagnostic"
+                  "unit_of_measurement": {
+                    "default": "\u00b0C"
                   }
-                }
-              }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema"
             }
           },
           "extends": [
-            "esp32_ble_tracker.ESP_BLE_DEVICE_SCHEMA",
+            "bthome_mithermometer.BLE_DEVICE_SCHEMA",
             "core.COMPONENT_SCHEMA"
           ]
-        }
+        },
+        "type": "schema"
       }
     }
   }

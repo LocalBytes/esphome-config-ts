@@ -16,7 +16,9 @@ export class LcdPcf8574Display extends EsphomeComponent<LcdPcf8574DisplayConfig>
 }
 
 export interface LcdPcf8574DisplayConfig extends LcdBaseLCD_SCHEMA {
-    id?: ID;
-    i2c_id?: ID;
     address?: any;
+    i2c_id?: ID;
+    id?: ID;
+    lambda?: any;
+    update_interval?: any;
 }

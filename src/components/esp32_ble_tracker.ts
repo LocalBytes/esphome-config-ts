@@ -20,23 +20,21 @@ export type Esp32BleTrackerConfigScanParametersInterval = CorePositiveTimePeriod
 export type Esp32BleTrackerConfigScanParametersWindow = CorePositiveTimePeriodMilliseconds;
 
 export interface Esp32BleTrackerConfigScanParameters {
+    active?: boolean;
+    continuous?: boolean;
     duration?: Esp32BleTrackerConfigScanParametersDuration;
     interval?: Esp32BleTrackerConfigScanParametersInterval;
     window?: Esp32BleTrackerConfigScanParametersWindow;
-    active?: boolean;
-    continuous?: boolean;
 }
 
 export interface Esp32BleTrackerConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
     ble_id?: ID;
-    scan_parameters?: Esp32BleTrackerConfigScanParameters;
+    id?: ID;
+    max_connections?: number;
     on_ble_advertise?: object[];
-    on_ble_service_data_advertise?: object[];
     on_ble_manufacturer_data_advertise?: object[];
+    on_ble_service_data_advertise?: object[];
     on_scan_end?: object[];
-}
-
-export interface Esp32BleTrackerESP_BLE_DEVICE_SCHEMA {
-    esp32_ble_id?: ID;
+    scan_parameters?: Esp32BleTrackerConfigScanParameters;
+    software_coexistence?: any;
 }

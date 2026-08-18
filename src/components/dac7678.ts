@@ -17,10 +17,10 @@ export class Dac7678 extends EsphomeComponent<Dac7678Config> {
 }
 
 export interface Dac7678Config extends CoreCOMPONENT_SCHEMA {
+    address?: any;
+    i2c_id?: ID;
     id?: ID;
     internal_reference?: boolean;
-    i2c_id?: ID;
-    address?: any;
 }
 
 export class Dac7678Output extends EsphomeComponent<Dac7678OutputConfig> {
@@ -28,7 +28,7 @@ export class Dac7678Output extends EsphomeComponent<Dac7678OutputConfig> {
 }
 
 export interface Dac7678OutputConfig extends OutputFLOAT_OUTPUT_SCHEMA {
-    id: string;
-    dac7678_id?: ID;
     channel: number;
+    dac7678_id?: ID;
+    id: string;
 }

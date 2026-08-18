@@ -16,7 +16,9 @@ export class Rtttl extends EsphomeComponent<RtttlConfig> {
 }
 
 export interface RtttlConfig extends CoreCOMPONENT_SCHEMA {
+    gain?: any;
     id?: ID;
-    output: ID;
     on_finished_playback?: object[];
+    output: ID;
+    speaker: ID;
 }

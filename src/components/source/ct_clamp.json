@@ -2,13 +2,14 @@
   "ct_clamp.sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "sensor.SENSOR_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
+            "accuracy_decimals": {
+              "default": "2"
+            },
+            "device_class": {
+              "default": "current"
+            },
             "id": {
               "id_type": {
                 "class": "ct_clamp::CTClampSensor",
@@ -18,45 +19,43 @@
                   "PollingComponent",
                   "Component"
                 ]
-              },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [CT Clamp Current Sensor](https://esphome.io/components/sensor/ct_clamp.html#configuration-variables)*"
-            },
-            "unit_of_measurement": {
-              "default": "A"
-            },
-            "accuracy_decimals": {
-              "default": "2"
-            },
-            "device_class": {
-              "default": "current"
-            },
-            "state_class": {
-              "default": "measurement"
-            },
-            "sensor": {
-              "key": "Required",
-              "use_id_type": "voltage_sampler::VoltageSampler",
-              "type": "use_id",
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The source sensor to measure voltage values from.\n\n*See also: [CT Clamp Current Sensor](https://esphome.io/components/sensor/ct_clamp.html#configuration-variables)*"
+              }
             },
             "sample_duration": {
-              "key": "Optional",
               "default": "200ms",
-              "type": "schema",
+              "key": "Optional",
               "schema": {
                 "extends": [
                   "core.positive_time_period_milliseconds"
                 ]
               },
-              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The time duration to sample the current clamp with. Higher values can increase accuracy. Defaults to `200ms` which would be 10 whole cycles on a 50Hz system.\n\n*See also: [CT Clamp Current Sensor](https://esphome.io/components/sensor/ct_clamp.html#configuration-variables)*"
+              "type": "schema",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The time duration to sample the current clamp with. Higher values can increase accuracy. Defaults to `200ms` which would be 10 whole cycles on a 50Hz system.\n\n*See also: [CT Clamp Current Sensor](https://next.esphome.io/components/sensor/ct_clamp#configuration-variables)*"
+            },
+            "sensor": {
+              "key": "Required",
+              "type": "use_id",
+              "use_id_type": "voltage_sampler::VoltageSampler",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: The source sensor to measure voltage values from.\n\n*See also: [CT Clamp Current Sensor](https://next.esphome.io/components/sensor/ct_clamp#configuration-variables)*"
+            },
+            "state_class": {
+              "default": "measurement"
+            },
+            "unit_of_measurement": {
+              "default": "A"
             },
             "update_interval": {
-              "key": "Optional",
               "default": "60s",
-              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`. The **update_interval** for `ct_clamp` has to be greater than **sample_duration**.\n\n*See also: [CT Clamp Current Sensor](https://esphome.io/components/sensor/ct_clamp.html#configuration-variables)*"
+              "key": "Optional",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The interval to check the sensor. Defaults to `60s`. The **update_interval** for `ct_clamp` has to be greater than **sample_duration**.\n\n*See also: [CT Clamp Current Sensor](https://next.esphome.io/components/sensor/ct_clamp#configuration-variables)*"
             }
-          }
-        }
+          },
+          "extends": [
+            "sensor._SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

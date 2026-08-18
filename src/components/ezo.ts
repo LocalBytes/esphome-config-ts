@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class EzoSensor extends EsphomeComponent<EzoSensorConfig> {
@@ -17,14 +17,14 @@ export class EzoSensor extends EsphomeComponent<EzoSensorConfig> {
 }
 
 export type EzoSensorConfig = {
+        address: string;
+        i2c_id?: ID;
         id?: any;
-        on_custom?: object[];
         on_calibration?: object[];
-        on_slope?: object[];
-        on_t?: object[];
+        on_custom?: object[];
         on_device_information?: object[];
         on_led?: object[];
+        on_slope?: object[];
+        on_t?: object[];
         update_interval?: any;
-        i2c_id?: ID;
-        address: string;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;

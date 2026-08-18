@@ -16,10 +16,10 @@ export class LcdMenu extends EsphomeComponent<LcdMenuConfig> {
 }
 
 export interface LcdMenuConfig extends DisplayMenuBaseDISPLAY_MENU_BASE_SCHEMA {
-    id?: ID;
     display_id?: ID;
-    mark_selected?: number;
-    mark_editing?: number;
-    mark_submenu?: number;
+    id?: ID;
     mark_back?: number;
+    mark_editing?: number;
+    mark_selected?: number;
+    mark_submenu?: number;
 }

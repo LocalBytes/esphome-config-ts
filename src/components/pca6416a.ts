@@ -16,7 +16,8 @@ export class Pca6416a extends EsphomeComponent<Pca6416aConfig> {
 }
 
 export interface Pca6416aConfig extends CoreCOMPONENT_SCHEMA {
-    id: string;
-    i2c_id?: ID;
     address?: any;
+    i2c_id?: ID;
+    id: string;
+    interrupt_pin?: Pin;
 }

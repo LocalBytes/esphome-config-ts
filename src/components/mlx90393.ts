@@ -9,63 +9,68 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Mlx90393Sensor extends EsphomeComponent<Mlx90393SensorConfig> {
     componentName: string = "mlx90393.sensor";
 }
 
-export type Mlx90393SensorConfigGain = '1X' | '1_33X' | '1_67X' | '2X' | '2_5X' | '3X' | '4X' | '5X';
-export type Mlx90393SensorConfigXAxisResolution = '16BIT' | '17BIT' | '18BIT' | '19BIT';
+export type Mlx90393SensorConfigGain = '1X' | '1_25X' | '1_67X' | '2X' | '2_5X' | '3X' | '3_75X' | '5X';
+export type Mlx90393SensorConfigHallconf = '0' | '12';
 
-export interface Mlx90393SensorConfigXAxis extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface Mlx90393SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
-    state_class?: any;
-    resolution?: Mlx90393SensorConfigXAxisResolution;
-}
-
-export type Mlx90393SensorConfigYAxisResolution = '16BIT' | '17BIT' | '18BIT' | '19BIT';
-
-export interface Mlx90393SensorConfigYAxis extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+    device_class?: any;
     icon?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
-    resolution?: Mlx90393SensorConfigYAxisResolution;
-}
-
-export type Mlx90393SensorConfigZAxisResolution = '16BIT' | '17BIT' | '18BIT' | '19BIT';
-
-export interface Mlx90393SensorConfigZAxis extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
-    resolution?: Mlx90393SensorConfigZAxisResolution;
-}
-
-export interface Mlx90393SensorConfigTemperature extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
     oversampling?: number;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export type Mlx90393SensorConfigXAxisResolution = 'DIV_8' | 'DIV_4' | 'DIV_2' | 'DIV_1';
+
+export interface Mlx90393SensorConfigXAxis extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    icon?: any;
+    resolution?: Mlx90393SensorConfigXAxisResolution;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export type Mlx90393SensorConfigYAxisResolution = 'DIV_8' | 'DIV_4' | 'DIV_2' | 'DIV_1';
+
+export interface Mlx90393SensorConfigYAxis extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    icon?: any;
+    resolution?: Mlx90393SensorConfigYAxisResolution;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export type Mlx90393SensorConfigZAxisResolution = 'DIV_8' | 'DIV_4' | 'DIV_2' | 'DIV_1';
+
+export interface Mlx90393SensorConfigZAxis extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    icon?: any;
+    resolution?: Mlx90393SensorConfigZAxisResolution;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
 export interface Mlx90393SensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    gain?: Mlx90393SensorConfigGain;
+    address?: any;
     drdy_pin?: Pin;
-    oversampling?: number;
     filter?: number;
+    gain?: Mlx90393SensorConfigGain;
+    hallconf?: Mlx90393SensorConfigHallconf;
+    i2c_id?: ID;
+    id?: ID;
+    oversampling?: number;
+    temperature?: Mlx90393SensorConfigTemperature;
+    temperature_compensation?: any;
+    update_interval?: any;
     x_axis?: Mlx90393SensorConfigXAxis;
     y_axis?: Mlx90393SensorConfigYAxis;
     z_axis?: Mlx90393SensorConfigZAxis;
-    temperature?: Mlx90393SensorConfigTemperature;
-    update_interval?: any;
-    i2c_id?: ID;
-    address?: any;
 }

@@ -2,15 +2,20 @@
   "ssd1327_i2c.display": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "ssd1327_base.SSD1327_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
-            "id": {
+            "address": {
+              "data_type": "hex_uint8_t",
+              "default": "61",
+              "key": "Optional",
+              "docs": "**int**: Manually specify the [I\u00b2C](https://next.esphome.io/components/i2c) address of the display. Defaults to 0x3D.\n\n*See also: [SSD1327 OLED Display](https://next.esphome.io/components/display/ssd1327#configuration-variables)*"
+            },
+            "i2c_id": {
               "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "i2c::I2CBus"
+            },
+            "id": {
               "id_type": {
                 "class": "ssd1327_i2c::I2CSSD1327",
                 "parents": [
@@ -18,25 +23,38 @@
                   "PollingComponent",
                   "Component",
                   "display::DisplayBuffer",
+                  "display::Display",
+                  "PollingComponent",
+                  "Component",
                   "i2c::I2CDevice"
                 ]
               },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [ssd1327 Over I\u00b2C](https://esphome.io/components/display/ssd1327.html#configuration-variables)*"
-            },
-            "i2c_id": {
               "key": "GeneratedID",
-              "use_id_type": "i2c::I2CBus",
-              "type": "use_id"
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: Manually specify the ID used for code generation.\n\n*See also: [SSD1327 OLED Display](https://next.esphome.io/components/display/ssd1327#configuration-variables)*"
             },
-            "address": {
+            "rotation": {
               "key": "Optional",
-              "default": "61",
-              "data_type": "hex_uint8_t",
-              "docs": "**int**: Manually specify the [I\u00b2C](https://esphome.io/components/i2c.html#i2c) address of the display. Defaults to 0x3D.\n\n*See also: [ssd1327 Over I\u00b2C](https://esphome.io/components/display/ssd1327.html#configuration-variables)*"
+              "docs": "Set the rotation of the display. Everything you draw in `lambda:` will be rotated by this option. One of `0\u00b0` (default), `90\u00b0`, `180\u00b0`, `270\u00b0`.\n\n*See also: [SSD1327 OLED Display](https://next.esphome.io/components/display/ssd1327#configuration-variables)*"
+            },
+            "lambda": {
+              "key": "Optional",
+              "docs": "**[lambda](https://next.esphome.io/automations/templates#config-lambda)**: The lambda to use for rendering the content on the display. See [Display Rendering Engine](https://next.esphome.io/components/display#display-engine) for more information.\n\n*See also: [SSD1327 OLED Display](https://next.esphome.io/components/display/ssd1327#configuration-variables)*"
+            },
+            "update_interval": {
+              "key": "Optional",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The interval to re-draw the screen. Defaults to `5s`.\n\n*See also: [SSD1327 OLED Display](https://next.esphome.io/components/display/ssd1327#configuration-variables)*"
+            },
+            "pages": {
+              "key": "Optional",
+              "docs": "**list**: Show pages instead of a single lambda. See [Display Pages](https://next.esphome.io/components/display#display-pages).\n\n*See also: [SSD1327 OLED Display](https://next.esphome.io/components/display/ssd1327#configuration-variables)*"
             }
-          }
+          },
+          "extends": [
+            "ssd1327_base.SSD1327_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
         },
-        "docs": "The `ssd1327_i2c` display platform allows you to use SSD1327 ([datasheet](https://www.generationrobots.com/media/Ecran_OLED_0_96/SSD1327_datasheet.pdf), [Waveshare](https://www.waveshare.com/1.5inch-oled-module.htm)) displays with ESPHome. Note that this component is for displays that are connected via the [I\u00b2C Bus](https://esphome.io/components/i2c.html#i2c). If your SSD1327 is connected via the 4-Wire [SPI bus](https://esphome.io/components/spi.html#spi), see [Over SPI](https://esphome.io/components/display/ssd1327.html#ssd1327-spi).\n\n*See also: [ssd1327 Over I\u00b2C](https://esphome.io/components/display/ssd1327.html#over-i2c)*"
+        "type": "schema"
       }
     }
   }

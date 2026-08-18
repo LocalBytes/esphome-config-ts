@@ -9,31 +9,45 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { ButtonBUTTON_SCHEMA } from "./button.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { Button_BUTTON_SCHEMA } from "./button.js";
 import type { Switch_SWITCH_SCHEMA } from "./switch.js";
+
+export class SafeMode extends EsphomeComponent<SafeModeConfig> {
+    componentName: string = "safe_mode";
+}
+
+export type SafeModeConfigBootIsGoodAfter = CorePositiveTimePeriodMilliseconds;
+export type SafeModeConfigRebootTimeout = CorePositiveTimePeriodMilliseconds;
+
+export interface SafeModeConfig extends CoreCOMPONENT_SCHEMA {
+    boot_is_good_after?: SafeModeConfigBootIsGoodAfter;
+    disabled?: boolean;
+    id?: ID;
+    num_attempts?: number;
+    on_safe_mode?: object[];
+    reboot_timeout?: SafeModeConfigRebootTimeout;
+}
 
 export class SafeModeButton extends EsphomeComponent<SafeModeButtonConfig> {
     componentName: string = "safe_mode.button";
 }
 
 export type SafeModeButtonConfig = {
-        id?: ID;
-        icon?: any;
-        entity_category?: any;
         device_class?: any;
-        ota?: ID;
-    } & ButtonBUTTON_SCHEMA & CoreCOMPONENT_SCHEMA;
+        entity_category?: any;
+        icon?: any;
+        id?: ID;
+        safe_mode?: ID;
+    } & Button_BUTTON_SCHEMA & CoreCOMPONENT_SCHEMA;
 
 export class SafeModeSwitch extends EsphomeComponent<SafeModeSwitchConfig> {
     componentName: string = "safe_mode.switch";
 }
 
-export type SafeModeSwitchConfigRestoreMode = 'RESTORE_DEFAULT_OFF' | 'RESTORE_DEFAULT_ON' | 'ALWAYS_OFF' | 'ALWAYS_ON' | 'RESTORE_INVERTED_DEFAULT_OFF' | 'RESTORE_INVERTED_DEFAULT_ON' | 'DISABLED';
 export type SafeModeSwitchConfig = {
-        restore_mode?: SafeModeSwitchConfigRestoreMode;
-        id?: ID;
         entity_category?: any;
         icon?: any;
-        ota?: ID;
+        id?: ID;
+        safe_mode?: ID;
     } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;

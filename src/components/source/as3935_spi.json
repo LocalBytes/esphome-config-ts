@@ -2,13 +2,20 @@
   "as3935_spi": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "as3935.AS3935_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
+            "cs_pin": {
+              "key": "Required",
+              "modes": [
+                "output"
+              ],
+              "schema": true,
+              "type": "pin",
+              "docs": "**[Pin Schema](https://next.esphome.io/guides/configuration-types#pin-schema)**: The chip select pin.\n\n*See also: [AMS AS3935 Franklin Lightning Sensor](https://next.esphome.io/components/sensor/as3935#configuration-variables)*"
+            },
+            "data_rate": {
+              "key": "Optional"
+            },
             "id": {
               "id_type": {
                 "class": "as3935_spi::SPIAS3935Component",
@@ -19,22 +26,36 @@
                 ]
               }
             },
+            "release_device": {
+              "key": "Optional",
+              "type": "boolean"
+            },
             "spi_id": {
               "key": "GeneratedID",
-              "use_id_type": "spi::SPIComponent",
-              "type": "use_id"
+              "type": "use_id",
+              "use_id_type": "spi::SPIComponent"
             },
-            "cs_pin": {
-              "key": "Required",
-              "schema": true,
-              "modes": [
-                "output"
-              ],
-              "type": "pin",
-              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The chip select pin.\n\n*See also: [as3935 Over SPI](https://esphome.io/components/sensor/as3935.html#configuration-variables)*"
+            "spi_mode": {
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "MODE0": null,
+                "MODE1": null,
+                "MODE2": null,
+                "MODE3": null,
+                "0": null,
+                "1": null,
+                "2": null,
+                "3": null
+              }
             }
-          }
-        }
+          },
+          "extends": [
+            "as3935.AS3935_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

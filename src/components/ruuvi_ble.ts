@@ -9,12 +9,12 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Esp32BleTrackerESP_BLE_DEVICE_SCHEMA } from "./esp32_ble_tracker.js";
+import type { BthomeMithermometerBLE_DEVICE_SCHEMA } from "./bthome_mithermometer.js";
 
 export class RuuviBle extends EsphomeComponent<RuuviBleConfig> {
     componentName: string = "ruuvi_ble";
 }
 
-export interface RuuviBleConfig extends Esp32BleTrackerESP_BLE_DEVICE_SCHEMA {
+export interface RuuviBleConfig extends BthomeMithermometerBLE_DEVICE_SCHEMA {
     id?: ID;
 }

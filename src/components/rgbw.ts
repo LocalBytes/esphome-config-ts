@@ -16,11 +16,10 @@ export class RgbwLight extends EsphomeComponent<RgbwLightConfig> {
 }
 
 export interface RgbwLightConfig extends LightRGB_LIGHT_SCHEMA {
+    blue: ID;
+    color_interlock?: boolean;
+    green: ID;
     output_id?: ID;
     red: ID;
-    green: ID;
-    blue: ID;
     white: ID;
-    color_interlock?: boolean;
-    effects?: any;
 }

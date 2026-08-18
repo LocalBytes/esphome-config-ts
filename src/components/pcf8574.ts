@@ -16,8 +16,9 @@ export class Pcf8574 extends EsphomeComponent<Pcf8574Config> {
 }
 
 export interface Pcf8574Config extends CoreCOMPONENT_SCHEMA {
-    id: string;
-    pcf8575?: boolean;
-    i2c_id?: ID;
     address?: any;
+    i2c_id?: ID;
+    id: string;
+    interrupt_pin?: Pin;
+    pcf8575?: boolean;
 }

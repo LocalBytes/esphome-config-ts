@@ -10,38 +10,39 @@
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
 export class MatrixKeypad extends EsphomeComponent<MatrixKeypadConfig> {
     componentName: string = "matrix_keypad";
-}
-
-export interface MatrixKeypadConfigRows {
-    pin: Pin;
 }
 
 export interface MatrixKeypadConfigColumns {
     pin: Pin;
 }
 
+export interface MatrixKeypadConfigRows {
+    pin: Pin;
+}
+
 export interface MatrixKeypadConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    rows: MatrixKeypadConfigRows[];
     columns: MatrixKeypadConfigColumns[];
-    keys?: string;
     debounce_time?: number;
     has_diodes?: boolean;
     has_pulldowns?: boolean;
+    id?: ID;
+    keys?: string;
+    on_key?: object[];
+    rows: MatrixKeypadConfigRows[];
 }
 
 export class MatrixKeypadBinarySensor extends EsphomeComponent<MatrixKeypadBinarySensorConfig> {
     componentName: string = "matrix_keypad.binary_sensor";
 }
 
-export interface MatrixKeypadBinarySensorConfig extends BinarySensorBINARY_SENSOR_SCHEMA {
+export interface MatrixKeypadBinarySensorConfig extends BinarySensor_BINARY_SENSOR_SCHEMA {
+    col?: number;
     id?: any;
+    key?: string;
     keypad_id?: ID;
     row?: number;
-    col?: number;
-    key?: string;
 }

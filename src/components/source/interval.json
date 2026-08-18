@@ -2,11 +2,10 @@
   "interval": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "trigger",
+        "has_required_var": true,
         "schema": {
           "config_vars": {
             "id": {
-              "key": "GeneratedID",
               "id_type": {
                 "class": "interval::IntervalTrigger",
                 "parents": [
@@ -15,28 +14,42 @@
                   "PollingComponent",
                   "Component"
                 ]
-              }
+              },
+              "key": "GeneratedID"
             },
             "interval": {
               "key": "Required",
-              "type": "schema",
               "schema": {
                 "extends": [
                   "core.positive_time_period_milliseconds"
                 ]
               },
-              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to execute the action with.\n\n*See also: [interval Component](https://esphome.io/guides/automations.html#interval-component)*"
+              "type": "schema",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The interval to execute the action with.\n\n*See also: [Interval Component](https://next.esphome.io/components/interval#configuration-variables)*"
             },
             "setup_priority": {
-              "key": "Optional"
+              "key": "Optional",
+              "visibility": "yaml_only"
+            },
+            "startup_delay": {
+              "default": "0s",
+              "key": "Optional",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              },
+              "type": "schema",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: An optional startup delay - defaults to zero.\n\n*See also: [Interval Component](https://next.esphome.io/components/interval#configuration-variables)*"
             },
             "then": {
               "type": "trigger",
-              "docs": "**[Action](https://esphome.io/guides/automations.html#config-action)**: The action to perform.\n\n*See also: [interval Component](https://esphome.io/guides/automations.html#interval-component)*"
+              "key": "Required",
+              "docs": "**[Action](https://next.esphome.io/automations/actions#all-actions)**: The action to perform.\n\n*See also: [Interval Component](https://next.esphome.io/components/interval#configuration-variables)*"
             }
           }
         },
-        "has_required_var": true
+        "type": "trigger"
       }
     }
   }

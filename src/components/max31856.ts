@@ -9,22 +9,28 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Max31856Sensor extends EsphomeComponent<Max31856SensorConfig> {
     componentName: string = "max31856.sensor";
 }
 
-export type Max31856SensorConfigMainsFilter = '50HZ' | '60HZ';
+export type Max31856SensorConfigMainsFilter = '50' | '60';
+export type Max31856SensorConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
+export type Max31856SensorConfigThermocoupleType = 'B' | 'E' | 'J' | 'K' | 'N' | 'R' | 'S' | 'T';
 export type Max31856SensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
         accuracy_decimals?: any;
-        device_class?: any;
-        state_class?: any;
-        mains_filter?: Max31856SensorConfigMainsFilter;
-        update_interval?: any;
-        spi_id?: ID;
         cs_pin: Pin;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+        data_rate?: any;
+        device_class?: any;
+        id?: any;
+        mains_filter?: Max31856SensorConfigMainsFilter;
+        release_device?: boolean;
+        spi_id?: ID;
+        spi_mode?: Max31856SensorConfigSpiMode;
+        state_class?: any;
+        thermocouple_type?: Max31856SensorConfigThermocoupleType;
+        unit_of_measurement?: any;
+        update_interval?: any;
+    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;

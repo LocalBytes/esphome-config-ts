@@ -16,11 +16,18 @@ export class St7920Display extends EsphomeComponent<St7920DisplayConfig> {
     componentName: string = "st7920.display";
 }
 
+export type St7920DisplayConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 export type St7920DisplayConfig = {
-        id?: ID;
-        width: number;
-        height: number;
-        update_interval?: any;
-        spi_id?: ID;
         cs_pin: Pin;
+        data_rate?: any;
+        height: number;
+        id?: ID;
+        release_device?: boolean;
+        spi_id?: ID;
+        spi_mode?: St7920DisplayConfigSpiMode;
+        update_interval?: any;
+        width: number;
+        rotation?: any;
+        lambda?: any;
+        pages?: any;
     } & DisplayFULL_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;

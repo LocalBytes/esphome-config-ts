@@ -18,13 +18,13 @@ export class NeopixelbusLight extends EsphomeComponent<NeopixelbusLightConfig> {
 
 export type NeopixelbusLightConfigVariant = 'ws2811' | 'ws2812' | 'ws2812x' | 'ws2813' | 'sk6812' | 'tm1814' | 'tm1829' | 'tm1914' | '800kbps' | '400kbps' | 'apa106' | 'lc8812' | 'dotstar' | 'ws2801' | 'lpd6803' | 'lpd8806' | 'p9813';
 export type NeopixelbusLightConfig = {
-        output_id?: ID;
-        type?: any;
-        variant: NeopixelbusLightConfigVariant;
-        method?: any;
-        invert?: boolean;
-        pin?: Pin;
         clock_pin?: Pin;
         data_pin?: Pin;
+        invert?: boolean;
+        method?: any;
         num_leds: number;
+        output_id?: ID;
+        pin?: Pin;
+        type?: any;
+        variant: NeopixelbusLightConfigVariant;
     } & LightADDRESSABLE_LIGHT_SCHEMA & CoreCOMPONENT_SCHEMA;

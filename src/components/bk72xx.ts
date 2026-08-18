@@ -14,27 +14,35 @@ export class Bk72xx extends EsphomeComponent<Bk72xxConfig> {
     componentName: string = "bk72xx";
 }
 
-export type Bk72xxConfigFamily = 'BK7231N' | 'BK7231Q' | 'BK7231T' | 'BK7251' | 'RTL8710B' | 'RTL8720C';
-export type Bk72xxConfigFrameworkLoglevel = 'VERBOSE' | 'TRACE' | 'DEBUG' | 'INFO' | 'WARN' | 'ERROR' | 'FATAL' | 'NONE';
+export type Bk72xxConfigFamily = 'BK7231N' | 'BK7231Q' | 'BK7231T' | 'BK7238' | 'BK7251' | 'LN882H' | 'RTL8710B' | 'RTL8720C';
 export type Bk72xxConfigFrameworkDebug = 'NONE' | 'WIFI' | 'CLIENT' | 'SERVER' | 'SSL' | 'OTA' | 'FDB' | 'MDNS' | 'LWIP' | 'LWIP_ASSERT';
+export type Bk72xxConfigFrameworkLoglevel = 'VERBOSE' | 'TRACE' | 'DEBUG' | 'INFO' | 'WARN' | 'ERROR' | 'FATAL' | 'NONE';
+export type Bk72xxConfigFrameworkOptions = Record<string, string>;
 export type Bk72xxConfigFrameworkSdkSilent = 'all' | 'auto' | 'none';
 export type Bk72xxConfigFrameworkUartPort = '0' | '1' | '2';
-export type Bk72xxConfigFrameworkOptions = Record<string, string>;
 
 export interface Bk72xxConfigFramework {
-    version?: string;
-    source?: string;
-    loglevel?: Bk72xxConfigFrameworkLoglevel;
     debug?: Bk72xxConfigFrameworkDebug[];
-    sdk_silent?: Bk72xxConfigFrameworkSdkSilent;
-    uart_port?: Bk72xxConfigFrameworkUartPort;
     gpio_recover?: boolean;
+    loglevel?: Bk72xxConfigFrameworkLoglevel;
     options: Bk72xxConfigFrameworkOptions;
+    sdk_silent?: Bk72xxConfigFrameworkSdkSilent;
+    source?: string;
+    uart_port?: Bk72xxConfigFrameworkUartPort;
+    version?: string;
 }
 
 export interface Bk72xxConfig {
-    id?: ID;
     board: string;
     family?: Bk72xxConfigFamily;
     framework?: Bk72xxConfigFramework;
+    id?: ID;
+}
+
+export interface Bk72xxPIN_SCHEMA {
+    allow_other_uses?: boolean;
+    id?: ID;
+    inverted?: boolean;
+    mode?: Pin;
+    number: string;
 }

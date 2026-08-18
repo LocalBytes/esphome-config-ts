@@ -9,51 +9,59 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+
+export abstract class Cs5460a extends EsphomeComponent {
+    componentName: string = "cs5460a";
+}
 
 export class Cs5460aSensor extends EsphomeComponent<Cs5460aSensorConfig> {
     componentName: string = "cs5460a.sensor";
 }
 
-export type Cs5460aSensorConfigPgaGain = '10X' | '50X';
+export interface Cs5460aSensorConfigCurrent extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
 export type Cs5460aSensorConfigCurrentGain = {};
+export type Cs5460aSensorConfigPgaGain = '10X' | '50X';
 
-export interface Cs5460aSensorConfigVoltage extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Cs5460aSensorConfigPower extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Cs5460aSensorConfigCurrent extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-}
+export type Cs5460aSensorConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 
-export interface Cs5460aSensorConfigPower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Cs5460aSensorConfigVoltage extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
 export interface Cs5460aSensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    samples?: number;
-    phase_offset?: number;
-    pga_gain?: Cs5460aSensorConfigPgaGain;
-    current_gain?: Cs5460aSensorConfigCurrentGain;
-    voltage_gain?: any;
-    current_hpf?: boolean;
-    voltage_hpf?: boolean;
-    pulse_energy?: any;
-    voltage?: Cs5460aSensorConfigVoltage;
-    current?: Cs5460aSensorConfigCurrent;
-    power?: Cs5460aSensorConfigPower;
-    spi_id?: ID;
     cs_pin?: Pin;
-}
-
-export abstract class Cs5460a extends EsphomeComponent {
-    componentName: string = "cs5460a";
+    current?: Cs5460aSensorConfigCurrent;
+    current_gain?: Cs5460aSensorConfigCurrentGain;
+    current_hpf?: boolean;
+    data_rate?: any;
+    id?: ID;
+    pga_gain?: Cs5460aSensorConfigPgaGain;
+    phase_offset?: number;
+    power?: Cs5460aSensorConfigPower;
+    pulse_energy?: any;
+    release_device?: boolean;
+    samples?: number;
+    spi_id?: ID;
+    spi_mode?: Cs5460aSensorConfigSpiMode;
+    voltage?: Cs5460aSensorConfigVoltage;
+    voltage_gain?: any;
+    voltage_hpf?: boolean;
 }

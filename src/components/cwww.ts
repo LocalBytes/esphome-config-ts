@@ -16,11 +16,10 @@ export class CwwwLight extends EsphomeComponent<CwwwLightConfig> {
 }
 
 export interface CwwwLightConfig extends LightRGB_LIGHT_SCHEMA {
-    output_id?: ID;
     cold_white: ID;
-    warm_white: ID;
     cold_white_color_temperature?: any;
-    warm_white_color_temperature?: any;
     constant_brightness?: boolean;
-    effects?: any;
+    output_id?: ID;
+    warm_white: ID;
+    warm_white_color_temperature?: any;
 }

@@ -15,10 +15,25 @@ export abstract class TextSensor extends EsphomeComponent {
     componentName: string = "text_sensor";
 }
 
-export type TextSensorTEXT_SENSOR_SCHEMA = {
-        mqtt_id?: any;
-        id?: ID;
+export type TextSensor_TEXT_SENSOR_SCHEMADeviceClass = 'date' | '' | 'timestamp';
+
+export interface TextSensor_TEXT_SENSOR_SCHEMAWebServer {
+    sorting_group_id?: ID;
+    sorting_weight?: any;
+    web_server_id?: ID;
+}
+
+export type TextSensor_TEXT_SENSOR_SCHEMA = {
+        device_class?: TextSensor_TEXT_SENSOR_SCHEMADeviceClass;
         filters?: any[];
-        on_value?: object[];
+        id?: ID;
+        mqtt_id?: any;
         on_raw_value?: object[];
+        on_value?: object[];
+        web_server?: TextSensor_TEXT_SENSOR_SCHEMAWebServer;
+        name?: any;
+        icon?: any;
+        internal?: any;
+        disabled_by_default?: any;
+        entity_category?: any;
     } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMPONENT_SCHEMA;

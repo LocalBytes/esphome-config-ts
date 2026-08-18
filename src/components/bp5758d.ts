@@ -17,9 +17,9 @@ export class Bp5758d extends EsphomeComponent<Bp5758dConfig> {
 }
 
 export interface Bp5758dConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    data_pin: Pin;
     clock_pin: Pin;
+    data_pin: Pin;
+    id?: ID;
 }
 
 export class Bp5758dOutput extends EsphomeComponent<Bp5758dOutputConfig> {
@@ -28,7 +28,7 @@ export class Bp5758dOutput extends EsphomeComponent<Bp5758dOutputConfig> {
 
 export type Bp5758dOutputConfig = {
         bp5758d_id?: ID;
-        id: string;
         channel: number;
         current?: number;
+        id: string;
     } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;

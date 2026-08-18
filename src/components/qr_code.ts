@@ -17,7 +17,7 @@ export class QrCode extends EsphomeComponent<QrCodeConfig> {
 export type QrCodeConfigEcc = 'LOW' | 'MEDIUM' | 'QUARTILE' | 'HIGH';
 
 export interface QrCodeConfig {
+    ecc?: QrCodeConfigEcc;
     id: string;
     value: string;
-    ecc?: QrCodeConfigEcc;
 }

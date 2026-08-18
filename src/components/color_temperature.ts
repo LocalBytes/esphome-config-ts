@@ -16,10 +16,9 @@ export class ColorTemperatureLight extends EsphomeComponent<ColorTemperatureLigh
 }
 
 export interface ColorTemperatureLightConfig extends LightRGB_LIGHT_SCHEMA {
-    output_id?: ID;
-    color_temperature: ID;
     brightness: ID;
     cold_white_color_temperature: string;
+    color_temperature: ID;
+    output_id?: ID;
     warm_white_color_temperature: string;
-    effects?: any;
 }

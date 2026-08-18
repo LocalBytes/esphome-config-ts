@@ -2,55 +2,17 @@
   "hyt271.sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
           "config_vars": {
-            "id": {
-              "key": "GeneratedID",
-              "id_type": {
-                "class": "hyt271::HYT271Component",
-                "parents": [
-                  "PollingComponent",
-                  "Component",
-                  "i2c::I2CDevice"
-                ]
-              }
-            },
-            "temperature": {
-              "key": "Required",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "\u00b0C"
-                  },
-                  "accuracy_decimals": {
-                    "default": "1"
-                  },
-                  "device_class": {
-                    "default": "temperature"
-                  },
-                  "state_class": {
-                    "default": "measurement"
-                  }
-                }
-              },
-              "docs": "The information for the temperature sensor.\n  * **name** (**Required**, string): The name for the temperature sensor.\n  \n  * **id** (*Optional*, [ID](https://esphome.io/guides/configuration-types.html#config-id)): Set the ID of this sensor for use in lambdas.\n  \n  * All other options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n  \n  \n\n*See also: [HYT271 Temperature & Humidity Sensor](https://esphome.io/components/sensor/hyt271.html#configuration-variables)*"
+            "address": {
+              "data_type": "hex_uint8_t",
+              "default": "40",
+              "key": "Optional"
             },
             "humidity": {
-              "key": "Required",
-              "type": "schema",
+              "key": "Optional",
               "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
                 "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "%"
-                  },
                   "accuracy_decimals": {
                     "default": "1"
                   },
@@ -59,31 +21,69 @@
                   },
                   "state_class": {
                     "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "%"
                   }
-                }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
               },
-              "docs": "The information for the humidity sensor.\n  * **name** (**Required**, string): The name for the humidity sensor.\n  \n  * **id** (*Optional*, [ID](https://esphome.io/guides/configuration-types.html#config-id)): Set the ID of this sensor for use in lambdas.\n  \n  * All other options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n  \n  \n\n*See also: [HYT271 Temperature & Humidity Sensor](https://esphome.io/components/sensor/hyt271.html#configuration-variables)*"
-            },
-            "update_interval": {
-              "key": "Optional",
-              "default": "60s",
-              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [HYT271 Temperature & Humidity Sensor](https://esphome.io/components/sensor/hyt271.html#configuration-variables)*"
+              "type": "schema",
+              "docs": "The information for the humidity sensor.\n\n*See also: [HYT271 Temperature & Humidity Sensor](https://next.esphome.io/components/sensor/hyt271#configuration-variables)*"
             },
             "i2c_id": {
               "key": "GeneratedID",
-              "use_id_type": "i2c::I2CBus",
-              "type": "use_id"
+              "type": "use_id",
+              "use_id_type": "i2c::I2CBus"
             },
-            "address": {
+            "id": {
+              "id_type": {
+                "class": "hyt271::HYT271Component",
+                "parents": [
+                  "PollingComponent",
+                  "Component",
+                  "i2c::I2CDevice"
+                ]
+              },
+              "key": "GeneratedID"
+            },
+            "temperature": {
               "key": "Optional",
-              "default": "40",
-              "data_type": "hex_uint8_t"
+              "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "temperature"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "\u00b0C"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "The information for the temperature sensor.\n\n*See also: [HYT271 Temperature & Humidity Sensor](https://next.esphome.io/components/sensor/hyt271#configuration-variables)*"
+            },
+            "update_interval": {
+              "default": "60s",
+              "key": "Optional",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [HYT271 Temperature & Humidity Sensor](https://next.esphome.io/components/sensor/hyt271#configuration-variables)*"
             }
           },
           "extends": [
             "core.COMPONENT_SCHEMA"
           ]
-        }
+        },
+        "type": "schema"
       }
     }
   }

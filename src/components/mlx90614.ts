@@ -9,33 +9,33 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Mlx90614Sensor extends EsphomeComponent<Mlx90614SensorConfig> {
     componentName: string = "mlx90614.sensor";
 }
 
-export interface Mlx90614SensorConfigAmbient extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Mlx90614SensorConfigAmbient extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Mlx90614SensorConfigObject extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Mlx90614SensorConfigObject extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-    state_class?: any;
     emissivity?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
 export interface Mlx90614SensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
+    address?: any;
     ambient?: Mlx90614SensorConfigAmbient;
+    i2c_id?: ID;
+    id?: ID;
     object?: Mlx90614SensorConfigObject;
     update_interval?: any;
-    i2c_id?: ID;
-    address?: any;
 }

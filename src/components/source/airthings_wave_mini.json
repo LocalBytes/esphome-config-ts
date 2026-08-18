@@ -2,11 +2,7 @@
   "airthings_wave_mini.sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "airthings_wave_base.BASE_SCHEMA"
-          ],
           "config_vars": {
             "id": {
               "id_type": {
@@ -17,10 +13,15 @@
                   "Component",
                   "ble_client::BLEClientNode"
                 ]
-              }
+              },
+              "key": "GeneratedID"
             }
-          }
-        }
+          },
+          "extends": [
+            "airthings_wave_base.BASE_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

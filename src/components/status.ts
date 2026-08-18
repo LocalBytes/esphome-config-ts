@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class StatusBinarySensor extends EsphomeComponent<StatusBinarySensorConfig> {
@@ -17,7 +17,8 @@ export class StatusBinarySensor extends EsphomeComponent<StatusBinarySensorConfi
 }
 
 export type StatusBinarySensorConfig = {
-        id?: any;
-        entity_category?: any;
         device_class?: any;
-    } & BinarySensorBINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+        entity_category?: any;
+        id?: any;
+        update_interval?: any;
+    } & BinarySensor_BINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;

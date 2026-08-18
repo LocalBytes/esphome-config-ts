@@ -17,7 +17,11 @@ export class Ssd1306I2cDisplay extends EsphomeComponent<Ssd1306I2cDisplayConfig>
 }
 
 export type Ssd1306I2cDisplayConfig = {
-        id?: ID;
-        i2c_id?: ID;
         address?: any;
+        i2c_id?: ID;
+        id?: ID;
+        rotation?: any;
+        lambda?: any;
+        update_interval?: any;
+        pages?: any;
     } & Ssd1306BaseSSD1306_SCHEMA & CoreCOMPONENT_SCHEMA;

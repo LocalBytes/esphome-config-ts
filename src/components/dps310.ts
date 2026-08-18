@@ -9,34 +9,34 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Dps310Sensor extends EsphomeComponent<Dps310SensorConfig> {
     componentName: string = "dps310.sensor";
 }
 
-export interface Dps310SensorConfigTemperature extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface Dps310SensorConfigPressure extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
+    icon?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Dps310SensorConfigPressure extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface Dps310SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
+    icon?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
 export interface Dps310SensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    temperature: Dps310SensorConfigTemperature;
-    pressure: Dps310SensorConfigPressure;
-    update_interval?: any;
-    i2c_id?: ID;
     address?: any;
+    i2c_id?: ID;
+    id?: ID;
+    pressure?: Dps310SensorConfigPressure;
+    temperature?: Dps310SensorConfigTemperature;
+    update_interval?: any;
 }

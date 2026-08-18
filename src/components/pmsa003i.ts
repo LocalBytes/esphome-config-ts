@@ -9,92 +9,92 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Pmsa003iSensor extends EsphomeComponent<Pmsa003iSensorConfig> {
     componentName: string = "pmsa003i.sensor";
 }
 
-export interface Pmsa003iSensorConfigPm_1_0 extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface Pmsa003iSensorConfigPm_10_0 extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
+    icon?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Pmsa003iSensorConfigPm_2_5 extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface Pmsa003iSensorConfigPm_1_0 extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
+    icon?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Pmsa003iSensorConfigPm_10_0 extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface Pmsa003iSensorConfigPm_2_5 extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
+    icon?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Pmsa003iSensorConfigPmc_0_3 extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface Pmsa003iSensorConfigPmc_0_3 extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
+    icon?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Pmsa003iSensorConfigPmc_0_5 extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface Pmsa003iSensorConfigPmc_0_5 extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
+    icon?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Pmsa003iSensorConfigPmc_1_0 extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface Pmsa003iSensorConfigPmc_10_0 extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
+    icon?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Pmsa003iSensorConfigPmc_2_5 extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface Pmsa003iSensorConfigPmc_1_0 extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
+    icon?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Pmsa003iSensorConfigPmc_5_0 extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface Pmsa003iSensorConfigPmc_2_5 extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
+    icon?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Pmsa003iSensorConfigPmc_10_0 extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface Pmsa003iSensorConfigPmc_5_0 extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
+    icon?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
 export interface Pmsa003iSensorConfig extends CoreCOMPONENT_SCHEMA {
+    address?: any;
+    i2c_id?: ID;
     id?: ID;
-    standard_units?: boolean;
+    pm_10_0?: Pmsa003iSensorConfigPm_10_0;
     pm_1_0?: Pmsa003iSensorConfigPm_1_0;
     pm_2_5?: Pmsa003iSensorConfigPm_2_5;
-    pm_10_0?: Pmsa003iSensorConfigPm_10_0;
     pmc_0_3?: Pmsa003iSensorConfigPmc_0_3;
     pmc_0_5?: Pmsa003iSensorConfigPmc_0_5;
+    pmc_10_0?: Pmsa003iSensorConfigPmc_10_0;
     pmc_1_0?: Pmsa003iSensorConfigPmc_1_0;
     pmc_2_5?: Pmsa003iSensorConfigPmc_2_5;
     pmc_5_0?: Pmsa003iSensorConfigPmc_5_0;
-    pmc_10_0?: Pmsa003iSensorConfigPmc_10_0;
+    standard_units?: boolean;
     update_interval?: any;
-    i2c_id?: ID;
-    address?: any;
 }

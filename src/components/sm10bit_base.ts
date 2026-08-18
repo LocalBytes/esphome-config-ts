@@ -16,8 +16,8 @@ export abstract class Sm10bitBase extends EsphomeComponent {
 }
 
 export interface Sm10bitBaseSM10BIT_BASE_CONFIG_SCHEMA extends CoreCOMPONENT_SCHEMA {
-    data_pin: Pin;
     clock_pin: Pin;
+    data_pin: Pin;
     max_power_color_channels?: number;
     max_power_white_channels?: number;
 }

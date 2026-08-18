@@ -2,14 +2,11 @@
   "xiaomi_mue4094rt.binary_sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "binary_sensor.BINARY_SENSOR_SCHEMA",
-            "esp32_ble_tracker.ESP_BLE_DEVICE_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
+            "device_class": {
+              "default": "motion"
+            },
             "id": {
               "id_type": {
                 "class": "xiaomi_mue4094rt::XiaomiMUE4094RT",
@@ -21,24 +18,27 @@
                 ]
               }
             },
-            "device_class": {
-              "default": "motion"
-            },
             "mac_address": {
               "key": "Required"
             },
             "timeout": {
-              "key": "Optional",
               "default": "5s",
-              "type": "schema",
+              "key": "Optional",
               "schema": {
                 "extends": [
                   "core.positive_time_period_milliseconds"
                 ]
-              }
+              },
+              "type": "schema"
             }
-          }
-        }
+          },
+          "extends": [
+            "binary_sensor._BINARY_SENSOR_SCHEMA",
+            "bthome_mithermometer.BLE_DEVICE_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

@@ -2,41 +2,35 @@
   "bluetooth_proxy": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
           "config_vars": {
-            "id": {
-              "key": "GeneratedID",
-              "id_type": {
-                "class": "bluetooth_proxy::BluetoothProxy",
-                "parents": [
-                  "esp32_ble_tracker::ESPBTDeviceListener",
-                  "Component"
-                ]
-              }
-            },
             "active": {
+              "default": "True",
               "key": "Optional",
-              "default": "False",
               "type": "boolean"
             },
             "cache_services": {
+              "default": "True",
               "key": "Optional",
               "type": "boolean"
             },
-            "connections": {
+            "connection_slots": {
+              "data_type": "positive_int",
+              "default": "3",
               "key": "Optional",
+              "type": "integer"
+            },
+            "connections": {
               "is_list": true,
-              "type": "schema",
+              "key": "Optional",
               "schema": {
                 "config_vars": {
                   "esp32_ble_id": {
                     "key": "GeneratedID",
-                    "use_id_type": "esp32_ble_tracker::ESP32BLETracker",
-                    "type": "use_id"
+                    "type": "use_id",
+                    "use_id_type": "esp32_ble_tracker::ESP32BLETracker"
                   },
                   "id": {
-                    "key": "GeneratedID",
                     "id_type": {
                       "class": "bluetooth_proxy::BluetoothConnection",
                       "parents": [
@@ -44,24 +38,37 @@
                         "esp32_ble_tracker::ESPBTClient",
                         "Component"
                       ]
-                    }
+                    },
+                    "key": "GeneratedID"
                   }
                 },
                 "extends": [
                   "core.COMPONENT_SCHEMA"
                 ]
-              }
+              },
+              "type": "schema"
             },
             "esp32_ble_id": {
               "key": "GeneratedID",
-              "use_id_type": "esp32_ble_tracker::ESP32BLETracker",
-              "type": "use_id"
+              "type": "use_id",
+              "use_id_type": "esp32_ble_tracker::ESP32BLETracker"
+            },
+            "id": {
+              "id_type": {
+                "class": "bluetooth_proxy::BluetoothProxy",
+                "parents": [
+                  "esp32_ble_tracker::ESPBTDeviceListener",
+                  "Component"
+                ]
+              },
+              "key": "GeneratedID"
             }
           },
           "extends": [
             "core.COMPONENT_SCHEMA"
           ]
-        }
+        },
+        "type": "schema"
       }
     }
   }

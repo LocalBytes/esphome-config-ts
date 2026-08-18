@@ -17,9 +17,9 @@ export class Sm16716 extends EsphomeComponent<Sm16716Config> {
 }
 
 export interface Sm16716Config extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    data_pin: Pin;
     clock_pin: Pin;
+    data_pin: Pin;
+    id?: ID;
     num_channels?: number;
     num_chips?: number;
 }
@@ -29,7 +29,7 @@ export class Sm16716Output extends EsphomeComponent<Sm16716OutputConfig> {
 }
 
 export type Sm16716OutputConfig = {
-        sm16716_id?: ID;
-        id: string;
         channel: number;
+        id: string;
+        sm16716_id?: ID;
     } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;

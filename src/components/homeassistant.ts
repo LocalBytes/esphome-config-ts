@@ -9,30 +9,28 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
-import type { TimeTIME_SCHEMA } from "./time.js";
+import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { Number_NUMBER_SCHEMA } from "./number.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { Switch_SWITCH_SCHEMA } from "./switch.js";
+import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { TimeTIME_SCHEMA } from "./time.js";
 
 export abstract class Homeassistant extends EsphomeComponent {
     componentName: string = "homeassistant";
 }
 
-export interface HomeassistantHOME_ASSISTANT_IMPORT_SCHEMA {
+export interface HomeassistantHOME_ASSISTANT_IMPORT_CONTROL_SCHEMA {
     entity_id: string;
-    attribute?: string;
     internal?: boolean;
 }
 
-export class HomeassistantSensor extends EsphomeComponent<HomeassistantSensorConfig> {
-    componentName: string = "homeassistant.sensor";
+export interface HomeassistantHOME_ASSISTANT_IMPORT_SCHEMA {
+    attribute?: string;
+    entity_id: string;
+    internal?: boolean;
 }
-
-export type HomeassistantSensorConfig = {
-        id?: any;
-        accuracy_decimals?: any;
-    } & SensorSENSOR_SCHEMA & HomeassistantHOME_ASSISTANT_IMPORT_SCHEMA;
 
 export class HomeassistantBinarySensor extends EsphomeComponent<HomeassistantBinarySensorConfig> {
     componentName: string = "homeassistant.binary_sensor";
@@ -40,7 +38,37 @@ export class HomeassistantBinarySensor extends EsphomeComponent<HomeassistantBin
 
 export type HomeassistantBinarySensorConfig = {
         id?: any;
-    } & BinarySensorBINARY_SENSOR_SCHEMA & HomeassistantHOME_ASSISTANT_IMPORT_SCHEMA;
+        entity_id: string;
+        attribute?: any;
+    } & BinarySensor_BINARY_SENSOR_SCHEMA & HomeassistantHOME_ASSISTANT_IMPORT_SCHEMA;
+
+export class HomeassistantNumber extends EsphomeComponent<HomeassistantNumberConfig> {
+    componentName: string = "homeassistant.number";
+}
+
+export type HomeassistantNumberConfig = {
+        id?: ID;
+    } & Number_NUMBER_SCHEMA & HomeassistantHOME_ASSISTANT_IMPORT_CONTROL_SCHEMA & CoreCOMPONENT_SCHEMA;
+
+export class HomeassistantSensor extends EsphomeComponent<HomeassistantSensorConfig> {
+    componentName: string = "homeassistant.sensor";
+}
+
+export type HomeassistantSensorConfig = {
+        accuracy_decimals?: any;
+        id?: any;
+        entity_id: string;
+        attribute?: any;
+    } & Sensor_SENSOR_SCHEMA & HomeassistantHOME_ASSISTANT_IMPORT_SCHEMA;
+
+export class HomeassistantSwitch extends EsphomeComponent<HomeassistantSwitchConfig> {
+    componentName: string = "homeassistant.switch";
+}
+
+export type HomeassistantSwitchConfig = {
+        id?: ID;
+        entity_id: string;
+    } & Switch_SWITCH_SCHEMA & HomeassistantHOME_ASSISTANT_IMPORT_CONTROL_SCHEMA & CoreCOMPONENT_SCHEMA;
 
 export class HomeassistantTextSensor extends EsphomeComponent<HomeassistantTextSensorConfig> {
     componentName: string = "homeassistant.text_sensor";
@@ -48,7 +76,7 @@ export class HomeassistantTextSensor extends EsphomeComponent<HomeassistantTextS
 
 export type HomeassistantTextSensorConfig = {
         id?: any;
-    } & TextSensorTEXT_SENSOR_SCHEMA & HomeassistantHOME_ASSISTANT_IMPORT_SCHEMA;
+    } & TextSensor_TEXT_SENSOR_SCHEMA & HomeassistantHOME_ASSISTANT_IMPORT_SCHEMA;
 
 export class HomeassistantTime extends EsphomeComponent<HomeassistantTimeConfig> {
     componentName: string = "homeassistant.time";

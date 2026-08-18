@@ -2,13 +2,17 @@
   "wifi_signal.sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "sensor.SENSOR_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
+            "accuracy_decimals": {
+              "default": "0"
+            },
+            "device_class": {
+              "default": "signal_strength"
+            },
+            "entity_category": {
+              "default": "diagnostic"
+            },
             "id": {
               "id_type": {
                 "class": "wifi_signal::WiFiSignalSensor",
@@ -18,31 +22,26 @@
                   "PollingComponent",
                   "Component"
                 ]
-              },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [WiFi Signal Sensor](https://esphome.io/components/sensor/wifi_signal.html#configuration-variables)*"
-            },
-            "unit_of_measurement": {
-              "default": "dBm"
-            },
-            "accuracy_decimals": {
-              "default": "0"
-            },
-            "device_class": {
-              "default": "signal_strength"
+              }
             },
             "state_class": {
               "default": "measurement"
             },
-            "entity_category": {
-              "default": "diagnostic"
+            "unit_of_measurement": {
+              "default": "dBm"
             },
             "update_interval": {
-              "key": "Optional",
               "default": "60s",
-              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [WiFi Signal Sensor](https://esphome.io/components/sensor/wifi_signal.html#configuration-variables)*"
+              "key": "Optional",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [WiFi Signal Sensor](https://next.esphome.io/components/sensor/wifi_signal#configuration-variables)*"
             }
-          }
-        }
+          },
+          "extends": [
+            "sensor._SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

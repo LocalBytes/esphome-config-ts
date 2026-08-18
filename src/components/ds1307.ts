@@ -11,16 +11,16 @@
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { TimeTIME_SCHEMA } from "./time.js";
 
+export abstract class Ds1307 extends EsphomeComponent {
+    componentName: string = "ds1307";
+}
+
 export class Ds1307Time extends EsphomeComponent<Ds1307TimeConfig> {
     componentName: string = "ds1307.time";
 }
 
 export interface Ds1307TimeConfig extends TimeTIME_SCHEMA {
-    id?: ID;
-    i2c_id?: ID;
     address?: any;
-}
-
-export abstract class Ds1307 extends EsphomeComponent {
-    componentName: string = "ds1307";
+    i2c_id?: ID;
+    id?: ID;
 }

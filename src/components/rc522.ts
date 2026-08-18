@@ -10,7 +10,7 @@
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
 
 export abstract class Rc522 extends EsphomeComponent {
     componentName: string = "rc522";
@@ -18,9 +18,9 @@ export abstract class Rc522 extends EsphomeComponent {
 
 export interface Rc522RC522_SCHEMA extends CoreCOMPONENT_SCHEMA {
     id?: ID;
-    reset_pin?: Pin;
     on_tag?: object[];
     on_tag_removed?: object[];
+    reset_pin?: Pin;
     update_interval?: any;
 }
 
@@ -28,7 +28,7 @@ export class Rc522BinarySensor extends EsphomeComponent<Rc522BinarySensorConfig>
     componentName: string = "rc522.binary_sensor";
 }
 
-export interface Rc522BinarySensorConfig extends BinarySensorBINARY_SENSOR_SCHEMA {
+export interface Rc522BinarySensorConfig extends BinarySensor_BINARY_SENSOR_SCHEMA {
     id?: any;
     rc522_id?: ID;
     uid: string;

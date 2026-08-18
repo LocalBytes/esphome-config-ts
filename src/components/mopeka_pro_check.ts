@@ -9,53 +9,73 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { Esp32BleTrackerESP_BLE_DEVICE_SCHEMA } from "./esp32_ble_tracker.js";
+import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { BthomeMithermometerBLE_DEVICE_SCHEMA } from "./bthome_mithermometer.js";
 import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class MopekaProCheckSensor extends EsphomeComponent<MopekaProCheckSensorConfig> {
     componentName: string = "mopeka_pro_check.sensor";
 }
 
+export interface MopekaProCheckSensorConfigBatteryLevel extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface MopekaProCheckSensorConfigDistance extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface MopekaProCheckSensorConfigIgnoredReads extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface MopekaProCheckSensorConfigLevel extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export type MopekaProCheckSensorConfigMinimumSignalQuality = 'ZERO' | 'LOW' | 'MEDIUM' | 'HIGH';
+
+export interface MopekaProCheckSensorConfigSignalQuality extends Sensor_SENSOR_SCHEMA {
+    accuracy_decimals?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
 export type MopekaProCheckSensorConfigTankType = 'CUSTOM' | '20LB_V' | '30LB_V' | '40LB_V' | 'EUROPE_6KG' | 'EUROPE_11KG' | 'EUROPE_14KG';
 
-export interface MopekaProCheckSensorConfigTemperature extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface MopekaProCheckSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-    state_class?: any;
-}
-
-export interface MopekaProCheckSensorConfigLevel extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
     icon?: any;
-    accuracy_decimals?: any;
     state_class?: any;
-}
-
-export interface MopekaProCheckSensorConfigDistance extends SensorSENSOR_SCHEMA {
     unit_of_measurement?: any;
-    icon?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
-}
-
-export interface MopekaProCheckSensorConfigBatteryLevel extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
 }
 
 export type MopekaProCheckSensorConfig = {
-        id?: ID;
-        mac_address: string;
-        custom_distance_full?: any;
+        battery_level?: MopekaProCheckSensorConfigBatteryLevel;
         custom_distance_empty?: any;
+        custom_distance_full?: any;
+        distance?: MopekaProCheckSensorConfigDistance;
+        id?: ID;
+        ignored_reads?: MopekaProCheckSensorConfigIgnoredReads;
+        level?: MopekaProCheckSensorConfigLevel;
+        mac_address: string;
+        minimum_signal_quality?: MopekaProCheckSensorConfigMinimumSignalQuality;
+        signal_quality?: MopekaProCheckSensorConfigSignalQuality;
         tank_type: MopekaProCheckSensorConfigTankType;
         temperature?: MopekaProCheckSensorConfigTemperature;
-        level?: MopekaProCheckSensorConfigLevel;
-        distance?: MopekaProCheckSensorConfigDistance;
-        battery_level?: MopekaProCheckSensorConfigBatteryLevel;
-    } & Esp32BleTrackerESP_BLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BthomeMithermometerBLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;

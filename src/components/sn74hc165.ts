@@ -16,10 +16,10 @@ export class Sn74hc165 extends EsphomeComponent<Sn74hc165Config> {
 }
 
 export interface Sn74hc165Config extends CoreCOMPONENT_SCHEMA {
-    id: string;
-    data_pin: Pin;
-    clock_pin: Pin;
-    load_pin: Pin;
     clock_inhibit_pin?: Pin;
+    clock_pin: Pin;
+    data_pin: Pin;
+    id: string;
+    load_pin: Pin;
     sr_count?: number;
 }

@@ -9,6 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
+import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class E131 extends EsphomeComponent<E131Config> {
     componentName: string = "e131";
@@ -16,7 +17,7 @@ export class E131 extends EsphomeComponent<E131Config> {
 
 export type E131ConfigMethod = 'UNICAST' | 'MULTICAST';
 
-export interface E131Config {
+export interface E131Config extends CoreCOMPONENT_SCHEMA {
     id?: ID;
     method?: E131ConfigMethod;
 }

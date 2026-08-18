@@ -9,28 +9,44 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { TouchscreenTOUCHSCREEN_SCHEMA } from "./touchscreen.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-
-export class Xpt2046 extends EsphomeComponent<any> {
-    componentName: string = "xpt2046";
-}
+import type { TouchscreenCALIBRATION_SCHEMA } from "./touchscreen.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
 
 export class Xpt2046Touchscreen extends EsphomeComponent<Xpt2046TouchscreenConfig> {
     componentName: string = "xpt2046.touchscreen";
 }
 
-export type Xpt2046TouchscreenConfig = {
-        id?: ID;
-        interrupt_pin?: Pin;
-        calibration_x_min?: number;
-        calibration_x_max?: number;
-        calibration_y_min?: number;
-        calibration_y_max?: number;
-        threshold?: number;
-        report_interval?: any;
-        swap_x_y?: boolean;
-        update_interval?: any;
-        spi_id?: ID;
-        cs_pin: Pin;
-    } & TouchscreenTOUCHSCREEN_SCHEMA & CoreCOMPONENT_SCHEMA;
+export interface Xpt2046TouchscreenConfigCalibration extends TouchscreenCALIBRATION_SCHEMA {
+    x_min: string;
+    x_max: string;
+    y_min: string;
+    y_max: string;
+}
+
+export type Xpt2046TouchscreenConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
+export type Xpt2046TouchscreenConfigTouchTimeout = CorePositiveTimePeriodMilliseconds;
+
+export interface Xpt2046TouchscreenConfigTransform {
+    mirror_x?: boolean;
+    mirror_y?: boolean;
+    swap_xy?: boolean;
+}
+
+export interface Xpt2046TouchscreenConfig extends CoreCOMPONENT_SCHEMA {
+    calibration: Xpt2046TouchscreenConfigCalibration;
+    cs_pin?: Pin;
+    data_rate?: any;
+    display?: ID;
+    id?: ID;
+    interrupt_pin?: Pin;
+    on_release?: object[];
+    on_touch?: object[];
+    on_update?: object[];
+    release_device?: boolean;
+    spi_id?: ID;
+    spi_mode?: Xpt2046TouchscreenConfigSpiMode;
+    threshold?: number;
+    touch_timeout?: Xpt2046TouchscreenConfigTouchTimeout;
+    transform?: Xpt2046TouchscreenConfigTransform;
+    update_interval?: any;
+}

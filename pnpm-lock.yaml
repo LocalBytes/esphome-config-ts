@@ -15,12 +15,20 @@ importers:
       '@tsconfig/node-lts':
         specifier: ^24.0.0
         version: 24.0.0
+      '@types/adm-zip':
+        specifier: ^0.5.8
+        version: 0.5.8
       '@types/js-yaml':
         specifier: ^4.0.9
         version: 4.0.9
       '@types/node':
         specifier: ^25.7.0
-        version: 25.9.5
+      '@types/node':
+        specifier: ^25.7.0
+        version: 25.9.1
+      adm-zip:
+        specifier: ^0.5.17
+        version: 0.5.17
       madge:
         specifier: ^8.0.0
         version: 8.0.0(supports-color@7.2.0)(typescript@7.0.2)
@@ -110,6 +118,9 @@ packages:
 
   '@tsconfig/node16@1.0.4':
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
+
+  '@types/adm-zip@0.5.8':
+    resolution: {integrity: sha512-RVVH7QvZYbN+ihqZ4kX/dMiowf6o+Jk1fNwiSdx0NahBJLU787zkULhGhJM8mf/obmLGmgdMM0bXsQTmyfbR7Q==}
 
   '@types/js-yaml@4.0.9':
     resolution: {integrity: sha512-k4MGaQl5TGo/iipqb2UDG2UwjXziSWkh0uysQelTlJpX1qGlpUZYm8PnO4DxG1qBomtJUdYJ6qR6xdIah10JLg==}
@@ -286,6 +297,10 @@ packages:
     resolution: {integrity: sha512-UVJyE9MttOsBQIDKw1skb9nAwQuR5wuGD3+82K6JgJlm/Y+KI92oNsMNGZCYdDsVtRHSak0pcV5Dno5+4jh9sw==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+
+  adm-zip@0.5.17:
+    resolution: {integrity: sha512-+Ut8d9LLqwEvHHJl1+PIHqoyDxFgVN847JTVM3Izi3xHDWPE4UtzzXysMZQs64DMcrJfBeS/uoEP4AD3HQHnQQ==}
+    engines: {node: '>=12.0'}
 
   ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
@@ -913,6 +928,10 @@ snapshots:
 
   '@tsconfig/node16@1.0.4': {}
 
+  '@types/adm-zip@0.5.8':
+    dependencies:
+      '@types/node': 25.9.1
+
   '@types/js-yaml@4.0.9': {}
 
   '@types/node@25.9.5':
@@ -1051,6 +1070,8 @@ snapshots:
       acorn: 8.16.0
 
   acorn@8.16.0: {}
+
+  adm-zip@0.5.17: {}
 
   ansi-regex@5.0.1: {}
 

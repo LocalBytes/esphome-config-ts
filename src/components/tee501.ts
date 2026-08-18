@@ -9,20 +9,20 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Tee501Sensor extends EsphomeComponent<Tee501SensorConfig> {
     componentName: string = "tee501.sensor";
 }
 
 export type Tee501SensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
         accuracy_decimals?: any;
-        device_class?: any;
-        state_class?: any;
-        update_interval?: any;
-        i2c_id?: ID;
         address?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+        device_class?: any;
+        i2c_id?: ID;
+        id?: any;
+        state_class?: any;
+        unit_of_measurement?: any;
+        update_interval?: any;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

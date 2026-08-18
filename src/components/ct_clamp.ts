@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class CtClampSensor extends EsphomeComponent<CtClampSensorConfig> {
     componentName: string = "ct_clamp.sensor";
@@ -18,12 +18,12 @@ export class CtClampSensor extends EsphomeComponent<CtClampSensorConfig> {
 
 export type CtClampSensorConfigSampleDuration = CorePositiveTimePeriodMilliseconds;
 export type CtClampSensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
         accuracy_decimals?: any;
         device_class?: any;
-        state_class?: any;
-        sensor: ID;
+        id?: any;
         sample_duration?: CtClampSensorConfigSampleDuration;
+        sensor: ID;
+        state_class?: any;
+        unit_of_measurement?: any;
         update_interval?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

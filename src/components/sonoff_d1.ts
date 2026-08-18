@@ -9,17 +9,17 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { LightBRIGHTNESS_ONLY_LIGHT_SCHEMA } from "./light.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { LightBRIGHTNESSONLYLIGHTSCHEMA } from "./light.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class SonoffD1Light extends EsphomeComponent<SonoffD1LightConfig> {
     componentName: string = "sonoff_d1.light";
 }
 
 export type SonoffD1LightConfig = {
-        output_id?: ID;
-        use_rm433_remote?: boolean;
-        min_value?: number;
         max_value?: number;
+        min_value?: number;
+        output_id?: ID;
         uart_id?: ID;
-    } & LightBRIGHTNESS_ONLY_LIGHT_SCHEMA & CoreCOMPONENT_SCHEMA;
+        use_rm433_remote?: boolean;
+    } & LightBRIGHTNESSONLYLIGHTSCHEMA & CoreCOMPONENTSCHEMA;

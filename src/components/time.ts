@@ -9,16 +9,20 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Time extends EsphomeComponent {
     componentName: string = "time";
 }
 
-export interface TimeTIME_SCHEMA extends CoreCOMPONENT_SCHEMA {
-    timezone?: any;
+export interface TimeTIMESCHEMA extends CoreCOMPONENTSCHEMA {
     on_time?: object[];
     on_time_sync?: object[];
+    timezone?: any;
     update_interval?: any;
     id?: any;
+}
+
+export abstract class TimeDatetime extends EsphomeComponent {
+    componentName: string = "time.datetime";
 }

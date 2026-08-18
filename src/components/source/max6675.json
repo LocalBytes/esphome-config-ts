@@ -2,13 +2,26 @@
   "max6675.sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "sensor.SENSOR_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
+            "accuracy_decimals": {
+              "default": "1"
+            },
+            "cs_pin": {
+              "key": "Required",
+              "modes": [
+                "output"
+              ],
+              "schema": true,
+              "type": "pin",
+              "docs": "**[Pin Schema](https://next.esphome.io/guides/configuration-types#pin-schema)**: The Chip Select pin of the SPI interface.\n\n*See also: [MAX6675 K-Type Thermocouple Temperature Sensor](https://next.esphome.io/components/sensor/max6675#configuration-variables)*"
+            },
+            "data_rate": {
+              "key": "Optional"
+            },
+            "device_class": {
+              "default": "temperature"
+            },
             "id": {
               "id_type": {
                 "class": "max6675::MAX6675Sensor",
@@ -19,43 +32,50 @@
                   "Component",
                   "spi::SPIDevice"
                 ]
-              },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [MAX6675 K-Type Thermocouple Temperature Sensor](https://esphome.io/components/sensor/max6675.html#configuration-variables)*"
+              }
             },
-            "unit_of_measurement": {
-              "default": "\u00b0C"
+            "release_device": {
+              "key": "Optional",
+              "type": "boolean"
             },
-            "accuracy_decimals": {
-              "default": "1"
+            "spi_id": {
+              "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "spi::SPIComponent",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: Manually specify the ID of the [SPI Component](https://next.esphome.io/components/spi) if you want to use multiple SPI buses.\n\n*See also: [MAX6675 K-Type Thermocouple Temperature Sensor](https://next.esphome.io/components/sensor/max6675#configuration-variables)*"
             },
-            "device_class": {
-              "default": "temperature"
+            "spi_mode": {
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "MODE0": null,
+                "MODE1": null,
+                "MODE2": null,
+                "MODE3": null,
+                "0": null,
+                "1": null,
+                "2": null,
+                "3": null
+              }
             },
             "state_class": {
               "default": "measurement"
             },
+            "unit_of_measurement": {
+              "default": "\u00b0C"
+            },
             "update_interval": {
-              "key": "Optional",
               "default": "60s",
-              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [MAX6675 K-Type Thermocouple Temperature Sensor](https://esphome.io/components/sensor/max6675.html#configuration-variables)*"
-            },
-            "spi_id": {
-              "key": "GeneratedID",
-              "use_id_type": "spi::SPIComponent",
-              "type": "use_id",
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID of the [SPI Component](https://esphome.io/components/spi.html#spi) if you want to use multiple SPI buses.\n\n*See also: [MAX6675 K-Type Thermocouple Temperature Sensor](https://esphome.io/components/sensor/max6675.html#configuration-variables)*"
-            },
-            "cs_pin": {
-              "key": "Required",
-              "schema": true,
-              "modes": [
-                "output"
-              ],
-              "type": "pin",
-              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The Chip Select pin of the SPI interface.\n\n*See also: [MAX6675 K-Type Thermocouple Temperature Sensor](https://esphome.io/components/sensor/max6675.html#configuration-variables)*"
+              "key": "Optional",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [MAX6675 K-Type Thermocouple Temperature Sensor](https://next.esphome.io/components/sensor/max6675#configuration-variables)*"
             }
-          }
-        }
+          },
+          "extends": [
+            "sensor._SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

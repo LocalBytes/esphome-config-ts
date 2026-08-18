@@ -1,12 +1,56 @@
 {
+  "sps30": {
+    "action": {
+      "start_fan_autoclean": {
+        "schema": {
+          "extends": [
+            "sps30.sensor.SPS30_ACTION_SCHEMA"
+          ]
+        },
+        "type": "schema",
+        "docs": "This [action](https://next.esphome.io/automations/actions#all-actions) manually starts fan-cleaning."
+      },
+      "start_measurement": {
+        "schema": {
+          "extends": [
+            "sps30.sensor.SPS30_ACTION_SCHEMA"
+          ]
+        },
+        "type": "schema",
+        "docs": "This [action](https://next.esphome.io/automations/actions#all-actions) manually puts the sensor into measurement mode."
+      },
+      "stop_measurement": {
+        "schema": {
+          "extends": [
+            "sps30.sensor.SPS30_ACTION_SCHEMA"
+          ]
+        },
+        "type": "schema",
+        "docs": "This [action](https://next.esphome.io/automations/actions#all-actions) manually puts the sensor into idle mode."
+      }
+    }
+  },
   "sps30.sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
           "config_vars": {
-            "id": {
+            "address": {
+              "data_type": "hex_uint8_t",
+              "default": "105",
+              "key": "Optional",
+              "docs": "**int**: Manually specify the I\u00b2C address of the sensor. Defaults to `0x69`.\n\n*See also: [SPS30 Particulate Matter Sensor](https://next.esphome.io/components/sensor/sps30#configuration-variables)*"
+            },
+            "auto_cleaning_interval": {
+              "key": "Optional",
+              "docs": "The interval in seconds of the periodic fan-cleaning.\n\n*See also: [SPS30 Particulate Matter Sensor](https://next.esphome.io/components/sensor/sps30#configuration-variables)*"
+            },
+            "i2c_id": {
               "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "i2c::I2CBus"
+            },
+            "id": {
               "id_type": {
                 "class": "sps30::SPS30Component",
                 "parents": [
@@ -15,300 +59,286 @@
                   "sensirion_common::SensirionI2CDevice",
                   "i2c::I2CDevice"
                 ]
-              }
-            },
-            "pm_1_0": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "\u00b5g/m\u00b3"
-                  },
-                  "icon": {
-                    "default": "mdi:chemical-weapon"
-                  },
-                  "accuracy_decimals": {
-                    "default": "2"
-                  },
-                  "device_class": {
-                    "default": "pm1"
-                  },
-                  "state_class": {
-                    "default": "measurement"
-                  }
-                }
               },
-              "docs": "The information for the **Weight Concentration** sensor for fine particles up to 1\u03bcm. Readings in \u00b5g/m\u00b3.\n  * **name** (**Required**, string): The name for this sensor.\n  \n  * **id** (*Optional*, [ID](https://esphome.io/guides/configuration-types.html#config-id)): Set the ID of this sensor for use in automation and lambdas.\n  \n  * All other options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n  \n  \n\n*See also: [SPS30 Particulate Matter Sensor](https://esphome.io/components/sensor/sps30.html#configuration-variables)*"
+              "key": "GeneratedID"
             },
-            "pm_2_5": {
+            "idle_interval": {
               "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "\u00b5g/m\u00b3"
-                  },
-                  "icon": {
-                    "default": "mdi:chemical-weapon"
-                  },
-                  "accuracy_decimals": {
-                    "default": "2"
-                  },
-                  "device_class": {
-                    "default": "pm25"
-                  },
-                  "state_class": {
-                    "default": "measurement"
-                  }
-                }
-              },
-              "docs": "The information for the **Weight Concentration** sensor for fine particles up to 2.5\u03bcm. Readings in \u00b5g/m\u00b3.\n  * **name** (**Required**, string): The name for this sensor.\n  \n  * **id** (*Optional*, [ID](https://esphome.io/guides/configuration-types.html#config-id)): Set the ID of this sensor for use in automation and lambdas.\n  \n  * All other options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n  \n  \n\n*See also: [SPS30 Particulate Matter Sensor](https://esphome.io/components/sensor/sps30.html#configuration-variables)*"
-            },
-            "pm_4_0": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "\u00b5g/m\u00b3"
-                  },
-                  "icon": {
-                    "default": "mdi:chemical-weapon"
-                  },
-                  "accuracy_decimals": {
-                    "default": "2"
-                  },
-                  "state_class": {
-                    "default": "measurement"
-                  }
-                }
-              },
-              "docs": "The information for the **Weight Concentration** sensor for coarse particles up to 4\u03bcm. Readings in \u00b5g/m\u00b3.\n  * **name** (**Required**, string): The name for this sensor.\n  \n  * **id** (*Optional*, [ID](https://esphome.io/guides/configuration-types.html#config-id)): Set the ID of this sensor for use in automation and lambdas.\n  \n  * All other options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n  \n  \n\n*See also: [SPS30 Particulate Matter Sensor](https://esphome.io/components/sensor/sps30.html#configuration-variables)*"
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: If specified, puts the sensor into idle mode between readings for the specified amount of time.\n\n*See also: [SPS30 Particulate Matter Sensor](https://next.esphome.io/components/sensor/sps30#configuration-variables)*"
             },
             "pm_10_0": {
               "key": "Optional",
-              "type": "schema",
               "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
                 "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "\u00b5g/m\u00b3"
-                  },
-                  "icon": {
-                    "default": "mdi:chemical-weapon"
-                  },
                   "accuracy_decimals": {
                     "default": "2"
                   },
                   "device_class": {
                     "default": "pm10"
                   },
+                  "icon": {
+                    "default": "mdi:chemical-weapon"
+                  },
                   "state_class": {
                     "default": "measurement"
-                  }
-                }
-              },
-              "docs": "The information for the **Weight Concentration** sensor for coarse particles up to 10\u03bcm. Readings in \u00b5g/m\u00b3.\n  * **name** (**Required**, string): The name for this sensor.\n  \n  * **id** (*Optional*, [ID](https://esphome.io/guides/configuration-types.html#config-id)): Set the ID of this sensor for use in automation and lambdas.\n  \n  * All other options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n  \n  \n\n*See also: [SPS30 Particulate Matter Sensor](https://esphome.io/components/sensor/sps30.html#configuration-variables)*"
-            },
-            "pmc_0_5": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
+                  },
                   "unit_of_measurement": {
-                    "default": "#/m\u00b3"
-                  },
-                  "icon": {
-                    "default": "mdi:counter"
-                  },
+                    "default": "\u00b5g/m\u00b3"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "The information for the **Weight Concentration** sensor for coarse particles up to 10\u03bcm. Readings in \u00b5g/m\u00b3.\n\n*See also: [SPS30 Particulate Matter Sensor](https://next.esphome.io/components/sensor/sps30#configuration-variables)*"
+            },
+            "pm_1_0": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
                   "accuracy_decimals": {
                     "default": "2"
                   },
-                  "state_class": {
-                    "default": "measurement"
-                  }
-                }
-              },
-              "docs": "The information for the **Number Concentration** sensor for ultrafine particles up to 0.5\u03bcm. Readings in particles/m\u00b3.\n  * **name** (**Required**, string): The name for this sensor.\n  \n  * **id** (*Optional*, [ID](https://esphome.io/guides/configuration-types.html#config-id)): Set the ID of this sensor for use in automation and lambdas.\n  \n  * All other options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n  \n  \n\n*See also: [SPS30 Particulate Matter Sensor](https://esphome.io/components/sensor/sps30.html#configuration-variables)*"
-            },
-            "pmc_1_0": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "#/m\u00b3"
+                  "device_class": {
+                    "default": "pm1"
                   },
                   "icon": {
-                    "default": "mdi:counter"
+                    "default": "mdi:chemical-weapon"
                   },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "\u00b5g/m\u00b3"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "The information for the **Weight Concentration** sensor for fine particles up to 1\u03bcm. Readings in \u00b5g/m\u00b3.\n\n*See also: [SPS30 Particulate Matter Sensor](https://next.esphome.io/components/sensor/sps30#configuration-variables)*"
+            },
+            "pm_2_5": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
                   "accuracy_decimals": {
                     "default": "2"
                   },
-                  "state_class": {
-                    "default": "measurement"
-                  }
-                }
-              },
-              "docs": "The information for the **Number Concentration** sensor for fine particles up to 1\u03bcm. Readings in particles/m\u00b3.\n  * **name** (**Required**, string): The name for this sensor.\n  \n  * **id** (*Optional*, [ID](https://esphome.io/guides/configuration-types.html#config-id)): Set the ID of this sensor for use in automation and lambdas.\n  \n  * All other options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n  \n  \n\n*See also: [SPS30 Particulate Matter Sensor](https://esphome.io/components/sensor/sps30.html#configuration-variables)*"
-            },
-            "pmc_2_5": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "#/m\u00b3"
+                  "device_class": {
+                    "default": "pm25"
                   },
                   "icon": {
-                    "default": "mdi:counter"
+                    "default": "mdi:chemical-weapon"
                   },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "\u00b5g/m\u00b3"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "The information for the **Weight Concentration** sensor for fine particles up to 2.5\u03bcm. Readings in \u00b5g/m\u00b3.\n\n*See also: [SPS30 Particulate Matter Sensor](https://next.esphome.io/components/sensor/sps30#configuration-variables)*"
+            },
+            "pm_4_0": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
                   "accuracy_decimals": {
                     "default": "2"
                   },
-                  "state_class": {
-                    "default": "measurement"
-                  }
-                }
-              },
-              "docs": "The information for the **Number Concentration** sensor for fine particles up to 2.5\u03bcm. Readings in particles/m\u00b3.\n  * **name** (**Required**, string): The name for this sensor.\n  \n  * **id** (*Optional*, [ID](https://esphome.io/guides/configuration-types.html#config-id)): Set the ID of this sensor for use in automation and lambdas.\n  \n  * All other options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n  \n  \n\n*See also: [SPS30 Particulate Matter Sensor](https://esphome.io/components/sensor/sps30.html#configuration-variables)*"
-            },
-            "pmc_4_0": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "#/m\u00b3"
-                  },
                   "icon": {
-                    "default": "mdi:counter"
-                  },
-                  "accuracy_decimals": {
-                    "default": "2"
+                    "default": "mdi:chemical-weapon"
                   },
                   "state_class": {
                     "default": "measurement"
-                  }
-                }
-              },
-              "docs": "The information for the **Number Concentration** sensor for coarse particles up to 4\u03bcm. Readings in particles/m\u00b3.\n  * **name** (**Required**, string): The name for this sensor.\n  \n  * **id** (*Optional*, [ID](https://esphome.io/guides/configuration-types.html#config-id)): Set the ID of this sensor for use in automation and lambdas.\n  \n  * All other options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n  \n  \n\n*See also: [SPS30 Particulate Matter Sensor](https://esphome.io/components/sensor/sps30.html#configuration-variables)*"
-            },
-            "pmc_10_0": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
+                  },
                   "unit_of_measurement": {
-                    "default": "#/m\u00b3"
-                  },
-                  "icon": {
-                    "default": "mdi:counter"
-                  },
-                  "accuracy_decimals": {
-                    "default": "2"
-                  },
-                  "state_class": {
-                    "default": "measurement"
+                    "default": "\u00b5g/m\u00b3"
                   }
-                }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
               },
-              "docs": "The information for the **Number Concentration** sensor for coarse particles up to 10\u03bcm. Readings in particles/m\u00b3.\n  * **name** (**Required**, string): The name for this sensor.\n  \n  * **id** (*Optional*, [ID](https://esphome.io/guides/configuration-types.html#config-id)): Set the ID of this sensor for use in automation and lambdas.\n  \n  * All other options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n  \n  \n\n*See also: [SPS30 Particulate Matter Sensor](https://esphome.io/components/sensor/sps30.html#configuration-variables)*"
+              "type": "schema",
+              "docs": "The information for the **Weight Concentration** sensor for coarse particles up to 4\u03bcm. Readings in \u00b5g/m\u00b3.\n\n*See also: [SPS30 Particulate Matter Sensor](https://next.esphome.io/components/sensor/sps30#configuration-variables)*"
             },
             "pm_size": {
               "key": "Optional",
-              "type": "schema",
               "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
                 "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "\u00b5m"
+                  "accuracy_decimals": {
+                    "default": "0"
                   },
                   "icon": {
                     "default": "mdi:ruler"
                   },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "\u00b5m"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Typical particle size in \u03bcm.\n\n*See also: [SPS30 Particulate Matter Sensor](https://next.esphome.io/components/sensor/sps30#configuration-variables)*"
+            },
+            "pmc_0_5": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
                   "accuracy_decimals": {
-                    "default": "0"
+                    "default": "2"
+                  },
+                  "icon": {
+                    "default": "mdi:counter"
                   },
                   "state_class": {
                     "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "#/cm\u00b3"
                   }
-                }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
               },
-              "docs": "Typical particle size in \u03bcm.\n  * **name** (**Required**, string): The name for this sensor.\n  \n  * **id** (*Optional*, [ID](https://esphome.io/guides/configuration-types.html#config-id)): Set the ID of this sensor for use in automation and lambdas.\n  \n  * All other options from [Sensor](https://esphome.io/components/sensor/index.html#config-sensor).\n  \n  \n\n*See also: [SPS30 Particulate Matter Sensor](https://esphome.io/components/sensor/sps30.html#configuration-variables)*"
+              "type": "schema",
+              "docs": "The information for the **Number Concentration** sensor for ultrafine particles up to 0.5\u03bcm. Readings in particles/cm\u00b3.\n\n*See also: [SPS30 Particulate Matter Sensor](https://next.esphome.io/components/sensor/sps30#configuration-variables)*"
             },
-            "auto_cleaning_interval": {
+            "pmc_10_0": {
               "key": "Optional",
-              "docs": "The interval in seconds of the periodic fan-cleaning.\n\n*See also: [SPS30 Particulate Matter Sensor](https://esphome.io/components/sensor/sps30.html#configuration-variables)*"
+              "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "2"
+                  },
+                  "icon": {
+                    "default": "mdi:counter"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "#/cm\u00b3"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "The information for the **Number Concentration** sensor for coarse particles up to 10\u03bcm. Readings in particles/cm\u00b3.\n\n*See also: [SPS30 Particulate Matter Sensor](https://next.esphome.io/components/sensor/sps30#configuration-variables)*"
+            },
+            "pmc_1_0": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "2"
+                  },
+                  "icon": {
+                    "default": "mdi:counter"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "#/cm\u00b3"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "The information for the **Number Concentration** sensor for fine particles up to 1\u03bcm. Readings in particles/cm\u00b3.\n\n*See also: [SPS30 Particulate Matter Sensor](https://next.esphome.io/components/sensor/sps30#configuration-variables)*"
+            },
+            "pmc_2_5": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "2"
+                  },
+                  "icon": {
+                    "default": "mdi:counter"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "#/cm\u00b3"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "The information for the **Number Concentration** sensor for fine particles up to 2.5\u03bcm. Readings in particles/cm\u00b3.\n\n*See also: [SPS30 Particulate Matter Sensor](https://next.esphome.io/components/sensor/sps30#configuration-variables)*"
+            },
+            "pmc_4_0": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "2"
+                  },
+                  "icon": {
+                    "default": "mdi:counter"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "#/cm\u00b3"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "The information for the **Number Concentration** sensor for coarse particles up to 4\u03bcm. Readings in particles/cm\u00b3.\n\n*See also: [SPS30 Particulate Matter Sensor](https://next.esphome.io/components/sensor/sps30#configuration-variables)*"
             },
             "update_interval": {
-              "key": "Optional",
               "default": "60s",
-              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [SPS30 Particulate Matter Sensor](https://esphome.io/components/sensor/sps30.html#configuration-variables)*"
-            },
-            "i2c_id": {
-              "key": "GeneratedID",
-              "use_id_type": "i2c::I2CBus",
-              "type": "use_id"
-            },
-            "address": {
               "key": "Optional",
-              "default": "105",
-              "data_type": "hex_uint8_t",
-              "docs": "**int**: Manually specify the I\u00b2C address of the sensor. Defaults to `0x69`.\n\n*See also: [SPS30 Particulate Matter Sensor](https://esphome.io/components/sensor/sps30.html#configuration-variables)*"
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [SPS30 Particulate Matter Sensor](https://next.esphome.io/components/sensor/sps30#configuration-variables)*"
             }
           },
           "extends": [
             "core.COMPONENT_SCHEMA"
           ]
-        }
-      }
-    }
-  },
-  "sps30": {
-    "action": {
-      "start_fan_autoclean": {
-        "type": "schema",
+        },
+        "type": "schema"
+      },
+      "SPS30_ACTION_SCHEMA": {
+        "maybe": "id",
         "schema": {
           "config_vars": {
             "id": {
               "key": "Required",
-              "use_id_type": "sps30::SPS30Component",
-              "type": "use_id"
+              "type": "use_id",
+              "use_id_type": "sps30::SPS30Component"
             }
           }
         },
-        "maybe": "id",
-        "docs": "This [action](https://esphome.io/guides/automations.html#config-action) manually starts fan-cleaning.\n\n*See also: [`sps30.start_fan_autoclean` Action](https://esphome.io/components/sensor/sps30.html#sps30-start-fan-autoclean-action)*"
+        "type": "schema"
       }
     }
   }

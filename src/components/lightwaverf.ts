@@ -9,15 +9,15 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Lightwaverf extends EsphomeComponent<LightwaverfConfig> {
     componentName: string = "lightwaverf";
 }
 
-export interface LightwaverfConfig extends CoreCOMPONENT_SCHEMA {
+export interface LightwaverfConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     read_pin?: Pin;
-    write_pin?: Pin;
     update_interval?: any;
+    write_pin?: Pin;
 }

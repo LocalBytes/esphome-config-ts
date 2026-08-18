@@ -2,28 +2,38 @@
   "captive_portal": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
           "config_vars": {
+            "compression": {
+              "default": "gzip",
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "gzip": null,
+                "br": null
+              },
+              "docs": "**string**: The compression algorithm used for the embedded web assets. Options are `gzip` or `br` (Brotli). Brotli provides ~24% smaller size than gzip, but some browsers only support Brotli over HTTPS connections. Since the captive portal is served over HTTP, gzip is recommended for maximum compatibility. Defaults to `gzip`.\n\n*See also: [Captive Portal](https://next.esphome.io/components/captive_portal#configuration-variables)*"
+            },
             "id": {
-              "key": "GeneratedID",
               "id_type": {
                 "class": "captive_portal::CaptivePortal",
                 "parents": [
                   "Component"
                 ]
-              }
+              },
+              "key": "GeneratedID"
             },
             "web_server_base_id": {
               "key": "GeneratedID",
-              "use_id_type": "web_server_base::WebServerBase",
-              "type": "use_id"
+              "type": "use_id",
+              "use_id_type": "web_server_base::WebServerBase"
             }
           },
           "extends": [
             "core.COMPONENT_SCHEMA"
           ]
-        }
+        },
+        "type": "schema"
       }
     }
   }

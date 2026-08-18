@@ -2,12 +2,13 @@
   "toshiba.climate": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "climate_ir.CLIMATE_IR_WITH_RECEIVER_SCHEMA"
-          ],
           "config_vars": {
+            "humidity_sensor": {
+              "key": "Optional",
+              "type": "use_id",
+              "use_id_type": "sensor::Sensor"
+            },
             "id": {
               "id_type": {
                 "class": "toshiba::ToshibaClimate",
@@ -16,29 +17,51 @@
                   "climate::Climate",
                   "EntityBase",
                   "Component",
-                  "remote_base::RemoteReceiverListener"
+                  "remote_base::RemoteReceiverListener",
+                  "remote_base::RemoteTransmittable"
                 ]
-              }
+              },
+              "key": "GeneratedID"
             },
             "model": {
-              "key": "Optional",
               "default": "generic",
+              "key": "Optional",
               "type": "enum",
               "values": {
-                "GENERIC": {
-                  "docs": "Temperature range is from 17 to 30 (default)"
-                },
-                "RAC-PT1411HWRU-C": {
-                  "docs": "Temperature range is from 16 to 30; unit displays temperature in degrees Celsius"
-                },
-                "RAC-PT1411HWRU-F": {
-                  "docs": "Temperature range is from 16 to 30; unit displays temperature in degrees Fahrenheit"
-                }
-              },
-              "docs": "**string**: There are two valid models\n  * `GENERIC`: Temperature range is from 17 to 30 (default)\n  \n  * `RAC-PT1411HWRU-C`: Temperature range is from 16 to 30; unit displays temperature in degrees Celsius\n  \n  * `RAC-PT1411HWRU-F`: Temperature range is from 16 to 30; unit displays temperature in degrees Fahrenheit\n  \n  \n\n*See also: [toshiba Climate](https://esphome.io/components/climate/climate_ir.html#toshiba-climate)*"
+                "GENERIC": null,
+                "RAC-PT1411HWRU-C": null,
+                "RAC-PT1411HWRU-F": null,
+                "RAS-2819T": null
+              }
+            },
+            "receiver_id": {
+              "key": "Optional",
+              "type": "use_id",
+              "use_id_type": "remote_base::RemoteReceiverBase"
+            },
+            "sensor": {
+              "key": "Optional",
+              "type": "use_id",
+              "use_id_type": "sensor::Sensor"
+            },
+            "supports_cool": {
+              "default": "True",
+              "key": "Optional",
+              "type": "boolean"
+            },
+            "supports_heat": {
+              "default": "True",
+              "key": "Optional",
+              "type": "boolean"
             }
-          }
-        }
+          },
+          "extends": [
+            "climate._CLIMATE_SCHEMA",
+            "core.COMPONENT_SCHEMA",
+            "remote_base.REMOTE_TRANSMITTABLE_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

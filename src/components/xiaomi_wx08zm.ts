@@ -9,33 +9,33 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Esp32BleTrackerESP_BLE_DEVICE_SCHEMA } from "./esp32_ble_tracker.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { BthomeMithermometerBLEDEVICESCHEMA } from "./bthome_mithermometer.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class XiaomiWx08zmBinarySensor extends EsphomeComponent<XiaomiWx08zmBinarySensorConfig> {
     componentName: string = "xiaomi_wx08zm.binary_sensor";
 }
 
-export interface XiaomiWx08zmBinarySensorConfigTablet extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
-}
-
-export interface XiaomiWx08zmBinarySensorConfigBatteryLevel extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface XiaomiWx08zmBinarySensorConfigBatteryLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-    state_class?: any;
     entity_category?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface XiaomiWx08zmBinarySensorConfigTablet extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
 export type XiaomiWx08zmBinarySensorConfig = {
+        battery_level?: XiaomiWx08zmBinarySensorConfigBatteryLevel;
         id?: any;
         mac_address: string;
         tablet?: XiaomiWx08zmBinarySensorConfigTablet;
-        battery_level?: XiaomiWx08zmBinarySensorConfigBatteryLevel;
-    } & BinarySensorBINARY_SENSOR_SCHEMA & Esp32BleTrackerESP_BLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BinarySensorBINARYSENSORSCHEMA & BthomeMithermometerBLEDEVICESCHEMA & CoreCOMPONENTSCHEMA;

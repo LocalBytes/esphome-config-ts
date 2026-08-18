@@ -9,13 +9,20 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { ClimateIrCLIMATE_IR_WITH_RECEIVER_SCHEMA } from "./climate_ir.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { RemoteBaseREMOTETRANSMITTABLESCHEMA } from "./remote_base.js";
 
 export class WhynterClimate extends EsphomeComponent<WhynterClimateConfig> {
     componentName: string = "whynter.climate";
 }
 
-export interface WhynterClimateConfig extends ClimateIrCLIMATE_IR_WITH_RECEIVER_SCHEMA {
-    id?: any;
-    use_fahrenheit?: boolean;
-}
+export type WhynterClimateConfig = {
+        humidity_sensor?: ID;
+        id?: ID;
+        receiver_id?: ID;
+        sensor?: ID;
+        supports_cool?: boolean;
+        supports_heat?: boolean;
+        use_fahrenheit?: boolean;
+    } & ClimateCLIMATESCHEMA & CoreCOMPONENTSCHEMA & RemoteBaseREMOTETRANSMITTABLESCHEMA;

@@ -2,11 +2,32 @@
   "ssd1331_spi.display": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
           "config_vars": {
+            "brightness": {
+              "default": "1.0",
+              "key": "Optional"
+            },
+            "cs_pin": {
+              "key": "Required",
+              "modes": [
+                "output"
+              ],
+              "schema": true,
+              "type": "pin"
+            },
+            "data_rate": {
+              "key": "Optional"
+            },
+            "dc_pin": {
+              "key": "Required",
+              "modes": [
+                "output"
+              ],
+              "schema": true,
+              "type": "pin"
+            },
             "id": {
-              "key": "GeneratedID",
               "id_type": {
                 "class": "ssd1331_spi::SPISSD1331",
                 "parents": [
@@ -14,58 +35,53 @@
                   "PollingComponent",
                   "Component",
                   "display::DisplayBuffer",
+                  "display::Display",
+                  "PollingComponent",
+                  "Component",
                   "spi::SPIDevice"
                 ]
               },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [SSD1331 OLED Display](https://esphome.io/components/display/ssd1331.html#configuration-variables)*"
+              "key": "GeneratedID"
             },
-            "dc_pin": {
-              "key": "Required",
-              "schema": true,
-              "modes": [
-                "output"
-              ],
-              "type": "pin",
-              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The DC pin.\n\n*See also: [SSD1331 OLED Display](https://esphome.io/components/display/ssd1331.html#configuration-variables)*"
-            },
-            "spi_id": {
-              "key": "GeneratedID",
-              "use_id_type": "spi::SPIComponent",
-              "type": "use_id"
-            },
-            "cs_pin": {
-              "key": "Required",
-              "schema": true,
-              "modes": [
-                "output"
-              ],
-              "type": "pin",
-              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin on the ESP that that the CS line is connected to. The CS line can be connected to GND if this is the only device on the SPI bus.\n\n*See also: [SSD1331 OLED Display](https://esphome.io/components/display/ssd1331.html#configuration-variables)*"
+            "release_device": {
+              "key": "Optional",
+              "type": "boolean"
             },
             "reset_pin": {
               "key": "Optional",
-              "schema": true,
               "modes": [
                 "output"
               ],
-              "type": "pin",
-              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The RESET pin.\n\n*See also: [SSD1331 OLED Display](https://esphome.io/components/display/ssd1331.html#configuration-variables)*"
+              "schema": true,
+              "type": "pin"
             },
-            "brightness": {
-              "key": "Optional",
-              "default": "1.0"
+            "spi_id": {
+              "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "spi::SPIComponent"
             },
-            "update_interval": {
+            "spi_mode": {
               "key": "Optional",
-              "default": "1s",
-              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to re-draw the screen. Defaults to `5s`.\n\n*See also: [SSD1331 OLED Display](https://esphome.io/components/display/ssd1331.html#configuration-variables)*"
-            }
+              "type": "enum",
+              "values": {
+                "MODE0": null,
+                "MODE1": null,
+                "MODE2": null,
+                "MODE3": null,
+                "0": null,
+                "1": null,
+                "2": null,
+                "3": null
+              }
+            },
+            "update_interval": {}
           },
           "extends": [
             "display.FULL_DISPLAY_SCHEMA",
             "core.COMPONENT_SCHEMA"
           ]
-        }
+        },
+        "type": "schema"
       }
     }
   }

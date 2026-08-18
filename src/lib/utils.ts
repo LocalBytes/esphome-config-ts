@@ -3,7 +3,7 @@ export function ucfirst(str: string) {
 }
 
 export function toCamelCase(str: string) {
-    return str.replace(/[-_.]([a-z])/g, g => g[1].toUpperCase())
+    return str.replace(/[-_.]+([a-zA-Z0-9])/g, g => g[g.length - 1].toUpperCase())
 }
 
 export function toUpperCamelCase(str: string) {

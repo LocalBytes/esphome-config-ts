@@ -2,33 +2,29 @@
   "preferences": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
           "config_vars": {
+            "flash_write_interval": {
+              "default": "60s",
+              "key": "Optional",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: Customize the frequency in which data is flushed to the flash. This setting helps to prevent rapid changes to a component from being quickly written to the flash and wearing it out. Defaults to `1min`. Set to `never` to disable this feature.\n\n*See also: [ESPHome Core Configuration](https://next.esphome.io/components/esphome#configuration-variables)*"
+            },
             "id": {
-              "key": "GeneratedID",
               "id_type": {
                 "class": "preferences::IntervalSyncer",
                 "parents": [
                   "Component"
                 ]
-              }
-            },
-            "flash_write_interval": {
-              "key": "Optional",
-              "default": "60s",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "core.positive_time_period_milliseconds"
-                ]
-              }
+              },
+              "key": "GeneratedID",
+              "docs": "**string**: Unique identifier for the device.\n\n*See also: [ESPHome Core Configuration](https://next.esphome.io/components/esphome#configuration-variables)*"
             }
           },
           "extends": [
             "core.COMPONENT_SCHEMA"
           ]
-        }
+        },
+        "type": "schema"
       }
     }
   }

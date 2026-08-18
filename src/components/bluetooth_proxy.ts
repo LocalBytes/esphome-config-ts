@@ -9,21 +9,22 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class BluetoothProxy extends EsphomeComponent<BluetoothProxyConfig> {
     componentName: string = "bluetooth_proxy";
 }
 
-export interface BluetoothProxyConfigConnections extends CoreCOMPONENT_SCHEMA {
+export interface BluetoothProxyConfigConnections extends CoreCOMPONENTSCHEMA {
     esp32_ble_id?: ID;
     id?: ID;
 }
 
-export interface BluetoothProxyConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
+export interface BluetoothProxyConfig extends CoreCOMPONENTSCHEMA {
     active?: boolean;
     cache_services?: boolean;
+    connection_slots?: number;
     connections?: BluetoothProxyConfigConnections[];
     esp32_ble_id?: ID;
+    id?: ID;
 }

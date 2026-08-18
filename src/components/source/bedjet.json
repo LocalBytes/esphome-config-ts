@@ -1,15 +1,30 @@
 {
   "bedjet": {
     "schemas": {
-      "CONFIG_SCHEMA": {
-        "type": "schema",
+      "BEDJET_CLIENT_SCHEMA": {
         "schema": {
-          "extends": [
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
-            "id": {
+            "bedjet_id": {
               "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "bedjet::BedJetHub",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: The ID of the Bedjet component.\n\n*See also: [BedJet](https://next.esphome.io/components/climate/bedjet#configuration-variables)*"
+            }
+          }
+        },
+        "type": "schema"
+      },
+      "CONFIG_SCHEMA": {
+        "is_list": true,
+        "schema": {
+          "config_vars": {
+            "ble_client_id": {
+              "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "ble_client::BLEClient",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: The ID of the BLE Client.\n\n*See also: [BedJet](https://next.esphome.io/components/climate/bedjet#configuration-variables)*"
+            },
+            "id": {
               "id_type": {
                 "class": "bedjet::BedJetHub",
                 "parents": [
@@ -18,65 +33,58 @@
                   "Component"
                 ]
               },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [bedjet Component/Hub](https://esphome.io/components/climate/bedjet.html#configuration-variables)*"
-            },
-            "time_id": {
-              "key": "Optional",
-              "use_id_type": "time::RealTimeClock",
-              "type": "use_id",
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The ID of a [Time Component](https://esphome.io/components/time/index.html) which can be used to set the time on the BedJet device.\n\n*See also: [bedjet Component/Hub](https://esphome.io/components/climate/bedjet.html#configuration-variables)*"
+              "key": "GeneratedID",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: Manually specify the ID used for code generation.\n\n*See also: [BedJet](https://next.esphome.io/components/climate/bedjet#configuration-variables)*"
             },
             "receive_timeout": {
-              "key": "Optional",
               "default": "0s",
-              "type": "schema",
+              "key": "Optional",
               "schema": {
                 "extends": [
                   "core.positive_time_period_milliseconds"
                 ]
-              }
+              },
+              "type": "schema"
             },
-            "ble_client_id": {
-              "key": "GeneratedID",
-              "use_id_type": "ble_client::BLEClient",
+            "time_id": {
+              "key": "Optional",
               "type": "use_id",
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The ID of the BLE Client.\n\n*See also: [bedjet Component/Hub](https://esphome.io/components/climate/bedjet.html#configuration-variables)*"
+              "use_id_type": "time::RealTimeClock",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: The ID of a [Time](https://next.esphome.io/components/time/) which can be used to set the time on the BedJet device.\n\n*See also: [BedJet](https://next.esphome.io/components/climate/bedjet#configuration-variables)*"
             },
             "update_interval": {
-              "key": "Optional",
               "default": "15s",
-              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to dispatch status changes to child components. Defaults to `5s`. Each child component can decide whether to publish its own updated state on this interval, or use another (longer) update interval to throttle its own updates.\n\n*See also: [bedjet Component/Hub](https://esphome.io/components/climate/bedjet.html#configuration-variables)*"
+              "key": "Optional",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The interval to dispatch status changes to child components. Defaults to `5s`. Each child component can decide whether to publish its own updated state on this interval, or use another (longer) update interval to throttle its own updates.\n\n*See also: [BedJet](https://next.esphome.io/components/climate/bedjet#configuration-variables)*"
             }
-          }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
         },
-        "is_list": true
-      },
-      "BEDJET_CLIENT_SCHEMA": {
-        "type": "schema",
-        "schema": {
-          "config_vars": {
-            "bedjet_id": {
-              "key": "Required",
-              "use_id_type": "bedjet::BedJetHub",
-              "type": "use_id",
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The ID of the Bedjet component.\n\n*See also: [bedjet Fan](https://esphome.io/components/climate/bedjet.html#id2)*"
-            }
-          }
-        }
+        "type": "schema"
       }
     }
   },
   "bedjet.climate": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "climate.CLIMATE_SCHEMA",
-            "core.COMPONENT_SCHEMA",
-            "bedjet.BEDJET_CLIENT_SCHEMA"
-          ],
           "config_vars": {
+            "heat_mode": {
+              "default": "heat",
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "heat": {
+                  "docs": "Default"
+                },
+                "extended": {
+                  "docs": "Setting `hvac_mode=heat` uses BedJet \"EXT HEAT\" mode. Whichever is not selected will be made available as a custom preset."
+                }
+              },
+              "docs": "**string**: The primary heating mode to use for `HVACMode.HEAT`  :\n\n*See also: [BedJet](https://next.esphome.io/components/climate/bedjet#configuration-variables)*"
+            },
             "id": {
               "id_type": {
                 "class": "bedjet::BedJetClimate",
@@ -87,39 +95,41 @@
                   "Component"
                 ]
               },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [bedjet Climate](https://esphome.io/components/climate/bedjet.html#id1)*"
+              "key": "GeneratedID"
             },
-            "heat_mode": {
+            "temperature_source": {
+              "default": "ambient",
               "key": "Optional",
-              "default": "heat",
               "type": "enum",
               "values": {
-                "heat": null,
-                "extended": {
-                  "docs": "Setting `hvac_mode=heat` uses BedJet \u201cEXT HEAT\u201d mode."
+                "outlet": {
+                  "docs": "The temperature of the air being discharged by the BedJet will be"
+                },
+                "ambient": {
+                  "docs": "Default"
                 }
               },
-              "docs": "**string**: The primary heating mode to use for `HVACMode.HEAT`:\n  * `heat` (Default) - Setting `hvac_mode=heat` uses the BedJet \u201cHEAT\u201d mode.\n  \n  * `extended` - Setting `hvac_mode=heat` uses BedJet \u201cEXT HEAT\u201d mode.\n  \n  Whichever is not selected will be made available as a custom preset.\n\n*See also: [bedjet Climate](https://esphome.io/components/climate/bedjet.html#id1)*"
+              "docs": "**string**: The temperature that should be used as the climate entity's current temperature:\n\n*See also: [BedJet](https://next.esphome.io/components/climate/bedjet#configuration-variables)*"
             },
             "update_interval": {
-              "key": "Optional",
-              "default": "60s"
+              "default": "60s",
+              "key": "Optional"
             }
-          }
-        }
+          },
+          "extends": [
+            "climate._CLIMATE_SCHEMA",
+            "core.COMPONENT_SCHEMA",
+            "bedjet.BEDJET_CLIENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   },
   "bedjet.fan": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "fan.FAN_SCHEMA",
-            "core.COMPONENT_SCHEMA",
-            "bedjet.BEDJET_CLIENT_SCHEMA"
-          ],
           "config_vars": {
             "id": {
               "id_type": {
@@ -131,14 +141,85 @@
                   "Component"
                 ]
               },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [bedjet Fan](https://esphome.io/components/climate/bedjet.html#id2)*"
+              "key": "GeneratedID"
             },
             "update_interval": {
-              "key": "Optional",
-              "default": "60s"
+              "default": "60s",
+              "key": "Optional"
             }
-          }
-        }
+          },
+          "extends": [
+            "fan._FAN_SCHEMA",
+            "core.COMPONENT_SCHEMA",
+            "bedjet.BEDJET_CLIENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
+      }
+    }
+  },
+  "bedjet.sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "schema": {
+          "config_vars": {
+            "ambient_temperature": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "device_class": {
+                    "default": "temperature"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "\u00b0C"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "If specified, the temperature of the room the BedJet is in will be reported as a sensor. All options from [Sensor](https://next.esphome.io/components/sensor).\n\n*See also: [BedJet](https://next.esphome.io/components/climate/bedjet#configuration-variables)*"
+            },
+            "id": {
+              "id_type": {
+                "class": "bedjet::BedjetSensor",
+                "parents": [
+                  "Component"
+                ]
+              },
+              "key": "GeneratedID"
+            },
+            "outlet_temperature": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "device_class": {
+                    "default": "temperature"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "\u00b0C"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "If specified, the temperature of the air being discharged from the BedJet will be reported as a sensor. All options from [Sensor](https://next.esphome.io/components/sensor).\n\n*See also: [BedJet](https://next.esphome.io/components/climate/bedjet#configuration-variables)*"
+            }
+          },
+          "extends": [
+            "bedjet.BEDJET_CLIENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

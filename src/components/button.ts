@@ -9,19 +9,33 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreENTITY_BASE_SCHEMA, CoreMQTT_COMMAND_COMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreENTITYBASESCHEMA, CoreMQTTCOMMANDCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Button extends EsphomeComponent {
     componentName: string = "button";
 }
 
-export type ButtonBUTTON_SCHEMADeviceClass = '' | 'identify' | 'restart' | 'update';
-export type ButtonBUTTON_SCHEMA = {
-        mqtt_id?: any;
-        device_class?: ButtonBUTTON_SCHEMADeviceClass;
-        on_press?: object[];
-    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMMAND_COMPONENT_SCHEMA;
-
-export interface ButtonBUTTON_PRESS_SCHEMA {
+export interface ButtonBUTTONPRESSSCHEMA {
     id: ID;
 }
+
+export type ButtonBUTTONSCHEMADeviceClass = '' | 'identify' | 'restart' | 'update';
+
+export interface ButtonBUTTONSCHEMAWebServer {
+    sorting_group_id?: ID;
+    sorting_weight?: any;
+    web_server_id?: ID;
+}
+
+export type ButtonBUTTONSCHEMA = {
+        device_class?: ButtonBUTTONSCHEMADeviceClass;
+        mqtt_id?: any;
+        on_press?: object[];
+        web_server?: ButtonBUTTONSCHEMAWebServer;
+        id?: any;
+        name?: any;
+        icon?: any;
+        internal?: any;
+        disabled_by_default?: any;
+        entity_category?: any;
+    } & CoreENTITYBASESCHEMA & CoreMQTTCOMMANDCOMPONENTSCHEMA;

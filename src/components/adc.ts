@@ -9,22 +9,26 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class AdcSensor extends EsphomeComponent<AdcSensorConfig> {
     componentName: string = "adc.sensor";
 }
 
-export type AdcSensorConfigAttenuation = '0db' | '2.5db' | '6db' | '11db' | 'auto';
+export type AdcSensorConfigAttenuation = '0db' | '2.5db' | '6db' | '11db' | '12db' | 'auto';
+export type AdcSensorConfigSamplingMode = 'avg' | 'min' | 'max';
 export type AdcSensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
         accuracy_decimals?: any;
+        attenuation?: AdcSensorConfigAttenuation;
         device_class?: any;
-        state_class?: any;
+        id?: any;
+        nrf_saadc?: any;
         pin: Pin;
         raw?: boolean;
-        attenuation?: AdcSensorConfigAttenuation;
+        samples?: number;
+        sampling_mode?: AdcSensorConfigSamplingMode;
+        state_class?: any;
+        unit_of_measurement?: any;
         update_interval?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

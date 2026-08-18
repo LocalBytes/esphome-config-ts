@@ -9,19 +9,24 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayBASIC_DISPLAY_SCHEMA } from "./display.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { DisplayBASICDISPLAYSCHEMA } from "./display.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Max7219Display extends EsphomeComponent<Max7219DisplayConfig> {
     componentName: string = "max7219.display";
 }
 
+export type Max7219DisplayConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 export type Max7219DisplayConfig = {
-        id?: ID;
-        num_chips?: number;
-        intensity?: number;
-        reverse_enable?: boolean;
-        update_interval?: any;
-        spi_id?: ID;
         cs_pin: Pin;
-    } & DisplayBASIC_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;
+        data_rate?: any;
+        id?: ID;
+        intensity?: number;
+        num_chips?: number;
+        release_device?: boolean;
+        reverse_enable?: boolean;
+        spi_id?: ID;
+        spi_mode?: Max7219DisplayConfigSpiMode;
+        update_interval?: any;
+        lambda?: any;
+    } & DisplayBASICDISPLAYSCHEMA & CoreCOMPONENTSCHEMA;

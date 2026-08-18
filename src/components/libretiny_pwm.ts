@@ -9,15 +9,15 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class LibretinyPwmOutput extends EsphomeComponent<LibretinyPwmOutputConfig> {
     componentName: string = "libretiny_pwm.output";
 }
 
 export type LibretinyPwmOutputConfig = {
+        frequency?: any;
         id: string;
         pin: Pin;
-        frequency?: any;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;

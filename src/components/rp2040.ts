@@ -9,18 +9,25 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
+import type { CorePositiveTimePeriodMilliseconds } from "./esphome.js";
 
 export class Rp2040 extends EsphomeComponent<Rp2040Config> {
     componentName: string = "rp2040";
 }
 
 export interface Rp2040ConfigFramework {
-    version?: string;
-    source?: string;
     platform_version?: any;
+    source?: string;
+    version?: string;
 }
 
+export type Rp2040ConfigVariant = 'RP2040' | 'RP2350';
+export type Rp2040ConfigWatchdogTimeout = CorePositiveTimePeriodMilliseconds;
+
 export interface Rp2040Config {
-    board: string;
+    board?: string;
+    enable_full_printf?: boolean;
     framework?: Rp2040ConfigFramework;
+    variant?: Rp2040ConfigVariant;
+    watchdog_timeout?: Rp2040ConfigWatchdogTimeout;
 }

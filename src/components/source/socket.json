@@ -2,12 +2,11 @@
   "socket": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
           "config_vars": {
             "implementation": {
-              "key": "Optional",
               "default": "lwip_tcp",
+              "key": "Optional",
               "type": "enum",
               "values": {
                 "lwip_tcp": null,
@@ -16,7 +15,8 @@
               }
             }
           }
-        }
+        },
+        "type": "schema"
       }
     }
   }

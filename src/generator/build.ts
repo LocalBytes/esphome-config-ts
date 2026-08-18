@@ -63,9 +63,6 @@ files.forEach(file => {
         } catch (e) {
             console.error(`Error generating ${key}`, e);
             totals.errors++;
-
-            //Re-throw to stop the build whilst we're developing, remove this when we're done.
-            throw e;
         }
     });
 

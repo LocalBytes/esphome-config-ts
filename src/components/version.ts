@@ -9,16 +9,17 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class VersionTextSensor extends EsphomeComponent<VersionTextSensorConfig> {
     componentName: string = "version.text_sensor";
 }
 
 export type VersionTextSensorConfig = {
-        icon?: any;
         entity_category?: any;
-        id?: any;
+        hide_hash?: boolean;
         hide_timestamp?: boolean;
-    } & TextSensorTEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+        icon?: any;
+        id?: any;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;

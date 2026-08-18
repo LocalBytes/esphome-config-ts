@@ -9,17 +9,22 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Mcp3008 extends EsphomeComponent<Mcp3008Config> {
     componentName: string = "mcp3008";
 }
 
+export type Mcp3008ConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
+
 export interface Mcp3008Config {
-    id?: ID;
-    spi_id?: ID;
     cs_pin: Pin;
+    data_rate?: any;
+    id?: ID;
+    release_device?: boolean;
+    spi_id?: ID;
+    spi_mode?: Mcp3008ConfigSpiMode;
 }
 
 export class Mcp3008Sensor extends EsphomeComponent<Mcp3008SensorConfig> {
@@ -27,9 +32,12 @@ export class Mcp3008Sensor extends EsphomeComponent<Mcp3008SensorConfig> {
 }
 
 export type Mcp3008SensorConfig = {
+        device_class?: any;
         id?: any;
         mcp3008_id?: ID;
         number: number;
         reference_voltage?: any;
+        state_class?: any;
+        unit_of_measurement?: any;
         update_interval?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
 
 export class Rdm6300 extends EsphomeComponent<Rdm6300Config> {
     componentName: string = "rdm6300";
 }
 
-export interface Rdm6300Config extends CoreCOMPONENT_SCHEMA {
+export interface Rdm6300Config extends CoreCOMPONENTSCHEMA {
     id?: ID;
     on_tag?: object[];
     uart_id?: ID;
@@ -26,7 +26,7 @@ export class Rdm6300BinarySensor extends EsphomeComponent<Rdm6300BinarySensorCon
     componentName: string = "rdm6300.binary_sensor";
 }
 
-export interface Rdm6300BinarySensorConfig extends BinarySensorBINARY_SENSOR_SCHEMA {
+export interface Rdm6300BinarySensorConfig extends BinarySensorBINARYSENSORSCHEMA {
     id?: any;
     rdm6300_id?: ID;
     uid: number;

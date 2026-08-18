@@ -9,18 +9,20 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class AcDimmerOutput extends EsphomeComponent<AcDimmerOutputConfig> {
     componentName: string = "ac_dimmer.output";
 }
 
 export type AcDimmerOutputConfigMethod = 'LEADING_PULSE' | 'LEADING' | 'TRAILING';
+export type AcDimmerOutputConfigZeroCrossInterruptType = 'RISING' | 'FALLING' | 'ANY';
 export type AcDimmerOutputConfig = {
-        id: string;
         gate_pin: Pin;
-        zero_cross_pin: Pin;
+        id: string;
         init_with_half_cycle?: boolean;
         method?: AcDimmerOutputConfigMethod;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+        zero_cross_interrupt_type?: AcDimmerOutputConfigZeroCrossInterruptType;
+        zero_cross_pin: Pin;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;

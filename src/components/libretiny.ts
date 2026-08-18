@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class Libretiny extends EsphomeComponent<any> {
     componentName: string = "libretiny";
@@ -19,9 +19,9 @@ export class LibretinyTextSensor extends EsphomeComponent<LibretinyTextSensorCon
     componentName: string = "libretiny.text_sensor";
 }
 
-export interface LibretinyTextSensorConfigVersion extends TextSensorTEXT_SENSOR_SCHEMA {
-    icon?: any;
+export interface LibretinyTextSensorConfigVersion extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
+    icon?: any;
 }
 
 export interface LibretinyTextSensorConfig {

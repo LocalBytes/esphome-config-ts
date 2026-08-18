@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class ResistanceSensor extends EsphomeComponent<ResistanceSensorConfig> {
     componentName: string = "resistance.sensor";
@@ -18,13 +18,13 @@ export class ResistanceSensor extends EsphomeComponent<ResistanceSensorConfig> {
 
 export type ResistanceSensorConfigConfiguration = 'DOWNSTREAM' | 'UPSTREAM';
 export type ResistanceSensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
-        icon?: any;
         accuracy_decimals?: any;
-        state_class?: any;
-        sensor: ID;
         configuration: ResistanceSensorConfigConfiguration;
-        resistor: string;
+        icon?: any;
+        id?: any;
         reference_voltage?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+        resistor: string;
+        sensor: ID;
+        state_class?: any;
+        unit_of_measurement?: any;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

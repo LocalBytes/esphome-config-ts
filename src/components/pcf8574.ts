@@ -9,15 +9,16 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Pcf8574 extends EsphomeComponent<Pcf8574Config> {
     componentName: string = "pcf8574";
 }
 
-export interface Pcf8574Config extends CoreCOMPONENT_SCHEMA {
-    id: string;
-    pcf8575?: boolean;
-    i2c_id?: ID;
+export interface Pcf8574Config extends CoreCOMPONENTSCHEMA {
     address?: any;
+    i2c_id?: ID;
+    id: string;
+    interrupt_pin?: Pin;
+    pcf8575?: boolean;
 }

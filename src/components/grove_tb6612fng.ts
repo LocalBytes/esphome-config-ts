@@ -9,15 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class GroveTb6612fng extends EsphomeComponent<GroveTb6612fngConfig> {
     componentName: string = "grove_tb6612fng";
 }
 
-export interface GroveTb6612fngConfig extends CoreCOMPONENT_SCHEMA {
-    id: string;
-    i2c_id?: ID;
+export interface GroveTb6612fngConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
-    name?: any;
+    i2c_id?: ID;
+    id: string;
 }

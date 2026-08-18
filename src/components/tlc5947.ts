@@ -9,20 +9,20 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
 
 export class Tlc5947 extends EsphomeComponent<Tlc5947Config> {
     componentName: string = "tlc5947";
 }
 
-export interface Tlc5947Config extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    data_pin: Pin;
+export interface Tlc5947Config extends CoreCOMPONENTSCHEMA {
     clock_pin: Pin;
+    data_pin: Pin;
+    id?: ID;
     lat_pin: Pin;
-    oe_pin?: Pin;
     num_chips?: number;
+    oe_pin?: Pin;
 }
 
 export class Tlc5947Output extends EsphomeComponent<Tlc5947OutputConfig> {
@@ -30,7 +30,7 @@ export class Tlc5947Output extends EsphomeComponent<Tlc5947OutputConfig> {
 }
 
 export type Tlc5947OutputConfig = {
-        tlc5947_id?: ID;
-        id: string;
         channel: number;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+        id: string;
+        tlc5947_id?: ID;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;

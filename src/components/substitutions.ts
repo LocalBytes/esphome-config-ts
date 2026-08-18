@@ -15,5 +15,5 @@ export class Substitutions extends EsphomeComponent<SubstitutionsConfig> {
 }
 
 export interface SubstitutionsConfig {
-    string: string;
+    string?: any;
 }

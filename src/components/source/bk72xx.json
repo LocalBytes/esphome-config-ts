@@ -1,24 +1,20 @@
 {
   "bk72xx": {
+    "pin": {
+      "schema": {
+        "extends": [
+          "bk72xx.PIN_SCHEMA"
+        ]
+      },
+      "type": "schema"
+    },
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
           "config_vars": {
-            "id": {
-              "key": "GeneratedID",
-              "id_type": {
-                "class": "libretiny::LTComponent",
-                "parents": [
-                  "PollingComponent",
-                  "Component"
-                ]
-              }
-            },
             "board": {
               "key": "Required",
-              "type": "string",
-              "docs": "**string**: The PlatformIO board ID that should be used. Choose the appropriate board from [this list](https://registry.platformio.org/packages/platforms/kuba2k2/libretiny/boards) (the icon next to the name can be used to copy the board ID).**This affects CPU selection and some internal settings** - make sure to choose the right CPU. If unsure about the choice of a particular board, choose a generic board such as `generic-bk7231n-qfn32-tuya`.\n\n*See also: [LibreTiny Platform](https://esphome.io/components/libretiny.html#configuration-variables)*"
+              "type": "string"
             },
             "family": {
               "key": "Optional",
@@ -27,48 +23,22 @@
                 "BK7231N": null,
                 "BK7231Q": null,
                 "BK7231T": null,
+                "BK7238": null,
                 "BK7251": null,
+                "LN882H": null,
                 "RTL8710B": null,
                 "RTL8720C": null
-              },
-              "docs": "**boolean**: The family of LibreTiny-supported microcontrollers that is used on this board. One of `bk7231n`, `bk7231t`, `rtl8710b`, `rtl8720c`, `bk7251`, `bk7231q`. Defaults to the variant that is detected from the board, if a board that\u2019s unknown to ESPHome is used, this option is mandatory. **It\u2019s recommended not to include this option**.\n\n*See also: [LibreTiny Platform](https://esphome.io/components/libretiny.html#configuration-variables)*"
+              }
             },
             "framework": {
-              "key": "Optional",
               "default": "{}",
-              "type": "schema",
+              "key": "Optional",
               "schema": {
                 "config_vars": {
-                  "version": {
-                    "key": "Optional",
-                    "default": "recommended",
-                    "type": "string",
-                    "docs": "**string**: The LibreTiny version number to use, from [LibreTiny platform releases](https://github.com/kuba2k2/libretiny/releases). Defaults to `recommended`. Additional values\n  * `dev`: Use the latest commit from [https://github.com/kuba2k2/libretiny](https://github.com/kuba2k2/libretiny), note this may break at any time\n  \n  * `latest`: Use the latest *release* from [https://github.com/kuba2k2/libretiny/releases](https://github.com/kuba2k2/libretiny/releases), even if it hasn\u2019t been recommended yet.\n  \n  * `recommended`: Use the recommended framework version.\n  \n  \n\n*See also: [LibreTiny Platform](https://esphome.io/components/libretiny.html#configuration-variables)*"
-                  },
-                  "source": {
-                    "key": "Optional",
-                    "type": "string",
-                    "docs": "**string**: The PlatformIO package or repository to use for the framework. This can be used to use a custom or patched version of the framework.\n\n*See also: [LibreTiny Platform](https://esphome.io/components/libretiny.html#configuration-variables)*"
-                  },
-                  "loglevel": {
-                    "key": "Optional",
-                    "default": "warn",
-                    "type": "enum",
-                    "values": {
-                      "VERBOSE": null,
-                      "TRACE": null,
-                      "DEBUG": null,
-                      "INFO": null,
-                      "WARN": null,
-                      "ERROR": null,
-                      "FATAL": null,
-                      "NONE": null
-                    }
-                  },
                   "debug": {
-                    "key": "Optional",
                     "default": "[]",
                     "is_list": true,
+                    "key": "Optional",
                     "type": "enum",
                     "values": {
                       "NONE": null,
@@ -83,15 +53,52 @@
                       "LWIP_ASSERT": null
                     }
                   },
-                  "sdk_silent": {
+                  "gpio_recover": {
+                    "default": "True",
                     "key": "Optional",
+                    "type": "boolean"
+                  },
+                  "loglevel": {
+                    "default": "warn",
+                    "key": "Optional",
+                    "type": "enum",
+                    "values": {
+                      "VERBOSE": null,
+                      "TRACE": null,
+                      "DEBUG": null,
+                      "INFO": null,
+                      "WARN": null,
+                      "ERROR": null,
+                      "FATAL": null,
+                      "NONE": null
+                    }
+                  },
+                  "options": {
+                    "default": "{}",
+                    "key": "String",
+                    "key_type": "string_strict",
+                    "schema": {
+                      "config_vars": {
+                        "string": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "type": "schema"
+                  },
+                  "sdk_silent": {
                     "default": "all",
+                    "key": "Optional",
                     "type": "enum",
                     "values": {
                       "all": null,
                       "auto": null,
                       "none": null
                     }
+                  },
+                  "source": {
+                    "key": "Optional",
+                    "type": "string"
                   },
                   "uart_port": {
                     "key": "Optional",
@@ -102,38 +109,97 @@
                       "2": null
                     }
                   },
-                  "gpio_recover": {
+                  "version": {
+                    "default": "recommended",
                     "key": "Optional",
-                    "default": "True",
-                    "type": "boolean"
-                  },
-                  "options": {
-                    "key": "String",
-                    "default": "{}",
-                    "key_type": "string_strict",
-                    "type": "schema",
-                    "schema": {
-                      "config_vars": {
-                        "string": {
-                          "type": "string"
-                        }
-                      }
-                    }
+                    "type": "string"
                   }
                 }
               },
-              "docs": "Options for the underlying framework used by ESPHome.\n  * **version** (*Optional*, string): The LibreTiny version number to use, from [LibreTiny platform releases](https://github.com/kuba2k2/libretiny/releases). Defaults to `recommended`. Additional values\n    * `dev`: Use the latest commit from [https://github.com/kuba2k2/libretiny](https://github.com/kuba2k2/libretiny), note this may break at any time\n    \n    * `latest`: Use the latest *release* from [https://github.com/kuba2k2/libretiny/releases](https://github.com/kuba2k2/libretiny/releases), even if it hasn\u2019t been recommended yet.\n    \n    * `recommended`: Use the recommended framework version.\n    \n    \n  \n  * **source** (*Optional*, string): The PlatformIO package or repository to use for the framework. This can be used to use a custom or patched version of the framework.\n  \n  * [Advanced options](https://esphome.io/components/libretiny.html#advanced-options)\n  \n  \n\n*See also: [LibreTiny Platform](https://esphome.io/components/libretiny.html#configuration-variables)*"
+              "type": "schema"
+            },
+            "id": {
+              "id_type": {
+                "class": "libretiny::LTComponent",
+                "parents": [
+                  "PollingComponent",
+                  "Component"
+                ]
+              },
+              "key": "GeneratedID"
             }
           }
-        }
-      }
-    },
-    "pin": {
-      "type": "schema",
-      "schema": {
-        "extends": [
-          "bk72xx.PIN_SCHEMA"
-        ]
+        },
+        "type": "schema"
+      },
+      "PIN_SCHEMA": {
+        "schema": {
+          "config_vars": {
+            "allow_other_uses": {
+              "key": "Optional",
+              "type": "boolean"
+            },
+            "id": {
+              "id_type": {
+                "class": "libretiny::ArduinoInternalGPIOPin",
+                "parents": [
+                  "InternalGPIOPin",
+                  "GPIOPin"
+                ]
+              },
+              "key": "GeneratedID"
+            },
+            "inverted": {
+              "default": "False",
+              "key": "Optional",
+              "type": "boolean"
+            },
+            "mode": {
+              "default": "{}",
+              "key": "Optional",
+              "modes": [],
+              "schema": {
+                "config_vars": {
+                  "analog": {
+                    "default": "False",
+                    "key": "Optional",
+                    "type": "boolean"
+                  },
+                  "input": {
+                    "default": "False",
+                    "key": "Optional",
+                    "type": "boolean"
+                  },
+                  "open_drain": {
+                    "default": "False",
+                    "key": "Optional",
+                    "type": "boolean"
+                  },
+                  "output": {
+                    "default": "False",
+                    "key": "Optional",
+                    "type": "boolean"
+                  },
+                  "pulldown": {
+                    "default": "False",
+                    "key": "Optional",
+                    "type": "boolean"
+                  },
+                  "pullup": {
+                    "default": "False",
+                    "key": "Optional",
+                    "type": "boolean"
+                  }
+                }
+              },
+              "type": "pin"
+            },
+            "number": {
+              "key": "Required"
+            }
+          }
+        },
+        "type": "schema"
       }
     }
   }

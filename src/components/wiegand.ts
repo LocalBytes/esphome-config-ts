@@ -9,16 +9,17 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Wiegand extends EsphomeComponent<WiegandConfig> {
     componentName: string = "wiegand";
 }
 
-export interface WiegandConfig {
-    id?: ID;
+export interface WiegandConfig extends CoreCOMPONENTSCHEMA {
     d0: Pin;
     d1: Pin;
-    on_tag?: object[];
-    on_raw?: object[];
+    id?: ID;
     on_key?: object[];
+    on_raw?: object[];
+    on_tag?: object[];
 }

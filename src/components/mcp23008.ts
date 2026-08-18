@@ -9,15 +9,16 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Mcp23008 extends EsphomeComponent<Mcp23008Config> {
     componentName: string = "mcp23008";
 }
 
-export interface Mcp23008Config extends CoreCOMPONENT_SCHEMA {
-    id: string;
-    open_drain_interrupt?: boolean;
-    i2c_id?: ID;
+export interface Mcp23008Config extends CoreCOMPONENTSCHEMA {
     address?: any;
+    i2c_id?: ID;
+    id: string;
+    interrupt_pin?: any;
+    open_drain_interrupt?: boolean;
 }

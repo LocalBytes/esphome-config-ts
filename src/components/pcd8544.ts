@@ -9,19 +9,25 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Pcd8544Display extends EsphomeComponent<Pcd8544DisplayConfig> {
     componentName: string = "pcd8544.display";
 }
 
+export type Pcd8544DisplayConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 export type Pcd8544DisplayConfig = {
-        id?: ID;
-        dc_pin: Pin;
-        reset_pin: Pin;
-        cs_pin: Pin;
         contrast?: number;
-        update_interval?: any;
+        cs_pin: Pin;
+        data_rate?: any;
+        dc_pin: Pin;
+        id?: ID;
+        release_device?: boolean;
+        reset_pin: Pin;
         spi_id?: ID;
-    } & DisplayFULL_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;
+        spi_mode?: Pcd8544DisplayConfigSpiMode;
+        update_interval?: any;
+        lambda?: any;
+        pages?: any;
+    } & DisplayFULLDISPLAYSCHEMA & CoreCOMPONENTSCHEMA;

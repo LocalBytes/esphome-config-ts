@@ -1,0 +1,322 @@
+{
+  "openthread_info.text_sensor": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "schema": {
+          "config_vars": {
+            "channel": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "entity_category": {
+                    "default": "diagnostic"
+                  },
+                  "id": {
+                    "id_type": {
+                      "class": "openthread_info::ChannelOpenThreadInfo",
+                      "parents": [
+                        "text_sensor::TextSensor",
+                        "EntityBase",
+                        "PollingComponent",
+                        "Component"
+                      ]
+                    }
+                  },
+                  "update_interval": {
+                    "default": "1s",
+                    "key": "Optional"
+                  }
+                },
+                "extends": [
+                  "text_sensor._TEXT_SENSOR_SCHEMA",
+                  "core.COMPONENT_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Expose the Thread network channel (11-26) as a text sensor. All options from [Text Sensor](https://next.esphome.io/components/text_sensor#config-text_sensor).\n\n*See also: [OpenThread Info Text Sensor](https://next.esphome.io/components/text_sensor/openthread_info#configuration-variables)*"
+            },
+            "eui64": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "entity_category": {
+                    "default": "diagnostic"
+                  },
+                  "id": {
+                    "id_type": {
+                      "class": "openthread_info::Eui64OpenThreadInfo",
+                      "parents": [
+                        "text_sensor::TextSensor",
+                        "EntityBase",
+                        "Component"
+                      ]
+                    }
+                  },
+                  "update_interval": {
+                    "default": "1h",
+                    "key": "Optional"
+                  }
+                },
+                "extends": [
+                  "text_sensor._TEXT_SENSOR_SCHEMA",
+                  "core.COMPONENT_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Expose the EUI-64 address as a text sensor. This is the unique 64-bit identifier for the device. All options from [Text Sensor](https://next.esphome.io/components/text_sensor#config-text_sensor).\n\n*See also: [OpenThread Info Text Sensor](https://next.esphome.io/components/text_sensor/openthread_info#configuration-variables)*"
+            },
+            "ext_addr": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "entity_category": {
+                    "default": "diagnostic"
+                  },
+                  "id": {
+                    "id_type": {
+                      "class": "openthread_info::ExtAddrOpenThreadInfo",
+                      "parents": [
+                        "text_sensor::TextSensor",
+                        "EntityBase",
+                        "PollingComponent",
+                        "Component"
+                      ]
+                    }
+                  },
+                  "update_interval": {
+                    "default": "1s",
+                    "key": "Optional"
+                  }
+                },
+                "extends": [
+                  "text_sensor._TEXT_SENSOR_SCHEMA",
+                  "core.COMPONENT_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Expose the IEEE 802.15.4 Extended MAC address as a text sensor. All options from [Text Sensor](https://next.esphome.io/components/text_sensor#config-text_sensor).\n\n*See also: [OpenThread Info Text Sensor](https://next.esphome.io/components/text_sensor/openthread_info#configuration-variables)*"
+            },
+            "ext_pan_id": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "entity_category": {
+                    "default": "diagnostic"
+                  },
+                  "id": {
+                    "id_type": {
+                      "class": "openthread_info::ExtPanIdOpenThreadInfo",
+                      "parents": [
+                        "text_sensor::TextSensor",
+                        "EntityBase",
+                        "PollingComponent",
+                        "Component"
+                      ]
+                    }
+                  },
+                  "update_interval": {
+                    "default": "1s",
+                    "key": "Optional"
+                  }
+                },
+                "extends": [
+                  "text_sensor._TEXT_SENSOR_SCHEMA",
+                  "core.COMPONENT_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Expose the Extended PAN ID as a text sensor. This is a 64-bit extended identifier for the Thread network. All options from [Text Sensor](https://next.esphome.io/components/text_sensor#config-text_sensor).\n\n*See also: [OpenThread Info Text Sensor](https://next.esphome.io/components/text_sensor/openthread_info#configuration-variables)*"
+            },
+            "ip_address": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "entity_category": {
+                    "default": "diagnostic"
+                  },
+                  "id": {
+                    "id_type": {
+                      "class": "openthread_info::IPAddressOpenThreadInfo",
+                      "parents": [
+                        "text_sensor::TextSensor",
+                        "EntityBase",
+                        "PollingComponent",
+                        "Component"
+                      ]
+                    }
+                  },
+                  "update_interval": {
+                    "default": "1s",
+                    "key": "Optional"
+                  }
+                },
+                "extends": [
+                  "text_sensor._TEXT_SENSOR_SCHEMA",
+                  "core.COMPONENT_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Expose the off-mesh routable IPv6 address of the Thread device as a text sensor. This is the address used for communication outside the Thread mesh network. All options from [Text Sensor](https://next.esphome.io/components/text_sensor#config-text_sensor).\n\n*See also: [OpenThread Info Text Sensor](https://next.esphome.io/components/text_sensor/openthread_info#configuration-variables)*"
+            },
+            "network_key": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "entity_category": {
+                    "default": "diagnostic"
+                  },
+                  "id": {
+                    "id_type": {
+                      "class": "openthread_info::NetworkKeyOpenThreadInfo",
+                      "parents": [
+                        "text_sensor::TextSensor",
+                        "EntityBase",
+                        "PollingComponent",
+                        "Component"
+                      ]
+                    }
+                  },
+                  "update_interval": {
+                    "default": "1s",
+                    "key": "Optional"
+                  }
+                },
+                "extends": [
+                  "text_sensor._TEXT_SENSOR_SCHEMA",
+                  "core.COMPONENT_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Expose the Thread network key as a text sensor. All options from [Text Sensor](https://next.esphome.io/components/text_sensor#config-text_sensor). > [!WARNING] > The `network_key` sensor exposes sensitive security credentials that could allow unauthorized access to your > Thread network. Only enable this sensor if you need it for debugging purposes and understand the security > implications.\n\n*See also: [OpenThread Info Text Sensor](https://next.esphome.io/components/text_sensor/openthread_info#configuration-variables)*"
+            },
+            "network_name": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "entity_category": {
+                    "default": "diagnostic"
+                  },
+                  "id": {
+                    "id_type": {
+                      "class": "openthread_info::NetworkNameOpenThreadInfo",
+                      "parents": [
+                        "text_sensor::TextSensor",
+                        "EntityBase",
+                        "PollingComponent",
+                        "Component"
+                      ]
+                    }
+                  },
+                  "update_interval": {
+                    "default": "1s",
+                    "key": "Optional"
+                  }
+                },
+                "extends": [
+                  "text_sensor._TEXT_SENSOR_SCHEMA",
+                  "core.COMPONENT_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Expose the Thread network name as a text sensor. All options from [Text Sensor](https://next.esphome.io/components/text_sensor#config-text_sensor).\n\n*See also: [OpenThread Info Text Sensor](https://next.esphome.io/components/text_sensor/openthread_info#configuration-variables)*"
+            },
+            "pan_id": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "entity_category": {
+                    "default": "diagnostic"
+                  },
+                  "id": {
+                    "id_type": {
+                      "class": "openthread_info::PanIdOpenThreadInfo",
+                      "parents": [
+                        "text_sensor::TextSensor",
+                        "EntityBase",
+                        "PollingComponent",
+                        "Component"
+                      ]
+                    }
+                  },
+                  "update_interval": {
+                    "default": "1s",
+                    "key": "Optional"
+                  }
+                },
+                "extends": [
+                  "text_sensor._TEXT_SENSOR_SCHEMA",
+                  "core.COMPONENT_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Expose the Personal Area Network ID (PAN ID) as a text sensor. This is a 16-bit identifier for the Thread network. All options from [Text Sensor](https://next.esphome.io/components/text_sensor#config-text_sensor).\n\n*See also: [OpenThread Info Text Sensor](https://next.esphome.io/components/text_sensor/openthread_info#configuration-variables)*"
+            },
+            "rloc16": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "entity_category": {
+                    "default": "diagnostic"
+                  },
+                  "id": {
+                    "id_type": {
+                      "class": "openthread_info::Rloc16OpenThreadInfo",
+                      "parents": [
+                        "text_sensor::TextSensor",
+                        "EntityBase",
+                        "PollingComponent",
+                        "Component"
+                      ]
+                    }
+                  },
+                  "update_interval": {
+                    "default": "1s",
+                    "key": "Optional"
+                  }
+                },
+                "extends": [
+                  "text_sensor._TEXT_SENSOR_SCHEMA",
+                  "core.COMPONENT_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Expose the Router Locator (RLOC16) address as a text sensor. This is a 16-bit address used for routing within the Thread network. All options from [Text Sensor](https://next.esphome.io/components/text_sensor#config-text_sensor).\n\n*See also: [OpenThread Info Text Sensor](https://next.esphome.io/components/text_sensor/openthread_info#configuration-variables)*"
+            },
+            "role": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "entity_category": {
+                    "default": "diagnostic"
+                  },
+                  "id": {
+                    "id_type": {
+                      "class": "openthread_info::RoleOpenThreadInfo",
+                      "parents": [
+                        "text_sensor::TextSensor",
+                        "EntityBase",
+                        "PollingComponent",
+                        "Component"
+                      ]
+                    }
+                  },
+                  "update_interval": {
+                    "default": "1s",
+                    "key": "Optional"
+                  }
+                },
+                "extends": [
+                  "text_sensor._TEXT_SENSOR_SCHEMA",
+                  "core.COMPONENT_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Expose the current device role in the Thread network (Leader, Router, Child, Detached, etc.) as a text sensor. All options from [Text Sensor](https://next.esphome.io/components/text_sensor#config-text_sensor).\n\n*See also: [OpenThread Info Text Sensor](https://next.esphome.io/components/text_sensor/openthread_info#configuration-variables)*"
+            }
+          }
+        },
+        "type": "schema"
+      }
+    }
+  }
+}

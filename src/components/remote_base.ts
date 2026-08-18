@@ -14,21 +14,18 @@ export abstract class RemoteBase extends EsphomeComponent {
     componentName: string = "remote_base";
 }
 
-export interface RemoteBaseBASE_REMOTE_TRANSMITTER_SCHEMA {
-    transmitter_id?: ID;
+export interface RemoteBaseBASEREMOTETRANSMITTERSCHEMA extends RemoteBaseREMOTETRANSMITTABLESCHEMA {
     repeat?: any;
 }
 
-export interface RemoteBaseCANALSAT_SCHEMA {
-    device: string;
-    address?: any;
-    command: string;
-}
-
-export interface RemoteBaseRC_SWITCH_PROTOCOL_SCHEMA {
+export interface RemoteBaseRCSWITCHPROTOCOLSCHEMA {
+    inverted?: boolean;
+    one?: any;
     pulse_length: number;
     sync?: any;
     zero?: any;
-    one?: any;
-    inverted?: boolean;
+}
+
+export interface RemoteBaseREMOTETRANSMITTABLESCHEMA {
+    transmitter_id?: ID;
 }

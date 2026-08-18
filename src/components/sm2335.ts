@@ -9,16 +9,20 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sm10bitBaseSM10BIT_BASE_CONFIG_SCHEMA } from "./sm10bit_base.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { Sm10bitBaseSM10BITBASECONFIGSCHEMA } from "./sm10bit_base.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Sm2335 extends EsphomeComponent<Sm2335Config> {
     componentName: string = "sm2335";
 }
 
-export interface Sm2335Config extends Sm10bitBaseSM10BIT_BASE_CONFIG_SCHEMA {
+export interface Sm2335Config extends Sm10bitBaseSM10BITBASECONFIGSCHEMA {
     id?: ID;
+    data_pin: string;
+    clock_pin: string;
+    max_power_color_channels?: any;
+    max_power_white_channels?: any;
 }
 
 export class Sm2335Output extends EsphomeComponent<Sm2335OutputConfig> {
@@ -26,7 +30,7 @@ export class Sm2335Output extends EsphomeComponent<Sm2335OutputConfig> {
 }
 
 export type Sm2335OutputConfig = {
-        sm2335_id?: ID;
-        id: string;
         channel: number;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+        id: string;
+        sm2335_id?: ID;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;

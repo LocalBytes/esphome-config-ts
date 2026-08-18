@@ -9,67 +9,68 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+
+export abstract class Pzemac extends EsphomeComponent {
+    componentName: string = "pzemac";
+}
 
 export class PzemacSensor extends EsphomeComponent<PzemacSensorConfig> {
     componentName: string = "pzemac.sensor";
 }
 
-export interface PzemacSensorConfigVoltage extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface PzemacSensorConfigCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface PzemacSensorConfigCurrent extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface PzemacSensorConfigEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface PzemacSensorConfigPower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface PzemacSensorConfigFrequency extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-    state_class?: any;
-}
-
-export interface PzemacSensorConfigEnergy extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export interface PzemacSensorConfigFrequency extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
     icon?: any;
-    accuracy_decimals?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface PzemacSensorConfigPowerFactor extends SensorSENSOR_SCHEMA {
+export interface PzemacSensorConfigPower extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface PzemacSensorConfigPowerFactor extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
 }
 
-export interface PzemacSensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    voltage?: PzemacSensorConfigVoltage;
+export interface PzemacSensorConfigVoltage extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface PzemacSensorConfig extends CoreCOMPONENTSCHEMA {
+    address?: any;
     current?: PzemacSensorConfigCurrent;
-    power?: PzemacSensorConfigPower;
     energy?: PzemacSensorConfigEnergy;
     frequency?: PzemacSensorConfigFrequency;
+    id?: ID;
+    modbus_id?: ID;
+    power?: PzemacSensorConfigPower;
     power_factor?: PzemacSensorConfigPowerFactor;
     update_interval?: any;
-    modbus_id?: ID;
-    address?: any;
-}
-
-export abstract class Pzemac extends EsphomeComponent {
-    componentName: string = "pzemac";
+    voltage?: PzemacSensorConfigVoltage;
 }

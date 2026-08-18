@@ -14,10 +14,13 @@ export abstract class Microphone extends EsphomeComponent {
     componentName: string = "microphone";
 }
 
-export interface MicrophoneMICROPHONE_SCHEMA {
-    on_data?: object[];
+export interface MicrophoneMICROPHONEACTIONSCHEMA {
+    id?: ID;
 }
 
-export interface MicrophoneMICROPHONE_ACTION_SCHEMA {
-    id?: ID;
+export interface MicrophoneMICROPHONESCHEMA {
+    bits_per_sample?: number;
+    num_channels?: number;
+    on_data?: object[];
+    sample_rate?: number;
 }

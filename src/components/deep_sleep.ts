@@ -9,41 +9,42 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class DeepSleep extends EsphomeComponent<DeepSleepConfig> {
     componentName: string = "deep_sleep";
 }
 
+export type DeepSleepConfigEsp32Ext1WakeupMode = 'ANY_LOW' | 'ALL_LOW' | 'ANY_HIGH';
+
+export interface DeepSleepConfigEsp32Ext1Wakeup {
+    mode: DeepSleepConfigEsp32Ext1WakeupMode;
+    pins: Pin[];
+}
+
 export type DeepSleepConfigRunDurationDefault = CorePositiveTimePeriodMilliseconds;
-export type DeepSleepConfigRunDurationTouchWakeupReason = CorePositiveTimePeriodMilliseconds;
 export type DeepSleepConfigRunDurationGpioWakeupReason = CorePositiveTimePeriodMilliseconds;
+export type DeepSleepConfigRunDurationTouchWakeupReason = CorePositiveTimePeriodMilliseconds;
 
 export interface DeepSleepConfigRunDuration {
     default: DeepSleepConfigRunDurationDefault;
-    touch_wakeup_reason?: DeepSleepConfigRunDurationTouchWakeupReason;
     gpio_wakeup_reason?: DeepSleepConfigRunDurationGpioWakeupReason;
+    touch_wakeup_reason?: DeepSleepConfigRunDurationTouchWakeupReason;
 }
 
 export type DeepSleepConfigSleepDuration = CorePositiveTimePeriodMilliseconds;
 export type DeepSleepConfigWakeupPinMode = 'IGNORE' | 'KEEP_AWAKE' | 'INVERT_WAKEUP';
-export type DeepSleepConfigEsp32Ext1WakeupMode = 'ALL_LOW' | 'ANY_HIGH';
 
-export interface DeepSleepConfigEsp32Ext1Wakeup {
-    pins: Pin[];
-    mode: DeepSleepConfigEsp32Ext1WakeupMode;
-}
-
-export interface DeepSleepConfig extends CoreCOMPONENT_SCHEMA {
+export interface DeepSleepConfig extends CoreCOMPONENTSCHEMA {
+    esp32_ext1_wakeup?: DeepSleepConfigEsp32Ext1Wakeup;
     id?: ID;
     run_duration?: DeepSleepConfigRunDuration;
     sleep_duration?: DeepSleepConfigSleepDuration;
-    wakeup_pin?: Pin;
-    wakeup_pin_mode?: DeepSleepConfigWakeupPinMode;
-    esp32_ext1_wakeup?: DeepSleepConfigEsp32Ext1Wakeup;
     touch_wakeup?: boolean;
+    wakeup_pin?: any;
+    wakeup_pin_mode?: DeepSleepConfigWakeupPinMode;
 }
 
-export interface DeepSleepDEEP_SLEEP_ACTION_SCHEMA {
+export interface DeepSleepDEEPSLEEPACTIONSCHEMA {
     id?: ID;
 }

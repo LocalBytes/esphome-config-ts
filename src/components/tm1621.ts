@@ -9,18 +9,19 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayBASIC_DISPLAY_SCHEMA } from "./display.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { DisplayBASICDISPLAYSCHEMA } from "./display.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Tm1621Display extends EsphomeComponent<Tm1621DisplayConfig> {
     componentName: string = "tm1621.display";
 }
 
 export type Tm1621DisplayConfig = {
-        id?: ID;
         cs_pin: Pin;
         data_pin: Pin;
+        id?: ID;
         read_pin: Pin;
-        write_pin: Pin;
         update_interval?: any;
-    } & DisplayBASIC_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;
+        write_pin: Pin;
+        lambda?: any;
+    } & DisplayBASICDISPLAYSCHEMA & CoreCOMPONENTSCHEMA;

@@ -2,14 +2,29 @@
   "spi_led_strip.light": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "light.ADDRESSABLE_LIGHT_SCHEMA"
-          ],
           "config_vars": {
+            "cs_pin": {
+              "key": "Optional",
+              "modes": [
+                "output"
+              ],
+              "schema": true,
+              "type": "pin"
+            },
+            "data_rate": {
+              "default": "1MHz",
+              "key": "Optional",
+              "docs": "Set the data rate of the SPI interface to the display. One of `80MHz`, `40MHz`, `20MHz`, `10MHz`, `5MHz`, `2MHz`, `1MHz` (default), `200kHz`, `75kHz` or `1kHz`.\n\n*See also: [SPI LED Strip Light](https://next.esphome.io/components/light/spi_led_strip#configuration-variables)*"
+            },
+            "num_leds": {
+              "data_type": "positive_not_null_int",
+              "default": "1",
+              "key": "Optional",
+              "type": "integer",
+              "docs": "**int**: The number of LEDs attached. The default is 1.\n\n*See also: [SPI LED Strip Light](https://next.esphome.io/components/light/spi_led_strip#configuration-variables)*"
+            },
             "output_id": {
-              "key": "GeneratedID",
               "id_type": {
                 "class": "spi_led_strip::SpiLedStrip",
                 "parents": [
@@ -18,50 +33,38 @@
                   "Component",
                   "spi::SPIDevice"
                 ]
-              }
-            },
-            "num_leds": {
-              "key": "Optional",
-              "default": "1",
-              "type": "integer",
-              "data_type": "positive_not_null_int",
-              "docs": "**int**: The number of LEDs attached. The default is 1.\n\n*See also: [SPI LED Strip Light](https://esphome.io/components/light/spi_led_strip.html#configuration-variables)*"
-            },
-            "data_rate": {
-              "key": "Optional",
-              "default": "1MHz",
-              "type": "enum",
-              "values": {
-                "80000000.0": null,
-                "40000000.0": null,
-                "20000000.0": null,
-                "10000000.0": null,
-                "8000000.0": null,
-                "5000000.0": null,
-                "4000000.0": null,
-                "2000000.0": null,
-                "1000000.0": null,
-                "200000.0": null,
-                "75000.0": null,
-                "1000.0": null
               },
-              "docs": "Set the data rate of the SPI interface to the display. One of `80MHz`, `40MHz`, `20MHz`, `10MHz`, `5MHz`, `2MHz`, `1MHz` (default), `200kHz`, `75kHz` or `1kHz`.\n\n*See also: [SPI LED Strip Light](https://esphome.io/components/light/spi_led_strip.html#configuration-variables)*"
+              "key": "GeneratedID"
+            },
+            "release_device": {
+              "key": "Optional",
+              "type": "boolean"
             },
             "spi_id": {
               "key": "GeneratedID",
-              "use_id_type": "spi::SPIComponent",
-              "type": "use_id"
+              "type": "use_id",
+              "use_id_type": "spi::SPIComponent"
             },
-            "cs_pin": {
+            "spi_mode": {
               "key": "Optional",
-              "schema": true,
-              "modes": [
-                "output"
-              ],
-              "type": "pin"
+              "type": "enum",
+              "values": {
+                "MODE0": null,
+                "MODE1": null,
+                "MODE2": null,
+                "MODE3": null,
+                "0": null,
+                "1": null,
+                "2": null,
+                "3": null
+              }
             }
-          }
-        }
+          },
+          "extends": [
+            "light.ADDRESSABLE_LIGHT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

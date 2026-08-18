@@ -2,12 +2,25 @@
   "heatpumpir.climate": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "climate_ir.CLIMATE_IR_WITH_RECEIVER_SCHEMA"
-          ],
           "config_vars": {
+            "horizontal_default": {
+              "key": "Required",
+              "type": "enum",
+              "values": {
+                "auto": null,
+                "middle": null,
+                "left": null,
+                "mleft": null,
+                "mright": null,
+                "right": null
+              }
+            },
+            "humidity_sensor": {
+              "key": "Optional",
+              "type": "use_id",
+              "use_id_type": "sensor::Sensor"
+            },
             "id": {
               "id_type": {
                 "class": "heatpumpir::HeatpumpIRClimate",
@@ -16,9 +29,17 @@
                   "climate::Climate",
                   "EntityBase",
                   "Component",
-                  "remote_base::RemoteReceiverListener"
+                  "remote_base::RemoteReceiverListener",
+                  "remote_base::RemoteTransmittable"
                 ]
-              }
+              },
+              "key": "GeneratedID"
+            },
+            "max_temperature": {
+              "key": "Required"
+            },
+            "min_temperature": {
+              "key": "Required"
             },
             "protocol": {
               "key": "Required",
@@ -39,6 +60,7 @@
                 "greeyan": null,
                 "greeyac": null,
                 "greeyt": null,
+                "greeyap": null,
                 "hisense_aud": null,
                 "hitachi": null,
                 "hyundai": null,
@@ -57,6 +79,7 @@
                 "mitsubishi_sez": null,
                 "panasonic_ckp": null,
                 "panasonic_dke": null,
+                "panasonic_eke": null,
                 "panasonic_jke": null,
                 "panasonic_lke": null,
                 "panasonic_nke": null,
@@ -65,20 +88,44 @@
                 "sharp": null,
                 "toshiba_daiseikai": null,
                 "toshiba": null,
-                "zhlt01": null
+                "zhlt01": null,
+                "nibe": null,
+                "carrier_qlima_1": null,
+                "carrier_qlima_2": null,
+                "samsung_aqv12msan": null,
+                "zhjg01": null,
+                "airway": null,
+                "bgh_aud": null,
+                "panasonic_altdke": null,
+                "philco_phs32": null,
+                "vaillantvai8": null,
+                "r51m": null
               }
             },
-            "horizontal_default": {
-              "key": "Required",
-              "type": "enum",
-              "values": {
-                "auto": null,
-                "middle": null,
-                "left": null,
-                "mleft": null,
-                "mright": null,
-                "right": null
-              }
+            "receiver_id": {
+              "key": "Optional",
+              "type": "use_id",
+              "use_id_type": "remote_base::RemoteReceiverBase"
+            },
+            "sensor": {
+              "key": "Optional",
+              "type": "use_id",
+              "use_id_type": "sensor::Sensor"
+            },
+            "supports_cool": {
+              "default": "True",
+              "key": "Optional",
+              "type": "boolean"
+            },
+            "supports_heat": {
+              "default": "True",
+              "key": "Optional",
+              "type": "boolean"
+            },
+            "transmitter_id": {
+              "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "remote_base::RemoteTransmitterBase"
             },
             "vertical_default": {
               "key": "Required",
@@ -91,15 +138,14 @@
                 "mdown": null,
                 "down": null
               }
-            },
-            "min_temperature": {
-              "key": "Required"
-            },
-            "max_temperature": {
-              "key": "Required"
             }
-          }
-        }
+          },
+          "extends": [
+            "climate._CLIMATE_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

@@ -9,24 +9,24 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class Teleinfo extends EsphomeComponent<TeleinfoConfig> {
     componentName: string = "teleinfo";
 }
 
-export interface TeleinfoConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
+export interface TeleinfoConfig extends CoreCOMPONENTSCHEMA {
     historical_mode?: boolean;
-    update_interval?: any;
+    id?: ID;
     uart_id?: ID;
+    update_interval?: any;
 }
 
-export interface TeleinfoTELEINFO_LISTENER_SCHEMA {
-    teleinfo_id?: ID;
+export interface TeleinfoTELEINFOLISTENERSCHEMA {
     tag_name: string;
+    teleinfo_id?: ID;
 }
 
 export class TeleinfoSensor extends EsphomeComponent<TeleinfoSensorConfig> {
@@ -34,11 +34,13 @@ export class TeleinfoSensor extends EsphomeComponent<TeleinfoSensorConfig> {
 }
 
 export type TeleinfoSensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
-        icon?: any;
         accuracy_decimals?: any;
-    } & SensorSENSOR_SCHEMA & TeleinfoTELEINFO_LISTENER_SCHEMA;
+        device_class?: any;
+        icon?: any;
+        id?: any;
+        state_class?: any;
+        unit_of_measurement?: any;
+    } & SensorSENSORSCHEMA & TeleinfoTELEINFOLISTENERSCHEMA;
 
 export class TeleinfoTextSensor extends EsphomeComponent<TeleinfoTextSensorConfig> {
     componentName: string = "teleinfo.text_sensor";
@@ -46,4 +48,4 @@ export class TeleinfoTextSensor extends EsphomeComponent<TeleinfoTextSensorConfi
 
 export type TeleinfoTextSensorConfig = {
         id?: any;
-    } & TextSensorTEXT_SENSOR_SCHEMA & TeleinfoTELEINFO_LISTENER_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & TeleinfoTELEINFOLISTENERSCHEMA;

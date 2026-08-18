@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Tsl2561Sensor extends EsphomeComponent<Tsl2561SensorConfig> {
     componentName: string = "tsl2561.sensor";
@@ -18,15 +18,15 @@ export class Tsl2561Sensor extends EsphomeComponent<Tsl2561SensorConfig> {
 
 export type Tsl2561SensorConfigGain = '1X' | '16X';
 export type Tsl2561SensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
         accuracy_decimals?: any;
-        device_class?: any;
-        state_class?: any;
-        integration_time?: any;
-        gain?: Tsl2561SensorConfigGain;
-        is_cs_package?: boolean;
-        update_interval?: any;
-        i2c_id?: ID;
         address?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+        device_class?: any;
+        gain?: Tsl2561SensorConfigGain;
+        i2c_id?: ID;
+        id?: any;
+        integration_time?: any;
+        is_cs_package?: boolean;
+        state_class?: any;
+        unit_of_measurement?: any;
+        update_interval?: any;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

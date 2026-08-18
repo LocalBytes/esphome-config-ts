@@ -9,18 +9,23 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CorePositiveTimePeriod, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class I2c extends EsphomeComponent<I2cConfig> {
     componentName: string = "i2c";
 }
 
-export interface I2cConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    sda?: any;
-    sda_pullup_enabled?: boolean;
-    scl?: any;
-    scl_pullup_enabled?: boolean;
+export type I2cConfigTimeout = CorePositiveTimePeriod;
+
+export interface I2cConfig extends CoreCOMPONENTSCHEMA {
+    device?: any;
     frequency?: any;
+    id?: ID;
+    low_power_mode?: boolean;
     scan?: boolean;
+    scl?: Pin;
+    scl_pullup_enabled?: boolean;
+    sda?: Pin;
+    sda_pullup_enabled?: boolean;
+    timeout?: I2cConfigTimeout;
 }

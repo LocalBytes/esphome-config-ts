@@ -9,27 +9,32 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Max31855Sensor extends EsphomeComponent<Max31855SensorConfig> {
     componentName: string = "max31855.sensor";
 }
 
-export interface Max31855SensorConfigReferenceTemperature extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Max31855SensorConfigReferenceTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
+export type Max31855SensorConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 export type Max31855SensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
         accuracy_decimals?: any;
-        device_class?: any;
-        reference_temperature?: Max31855SensorConfigReferenceTemperature;
-        update_interval?: any;
-        spi_id?: ID;
         cs_pin: Pin;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+        data_rate?: any;
+        device_class?: any;
+        id?: any;
+        reference_temperature?: Max31855SensorConfigReferenceTemperature;
+        release_device?: boolean;
+        spi_id?: ID;
+        spi_mode?: Max31855SensorConfigSpiMode;
+        state_class?: any;
+        unit_of_measurement?: any;
+        update_interval?: any;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

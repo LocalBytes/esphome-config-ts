@@ -9,16 +9,25 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreSOURCE_SCHEMA } from "./esphome.js";
 
 export class ExternalComponents extends EsphomeComponent<ExternalComponentsConfig> {
     componentName: string = "external_components";
 }
 
-export type ExternalComponentsConfigSource = CoreSOURCE_SCHEMA;
+export type ExternalComponentsConfigSource = ExternalComponentsConfigSourceGit | ExternalComponentsConfigSourceLocal;
+
+export interface ExternalComponentsConfigSourceGit {
+    type: "git" | "GIT";
+    path: string;
+}
+
+export interface ExternalComponentsConfigSourceLocal {
+    type: "local" | "LOCAL";
+    path: string;
+}
 
 export interface ExternalComponentsConfig {
-    source: ExternalComponentsConfigSource;
-    refresh?: string;
     components?: string[];
+    refresh?: string;
+    source: ExternalComponentsConfigSource;
 }

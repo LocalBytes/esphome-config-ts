@@ -9,47 +9,47 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Pzem004tSensor extends EsphomeComponent<Pzem004tSensorConfig> {
     componentName: string = "pzem004t.sensor";
 }
 
-export interface Pzem004tSensorConfigVoltage extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Pzem004tSensorConfigCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Pzem004tSensorConfigCurrent extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Pzem004tSensorConfigEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Pzem004tSensorConfigPower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Pzem004tSensorConfigPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Pzem004tSensorConfigEnergy extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Pzem004tSensorConfigVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Pzem004tSensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    voltage?: Pzem004tSensorConfigVoltage;
+export interface Pzem004tSensorConfig extends CoreCOMPONENTSCHEMA {
     current?: Pzem004tSensorConfigCurrent;
-    power?: Pzem004tSensorConfigPower;
     energy?: Pzem004tSensorConfigEnergy;
-    update_interval?: any;
+    id?: ID;
+    power?: Pzem004tSensorConfigPower;
     uart_id?: ID;
+    update_interval?: any;
+    voltage?: Pzem004tSensorConfigVoltage;
 }

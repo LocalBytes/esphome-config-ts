@@ -9,18 +9,23 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Mcp3204 extends EsphomeComponent<Mcp3204Config> {
     componentName: string = "mcp3204";
 }
 
+export type Mcp3204ConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
+
 export interface Mcp3204Config {
+    cs_pin: Pin;
+    data_rate?: any;
     id?: ID;
     reference_voltage?: any;
+    release_device?: boolean;
     spi_id?: ID;
-    cs_pin: Pin;
+    spi_mode?: Mcp3204ConfigSpiMode;
 }
 
 export class Mcp3204Sensor extends EsphomeComponent<Mcp3204SensorConfig> {
@@ -28,8 +33,9 @@ export class Mcp3204Sensor extends EsphomeComponent<Mcp3204SensorConfig> {
 }
 
 export type Mcp3204SensorConfig = {
+        diff_mode?: boolean;
         id?: any;
         mcp3204_id?: ID;
         number: number;
         update_interval?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

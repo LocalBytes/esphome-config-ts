@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Hx711Sensor extends EsphomeComponent<Hx711SensorConfig> {
     componentName: string = "hx711.sensor";
@@ -18,12 +18,12 @@ export class Hx711Sensor extends EsphomeComponent<Hx711SensorConfig> {
 
 export type Hx711SensorConfigGain = '32' | '64' | '128';
 export type Hx711SensorConfig = {
-        id?: any;
-        icon?: any;
         accuracy_decimals?: any;
-        state_class?: any;
-        dout_pin: Pin;
         clk_pin: Pin;
+        dout_pin: Pin;
         gain?: Hx711SensorConfigGain;
+        icon?: any;
+        id?: any;
+        state_class?: any;
         update_interval?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

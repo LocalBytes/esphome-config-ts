@@ -9,42 +9,43 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Sht4xSensor extends EsphomeComponent<Sht4xSensorConfig> {
     componentName: string = "sht4x.sensor";
 }
 
-export interface Sht4xSensorConfigTemperature extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export interface Sht4xSensorConfigHumidity extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export type Sht4xSensorConfigPrecision = 'High' | 'Med' | 'Low';
 export type Sht4xSensorConfigHeaterPower = 'High' | 'Med' | 'Low';
 export type Sht4xSensorConfigHeaterTime = 'Long' | 'Short';
 
-export interface Sht4xSensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    temperature?: Sht4xSensorConfigTemperature;
-    humidity?: Sht4xSensorConfigHumidity;
-    precision?: Sht4xSensorConfigPrecision;
+export interface Sht4xSensorConfigHumidity extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export type Sht4xSensorConfigPrecision = 'High' | 'Med' | 'Low';
+
+export interface Sht4xSensorConfigTemperature extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface Sht4xSensorConfig extends CoreCOMPONENTSCHEMA {
+    address?: any;
+    heater_max_duty?: any;
     heater_power?: Sht4xSensorConfigHeaterPower;
     heater_time?: Sht4xSensorConfigHeaterTime;
-    heater_max_duty?: any;
-    update_interval?: any;
+    humidity?: Sht4xSensorConfigHumidity;
     i2c_id?: ID;
-    address?: any;
+    id?: ID;
+    precision?: Sht4xSensorConfigPrecision;
+    temperature?: Sht4xSensorConfigTemperature;
+    update_interval?: any;
 }

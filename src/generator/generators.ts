@@ -121,9 +121,9 @@ function generateSchema(file: SourceFile, name: string, json: any) {
         }).filter(notEmpty);
 
     let extensions: string[] = (json.schema?.extends ?? []).map((extension: string) => {
-        let extensionName = toUpperCamelCase(extension)
-            .replace(".CONFIG_SCHEMA", ".Config")
-            .replace(".", "");
+        let extensionName = toUpperCamelCase(
+            extension.replace(/\.CONFIG_SCHEMA$/, ".Config")
+        );
 
         let firstDot = fileNameFromComponent(extension);
 

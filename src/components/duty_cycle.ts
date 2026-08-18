@@ -9,19 +9,19 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class DutyCycleSensor extends EsphomeComponent<DutyCycleSensorConfig> {
     componentName: string = "duty_cycle.sensor";
 }
 
 export type DutyCycleSensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
-        icon?: any;
         accuracy_decimals?: any;
-        state_class?: any;
+        icon?: any;
+        id?: any;
         pin: Pin;
+        state_class?: any;
+        unit_of_measurement?: any;
         update_interval?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

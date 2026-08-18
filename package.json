@@ -5,6 +5,7 @@
   "scripts": {
     "prepare": "npm run prepare:tspatch && npm run build:tsc",
     "prepare:tspatch": "ts-patch install",
+    "update-schema": "node --loader ts-node/esm ./scripts/update-schema.ts",
     "build:generator": "node --loader ts-node/esm ./src/generator/build.ts",
     "build:tsc": "tsc",
     "build": "npm run build:generator && npm run build:tsc",
@@ -15,8 +16,10 @@
   "main": "dist/",
   "devDependencies": {
     "@tsconfig/node-lts": "^24.0.0",
+    "@types/adm-zip": "^0.5.8",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^25.7.0",
+    "adm-zip": "^0.5.17",
     "madge": "^8.0.0",
     "ts-morph": "^28.0.0",
     "ts-node": "^10.9.2",

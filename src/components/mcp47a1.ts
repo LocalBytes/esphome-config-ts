@@ -9,15 +9,15 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Mcp47a1Output extends EsphomeComponent<Mcp47a1OutputConfig> {
     componentName: string = "mcp47a1.output";
 }
 
 export type Mcp47a1OutputConfig = {
-        id: string;
-        i2c_id?: ID;
         address?: any;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+        i2c_id?: ID;
+        id: string;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;

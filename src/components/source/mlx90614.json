@@ -2,11 +2,43 @@
   "mlx90614.sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
           "config_vars": {
-            "id": {
+            "address": {
+              "data_type": "hex_uint8_t",
+              "default": "90",
+              "key": "Optional"
+            },
+            "ambient": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "1"
+                  },
+                  "device_class": {
+                    "default": "temperature"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "\u00b0C"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Enables sensor entity for ambient temperature reading.\n\n*See also: [MLX90614  non-contact thermometer](https://next.esphome.io/components/sensor/mlx90614#configuration-variables)*"
+            },
+            "i2c_id": {
               "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "i2c::I2CBus"
+            },
+            "id": {
               "id_type": {
                 "class": "mlx90614::MLX90614Component",
                 "parents": [
@@ -14,77 +46,48 @@
                   "Component",
                   "i2c::I2CDevice"
                 ]
-              }
-            },
-            "ambient": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "\u00b0C"
-                  },
-                  "accuracy_decimals": {
-                    "default": "1"
-                  },
-                  "device_class": {
-                    "default": "temperature"
-                  },
-                  "state_class": {
-                    "default": "measurement"
-                  }
-                }
-              }
+              },
+              "key": "GeneratedID"
             },
             "object": {
               "key": "Optional",
-              "type": "schema",
               "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
                 "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "\u00b0C"
-                  },
                   "accuracy_decimals": {
                     "default": "1"
                   },
                   "device_class": {
                     "default": "temperature"
                   },
+                  "emissivity": {
+                    "default": "1.0",
+                    "key": "Optional",
+                    "docs": "Emissivity coefficient is the measure of an object's ability to emit infrared energy compared to a theoretical perfect black body emitter. See [Emissivity Application note](https://media.melexis.com/-/media/files/documents/application-notes/mlx90614-changing-emissivity-unlocking-key-application-note-melexis.pdf?la=en) for details on determining custom emissivity. Default is 1.0 which is 100% and corresponds to the ideal black body.\n\n*See also: [MLX90614  non-contact thermometer](https://next.esphome.io/components/sensor/mlx90614#configuration-variables)*"
+                  },
                   "state_class": {
                     "default": "measurement"
                   },
-                  "emissivity": {
-                    "key": "Optional",
-                    "default": "1.0"
+                  "unit_of_measurement": {
+                    "default": "\u00b0C"
                   }
-                }
-              }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema",
+              "docs": "Enables sensor entity for object temperature reading.\n\n*See also: [MLX90614  non-contact thermometer](https://next.esphome.io/components/sensor/mlx90614#configuration-variables)*"
             },
             "update_interval": {
-              "key": "Optional",
-              "default": "60s"
-            },
-            "i2c_id": {
-              "key": "GeneratedID",
-              "use_id_type": "i2c::I2CBus",
-              "type": "use_id"
-            },
-            "address": {
-              "key": "Optional",
-              "default": "90",
-              "data_type": "hex_uint8_t"
+              "default": "60s",
+              "key": "Optional"
             }
           },
           "extends": [
             "core.COMPONENT_SCHEMA"
           ]
-        }
+        },
+        "type": "schema"
       }
     }
   }

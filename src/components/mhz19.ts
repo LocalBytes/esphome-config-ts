@@ -9,41 +9,47 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CorePositiveTimePeriodSeconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+
+export abstract class Mhz19 extends EsphomeComponent {
+    componentName: string = "mhz19";
+}
 
 export class Mhz19Sensor extends EsphomeComponent<Mhz19SensorConfig> {
     componentName: string = "mhz19.sensor";
 }
 
-export interface Mhz19SensorConfigCo2 extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Mhz19SensorConfigCo2 extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
     icon?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
     state_class?: any;
-}
-
-export interface Mhz19SensorConfigTemperature extends SensorSENSOR_SCHEMA {
     unit_of_measurement?: any;
+}
+
+export type Mhz19SensorConfigDetectionRange = '2000' | '5000' | '10000';
+
+export interface Mhz19SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Mhz19SensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    co2: Mhz19SensorConfigCo2;
-    temperature?: Mhz19SensorConfigTemperature;
+export type Mhz19SensorConfigWarmupTime = CorePositiveTimePeriodSeconds;
+
+export interface Mhz19SensorConfig extends CoreCOMPONENTSCHEMA {
     automatic_baseline_calibration?: boolean;
-    update_interval?: any;
+    co2?: Mhz19SensorConfigCo2;
+    detection_range?: Mhz19SensorConfigDetectionRange;
+    id?: ID;
+    temperature?: Mhz19SensorConfigTemperature;
     uart_id?: ID;
+    update_interval?: any;
+    warmup_time?: Mhz19SensorConfigWarmupTime;
 }
 
-export interface Mhz19SensorCALIBRATION_ACTION_SCHEMA {
+export interface Mhz19SensorNOARGSACTIONSCHEMA {
     id: ID;
-}
-
-export abstract class Mhz19 extends EsphomeComponent {
-    componentName: string = "mhz19";
 }

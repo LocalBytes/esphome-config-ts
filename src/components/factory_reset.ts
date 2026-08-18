@@ -9,27 +9,40 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { ButtonBUTTON_SCHEMA } from "./button.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { SwitchSWITCH_SCHEMA } from "./switch.js";
+import type { CorePositiveTimePeriodSeconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { ButtonBUTTONSCHEMA } from "./button.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
+
+export class FactoryReset extends EsphomeComponent<FactoryResetConfig> {
+    componentName: string = "factory_reset";
+}
+
+export type FactoryResetConfigMaxDelay = CorePositiveTimePeriodSeconds;
+
+export interface FactoryResetConfig extends CoreCOMPONENTSCHEMA {
+    id?: ID;
+    max_delay?: FactoryResetConfigMaxDelay;
+    on_increment?: object[];
+    resets_required?: number;
+}
 
 export class FactoryResetButton extends EsphomeComponent<FactoryResetButtonConfig> {
     componentName: string = "factory_reset.button";
 }
 
 export type FactoryResetButtonConfig = {
-        id?: ID;
-        icon?: any;
-        entity_category?: any;
         device_class?: any;
-    } & ButtonBUTTON_SCHEMA & CoreCOMPONENT_SCHEMA;
+        entity_category?: any;
+        icon?: any;
+        id?: ID;
+    } & ButtonBUTTONSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class FactoryResetSwitch extends EsphomeComponent<FactoryResetSwitchConfig> {
     componentName: string = "factory_reset.switch";
 }
 
 export type FactoryResetSwitchConfig = {
-        id?: ID;
-        icon?: any;
         entity_category?: any;
-    } & SwitchSWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
+        icon?: any;
+        id?: ID;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA;

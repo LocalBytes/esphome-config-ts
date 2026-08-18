@@ -4,14 +4,12 @@
       "CONFIG_SCHEMA": {
         "key": "String",
         "key_type": "validate_substitution_key",
-        "type": "schema",
         "schema": {
           "config_vars": {
-            "string": {
-              "type": "string"
-            }
+            "string": {}
           }
-        }
+        },
+        "type": "schema"
       }
     }
   }

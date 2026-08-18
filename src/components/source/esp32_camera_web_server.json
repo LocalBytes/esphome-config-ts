@@ -2,23 +2,17 @@
   "esp32_camera_web_server": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
+        "is_list": true,
         "schema": {
           "config_vars": {
             "id": {
-              "key": "GeneratedID",
               "id_type": {
                 "class": "esp32_camera_web_server::CameraWebServer",
                 "parents": [
                   "Component"
                 ]
-              }
-            },
-            "port": {
-              "key": "Required",
-              "type": "integer",
-              "data_type": "port",
-              "docs": "**string**: The serving port.\n\n*See also: [ESP32 Camera Web Server Component](https://esphome.io/components/esp32_camera_web_server.html#configuration-variables)*"
+              },
+              "key": "GeneratedID"
             },
             "mode": {
               "key": "Required",
@@ -27,14 +21,20 @@
                 "STREAM": null,
                 "SNAPSHOT": null
               },
-              "docs": "**string**: The operation mode. One of these values:\n  * `snapshot`\n  \n  * `stream`\n  \n  \n\n*See also: [ESP32 Camera Web Server Component](https://esphome.io/components/esp32_camera_web_server.html#configuration-variables)*"
+              "docs": "**string**: The operation mode. One of these values:\n\n*See also: [ESP32 Camera Web Server Component](https://next.esphome.io/components/esp32_camera_web_server#configuration-variables)*"
+            },
+            "port": {
+              "data_type": "port",
+              "key": "Required",
+              "type": "integer",
+              "docs": "**string**: The serving port.\n\n*See also: [ESP32 Camera Web Server Component](https://next.esphome.io/components/esp32_camera_web_server#configuration-variables)*"
             }
           },
           "extends": [
             "core.COMPONENT_SCHEMA"
           ]
         },
-        "is_list": true
+        "type": "schema"
       }
     }
   }

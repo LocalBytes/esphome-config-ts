@@ -9,20 +9,20 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class AnalogThresholdBinarySensor extends EsphomeComponent<AnalogThresholdBinarySensorConfig> {
     componentName: string = "analog_threshold.binary_sensor";
 }
 
 export interface AnalogThresholdBinarySensorConfigThreshold {
-    upper: string;
     lower: string;
+    upper: string;
 }
 
 export type AnalogThresholdBinarySensorConfig = {
         id?: any;
         sensor_id: ID;
         threshold: AnalogThresholdBinarySensorConfigThreshold;
-    } & BinarySensorBINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BinarySensorBINARYSENSORSCHEMA & CoreCOMPONENTSCHEMA;

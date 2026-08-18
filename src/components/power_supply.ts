@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class PowerSupply extends EsphomeComponent<PowerSupplyConfig> {
     componentName: string = "power_supply";
@@ -18,9 +18,10 @@ export class PowerSupply extends EsphomeComponent<PowerSupplyConfig> {
 export type PowerSupplyConfigEnableTime = CorePositiveTimePeriodMilliseconds;
 export type PowerSupplyConfigKeepOnTime = CorePositiveTimePeriodMilliseconds;
 
-export interface PowerSupplyConfig extends CoreCOMPONENT_SCHEMA {
-    id: string;
-    pin: Pin;
+export interface PowerSupplyConfig extends CoreCOMPONENTSCHEMA {
+    enable_on_boot?: boolean;
     enable_time?: PowerSupplyConfigEnableTime;
+    id: string;
     keep_on_time?: PowerSupplyConfigKeepOnTime;
+    pin: Pin;
 }

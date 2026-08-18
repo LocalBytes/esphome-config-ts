@@ -9,18 +9,17 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { LightRGB_LIGHT_SCHEMA } from "./light.js";
+import type { LightRGBLIGHTSCHEMA } from "./light.js";
 
 export class CwwwLight extends EsphomeComponent<CwwwLightConfig> {
     componentName: string = "cwww.light";
 }
 
-export interface CwwwLightConfig extends LightRGB_LIGHT_SCHEMA {
-    output_id?: ID;
+export interface CwwwLightConfig extends LightRGBLIGHTSCHEMA {
     cold_white: ID;
-    warm_white: ID;
     cold_white_color_temperature?: any;
-    warm_white_color_temperature?: any;
     constant_brightness?: boolean;
-    effects?: any;
+    output_id?: ID;
+    warm_white: ID;
+    warm_white_color_temperature?: any;
 }

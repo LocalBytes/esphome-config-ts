@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Tca9548a extends EsphomeComponent<Tca9548aConfig> {
     componentName: string = "tca9548a";
@@ -20,9 +20,9 @@ export interface Tca9548aConfigChannels {
     channel: number;
 }
 
-export interface Tca9548aConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
+export interface Tca9548aConfig extends CoreCOMPONENTSCHEMA {
+    address?: any;
     channels?: Tca9548aConfigChannels[];
     i2c_id?: ID;
-    address?: any;
+    id?: ID;
 }

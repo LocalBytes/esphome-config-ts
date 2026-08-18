@@ -2,81 +2,89 @@
   "cd74hc4067": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
+        "is_list": true,
         "schema": {
           "config_vars": {
-            "id": {
-              "key": "GeneratedID",
-              "id_type": {
-                "class": "cd74hc4067::CD74HC4067Component",
-                "parents": [
-                  "Component",
-                  "PollingComponent",
-                  "Component"
-                ]
-              }
-            },
-            "pin_s0": {
-              "key": "Required",
-              "schema": true,
-              "modes": [
-                "output"
-              ],
-              "type": "pin"
-            },
-            "pin_s1": {
-              "key": "Required",
-              "schema": true,
-              "modes": [
-                "output"
-              ],
-              "type": "pin"
-            },
-            "pin_s2": {
-              "key": "Required",
-              "schema": true,
-              "modes": [
-                "output"
-              ],
-              "type": "pin"
-            },
-            "pin_s3": {
-              "key": "Required",
-              "schema": true,
-              "modes": [
-                "output"
-              ],
-              "type": "pin"
-            },
             "delay": {
-              "key": "Optional",
               "default": "2ms",
-              "type": "schema",
+              "key": "Optional",
               "schema": {
                 "extends": [
                   "core.positive_time_period_milliseconds"
                 ]
-              }
+              },
+              "type": "schema",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: A small delay duration needed for the chip to switch inputs, defaults to 2ms.\n\n*See also: [cd74hc4067 Analog Multiplexer](https://next.esphome.io/components/sensor/cd74hc4067#configuration-variables)*"
+            },
+            "id": {
+              "id_type": {
+                "class": "cd74hc4067::CD74HC4067Component",
+                "parents": [
+                  "Component"
+                ]
+              },
+              "key": "GeneratedID"
+            },
+            "pin_s0": {
+              "key": "Required",
+              "modes": [
+                "output"
+              ],
+              "schema": true,
+              "type": "pin"
+            },
+            "pin_s1": {
+              "key": "Required",
+              "modes": [
+                "output"
+              ],
+              "schema": true,
+              "type": "pin"
+            },
+            "pin_s2": {
+              "key": "Required",
+              "modes": [
+                "output"
+              ],
+              "schema": true,
+              "type": "pin"
+            },
+            "pin_s3": {
+              "key": "Required",
+              "modes": [
+                "output"
+              ],
+              "schema": true,
+              "type": "pin"
             }
           },
           "extends": [
             "core.COMPONENT_SCHEMA"
           ]
         },
-        "is_list": true
+        "type": "schema"
       }
     }
   },
   "cd74hc4067.sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "sensor.SENSOR_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
+            "accuracy_decimals": {
+              "default": "3"
+            },
+            "cd74hc4067_id": {
+              "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "cd74hc4067::CD74HC4067Component"
+            },
+            "device_class": {
+              "default": "voltage"
+            },
+            "icon": {
+              "default": "mdi:flash"
+            },
             "id": {
               "id_type": {
                 "class": "cd74hc4067::CD74HC4067Sensor",
@@ -89,41 +97,32 @@
                 ]
               }
             },
-            "unit_of_measurement": {
-              "default": "V"
-            },
-            "icon": {
-              "default": "mdi:flash"
-            },
-            "accuracy_decimals": {
-              "default": "3"
-            },
-            "device_class": {
-              "default": "voltage"
-            },
-            "state_class": {
-              "default": "measurement"
-            },
-            "cd74hc4067_id": {
-              "key": "GeneratedID",
-              "use_id_type": "cd74hc4067::CD74HC4067Component",
-              "type": "use_id"
-            },
             "number": {
               "key": "Required",
               "type": "integer"
             },
             "sensor": {
               "key": "Required",
-              "use_id_type": "voltage_sampler::VoltageSampler",
-              "type": "use_id"
+              "type": "use_id",
+              "use_id_type": "voltage_sampler::VoltageSampler"
+            },
+            "state_class": {
+              "default": "measurement"
+            },
+            "unit_of_measurement": {
+              "default": "V"
             },
             "update_interval": {
-              "key": "Optional",
-              "default": "60s"
+              "default": "60s",
+              "key": "Optional"
             }
-          }
-        }
+          },
+          "extends": [
+            "sensor._SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

@@ -9,62 +9,62 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Tsl2591Sensor extends EsphomeComponent<Tsl2591SensorConfig> {
     componentName: string = "tsl2591.sensor";
 }
 
-export interface Tsl2591SensorConfigInfrared extends SensorSENSOR_SCHEMA {
-    icon?: any;
+export interface Tsl2591SensorConfigActualGain extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
+    device_class?: any;
+    icon?: any;
     state_class?: any;
 }
 
-export interface Tsl2591SensorConfigVisible extends SensorSENSOR_SCHEMA {
-    icon?: any;
+export interface Tsl2591SensorConfigCalculatedLux extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
-    state_class?: any;
-}
-
-export interface Tsl2591SensorConfigFullSpectrum extends SensorSENSOR_SCHEMA {
+    device_class?: any;
     icon?: any;
-    accuracy_decimals?: any;
     state_class?: any;
-}
-
-export interface Tsl2591SensorConfigCalculatedLux extends SensorSENSOR_SCHEMA {
     unit_of_measurement?: any;
-    icon?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
 }
 
-export interface Tsl2591SensorConfigActualGain extends SensorSENSOR_SCHEMA {
-    icon?: any;
+export interface Tsl2591SensorConfigFullSpectrum extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
-    device_class?: any;
+    icon?: any;
     state_class?: any;
 }
 
 export type Tsl2591SensorConfigGain = '1X' | 'LOW' | '25X' | 'MED' | 'MEDIUM' | '400X' | 'HIGH' | '9500X' | 'MAX' | 'MAXIMUM' | 'AUTO';
 
-export interface Tsl2591SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Tsl2591SensorConfigInfrared extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    icon?: any;
+    state_class?: any;
+}
+
+export interface Tsl2591SensorConfigVisible extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    icon?: any;
+    state_class?: any;
+}
+
+export interface Tsl2591SensorConfig extends CoreCOMPONENTSCHEMA {
+    actual_gain?: Tsl2591SensorConfigActualGain;
+    address?: any;
+    calculated_lux?: Tsl2591SensorConfigCalculatedLux;
+    device_factor?: any;
+    full_spectrum?: Tsl2591SensorConfigFullSpectrum;
+    gain?: Tsl2591SensorConfigGain;
+    glass_attenuation_factor?: any;
+    i2c_id?: ID;
     id?: ID;
     infrared?: Tsl2591SensorConfigInfrared;
-    visible?: Tsl2591SensorConfigVisible;
-    full_spectrum?: Tsl2591SensorConfigFullSpectrum;
-    calculated_lux?: Tsl2591SensorConfigCalculatedLux;
-    actual_gain?: Tsl2591SensorConfigActualGain;
     integration_time?: any;
     name?: string;
-    gain?: Tsl2591SensorConfigGain;
     power_save_mode?: boolean;
-    device_factor?: any;
-    glass_attenuation_factor?: any;
     update_interval?: any;
-    i2c_id?: ID;
-    address?: any;
+    visible?: Tsl2591SensorConfigVisible;
 }

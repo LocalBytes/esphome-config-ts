@@ -9,36 +9,55 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreENTITY_BASE_SCHEMA, CoreMQTT_COMPONENT_SCHEMA } from "./esphome.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreENTITYBASESCHEMA, CoreMQTTCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class BinarySensor extends EsphomeComponent {
     componentName: string = "binary_sensor";
 }
 
-export type BinarySensorMULTI_CLICK_TIMING_SCHEMAMinLength = CorePositiveTimePeriodMilliseconds;
-export type BinarySensorMULTI_CLICK_TIMING_SCHEMAMaxLength = CorePositiveTimePeriodMilliseconds;
-
-export interface BinarySensorMULTI_CLICK_TIMING_SCHEMA {
-    state?: boolean;
-    min_length?: BinarySensorMULTI_CLICK_TIMING_SCHEMAMinLength;
-    max_length?: BinarySensorMULTI_CLICK_TIMING_SCHEMAMaxLength;
+export interface BinarySensorBINARYSENSORCONDITIONSCHEMA {
+    id: ID;
 }
 
-export type BinarySensorBINARY_SENSOR_SCHEMADeviceClass = 'battery' | 'battery_charging' | 'carbon_monoxide' | 'cold' | 'connectivity' | 'door' | '' | 'garage_door' | 'gas' | 'heat' | 'light' | 'lock' | 'moisture' | 'motion' | 'moving' | 'occupancy' | 'opening' | 'plug' | 'power' | 'presence' | 'problem' | 'running' | 'safety' | 'smoke' | 'sound' | 'tamper' | 'update' | 'vibration' | 'window';
-export type BinarySensorBINARY_SENSOR_SCHEMA = {
+export type BinarySensorMULTICLICKTIMINGSCHEMAMaxLength = CorePositiveTimePeriodMilliseconds;
+export type BinarySensorMULTICLICKTIMINGSCHEMAMinLength = CorePositiveTimePeriodMilliseconds;
+
+export interface BinarySensorMULTICLICKTIMINGSCHEMA {
+    max_length?: BinarySensorMULTICLICKTIMINGSCHEMAMaxLength;
+    min_length?: BinarySensorMULTICLICKTIMINGSCHEMAMinLength;
+    state?: boolean;
+}
+
+export type BinarySensorBINARYSENSORSCHEMADeviceClass = 'battery' | 'battery_charging' | 'carbon_monoxide' | 'cold' | 'connectivity' | 'door' | '' | 'garage_door' | 'gas' | 'heat' | 'light' | 'lock' | 'moisture' | 'motion' | 'moving' | 'occupancy' | 'opening' | 'plug' | 'power' | 'presence' | 'problem' | 'running' | 'safety' | 'smoke' | 'sound' | 'tamper' | 'update' | 'vibration' | 'window';
+export type BinarySensorBINARYSENSORSCHEMAReport = 'coordinator' | 'enable' | 'force';
+
+export interface BinarySensorBINARYSENSORSCHEMAWebServer {
+    sorting_group_id?: ID;
+    sorting_weight?: any;
+    web_server_id?: ID;
+}
+
+export type BinarySensorBINARYSENSORSCHEMA = {
+        device_class?: BinarySensorBINARYSENSORSCHEMADeviceClass;
+        filters?: any[];
         id?: ID;
         mqtt_id?: any;
-        publish_initial_state?: boolean;
-        device_class?: BinarySensorBINARY_SENSOR_SCHEMADeviceClass;
-        filters?: any[];
-        on_press?: object[];
-        on_release?: object[];
         on_click?: object[];
         on_double_click?: object[];
         on_multi_click?: object[];
+        on_press?: object[];
+        on_release?: object[];
         on_state?: object[];
-    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMPONENT_SCHEMA;
-
-export interface BinarySensorBINARY_SENSOR_CONDITION_SCHEMA {
-    id: ID;
-}
+        on_state_change?: object[];
+        publish_initial_state?: any;
+        report?: BinarySensorBINARYSENSORSCHEMAReport;
+        trigger_on_initial_state?: boolean;
+        web_server?: BinarySensorBINARYSENSORSCHEMAWebServer;
+        zigbee_binary_sensor?: any;
+        zigbee_id?: ID;
+        name?: any;
+        icon?: any;
+        internal?: any;
+        disabled_by_default?: any;
+        entity_category?: any;
+    } & CoreENTITYBASESCHEMA & CoreMQTTCOMPONENTSCHEMA;

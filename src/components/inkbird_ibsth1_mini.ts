@@ -9,48 +9,48 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { Esp32BleTrackerESP_BLE_DEVICE_SCHEMA } from "./esp32_ble_tracker.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { BthomeMithermometerBLEDEVICESCHEMA } from "./bthome_mithermometer.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class InkbirdIbsth1MiniSensor extends EsphomeComponent<InkbirdIbsth1MiniSensorConfig> {
     componentName: string = "inkbird_ibsth1_mini.sensor";
 }
 
-export interface InkbirdIbsth1MiniSensorConfigTemperature extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface InkbirdIbsth1MiniSensorConfigBatteryLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-    state_class?: any;
-}
-
-export interface InkbirdIbsth1MiniSensorConfigExternalTemperature extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export interface InkbirdIbsth1MiniSensorConfigHumidity extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export interface InkbirdIbsth1MiniSensorConfigBatteryLevel extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
     entity_category?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface InkbirdIbsth1MiniSensorConfigExternalTemperature extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface InkbirdIbsth1MiniSensorConfigHumidity extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface InkbirdIbsth1MiniSensorConfigTemperature extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
 export type InkbirdIbsth1MiniSensorConfig = {
+        battery_level?: InkbirdIbsth1MiniSensorConfigBatteryLevel;
+        external_temperature?: InkbirdIbsth1MiniSensorConfigExternalTemperature;
+        humidity?: InkbirdIbsth1MiniSensorConfigHumidity;
         id?: ID;
         mac_address: string;
         temperature?: InkbirdIbsth1MiniSensorConfigTemperature;
-        external_temperature?: InkbirdIbsth1MiniSensorConfigExternalTemperature;
-        humidity?: InkbirdIbsth1MiniSensorConfigHumidity;
-        battery_level?: InkbirdIbsth1MiniSensorConfigBatteryLevel;
-    } & Esp32BleTrackerESP_BLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BthomeMithermometerBLEDEVICESCHEMA & CoreCOMPONENTSCHEMA;

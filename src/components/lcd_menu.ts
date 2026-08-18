@@ -9,17 +9,17 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayMenuBaseDISPLAY_MENU_BASE_SCHEMA } from "./display_menu_base.js";
+import type { DisplayMenuBaseDISPLAYMENUBASESCHEMA } from "./display_menu_base.js";
 
 export class LcdMenu extends EsphomeComponent<LcdMenuConfig> {
     componentName: string = "lcd_menu";
 }
 
-export interface LcdMenuConfig extends DisplayMenuBaseDISPLAY_MENU_BASE_SCHEMA {
-    id?: ID;
+export interface LcdMenuConfig extends DisplayMenuBaseDISPLAYMENUBASESCHEMA {
     display_id?: ID;
-    mark_selected?: number;
-    mark_editing?: number;
-    mark_submenu?: number;
+    id?: ID;
     mark_back?: number;
+    mark_editing?: number;
+    mark_selected?: number;
+    mark_submenu?: number;
 }

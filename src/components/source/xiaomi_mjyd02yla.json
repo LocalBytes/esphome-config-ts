@@ -2,14 +2,40 @@
   "xiaomi_mjyd02yla.binary_sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "binary_sensor.BINARY_SENSOR_SCHEMA",
-            "esp32_ble_tracker.ESP_BLE_DEVICE_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
+            "battery_level": {
+              "key": "Optional",
+              "schema": {
+                "config_vars": {
+                  "accuracy_decimals": {
+                    "default": "0"
+                  },
+                  "device_class": {
+                    "default": "battery"
+                  },
+                  "entity_category": {
+                    "default": "diagnostic"
+                  },
+                  "state_class": {
+                    "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "%"
+                  }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema"
+            },
+            "bindkey": {
+              "key": "Required"
+            },
+            "device_class": {
+              "default": "motion"
+            },
             "id": {
               "id_type": {
                 "class": "xiaomi_mjyd02yla::XiaomiMJYD02YLA",
@@ -21,72 +47,33 @@
                 ]
               }
             },
-            "device_class": {
-              "default": "motion"
-            },
-            "mac_address": {
-              "key": "Required"
-            },
-            "bindkey": {
-              "key": "Required"
-            },
             "idle_time": {
               "key": "Optional",
-              "type": "schema",
               "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
                 "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "min"
+                  "accuracy_decimals": {
+                    "default": "0"
                   },
                   "icon": {
                     "default": "mdi:timelapse"
                   },
-                  "accuracy_decimals": {
-                    "default": "0"
-                  }
-                }
-              }
-            },
-            "battery_level": {
-              "key": "Optional",
-              "type": "schema",
-              "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
-                "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "%"
-                  },
-                  "accuracy_decimals": {
-                    "default": "0"
-                  },
-                  "device_class": {
-                    "default": "battery"
-                  },
                   "state_class": {
                     "default": "measurement"
                   },
-                  "entity_category": {
-                    "default": "diagnostic"
+                  "unit_of_measurement": {
+                    "default": "min"
                   }
-                }
-              }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema"
             },
             "illuminance": {
               "key": "Optional",
-              "type": "schema",
               "schema": {
-                "extends": [
-                  "sensor.SENSOR_SCHEMA"
-                ],
                 "config_vars": {
-                  "unit_of_measurement": {
-                    "default": "lx"
-                  },
                   "accuracy_decimals": {
                     "default": "0"
                   },
@@ -95,26 +82,42 @@
                   },
                   "state_class": {
                     "default": "measurement"
+                  },
+                  "unit_of_measurement": {
+                    "default": "lx"
                   }
-                }
-              }
+                },
+                "extends": [
+                  "sensor._SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema"
             },
             "light": {
               "key": "Optional",
-              "type": "schema",
               "schema": {
-                "extends": [
-                  "binary_sensor.BINARY_SENSOR_SCHEMA"
-                ],
                 "config_vars": {
                   "device_class": {
                     "default": "light"
                   }
-                }
-              }
+                },
+                "extends": [
+                  "binary_sensor._BINARY_SENSOR_SCHEMA"
+                ]
+              },
+              "type": "schema"
+            },
+            "mac_address": {
+              "key": "Required"
             }
-          }
-        }
+          },
+          "extends": [
+            "binary_sensor._BINARY_SENSOR_SCHEMA",
+            "bthome_mithermometer.BLE_DEVICE_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

@@ -9,31 +9,31 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { Esp32BleTrackerESP_BLE_DEVICE_SCHEMA } from "./esp32_ble_tracker.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { BthomeMithermometerBLEDEVICESCHEMA } from "./bthome_mithermometer.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class XiaomiHhccpot002Sensor extends EsphomeComponent<XiaomiHhccpot002SensorConfig> {
     componentName: string = "xiaomi_hhccpot002.sensor";
 }
 
-export interface XiaomiHhccpot002SensorConfigMoisture extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface XiaomiHhccpot002SensorConfigConductivity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
+    icon?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface XiaomiHhccpot002SensorConfigConductivity extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface XiaomiHhccpot002SensorConfigMoisture extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
+    icon?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
 export type XiaomiHhccpot002SensorConfig = {
+        conductivity?: XiaomiHhccpot002SensorConfigConductivity;
         id?: ID;
         mac_address: string;
         moisture?: XiaomiHhccpot002SensorConfigMoisture;
-        conductivity?: XiaomiHhccpot002SensorConfigConductivity;
-    } & Esp32BleTrackerESP_BLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BthomeMithermometerBLEDEVICESCHEMA & CoreCOMPONENTSCHEMA;

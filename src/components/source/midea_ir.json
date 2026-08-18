@@ -2,12 +2,13 @@
   "midea_ir.climate": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "climate_ir.CLIMATE_IR_WITH_RECEIVER_SCHEMA"
-          ],
           "config_vars": {
+            "humidity_sensor": {
+              "key": "Optional",
+              "type": "use_id",
+              "use_id_type": "sensor::Sensor"
+            },
             "id": {
               "id_type": {
                 "class": "midea_ir::MideaIR",
@@ -16,18 +17,49 @@
                   "climate::Climate",
                   "EntityBase",
                   "Component",
-                  "remote_base::RemoteReceiverListener"
+                  "remote_base::RemoteReceiverListener",
+                  "remote_base::RemoteTransmittable"
                 ]
-              }
+              },
+              "key": "GeneratedID"
+            },
+            "receiver_id": {
+              "key": "Optional",
+              "type": "use_id",
+              "use_id_type": "remote_base::RemoteReceiverBase"
+            },
+            "sensor": {
+              "key": "Optional",
+              "type": "use_id",
+              "use_id_type": "sensor::Sensor"
+            },
+            "supports_cool": {
+              "default": "True",
+              "key": "Optional",
+              "type": "boolean"
+            },
+            "supports_heat": {
+              "default": "True",
+              "key": "Optional",
+              "type": "boolean"
+            },
+            "transmitter_id": {
+              "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "remote_base::RemoteTransmitterBase"
             },
             "use_fahrenheit": {
-              "key": "Optional",
               "default": "False",
-              "type": "boolean",
-              "docs": "**boolean**: Allows you to transfer the temperature to the air conditioner in degrees Fahrenheit. The air conditioner display also shows the temperature in Fahrenheit. Defaults to `false`.\n\n*See also: [midea_ir Climate](https://esphome.io/components/climate/climate_ir.html#midea-ir-climate)*"
+              "key": "Optional",
+              "type": "boolean"
             }
-          }
-        }
+          },
+          "extends": [
+            "climate._CLIMATE_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

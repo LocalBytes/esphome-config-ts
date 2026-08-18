@@ -9,15 +9,19 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Ssd1306BaseSSD1306_SCHEMA } from "./ssd1306_base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { Ssd1306BaseSSD1306SCHEMA } from "./ssd1306_base.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Ssd1306I2cDisplay extends EsphomeComponent<Ssd1306I2cDisplayConfig> {
     componentName: string = "ssd1306_i2c.display";
 }
 
 export type Ssd1306I2cDisplayConfig = {
-        id?: ID;
-        i2c_id?: ID;
         address?: any;
-    } & Ssd1306BaseSSD1306_SCHEMA & CoreCOMPONENT_SCHEMA;
+        i2c_id?: ID;
+        id?: ID;
+        rotation?: any;
+        lambda?: any;
+        update_interval?: any;
+        pages?: any;
+    } & Ssd1306BaseSSD1306SCHEMA & CoreCOMPONENTSCHEMA;

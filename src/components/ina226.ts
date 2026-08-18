@@ -9,50 +9,59 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Ina226Sensor extends EsphomeComponent<Ina226SensorConfig> {
     componentName: string = "ina226.sensor";
 }
 
-export interface Ina226SensorConfigBusVoltage extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export type Ina226SensorConfigAdcAveraging = '1' | '4' | '16' | '64' | '128' | '256' | '512' | '1024';
+
+export interface Ina226SensorConfigAdcTime {
+    current: string;
+    voltage: string;
+}
+
+export interface Ina226SensorConfigBusVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Ina226SensorConfigShuntVoltage extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Ina226SensorConfigCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Ina226SensorConfigCurrent extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Ina226SensorConfigPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Ina226SensorConfigPower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Ina226SensorConfigShuntVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Ina226SensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
+export interface Ina226SensorConfig extends CoreCOMPONENTSCHEMA {
+    adc_averaging?: Ina226SensorConfigAdcAveraging;
+    adc_time?: Ina226SensorConfigAdcTime;
+    address?: any;
     bus_voltage?: Ina226SensorConfigBusVoltage;
-    shunt_voltage?: Ina226SensorConfigShuntVoltage;
     current?: Ina226SensorConfigCurrent;
+    i2c_id?: ID;
+    id?: ID;
+    max_current?: any;
     power?: Ina226SensorConfigPower;
     shunt_resistance?: any;
-    max_current?: any;
+    shunt_voltage?: Ina226SensorConfigShuntVoltage;
     update_interval?: any;
-    i2c_id?: ID;
-    address?: any;
 }

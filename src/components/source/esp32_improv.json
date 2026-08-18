@@ -2,63 +2,97 @@
   "esp32_improv": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
           "config_vars": {
-            "id": {
-              "key": "GeneratedID",
-              "id_type": {
-                "class": "esp32_improv::ESP32ImprovComponent",
-                "parents": [
-                  "Component",
-                  "esp32_ble_server::BLEServiceComponent"
+            "authorized_duration": {
+              "default": "1min",
+              "key": "Optional",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
                 ]
-              }
-            },
-            "ble_server_id": {
-              "key": "GeneratedID",
-              "use_id_type": "esp32_ble_server::BLEServer",
-              "type": "use_id"
+              },
+              "type": "schema",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The amount of time until authorization times out and needs to be re-authorized. Defaults to `1min`.\n\n*See also: [Improv via BLE](https://next.esphome.io/components/esp32_improv#configuration-variables)*"
             },
             "authorizer": {
               "key": "Required",
-              "use_id_type": "binary_sensor::BinarySensor",
               "type": "use_id",
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: A [binary sensor](https://esphome.io/components/binary_sensor/index.html) to authorize with. Also accepts `none`/`false` to skip authorization.\n\n*See also: [Improv via BLE](https://esphome.io/components/esp32_improv.html#configuration-variables)*"
+              "use_id_type": "binary_sensor::BinarySensor",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: A [binary sensor](https://next.esphome.io/components/binary_sensor/) to authorize with. Also accepts `none` to skip authorization.\n\n*See also: [Improv via BLE](https://next.esphome.io/components/esp32_improv#configuration-variables)*"
+            },
+            "id": {
+              "id_type": {
+                "class": "esp32_improv::ESP32ImprovComponent",
+                "parents": [
+                  "Component"
+                ]
+              },
+              "key": "GeneratedID"
+            },
+            "identify_duration": {
+              "default": "10s",
+              "key": "Optional",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              },
+              "type": "schema",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The amount of time to identify for. Defaults to `10s`.\n\n*See also: [Improv via BLE](https://next.esphome.io/components/esp32_improv#configuration-variables)*"
+            },
+            "next_url": {
+              "key": "Optional",
+              "docs": "**string**: The URL to open after provisioning is complete. Defaults to `https://my.home-assistant.io/redirect/config_flow_start?domain=esphome`.\n\n*See also: [Improv via BLE](https://next.esphome.io/components/esp32_improv#configuration-variables)*"
+            },
+            "on_provisioned": {
+              "key": "Optional",
+              "type": "trigger",
+              "docs": "**[Automation](https://next.esphome.io/automations)**: An action to be performed when provisioning has completed. See [`on_provisioned`](https://next.esphome.io/components/esp32_improv#improv-on_provisioned).\n\n*See also: [Improv via BLE](https://next.esphome.io/components/esp32_improv#configuration-variables)*"
+            },
+            "on_provisioning": {
+              "key": "Optional",
+              "type": "trigger",
+              "docs": "**[Automation](https://next.esphome.io/automations)**: An action to be performed when the device begins the provisioning process. See [`on_provisioning`](https://next.esphome.io/components/esp32_improv#improv-on_provisioning).\n\n*See also: [Improv via BLE](https://next.esphome.io/components/esp32_improv#configuration-variables)*"
+            },
+            "on_start": {
+              "key": "Optional",
+              "type": "trigger",
+              "docs": "**[Automation](https://next.esphome.io/automations)**: An action to be performed when Improv is waiting for authorization and/or upon authorization. See [`on_start`](https://next.esphome.io/components/esp32_improv#improv-on_start).\n\n*See also: [Improv via BLE](https://next.esphome.io/components/esp32_improv#configuration-variables)*"
+            },
+            "on_state": {
+              "key": "Optional",
+              "type": "trigger",
+              "docs": "**[Automation](https://next.esphome.io/automations)**: An action to be performed when an Improv state change happens. See [`on_state`](https://next.esphome.io/components/esp32_improv#improv-on_state).\n\n*See also: [Improv via BLE](https://next.esphome.io/components/esp32_improv#configuration-variables)*"
+            },
+            "on_stop": {
+              "key": "Optional",
+              "type": "trigger",
+              "docs": "**[Automation](https://next.esphome.io/automations)**: An action to be performed when Improv has stopped. See [`on_stop`](https://next.esphome.io/components/esp32_improv#improv-on_stop).\n\n*See also: [Improv via BLE](https://next.esphome.io/components/esp32_improv#configuration-variables)*"
             },
             "status_indicator": {
               "key": "Optional",
-              "use_id_type": "output::BinaryOutput",
               "type": "use_id",
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: An [output](https://esphome.io/components/output/index.html) to display feedback to the user.\n\n*See also: [Improv via BLE](https://esphome.io/components/esp32_improv.html#configuration-variables)*"
+              "use_id_type": "output::BinaryOutput",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: An [output](https://next.esphome.io/components/output/) to display feedback to the user.\n\n*See also: [Improv via BLE](https://next.esphome.io/components/esp32_improv#configuration-variables)*"
             },
-            "identify_duration": {
+            "wifi_timeout": {
+              "default": "90s",
               "key": "Optional",
-              "default": "10s",
-              "type": "schema",
               "schema": {
                 "extends": [
                   "core.positive_time_period_milliseconds"
                 ]
               },
-              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The amount of time to identify for. Defaults to `10s`.\n\n*See also: [Improv via BLE](https://esphome.io/components/esp32_improv.html#configuration-variables)*"
-            },
-            "authorized_duration": {
-              "key": "Optional",
-              "default": "1min",
               "type": "schema",
-              "schema": {
-                "extends": [
-                  "core.positive_time_period_milliseconds"
-                ]
-              },
-              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The amount of time until authorization times out and needs to be re-authorized. Defaults to `1min`.\n\n*See also: [Improv via BLE](https://esphome.io/components/esp32_improv.html#configuration-variables)*"
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The amount of time to wait before starting the Improv service after Wi-Fi is no longer connected. Defaults to `90s`.\n\n*See also: [Improv via BLE](https://next.esphome.io/components/esp32_improv#configuration-variables)*"
             }
           },
           "extends": [
             "core.COMPONENT_SCHEMA"
           ]
-        }
+        },
+        "type": "schema"
       }
     }
   }

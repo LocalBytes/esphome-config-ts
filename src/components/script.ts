@@ -15,12 +15,15 @@ export class Script extends EsphomeComponent<ScriptConfig> {
 }
 
 export type ScriptConfigMode = 'single' | 'restart' | 'queued' | 'parallel';
-export type ScriptConfigParameters = Record<string, string>;
+
+export interface ScriptConfigParameters {
+    string?: any;
+}
 
 export interface ScriptConfig {
     id: string;
-    mode?: ScriptConfigMode;
     max_runs?: number;
-    parameters: ScriptConfigParameters;
+    mode?: ScriptConfigMode;
+    parameters?: ScriptConfigParameters;
     then: object[];
 }

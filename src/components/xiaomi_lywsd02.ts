@@ -9,40 +9,40 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { Esp32BleTrackerESP_BLE_DEVICE_SCHEMA } from "./esp32_ble_tracker.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { BthomeMithermometerBLEDEVICESCHEMA } from "./bthome_mithermometer.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class XiaomiLywsd02Sensor extends EsphomeComponent<XiaomiLywsd02SensorConfig> {
     componentName: string = "xiaomi_lywsd02.sensor";
 }
 
-export interface XiaomiLywsd02SensorConfigTemperature extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface XiaomiLywsd02SensorConfigBatteryLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-    state_class?: any;
-}
-
-export interface XiaomiLywsd02SensorConfigHumidity extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export interface XiaomiLywsd02SensorConfigBatteryLevel extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
     entity_category?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface XiaomiLywsd02SensorConfigHumidity extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface XiaomiLywsd02SensorConfigTemperature extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
 export type XiaomiLywsd02SensorConfig = {
+        battery_level?: XiaomiLywsd02SensorConfigBatteryLevel;
+        humidity?: XiaomiLywsd02SensorConfigHumidity;
         id?: ID;
         mac_address: string;
         temperature?: XiaomiLywsd02SensorConfigTemperature;
-        humidity?: XiaomiLywsd02SensorConfigHumidity;
-        battery_level?: XiaomiLywsd02SensorConfigBatteryLevel;
-    } & Esp32BleTrackerESP_BLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BthomeMithermometerBLEDEVICESCHEMA & CoreCOMPONENTSCHEMA;

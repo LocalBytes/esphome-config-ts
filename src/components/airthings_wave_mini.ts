@@ -9,12 +9,12 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { AirthingsWaveBaseBASE_SCHEMA } from "./airthings_wave_base.js";
+import type { AirthingsWaveBaseBASESCHEMA } from "./airthings_wave_base.js";
 
 export class AirthingsWaveMiniSensor extends EsphomeComponent<AirthingsWaveMiniSensorConfig> {
     componentName: string = "airthings_wave_mini.sensor";
 }
 
-export interface AirthingsWaveMiniSensorConfig extends AirthingsWaveBaseBASE_SCHEMA {
-    id?: any;
+export interface AirthingsWaveMiniSensorConfig extends AirthingsWaveBaseBASESCHEMA {
+    id?: ID;
 }

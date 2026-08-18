@@ -2,12 +2,13 @@
   "tcl112.climate": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "climate_ir.CLIMATE_IR_WITH_RECEIVER_SCHEMA"
-          ],
           "config_vars": {
+            "humidity_sensor": {
+              "key": "Optional",
+              "type": "use_id",
+              "use_id_type": "sensor::Sensor"
+            },
             "id": {
               "id_type": {
                 "class": "tcl112::Tcl112Climate",
@@ -16,12 +17,40 @@
                   "climate::Climate",
                   "EntityBase",
                   "Component",
-                  "remote_base::RemoteReceiverListener"
+                  "remote_base::RemoteReceiverListener",
+                  "remote_base::RemoteTransmittable"
                 ]
-              }
+              },
+              "key": "GeneratedID"
+            },
+            "receiver_id": {
+              "key": "Optional",
+              "type": "use_id",
+              "use_id_type": "remote_base::RemoteReceiverBase"
+            },
+            "sensor": {
+              "key": "Optional",
+              "type": "use_id",
+              "use_id_type": "sensor::Sensor"
+            },
+            "supports_cool": {
+              "default": "True",
+              "key": "Optional",
+              "type": "boolean"
+            },
+            "supports_heat": {
+              "default": "True",
+              "key": "Optional",
+              "type": "boolean"
             }
-          }
-        }
+          },
+          "extends": [
+            "climate._CLIMATE_SCHEMA",
+            "core.COMPONENT_SCHEMA",
+            "remote_base.REMOTE_TRANSMITTABLE_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

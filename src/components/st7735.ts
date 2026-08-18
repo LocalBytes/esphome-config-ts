@@ -9,27 +9,31 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class St7735Display extends EsphomeComponent<St7735DisplayConfig> {
     componentName: string = "st7735.display";
 }
 
 export type St7735DisplayConfigModel = 'INITR_GREENTAB' | 'INITR_REDTAB' | 'INITR_BLACKTAB' | 'INITR_MINI160X80' | 'INITR_18BLACKTAB' | 'INITR_18REDTAB';
+export type St7735DisplayConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 export type St7735DisplayConfig = {
-        id?: ID;
-        dc_pin: Pin;
-        device_width: number;
-        device_height: number;
         col_start: number;
-        row_start: number;
-        eight_bit_color?: boolean;
-        use_bgr?: boolean;
-        invert_colors?: boolean;
-        spi_id?: ID;
         cs_pin: Pin;
+        data_rate?: any;
+        dc_pin: Pin;
+        device_height: number;
+        device_width: number;
+        eight_bit_color?: boolean;
+        id?: ID;
+        invert_colors?: boolean;
         model: St7735DisplayConfigModel;
+        release_device?: boolean;
         reset_pin?: Pin;
+        row_start: number;
+        spi_id?: ID;
+        spi_mode?: St7735DisplayConfigSpiMode;
         update_interval?: any;
-    } & DisplayFULL_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;
+        use_bgr?: boolean;
+    } & DisplayFULLDISPLAYSCHEMA & CoreCOMPONENTSCHEMA;

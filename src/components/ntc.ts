@@ -9,19 +9,19 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class NtcSensor extends EsphomeComponent<NtcSensorConfig> {
     componentName: string = "ntc.sensor";
 }
 
 export type NtcSensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
         accuracy_decimals?: any;
-        device_class?: any;
-        state_class?: any;
-        sensor: ID;
         calibration: string;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+        device_class?: any;
+        id?: any;
+        sensor: ID;
+        state_class?: any;
+        unit_of_measurement?: any;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

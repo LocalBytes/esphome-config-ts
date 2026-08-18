@@ -9,18 +9,18 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Sen21231Sensor extends EsphomeComponent<Sen21231SensorConfig> {
     componentName: string = "sen21231.sensor";
 }
 
 export type Sen21231SensorConfig = {
-        id?: any;
-        icon?: any;
         accuracy_decimals?: any;
-        update_interval?: any;
-        i2c_id?: ID;
         address?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+        i2c_id?: ID;
+        icon?: any;
+        id?: any;
+        update_interval?: any;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

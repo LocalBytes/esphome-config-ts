@@ -9,34 +9,34 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+
+export abstract class PulseMeter extends EsphomeComponent {
+    componentName: string = "pulse_meter";
+}
 
 export class PulseMeterSensor extends EsphomeComponent<PulseMeterSensorConfig> {
     componentName: string = "pulse_meter.sensor";
 }
 
-export interface PulseMeterSensorConfigTotal extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
-}
-
 export type PulseMeterSensorConfigInternalFilterMode = 'EDGE' | 'PULSE';
 
-export interface PulseMeterSensorConfig extends SensorSENSOR_SCHEMA {
-    id?: any;
-    unit_of_measurement?: any;
-    icon?: any;
+export interface PulseMeterSensorConfigTotal extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
+    icon?: any;
     state_class?: any;
-    pin: string;
-    internal_filter?: any;
-    timeout?: any;
-    total?: PulseMeterSensorConfigTotal;
-    internal_filter_mode?: PulseMeterSensorConfigInternalFilterMode;
+    unit_of_measurement?: any;
 }
 
-export abstract class PulseMeter extends EsphomeComponent {
-    componentName: string = "pulse_meter";
+export interface PulseMeterSensorConfig extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    icon?: any;
+    id?: any;
+    internal_filter?: any;
+    internal_filter_mode?: PulseMeterSensorConfigInternalFilterMode;
+    pin: string;
+    state_class?: any;
+    timeout?: any;
+    total?: PulseMeterSensorConfigTotal;
+    unit_of_measurement?: any;
 }

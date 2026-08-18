@@ -9,12 +9,19 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { ClimateIrCLIMATE_IR_WITH_RECEIVER_SCHEMA } from "./climate_ir.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class HitachiAc344Climate extends EsphomeComponent<HitachiAc344ClimateConfig> {
     componentName: string = "hitachi_ac344.climate";
 }
 
-export interface HitachiAc344ClimateConfig extends ClimateIrCLIMATE_IR_WITH_RECEIVER_SCHEMA {
-    id?: any;
-}
+export type HitachiAc344ClimateConfig = {
+        humidity_sensor?: ID;
+        id?: ID;
+        receiver_id?: ID;
+        sensor?: ID;
+        supports_cool?: boolean;
+        supports_heat?: boolean;
+        transmitter_id?: ID;
+    } & ClimateCLIMATESCHEMA & CoreCOMPONENTSCHEMA;

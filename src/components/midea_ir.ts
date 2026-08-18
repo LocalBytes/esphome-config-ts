@@ -9,13 +9,20 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { ClimateIrCLIMATE_IR_WITH_RECEIVER_SCHEMA } from "./climate_ir.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class MideaIrClimate extends EsphomeComponent<MideaIrClimateConfig> {
     componentName: string = "midea_ir.climate";
 }
 
-export interface MideaIrClimateConfig extends ClimateIrCLIMATE_IR_WITH_RECEIVER_SCHEMA {
-    id?: any;
-    use_fahrenheit?: boolean;
-}
+export type MideaIrClimateConfig = {
+        humidity_sensor?: ID;
+        id?: ID;
+        receiver_id?: ID;
+        sensor?: ID;
+        supports_cool?: boolean;
+        supports_heat?: boolean;
+        transmitter_id?: ID;
+        use_fahrenheit?: boolean;
+    } & ClimateCLIMATESCHEMA & CoreCOMPONENTSCHEMA;

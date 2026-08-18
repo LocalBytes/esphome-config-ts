@@ -9,34 +9,39 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class HoneywellabpSensor extends EsphomeComponent<HoneywellabpSensorConfig> {
     componentName: string = "honeywellabp.sensor";
 }
 
-export interface HoneywellabpSensorConfigPressure extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface HoneywellabpSensorConfigPressure extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-    state_class?: any;
-    min_pressure: string;
     max_pressure: string;
+    min_pressure: string;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface HoneywellabpSensorConfigTemperature extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export type HoneywellabpSensorConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
+
+export interface HoneywellabpSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface HoneywellabpSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface HoneywellabpSensorConfig extends CoreCOMPONENTSCHEMA {
+    cs_pin: Pin;
+    data_rate?: any;
     id?: ID;
     pressure?: HoneywellabpSensorConfigPressure;
+    release_device?: boolean;
+    spi_id?: ID;
+    spi_mode?: HoneywellabpSensorConfigSpiMode;
     temperature?: HoneywellabpSensorConfigTemperature;
     update_interval?: any;
-    spi_id?: ID;
-    cs_pin: Pin;
 }

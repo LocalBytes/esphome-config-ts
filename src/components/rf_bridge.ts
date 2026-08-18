@@ -9,19 +9,19 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class RfBridge extends EsphomeComponent<RfBridgeConfig> {
     componentName: string = "rf_bridge";
 }
 
-export interface RfBridgeConfig extends CoreCOMPONENT_SCHEMA {
+export interface RfBridgeConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
-    on_code_received?: object[];
     on_advanced_code_received?: object[];
+    on_code_received?: object[];
     uart_id?: ID;
 }
 
-export interface RfBridgeRFBRIDGE_ID_SCHEMA {
+export interface RfBridgeRFBRIDGEIDSCHEMA {
     id?: ID;
 }

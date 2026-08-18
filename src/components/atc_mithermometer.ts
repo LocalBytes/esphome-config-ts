@@ -9,58 +9,58 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class AtcMithermometerSensor extends EsphomeComponent<AtcMithermometerSensorConfig> {
     componentName: string = "atc_mithermometer.sensor";
 }
 
-export interface AtcMithermometerSensorConfigTemperature extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface AtcMithermometerSensorConfigBatteryLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-    state_class?: any;
-}
-
-export interface AtcMithermometerSensorConfigHumidity extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export interface AtcMithermometerSensorConfigBatteryLevel extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
     entity_category?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface AtcMithermometerSensorConfigBatteryVoltage extends SensorSENSOR_SCHEMA {
+export interface AtcMithermometerSensorConfigBatteryVoltage extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    entity_category?: any;
+    state_class?: any;
     unit_of_measurement?: any;
+}
+
+export interface AtcMithermometerSensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
-    entity_category?: any;
+    unit_of_measurement?: any;
 }
 
-export interface AtcMithermometerSensorConfigSignalStrength extends SensorSENSOR_SCHEMA {
+export interface AtcMithermometerSensorConfigSignalStrength extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    entity_category?: any;
+    state_class?: any;
     unit_of_measurement?: any;
+}
+
+export interface AtcMithermometerSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
-    entity_category?: any;
+    unit_of_measurement?: any;
 }
 
-export interface AtcMithermometerSensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    mac_address: string;
-    temperature?: AtcMithermometerSensorConfigTemperature;
-    humidity?: AtcMithermometerSensorConfigHumidity;
+export interface AtcMithermometerSensorConfig extends CoreCOMPONENTSCHEMA {
     battery_level?: AtcMithermometerSensorConfigBatteryLevel;
     battery_voltage?: AtcMithermometerSensorConfigBatteryVoltage;
-    signal_strength?: AtcMithermometerSensorConfigSignalStrength;
     esp32_ble_id?: ID;
+    humidity?: AtcMithermometerSensorConfigHumidity;
+    id?: ID;
+    mac_address: string;
+    signal_strength?: AtcMithermometerSensorConfigSignalStrength;
+    temperature?: AtcMithermometerSensorConfigTemperature;
 }

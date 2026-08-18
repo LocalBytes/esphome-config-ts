@@ -9,89 +9,96 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Atm90e26Sensor extends EsphomeComponent<Atm90e26SensorConfig> {
     componentName: string = "atm90e26.sensor";
 }
 
-export interface Atm90e26SensorConfigVoltage extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Atm90e26SensorConfigCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Atm90e26SensorConfigCurrent extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Atm90e26SensorConfigForwardActiveEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Atm90e26SensorConfigPower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Atm90e26SensorConfigFrequency extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-    state_class?: any;
-}
-
-export interface Atm90e26SensorConfigReactivePower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
     icon?: any;
-    accuracy_decimals?: any;
     state_class?: any;
-}
-
-export interface Atm90e26SensorConfigPowerFactor extends SensorSENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export interface Atm90e26SensorConfigForwardActiveEnergy extends SensorSENSOR_SCHEMA {
     unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
 }
 
-export interface Atm90e26SensorConfigReverseActiveEnergy extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export interface Atm90e26SensorConfigFrequency extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
-}
-
-export type Atm90e26SensorConfigLineFrequency = '50HZ' | '60HZ';
 export type Atm90e26SensorConfigGainPga = '1X' | '4X' | '8X' | '16X' | '24X';
+export type Atm90e26SensorConfigLineFrequency = '50HZ' | '60HZ';
 
-export interface Atm90e26SensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    voltage?: Atm90e26SensorConfigVoltage;
+export interface Atm90e26SensorConfigPower extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface Atm90e26SensorConfigPowerFactor extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+}
+
+export interface Atm90e26SensorConfigReactivePower extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface Atm90e26SensorConfigReverseActiveEnergy extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export type Atm90e26SensorConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
+
+export interface Atm90e26SensorConfigVoltage extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface Atm90e26SensorConfig extends CoreCOMPONENTSCHEMA {
+    cs_pin: Pin;
     current?: Atm90e26SensorConfigCurrent;
-    power?: Atm90e26SensorConfigPower;
-    reactive_power?: Atm90e26SensorConfigReactivePower;
-    power_factor?: Atm90e26SensorConfigPowerFactor;
+    data_rate?: any;
     forward_active_energy?: Atm90e26SensorConfigForwardActiveEnergy;
-    reverse_active_energy?: Atm90e26SensorConfigReverseActiveEnergy;
     frequency?: Atm90e26SensorConfigFrequency;
+    gain_ct?: number;
+    gain_metering?: number;
+    gain_pga?: Atm90e26SensorConfigGainPga;
+    gain_voltage?: number;
+    id?: ID;
     line_frequency: Atm90e26SensorConfigLineFrequency;
     meter_constant: string;
     pl_const?: number;
-    gain_metering?: number;
-    gain_voltage?: number;
-    gain_ct?: number;
-    gain_pga?: Atm90e26SensorConfigGainPga;
-    update_interval?: any;
+    power?: Atm90e26SensorConfigPower;
+    power_factor?: Atm90e26SensorConfigPowerFactor;
+    reactive_power?: Atm90e26SensorConfigReactivePower;
+    release_device?: boolean;
+    reverse_active_energy?: Atm90e26SensorConfigReverseActiveEnergy;
     spi_id?: ID;
-    cs_pin: Pin;
+    spi_mode?: Atm90e26SensorConfigSpiMode;
+    update_interval?: any;
+    voltage?: Atm90e26SensorConfigVoltage;
 }

@@ -9,22 +9,21 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { LightRGB_LIGHT_SCHEMA } from "./light.js";
+import type { LightRGBLIGHTSCHEMA } from "./light.js";
 
 export class RgbwwLight extends EsphomeComponent<RgbwwLightConfig> {
     componentName: string = "rgbww.light";
 }
 
-export interface RgbwwLightConfig extends LightRGB_LIGHT_SCHEMA {
-    output_id?: ID;
-    red: ID;
-    green: ID;
+export interface RgbwwLightConfig extends LightRGBLIGHTSCHEMA {
     blue: ID;
     cold_white: ID;
-    warm_white: ID;
     cold_white_color_temperature?: any;
-    warm_white_color_temperature?: any;
-    constant_brightness?: boolean;
     color_interlock?: boolean;
-    effects?: any;
+    constant_brightness?: boolean;
+    green: ID;
+    output_id?: ID;
+    red: ID;
+    warm_white: ID;
+    warm_white_color_temperature?: any;
 }

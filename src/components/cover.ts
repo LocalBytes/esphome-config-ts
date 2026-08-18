@@ -9,35 +9,57 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreENTITY_BASE_SCHEMA, CoreMQTT_COMMAND_COMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreENTITYBASESCHEMA, CoreMQTTCOMMANDCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Cover extends EsphomeComponent {
     componentName: string = "cover";
 }
 
-export type CoverCOVER_SCHEMADeviceClass = 'awning' | 'blind' | 'curtain' | 'damper' | 'door' | '' | 'garage' | 'gate' | 'shade' | 'shutter' | 'window';
-export type CoverCOVER_SCHEMA = {
-        id?: ID;
+export interface CoverCOVERACTIONSCHEMA {
+    id: ID;
+}
+
+export interface CoverCOVERCONDITIONSCHEMA {
+    id: ID;
+}
+
+export type CoverCOVERCONTROLACTIONSCHEMAState = 'OPEN' | 'CLOSED';
+
+export interface CoverCOVERCONTROLACTIONSCHEMA {
+    id: ID;
+    position?: any;
+    state?: CoverCOVERCONTROLACTIONSCHEMAState;
+    stop?: boolean;
+    tilt?: any;
+}
+
+export type CoverCOVERSCHEMADeviceClass = 'awning' | 'blind' | 'curtain' | 'damper' | 'door' | '' | 'garage' | 'gate' | 'shade' | 'shutter' | 'window';
+
+export interface CoverCOVERSCHEMAWebServer {
+    sorting_group_id?: ID;
+    sorting_weight?: any;
+    web_server_id?: ID;
+}
+
+export type CoverCOVERSCHEMA = {
+        device_class?: CoverCOVERSCHEMADeviceClass;
         mqtt_id?: any;
-        device_class?: CoverCOVER_SCHEMADeviceClass;
+        mqtt_json_state_payload?: boolean;
+        on_closed?: object[];
+        on_closing?: object[];
+        on_idle?: object[];
+        on_open?: object[];
+        on_opened?: object[];
+        on_opening?: object[];
         position_command_topic?: any;
         position_state_topic?: any;
         tilt_command_topic?: any;
         tilt_state_topic?: any;
-        on_open?: object[];
-        on_closed?: object[];
-    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMMAND_COMPONENT_SCHEMA;
-
-export interface CoverCOVER_ACTION_SCHEMA {
-    id: ID;
-}
-
-export type CoverCOVER_CONTROL_ACTION_SCHEMAState = 'OPEN' | 'CLOSED';
-
-export interface CoverCOVER_CONTROL_ACTION_SCHEMA {
-    id: ID;
-    stop?: boolean;
-    state?: CoverCOVER_CONTROL_ACTION_SCHEMAState;
-    position?: any;
-    tilt?: any;
-}
+        web_server?: CoverCOVERSCHEMAWebServer;
+        id?: any;
+        name?: any;
+        icon?: any;
+        internal?: any;
+        disabled_by_default?: any;
+        entity_category?: any;
+    } & CoreENTITYBASESCHEMA & CoreMQTTCOMMANDCOMPONENTSCHEMA;

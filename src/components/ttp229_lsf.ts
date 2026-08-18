@@ -9,25 +9,25 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
 
 export class Ttp229Lsf extends EsphomeComponent<Ttp229LsfConfig> {
     componentName: string = "ttp229_lsf";
 }
 
-export interface Ttp229LsfConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    i2c_id?: ID;
+export interface Ttp229LsfConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
+    i2c_id?: ID;
+    id?: ID;
 }
 
 export class Ttp229LsfBinarySensor extends EsphomeComponent<Ttp229LsfBinarySensorConfig> {
     componentName: string = "ttp229_lsf.binary_sensor";
 }
 
-export interface Ttp229LsfBinarySensorConfig extends BinarySensorBINARY_SENSOR_SCHEMA {
+export interface Ttp229LsfBinarySensorConfig extends BinarySensorBINARYSENSORSCHEMA {
+    channel: number;
     id?: any;
     ttp229_id?: ID;
-    channel: number;
 }

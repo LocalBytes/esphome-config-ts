@@ -9,40 +9,40 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+
+export abstract class UfireEc extends EsphomeComponent {
+    componentName: string = "ufire_ec";
+}
 
 export class UfireEcSensor extends EsphomeComponent<UfireEcSensorConfig> {
     componentName: string = "ufire_ec.sensor";
 }
 
-export interface UfireEcSensorConfigTemperature extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface UfireEcSensorConfigEc extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-    state_class?: any;
-}
-
-export interface UfireEcSensorConfigEc extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
     icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface UfireEcSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface UfireEcSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface UfireEcSensorConfig extends CoreCOMPONENTSCHEMA {
+    address?: any;
+    ec?: UfireEcSensorConfigEc;
+    i2c_id?: ID;
     id?: ID;
     temperature?: UfireEcSensorConfigTemperature;
-    ec?: UfireEcSensorConfigEc;
-    temperature_sensor?: ID;
-    temperature_compensation?: any;
     temperature_coefficient?: any;
+    temperature_compensation?: any;
+    temperature_sensor?: ID;
     update_interval?: any;
-    i2c_id?: ID;
-    address?: any;
-}
-
-export abstract class UfireEc extends EsphomeComponent {
-    componentName: string = "ufire_ec";
 }

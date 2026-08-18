@@ -2,13 +2,14 @@
   "duty_cycle.sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "sensor.SENSOR_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
+            "accuracy_decimals": {
+              "default": "1"
+            },
+            "icon": {
+              "default": "mdi:percent"
+            },
             "id": {
               "id_type": {
                 "class": "duty_cycle::DutyCycleSensor",
@@ -19,37 +20,36 @@
                   "Component"
                 ]
               },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Set the ID of this sensor for use in lambdas.\n\n*See also: [Duty Cycle Sensor](https://esphome.io/components/sensor/duty_cycle.html#configuration-variables)*"
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: Set the ID of this sensor for use in lambdas.\n\n*See also: [Duty Cycle Sensor](https://next.esphome.io/components/sensor/duty_cycle#configuration-variables)*"
             },
-            "unit_of_measurement": {
-              "default": "%"
-            },
-            "icon": {
-              "default": "mdi:percent"
-            },
-            "accuracy_decimals": {
-              "default": "1"
+            "pin": {
+              "internal": true,
+              "key": "Required",
+              "modes": [
+                "input"
+              ],
+              "schema": true,
+              "type": "pin",
+              "docs": "**[Pin Schema](https://next.esphome.io/guides/configuration-types#pin-schema)**: The pin to observe for the duty cycle.\n\n*See also: [Duty Cycle Sensor](https://next.esphome.io/components/sensor/duty_cycle#configuration-variables)*"
             },
             "state_class": {
               "default": "measurement"
             },
-            "pin": {
-              "key": "Required",
-              "schema": true,
-              "internal": true,
-              "modes": [
-                "input"
-              ],
-              "type": "pin",
-              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The pin to observe for the duty cycle.\n\n*See also: [Duty Cycle Sensor](https://esphome.io/components/sensor/duty_cycle.html#configuration-variables)*"
+            "unit_of_measurement": {
+              "default": "%"
             },
             "update_interval": {
-              "key": "Optional",
               "default": "60s",
-              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [Duty Cycle Sensor](https://esphome.io/components/sensor/duty_cycle.html#configuration-variables)*"
+              "key": "Optional",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [Duty Cycle Sensor](https://next.esphome.io/components/sensor/duty_cycle#configuration-variables)*"
             }
-          }
-        }
+          },
+          "extends": [
+            "sensor._SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

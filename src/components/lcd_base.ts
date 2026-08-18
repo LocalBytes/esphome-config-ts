@@ -9,20 +9,20 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayBASIC_DISPLAY_SCHEMA } from "./display.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { DisplayBASICDISPLAYSCHEMA } from "./display.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class LcdBase extends EsphomeComponent {
     componentName: string = "lcd_base";
 }
 
-export interface LcdBaseLCD_SCHEMAUserCharacters {
-    position: number;
+export interface LcdBaseLCDSCHEMAUserCharacters {
     data: number[];
+    position: number;
 }
 
-export type LcdBaseLCD_SCHEMA = {
+export type LcdBaseLCDSCHEMA = {
         dimensions: string;
-        user_characters?: LcdBaseLCD_SCHEMAUserCharacters[];
         update_interval?: any;
-    } & DisplayBASIC_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;
+        user_characters?: LcdBaseLCDSCHEMAUserCharacters[];
+    } & DisplayBASICDISPLAYSCHEMA & CoreCOMPONENTSCHEMA;

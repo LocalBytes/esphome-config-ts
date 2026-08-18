@@ -9,54 +9,71 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Ltr390Sensor extends EsphomeComponent<Ltr390SensorConfig> {
     componentName: string = "ltr390.sensor";
 }
 
-export interface Ltr390SensorConfigLight extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface Ltr390SensorConfigAmbientLight extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Ltr390SensorConfigAmbientLight extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export type Ltr390SensorConfigGainAmbientLight = 'X1' | 'X3' | 'X6' | 'X9' | 'X18';
+export type Ltr390SensorConfigGainUv = 'X1' | 'X3' | 'X6' | 'X9' | 'X18';
+
+export interface Ltr390SensorConfigGain {
+    ambient_light: Ltr390SensorConfigGainAmbientLight;
+    uv: Ltr390SensorConfigGainUv;
+}
+
+export interface Ltr390SensorConfigLight extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Ltr390SensorConfigUvIndex extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export type Ltr390SensorConfigResolutionAmbientLight = '13' | '16' | '17' | '18' | '19' | '20';
+export type Ltr390SensorConfigResolutionUv = '13' | '16' | '17' | '18' | '19' | '20';
+
+export interface Ltr390SensorConfigResolution {
+    ambient_light: Ltr390SensorConfigResolutionAmbientLight;
+    uv: Ltr390SensorConfigResolutionUv;
+}
+
+export interface Ltr390SensorConfigUv extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Ltr390SensorConfigUv extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface Ltr390SensorConfigUvIndex extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export type Ltr390SensorConfigGain = 'X1' | 'X3' | 'X6' | 'X9' | 'X18';
-export type Ltr390SensorConfigResolution = '13' | '16' | '17' | '18' | '19' | '20';
-
-export interface Ltr390SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Ltr390SensorConfig extends CoreCOMPONENTSCHEMA {
+    address?: any;
+    ambient_light?: Ltr390SensorConfigAmbientLight;
+    gain?: Ltr390SensorConfigGain;
+    i2c_id?: ID;
     id?: ID;
     light?: Ltr390SensorConfigLight;
-    ambient_light?: Ltr390SensorConfigAmbientLight;
-    uv_index?: Ltr390SensorConfigUvIndex;
-    uv?: Ltr390SensorConfigUv;
-    gain?: Ltr390SensorConfigGain;
     resolution?: Ltr390SensorConfigResolution;
-    window_correction_factor?: any;
     update_interval?: any;
-    i2c_id?: ID;
-    address?: any;
+    uv?: Ltr390SensorConfigUv;
+    uv_index?: Ltr390SensorConfigUvIndex;
+    window_correction_factor?: any;
 }

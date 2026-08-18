@@ -9,27 +9,52 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Ili9xxxDisplay extends EsphomeComponent<Ili9xxxDisplayConfig> {
     componentName: string = "ili9xxx.display";
 }
 
-export type Ili9xxxDisplayConfigModel = 'M5STACK' | 'M5CORE' | 'TFT_2.4' | 'TFT_2.4R' | 'ILI9341' | 'ILI9342' | 'ILI9481' | 'ILI9481-18' | 'ILI9486' | 'ILI9488' | 'ILI9488_A' | 'ST7796' | 'S3BOX' | 'S3BOX_LITE';
-export type Ili9xxxDisplayConfigColorPalette = 'NONE' | 'GRAYSCALE' | 'IMAGE_ADAPTIVE';
-export type Ili9xxxDisplayConfigDataRate = '80000000.0' | '40000000.0' | '20000000.0' | '10000000.0' | '8000000.0' | '5000000.0' | '4000000.0' | '2000000.0' | '1000000.0' | '200000.0' | '75000.0' | '1000.0';
+export type Ili9xxxDisplayConfigColorOrder = 'RGB' | 'BGR';
+export type Ili9xxxDisplayConfigColorPalette = 'NONE' | 'GRAYSCALE' | 'IMAGE_ADAPTIVE' | '8BIT';
+
+export interface Ili9xxxDisplayConfigDimensions {
+    height: number;
+    offset_height?: number;
+    offset_width?: number;
+    width: number;
+}
+
+export type Ili9xxxDisplayConfigModel = 'GC9A01A' | 'GC9D01N' | 'M5STACK' | 'M5CORE' | 'TFT_2.4' | 'TFT_2.4R' | 'ILI9341' | 'ILI9342' | 'ILI9481' | 'ILI9481-18' | 'ILI9486' | 'ILI9488' | 'ILI9488_A' | 'ST7735' | 'ST7796' | 'ST7789V' | 'S3BOX' | 'S3BOX_LITE' | 'WAVESHARE_RES_3_5' | 'CUSTOM';
+export type Ili9xxxDisplayConfigPixelMode = '16bit' | '18bit';
+export type Ili9xxxDisplayConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
+
+export interface Ili9xxxDisplayConfigTransform {
+    mirror_x?: boolean;
+    mirror_y?: boolean;
+    swap_xy?: boolean;
+}
+
 export type Ili9xxxDisplayConfig = {
-        id?: ID;
-        model: Ili9xxxDisplayConfigModel;
-        dimensions?: any;
-        dc_pin: Pin;
-        reset_pin?: Pin;
+        color_order?: Ili9xxxDisplayConfigColorOrder;
         color_palette?: Ili9xxxDisplayConfigColorPalette;
-        raw_data_id?: ID;
         color_palette_images?: any[];
-        data_rate?: Ili9xxxDisplayConfigDataRate;
-        update_interval?: any;
-        spi_id?: ID;
         cs_pin?: Pin;
-    } & DisplayFULL_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;
+        data_rate?: any;
+        dc_pin: Pin;
+        dimensions?: Ili9xxxDisplayConfigDimensions;
+        id?: ID;
+        init_sequence?: any[];
+        invert_colors: boolean;
+        model: Ili9xxxDisplayConfigModel;
+        pixel_mode?: Ili9xxxDisplayConfigPixelMode;
+        raw_data_id?: ID;
+        release_device?: boolean;
+        reset_pin?: Pin;
+        rotation?: any;
+        spi_id?: ID;
+        spi_mode?: Ili9xxxDisplayConfigSpiMode;
+        transform?: Ili9xxxDisplayConfigTransform;
+        update_interval?: any;
+    } & DisplayFULLDISPLAYSCHEMA & CoreCOMPONENTSCHEMA;

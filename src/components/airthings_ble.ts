@@ -15,6 +15,6 @@ export class AirthingsBle extends EsphomeComponent<AirthingsBleConfig> {
 }
 
 export interface AirthingsBleConfig {
-    id?: ID;
     esp32_ble_id?: ID;
+    id?: ID;
 }

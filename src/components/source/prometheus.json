@@ -2,39 +2,31 @@
   "prometheus": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
           "config_vars": {
             "id": {
-              "key": "GeneratedID",
               "id_type": {
                 "class": "prometheus::PrometheusHandler",
                 "parents": [
                   "Component"
                 ]
               },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [Prometheus Component](https://esphome.io/components/prometheus.html#configuration-variables)*"
-            },
-            "web_server_base_id": {
               "key": "GeneratedID",
-              "use_id_type": "web_server_base::WebServerBase",
-              "type": "use_id"
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: Manually specify the ID used for code generation.\n\n*See also: [Prometheus Component](https://next.esphome.io/components/prometheus#configuration-variables)*"
             },
             "include_internal": {
-              "key": "Optional",
               "default": "False",
+              "key": "Optional",
               "type": "boolean",
-              "docs": "**boolean**: Whether `internal` entities should be displayed on the web interface. Defaults to `false`.\n\n*See also: [Prometheus Component](https://esphome.io/components/prometheus.html#configuration-variables)*"
+              "docs": "**boolean**: Whether `internal` entities should be displayed on the web interface. Defaults to `false`.\n\n*See also: [Prometheus Component](https://next.esphome.io/components/prometheus#configuration-variables)*"
             },
             "relabel": {
-              "key": "String",
               "default": "{}",
-              "key_type": "<function use_id.<locals>.validator at 0x000002411BDBE980>",
-              "type": "schema",
+              "key": "Optional",
+              "key_type": "<function use_id.<locals>.validator at 0x7f06aca31ee0>",
               "schema": {
                 "config_vars": {
                   "string": {
-                    "type": "schema",
                     "schema": {
                       "config_vars": {
                         "id": {
@@ -46,17 +38,25 @@
                           "type": "string"
                         }
                       }
-                    }
+                    },
+                    "type": "schema"
                   }
                 }
               },
-              "docs": "Override metric labels. See [relabel](https://esphome.io/components/prometheus.html#prometheus-relabel)\n\n*See also: [Prometheus Component](https://esphome.io/components/prometheus.html#configuration-variables)*"
+              "type": "schema",
+              "docs": "Override metric labels. See [`relabel`](https://next.esphome.io/components/prometheus#prometheus-relabel)\n\n*See also: [Prometheus Component](https://next.esphome.io/components/prometheus#configuration-variables)*"
+            },
+            "web_server_base_id": {
+              "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "web_server_base::WebServerBase"
             }
           },
           "extends": [
             "core.COMPONENT_SCHEMA"
           ]
-        }
+        },
+        "type": "schema"
       }
     }
   }

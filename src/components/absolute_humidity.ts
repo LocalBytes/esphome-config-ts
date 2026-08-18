@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class AbsoluteHumiditySensor extends EsphomeComponent<AbsoluteHumiditySensorConfig> {
     componentName: string = "absolute_humidity.sensor";
@@ -18,12 +18,12 @@ export class AbsoluteHumiditySensor extends EsphomeComponent<AbsoluteHumiditySen
 
 export type AbsoluteHumiditySensorConfigEquation = 'BUCK' | 'TETENS' | 'WOBUS';
 export type AbsoluteHumiditySensorConfig = {
-        unit_of_measurement?: any;
-        icon?: any;
         accuracy_decimals?: any;
-        state_class?: any;
-        id?: any;
-        temperature: ID;
-        humidity: ID;
+        device_class?: any;
         equation?: AbsoluteHumiditySensorConfigEquation;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+        humidity: ID;
+        id?: any;
+        state_class?: any;
+        temperature: ID;
+        unit_of_measurement?: any;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

@@ -9,39 +9,11 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Sgp30Sensor extends EsphomeComponent<Sgp30SensorConfig> {
     componentName: string = "sgp30.sensor";
-}
-
-export interface Sgp30SensorConfigEco2 extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export interface Sgp30SensorConfigTvoc extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export interface Sgp30SensorConfigEco2Baseline extends SensorSENSOR_SCHEMA {
-    icon?: any;
-    accuracy_decimals?: any;
-    entity_category?: any;
-}
-
-export interface Sgp30SensorConfigTvocBaseline extends SensorSENSOR_SCHEMA {
-    icon?: any;
-    accuracy_decimals?: any;
-    entity_category?: any;
 }
 
 export interface Sgp30SensorConfigBaseline {
@@ -54,16 +26,44 @@ export interface Sgp30SensorConfigCompensation {
     temperature_source: ID;
 }
 
-export interface Sgp30SensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    eco2: Sgp30SensorConfigEco2;
-    tvoc: Sgp30SensorConfigTvoc;
-    eco2_baseline?: Sgp30SensorConfigEco2Baseline;
-    tvoc_baseline?: Sgp30SensorConfigTvocBaseline;
-    store_baseline?: boolean;
+export interface Sgp30SensorConfigEco2 extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface Sgp30SensorConfigEco2Baseline extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    entity_category?: any;
+    icon?: any;
+}
+
+export interface Sgp30SensorConfigTvoc extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface Sgp30SensorConfigTvocBaseline extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    entity_category?: any;
+    icon?: any;
+}
+
+export interface Sgp30SensorConfig extends CoreCOMPONENTSCHEMA {
+    address?: any;
     baseline?: Sgp30SensorConfigBaseline;
     compensation?: Sgp30SensorConfigCompensation;
-    update_interval?: any;
+    eco2?: Sgp30SensorConfigEco2;
+    eco2_baseline?: Sgp30SensorConfigEco2Baseline;
     i2c_id?: ID;
-    address?: any;
+    id?: ID;
+    store_baseline?: boolean;
+    tvoc?: Sgp30SensorConfigTvoc;
+    tvoc_baseline?: Sgp30SensorConfigTvocBaseline;
+    update_interval?: any;
 }

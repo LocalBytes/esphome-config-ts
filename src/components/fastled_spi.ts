@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { FastledBaseBASE_SCHEMA } from "./fastled_base.js";
+import type { FastledBaseBASESCHEMA } from "./fastled_base.js";
 
 export class FastledSpiLight extends EsphomeComponent<FastledSpiLightConfig> {
     componentName: string = "fastled_spi.light";
@@ -17,9 +17,9 @@ export class FastledSpiLight extends EsphomeComponent<FastledSpiLightConfig> {
 
 export type FastledSpiLightConfigChipset = 'LPD8806' | 'WS2801' | 'WS2803' | 'SM16716' | 'P9813' | 'APA102' | 'SK9822' | 'DOTSTAR';
 
-export interface FastledSpiLightConfig extends FastledBaseBASE_SCHEMA {
+export interface FastledSpiLightConfig extends FastledBaseBASESCHEMA {
     chipset: FastledSpiLightConfigChipset;
-    data_pin: Pin;
     clock_pin: Pin;
+    data_pin: Pin;
     data_rate?: any;
 }

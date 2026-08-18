@@ -9,57 +9,57 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Hlw8012Sensor extends EsphomeComponent<Hlw8012SensorConfig> {
     componentName: string = "hlw8012.sensor";
 }
 
-export interface Hlw8012SensorConfigVoltage extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Hlw8012SensorConfigCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Hlw8012SensorConfigCurrent extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Hlw8012SensorConfigEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
-}
-
-export interface Hlw8012SensorConfigPower extends SensorSENSOR_SCHEMA {
     unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
 }
 
-export interface Hlw8012SensorConfigEnergy extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export type Hlw8012SensorConfigModel = 'HLW8012' | 'CSE7759' | 'BL0937';
 export type Hlw8012SensorConfigInitialMode = 'current' | 'voltage';
+export type Hlw8012SensorConfigModel = 'HLW8012' | 'CSE7759' | 'BL0937';
 
-export interface Hlw8012SensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    sel_pin: Pin;
-    cf_pin: Pin;
+export interface Hlw8012SensorConfigPower extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface Hlw8012SensorConfigVoltage extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface Hlw8012SensorConfig extends CoreCOMPONENTSCHEMA {
     cf1_pin: Pin;
-    voltage?: Hlw8012SensorConfigVoltage;
-    current?: Hlw8012SensorConfigCurrent;
-    power?: Hlw8012SensorConfigPower;
-    energy?: Hlw8012SensorConfigEnergy;
-    current_resistor?: any;
-    voltage_divider?: any;
-    model?: Hlw8012SensorConfigModel;
+    cf_pin: Pin;
     change_mode_every?: number;
+    current?: Hlw8012SensorConfigCurrent;
+    current_resistor?: any;
+    energy?: Hlw8012SensorConfigEnergy;
+    id?: ID;
     initial_mode?: Hlw8012SensorConfigInitialMode;
+    model?: Hlw8012SensorConfigModel;
+    power?: Hlw8012SensorConfigPower;
+    sel_pin: Pin;
     update_interval?: any;
+    voltage?: Hlw8012SensorConfigVoltage;
+    voltage_divider?: any;
 }

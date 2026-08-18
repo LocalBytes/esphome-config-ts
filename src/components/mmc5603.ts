@@ -9,37 +9,39 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Mmc5603Sensor extends EsphomeComponent<Mmc5603SensorConfig> {
     componentName: string = "mmc5603.sensor";
-}
-
-export interface Mmc5603SensorFieldStrengthSchema extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
 }
 
 export type Mmc5603SensorConfigFieldStrengthX = Mmc5603SensorFieldStrengthSchema;
 export type Mmc5603SensorConfigFieldStrengthY = Mmc5603SensorFieldStrengthSchema;
 export type Mmc5603SensorConfigFieldStrengthZ = Mmc5603SensorFieldStrengthSchema;
 
-export interface Mmc5603SensorConfigHeading extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface Mmc5603SensorConfigHeading extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Mmc5603SensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
+export interface Mmc5603SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
+    auto_set_reset?: boolean;
     field_strength_x?: Mmc5603SensorConfigFieldStrengthX;
     field_strength_y?: Mmc5603SensorConfigFieldStrengthY;
     field_strength_z?: Mmc5603SensorConfigFieldStrengthZ;
     heading?: Mmc5603SensorConfigHeading;
-    update_interval?: any;
     i2c_id?: ID;
+    id?: ID;
+    update_interval?: any;
+}
+
+export interface Mmc5603SensorFieldStrengthSchema extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }

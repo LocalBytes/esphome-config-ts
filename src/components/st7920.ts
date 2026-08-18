@@ -9,18 +9,25 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class St7920Display extends EsphomeComponent<St7920DisplayConfig> {
     componentName: string = "st7920.display";
 }
 
+export type St7920DisplayConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 export type St7920DisplayConfig = {
-        id?: ID;
-        width: number;
-        height: number;
-        update_interval?: any;
-        spi_id?: ID;
         cs_pin: Pin;
-    } & DisplayFULL_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;
+        data_rate?: any;
+        height: number;
+        id?: ID;
+        release_device?: boolean;
+        spi_id?: ID;
+        spi_mode?: St7920DisplayConfigSpiMode;
+        update_interval?: any;
+        width: number;
+        rotation?: any;
+        lambda?: any;
+        pages?: any;
+    } & DisplayFULLDISPLAYSCHEMA & CoreCOMPONENTSCHEMA;

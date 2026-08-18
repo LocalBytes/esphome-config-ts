@@ -34,8 +34,8 @@ export class Configuration {
             .addComponent(new Logger({logs: {}}))
             .addComponent(new WebServer({}))
             .addComponent(new Api({}))
-            .addComponent(new Ota({
-                // @ts-ignore
+            // @ts-ignore Ota is abstract post-schema-update; needs a concrete platform subclass.
+            .addComponent(new (Ota as any)({
                 platform: "esphome",
             }));
     }

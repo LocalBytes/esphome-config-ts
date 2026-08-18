@@ -9,23 +9,26 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Display extends EsphomeComponent {
     componentName: string = "display";
 }
 
-export interface DisplayBASIC_DISPLAY_SCHEMA {
+export interface DisplayBASICDISPLAYSCHEMA extends CoreCOMPONENTSCHEMA {
     lambda?: any;
+    update_interval?: any;
 }
 
-export interface DisplayFULL_DISPLAY_SCHEMAPages {
+export interface DisplayFULLDISPLAYSCHEMAPages {
     id?: ID;
     lambda: string;
 }
 
-export interface DisplayFULL_DISPLAY_SCHEMA extends DisplayBASIC_DISPLAY_SCHEMA {
-    rotation?: any;
-    pages?: DisplayFULL_DISPLAY_SCHEMAPages[];
+export interface DisplayFULLDISPLAYSCHEMA extends DisplayBASICDISPLAYSCHEMA {
+    auto_clear_enabled?: any;
     on_page_change?: object[];
-    auto_clear_enabled?: boolean;
+    pages?: DisplayFULLDISPLAYSCHEMAPages[];
+    rotation?: any;
+    show_test_card?: boolean;
 }

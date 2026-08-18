@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CanbusCANBUS_SCHEMA } from "./canbus.js";
+import type { CanbusCANBUSSCHEMA } from "./canbus.js";
 
 export class Mcp2515Canbus extends EsphomeComponent<Mcp2515CanbusConfig> {
     componentName: string = "mcp2515.canbus";
@@ -17,11 +17,15 @@ export class Mcp2515Canbus extends EsphomeComponent<Mcp2515CanbusConfig> {
 
 export type Mcp2515CanbusConfigClock = '8MHZ' | '12MHZ' | '16MHZ' | '20MHZ';
 export type Mcp2515CanbusConfigMode = 'NORMAL' | 'LOOPBACK' | 'LISTENONLY';
+export type Mcp2515CanbusConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 
-export interface Mcp2515CanbusConfig extends CanbusCANBUS_SCHEMA {
-    id?: any;
+export interface Mcp2515CanbusConfig extends CanbusCANBUSSCHEMA {
     clock?: Mcp2515CanbusConfigClock;
-    mode?: Mcp2515CanbusConfigMode;
-    spi_id?: ID;
     cs_pin: Pin;
+    data_rate?: any;
+    id?: any;
+    mode?: Mcp2515CanbusConfigMode;
+    release_device?: boolean;
+    spi_id?: ID;
+    spi_mode?: Mcp2515CanbusConfigSpiMode;
 }

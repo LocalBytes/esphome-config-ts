@@ -9,38 +9,40 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensorBINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
 
 export class Sx1509 extends EsphomeComponent<Sx1509Config> {
     componentName: string = "sx1509";
 }
 
 export interface Sx1509ConfigKeypad {
-    key_rows: number;
-    key_columns: number;
-    sleep_time?: number;
-    scan_time?: number;
     debounce_time?: number;
+    key_columns: number;
+    key_rows: number;
+    keys?: string;
+    on_key?: object[];
+    scan_time?: number;
+    sleep_time?: number;
 }
 
-export interface Sx1509Config extends CoreCOMPONENT_SCHEMA {
+export interface Sx1509Config extends CoreCOMPONENTSCHEMA {
+    address?: any;
+    i2c_id?: ID;
     id?: ID;
     keypad?: Sx1509ConfigKeypad;
-    i2c_id?: ID;
-    address?: any;
 }
 
 export class Sx1509BinarySensor extends EsphomeComponent<Sx1509BinarySensorConfig> {
     componentName: string = "sx1509.binary_sensor";
 }
 
-export interface Sx1509BinarySensorConfig extends BinarySensorBINARY_SENSOR_SCHEMA {
-    id?: any;
-    sx1509_id?: ID;
-    row: number;
+export interface Sx1509BinarySensorConfig extends BinarySensorBINARYSENSORSCHEMA {
     col: number;
+    id?: any;
+    row: number;
+    sx1509_id?: ID;
 }
 
 export class Sx1509Output extends EsphomeComponent<Sx1509OutputConfig> {
@@ -49,6 +51,6 @@ export class Sx1509Output extends EsphomeComponent<Sx1509OutputConfig> {
 
 export type Sx1509OutputConfig = {
         id: string;
-        sx1509_id?: ID;
         pin: number;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+        sx1509_id?: ID;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;

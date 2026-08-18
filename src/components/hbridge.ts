@@ -9,9 +9,10 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { FanFAN_SCHEMA } from "./fan.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { LightRGB_LIGHT_SCHEMA } from "./light.js";
+import type { FanFANSCHEMA } from "./fan.js";
+import type { CoreCOMPONENTSCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
+import type { LightRGBLIGHTSCHEMA } from "./light.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
 
 export class HbridgeFan extends EsphomeComponent<HbridgeFanConfig> {
     componentName: string = "hbridge.fan";
@@ -19,20 +20,36 @@ export class HbridgeFan extends EsphomeComponent<HbridgeFanConfig> {
 
 export type HbridgeFanConfigDecayMode = 'SLOW' | 'FAST';
 export type HbridgeFanConfig = {
-        id?: any;
+        decay_mode?: HbridgeFanConfigDecayMode;
+        enable_pin?: ID;
+        id?: ID;
         pin_a: ID;
         pin_b: ID;
-        decay_mode?: HbridgeFanConfigDecayMode;
+        preset_modes?: any;
         speed_count?: number;
-        enable_pin?: ID;
-    } & FanFAN_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & FanFANSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class HbridgeLight extends EsphomeComponent<HbridgeLightConfig> {
     componentName: string = "hbridge.light";
 }
 
-export interface HbridgeLightConfig extends LightRGB_LIGHT_SCHEMA {
+export interface HbridgeLightConfig extends LightRGBLIGHTSCHEMA {
     output_id?: ID;
     pin_a: ID;
     pin_b: ID;
 }
+
+export class HbridgeSwitch extends EsphomeComponent<HbridgeSwitchConfig> {
+    componentName: string = "hbridge.switch";
+}
+
+export type HbridgeSwitchConfigPulseLength = CorePositiveTimePeriodMilliseconds;
+export type HbridgeSwitchConfigWaitTime = CorePositiveTimePeriodMilliseconds;
+export type HbridgeSwitchConfig = {
+        id?: ID;
+        off_pin: Pin;
+        on_pin: Pin;
+        optimistic?: boolean;
+        pulse_length?: HbridgeSwitchConfigPulseLength;
+        wait_time?: HbridgeSwitchConfigWaitTime;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA;

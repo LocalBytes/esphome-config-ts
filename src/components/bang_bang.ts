@@ -9,25 +9,26 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { ClimateCLIMATE_SCHEMA } from "./climate.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class BangBangClimate extends EsphomeComponent<BangBangClimateConfig> {
     componentName: string = "bang_bang.climate";
 }
 
 export interface BangBangClimateConfigAwayConfig {
-    default_target_temperature_low: string;
     default_target_temperature_high: string;
+    default_target_temperature_low: string;
 }
 
 export type BangBangClimateConfig = {
-        id?: any;
-        sensor: ID;
-        default_target_temperature_low: string;
-        default_target_temperature_high: string;
-        idle_action: object[];
-        cool_action?: object[];
-        heat_action?: object[];
         away_config?: BangBangClimateConfigAwayConfig;
-    } & ClimateCLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA;
+        cool_action?: object[];
+        default_target_temperature_high: string;
+        default_target_temperature_low: string;
+        heat_action?: object[];
+        humidity_sensor?: ID;
+        id?: ID;
+        idle_action: object[];
+        sensor: ID;
+    } & ClimateCLIMATESCHEMA & CoreCOMPONENTSCHEMA;

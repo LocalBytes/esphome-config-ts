@@ -1,12 +1,89 @@
 {
   "max6956": {
-    "schemas": {
-      "CONFIG_SCHEMA": {
-        "type": "schema",
+    "action": {
+      "set_brightness_global": {
+        "maybe": "brightness_global",
         "schema": {
           "config_vars": {
+            "brightness_global": {
+              "key": "Required",
+              "templatable": true,
+              "type": "integer"
+            },
+            "id": {
+              "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "max6956::MAX6956"
+            }
+          }
+        },
+        "type": "schema"
+      },
+      "set_brightness_mode": {
+        "maybe": "brightness_mode",
+        "schema": {
+          "config_vars": {
+            "brightness_mode": {
+              "key": "Required",
+              "templatable": true,
+              "type": "enum",
+              "values": {
+                "global": null,
+                "segment": null
+              }
+            },
             "id": {
               "key": "Required",
+              "type": "use_id",
+              "use_id_type": "max6956::MAX6956"
+            }
+          }
+        },
+        "type": "schema"
+      }
+    },
+    "pin": {
+      "schema": {
+        "extends": [
+          "max6956.MAX6956_PIN_SCHEMA"
+        ]
+      },
+      "type": "schema"
+    },
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "is_list": true,
+        "schema": {
+          "config_vars": {
+            "address": {
+              "data_type": "hex_uint8_t",
+              "default": "64",
+              "key": "Optional",
+              "docs": "**int**: The I\u00b2C address of the driver. Defaults to `0x40`.\n\n*See also: [MAX6956 I/O Expander](https://next.esphome.io/components/max6956#configuration-variables)*"
+            },
+            "brightness_global": {
+              "default": "0",
+              "key": "Optional",
+              "type": "integer",
+              "docs": "Set the value of the current to be sink by all pins configured as led driver. Defaults to `0`\n\n*See also: [MAX6956 I/O Expander](https://next.esphome.io/components/max6956#configuration-variables)*"
+            },
+            "brightness_mode": {
+              "default": "global",
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "global": null,
+                "segment": null
+              },
+              "docs": "Define if the current to be sink will be confgured globaly or per pin configured as led driver. Defaults to `global`\n\n*See also: [MAX6956 I/O Expander](https://next.esphome.io/components/max6956#configuration-variables)*"
+            },
+            "i2c_id": {
+              "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "i2c::I2CBus",
+              "docs": "The I\u00b2C Bus ID Defaults to `false`\n\n*See also: [MAX6956 I/O Expander](https://next.esphome.io/components/max6956#configuration-variables)*"
+            },
+            "id": {
               "id_type": {
                 "class": "max6956::MAX6956",
                 "parents": [
@@ -14,107 +91,24 @@
                   "i2c::I2CDevice"
                 ]
               },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this `max6956` component.\n\n*See also: [max6956 Component/Hub](https://esphome.io/components/max6956.html#configuration-variables)*"
-            },
-            "brightness_global": {
-              "key": "Optional",
-              "default": "0",
-              "type": "integer",
-              "docs": "Set the value of the current to be sink by all pins configured as led driver. Defaults to `0`\n\n*See also: [max6956 Component/Hub](https://esphome.io/components/max6956.html#configuration-variables)*"
-            },
-            "brightness_mode": {
-              "key": "Optional",
-              "default": "global",
-              "type": "enum",
-              "values": {
-                "global": null,
-                "segment": null
-              },
-              "docs": "Define if the current to be sink will be confgured globaly or per pin configured as led driver. Defaults to `global`\n\n*See also: [max6956 Component/Hub](https://esphome.io/components/max6956.html#configuration-variables)*"
-            },
-            "i2c_id": {
-              "key": "GeneratedID",
-              "use_id_type": "i2c::I2CBus",
-              "type": "use_id",
-              "docs": "The I\u00b2C Bus ID Defaults to `false`\n\n*See also: [max6956 Component/Hub](https://esphome.io/components/max6956.html#configuration-variables)*"
-            },
-            "address": {
-              "key": "Optional",
-              "default": "64",
-              "data_type": "hex_uint8_t",
-              "docs": "**int**: The I\u00b2C address of the driver. Defaults to `0x40`.\n\n*See also: [max6956 Component/Hub](https://esphome.io/components/max6956.html#configuration-variables)*"
+              "key": "Required",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: The id to use for this `max6956` component.\n\n*See also: [MAX6956 I/O Expander](https://next.esphome.io/components/max6956#configuration-variables)*"
             }
           },
           "extends": [
             "core.COMPONENT_SCHEMA"
           ]
         },
-        "is_list": true
-      }
-    },
-    "action": {
-      "set_brightness_global": {
-        "type": "schema",
-        "maybe": "brightness_global",
-        "schema": {
-          "config_vars": {
-            "id": {
-              "key": "GeneratedID",
-              "use_id_type": "max6956::MAX6956",
-              "type": "use_id"
-            },
-            "brightness_global": {
-              "key": "Required",
-              "templatable": true,
-              "type": "integer"
-            }
-          }
-        }
-      },
-      "set_brightness_mode": {
-        "type": "schema",
-        "maybe": "brightness_mode",
-        "schema": {
-          "config_vars": {
-            "id": {
-              "key": "Required",
-              "use_id_type": "max6956::MAX6956",
-              "type": "use_id"
-            },
-            "brightness_mode": {
-              "key": "Required",
-              "templatable": true,
-              "type": "enum",
-              "values": {
-                "global": null,
-                "segment": null
-              }
-            }
-          }
-        }
-      }
-    },
-    "pin": {
-      "type": "schema",
-      "schema": {
-        "extends": [
-          "max6956.MAX6956_PIN_SCHEMA"
-        ]
+        "type": "schema"
       }
     }
   },
   "max6956.output": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "output.FLOAT_OUTPUT_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
             "id": {
-              "key": "Required",
               "id_type": {
                 "class": "max6956::MAX6956LedChannel",
                 "parents": [
@@ -122,19 +116,25 @@
                   "output::BinaryOutput",
                   "Component"
                 ]
-              }
+              },
+              "key": "Required"
             },
             "max6956": {
               "key": "GeneratedID",
-              "use_id_type": "max6956::MAX6956",
-              "type": "use_id"
+              "type": "use_id",
+              "use_id_type": "max6956::MAX6956"
             },
             "pin": {
               "key": "Required",
               "type": "integer"
             }
-          }
-        }
+          },
+          "extends": [
+            "output.FLOAT_OUTPUT_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

@@ -9,130 +9,134 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class GrowattSolarSensor extends EsphomeComponent<GrowattSolarSensorConfig> {
     componentName: string = "growatt_solar.sensor";
 }
 
-export interface GrowattSolarSensorPHASE_SCHEMAVoltage extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-}
-
-export interface GrowattSolarSensorPHASE_SCHEMACurrent extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface GrowattSolarSensorConfigActivePower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface GrowattSolarSensorPHASE_SCHEMAActivePower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface GrowattSolarSensorConfigEnergyProductionDay extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
-}
-
-export interface GrowattSolarSensorPHASE_SCHEMA {
-    voltage?: GrowattSolarSensorPHASE_SCHEMAVoltage;
-    current?: GrowattSolarSensorPHASE_SCHEMACurrent;
-    active_power?: GrowattSolarSensorPHASE_SCHEMAActivePower;
-}
-
-export interface GrowattSolarSensorPV_SCHEMAVoltage extends SensorSENSOR_SCHEMA {
     unit_of_measurement?: any;
+}
+
+export interface GrowattSolarSensorConfigFrequency extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-}
-
-export interface GrowattSolarSensorPV_SCHEMACurrent extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export interface GrowattSolarSensorPV_SCHEMAActivePower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export interface GrowattSolarSensorPV_SCHEMA {
-    voltage?: GrowattSolarSensorPV_SCHEMAVoltage;
-    current?: GrowattSolarSensorPV_SCHEMACurrent;
-    active_power?: GrowattSolarSensorPV_SCHEMAActivePower;
-}
-
-export type GrowattSolarSensorConfigProtocolVersion = 'RTU' | 'RTU2';
-export type GrowattSolarSensorConfigPhaseA = GrowattSolarSensorPHASE_SCHEMA;
-export type GrowattSolarSensorConfigPhaseB = GrowattSolarSensorPHASE_SCHEMA;
-export type GrowattSolarSensorConfigPhaseC = GrowattSolarSensorPHASE_SCHEMA;
-export type GrowattSolarSensorConfigPv1 = GrowattSolarSensorPV_SCHEMA;
-export type GrowattSolarSensorConfigPv2 = GrowattSolarSensorPV_SCHEMA;
-export type GrowattSolarSensorConfigInverterStatus = SensorSENSOR_SCHEMA;
-
-export interface GrowattSolarSensorConfigFrequency extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
     icon?: any;
-    accuracy_decimals?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface GrowattSolarSensorConfigActivePower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface GrowattSolarSensorConfigInverterModuleTemp extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface GrowattSolarSensorConfigPvActivePower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export type GrowattSolarSensorConfigInverterStatus = SensorSENSORSCHEMA;
+export type GrowattSolarSensorConfigPhaseA = GrowattSolarSensorPHASESCHEMA;
+export type GrowattSolarSensorConfigPhaseB = GrowattSolarSensorPHASESCHEMA;
+export type GrowattSolarSensorConfigPhaseC = GrowattSolarSensorPHASESCHEMA;
+export type GrowattSolarSensorConfigProtocolVersion = 'RTU' | 'RTU2';
+export type GrowattSolarSensorConfigPv1 = GrowattSolarSensorPVSCHEMA;
+export type GrowattSolarSensorConfigPv2 = GrowattSolarSensorPVSCHEMA;
+
+export interface GrowattSolarSensorConfigPvActivePower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface GrowattSolarSensorConfigEnergyProductionDay extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface GrowattSolarSensorConfigTotalEnergyProduction extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
-}
-
-export interface GrowattSolarSensorConfigTotalEnergyProduction extends SensorSENSOR_SCHEMA {
     unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
 }
 
-export interface GrowattSolarSensorConfigInverterModuleTemp extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    state_class?: any;
-}
-
-export interface GrowattSolarSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface GrowattSolarSensorConfig extends CoreCOMPONENTSCHEMA {
+    active_power?: GrowattSolarSensorConfigActivePower;
+    address?: any;
+    energy_production_day?: GrowattSolarSensorConfigEnergyProductionDay;
+    frequency?: GrowattSolarSensorConfigFrequency;
     id?: ID;
-    protocol_version?: GrowattSolarSensorConfigProtocolVersion;
+    inverter_module_temp?: GrowattSolarSensorConfigInverterModuleTemp;
+    inverter_status?: GrowattSolarSensorConfigInverterStatus;
+    modbus_id?: ID;
     phase_a?: GrowattSolarSensorConfigPhaseA;
     phase_b?: GrowattSolarSensorConfigPhaseB;
     phase_c?: GrowattSolarSensorConfigPhaseC;
+    protocol_version?: GrowattSolarSensorConfigProtocolVersion;
     pv1?: GrowattSolarSensorConfigPv1;
     pv2?: GrowattSolarSensorConfigPv2;
-    inverter_status?: GrowattSolarSensorConfigInverterStatus;
-    frequency?: GrowattSolarSensorConfigFrequency;
-    active_power?: GrowattSolarSensorConfigActivePower;
     pv_active_power?: GrowattSolarSensorConfigPvActivePower;
-    energy_production_day?: GrowattSolarSensorConfigEnergyProductionDay;
     total_energy_production?: GrowattSolarSensorConfigTotalEnergyProduction;
-    inverter_module_temp?: GrowattSolarSensorConfigInverterModuleTemp;
     update_interval?: any;
-    modbus_id?: ID;
-    address?: any;
+}
+
+export interface GrowattSolarSensorPHASESCHEMAActivePower extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface GrowattSolarSensorPHASESCHEMACurrent extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface GrowattSolarSensorPHASESCHEMAVoltage extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface GrowattSolarSensorPHASESCHEMA {
+    active_power?: GrowattSolarSensorPHASESCHEMAActivePower;
+    current?: GrowattSolarSensorPHASESCHEMACurrent;
+    voltage?: GrowattSolarSensorPHASESCHEMAVoltage;
+}
+
+export interface GrowattSolarSensorPVSCHEMAActivePower extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface GrowattSolarSensorPVSCHEMACurrent extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface GrowattSolarSensorPVSCHEMAVoltage extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface GrowattSolarSensorPVSCHEMA {
+    active_power?: GrowattSolarSensorPVSCHEMAActivePower;
+    current?: GrowattSolarSensorPVSCHEMACurrent;
+    voltage?: GrowattSolarSensorPVSCHEMAVoltage;
 }

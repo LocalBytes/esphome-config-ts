@@ -9,54 +9,64 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Bl0942Sensor extends EsphomeComponent<Bl0942SensorConfig> {
     componentName: string = "bl0942.sensor";
 }
 
-export interface Bl0942SensorConfigVoltage extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Bl0942SensorConfigCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Bl0942SensorConfigCurrent extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Bl0942SensorConfigEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Bl0942SensorConfigPower extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Bl0942SensorConfigFrequency extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Bl0942SensorConfigEnergy extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-}
+export type Bl0942SensorConfigLineFrequency = '50' | '60';
 
-export interface Bl0942SensorConfigFrequency extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface Bl0942SensorConfigPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface Bl0942SensorConfig extends CoreCOMPONENT_SCHEMA {
-    id?: ID;
-    voltage?: Bl0942SensorConfigVoltage;
+export interface Bl0942SensorConfigVoltage extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface Bl0942SensorConfig extends CoreCOMPONENTSCHEMA {
+    address?: number;
     current?: Bl0942SensorConfigCurrent;
-    power?: Bl0942SensorConfigPower;
+    current_reference?: any;
     energy?: Bl0942SensorConfigEnergy;
+    energy_reference?: any;
     frequency?: Bl0942SensorConfigFrequency;
-    update_interval?: any;
+    id?: ID;
+    line_frequency?: Bl0942SensorConfigLineFrequency;
+    power?: Bl0942SensorConfigPower;
+    power_reference?: any;
+    reset?: boolean;
     uart_id?: ID;
+    update_interval?: any;
+    voltage?: Bl0942SensorConfigVoltage;
+    voltage_reference?: any;
 }

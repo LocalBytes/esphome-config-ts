@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Sdp3xSensor extends EsphomeComponent<Sdp3xSensorConfig> {
     componentName: string = "sdp3x.sensor";
@@ -18,13 +18,13 @@ export class Sdp3xSensor extends EsphomeComponent<Sdp3xSensorConfig> {
 
 export type Sdp3xSensorConfigMeasurementMode = 'mass_flow' | 'differential_pressure';
 export type Sdp3xSensorConfig = {
-        id?: any;
-        unit_of_measurement?: any;
         accuracy_decimals?: any;
-        device_class?: any;
-        state_class?: any;
-        measurement_mode?: Sdp3xSensorConfigMeasurementMode;
-        update_interval?: any;
-        i2c_id?: ID;
         address?: any;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+        device_class?: any;
+        i2c_id?: ID;
+        id?: any;
+        measurement_mode?: Sdp3xSensorConfigMeasurementMode;
+        state_class?: any;
+        unit_of_measurement?: any;
+        update_interval?: any;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

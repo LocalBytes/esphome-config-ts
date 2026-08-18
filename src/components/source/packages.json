@@ -2,46 +2,90 @@
   "packages": {
     "schemas": {
       "CONFIG_SCHEMA": {
+        "is_list": true,
         "key": "String",
         "key_type": "<class 'str'>",
-        "type": "schema",
         "schema": {
           "config_vars": {
             "string": {
-              "type": "schema",
+              "schema": {
+                "extends": [
+                  "packages.PACKAGE_SCHEMA"
+                ]
+              },
+              "type": "schema"
+            }
+          },
+          "extends": [
+            "packages.PACKAGE_SCHEMA"
+          ]
+        },
+        "type": "schema"
+      },
+      "PACKAGE_SCHEMA": {
+        "schema": {
+          "config_vars": {
+            "file": {
+              "key": "Optional"
+            },
+            "files": {
+              "is_list": true,
+              "key": "Optional",
               "schema": {
                 "config_vars": {
-                  "url": {
+                  "path": {
                     "key": "Required"
                   },
-                  "username": {
-                    "key": "Optional",
-                    "type": "string"
-                  },
-                  "password": {
-                    "key": "Optional",
-                    "type": "string"
-                  },
-                  "file": {
-                    "key": "Optional"
-                  },
-                  "files": {
-                    "key": "Optional",
-                    "is_list": true
-                  },
-                  "ref": {
-                    "key": "Optional"
-                  },
-                  "refresh": {
-                    "key": "Optional",
-                    "default": "1d",
-                    "type": "string"
+                  "vars": {
+                    "default": "{}",
+                    "key": "String",
+                    "key_type": "string",
+                    "schema": {
+                      "config_vars": {
+                        "string": {}
+                      }
+                    },
+                    "type": "schema"
                   }
                 }
-              }
+              },
+              "type": "schema",
+              "docs": "List of files to include. Can be one of:\n\n*See also: [Packages](https://next.esphome.io/components/packages#configuration-variables)*"
+            },
+            "password": {
+              "key": "Optional",
+              "sensitive": true,
+              "sensitive_source": "heuristic",
+              "type": "string",
+              "docs": "**string**: Password to be used for authentication, if required.\n\n*See also: [Packages](https://next.esphome.io/components/packages#configuration-variables)*"
+            },
+            "path": {
+              "key": "Optional",
+              "type": "string",
+              "docs": "**string**: Base common path of included files.\n\n*See also: [Packages](https://next.esphome.io/components/packages#configuration-variables)*"
+            },
+            "ref": {
+              "key": "Optional",
+              "docs": "**string**: The Git ref(erence) to be used when pulling content from the repository.\n\n*See also: [Packages](https://next.esphome.io/components/packages#configuration-variables)*"
+            },
+            "refresh": {
+              "default": "1d",
+              "key": "Optional",
+              "type": "string",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The interval at which the content from the repository should be refreshed.\n\n*See also: [Packages](https://next.esphome.io/components/packages#configuration-variables)*"
+            },
+            "url": {
+              "key": "Required",
+              "docs": "**string**: The URL for the repository.\n\n*See also: [Packages](https://next.esphome.io/components/packages#configuration-variables)*"
+            },
+            "username": {
+              "key": "Optional",
+              "type": "string",
+              "docs": "**string**: Username to be used for authentication, if required.\n\n*See also: [Packages](https://next.esphome.io/components/packages#configuration-variables)*"
             }
           }
-        }
+        },
+        "type": "schema"
       }
     }
   }

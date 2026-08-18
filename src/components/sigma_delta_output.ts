@@ -9,18 +9,18 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class SigmaDeltaOutputOutput extends EsphomeComponent<SigmaDeltaOutputOutputConfig> {
     componentName: string = "sigma_delta_output.output";
 }
 
 export type SigmaDeltaOutputOutputConfig = {
-        update_interval?: any;
         id: string;
         pin?: Pin;
         state_change_action?: object[];
-        turn_on_action?: object[];
         turn_off_action?: object[];
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+        turn_on_action?: object[];
+        update_interval?: any;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;

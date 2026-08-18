@@ -9,24 +9,24 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { LightADDRESSABLE_LIGHT_SCHEMA } from "./light.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { LightADDRESSABLELIGHTSCHEMA } from "./light.js";
 
 export class PartitionLight extends EsphomeComponent<PartitionLightConfig> {
     componentName: string = "partition.light";
 }
 
-export interface PartitionLightConfigSegments extends CoreCOMPONENT_SCHEMA {
-    id: ID;
+export interface PartitionLightConfigSegments extends CoreCOMPONENTSCHEMA {
+    addressable_light_id?: ID;
     from: number;
-    to: number;
+    id: ID;
+    light_id?: ID;
     reversed?: boolean;
     single_light_id: ID;
-    addressable_light_id?: ID;
-    light_id?: ID;
+    to: number;
 }
 
-export interface PartitionLightConfig extends LightADDRESSABLE_LIGHT_SCHEMA {
+export interface PartitionLightConfig extends LightADDRESSABLELIGHTSCHEMA {
     output_id?: ID;
     segments: PartitionLightConfigSegments[];
 }

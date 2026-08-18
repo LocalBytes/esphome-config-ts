@@ -9,18 +9,18 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class A01nyubSensor extends EsphomeComponent<A01nyubSensorConfig> {
     componentName: string = "a01nyub.sensor";
 }
 
-export interface A01nyubSensorConfig extends SensorSENSOR_SCHEMA {
-    id?: any;
-    unit_of_measurement?: any;
-    icon?: any;
+export interface A01nyubSensorConfig extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
+    icon?: any;
+    id?: any;
     state_class?: any;
     uart_id?: ID;
+    unit_of_measurement?: any;
 }

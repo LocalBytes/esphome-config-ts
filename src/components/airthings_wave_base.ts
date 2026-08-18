@@ -9,56 +9,56 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class AirthingsWaveBase extends EsphomeComponent {
     componentName: string = "airthings_wave_base";
 }
 
-export interface AirthingsWaveBaseBASE_SCHEMAHumidity extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
+export interface AirthingsWaveBaseBASESCHEMABatteryVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-    state_class?: any;
-}
-
-export interface AirthingsWaveBaseBASE_SCHEMATemperature extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export interface AirthingsWaveBaseBASE_SCHEMAPressure extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export interface AirthingsWaveBaseBASE_SCHEMATvoc extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-}
-
-export interface AirthingsWaveBaseBASE_SCHEMABatteryVoltage extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
     entity_category?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export type AirthingsWaveBaseBASE_SCHEMA = {
-        humidity?: AirthingsWaveBaseBASE_SCHEMAHumidity;
-        temperature?: AirthingsWaveBaseBASE_SCHEMATemperature;
-        pressure?: AirthingsWaveBaseBASE_SCHEMAPressure;
-        tvoc?: AirthingsWaveBaseBASE_SCHEMATvoc;
-        battery_voltage?: AirthingsWaveBaseBASE_SCHEMABatteryVoltage;
-        battery_update_interval?: any;
-        update_interval?: any;
-        ble_client_id?: ID;
-    } & SensorSENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+export interface AirthingsWaveBaseBASESCHEMAHumidity extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface AirthingsWaveBaseBASESCHEMAPressure extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface AirthingsWaveBaseBASESCHEMATemperature extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface AirthingsWaveBaseBASESCHEMATvoc extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface AirthingsWaveBaseBASESCHEMA extends CoreCOMPONENTSCHEMA {
+    battery_update_interval?: any;
+    battery_voltage?: AirthingsWaveBaseBASESCHEMABatteryVoltage;
+    ble_client_id?: ID;
+    humidity?: AirthingsWaveBaseBASESCHEMAHumidity;
+    pressure?: AirthingsWaveBaseBASESCHEMAPressure;
+    temperature?: AirthingsWaveBaseBASESCHEMATemperature;
+    tvoc?: AirthingsWaveBaseBASESCHEMATvoc;
+    update_interval?: any;
+}

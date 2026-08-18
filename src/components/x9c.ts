@@ -9,16 +9,20 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
+import type { CorePositiveTimePeriodMicroseconds } from "./esphome.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
 
 export class X9cOutput extends EsphomeComponent<X9cOutputConfig> {
     componentName: string = "x9c.output";
 }
 
-export interface X9cOutputConfig extends OutputFLOAT_OUTPUT_SCHEMA {
-    id?: ID;
+export type X9cOutputConfigStepDelay = CorePositiveTimePeriodMicroseconds;
+
+export interface X9cOutputConfig extends OutputFLOATOUTPUTSCHEMA {
     cs_pin: Pin;
+    id?: ID;
     inc_pin: Pin;
-    ud_pin: Pin;
     initial_value?: any;
+    step_delay?: X9cOutputConfigStepDelay;
+    ud_pin: Pin;
 }

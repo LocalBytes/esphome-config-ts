@@ -9,18 +9,20 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { LightADDRESSABLE_LIGHT_SCHEMA } from "./light.js";
+import type { LightADDRESSABLELIGHTSCHEMA } from "./light.js";
 
 export class SpiLedStripLight extends EsphomeComponent<SpiLedStripLightConfig> {
     componentName: string = "spi_led_strip.light";
 }
 
-export type SpiLedStripLightConfigDataRate = '80000000.0' | '40000000.0' | '20000000.0' | '10000000.0' | '8000000.0' | '5000000.0' | '4000000.0' | '2000000.0' | '1000000.0' | '200000.0' | '75000.0' | '1000.0';
+export type SpiLedStripLightConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 
-export interface SpiLedStripLightConfig extends LightADDRESSABLE_LIGHT_SCHEMA {
-    output_id?: ID;
-    num_leds?: number;
-    data_rate?: SpiLedStripLightConfigDataRate;
-    spi_id?: ID;
+export interface SpiLedStripLightConfig extends LightADDRESSABLELIGHTSCHEMA {
     cs_pin?: Pin;
+    data_rate?: any;
+    num_leds?: number;
+    output_id?: ID;
+    release_device?: boolean;
+    spi_id?: ID;
+    spi_mode?: SpiLedStripLightConfigSpiMode;
 }

@@ -1,16 +1,34 @@
 {
   "rp2040_pwm.output": {
-    "schemas": {
-      "CONFIG_SCHEMA": {
-        "type": "schema",
+    "action": {
+      "set_frequency": {
         "schema": {
-          "extends": [
-            "output.FLOAT_OUTPUT_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
+            "frequency": {
+              "data_type": "output",
+              "key": "Required",
+              "templatable": true
+            },
             "id": {
               "key": "Required",
+              "type": "use_id",
+              "use_id_type": "rp2040_pwm::RP2040PWM"
+            }
+          }
+        },
+        "type": "schema"
+      }
+    },
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "schema": {
+          "config_vars": {
+            "frequency": {
+              "data_type": "output",
+              "default": "1kHz",
+              "key": "Optional"
+            },
+            "id": {
               "id_type": {
                 "class": "rp2040_pwm::RP2040PWM",
                 "parents": [
@@ -18,43 +36,25 @@
                   "output::BinaryOutput",
                   "Component"
                 ]
-              }
+              },
+              "key": "Required"
             },
             "pin": {
-              "key": "Required",
-              "schema": true,
               "internal": true,
+              "key": "Required",
               "modes": [
                 "output"
               ],
+              "schema": true,
               "type": "pin"
-            },
-            "frequency": {
-              "key": "Optional",
-              "default": "1kHz",
-              "data_type": "output"
             }
-          }
-        }
-      }
-    },
-    "action": {
-      "set_frequency": {
-        "type": "schema",
-        "schema": {
-          "config_vars": {
-            "id": {
-              "key": "Required",
-              "use_id_type": "rp2040_pwm::RP2040PWM",
-              "type": "use_id"
-            },
-            "frequency": {
-              "key": "Required",
-              "templatable": true,
-              "data_type": "output"
-            }
-          }
-        }
+          },
+          "extends": [
+            "output.FLOAT_OUTPUT_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

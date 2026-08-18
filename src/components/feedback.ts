@@ -9,38 +9,38 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { CoverCOVER_SCHEMA } from "./cover.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { CoverCOVERSCHEMA } from "./cover.js";
 
 export class FeedbackCover extends EsphomeComponent<FeedbackCoverConfig> {
     componentName: string = "feedback.cover";
 }
 
-export type FeedbackCoverConfigOpenDuration = CorePositiveTimePeriodMilliseconds;
-export type FeedbackCoverConfigCloseDuration = CorePositiveTimePeriodMilliseconds;
-export type FeedbackCoverConfigMaxDuration = CorePositiveTimePeriodMilliseconds;
-export type FeedbackCoverConfigUpdateInterval = CorePositiveTimePeriodMilliseconds;
-export type FeedbackCoverConfigDirectionChangeWaitTime = CorePositiveTimePeriodMilliseconds;
 export type FeedbackCoverConfigAccelerationWaitTime = CorePositiveTimePeriodMilliseconds;
+export type FeedbackCoverConfigCloseDuration = CorePositiveTimePeriodMilliseconds;
+export type FeedbackCoverConfigDirectionChangeWaitTime = CorePositiveTimePeriodMilliseconds;
+export type FeedbackCoverConfigMaxDuration = CorePositiveTimePeriodMilliseconds;
+export type FeedbackCoverConfigOpenDuration = CorePositiveTimePeriodMilliseconds;
+export type FeedbackCoverConfigUpdateInterval = CorePositiveTimePeriodMilliseconds;
 export type FeedbackCoverConfig = {
-        id?: any;
-        stop_action: object[];
-        open_action: object[];
-        open_duration: FeedbackCoverConfigOpenDuration;
-        open_endstop?: ID;
-        open_sensor?: ID;
-        open_obstacle_sensor?: ID;
+        acceleration_wait_time?: FeedbackCoverConfigAccelerationWaitTime;
+        assumed_state?: boolean;
         close_action: object[];
         close_duration: FeedbackCoverConfigCloseDuration;
         close_endstop?: ID;
-        close_sensor?: ID;
         close_obstacle_sensor?: ID;
-        max_duration?: FeedbackCoverConfigMaxDuration;
-        has_built_in_endstop?: boolean;
-        assumed_state?: boolean;
-        update_interval?: FeedbackCoverConfigUpdateInterval;
-        infer_endstop_from_movement?: boolean;
+        close_sensor?: ID;
         direction_change_wait_time?: FeedbackCoverConfigDirectionChangeWaitTime;
-        acceleration_wait_time?: FeedbackCoverConfigAccelerationWaitTime;
+        has_built_in_endstop?: boolean;
+        id?: ID;
+        infer_endstop_from_movement?: boolean;
+        max_duration?: FeedbackCoverConfigMaxDuration;
         obstacle_rollback?: any;
-    } & CoverCOVER_SCHEMA & CoreCOMPONENT_SCHEMA;
+        open_action: object[];
+        open_duration: FeedbackCoverConfigOpenDuration;
+        open_endstop?: ID;
+        open_obstacle_sensor?: ID;
+        open_sensor?: ID;
+        stop_action: object[];
+        update_interval?: FeedbackCoverConfigUpdateInterval;
+    } & CoverCOVERSCHEMA & CoreCOMPONENTSCHEMA;

@@ -2,48 +2,77 @@
   "adc128s102": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
+        "is_list": true,
         "schema": {
           "config_vars": {
+            "cs_pin": {
+              "key": "Required",
+              "modes": [
+                "output"
+              ],
+              "schema": true,
+              "type": "pin",
+              "docs": "**int**: The SPI cable select pin to use\n\n*See also: [ADC128S102 8-Channel 12-Bit A/D Converter](https://next.esphome.io/components/sensor/adc128s102#example-configuration-entry)*"
+            },
+            "data_rate": {
+              "key": "Optional"
+            },
             "id": {
-              "key": "GeneratedID",
               "id_type": {
                 "class": "adc128s102::ADC128S102",
                 "parents": [
                   "Component",
                   "spi::SPIDevice"
                 ]
-              }
+              },
+              "key": "GeneratedID",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: The id to use for this ADC128S102 component.\n\n*See also: [ADC128S102 8-Channel 12-Bit A/D Converter](https://next.esphome.io/components/sensor/adc128s102#example-configuration-entry)*"
+            },
+            "release_device": {
+              "key": "Optional",
+              "type": "boolean"
             },
             "spi_id": {
               "key": "GeneratedID",
-              "use_id_type": "spi::SPIComponent",
-              "type": "use_id"
+              "type": "use_id",
+              "use_id_type": "spi::SPIComponent"
             },
-            "cs_pin": {
-              "key": "Required",
-              "schema": true,
-              "modes": [
-                "output"
-              ],
-              "type": "pin"
+            "spi_mode": {
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "MODE0": null,
+                "MODE1": null,
+                "MODE2": null,
+                "MODE3": null,
+                "0": null,
+                "1": null,
+                "2": null,
+                "3": null
+              }
             }
           }
         },
-        "is_list": true
+        "type": "schema"
       }
     }
   },
   "adc128s102.sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "sensor.SENSOR_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
+            "adc128s102_id": {
+              "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "adc128s102::ADC128S102",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: The id of the parent ADC128S102 component.\n\n*See also: [ADC128S102 8-Channel 12-Bit A/D Converter](https://next.esphome.io/components/sensor/adc128s102#sensor)*"
+            },
+            "channel": {
+              "key": "Required",
+              "type": "integer",
+              "docs": "**int**: The channel of the ADC128S102 to use.\n\n*See also: [ADC128S102 8-Channel 12-Bit A/D Converter](https://next.esphome.io/components/sensor/adc128s102#sensor)*"
+            },
             "id": {
               "id_type": {
                 "class": "adc128s102::ADC128S102Sensor",
@@ -56,24 +85,18 @@
                 ]
               }
             },
-            "adc128s102_id": {
-              "key": "GeneratedID",
-              "use_id_type": "adc128s102::ADC128S102",
-              "type": "use_id",
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id of the parent ADC128S102 component.\n\n*See also: [adc128s102 Sensor](https://esphome.io/components/sensor/adc128s102.html#sensor)*"
-            },
-            "channel": {
-              "key": "Required",
-              "type": "integer",
-              "docs": "**int**: The channel of the ADC128S102 to use.\n\n*See also: [adc128s102 Sensor](https://esphome.io/components/sensor/adc128s102.html#sensor)*"
-            },
             "update_interval": {
-              "key": "Optional",
               "default": "60s",
-              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [adc128s102 Sensor](https://esphome.io/components/sensor/adc128s102.html#sensor)*"
+              "key": "Optional",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [ADC128S102 8-Channel 12-Bit A/D Converter](https://next.esphome.io/components/sensor/adc128s102#sensor)*"
             }
-          }
-        }
+          },
+          "extends": [
+            "sensor._SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

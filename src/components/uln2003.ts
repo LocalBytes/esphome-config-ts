@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { StepperSTEPPER_SCHEMA } from "./stepper.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { StepperSTEPPERSCHEMA } from "./stepper.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Uln2003Stepper extends EsphomeComponent<Uln2003StepperConfig> {
     componentName: string = "uln2003.stepper";
@@ -25,4 +25,4 @@ export type Uln2003StepperConfig = {
         pin_d: Pin;
         sleep_when_done?: boolean;
         step_mode?: Uln2003StepperConfigStepMode;
-    } & StepperSTEPPER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & StepperSTEPPERSCHEMA & CoreCOMPONENTSCHEMA;

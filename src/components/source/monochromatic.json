@@ -2,29 +2,29 @@
   "monochromatic.light": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "light.BRIGHTNESS_ONLY_LIGHT_SCHEMA"
-          ],
           "config_vars": {
+            "output": {
+              "key": "Required",
+              "type": "use_id",
+              "use_id_type": "output::FloatOutput",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: The id of the float [Output Component](https://next.esphome.io/components/output/) to use for this light.\n\n*See also: [Monochromatic Light](https://next.esphome.io/components/light/monochromatic#configuration-variables)*"
+            },
             "output_id": {
-              "key": "GeneratedID",
               "id_type": {
                 "class": "monochromatic::MonochromaticLightOutput",
                 "parents": [
                   "light::LightOutput"
                 ]
-              }
-            },
-            "output": {
-              "key": "Required",
-              "use_id_type": "output::FloatOutput",
-              "type": "use_id",
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id of the float [Output Component](https://esphome.io/components/output/index.html#output) to use for this light.\n\n*See also: [Monochromatic Light](https://esphome.io/components/light/monochromatic.html#configuration-variables)*"
+              },
+              "key": "GeneratedID"
             }
-          }
-        }
+          },
+          "extends": [
+            "light.BRIGHTNESS_ONLY_LIGHT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

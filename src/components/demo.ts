@@ -15,13 +15,20 @@ export class Demo extends EsphomeComponent<DemoConfig> {
 }
 
 export interface DemoConfig {
+    alarm_control_panels?: any;
     binary_sensors?: any;
+    buttons?: any;
     climates?: any;
     covers?: any;
+    datetimes?: any;
     fans?: any;
     lights?: any;
+    locks?: any;
     numbers?: any;
+    selects?: any;
     sensors?: any;
     switches?: any;
     text_sensors?: any;
+    texts?: any;
+    valves?: any;
 }

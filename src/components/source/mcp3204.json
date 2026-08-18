@@ -2,11 +2,22 @@
   "mcp3204": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
+        "is_list": true,
         "schema": {
           "config_vars": {
+            "cs_pin": {
+              "key": "Required",
+              "modes": [
+                "output"
+              ],
+              "schema": true,
+              "type": "pin",
+              "docs": "**[Pin Schema](https://next.esphome.io/guides/configuration-types#pin-schema)**: The SPI cable select pin to use.\n\n*See also: [MCP3204 & MCP3208 12-Bit A/D Converters](https://next.esphome.io/components/sensor/mcp3204#configuration-variables)*"
+            },
+            "data_rate": {
+              "key": "Optional"
+            },
             "id": {
-              "key": "GeneratedID",
               "id_type": {
                 "class": "mcp3204::MCP3204",
                 "parents": [
@@ -14,43 +25,54 @@
                   "spi::SPIDevice"
                 ]
               },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id to use for this MCP3204 component.\n\n*See also: [mcp3204 Component/Hub](https://esphome.io/components/sensor/mcp3204.html#configuration-variables)*"
+              "key": "GeneratedID",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: The id to use for this MCP3204 component.\n\n*See also: [MCP3204 & MCP3208 12-Bit A/D Converters](https://next.esphome.io/components/sensor/mcp3204#configuration-variables)*"
             },
             "reference_voltage": {
-              "key": "Optional",
               "default": "3.3V",
-              "docs": "**float**: The reference voltage. Defaults to `3.3V`.\n\n*See also: [mcp3204 Component/Hub](https://esphome.io/components/sensor/mcp3204.html#configuration-variables)*"
+              "key": "Optional",
+              "docs": "**float**: The reference voltage. Defaults to `3.3V`.\n\n*See also: [MCP3204 & MCP3208 12-Bit A/D Converters](https://next.esphome.io/components/sensor/mcp3204#configuration-variables)*"
+            },
+            "release_device": {
+              "key": "Optional",
+              "type": "boolean"
             },
             "spi_id": {
               "key": "GeneratedID",
-              "use_id_type": "spi::SPIComponent",
-              "type": "use_id"
+              "type": "use_id",
+              "use_id_type": "spi::SPIComponent"
             },
-            "cs_pin": {
-              "key": "Required",
-              "schema": true,
-              "modes": [
-                "output"
-              ],
-              "type": "pin",
-              "docs": "**[Pin Schema](https://esphome.io/guides/configuration-types.html#config-pin-schema)**: The SPI cable select pin to use.\n\n*See also: [mcp3204 Component/Hub](https://esphome.io/components/sensor/mcp3204.html#configuration-variables)*"
+            "spi_mode": {
+              "key": "Optional",
+              "type": "enum",
+              "values": {
+                "MODE0": null,
+                "MODE1": null,
+                "MODE2": null,
+                "MODE3": null,
+                "0": null,
+                "1": null,
+                "2": null,
+                "3": null
+              }
             }
           }
         },
-        "is_list": true
+        "type": "schema"
       }
     }
   },
   "mcp3204.sensor": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "sensor.SENSOR_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
+            "diff_mode": {
+              "default": "False",
+              "key": "Optional",
+              "type": "boolean",
+              "docs": "**boolean**: Enable differential mode measurement. Defaults to `false`.\n\n*See also: [MCP3204 & MCP3208 12-Bit A/D Converters](https://next.esphome.io/components/sensor/mcp3204#configuration-variables)*"
+            },
             "id": {
               "id_type": {
                 "class": "mcp3204::MCP3204Sensor",
@@ -61,27 +83,31 @@
                   "Component",
                   "voltage_sampler::VoltageSampler"
                 ]
-              },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [mcp3204 Sensor](https://esphome.io/components/sensor/mcp3204.html#id1)*"
+              }
             },
             "mcp3204_id": {
               "key": "GeneratedID",
-              "use_id_type": "mcp3204::MCP3204",
               "type": "use_id",
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: The id of the parent MCP3204 component.\n\n*See also: [mcp3204 Sensor](https://esphome.io/components/sensor/mcp3204.html#id1)*"
+              "use_id_type": "mcp3204::MCP3204",
+              "docs": "**[ID](https://next.esphome.io/guides/configuration-types#id)**: The id of the parent MCP3204 component.\n\n*See also: [MCP3204 & MCP3208 12-Bit A/D Converters](https://next.esphome.io/components/sensor/mcp3204#configuration-variables)*"
             },
             "number": {
               "key": "Required",
               "type": "integer",
-              "docs": "**int**: The pin number of the MCP3204\n\n*See also: [mcp3204 Sensor](https://esphome.io/components/sensor/mcp3204.html#id1)*"
+              "docs": "**int**: The pin to measure on the MCP3204/MCP3208\n\n*See also: [MCP3204 & MCP3208 12-Bit A/D Converters](https://next.esphome.io/components/sensor/mcp3204#configuration-variables)*"
             },
             "update_interval": {
-              "key": "Optional",
               "default": "60s",
-              "docs": "**[Time](https://esphome.io/guides/configuration-types.html#config-time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [mcp3204 Sensor](https://esphome.io/components/sensor/mcp3204.html#id1)*"
+              "key": "Optional",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The interval to check the sensor. Defaults to `60s`.\n\n*See also: [MCP3204 & MCP3208 12-Bit A/D Converters](https://next.esphome.io/components/sensor/mcp3204#configuration-variables)*"
             }
-          }
-        }
+          },
+          "extends": [
+            "sensor._SENSOR_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

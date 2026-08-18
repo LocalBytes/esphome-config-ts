@@ -9,88 +9,120 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreENTITY_BASE_SCHEMA, CoreMQTT_COMPONENT_SCHEMA } from "./esphome.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreENTITYBASESCHEMA, CoreMQTTCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Sensor extends EsphomeComponent {
     componentName: string = "sensor";
 }
 
-export type SensorSENSOR_SCHEMADeviceClass = 'apparent_power' | 'aqi' | 'atmospheric_pressure' | 'battery' | 'carbon_dioxide' | 'carbon_monoxide' | 'current' | 'data_rate' | 'data_size' | 'date' | 'distance' | 'duration' | '' | 'energy' | 'energy_storage' | 'frequency' | 'gas' | 'humidity' | 'illuminance' | 'irradiance' | 'moisture' | 'monetary' | 'nitrogen_dioxide' | 'nitrogen_monoxide' | 'nitrous_oxide' | 'ozone' | 'ph' | 'pm1' | 'pm10' | 'pm25' | 'power' | 'power_factor' | 'precipitation' | 'precipitation_intensity' | 'pressure' | 'reactive_power' | 'signal_strength' | 'sound_pressure' | 'speed' | 'sulphur_dioxide' | 'temperature' | 'timestamp' | 'volatile_organic_compounds' | 'volatile_organic_compounds_parts' | 'voltage' | 'volume' | 'volume_storage' | 'water' | 'weight' | 'wind_speed';
-export type SensorSENSOR_SCHEMAStateClass = '' | 'measurement' | 'total_increasing' | 'total';
-export type SensorSENSOR_SCHEMAExpireAfter = CorePositiveTimePeriodMilliseconds;
-export type SensorSENSOR_SCHEMA = {
-        mqtt_id?: any;
-        id?: ID;
-        unit_of_measurement?: string;
-        accuracy_decimals?: number;
-        device_class?: SensorSENSOR_SCHEMADeviceClass;
-        state_class?: SensorSENSOR_SCHEMAStateClass;
-        force_update?: boolean;
-        expire_after?: SensorSENSOR_SCHEMAExpireAfter;
-        filters?: any[];
-        on_value?: object[];
-        on_raw_value?: object[];
-        on_value_range?: object[];
-    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMPONENT_SCHEMA;
-
-export interface SensorQUANTILE_SCHEMA {
-    window_size?: number;
-    send_every?: number;
-    send_first_at?: number;
-    quantile?: any;
+export interface SensorCLAMPSCHEMA {
+    ignore_out_of_range?: boolean;
+    max_value?: any;
+    min_value?: any;
 }
 
-export interface SensorMEDIAN_SCHEMA {
-    window_size?: number;
-    send_every?: number;
-    send_first_at?: number;
+export interface SensorDELTASCHEMA {
+    baseline?: any;
+    max_value?: any;
+    min_value?: any;
 }
 
-export interface SensorMIN_SCHEMA {
-    window_size?: number;
-    send_every?: number;
-    send_first_at?: number;
-}
-
-export interface SensorMAX_SCHEMA {
-    window_size?: number;
-    send_every?: number;
-    send_first_at?: number;
-}
-
-export interface SensorSLIDING_AVERAGE_SCHEMA {
-    window_size?: number;
-    send_every?: number;
-    send_first_at?: number;
-}
-
-export interface SensorEXPONENTIAL_AVERAGE_SCHEMA {
+export interface SensorEXPONENTIALAVERAGESCHEMA {
     alpha?: any;
     send_every?: number;
     send_first_at?: number;
 }
 
-export type SensorDELTA_SCHEMAType = 'absolute' | 'percentage';
+export type SensorHEARTBEATSCHEMAPeriod = CorePositiveTimePeriodMilliseconds;
 
-export interface SensorDELTA_SCHEMA {
-    value: string;
-    type?: SensorDELTA_SCHEMAType;
+export interface SensorHEARTBEATSCHEMA {
+    optimistic?: boolean;
+    period: SensorHEARTBEATSCHEMAPeriod;
 }
 
-export type SensorTIMEOUT_SCHEMATimeout = CorePositiveTimePeriodMilliseconds;
+export interface SensorMAXSCHEMA {
+    send_every?: number;
+    send_first_at?: number;
+    window_size?: number;
+}
 
-export interface SensorTIMEOUT_SCHEMA {
-    timeout: SensorTIMEOUT_SCHEMATimeout;
+export interface SensorMEDIANSCHEMA {
+    send_every?: number;
+    send_first_at?: number;
+    window_size?: number;
+}
+
+export interface SensorMINSCHEMA {
+    send_every?: number;
+    send_first_at?: number;
+    window_size?: number;
+}
+
+export interface SensorQUANTILESCHEMA {
+    quantile?: any;
+    send_every?: number;
+    send_first_at?: number;
+    window_size?: number;
+}
+
+export interface SensorSENSORINRANGECONDITIONSCHEMA {
+    above?: any;
+    below?: any;
+    id: ID;
+}
+
+export interface SensorSLIDINGAVERAGESCHEMA {
+    send_every?: number;
+    send_first_at?: number;
+    window_size?: number;
+}
+
+export type SensorTHROTTLEWITHPRIORITYSCHEMATimeout = CorePositiveTimePeriodMilliseconds;
+
+export interface SensorTHROTTLEWITHPRIORITYSCHEMA {
+    timeout: SensorTHROTTLEWITHPRIORITYSCHEMATimeout;
     value?: any;
 }
 
-export interface SensorCLAMP_SCHEMA {
-    min_value?: any;
-    max_value?: any;
+export type SensorTIMEOUTSCHEMATimeout = CorePositiveTimePeriodMilliseconds;
+
+export interface SensorTIMEOUTSCHEMA {
+    timeout: SensorTIMEOUTSCHEMATimeout;
+    value?: any;
 }
 
-export interface SensorSENSOR_IN_RANGE_CONDITION_SCHEMA {
-    id: ID;
-    above?: any;
-    below?: any;
+export type SensorSENSORSCHEMADeviceClass = 'absolute_humidity' | 'apparent_power' | 'aqi' | 'area' | 'atmospheric_pressure' | 'battery' | 'blood_glucose_concentration' | 'carbon_dioxide' | 'carbon_monoxide' | 'conductivity' | 'current' | 'data_rate' | 'data_size' | 'date' | 'distance' | 'duration' | '' | 'energy' | 'energy_distance' | 'energy_storage' | 'frequency' | 'gas' | 'humidity' | 'illuminance' | 'irradiance' | 'moisture' | 'monetary' | 'nitrogen_dioxide' | 'nitrogen_monoxide' | 'nitrous_oxide' | 'ozone' | 'ph' | 'pm1' | 'pm10' | 'pm25' | 'pm4' | 'power' | 'power_factor' | 'precipitation' | 'precipitation_intensity' | 'pressure' | 'reactive_energy' | 'reactive_power' | 'signal_strength' | 'sound_pressure' | 'speed' | 'sulphur_dioxide' | 'temperature' | 'temperature_delta' | 'timestamp' | 'uptime' | 'volatile_organic_compounds' | 'volatile_organic_compounds_parts' | 'voltage' | 'volume' | 'volume_flow_rate' | 'volume_storage' | 'water' | 'weight' | 'wind_direction' | 'wind_speed';
+export type SensorSENSORSCHEMAEntityCategory = '' | 'diagnostic';
+export type SensorSENSORSCHEMAExpireAfter = CorePositiveTimePeriodMilliseconds;
+export type SensorSENSORSCHEMAReport = 'coordinator' | 'enable' | 'force';
+export type SensorSENSORSCHEMAStateClass = '' | 'measurement' | 'total_increasing' | 'total' | 'measurement_angle';
+
+export interface SensorSENSORSCHEMAWebServer {
+    sorting_group_id?: ID;
+    sorting_weight?: any;
+    web_server_id?: ID;
 }
+
+export type SensorSENSORSCHEMA = {
+        accuracy_decimals?: number;
+        device_class?: SensorSENSORSCHEMADeviceClass;
+        entity_category?: SensorSENSORSCHEMAEntityCategory;
+        expire_after?: SensorSENSORSCHEMAExpireAfter;
+        filters?: any[];
+        force_update?: boolean;
+        id?: ID;
+        mqtt_id?: any;
+        on_raw_value?: object[];
+        on_value?: object[];
+        on_value_range?: object[];
+        report?: SensorSENSORSCHEMAReport;
+        state_class?: SensorSENSORSCHEMAStateClass;
+        unit_of_measurement?: string;
+        web_server?: SensorSENSORSCHEMAWebServer;
+        zigbee_id?: ID;
+        zigbee_sensor?: any;
+        name?: any;
+        icon?: any;
+        internal?: any;
+        disabled_by_default?: any;
+    } & CoreENTITYBASESCHEMA & CoreMQTTCOMPONENTSCHEMA;

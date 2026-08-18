@@ -15,5 +15,8 @@ export class Network extends EsphomeComponent<NetworkConfig> {
 }
 
 export interface NetworkConfig {
+    enable_high_performance?: boolean;
     enable_ipv6?: boolean;
+    id?: ID;
+    min_ipv6_addr_count?: number;
 }

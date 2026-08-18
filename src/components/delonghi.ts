@@ -9,12 +9,19 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { ClimateIrCLIMATE_IR_WITH_RECEIVER_SCHEMA } from "./climate_ir.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class DelonghiClimate extends EsphomeComponent<DelonghiClimateConfig> {
     componentName: string = "delonghi.climate";
 }
 
-export interface DelonghiClimateConfig extends ClimateIrCLIMATE_IR_WITH_RECEIVER_SCHEMA {
-    id?: any;
-}
+export type DelonghiClimateConfig = {
+        humidity_sensor?: ID;
+        id?: ID;
+        receiver_id?: ID;
+        sensor?: ID;
+        supports_cool?: boolean;
+        supports_heat?: boolean;
+        transmitter_id?: ID;
+    } & ClimateCLIMATESCHEMA & CoreCOMPONENTSCHEMA;

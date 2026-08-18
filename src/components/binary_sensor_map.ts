@@ -14,42 +14,43 @@ export class BinarySensorMapSensor extends EsphomeComponent<BinarySensorMapSenso
     componentName: string = "binary_sensor_map.sensor";
 }
 
-export interface BinarySensorMapSensorEntryOneParameter {
+export type BinarySensorMapSensorConfig = BinarySensorMapSensorConfigBayesian | BinarySensorMapSensorConfigGroup | BinarySensorMapSensorConfigSum;
+
+export interface BinarySensorMapSensorConfigBayesianObservations {
     binary_sensor: ID;
-    value: string;
+    prob_given_false: string;
+    prob_given_true: string;
 }
 
-export type BinarySensorMapSensorConfig = BinarySensorMapSensorConfigGroup | BinarySensorMapSensorConfigSum | BinarySensorMapSensorConfigBayesian;
+export interface BinarySensorMapSensorConfigBayesian {
+    type: "bayesian" | "BAYESIAN";
+    accuracy_decimals?: any;
+    id?: any;
+    observations: BinarySensorMapSensorConfigBayesianObservations[];
+    prior?: any;
+}
+
 export type BinarySensorMapSensorConfigGroupChannels = BinarySensorMapSensorEntryOneParameter;
 
 export interface BinarySensorMapSensorConfigGroup {
     type: "group" | "GROUP";
-    id?: any;
-    icon?: any;
     accuracy_decimals?: any;
     channels: BinarySensorMapSensorConfigGroupChannels[];
+    icon?: any;
+    id?: any;
 }
 
 export type BinarySensorMapSensorConfigSumChannels = BinarySensorMapSensorEntryOneParameter;
 
 export interface BinarySensorMapSensorConfigSum {
     type: "sum" | "SUM";
-    id?: any;
-    icon?: any;
     accuracy_decimals?: any;
     channels: BinarySensorMapSensorConfigSumChannels[];
-}
-
-export interface BinarySensorMapSensorConfigBayesianObservations {
-    binary_sensor: ID;
-    prob_given_true: string;
-    prob_given_false: string;
-}
-
-export interface BinarySensorMapSensorConfigBayesian {
-    type: "bayesian" | "BAYESIAN";
+    icon?: any;
     id?: any;
-    accuracy_decimals?: any;
-    prior: string;
-    observations: BinarySensorMapSensorConfigBayesianObservations[];
+}
+
+export interface BinarySensorMapSensorEntryOneParameter {
+    binary_sensor: ID;
+    value: string;
 }

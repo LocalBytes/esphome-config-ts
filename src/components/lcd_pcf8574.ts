@@ -9,14 +9,16 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { LcdBaseLCD_SCHEMA } from "./lcd_base.js";
+import type { LcdBaseLCDSCHEMA } from "./lcd_base.js";
 
 export class LcdPcf8574Display extends EsphomeComponent<LcdPcf8574DisplayConfig> {
     componentName: string = "lcd_pcf8574.display";
 }
 
-export interface LcdPcf8574DisplayConfig extends LcdBaseLCD_SCHEMA {
-    id?: ID;
-    i2c_id?: ID;
+export interface LcdPcf8574DisplayConfig extends LcdBaseLCDSCHEMA {
     address?: any;
+    i2c_id?: ID;
+    id?: ID;
+    lambda?: any;
+    update_interval?: any;
 }

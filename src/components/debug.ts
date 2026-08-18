@@ -9,15 +9,15 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { SensorSENSOR_SCHEMA } from "./sensor.js";
-import type { TextSensorTEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class Debug extends EsphomeComponent<DebugConfig> {
     componentName: string = "debug";
 }
 
-export interface DebugConfig extends CoreCOMPONENT_SCHEMA {
+export interface DebugConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     update_interval?: any;
 }
@@ -26,47 +26,71 @@ export class DebugSensor extends EsphomeComponent<DebugSensorConfig> {
     componentName: string = "debug.sensor";
 }
 
-export interface DebugSensorConfigFree extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface DebugSensorConfigBlock extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface DebugSensorConfigBlock extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface DebugSensorConfigCpuFrequency extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
+    device_class?: any;
     entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface DebugSensorConfigFragmentation extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface DebugSensorConfigFragmentation extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface DebugSensorConfigLoopTime extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface DebugSensorConfigFree extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
-export interface DebugSensorConfigPsram extends SensorSENSOR_SCHEMA {
-    unit_of_measurement?: any;
-    icon?: any;
+export interface DebugSensorConfigLoopTime extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface DebugSensorConfigMinFree extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface DebugSensorConfigPsram extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
 }
 
 export interface DebugSensorConfig {
-    debug_id?: ID;
-    free?: DebugSensorConfigFree;
     block?: DebugSensorConfigBlock;
+    cpu_frequency?: DebugSensorConfigCpuFrequency;
+    debug_id?: ID;
     fragmentation?: DebugSensorConfigFragmentation;
+    free?: DebugSensorConfigFree;
     loop_time?: DebugSensorConfigLoopTime;
+    min_free?: DebugSensorConfigMinFree;
     psram?: DebugSensorConfigPsram;
 }
 
@@ -74,14 +98,14 @@ export class DebugTextSensor extends EsphomeComponent<DebugTextSensorConfig> {
     componentName: string = "debug.text_sensor";
 }
 
-export interface DebugTextSensorConfigDevice extends TextSensorTEXT_SENSOR_SCHEMA {
-    icon?: any;
+export interface DebugTextSensorConfigDevice extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
+    icon?: any;
 }
 
-export interface DebugTextSensorConfigResetReason extends TextSensorTEXT_SENSOR_SCHEMA {
-    icon?: any;
+export interface DebugTextSensorConfigResetReason extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
+    icon?: any;
 }
 
 export interface DebugTextSensorConfig {

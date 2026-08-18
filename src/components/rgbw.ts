@@ -9,18 +9,17 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { LightRGB_LIGHT_SCHEMA } from "./light.js";
+import type { LightRGBLIGHTSCHEMA } from "./light.js";
 
 export class RgbwLight extends EsphomeComponent<RgbwLightConfig> {
     componentName: string = "rgbw.light";
 }
 
-export interface RgbwLightConfig extends LightRGB_LIGHT_SCHEMA {
+export interface RgbwLightConfig extends LightRGBLIGHTSCHEMA {
+    blue: ID;
+    color_interlock?: boolean;
+    green: ID;
     output_id?: ID;
     red: ID;
-    green: ID;
-    blue: ID;
     white: ID;
-    color_interlock?: boolean;
-    effects?: any;
 }

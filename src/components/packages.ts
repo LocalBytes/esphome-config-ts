@@ -14,16 +14,26 @@ export class Packages extends EsphomeComponent<PackagesConfig> {
     componentName: string = "packages";
 }
 
-export interface PackagesConfigString {
-    url: string;
-    username?: string;
-    password?: string;
-    file?: any;
-    files?: any[];
-    ref?: any;
-    refresh?: string;
+export type PackagesConfigString = PackagesPACKAGESCHEMA;
+
+export interface PackagesConfig extends PackagesPACKAGESCHEMA {
+    string: PackagesConfigString;
 }
 
-export interface PackagesConfig {
-    string: PackagesConfigString;
+export type PackagesPACKAGESCHEMAFilesVars = Record<string, string>;
+
+export interface PackagesPACKAGESCHEMAFiles {
+    path: string;
+    vars: PackagesPACKAGESCHEMAFilesVars;
+}
+
+export interface PackagesPACKAGESCHEMA {
+    file?: any;
+    files?: PackagesPACKAGESCHEMAFiles[];
+    password?: string;
+    path?: string;
+    ref?: any;
+    refresh?: string;
+    url: string;
+    username?: string;
 }

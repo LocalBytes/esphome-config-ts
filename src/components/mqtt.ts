@@ -15,57 +15,63 @@ export class Mqtt extends EsphomeComponent<MqttConfig> {
     componentName: string = "mqtt";
 }
 
+export type MqttConfigBirthMessage = MqttMQTTMESSAGESCHEMA;
 export type MqttConfigDiscovery = 'CLEAN';
-export type MqttConfigDiscoveryUniqueIdGenerator = 'legacy' | 'mac';
 export type MqttConfigDiscoveryObjectIdGenerator = 'none' | 'device_name';
-export type MqttConfigBirthMessage = MqttMQTT_MESSAGE_SCHEMA;
-export type MqttConfigWillMessage = MqttMQTT_MESSAGE_SCHEMA;
-export type MqttConfigShutdownMessage = MqttMQTT_MESSAGE_SCHEMA;
+export type MqttConfigDiscoveryUniqueIdGenerator = 'legacy' | 'mac';
+export type MqttConfigKeepalive = CorePositiveTimePeriodSeconds;
 export type MqttConfigLogTopicLevel = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 
-export interface MqttConfigLogTopic extends MqttMQTT_MESSAGE_BASE {
+export interface MqttConfigLogTopic extends MqttMQTTMESSAGEBASE {
     level?: MqttConfigLogTopicLevel;
 }
 
-export type MqttConfigKeepalive = CorePositiveTimePeriodSeconds;
 export type MqttConfigRebootTimeout = CorePositiveTimePeriodMilliseconds;
+export type MqttConfigShutdownMessage = MqttMQTTMESSAGESCHEMA;
+export type MqttConfigWillMessage = MqttMQTTMESSAGESCHEMA;
 
 export interface MqttConfig {
-    id?: ID;
-    broker: string;
-    port?: number;
-    username?: string;
-    password?: string;
-    client_id?: string;
-    idf_send_async?: boolean;
-    certificate_authority?: string;
-    skip_cert_cn_check?: boolean;
-    discovery?: MqttConfigDiscovery;
-    discovery_retain?: boolean;
-    discovery_prefix?: any;
-    discovery_unique_id_generator?: MqttConfigDiscoveryUniqueIdGenerator;
-    discovery_object_id_generator?: MqttConfigDiscoveryObjectIdGenerator;
-    use_abbreviations?: boolean;
     birth_message?: MqttConfigBirthMessage;
-    will_message?: MqttConfigWillMessage;
-    shutdown_message?: MqttConfigShutdownMessage;
-    topic_prefix?: any;
-    log_topic?: MqttConfigLogTopic;
-    ssl_fingerprints?: any[];
+    broker: string;
+    certificate_authority?: string;
+    clean_session?: boolean;
+    client_certificate?: string;
+    client_certificate_key?: string;
+    client_id?: string;
+    discover_ip?: boolean;
+    discovery?: MqttConfigDiscovery;
+    discovery_object_id_generator?: MqttConfigDiscoveryObjectIdGenerator;
+    discovery_prefix?: any;
+    discovery_retain?: boolean;
+    discovery_unique_id_generator?: MqttConfigDiscoveryUniqueIdGenerator;
+    enable_on_boot?: boolean;
+    id?: ID;
+    idf_send_async?: boolean;
     keepalive?: MqttConfigKeepalive;
-    reboot_timeout?: MqttConfigRebootTimeout;
+    log_topic?: MqttConfigLogTopic;
     on_connect?: object[];
     on_disconnect?: object[];
-    on_message?: object[];
     on_json_message?: object[];
+    on_message?: object[];
+    password?: string;
+    port?: number;
+    publish_nan_as_none?: boolean;
+    reboot_timeout?: MqttConfigRebootTimeout;
+    shutdown_message?: MqttConfigShutdownMessage;
+    skip_cert_cn_check?: boolean;
+    topic_prefix?: any;
+    use_abbreviations?: boolean;
+    username?: string;
+    wait_for_connection?: boolean;
+    will_message?: MqttConfigWillMessage;
 }
 
-export interface MqttMQTT_MESSAGE_BASE {
-    topic: string;
+export interface MqttMQTTMESSAGEBASE {
     qos?: any;
     retain?: boolean;
+    topic: string;
 }
 
-export interface MqttMQTT_MESSAGE_SCHEMA extends MqttMQTT_MESSAGE_BASE {
+export interface MqttMQTTMESSAGESCHEMA extends MqttMQTTMESSAGEBASE {
     payload: string;
 }

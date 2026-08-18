@@ -1,16 +1,97 @@
 {
-  "safe_mode.button": {
-    "schemas": {
-      "CONFIG_SCHEMA": {
-        "type": "schema",
+  "safe_mode": {
+    "action": {
+      "mark_successful": {
         "schema": {
-          "extends": [
-            "button.BUTTON_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
             "id": {
               "key": "GeneratedID",
+              "type": "use_id",
+              "use_id_type": "safe_mode::SafeModeComponent"
+            }
+          }
+        },
+        "type": "schema",
+        "docs": "This action marks the boot as successful, preventing safe mode from being invoked. This is useful for devices that take a sensor reading and then enter deep sleep, rather than waiting for the `boot_is_good_after` time to elapse."
+      }
+    },
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "schema": {
+          "config_vars": {
+            "boot_is_good_after": {
+              "default": "1min",
+              "key": "Optional",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              },
+              "type": "schema",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The amount of time after which the boot is considered successful.\n\n*See also: [Safe Mode](https://next.esphome.io/components/safe_mode#configuration-variables)*"
+            },
+            "disabled": {
+              "default": "False",
+              "key": "Optional",
+              "type": "boolean",
+              "docs": "**boolean**: Set to `true` to disable safe_mode. [Ota](https://next.esphome.io/components/ota/) automatically\n\n*See also: [Safe Mode](https://next.esphome.io/components/safe_mode#configuration-variables)*"
+            },
+            "id": {
+              "id_type": {
+                "class": "safe_mode::SafeModeComponent",
+                "parents": [
+                  "Component"
+                ]
+              },
+              "key": "GeneratedID"
+            },
+            "num_attempts": {
+              "data_type": "positive_not_null_int",
+              "default": "10",
+              "key": "Optional",
+              "type": "integer",
+              "docs": "**int**: The number of failed boot attempts which must occur before invoking safe mode.\n\n*See also: [Safe Mode](https://next.esphome.io/components/safe_mode#configuration-variables)*"
+            },
+            "on_safe_mode": {
+              "key": "Optional",
+              "type": "trigger",
+              "docs": "**[Automation](https://next.esphome.io/automations)**: An action to be performed once when safe mode is invoked.\n\n*See also: [Safe Mode](https://next.esphome.io/components/safe_mode#configuration-variables)*"
+            },
+            "reboot_timeout": {
+              "default": "5min",
+              "key": "Optional",
+              "schema": {
+                "extends": [
+                  "core.positive_time_period_milliseconds"
+                ]
+              },
+              "type": "schema",
+              "docs": "**[Time](https://next.esphome.io/guides/configuration-types#time)**: The amount of time to wait before rebooting when in safe mode.\n\n*See also: [Safe Mode](https://next.esphome.io/components/safe_mode#configuration-variables)*"
+            }
+          },
+          "extends": [
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
+      }
+    }
+  },
+  "safe_mode.button": {
+    "schemas": {
+      "CONFIG_SCHEMA": {
+        "schema": {
+          "config_vars": {
+            "device_class": {
+              "default": "restart"
+            },
+            "entity_category": {
+              "default": "config"
+            },
+            "icon": {
+              "default": "mdi:restart-alert"
+            },
+            "id": {
               "id_type": {
                 "class": "safe_mode::SafeModeButton",
                 "parents": [
@@ -19,53 +100,35 @@
                   "Component"
                 ]
               },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [Safe Mode Button](https://esphome.io/components/button/safe_mode.html#configuration-variables)*"
+              "key": "GeneratedID"
             },
-            "icon": {
-              "default": "mdi:restart-alert"
-            },
-            "entity_category": {
-              "default": "config"
-            },
-            "device_class": {
-              "default": "restart"
-            },
-            "ota": {
+            "safe_mode": {
               "key": "GeneratedID",
-              "use_id_type": "ota::OTAComponent",
-              "type": "use_id"
+              "type": "use_id",
+              "use_id_type": "safe_mode::SafeModeComponent"
             }
-          }
-        }
+          },
+          "extends": [
+            "button._BUTTON_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   },
   "safe_mode.switch": {
     "schemas": {
       "CONFIG_SCHEMA": {
-        "type": "schema",
         "schema": {
-          "extends": [
-            "switch._SWITCH_SCHEMA",
-            "core.COMPONENT_SCHEMA"
-          ],
           "config_vars": {
-            "restore_mode": {
-              "key": "Optional",
-              "default": "ALWAYS_OFF",
-              "type": "enum",
-              "values": {
-                "RESTORE_DEFAULT_OFF": null,
-                "RESTORE_DEFAULT_ON": null,
-                "ALWAYS_OFF": null,
-                "ALWAYS_ON": null,
-                "RESTORE_INVERTED_DEFAULT_OFF": null,
-                "RESTORE_INVERTED_DEFAULT_ON": null,
-                "DISABLED": null
-              }
+            "entity_category": {
+              "default": "config"
+            },
+            "icon": {
+              "default": "mdi:restart-alert"
             },
             "id": {
-              "key": "GeneratedID",
               "id_type": {
                 "class": "safe_mode::SafeModeSwitch",
                 "parents": [
@@ -74,21 +137,20 @@
                   "Component"
                 ]
               },
-              "docs": "**[ID](https://esphome.io/guides/configuration-types.html#config-id)**: Manually specify the ID used for code generation.\n\n*See also: [Safe Mode Switch](https://esphome.io/components/switch/safe_mode.html#configuration-variables)*"
+              "key": "GeneratedID"
             },
-            "entity_category": {
-              "default": "config"
-            },
-            "icon": {
-              "default": "mdi:restart-alert"
-            },
-            "ota": {
+            "safe_mode": {
               "key": "GeneratedID",
-              "use_id_type": "ota::OTAComponent",
-              "type": "use_id"
+              "type": "use_id",
+              "use_id_type": "safe_mode::SafeModeComponent"
             }
-          }
-        }
+          },
+          "extends": [
+            "switch._SWITCH_SCHEMA",
+            "core.COMPONENT_SCHEMA"
+          ]
+        },
+        "type": "schema"
       }
     }
   }

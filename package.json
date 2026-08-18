@@ -1,44 +1,21 @@
 {
   "name": "esphome-config-ts",
-  "version": "0.1.0",
-  "description": "",
-  "scripts": {
-    "prepare": "npm run prepare:tspatch && npm run build:tsc",
-    "prepare:tspatch": "ts-patch install",
-    "update-schema": "node --loader ts-node/esm ./scripts/update-schema.ts",
-    "build:generator": "node --loader ts-node/esm ./src/generator/build.ts",
-    "build:tsc": "tsc",
-    "build": "npm run build:generator && npm run build:tsc",
-    "test": "node --loader ts-node/esm ./examples/esp32_buttons.ts",
-    "madge": "madge --circular --extensions ts ./src"
-  },
+  "version": "0.2.0",
   "type": "module",
-  "main": "dist/",
+  "esphome-config-ts": {
+    "version": "2026.7"
+  },
   "devDependencies": {
-    "@tsconfig/node-lts": "^24.0.0",
-    "@types/adm-zip": "^0.5.8",
+    "@tsconfig/recommended": "^1.0.13",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^25.7.0",
-    "adm-zip": "^0.5.17",
-    "madge": "^8.0.0",
+    "@types/node": "^25.9.5",
     "ts-morph": "^28.0.0",
-    "ts-node": "^10.9.2",
-    "ts-patch": "^4.0.1",
-    "typescript": "^7.0.0",
-    "typescript-transform-paths": "^4.0.0"
+    "typescript": "^7.0.2"
   },
   "dependencies": {
-    "js-yaml": "^5.0.0"
+    "js-yaml": "^5.3.0",
+    "unzipper": "^0.12.5",
+    "zod": "^4.4.3"
   },
-  "madge": {
-    "detectiveOptions": {
-      "es6": {
-        "skipTypeImports": true
-      },
-      "ts": {
-        "skipTypeImports": true
-      }
-    }
-  },
-  "packageManager": "pnpm@11.20.0"
+  "packageManager": "pnpm@12.0.0-rc.6"
 }

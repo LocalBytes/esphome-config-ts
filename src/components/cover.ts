@@ -9,40 +9,40 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreENTITY_BASE_SCHEMA, CoreMQTT_COMMAND_COMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreENTITYBASESCHEMA, CoreMQTTCOMMANDCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Cover extends EsphomeComponent {
     componentName: string = "cover";
 }
 
-export interface CoverCOVER_ACTION_SCHEMA {
+export interface CoverCOVERACTIONSCHEMA {
     id: ID;
 }
 
-export interface CoverCOVER_CONDITION_SCHEMA {
+export interface CoverCOVERCONDITIONSCHEMA {
     id: ID;
 }
 
-export type CoverCOVER_CONTROL_ACTION_SCHEMAState = 'OPEN' | 'CLOSED';
+export type CoverCOVERCONTROLACTIONSCHEMAState = 'OPEN' | 'CLOSED';
 
-export interface CoverCOVER_CONTROL_ACTION_SCHEMA {
+export interface CoverCOVERCONTROLACTIONSCHEMA {
     id: ID;
     position?: any;
-    state?: CoverCOVER_CONTROL_ACTION_SCHEMAState;
+    state?: CoverCOVERCONTROLACTIONSCHEMAState;
     stop?: boolean;
     tilt?: any;
 }
 
-export type Cover_COVER_SCHEMADeviceClass = 'awning' | 'blind' | 'curtain' | 'damper' | 'door' | '' | 'garage' | 'gate' | 'shade' | 'shutter' | 'window';
+export type CoverCOVERSCHEMADeviceClass = 'awning' | 'blind' | 'curtain' | 'damper' | 'door' | '' | 'garage' | 'gate' | 'shade' | 'shutter' | 'window';
 
-export interface Cover_COVER_SCHEMAWebServer {
+export interface CoverCOVERSCHEMAWebServer {
     sorting_group_id?: ID;
     sorting_weight?: any;
     web_server_id?: ID;
 }
 
-export type Cover_COVER_SCHEMA = {
-        device_class?: Cover_COVER_SCHEMADeviceClass;
+export type CoverCOVERSCHEMA = {
+        device_class?: CoverCOVERSCHEMADeviceClass;
         mqtt_id?: any;
         mqtt_json_state_payload?: boolean;
         on_closed?: object[];
@@ -55,11 +55,11 @@ export type Cover_COVER_SCHEMA = {
         position_state_topic?: any;
         tilt_command_topic?: any;
         tilt_state_topic?: any;
-        web_server?: Cover_COVER_SCHEMAWebServer;
+        web_server?: CoverCOVERSCHEMAWebServer;
         id?: any;
         name?: any;
         icon?: any;
         internal?: any;
         disabled_by_default?: any;
         entity_category?: any;
-    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMMAND_COMPONENT_SCHEMA;
+    } & CoreENTITYBASESCHEMA & CoreMQTTCOMMANDCOMPONENTSCHEMA;

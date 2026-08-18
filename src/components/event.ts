@@ -9,34 +9,34 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreENTITY_BASE_SCHEMA, CoreMQTT_COMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreENTITYBASESCHEMA, CoreMQTTCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Event extends EsphomeComponent {
     componentName: string = "event";
 }
 
-export interface EventTRIGGER_EVENT_SCHEMA {
+export interface EventTRIGGEREVENTSCHEMA {
     event_type: string;
     id: ID;
 }
 
-export type Event_EVENT_SCHEMADeviceClass = 'button' | 'doorbell' | '' | 'motion';
+export type EventEVENTSCHEMADeviceClass = 'button' | 'doorbell' | '' | 'motion';
 
-export interface Event_EVENT_SCHEMAWebServer {
+export interface EventEVENTSCHEMAWebServer {
     sorting_group_id?: ID;
     sorting_weight?: any;
     web_server_id?: ID;
 }
 
-export type Event_EVENT_SCHEMA = {
-        device_class?: Event_EVENT_SCHEMADeviceClass;
+export type EventEVENTSCHEMA = {
+        device_class?: EventEVENTSCHEMADeviceClass;
         id?: ID;
         mqtt_id?: any;
         on_event?: object[];
-        web_server?: Event_EVENT_SCHEMAWebServer;
+        web_server?: EventEVENTSCHEMAWebServer;
         name?: any;
         icon?: any;
         internal?: any;
         disabled_by_default?: any;
         entity_category?: any;
-    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMPONENT_SCHEMA;
+    } & CoreENTITYBASESCHEMA & CoreMQTTCOMPONENTSCHEMA;

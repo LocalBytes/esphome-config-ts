@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Scd4x extends EsphomeComponent {
     componentName: string = "scd4x";
@@ -20,7 +20,7 @@ export class Scd4xSensor extends EsphomeComponent<Scd4xSensorConfig> {
     componentName: string = "scd4x.sensor";
 }
 
-export interface Scd4xSensorConfigCo2 extends Sensor_SENSOR_SCHEMA {
+export interface Scd4xSensorConfigCo2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -28,7 +28,7 @@ export interface Scd4xSensorConfigCo2 extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Scd4xSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface Scd4xSensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -38,7 +38,7 @@ export interface Scd4xSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
 
 export type Scd4xSensorConfigMeasurementMode = 'periodic' | 'low_power_periodic' | 'single_shot' | 'single_shot_rht_only';
 
-export interface Scd4xSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Scd4xSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -46,7 +46,7 @@ export interface Scd4xSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Scd4xSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Scd4xSensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     altitude_compensation?: number;
     ambient_pressure_compensation?: any;

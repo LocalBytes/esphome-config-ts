@@ -9,22 +9,22 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Climate_CLIMATE_SCHEMA } from "./climate.js";
-import type { Fan_FAN_SCHEMA } from "./fan.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
+import type { FanFANSCHEMA } from "./fan.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class Bedjet extends EsphomeComponent<BedjetConfig> {
     componentName: string = "bedjet";
 }
 
-export interface BedjetBEDJET_CLIENT_SCHEMA {
+export interface BedjetBEDJETCLIENTSCHEMA {
     bedjet_id?: ID;
 }
 
 export type BedjetConfigReceiveTimeout = CorePositiveTimePeriodMilliseconds;
 
-export interface BedjetConfig extends CoreCOMPONENT_SCHEMA {
+export interface BedjetConfig extends CoreCOMPONENTSCHEMA {
     ble_client_id?: ID;
     id?: ID;
     receive_timeout?: BedjetConfigReceiveTimeout;
@@ -43,7 +43,7 @@ export type BedjetClimateConfig = {
         id?: ID;
         temperature_source?: BedjetClimateConfigTemperatureSource;
         update_interval?: any;
-    } & Climate_CLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA & BedjetBEDJET_CLIENT_SCHEMA;
+    } & ClimateCLIMATESCHEMA & CoreCOMPONENTSCHEMA & BedjetBEDJETCLIENTSCHEMA;
 
 export class BedjetFan extends EsphomeComponent<BedjetFanConfig> {
     componentName: string = "bedjet.fan";
@@ -52,25 +52,25 @@ export class BedjetFan extends EsphomeComponent<BedjetFanConfig> {
 export type BedjetFanConfig = {
         id?: ID;
         update_interval?: any;
-    } & Fan_FAN_SCHEMA & CoreCOMPONENT_SCHEMA & BedjetBEDJET_CLIENT_SCHEMA;
+    } & FanFANSCHEMA & CoreCOMPONENTSCHEMA & BedjetBEDJETCLIENTSCHEMA;
 
 export class BedjetSensor extends EsphomeComponent<BedjetSensorConfig> {
     componentName: string = "bedjet.sensor";
 }
 
-export interface BedjetSensorConfigAmbientTemperature extends Sensor_SENSOR_SCHEMA {
+export interface BedjetSensorConfigAmbientTemperature extends SensorSENSORSCHEMA {
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface BedjetSensorConfigOutletTemperature extends Sensor_SENSOR_SCHEMA {
+export interface BedjetSensorConfigOutletTemperature extends SensorSENSORSCHEMA {
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface BedjetSensorConfig extends BedjetBEDJET_CLIENT_SCHEMA {
+export interface BedjetSensorConfig extends BedjetBEDJETCLIENTSCHEMA {
     ambient_temperature?: BedjetSensorConfigAmbientTemperature;
     id?: ID;
     outlet_temperature?: BedjetSensorConfigOutletTemperature;

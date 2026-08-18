@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class ZephyrBleServer extends EsphomeComponent<ZephyrBleServerConfig> {
     componentName: string = "zephyr_ble_server";
 }
 
-export interface ZephyrBleServerConfig extends CoreCOMPONENT_SCHEMA {
+export interface ZephyrBleServerConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     on_numeric_comparison_request?: object[];
 }

@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Tinyusb extends EsphomeComponent<TinyusbConfig> {
     componentName: string = "tinyusb";
 }
 
-export interface TinyusbConfig extends CoreCOMPONENT_SCHEMA {
+export interface TinyusbConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     usb_lang_id?: number;
     usb_manufacturer_str?: string;

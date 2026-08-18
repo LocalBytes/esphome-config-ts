@@ -9,9 +9,9 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Climate_CLIMATE_SCHEMA } from "./climate.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
 
 export class GreeClimate extends EsphomeComponent<GreeClimateConfig> {
     componentName: string = "gree.climate";
@@ -27,13 +27,13 @@ export type GreeClimateConfig = {
         supports_cool?: boolean;
         supports_heat?: boolean;
         transmitter_id?: ID;
-    } & Climate_CLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & ClimateCLIMATESCHEMA & CoreCOMPONENTSCHEMA;
 
 export class GreeSwitch extends EsphomeComponent<GreeSwitchConfig> {
     componentName: string = "gree.switch";
 }
 
-export interface GreeSwitchConfigHealth extends Switch_SWITCH_SCHEMA {
+export interface GreeSwitchConfigHealth extends SwitchSWITCHSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -41,7 +41,7 @@ export interface GreeSwitchConfigHealth extends Switch_SWITCH_SCHEMA {
     restore_mode?: any;
 }
 
-export interface GreeSwitchConfigLight extends Switch_SWITCH_SCHEMA {
+export interface GreeSwitchConfigLight extends SwitchSWITCHSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -49,7 +49,7 @@ export interface GreeSwitchConfigLight extends Switch_SWITCH_SCHEMA {
     restore_mode?: any;
 }
 
-export interface GreeSwitchConfigTurbo extends Switch_SWITCH_SCHEMA {
+export interface GreeSwitchConfigTurbo extends SwitchSWITCHSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -57,7 +57,7 @@ export interface GreeSwitchConfigTurbo extends Switch_SWITCH_SCHEMA {
     restore_mode?: any;
 }
 
-export interface GreeSwitchConfigXfan extends Switch_SWITCH_SCHEMA {
+export interface GreeSwitchConfigXfan extends SwitchSWITCHSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;

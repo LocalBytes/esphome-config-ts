@@ -9,28 +9,28 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreENTITY_BASE_SCHEMA, CoreMQTT_COMMAND_COMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreENTITYBASESCHEMA, CoreMQTTCOMMANDCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Datetime extends EsphomeComponent {
     componentName: string = "datetime";
 }
 
-export interface Datetime_DATETIME_SCHEMAWebServer {
+export interface DatetimeDATETIMESCHEMAWebServer {
     sorting_group_id?: ID;
     sorting_weight?: any;
     web_server_id?: ID;
 }
 
-export type Datetime_DATETIME_SCHEMA = {
+export type DatetimeDATETIMESCHEMA = {
         on_value?: object[];
         time_id?: ID;
-        web_server?: Datetime_DATETIME_SCHEMAWebServer;
+        web_server?: DatetimeDATETIMESCHEMAWebServer;
         name?: any;
         icon?: any;
         internal?: any;
         disabled_by_default?: any;
         entity_category?: any;
-    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMMAND_COMPONENT_SCHEMA;
+    } & CoreENTITYBASESCHEMA & CoreMQTTCOMMANDCOMPONENTSCHEMA;
 
 export abstract class DatetimeDatetime extends EsphomeComponent {
     componentName: string = "datetime.datetime";

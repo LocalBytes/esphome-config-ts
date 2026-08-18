@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class VoiceAssistant extends EsphomeComponent<VoiceAssistantConfig> {
     componentName: string = "voice_assistant";
@@ -25,7 +25,7 @@ export interface VoiceAssistantConfigMicrophone {
     microphone?: ID;
 }
 
-export interface VoiceAssistantConfig extends CoreCOMPONENT_SCHEMA {
+export interface VoiceAssistantConfig extends CoreCOMPONENTSCHEMA {
     auto_gain?: number;
     conversation_timeout?: VoiceAssistantConfigConversationTimeout;
     id?: ID;
@@ -61,6 +61,6 @@ export interface VoiceAssistantConfig extends CoreCOMPONENT_SCHEMA {
     volume_multiplier?: any;
 }
 
-export interface VoiceAssistantVOICE_ASSISTANT_ACTION_SCHEMA {
+export interface VoiceAssistantVOICEASSISTANTACTIONSCHEMA {
     id?: ID;
 }

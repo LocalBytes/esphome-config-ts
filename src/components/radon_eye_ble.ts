@@ -9,12 +9,12 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { BthomeMithermometerBLE_DEVICE_SCHEMA } from "./bthome_mithermometer.js";
+import type { BthomeMithermometerBLEDEVICESCHEMA } from "./bthome_mithermometer.js";
 
 export class RadonEyeBle extends EsphomeComponent<RadonEyeBleConfig> {
     componentName: string = "radon_eye_ble";
 }
 
-export interface RadonEyeBleConfig extends BthomeMithermometerBLE_DEVICE_SCHEMA {
+export interface RadonEyeBleConfig extends BthomeMithermometerBLEDEVICESCHEMA {
     id?: ID;
 }

@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Honeywellabp2I2cSensor extends EsphomeComponent<Honeywellabp2I2cSensorConfig> {
     componentName: string = "honeywellabp2_i2c.sensor";
@@ -18,7 +18,7 @@ export class Honeywellabp2I2cSensor extends EsphomeComponent<Honeywellabp2I2cSen
 
 export type Honeywellabp2I2cSensorConfigPressureTransferFunction = 'A' | 'B';
 
-export interface Honeywellabp2I2cSensorConfigPressure extends Sensor_SENSOR_SCHEMA {
+export interface Honeywellabp2I2cSensorConfigPressure extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     max_pressure: string;
@@ -28,14 +28,14 @@ export interface Honeywellabp2I2cSensorConfigPressure extends Sensor_SENSOR_SCHE
     unit_of_measurement?: any;
 }
 
-export interface Honeywellabp2I2cSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Honeywellabp2I2cSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Honeywellabp2I2cSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Honeywellabp2I2cSensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: ID;

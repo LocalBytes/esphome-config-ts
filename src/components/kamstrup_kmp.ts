@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class KamstrupKmpSensor extends EsphomeComponent<KamstrupKmpSensorConfig> {
     componentName: string = "kamstrup_kmp.sensor";
 }
 
-export interface KamstrupKmpSensorConfigCustom extends Sensor_SENSOR_SCHEMA {
+export interface KamstrupKmpSensorConfigCustom extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     command: string;
     device_class?: any;
@@ -24,56 +24,56 @@ export interface KamstrupKmpSensorConfigCustom extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface KamstrupKmpSensorConfigFlow extends Sensor_SENSOR_SCHEMA {
+export interface KamstrupKmpSensorConfigFlow extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface KamstrupKmpSensorConfigHeatEnergy extends Sensor_SENSOR_SCHEMA {
+export interface KamstrupKmpSensorConfigHeatEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface KamstrupKmpSensorConfigPower extends Sensor_SENSOR_SCHEMA {
+export interface KamstrupKmpSensorConfigPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface KamstrupKmpSensorConfigTemp1 extends Sensor_SENSOR_SCHEMA {
+export interface KamstrupKmpSensorConfigTemp1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface KamstrupKmpSensorConfigTemp2 extends Sensor_SENSOR_SCHEMA {
+export interface KamstrupKmpSensorConfigTemp2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface KamstrupKmpSensorConfigTempDiff extends Sensor_SENSOR_SCHEMA {
+export interface KamstrupKmpSensorConfigTempDiff extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface KamstrupKmpSensorConfigVolume extends Sensor_SENSOR_SCHEMA {
+export interface KamstrupKmpSensorConfigVolume extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface KamstrupKmpSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface KamstrupKmpSensorConfig extends CoreCOMPONENTSCHEMA {
     custom?: KamstrupKmpSensorConfigCustom[];
     flow?: KamstrupKmpSensorConfigFlow;
     heat_energy?: KamstrupKmpSensorConfigHeatEnergy;

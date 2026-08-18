@@ -9,10 +9,10 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class DlmsMeter extends EsphomeComponent<DlmsMeterConfig> {
     componentName: string = "dlms_meter";
@@ -27,7 +27,7 @@ export interface DlmsMeterConfigCustomPatterns {
 
 export type DlmsMeterConfigReceiveTimeout = CorePositiveTimePeriodMilliseconds;
 
-export interface DlmsMeterConfig extends CoreCOMPONENT_SCHEMA {
+export interface DlmsMeterConfig extends CoreCOMPONENTSCHEMA {
     auth_key?: any;
     custom_patterns?: DlmsMeterConfigCustomPatterns[];
     decryption_key?: any;
@@ -42,7 +42,7 @@ export class DlmsMeterBinarySensor extends EsphomeComponent<DlmsMeterBinarySenso
     componentName: string = "dlms_meter.binary_sensor";
 }
 
-export interface DlmsMeterBinarySensorConfig extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface DlmsMeterBinarySensorConfig extends BinarySensorBINARYSENSORSCHEMA {
     dlms_meter_id?: ID;
     obis_code: string;
 }
@@ -51,97 +51,97 @@ export class DlmsMeterSensor extends EsphomeComponent<DlmsMeterSensorConfig> {
     componentName: string = "dlms_meter.sensor";
 }
 
-export interface DlmsMeterSensorConfigActiveEnergyMinus extends Sensor_SENSOR_SCHEMA {
+export interface DlmsMeterSensorConfigActiveEnergyMinus extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DlmsMeterSensorConfigActiveEnergyPlus extends Sensor_SENSOR_SCHEMA {
+export interface DlmsMeterSensorConfigActiveEnergyPlus extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DlmsMeterSensorConfigActivePowerMinus extends Sensor_SENSOR_SCHEMA {
+export interface DlmsMeterSensorConfigActivePowerMinus extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DlmsMeterSensorConfigActivePowerPlus extends Sensor_SENSOR_SCHEMA {
+export interface DlmsMeterSensorConfigActivePowerPlus extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DlmsMeterSensorConfigCurrentL1 extends Sensor_SENSOR_SCHEMA {
+export interface DlmsMeterSensorConfigCurrentL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DlmsMeterSensorConfigCurrentL2 extends Sensor_SENSOR_SCHEMA {
+export interface DlmsMeterSensorConfigCurrentL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DlmsMeterSensorConfigCurrentL3 extends Sensor_SENSOR_SCHEMA {
+export interface DlmsMeterSensorConfigCurrentL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DlmsMeterSensorConfigPowerFactor extends Sensor_SENSOR_SCHEMA {
+export interface DlmsMeterSensorConfigPowerFactor extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
 }
 
-export interface DlmsMeterSensorConfigReactiveEnergyMinus extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface DlmsMeterSensorConfigReactiveEnergyPlus extends Sensor_SENSOR_SCHEMA {
+export interface DlmsMeterSensorConfigReactiveEnergyMinus extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DlmsMeterSensorConfigVoltageL1 extends Sensor_SENSOR_SCHEMA {
+export interface DlmsMeterSensorConfigReactiveEnergyPlus extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DlmsMeterSensorConfigVoltageL2 extends Sensor_SENSOR_SCHEMA {
+export interface DlmsMeterSensorConfigVoltageL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DlmsMeterSensorConfigVoltageL3 extends Sensor_SENSOR_SCHEMA {
+export interface DlmsMeterSensorConfigVoltageL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DlmsMeterSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface DlmsMeterSensorConfigVoltageL3 extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface DlmsMeterSensorConfig extends CoreCOMPONENTSCHEMA {
     active_energy_minus?: DlmsMeterSensorConfigActiveEnergyMinus;
     active_energy_plus?: DlmsMeterSensorConfigActiveEnergyPlus;
     active_power_minus?: DlmsMeterSensorConfigActivePowerMinus;
@@ -163,10 +163,10 @@ export class DlmsMeterTextSensor extends EsphomeComponent<DlmsMeterTextSensorCon
     componentName: string = "dlms_meter.text_sensor";
 }
 
-export type DlmsMeterTextSensorConfigMeternumber = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DlmsMeterTextSensorConfigTimestamp = TextSensor_TEXT_SENSOR_SCHEMA;
+export type DlmsMeterTextSensorConfigMeternumber = TextSensorTEXTSENSORSCHEMA;
+export type DlmsMeterTextSensorConfigTimestamp = TextSensorTEXTSENSORSCHEMA;
 
-export interface DlmsMeterTextSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface DlmsMeterTextSensorConfig extends CoreCOMPONENTSCHEMA {
     dlms_meter_id?: ID;
     meternumber?: DlmsMeterTextSensorConfigMeternumber;
     obis_code: string;

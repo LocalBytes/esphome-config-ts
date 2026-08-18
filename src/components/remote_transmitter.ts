@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class RemoteTransmitter extends EsphomeComponent<RemoteTransmitterConfig> {
     componentName: string = "remote_transmitter";
 }
 
-export interface RemoteTransmitterConfig extends CoreCOMPONENT_SCHEMA {
+export interface RemoteTransmitterConfig extends CoreCOMPONENTSCHEMA {
     carrier_duty_percent: string;
     clock_resolution?: any;
     eot_level?: boolean;

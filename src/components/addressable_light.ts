@@ -10,7 +10,7 @@
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds } from "./esphome.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
 
 export class AddressableLightDisplay extends EsphomeComponent<AddressableLightDisplayConfig> {
     componentName: string = "addressable_light.display";
@@ -18,7 +18,7 @@ export class AddressableLightDisplay extends EsphomeComponent<AddressableLightDi
 
 export type AddressableLightDisplayConfigUpdateInterval = CorePositiveTimePeriodMilliseconds;
 
-export interface AddressableLightDisplayConfig extends DisplayFULL_DISPLAY_SCHEMA {
+export interface AddressableLightDisplayConfig extends DisplayFULLDISPLAYSCHEMA {
     addressable_light_id: ID;
     height: number;
     id?: ID;

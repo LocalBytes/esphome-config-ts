@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { SpeakerSPEAKER_SCHEMA } from "./speaker.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SpeakerSPEAKERSCHEMA } from "./speaker.js";
 
 export class ResamplerSpeaker extends EsphomeComponent<ResamplerSpeakerConfig> {
     componentName: string = "resampler.speaker";
@@ -25,4 +25,4 @@ export type ResamplerSpeakerConfig = {
         output_speaker: ID;
         taps?: any;
         task_stack_in_psram?: any;
-    } & SpeakerSPEAKER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SpeakerSPEAKERSCHEMA & CoreCOMPONENTSCHEMA;

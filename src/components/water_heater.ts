@@ -9,20 +9,20 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreENTITY_BASE_SCHEMA } from "./esphome.js";
+import type { CoreENTITYBASESCHEMA } from "./esphome.js";
 
 export abstract class WaterHeater extends EsphomeComponent {
     componentName: string = "water_heater";
 }
 
-export interface WaterHeater_WATER_HEATER_SCHEMAVisual {
+export interface WaterHeaterWATERHEATERSCHEMAVisual {
     max_temperature?: any;
     min_temperature?: any;
     target_temperature_step?: any;
 }
 
-export interface WaterHeater_WATER_HEATER_SCHEMA extends CoreENTITY_BASE_SCHEMA {
-    visual?: WaterHeater_WATER_HEATER_SCHEMAVisual;
+export interface WaterHeaterWATERHEATERSCHEMA extends CoreENTITYBASESCHEMA {
+    visual?: WaterHeaterWATERHEATERSCHEMAVisual;
     id?: any;
     name?: any;
     icon?: any;

@@ -10,7 +10,7 @@
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMicroseconds } from "./esphome.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
 
 export class X9cOutput extends EsphomeComponent<X9cOutputConfig> {
     componentName: string = "x9c.output";
@@ -18,7 +18,7 @@ export class X9cOutput extends EsphomeComponent<X9cOutputConfig> {
 
 export type X9cOutputConfigStepDelay = CorePositiveTimePeriodMicroseconds;
 
-export interface X9cOutputConfig extends OutputFLOAT_OUTPUT_SCHEMA {
+export interface X9cOutputConfig extends OutputFLOATOUTPUTSCHEMA {
     cs_pin: Pin;
     id?: ID;
     inc_pin: Pin;

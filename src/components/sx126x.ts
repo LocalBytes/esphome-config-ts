@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMicroseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { PacketTransportTRANSPORT_SCHEMA } from "./packet_transport.js";
+import type { CorePositiveTimePeriodMicroseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { PacketTransportTRANSPORTSCHEMA } from "./packet_transport.js";
 
 export class Sx126x extends EsphomeComponent<Sx126xConfig> {
     componentName: string = "sx126x";
@@ -26,7 +26,7 @@ export type Sx126xConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'M
 export type Sx126xConfigTcxoDelay = CorePositiveTimePeriodMicroseconds;
 export type Sx126xConfigTcxoVoltage = '1_6V' | '1_7V' | '1_8V' | '2_2V' | '2_4V' | '2_7V' | '3_0V' | '3_3V' | 'NONE';
 
-export interface Sx126xConfig extends CoreCOMPONENT_SCHEMA {
+export interface Sx126xConfig extends CoreCOMPONENTSCHEMA {
     bandwidth?: Sx126xConfigBandwidth;
     bitrate?: number;
     busy_pin: Pin;
@@ -63,7 +63,7 @@ export interface Sx126xConfig extends CoreCOMPONENT_SCHEMA {
     tcxo_voltage?: Sx126xConfigTcxoVoltage;
 }
 
-export interface Sx126xNO_ARGS_ACTION_SCHEMA {
+export interface Sx126xNOARGSACTIONSCHEMA {
     id?: ID;
 }
 
@@ -71,7 +71,7 @@ export class Sx126xPacketTransport extends EsphomeComponent<Sx126xPacketTranspor
     componentName: string = "sx126x.packet_transport";
 }
 
-export interface Sx126xPacketTransportConfig extends PacketTransportTRANSPORT_SCHEMA {
+export interface Sx126xPacketTransportConfig extends PacketTransportTRANSPORTSCHEMA {
     id?: ID;
     sx126x_id?: ID;
 }

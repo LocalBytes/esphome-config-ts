@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Es8156AudioDac extends EsphomeComponent<Es8156AudioDacConfig> {
     componentName: string = "es8156.audio_dac";
 }
 
-export interface Es8156AudioDacConfig extends CoreCOMPONENT_SCHEMA {
+export interface Es8156AudioDacConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: ID;

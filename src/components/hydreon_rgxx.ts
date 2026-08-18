@@ -9,23 +9,23 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class HydreonRgxxBinarySensor extends EsphomeComponent<HydreonRgxxBinarySensorConfig> {
     componentName: string = "hydreon_rgxx.binary_sensor";
 }
 
-export interface HydreonRgxxBinarySensorConfigEmSat extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface HydreonRgxxBinarySensorConfigEmSat extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
 }
 
-export interface HydreonRgxxBinarySensorConfigLensBad extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface HydreonRgxxBinarySensorConfigLensBad extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
 }
 
-export interface HydreonRgxxBinarySensorConfigTooCold extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface HydreonRgxxBinarySensorConfigTooCold extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
 }
 
@@ -41,14 +41,14 @@ export class HydreonRgxxSensor extends EsphomeComponent<HydreonRgxxSensorConfig>
     componentName: string = "hydreon_rgxx.sensor";
 }
 
-export interface HydreonRgxxSensorConfigAcc extends Sensor_SENSOR_SCHEMA {
+export interface HydreonRgxxSensorConfigAcc extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface HydreonRgxxSensorConfigEventAcc extends Sensor_SENSOR_SCHEMA {
+export interface HydreonRgxxSensorConfigEventAcc extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -57,14 +57,14 @@ export interface HydreonRgxxSensorConfigEventAcc extends Sensor_SENSOR_SCHEMA {
 
 export type HydreonRgxxSensorConfigModel = 'RG_9' | 'RG_15';
 
-export interface HydreonRgxxSensorConfigMoisture extends Sensor_SENSOR_SCHEMA {
+export interface HydreonRgxxSensorConfigMoisture extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface HydreonRgxxSensorConfigRInt extends Sensor_SENSOR_SCHEMA {
+export interface HydreonRgxxSensorConfigRInt extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -73,7 +73,7 @@ export interface HydreonRgxxSensorConfigRInt extends Sensor_SENSOR_SCHEMA {
 
 export type HydreonRgxxSensorConfigResolution = 'low' | 'high';
 
-export interface HydreonRgxxSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface HydreonRgxxSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -81,14 +81,14 @@ export interface HydreonRgxxSensorConfigTemperature extends Sensor_SENSOR_SCHEMA
     unit_of_measurement?: any;
 }
 
-export interface HydreonRgxxSensorConfigTotalAcc extends Sensor_SENSOR_SCHEMA {
+export interface HydreonRgxxSensorConfigTotalAcc extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface HydreonRgxxSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface HydreonRgxxSensorConfig extends CoreCOMPONENTSCHEMA {
     acc?: HydreonRgxxSensorConfigAcc;
     disable_led?: boolean;
     event_acc?: HydreonRgxxSensorConfigEventAcc;

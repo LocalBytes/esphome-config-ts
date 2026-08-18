@@ -9,37 +9,37 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreENTITY_BASE_SCHEMA, CoreMQTT_COMMAND_COMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreENTITYBASESCHEMA, CoreMQTTCOMMANDCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Climate extends EsphomeComponent {
     componentName: string = "climate";
 }
 
-export type ClimateCLIMATE_CONTROL_ACTION_SCHEMAFanMode = 'ON' | 'OFF' | 'AUTO' | 'LOW' | 'MEDIUM' | 'HIGH' | 'MIDDLE' | 'FOCUS' | 'DIFFUSE' | 'QUIET';
-export type ClimateCLIMATE_CONTROL_ACTION_SCHEMAMode = 'OFF' | 'HEAT_COOL' | 'COOL' | 'HEAT' | 'DRY' | 'FAN_ONLY' | 'AUTO';
-export type ClimateCLIMATE_CONTROL_ACTION_SCHEMAPreset = 'NONE' | 'ECO' | 'AWAY' | 'BOOST' | 'COMFORT' | 'HOME' | 'SLEEP' | 'ACTIVITY';
-export type ClimateCLIMATE_CONTROL_ACTION_SCHEMASwingMode = 'OFF' | 'BOTH' | 'VERTICAL' | 'HORIZONTAL';
+export type ClimateCLIMATECONTROLACTIONSCHEMAFanMode = 'ON' | 'OFF' | 'AUTO' | 'LOW' | 'MEDIUM' | 'HIGH' | 'MIDDLE' | 'FOCUS' | 'DIFFUSE' | 'QUIET';
+export type ClimateCLIMATECONTROLACTIONSCHEMAMode = 'OFF' | 'HEAT_COOL' | 'COOL' | 'HEAT' | 'DRY' | 'FAN_ONLY' | 'AUTO';
+export type ClimateCLIMATECONTROLACTIONSCHEMAPreset = 'NONE' | 'ECO' | 'AWAY' | 'BOOST' | 'COMFORT' | 'HOME' | 'SLEEP' | 'ACTIVITY';
+export type ClimateCLIMATECONTROLACTIONSCHEMASwingMode = 'OFF' | 'BOTH' | 'VERTICAL' | 'HORIZONTAL';
 
-export interface ClimateCLIMATE_CONTROL_ACTION_SCHEMA {
+export interface ClimateCLIMATECONTROLACTIONSCHEMA {
     custom_fan_mode?: string;
     custom_preset?: string;
-    fan_mode?: ClimateCLIMATE_CONTROL_ACTION_SCHEMAFanMode;
+    fan_mode?: ClimateCLIMATECONTROLACTIONSCHEMAFanMode;
     id: ID;
-    mode?: ClimateCLIMATE_CONTROL_ACTION_SCHEMAMode;
-    preset?: ClimateCLIMATE_CONTROL_ACTION_SCHEMAPreset;
-    swing_mode?: ClimateCLIMATE_CONTROL_ACTION_SCHEMASwingMode;
+    mode?: ClimateCLIMATECONTROLACTIONSCHEMAMode;
+    preset?: ClimateCLIMATECONTROLACTIONSCHEMAPreset;
+    swing_mode?: ClimateCLIMATECONTROLACTIONSCHEMASwingMode;
     target_humidity?: any;
     target_temperature?: any;
     target_temperature_high?: any;
     target_temperature_low?: any;
 }
 
-export interface ClimateVISUAL_TEMPERATURE_STEP_SCHEMA {
+export interface ClimateVISUALTEMPERATURESTEPSCHEMA {
     current_temperature: string;
     target_temperature: string;
 }
 
-export interface Climate_CLIMATE_SCHEMAVisual {
+export interface ClimateCLIMATESCHEMAVisual {
     max_humidity?: any;
     max_temperature?: any;
     min_humidity?: any;
@@ -47,13 +47,13 @@ export interface Climate_CLIMATE_SCHEMAVisual {
     temperature_step?: any;
 }
 
-export interface Climate_CLIMATE_SCHEMAWebServer {
+export interface ClimateCLIMATESCHEMAWebServer {
     sorting_group_id?: ID;
     sorting_weight?: any;
     web_server_id?: ID;
 }
 
-export type Climate_CLIMATE_SCHEMA = {
+export type ClimateCLIMATESCHEMA = {
         action_state_topic?: any;
         away_command_topic?: any;
         away_state_topic?: any;
@@ -78,12 +78,12 @@ export type Climate_CLIMATE_SCHEMA = {
         target_temperature_low_command_topic?: any;
         target_temperature_low_state_topic?: any;
         target_temperature_state_topic?: any;
-        visual?: Climate_CLIMATE_SCHEMAVisual;
-        web_server?: Climate_CLIMATE_SCHEMAWebServer;
+        visual?: ClimateCLIMATESCHEMAVisual;
+        web_server?: ClimateCLIMATESCHEMAWebServer;
         id?: any;
         name?: any;
         icon?: any;
         internal?: any;
         disabled_by_default?: any;
         entity_category?: any;
-    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMMAND_COMPONENT_SCHEMA;
+    } & CoreENTITYBASESCHEMA & CoreMQTTCOMMANDCOMPONENTSCHEMA;

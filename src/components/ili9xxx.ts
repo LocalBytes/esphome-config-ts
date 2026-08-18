@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Ili9xxxDisplay extends EsphomeComponent<Ili9xxxDisplayConfig> {
     componentName: string = "ili9xxx.display";
@@ -57,4 +57,4 @@ export type Ili9xxxDisplayConfig = {
         spi_mode?: Ili9xxxDisplayConfigSpiMode;
         transform?: Ili9xxxDisplayConfigTransform;
         update_interval?: any;
-    } & DisplayFULL_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & DisplayFULLDISPLAYSCHEMA & CoreCOMPONENTSCHEMA;

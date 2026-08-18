@@ -9,9 +9,9 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class Apds9960 extends EsphomeComponent<Apds9960Config> {
     componentName: string = "apds9960";
@@ -24,7 +24,7 @@ export type Apds9960ConfigGestureWaitTime = '0ms' | '2.8ms' | '5.6ms' | '8.4ms' 
 export type Apds9960ConfigLedDrive = '100ma' | '50ma' | '25ma' | '12.5ma';
 export type Apds9960ConfigProximityGain = '1x' | '2x' | '4x' | '8x';
 
-export interface Apds9960Config extends CoreCOMPONENT_SCHEMA {
+export interface Apds9960Config extends CoreCOMPONENTSCHEMA {
     address?: any;
     ambient_light_gain?: Apds9960ConfigAmbientLightGain;
     gesture_gain?: Apds9960ConfigGestureGain;
@@ -43,7 +43,7 @@ export class Apds9960BinarySensor extends EsphomeComponent<Apds9960BinarySensorC
 
 export type Apds9960BinarySensorConfigDirection = 'up' | 'down' | 'left' | 'right';
 
-export interface Apds9960BinarySensorConfig extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface Apds9960BinarySensorConfig extends BinarySensorBINARYSENSORSCHEMA {
     apds9960_id?: ID;
     device_class?: any;
     direction: Apds9960BinarySensorConfigDirection;
@@ -55,7 +55,7 @@ export class Apds9960Sensor extends EsphomeComponent<Apds9960SensorConfig> {
 
 export type Apds9960SensorConfigType = 'clear' | 'red' | 'green' | 'blue' | 'proximity';
 
-export interface Apds9960SensorConfig extends Sensor_SENSOR_SCHEMA {
+export interface Apds9960SensorConfig extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     apds9960_id?: ID;
     icon?: any;

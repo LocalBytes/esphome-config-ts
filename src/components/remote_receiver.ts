@@ -9,9 +9,9 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMicroseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { RemoteBaseRC_SWITCH_PROTOCOL_SCHEMA } from "./remote_base.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { CorePositiveTimePeriodMicroseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { RemoteBaseRCSWITCHPROTOCOLSCHEMA } from "./remote_base.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
 
 export class RemoteReceiver extends EsphomeComponent<RemoteReceiverConfig> {
     componentName: string = "remote_receiver";
@@ -20,7 +20,7 @@ export class RemoteReceiver extends EsphomeComponent<RemoteReceiverConfig> {
 export type RemoteReceiverConfigFilter = CorePositiveTimePeriodMicroseconds;
 export type RemoteReceiverConfigIdle = CorePositiveTimePeriodMicroseconds;
 
-export interface RemoteReceiverConfig extends CoreCOMPONENT_SCHEMA {
+export interface RemoteReceiverConfig extends CoreCOMPONENTSCHEMA {
     buffer_size?: any;
     carrier_duty_percent?: any;
     carrier_frequency?: number;
@@ -232,14 +232,14 @@ export interface RemoteReceiverBinarySensorConfigRc6 {
     command: string;
 }
 
-export type RemoteReceiverBinarySensorConfigRcSwitchRawProtocol = RemoteBaseRC_SWITCH_PROTOCOL_SCHEMA;
+export type RemoteReceiverBinarySensorConfigRcSwitchRawProtocol = RemoteBaseRCSWITCHPROTOCOLSCHEMA;
 
 export interface RemoteReceiverBinarySensorConfigRcSwitchRaw {
     code: string;
     protocol?: RemoteReceiverBinarySensorConfigRcSwitchRawProtocol;
 }
 
-export type RemoteReceiverBinarySensorConfigRcSwitchTypeAProtocol = RemoteBaseRC_SWITCH_PROTOCOL_SCHEMA;
+export type RemoteReceiverBinarySensorConfigRcSwitchTypeAProtocol = RemoteBaseRCSWITCHPROTOCOLSCHEMA;
 
 export interface RemoteReceiverBinarySensorConfigRcSwitchTypeA {
     device: string;
@@ -248,7 +248,7 @@ export interface RemoteReceiverBinarySensorConfigRcSwitchTypeA {
     state: boolean;
 }
 
-export type RemoteReceiverBinarySensorConfigRcSwitchTypeBProtocol = RemoteBaseRC_SWITCH_PROTOCOL_SCHEMA;
+export type RemoteReceiverBinarySensorConfigRcSwitchTypeBProtocol = RemoteBaseRCSWITCHPROTOCOLSCHEMA;
 
 export interface RemoteReceiverBinarySensorConfigRcSwitchTypeB {
     address: number;
@@ -258,7 +258,7 @@ export interface RemoteReceiverBinarySensorConfigRcSwitchTypeB {
 }
 
 export type RemoteReceiverBinarySensorConfigRcSwitchTypeCFamily = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p';
-export type RemoteReceiverBinarySensorConfigRcSwitchTypeCProtocol = RemoteBaseRC_SWITCH_PROTOCOL_SCHEMA;
+export type RemoteReceiverBinarySensorConfigRcSwitchTypeCProtocol = RemoteBaseRCSWITCHPROTOCOLSCHEMA;
 
 export interface RemoteReceiverBinarySensorConfigRcSwitchTypeC {
     device: number;
@@ -269,7 +269,7 @@ export interface RemoteReceiverBinarySensorConfigRcSwitchTypeC {
 }
 
 export type RemoteReceiverBinarySensorConfigRcSwitchTypeDGroup = 'a' | 'b' | 'c' | 'd';
-export type RemoteReceiverBinarySensorConfigRcSwitchTypeDProtocol = RemoteBaseRC_SWITCH_PROTOCOL_SCHEMA;
+export type RemoteReceiverBinarySensorConfigRcSwitchTypeDProtocol = RemoteBaseRCSWITCHPROTOCOLSCHEMA;
 export type RemoteReceiverBinarySensorConfigRcSwitchTypeDRepeatWaitTime = CorePositiveTimePeriodMicroseconds;
 
 export interface RemoteReceiverBinarySensorConfigRcSwitchTypeDRepeat {
@@ -365,4 +365,4 @@ export type RemoteReceiverBinarySensorConfig = {
         symphony: RemoteReceiverBinarySensorConfigSymphony;
         toshiba_ac: RemoteReceiverBinarySensorConfigToshibaAc;
         toto: RemoteReceiverBinarySensorConfigToto;
-    } & BinarySensor_BINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BinarySensorBINARYSENSORSCHEMA & CoreCOMPONENTSCHEMA;

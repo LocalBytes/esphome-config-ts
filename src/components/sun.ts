@@ -9,9 +9,9 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class Sun extends EsphomeComponent<SunConfig> {
     componentName: string = "sun";
@@ -40,7 +40,7 @@ export type SunSensorConfig = {
         type: SunSensorConfigType;
         unit_of_measurement?: any;
         update_interval?: any;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class SunTextSensor extends EsphomeComponent<SunTextSensorConfig> {
     componentName: string = "sun.text_sensor";
@@ -54,4 +54,4 @@ export type SunTextSensorConfig = {
         sun_id?: ID;
         type: SunTextSensorConfigType;
         update_interval?: any;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;

@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class LedcOutput extends EsphomeComponent<LedcOutputConfig> {
     componentName: string = "ledc.output";
@@ -22,4 +22,4 @@ export type LedcOutputConfig = {
         id: string;
         phase_angle?: any;
         pin: Pin;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;

@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { UartUART_DEVICE_SCHEMA } from "./uart.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { UartUARTDEVICESCHEMA } from "./uart.js";
 
 export class ZwaveProxy extends EsphomeComponent<ZwaveProxyConfig> {
     componentName: string = "zwave_proxy";
@@ -18,4 +18,4 @@ export class ZwaveProxy extends EsphomeComponent<ZwaveProxyConfig> {
 
 export type ZwaveProxyConfig = {
         id?: ID;
-    } & CoreCOMPONENT_SCHEMA & UartUART_DEVICE_SCHEMA;
+    } & CoreCOMPONENTSCHEMA & UartUARTDEVICESCHEMA;

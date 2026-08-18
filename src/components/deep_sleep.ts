@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class DeepSleep extends EsphomeComponent<DeepSleepConfig> {
     componentName: string = "deep_sleep";
@@ -35,7 +35,7 @@ export interface DeepSleepConfigRunDuration {
 export type DeepSleepConfigSleepDuration = CorePositiveTimePeriodMilliseconds;
 export type DeepSleepConfigWakeupPinMode = 'IGNORE' | 'KEEP_AWAKE' | 'INVERT_WAKEUP';
 
-export interface DeepSleepConfig extends CoreCOMPONENT_SCHEMA {
+export interface DeepSleepConfig extends CoreCOMPONENTSCHEMA {
     esp32_ext1_wakeup?: DeepSleepConfigEsp32Ext1Wakeup;
     id?: ID;
     run_duration?: DeepSleepConfigRunDuration;
@@ -45,6 +45,6 @@ export interface DeepSleepConfig extends CoreCOMPONENT_SCHEMA {
     wakeup_pin_mode?: DeepSleepConfigWakeupPinMode;
 }
 
-export interface DeepSleepDEEP_SLEEP_ACTION_SCHEMA {
+export interface DeepSleepDEEPSLEEPACTIONSCHEMA {
     id?: ID;
 }

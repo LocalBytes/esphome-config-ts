@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Select_SELECT_SCHEMA } from "./select.js";
+import type { SelectSELECTSCHEMA } from "./select.js";
 
 export class Logger extends EsphomeComponent {
     componentName: string = "logger";
@@ -384,7 +384,7 @@ export type LoggerConfigLogsLight = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG'
 export type LoggerConfigLogsLightAddressable = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsLightAutomation = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsLightwaverfSensor = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
-export type LoggerConfigLogsLilygoT5_47Touchscreen = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
+export type LoggerConfigLogsLilygoT547Touchscreen = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsLm75b = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsLock = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsLogger = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
@@ -395,8 +395,8 @@ export type LoggerConfigLogsLtr390 = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG
 export type LoggerConfigLogsLtr501 = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsLtrAlsPs = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsLvgl = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
-export type LoggerConfigLogsM5stack_8angle = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
-export type LoggerConfigLogsM5stack_8angleLight = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
+export type LoggerConfigLogsM5stack8angle = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
+export type LoggerConfigLogsM5stack8angleLight = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsMatrixKeypad = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsMax17043 = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsMax31855 = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
@@ -440,7 +440,7 @@ export type LoggerConfigLogsMicronovaNumber = 'NONE' | 'ERROR' | 'WARN' | 'INFO'
 export type LoggerConfigLogsMicronovaSensor = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsMicronovaSwitch = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsMicronovaTextSensor = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
-export type LoggerConfigLogsMics_4514 = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
+export type LoggerConfigLogsMics4514 = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsMideaIrClimate = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsMitsubishiClimate = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsMitsubishiCn105Climate = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
@@ -549,7 +549,7 @@ export type LoggerConfigLogsPartitionLight = 'NONE' | 'ERROR' | 'WARN' | 'INFO' 
 export type LoggerConfigLogsPca6416a = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsPca9554 = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsPca9685 = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
-export type LoggerConfigLogsPcd_8544 = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
+export type LoggerConfigLogsPcd8544 = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsPcf85063 = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsPcf8574 = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsPcm5122 = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
@@ -875,8 +875,7 @@ export type LoggerConfigLogsVl53l0x = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBU
 export type LoggerConfigLogsVoiceAssistant = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsWakeOnLanButton = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsWaterHeater = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
-export type LoggerConfigLogsWaveshare_2.13v3 = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
-
+export type LoggerConfigLogsWaveshare213v3 = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsWaveshareEpaper = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsWebServer = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsWebServerOta = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
@@ -894,7 +893,7 @@ export type LoggerConfigLogsWifiLt = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG
 export type LoggerConfigLogsWifiPicoW = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsWifiSignalSensor = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsWireguard = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
-export type LoggerConfigLogsWl_134Sensor = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
+export type LoggerConfigLogsWl134Sensor = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsWledLightEffect = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsWts01 = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 export type LoggerConfigLogsX9cOutput = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
@@ -947,7 +946,7 @@ export class LoggerSelect extends EsphomeComponent<LoggerSelectConfig> {
     componentName: string = "logger.select";
 }
 
-export interface LoggerSelectConfig extends Select_SELECT_SCHEMA {
+export interface LoggerSelectConfig extends SelectSELECTSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: any;

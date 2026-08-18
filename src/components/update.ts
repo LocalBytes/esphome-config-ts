@@ -9,29 +9,29 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreENTITY_BASE_SCHEMA, CoreMQTT_COMMAND_COMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreENTITYBASESCHEMA, CoreMQTTCOMMANDCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Update extends EsphomeComponent {
     componentName: string = "update";
 }
 
-export type Update_UPDATE_SCHEMADeviceClass = '' | 'firmware';
+export type UpdateUPDATESCHEMADeviceClass = '' | 'firmware';
 
-export interface Update_UPDATE_SCHEMAWebServer {
+export interface UpdateUPDATESCHEMAWebServer {
     sorting_group_id?: ID;
     sorting_weight?: any;
     web_server_id?: ID;
 }
 
-export type Update_UPDATE_SCHEMA = {
-        device_class?: Update_UPDATE_SCHEMADeviceClass;
+export type UpdateUPDATESCHEMA = {
+        device_class?: UpdateUPDATESCHEMADeviceClass;
         entity_category?: any;
         mqtt_id?: any;
         on_update_available?: object[];
-        web_server?: Update_UPDATE_SCHEMAWebServer;
+        web_server?: UpdateUPDATESCHEMAWebServer;
         id?: any;
         name?: any;
         disabled_by_default?: any;
         icon?: any;
         internal?: any;
-    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMMAND_COMPONENT_SCHEMA;
+    } & CoreENTITYBASESCHEMA & CoreMQTTCOMMANDCOMPONENTSCHEMA;

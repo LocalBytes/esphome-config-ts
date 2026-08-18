@@ -9,23 +9,23 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Climate_CLIMATE_SCHEMA } from "./climate.js";
-import type { Cover_COVER_SCHEMA } from "./cover.js";
-import type { Fan_FAN_SCHEMA } from "./fan.js";
-import type { LightBRIGHTNESS_ONLY_LIGHT_SCHEMA } from "./light.js";
-import type { Number_NUMBER_SCHEMA } from "./number.js";
-import type { Select_SELECT_SCHEMA } from "./select.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
+import type { CoverCOVERSCHEMA } from "./cover.js";
+import type { FanFANSCHEMA } from "./fan.js";
+import type { LightBRIGHTNESSONLYLIGHTSCHEMA } from "./light.js";
+import type { NumberNUMBERSCHEMA } from "./number.js";
+import type { SelectSELECTSCHEMA } from "./select.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class Tuya extends EsphomeComponent<TuyaConfig> {
     componentName: string = "tuya";
 }
 
-export interface TuyaConfig extends CoreCOMPONENT_SCHEMA {
+export interface TuyaConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     ignore_mcu_update_on_datapoints?: number[];
     on_datapoint_update?: object[];
@@ -42,7 +42,7 @@ export type TuyaBinarySensorConfig = {
         id?: any;
         sensor_datapoint: number;
         tuya_id?: ID;
-    } & BinarySensor_BINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BinarySensorBINARYSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class TuyaClimate extends EsphomeComponent<TuyaClimateConfig> {
     componentName: string = "tuya.climate";
@@ -102,7 +102,7 @@ export type TuyaClimateConfig = {
         target_temperature_multiplier?: any;
         temperature_multiplier?: any;
         tuya_id?: ID;
-    } & Climate_CLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & ClimateCLIMATESCHEMA & CoreCOMPONENTSCHEMA;
 
 export class TuyaCover extends EsphomeComponent<TuyaCoverConfig> {
     componentName: string = "tuya.cover";
@@ -121,7 +121,7 @@ export type TuyaCoverConfig = {
         position_report_datapoint?: number;
         restore_mode?: TuyaCoverConfigRestoreMode;
         tuya_id?: ID;
-    } & Cover_COVER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & CoverCOVERSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class TuyaFan extends EsphomeComponent<TuyaFanConfig> {
     componentName: string = "tuya.fan";
@@ -135,7 +135,7 @@ export type TuyaFanConfig = {
         speed_datapoint?: number;
         switch_datapoint?: number;
         tuya_id?: ID;
-    } & Fan_FAN_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & FanFANSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class TuyaLight extends EsphomeComponent<TuyaLightConfig> {
     componentName: string = "tuya.light";
@@ -161,7 +161,7 @@ export type TuyaLightConfig = {
         switch_datapoint?: number;
         tuya_id?: ID;
         warm_white_color_temperature?: any;
-    } & LightBRIGHTNESS_ONLY_LIGHT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & LightBRIGHTNESSONLYLIGHTSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class TuyaNumber extends EsphomeComponent<TuyaNumberConfig> {
     componentName: string = "tuya.number";
@@ -184,7 +184,7 @@ export type TuyaNumberConfig = {
         number_datapoint: number;
         step: string;
         tuya_id?: ID;
-    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & NumberNUMBERSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class TuyaSelect extends EsphomeComponent<TuyaSelectConfig> {
     componentName: string = "tuya.select";
@@ -197,7 +197,7 @@ export type TuyaSelectConfig = {
         optimistic?: boolean;
         options: string;
         tuya_id?: ID;
-    } & Select_SELECT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SelectSELECTSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class TuyaSensor extends EsphomeComponent<TuyaSensorConfig> {
     componentName: string = "tuya.sensor";
@@ -207,7 +207,7 @@ export type TuyaSensorConfig = {
         id?: any;
         sensor_datapoint: number;
         tuya_id?: ID;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class TuyaSwitch extends EsphomeComponent<TuyaSwitchConfig> {
     componentName: string = "tuya.switch";
@@ -217,7 +217,7 @@ export type TuyaSwitchConfig = {
         id?: ID;
         switch_datapoint: number;
         tuya_id?: ID;
-    } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class TuyaTextSensor extends EsphomeComponent<TuyaTextSensorConfig> {
     componentName: string = "tuya.text_sensor";
@@ -227,4 +227,4 @@ export type TuyaTextSensorConfig = {
         id?: any;
         sensor_datapoint: number;
         tuya_id?: ID;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;

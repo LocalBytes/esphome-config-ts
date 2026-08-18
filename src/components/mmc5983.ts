@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class Mmc5983Sensor extends EsphomeComponent<Mmc5983SensorConfig> {
     componentName: string = "mmc5983.sensor";
@@ -20,7 +20,7 @@ export type Mmc5983SensorConfigFieldStrengthX = Mmc5983SensorFieldStrengthSchema
 export type Mmc5983SensorConfigFieldStrengthY = Mmc5983SensorFieldStrengthSchema;
 export type Mmc5983SensorConfigFieldStrengthZ = Mmc5983SensorFieldStrengthSchema;
 
-export interface Mmc5983SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Mmc5983SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     field_strength_x?: Mmc5983SensorConfigFieldStrengthX;
     field_strength_y?: Mmc5983SensorConfigFieldStrengthY;
@@ -30,7 +30,7 @@ export interface Mmc5983SensorConfig extends CoreCOMPONENT_SCHEMA {
     update_interval?: any;
 }
 
-export interface Mmc5983SensorFieldStrengthSchema extends Sensor_SENSOR_SCHEMA {
+export interface Mmc5983SensorFieldStrengthSchema extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;

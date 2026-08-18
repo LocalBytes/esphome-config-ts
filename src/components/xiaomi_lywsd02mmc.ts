@@ -9,15 +9,15 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { BthomeMithermometerBLE_DEVICE_SCHEMA } from "./bthome_mithermometer.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { BthomeMithermometerBLEDEVICESCHEMA } from "./bthome_mithermometer.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class XiaomiLywsd02mmcSensor extends EsphomeComponent<XiaomiLywsd02mmcSensorConfig> {
     componentName: string = "xiaomi_lywsd02mmc.sensor";
 }
 
-export interface XiaomiLywsd02mmcSensorConfigBatteryLevel extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiLywsd02mmcSensorConfigBatteryLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -25,14 +25,14 @@ export interface XiaomiLywsd02mmcSensorConfigBatteryLevel extends Sensor_SENSOR_
     unit_of_measurement?: any;
 }
 
-export interface XiaomiLywsd02mmcSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiLywsd02mmcSensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface XiaomiLywsd02mmcSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiLywsd02mmcSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -46,4 +46,4 @@ export type XiaomiLywsd02mmcSensorConfig = {
         id?: ID;
         mac_address: string;
         temperature?: XiaomiLywsd02mmcSensorConfigTemperature;
-    } & BthomeMithermometerBLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BthomeMithermometerBLEDEVICESCHEMA & CoreCOMPONENTSCHEMA;

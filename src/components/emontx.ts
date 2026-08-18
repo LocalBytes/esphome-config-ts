@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class Emontx extends EsphomeComponent<EmontxConfig> {
     componentName: string = "emontx";
 }
 
-export interface EmontxConfig extends CoreCOMPONENT_SCHEMA {
+export interface EmontxConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     on_data?: object[];
     on_json?: object[];
@@ -27,7 +27,7 @@ export class EmontxSensor extends EsphomeComponent<EmontxSensorConfig> {
     componentName: string = "emontx.sensor";
 }
 
-export interface EmontxSensorConfig extends Sensor_SENSOR_SCHEMA {
+export interface EmontxSensorConfig extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     emontx_id?: ID;
     id?: any;

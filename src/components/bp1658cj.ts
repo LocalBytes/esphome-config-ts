@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
 
 export class Bp1658cj extends EsphomeComponent<Bp1658cjConfig> {
     componentName: string = "bp1658cj";
 }
 
-export interface Bp1658cjConfig extends CoreCOMPONENT_SCHEMA {
+export interface Bp1658cjConfig extends CoreCOMPONENTSCHEMA {
     clock_pin: Pin;
     data_pin: Pin;
     id?: ID;
@@ -32,4 +32,4 @@ export type Bp1658cjOutputConfig = {
         bp1658cj_id?: ID;
         channel: number;
         id: string;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;

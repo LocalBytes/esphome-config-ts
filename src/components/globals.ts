@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Globals extends EsphomeComponent<GlobalsConfig> {
     componentName: string = "globals";
 }
 
-export interface GlobalsConfig extends CoreCOMPONENT_SCHEMA {
+export interface GlobalsConfig extends CoreCOMPONENTSCHEMA {
     id: string;
     initial_value?: string;
     max_restore_data_length?: number;

@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Lc709203fSensor extends EsphomeComponent<Lc709203fSensorConfig> {
     componentName: string = "lc709203f.sensor";
 }
 
-export interface Lc709203fSensorConfigBatteryLevel extends Sensor_SENSOR_SCHEMA {
+export interface Lc709203fSensorConfigBatteryLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -24,7 +24,7 @@ export interface Lc709203fSensorConfigBatteryLevel extends Sensor_SENSOR_SCHEMA 
     unit_of_measurement?: any;
 }
 
-export interface Lc709203fSensorConfigBatteryVoltage extends Sensor_SENSOR_SCHEMA {
+export interface Lc709203fSensorConfigBatteryVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -32,7 +32,7 @@ export interface Lc709203fSensorConfigBatteryVoltage extends Sensor_SENSOR_SCHEM
     unit_of_measurement?: any;
 }
 
-export interface Lc709203fSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Lc709203fSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     b_constant: number;
     device_class?: any;
@@ -43,7 +43,7 @@ export interface Lc709203fSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
 
 export type Lc709203fSensorConfigVoltage = '3.7' | '3.8';
 
-export interface Lc709203fSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Lc709203fSensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     battery_level?: Lc709203fSensorConfigBatteryLevel;
     battery_voltage?: Lc709203fSensorConfigBatteryVoltage;

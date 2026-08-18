@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class TotalDailyEnergySensor extends EsphomeComponent<TotalDailyEnergySensorConfig> {
     componentName: string = "total_daily_energy.sensor";
@@ -25,4 +25,4 @@ export type TotalDailyEnergySensorConfig = {
         restore?: boolean;
         state_class?: any;
         time_id?: ID;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

@@ -9,10 +9,10 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodSeconds, CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CorePositiveTimePeriodSeconds, CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class Wireguard extends EsphomeComponent<WireguardConfig> {
     componentName: string = "wireguard";
@@ -21,7 +21,7 @@ export class Wireguard extends EsphomeComponent<WireguardConfig> {
 export type WireguardConfigPeerPersistentKeepalive = CorePositiveTimePeriodSeconds;
 export type WireguardConfigRebootTimeout = CorePositiveTimePeriodMilliseconds;
 
-export interface WireguardConfig extends CoreCOMPONENT_SCHEMA {
+export interface WireguardConfig extends CoreCOMPONENTSCHEMA {
     address: string;
     id?: ID;
     netmask?: any;
@@ -42,11 +42,11 @@ export class WireguardBinarySensor extends EsphomeComponent<WireguardBinarySenso
     componentName: string = "wireguard.binary_sensor";
 }
 
-export interface WireguardBinarySensorConfigEnabled extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface WireguardBinarySensorConfigEnabled extends BinarySensorBINARYSENSORSCHEMA {
     entity_category?: any;
 }
 
-export interface WireguardBinarySensorConfigStatus extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface WireguardBinarySensorConfigStatus extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
 }
 
@@ -60,7 +60,7 @@ export class WireguardSensor extends EsphomeComponent<WireguardSensorConfig> {
     componentName: string = "wireguard.sensor";
 }
 
-export interface WireguardSensorConfigLatestHandshake extends Sensor_SENSOR_SCHEMA {
+export interface WireguardSensorConfigLatestHandshake extends SensorSENSORSCHEMA {
     device_class?: any;
     entity_category?: any;
 }
@@ -74,7 +74,7 @@ export class WireguardTextSensor extends EsphomeComponent<WireguardTextSensorCon
     componentName: string = "wireguard.text_sensor";
 }
 
-export interface WireguardTextSensorConfigAddress extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface WireguardTextSensorConfigAddress extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
 }
 

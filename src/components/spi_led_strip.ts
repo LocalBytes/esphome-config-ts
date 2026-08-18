@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { LightADDRESSABLE_LIGHT_SCHEMA } from "./light.js";
+import type { LightADDRESSABLELIGHTSCHEMA } from "./light.js";
 
 export class SpiLedStripLight extends EsphomeComponent<SpiLedStripLightConfig> {
     componentName: string = "spi_led_strip.light";
@@ -17,7 +17,7 @@ export class SpiLedStripLight extends EsphomeComponent<SpiLedStripLightConfig> {
 
 export type SpiLedStripLightConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 
-export interface SpiLedStripLightConfig extends LightADDRESSABLE_LIGHT_SCHEMA {
+export interface SpiLedStripLightConfig extends LightADDRESSABLELIGHTSCHEMA {
     cs_pin?: Pin;
     data_rate?: any;
     num_leds?: number;

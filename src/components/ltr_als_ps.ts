@@ -9,27 +9,27 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CorePositiveTimePeriodSeconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CorePositiveTimePeriodSeconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class LtrAlsPsSensor extends EsphomeComponent<LtrAlsPsSensorConfig> {
     componentName: string = "ltr_als_ps.sensor";
 }
 
-export interface LtrAlsPsSensorConfigActualGain extends Sensor_SENSOR_SCHEMA {
+export interface LtrAlsPsSensorConfigActualGain extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
 }
 
-export interface LtrAlsPsSensorConfigActualIntegrationTime extends Sensor_SENSOR_SCHEMA {
+export interface LtrAlsPsSensorConfigActualIntegrationTime extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface LtrAlsPsSensorConfigAmbientLight extends Sensor_SENSOR_SCHEMA {
+export interface LtrAlsPsSensorConfigAmbientLight extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -37,7 +37,7 @@ export interface LtrAlsPsSensorConfigAmbientLight extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface LtrAlsPsSensorConfigFullSpectrumCounts extends Sensor_SENSOR_SCHEMA {
+export interface LtrAlsPsSensorConfigFullSpectrumCounts extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
@@ -46,7 +46,7 @@ export interface LtrAlsPsSensorConfigFullSpectrumCounts extends Sensor_SENSOR_SC
 
 export type LtrAlsPsSensorConfigGain = '1X' | '2X' | '4X' | '8X' | '48X' | '96X';
 
-export interface LtrAlsPsSensorConfigInfraredCounts extends Sensor_SENSOR_SCHEMA {
+export interface LtrAlsPsSensorConfigInfraredCounts extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
@@ -55,7 +55,7 @@ export interface LtrAlsPsSensorConfigInfraredCounts extends Sensor_SENSOR_SCHEMA
 
 export type LtrAlsPsSensorConfigPsCooldown = CorePositiveTimePeriodSeconds;
 
-export interface LtrAlsPsSensorConfigPsCounts extends Sensor_SENSOR_SCHEMA {
+export interface LtrAlsPsSensorConfigPsCounts extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
@@ -65,7 +65,7 @@ export interface LtrAlsPsSensorConfigPsCounts extends Sensor_SENSOR_SCHEMA {
 export type LtrAlsPsSensorConfigPsGain = '16X' | '32X' | '64X';
 export type LtrAlsPsSensorConfigType = 'ALS' | 'PS' | 'ALS_PS';
 
-export interface LtrAlsPsSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface LtrAlsPsSensorConfig extends CoreCOMPONENTSCHEMA {
     actual_gain?: LtrAlsPsSensorConfigActualGain;
     actual_integration_time?: LtrAlsPsSensorConfigActualIntegrationTime;
     address?: any;

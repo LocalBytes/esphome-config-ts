@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
 
 export class Tlc59208f extends EsphomeComponent<Tlc59208fConfig> {
     componentName: string = "tlc59208f";
 }
 
-export interface Tlc59208fConfig extends CoreCOMPONENT_SCHEMA {
+export interface Tlc59208fConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: ID;
@@ -26,7 +26,7 @@ export class Tlc59208fOutput extends EsphomeComponent<Tlc59208fOutputConfig> {
     componentName: string = "tlc59208f.output";
 }
 
-export interface Tlc59208fOutputConfig extends OutputFLOAT_OUTPUT_SCHEMA {
+export interface Tlc59208fOutputConfig extends OutputFLOATOUTPUTSCHEMA {
     channel: number;
     id: string;
     tlc59208f_id?: ID;

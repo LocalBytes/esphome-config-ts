@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Rp2040Ble extends EsphomeComponent<Rp2040BleConfig> {
     componentName: string = "rp2040_ble";
 }
 
-export interface Rp2040BleConfig extends CoreCOMPONENT_SCHEMA {
+export interface Rp2040BleConfig extends CoreCOMPONENTSCHEMA {
     enable_on_boot?: boolean;
     id?: ID;
 }

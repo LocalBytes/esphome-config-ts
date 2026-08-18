@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class UsbCdcAcm extends EsphomeComponent<UsbCdcAcmConfig> {
     componentName: string = "usb_cdc_acm";
@@ -19,7 +19,7 @@ export interface UsbCdcAcmConfigInterfaces {
     id?: ID;
 }
 
-export interface UsbCdcAcmConfig extends CoreCOMPONENT_SCHEMA {
+export interface UsbCdcAcmConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     interfaces?: UsbCdcAcmConfigInterfaces[];
     rx_buffer_size?: number;

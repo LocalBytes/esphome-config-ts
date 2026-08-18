@@ -9,17 +9,17 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { OtaBASE_OTA_SCHEMA } from "./ota.js";
+import type { OtaBASEOTASCHEMA } from "./ota.js";
 
 export abstract class Core extends EsphomeComponent {
     componentName: string = "core";
 }
 
-export interface CoreCOMPONENT_SCHEMA {
+export interface CoreCOMPONENTSCHEMA {
     setup_priority?: any;
 }
 
-export interface CoreENTITY_BASE_SCHEMA {
+export interface CoreENTITYBASESCHEMA {
     device_id?: ID;
     disabled_by_default?: boolean;
     entity_category?: any;
@@ -28,7 +28,7 @@ export interface CoreENTITY_BASE_SCHEMA {
     name?: any;
 }
 
-export interface CoreGIT_SCHEMA {
+export interface CoreGITSCHEMA {
     password?: string;
     path: string;
     ref?: any;
@@ -36,19 +36,19 @@ export interface CoreGIT_SCHEMA {
     username?: string;
 }
 
-export interface CoreMQTT_COMMAND_COMPONENT_SCHEMA extends CoreMQTT_COMPONENT_SCHEMA {
+export interface CoreMQTTCOMMANDCOMPONENTSCHEMA extends CoreMQTTCOMPONENTSCHEMA {
     command_retain?: boolean;
     command_topic?: any;
 }
 
-export interface CoreMQTT_COMPONENT_SCHEMAAvailability {
+export interface CoreMQTTCOMPONENTSCHEMAAvailability {
     payload_available?: any;
     payload_not_available?: any;
     topic: string;
 }
 
-export interface CoreMQTT_COMPONENT_SCHEMA {
-    availability?: CoreMQTT_COMPONENT_SCHEMAAvailability;
+export interface CoreMQTTCOMPONENTSCHEMA {
+    availability?: CoreMQTTCOMPONENTSCHEMAAvailability;
     discovery?: boolean;
     qos?: any;
     retain?: boolean;
@@ -136,4 +136,4 @@ export type EsphomeOtaConfig = {
         password?: string;
         port?: number;
         version?: EsphomeOtaConfigVersion;
-    } & OtaBASE_OTA_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OtaBASEOTASCHEMA & CoreCOMPONENTSCHEMA;

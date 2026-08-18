@@ -9,28 +9,28 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class HoneywellHihI2cSensor extends EsphomeComponent<HoneywellHihI2cSensorConfig> {
     componentName: string = "honeywell_hih_i2c.sensor";
 }
 
-export interface HoneywellHihI2cSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface HoneywellHihI2cSensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface HoneywellHihI2cSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface HoneywellHihI2cSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface HoneywellHihI2cSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface HoneywellHihI2cSensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     humidity?: HoneywellHihI2cSensorConfigHumidity;
     i2c_id?: ID;

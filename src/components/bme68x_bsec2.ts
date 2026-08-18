@@ -10,29 +10,29 @@
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMinutes } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export abstract class Bme68xBsec2 extends EsphomeComponent {
     componentName: string = "bme68x_bsec2";
 }
 
-export type Bme68xBsec2CONFIG_SCHEMA_BASEAlgorithmOutput = 'classification' | 'regression';
-export type Bme68xBsec2CONFIG_SCHEMA_BASEModel = 'bme680' | 'bme688';
-export type Bme68xBsec2CONFIG_SCHEMA_BASEOperatingAge = '4d' | '28d';
-export type Bme68xBsec2CONFIG_SCHEMA_BASESampleRate = 'LP' | 'ULP';
-export type Bme68xBsec2CONFIG_SCHEMA_BASEStateSaveInterval = CorePositiveTimePeriodMinutes;
-export type Bme68xBsec2CONFIG_SCHEMA_BASESupplyVoltage = '1.8V' | '3.3V';
+export type Bme68xBsec2CONFIGSCHEMABASEAlgorithmOutput = 'classification' | 'regression';
+export type Bme68xBsec2CONFIGSCHEMABASEModel = 'bme680' | 'bme688';
+export type Bme68xBsec2CONFIGSCHEMABASEOperatingAge = '4d' | '28d';
+export type Bme68xBsec2CONFIGSCHEMABASESampleRate = 'LP' | 'ULP';
+export type Bme68xBsec2CONFIGSCHEMABASEStateSaveInterval = CorePositiveTimePeriodMinutes;
+export type Bme68xBsec2CONFIGSCHEMABASESupplyVoltage = '1.8V' | '3.3V';
 
-export interface Bme68xBsec2CONFIG_SCHEMA_BASE {
-    algorithm_output?: Bme68xBsec2CONFIG_SCHEMA_BASEAlgorithmOutput;
+export interface Bme68xBsec2CONFIGSCHEMABASE {
+    algorithm_output?: Bme68xBsec2CONFIGSCHEMABASEAlgorithmOutput;
     id?: ID;
-    model: Bme68xBsec2CONFIG_SCHEMA_BASEModel;
-    operating_age?: Bme68xBsec2CONFIG_SCHEMA_BASEOperatingAge;
+    model: Bme68xBsec2CONFIGSCHEMABASEModel;
+    operating_age?: Bme68xBsec2CONFIGSCHEMABASEOperatingAge;
     raw_data_id?: ID;
-    sample_rate?: Bme68xBsec2CONFIG_SCHEMA_BASESampleRate;
-    state_save_interval?: Bme68xBsec2CONFIG_SCHEMA_BASEStateSaveInterval;
-    supply_voltage?: Bme68xBsec2CONFIG_SCHEMA_BASESupplyVoltage;
+    sample_rate?: Bme68xBsec2CONFIGSCHEMABASESampleRate;
+    state_save_interval?: Bme68xBsec2CONFIGSCHEMABASEStateSaveInterval;
+    supply_voltage?: Bme68xBsec2CONFIGSCHEMABASESupplyVoltage;
     temperature_offset?: any;
 }
 
@@ -40,21 +40,21 @@ export class Bme68xBsec2Sensor extends EsphomeComponent<Bme68xBsec2SensorConfig>
     componentName: string = "bme68x_bsec2.sensor";
 }
 
-export interface Bme68xBsec2SensorConfigBreathVocEquivalent extends Sensor_SENSOR_SCHEMA {
+export interface Bme68xBsec2SensorConfigBreathVocEquivalent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Bme68xBsec2SensorConfigCo2Equivalent extends Sensor_SENSOR_SCHEMA {
+export interface Bme68xBsec2SensorConfigCo2Equivalent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Bme68xBsec2SensorConfigGasResistance extends Sensor_SENSOR_SCHEMA {
+export interface Bme68xBsec2SensorConfigGasResistance extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
@@ -63,7 +63,7 @@ export interface Bme68xBsec2SensorConfigGasResistance extends Sensor_SENSOR_SCHE
 
 export type Bme68xBsec2SensorConfigHumiditySampleRate = 'LP' | 'ULP';
 
-export interface Bme68xBsec2SensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface Bme68xBsec2SensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -72,20 +72,20 @@ export interface Bme68xBsec2SensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Bme68xBsec2SensorConfigIaq extends Sensor_SENSOR_SCHEMA {
+export interface Bme68xBsec2SensorConfigIaq extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Bme68xBsec2SensorConfigIaqAccuracy extends Sensor_SENSOR_SCHEMA {
+export interface Bme68xBsec2SensorConfigIaqAccuracy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
 }
 
-export interface Bme68xBsec2SensorConfigIaqStatic extends Sensor_SENSOR_SCHEMA {
+export interface Bme68xBsec2SensorConfigIaqStatic extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
@@ -94,7 +94,7 @@ export interface Bme68xBsec2SensorConfigIaqStatic extends Sensor_SENSOR_SCHEMA {
 
 export type Bme68xBsec2SensorConfigPressureSampleRate = 'LP' | 'ULP';
 
-export interface Bme68xBsec2SensorConfigPressure extends Sensor_SENSOR_SCHEMA {
+export interface Bme68xBsec2SensorConfigPressure extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     sample_rate?: Bme68xBsec2SensorConfigPressureSampleRate;
@@ -104,7 +104,7 @@ export interface Bme68xBsec2SensorConfigPressure extends Sensor_SENSOR_SCHEMA {
 
 export type Bme68xBsec2SensorConfigTemperatureSampleRate = 'LP' | 'ULP';
 
-export interface Bme68xBsec2SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Bme68xBsec2SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -131,7 +131,7 @@ export class Bme68xBsec2TextSensor extends EsphomeComponent<Bme68xBsec2TextSenso
     componentName: string = "bme68x_bsec2.text_sensor";
 }
 
-export interface Bme68xBsec2TextSensorConfigIaqAccuracy extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface Bme68xBsec2TextSensorConfigIaqAccuracy extends TextSensorTEXTSENSORSCHEMA {
     icon?: any;
 }
 

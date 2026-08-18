@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Ade7880Sensor extends EsphomeComponent<Ade7880SensorConfig> {
     componentName: string = "ade7880.sensor";
@@ -20,7 +20,7 @@ export interface Ade7880SensorConfigNeutralCalibration {
     current_gain: number;
 }
 
-export interface Ade7880SensorConfigNeutralCurrent extends Sensor_SENSOR_SCHEMA {
+export interface Ade7880SensorConfigNeutralCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -34,11 +34,11 @@ export interface Ade7880SensorConfigNeutral {
     name?: string;
 }
 
-export type Ade7880SensorConfigPhaseA = Ade7880SensorPOWER_CHANNEL_SCHEMA;
-export type Ade7880SensorConfigPhaseB = Ade7880SensorPOWER_CHANNEL_SCHEMA;
-export type Ade7880SensorConfigPhaseC = Ade7880SensorPOWER_CHANNEL_SCHEMA;
+export type Ade7880SensorConfigPhaseA = Ade7880SensorPOWERCHANNELSCHEMA;
+export type Ade7880SensorConfigPhaseB = Ade7880SensorPOWERCHANNELSCHEMA;
+export type Ade7880SensorConfigPhaseC = Ade7880SensorPOWERCHANNELSCHEMA;
 
-export interface Ade7880SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Ade7880SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     frequency?: any;
     i2c_id?: ID;
@@ -53,71 +53,71 @@ export interface Ade7880SensorConfig extends CoreCOMPONENT_SCHEMA {
     update_interval?: any;
 }
 
-export interface Ade7880SensorPOWER_CHANNEL_SCHEMAActivePower extends Sensor_SENSOR_SCHEMA {
+export interface Ade7880SensorPOWERCHANNELSCHEMAActivePower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ade7880SensorPOWER_CHANNEL_SCHEMAApparentPower extends Sensor_SENSOR_SCHEMA {
+export interface Ade7880SensorPOWERCHANNELSCHEMAApparentPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ade7880SensorPOWER_CHANNEL_SCHEMACalibration {
+export interface Ade7880SensorPOWERCHANNELSCHEMACalibration {
     current_gain: number;
     phase_angle: number;
     power_gain: number;
     voltage_gain: number;
 }
 
-export interface Ade7880SensorPOWER_CHANNEL_SCHEMACurrent extends Sensor_SENSOR_SCHEMA {
+export interface Ade7880SensorPOWERCHANNELSCHEMACurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ade7880SensorPOWER_CHANNEL_SCHEMAForwardActiveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ade7880SensorPOWERCHANNELSCHEMAForwardActiveEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ade7880SensorPOWER_CHANNEL_SCHEMAPowerFactor extends Sensor_SENSOR_SCHEMA {
+export interface Ade7880SensorPOWERCHANNELSCHEMAPowerFactor extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ade7880SensorPOWER_CHANNEL_SCHEMAReverseActiveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ade7880SensorPOWERCHANNELSCHEMAReverseActiveEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ade7880SensorPOWER_CHANNEL_SCHEMAVoltage extends Sensor_SENSOR_SCHEMA {
+export interface Ade7880SensorPOWERCHANNELSCHEMAVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ade7880SensorPOWER_CHANNEL_SCHEMA {
-    active_power: Ade7880SensorPOWER_CHANNEL_SCHEMAActivePower;
-    apparent_power: Ade7880SensorPOWER_CHANNEL_SCHEMAApparentPower;
-    calibration: Ade7880SensorPOWER_CHANNEL_SCHEMACalibration;
-    current: Ade7880SensorPOWER_CHANNEL_SCHEMACurrent;
-    forward_active_energy: Ade7880SensorPOWER_CHANNEL_SCHEMAForwardActiveEnergy;
+export interface Ade7880SensorPOWERCHANNELSCHEMA {
+    active_power: Ade7880SensorPOWERCHANNELSCHEMAActivePower;
+    apparent_power: Ade7880SensorPOWERCHANNELSCHEMAApparentPower;
+    calibration: Ade7880SensorPOWERCHANNELSCHEMACalibration;
+    current: Ade7880SensorPOWERCHANNELSCHEMACurrent;
+    forward_active_energy: Ade7880SensorPOWERCHANNELSCHEMAForwardActiveEnergy;
     id?: ID;
     name?: string;
-    power_factor: Ade7880SensorPOWER_CHANNEL_SCHEMAPowerFactor;
-    reverse_active_energy: Ade7880SensorPOWER_CHANNEL_SCHEMAReverseActiveEnergy;
-    voltage: Ade7880SensorPOWER_CHANNEL_SCHEMAVoltage;
+    power_factor: Ade7880SensorPOWERCHANNELSCHEMAPowerFactor;
+    reverse_active_energy: Ade7880SensorPOWERCHANNELSCHEMAReverseActiveEnergy;
+    voltage: Ade7880SensorPOWERCHANNELSCHEMAVoltage;
 }

@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Pm2005Sensor extends EsphomeComponent<Pm2005SensorConfig> {
     componentName: string = "pm2005.sensor";
 }
 
-export interface Pm2005SensorConfigPm_10_0 extends Sensor_SENSOR_SCHEMA {
+export interface Pm2005SensorConfigPm100 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -24,7 +24,7 @@ export interface Pm2005SensorConfigPm_10_0 extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Pm2005SensorConfigPm_1_0 extends Sensor_SENSOR_SCHEMA {
+export interface Pm2005SensorConfigPm10 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -32,7 +32,7 @@ export interface Pm2005SensorConfigPm_1_0 extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Pm2005SensorConfigPm_2_5 extends Sensor_SENSOR_SCHEMA {
+export interface Pm2005SensorConfigPm25 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -42,13 +42,13 @@ export interface Pm2005SensorConfigPm_2_5 extends Sensor_SENSOR_SCHEMA {
 
 export type Pm2005SensorConfigType = 'PM2005' | 'PM2105';
 
-export interface Pm2005SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Pm2005SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: ID;
-    pm_10_0?: Pm2005SensorConfigPm_10_0;
-    pm_1_0?: Pm2005SensorConfigPm_1_0;
-    pm_2_5?: Pm2005SensorConfigPm_2_5;
+    pm_10_0?: Pm2005SensorConfigPm100;
+    pm_1_0?: Pm2005SensorConfigPm10;
+    pm_2_5?: Pm2005SensorConfigPm25;
     type?: Pm2005SensorConfigType;
     update_interval?: any;
 }

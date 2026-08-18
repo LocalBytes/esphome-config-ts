@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class BParasiteSensor extends EsphomeComponent<BParasiteSensorConfig> {
     componentName: string = "b_parasite.sensor";
 }
 
-export interface BParasiteSensorConfigBatteryVoltage extends Sensor_SENSOR_SCHEMA {
+export interface BParasiteSensorConfigBatteryVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -24,35 +24,35 @@ export interface BParasiteSensorConfigBatteryVoltage extends Sensor_SENSOR_SCHEM
     unit_of_measurement?: any;
 }
 
-export interface BParasiteSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface BParasiteSensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface BParasiteSensorConfigIlluminance extends Sensor_SENSOR_SCHEMA {
+export interface BParasiteSensorConfigIlluminance extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface BParasiteSensorConfigMoisture extends Sensor_SENSOR_SCHEMA {
+export interface BParasiteSensorConfigMoisture extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface BParasiteSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface BParasiteSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface BParasiteSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface BParasiteSensorConfig extends CoreCOMPONENTSCHEMA {
     battery_voltage?: BParasiteSensorConfigBatteryVoltage;
     esp32_ble_id?: ID;
     humidity?: BParasiteSensorConfigHumidity;

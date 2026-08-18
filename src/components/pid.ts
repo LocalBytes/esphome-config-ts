@@ -9,9 +9,9 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Climate_CLIMATE_SCHEMA } from "./climate.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class PidClimate extends EsphomeComponent<PidClimateConfig> {
     componentName: string = "pid.climate";
@@ -37,7 +37,7 @@ export interface PidClimateConfigDeadbandParameters {
     threshold_low: string;
 }
 
-export interface PidClimateConfig extends Climate_CLIMATE_SCHEMA {
+export interface PidClimateConfig extends ClimateCLIMATESCHEMA {
     control_parameters: PidClimateConfigControlParameters;
     cool_output?: ID;
     deadband_parameters?: PidClimateConfigDeadbandParameters;
@@ -61,4 +61,4 @@ export type PidSensorConfig = {
         state_class?: any;
         type: PidSensorConfigType;
         unit_of_measurement?: any;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

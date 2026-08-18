@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Tc74Sensor extends EsphomeComponent<Tc74SensorConfig> {
     componentName: string = "tc74.sensor";
@@ -25,4 +25,4 @@ export type Tc74SensorConfig = {
         state_class?: any;
         unit_of_measurement?: any;
         update_interval?: any;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

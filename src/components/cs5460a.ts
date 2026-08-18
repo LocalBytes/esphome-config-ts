@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Cs5460a extends EsphomeComponent {
     componentName: string = "cs5460a";
@@ -20,7 +20,7 @@ export class Cs5460aSensor extends EsphomeComponent<Cs5460aSensorConfig> {
     componentName: string = "cs5460a.sensor";
 }
 
-export interface Cs5460aSensorConfigCurrent extends Sensor_SENSOR_SCHEMA {
+export interface Cs5460aSensorConfigCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -30,7 +30,7 @@ export interface Cs5460aSensorConfigCurrent extends Sensor_SENSOR_SCHEMA {
 export type Cs5460aSensorConfigCurrentGain = {};
 export type Cs5460aSensorConfigPgaGain = '10X' | '50X';
 
-export interface Cs5460aSensorConfigPower extends Sensor_SENSOR_SCHEMA {
+export interface Cs5460aSensorConfigPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -39,14 +39,14 @@ export interface Cs5460aSensorConfigPower extends Sensor_SENSOR_SCHEMA {
 
 export type Cs5460aSensorConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 
-export interface Cs5460aSensorConfigVoltage extends Sensor_SENSOR_SCHEMA {
+export interface Cs5460aSensorConfigVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Cs5460aSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Cs5460aSensorConfig extends CoreCOMPONENTSCHEMA {
     cs_pin?: Pin;
     current?: Cs5460aSensorConfigCurrent;
     current_gain?: Cs5460aSensorConfigCurrentGain;

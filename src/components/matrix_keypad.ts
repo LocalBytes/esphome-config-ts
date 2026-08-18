@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
 
 export class MatrixKeypad extends EsphomeComponent<MatrixKeypadConfig> {
     componentName: string = "matrix_keypad";
@@ -24,7 +24,7 @@ export interface MatrixKeypadConfigRows {
     pin: Pin;
 }
 
-export interface MatrixKeypadConfig extends CoreCOMPONENT_SCHEMA {
+export interface MatrixKeypadConfig extends CoreCOMPONENTSCHEMA {
     columns: MatrixKeypadConfigColumns[];
     debounce_time?: number;
     has_diodes?: boolean;
@@ -39,7 +39,7 @@ export class MatrixKeypadBinarySensor extends EsphomeComponent<MatrixKeypadBinar
     componentName: string = "matrix_keypad.binary_sensor";
 }
 
-export interface MatrixKeypadBinarySensorConfig extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface MatrixKeypadBinarySensorConfig extends BinarySensorBINARYSENSORSCHEMA {
     col?: number;
     id?: any;
     key?: string;

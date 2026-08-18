@@ -9,27 +9,27 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class SdmMeterSensor extends EsphomeComponent<SdmMeterSensorConfig> {
     componentName: string = "sdm_meter.sensor";
 }
 
-export interface SdmMeterSensorConfigExportActiveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface SdmMeterSensorConfigExportActiveEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SdmMeterSensorConfigExportReactiveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface SdmMeterSensorConfigExportReactiveEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SdmMeterSensorConfigFrequency extends Sensor_SENSOR_SCHEMA {
+export interface SdmMeterSensorConfigFrequency extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -37,31 +37,31 @@ export interface SdmMeterSensorConfigFrequency extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface SdmMeterSensorConfigImportActiveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface SdmMeterSensorConfigImportActiveEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SdmMeterSensorConfigImportReactiveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface SdmMeterSensorConfigImportReactiveEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export type SdmMeterSensorConfigPhaseA = SdmMeterSensorPHASE_SCHEMA;
-export type SdmMeterSensorConfigPhaseB = SdmMeterSensorPHASE_SCHEMA;
-export type SdmMeterSensorConfigPhaseC = SdmMeterSensorPHASE_SCHEMA;
+export type SdmMeterSensorConfigPhaseA = SdmMeterSensorPHASESCHEMA;
+export type SdmMeterSensorConfigPhaseB = SdmMeterSensorPHASESCHEMA;
+export type SdmMeterSensorConfigPhaseC = SdmMeterSensorPHASESCHEMA;
 
-export interface SdmMeterSensorConfigTotalPower extends Sensor_SENSOR_SCHEMA {
+export interface SdmMeterSensorConfigTotalPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SdmMeterSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface SdmMeterSensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     export_active_energy?: SdmMeterSensorConfigExportActiveEnergy;
     export_reactive_energy?: SdmMeterSensorConfigExportReactiveEnergy;
@@ -77,60 +77,60 @@ export interface SdmMeterSensorConfig extends CoreCOMPONENT_SCHEMA {
     update_interval?: any;
 }
 
-export interface SdmMeterSensorPHASE_SCHEMAActivePower extends Sensor_SENSOR_SCHEMA {
+export interface SdmMeterSensorPHASESCHEMAActivePower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SdmMeterSensorPHASE_SCHEMAApparentPower extends Sensor_SENSOR_SCHEMA {
+export interface SdmMeterSensorPHASESCHEMAApparentPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SdmMeterSensorPHASE_SCHEMACurrent extends Sensor_SENSOR_SCHEMA {
+export interface SdmMeterSensorPHASESCHEMACurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SdmMeterSensorPHASE_SCHEMAPhaseAngle extends Sensor_SENSOR_SCHEMA {
+export interface SdmMeterSensorPHASESCHEMAPhaseAngle extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SdmMeterSensorPHASE_SCHEMAPowerFactor extends Sensor_SENSOR_SCHEMA {
+export interface SdmMeterSensorPHASESCHEMAPowerFactor extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
 }
 
-export interface SdmMeterSensorPHASE_SCHEMAReactivePower extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface SdmMeterSensorPHASE_SCHEMAVoltage extends Sensor_SENSOR_SCHEMA {
+export interface SdmMeterSensorPHASESCHEMAReactivePower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SdmMeterSensorPHASE_SCHEMA {
-    active_power?: SdmMeterSensorPHASE_SCHEMAActivePower;
-    apparent_power?: SdmMeterSensorPHASE_SCHEMAApparentPower;
-    current?: SdmMeterSensorPHASE_SCHEMACurrent;
-    phase_angle?: SdmMeterSensorPHASE_SCHEMAPhaseAngle;
-    power_factor?: SdmMeterSensorPHASE_SCHEMAPowerFactor;
-    reactive_power?: SdmMeterSensorPHASE_SCHEMAReactivePower;
-    voltage?: SdmMeterSensorPHASE_SCHEMAVoltage;
+export interface SdmMeterSensorPHASESCHEMAVoltage extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface SdmMeterSensorPHASESCHEMA {
+    active_power?: SdmMeterSensorPHASESCHEMAActivePower;
+    apparent_power?: SdmMeterSensorPHASESCHEMAApparentPower;
+    current?: SdmMeterSensorPHASESCHEMACurrent;
+    phase_angle?: SdmMeterSensorPHASESCHEMAPhaseAngle;
+    power_factor?: SdmMeterSensorPHASESCHEMAPowerFactor;
+    reactive_power?: SdmMeterSensorPHASESCHEMAReactivePower;
+    voltage?: SdmMeterSensorPHASESCHEMAVoltage;
 }

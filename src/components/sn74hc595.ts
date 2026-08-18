@@ -37,7 +37,7 @@ export interface Sn74hc595ConfigSpi {
     sr_count?: any;
 }
 
-export interface Sn74hc595_COMMON_SCHEMA {
+export interface Sn74hc595COMMONSCHEMA {
     latch_pin: Pin;
     oe_pin?: Pin;
     sr_count?: number;

@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { TimeTIME_SCHEMA } from "./time.js";
+import type { TimeTIMESCHEMA } from "./time.js";
 
 export abstract class Rx8130 extends EsphomeComponent {
     componentName: string = "rx8130";
@@ -19,7 +19,7 @@ export class Rx8130Time extends EsphomeComponent<Rx8130TimeConfig> {
     componentName: string = "rx8130.time";
 }
 
-export interface Rx8130TimeConfig extends TimeTIME_SCHEMA {
+export interface Rx8130TimeConfig extends TimeTIMESCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: ID;

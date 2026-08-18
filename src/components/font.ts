@@ -36,7 +36,7 @@ export interface FontConfig {
     size?: number;
 }
 
-export interface FontEXTERNAL_FONT_SCHEMA {
+export interface FontEXTERNALFONTSCHEMA {
     italic?: boolean;
     refresh?: string;
     weight?: number;

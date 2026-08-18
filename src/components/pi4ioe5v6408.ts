@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Pi4ioe5v6408 extends EsphomeComponent<Pi4ioe5v6408Config> {
     componentName: string = "pi4ioe5v6408";
 }
 
-export interface Pi4ioe5v6408Config extends CoreCOMPONENT_SCHEMA {
+export interface Pi4ioe5v6408Config extends CoreCOMPONENTSCHEMA {
     address?: any;
     i2c_id?: ID;
     id: string;

@@ -9,54 +9,54 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class SelecMeterSensor extends EsphomeComponent<SelecMeterSensorConfig> {
     componentName: string = "selec_meter.sensor";
 }
 
-export interface SelecMeterSensorConfigActivePower extends Sensor_SENSOR_SCHEMA {
+export interface SelecMeterSensorConfigActivePower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SelecMeterSensorConfigApparentEnergy extends Sensor_SENSOR_SCHEMA {
+export interface SelecMeterSensorConfigApparentEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SelecMeterSensorConfigApparentPower extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface SelecMeterSensorConfigCurrent extends Sensor_SENSOR_SCHEMA {
+export interface SelecMeterSensorConfigApparentPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SelecMeterSensorConfigExportActiveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface SelecMeterSensorConfigCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SelecMeterSensorConfigExportReactiveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface SelecMeterSensorConfigExportActiveEnergy extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface SelecMeterSensorConfigExportReactiveEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SelecMeterSensorConfigFrequency extends Sensor_SENSOR_SCHEMA {
+export interface SelecMeterSensorConfigFrequency extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -64,74 +64,74 @@ export interface SelecMeterSensorConfigFrequency extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface SelecMeterSensorConfigImportActiveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface SelecMeterSensorConfigImportActiveEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SelecMeterSensorConfigImportReactiveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface SelecMeterSensorConfigImportReactiveEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SelecMeterSensorConfigMaximumDemandActivePower extends Sensor_SENSOR_SCHEMA {
+export interface SelecMeterSensorConfigMaximumDemandActivePower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SelecMeterSensorConfigMaximumDemandApparentPower extends Sensor_SENSOR_SCHEMA {
+export interface SelecMeterSensorConfigMaximumDemandApparentPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SelecMeterSensorConfigMaximumDemandReactivePower extends Sensor_SENSOR_SCHEMA {
+export interface SelecMeterSensorConfigMaximumDemandReactivePower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SelecMeterSensorConfigPowerFactor extends Sensor_SENSOR_SCHEMA {
+export interface SelecMeterSensorConfigPowerFactor extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
 }
 
-export interface SelecMeterSensorConfigReactivePower extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface SelecMeterSensorConfigTotalActiveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface SelecMeterSensorConfigReactivePower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SelecMeterSensorConfigTotalReactiveEnergy extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface SelecMeterSensorConfigVoltage extends Sensor_SENSOR_SCHEMA {
+export interface SelecMeterSensorConfigTotalActiveEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SelecMeterSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface SelecMeterSensorConfigTotalReactiveEnergy extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface SelecMeterSensorConfigVoltage extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface SelecMeterSensorConfig extends CoreCOMPONENTSCHEMA {
     active_power?: SelecMeterSensorConfigActivePower;
     address?: any;
     apparent_energy?: SelecMeterSensorConfigApparentEnergy;

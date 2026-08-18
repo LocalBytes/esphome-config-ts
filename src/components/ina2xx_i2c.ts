@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Ina2xxBaseINA2XX_SCHEMA } from "./ina2xx_base.js";
+import type { Ina2xxBaseINA2XXSCHEMA } from "./ina2xx_base.js";
 
 export class Ina2xxI2cSensor extends EsphomeComponent<Ina2xxI2cSensorConfig> {
     componentName: string = "ina2xx_i2c.sensor";
@@ -17,7 +17,7 @@ export class Ina2xxI2cSensor extends EsphomeComponent<Ina2xxI2cSensorConfig> {
 
 export type Ina2xxI2cSensorConfigModel = 'INA228' | 'INA238' | 'INA237';
 
-export interface Ina2xxI2cSensorConfig extends Ina2xxBaseINA2XX_SCHEMA {
+export interface Ina2xxI2cSensorConfig extends Ina2xxBaseINA2XXSCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: ID;

@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Statsd extends EsphomeComponent<StatsdConfig> {
     componentName: string = "statsd";
@@ -25,7 +25,7 @@ export interface StatsdConfigSensors {
     name: string;
 }
 
-export interface StatsdConfig extends CoreCOMPONENT_SCHEMA {
+export interface StatsdConfig extends CoreCOMPONENTSCHEMA {
     binary_sensors?: StatsdConfigBinarySensors[];
     host: string;
     id?: ID;

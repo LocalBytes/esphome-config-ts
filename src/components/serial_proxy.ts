@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class SerialProxy extends EsphomeComponent<SerialProxyConfig> {
     componentName: string = "serial_proxy";
@@ -17,7 +17,7 @@ export class SerialProxy extends EsphomeComponent<SerialProxyConfig> {
 
 export type SerialProxyConfigPortType = 'TTL' | 'RS232' | 'RS485';
 
-export interface SerialProxyConfig extends CoreCOMPONENT_SCHEMA {
+export interface SerialProxyConfig extends CoreCOMPONENTSCHEMA {
     dtr_pin?: Pin;
     id?: ID;
     name: string;

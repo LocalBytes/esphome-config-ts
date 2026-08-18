@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriod, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { CorePositiveTimePeriod, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
 
 export class BlePresenceBinarySensor extends EsphomeComponent<BlePresenceBinarySensorConfig> {
     componentName: string = "ble_presence.binary_sensor";
@@ -28,4 +28,4 @@ export type BlePresenceBinarySensorConfig = {
         min_rssi?: number;
         service_uuid?: any;
         timeout?: BlePresenceBinarySensorConfigTimeout;
-    } & BinarySensor_BINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BinarySensorBINARYSENSORSCHEMA & CoreCOMPONENTSCHEMA;

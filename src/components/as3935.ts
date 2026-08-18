@@ -9,24 +9,24 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export abstract class As3935 extends EsphomeComponent {
     componentName: string = "as3935";
 }
 
-export type As3935AS3935_SCHEMADivRatio = '0' | '16' | '32' | '64' | '128';
-export type As3935AS3935_SCHEMALightningThreshold = '1' | '5' | '9' | '16';
+export type As3935AS3935SCHEMADivRatio = '0' | '16' | '32' | '64' | '128';
+export type As3935AS3935SCHEMALightningThreshold = '1' | '5' | '9' | '16';
 
-export interface As3935AS3935_SCHEMA {
+export interface As3935AS3935SCHEMA {
     calibration?: boolean;
     capacitance?: number;
-    div_ratio?: As3935AS3935_SCHEMADivRatio;
+    div_ratio?: As3935AS3935SCHEMADivRatio;
     id?: ID;
     indoor?: boolean;
     irq_pin: Pin;
-    lightning_threshold?: As3935AS3935_SCHEMALightningThreshold;
+    lightning_threshold?: As3935AS3935SCHEMALightningThreshold;
     mask_disturber?: boolean;
     noise_level?: number;
     spike_rejection?: number;
@@ -38,7 +38,7 @@ export class As3935BinarySensor extends EsphomeComponent<As3935BinarySensorConfi
     componentName: string = "as3935.binary_sensor";
 }
 
-export interface As3935BinarySensorConfig extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface As3935BinarySensorConfig extends BinarySensorBINARYSENSORSCHEMA {
     as3935_id?: ID;
 }
 
@@ -46,14 +46,14 @@ export class As3935Sensor extends EsphomeComponent<As3935SensorConfig> {
     componentName: string = "as3935.sensor";
 }
 
-export interface As3935SensorConfigDistance extends Sensor_SENSOR_SCHEMA {
+export interface As3935SensorConfigDistance extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface As3935SensorConfigLightningEnergy extends Sensor_SENSOR_SCHEMA {
+export interface As3935SensorConfigLightningEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
 }

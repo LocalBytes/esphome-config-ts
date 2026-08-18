@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Climate_CLIMATE_SCHEMA } from "./climate.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
 
 export class MitsubishiCn105Climate extends EsphomeComponent<MitsubishiCn105ClimateConfig> {
     componentName: string = "mitsubishi_cn105.climate";
@@ -17,7 +17,7 @@ export class MitsubishiCn105Climate extends EsphomeComponent<MitsubishiCn105Clim
 
 export type MitsubishiCn105ClimateConfigSupportedSwingModes = 'OFF' | 'BOTH' | 'VERTICAL' | 'HORIZONTAL';
 
-export interface MitsubishiCn105ClimateConfig extends Climate_CLIMATE_SCHEMA {
+export interface MitsubishiCn105ClimateConfig extends ClimateCLIMATESCHEMA {
     current_temperature_min_interval?: any;
     id?: ID;
     supported_swing_modes?: MitsubishiCn105ClimateConfigSupportedSwingModes;

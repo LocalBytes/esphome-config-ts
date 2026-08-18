@@ -9,10 +9,10 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Fan_FAN_SCHEMA } from "./fan.js";
-import type { CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
-import type { LightRGB_LIGHT_SCHEMA } from "./light.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
+import type { FanFANSCHEMA } from "./fan.js";
+import type { CoreCOMPONENTSCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
+import type { LightRGBLIGHTSCHEMA } from "./light.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
 
 export class HbridgeFan extends EsphomeComponent<HbridgeFanConfig> {
     componentName: string = "hbridge.fan";
@@ -27,13 +27,13 @@ export type HbridgeFanConfig = {
         pin_b: ID;
         preset_modes?: any;
         speed_count?: number;
-    } & Fan_FAN_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & FanFANSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class HbridgeLight extends EsphomeComponent<HbridgeLightConfig> {
     componentName: string = "hbridge.light";
 }
 
-export interface HbridgeLightConfig extends LightRGB_LIGHT_SCHEMA {
+export interface HbridgeLightConfig extends LightRGBLIGHTSCHEMA {
     output_id?: ID;
     pin_a: ID;
     pin_b: ID;
@@ -52,4 +52,4 @@ export type HbridgeSwitchConfig = {
         optimistic?: boolean;
         pulse_length?: HbridgeSwitchConfigPulseLength;
         wait_time?: HbridgeSwitchConfigWaitTime;
-    } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA;

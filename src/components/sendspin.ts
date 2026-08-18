@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { MediaPlayer_MEDIA_PLAYER_SCHEMA } from "./media_player.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { MediaPlayerMEDIAPLAYERSCHEMA } from "./media_player.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class Sendspin extends EsphomeComponent<SendspinConfig> {
     componentName: string = "sendspin";
@@ -25,7 +25,7 @@ export class SendspinMediaPlayer extends EsphomeComponent<SendspinMediaPlayerCon
     componentName: string = "sendspin.media_player";
 }
 
-export interface SendspinMediaPlayerConfig extends MediaPlayer_MEDIA_PLAYER_SCHEMA {
+export interface SendspinMediaPlayerConfig extends MediaPlayerMEDIAPLAYERSCHEMA {
     id?: ID;
     sendspin_id?: ID;
     volume_increment?: any;
@@ -35,7 +35,7 @@ export class SendspinMediaSource extends EsphomeComponent<any> {
     componentName: string = "sendspin.media_source";
 }
 
-export interface SendspinMediaSourceSENDSPIN_MEDIA_SOURCE_ACTION_SCHEMA {
+export interface SendspinMediaSourceSENDSPINMEDIASOURCEACTIONSCHEMA {
     id?: ID;
 }
 
@@ -74,7 +74,7 @@ export interface SendspinSensorConfigYear {
     id?: any;
 }
 
-export interface SendspinSensor_HUB_ID_SCHEMA {
+export interface SendspinSensorHUBIDSCHEMA {
     sendspin_id?: ID;
 }
 
@@ -84,7 +84,7 @@ export class SendspinTextSensor extends EsphomeComponent<SendspinTextSensorConfi
 
 export type SendspinTextSensorConfigType = 'title' | 'artist' | 'album' | 'album_artist';
 
-export interface SendspinTextSensorConfig extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface SendspinTextSensorConfig extends TextSensorTEXTSENSORSCHEMA {
     id?: any;
     sendspin_id?: ID;
     type: SendspinTextSensorConfigType;

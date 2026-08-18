@@ -15,20 +15,20 @@ export class Mqtt extends EsphomeComponent<MqttConfig> {
     componentName: string = "mqtt";
 }
 
-export type MqttConfigBirthMessage = MqttMQTT_MESSAGE_SCHEMA;
+export type MqttConfigBirthMessage = MqttMQTTMESSAGESCHEMA;
 export type MqttConfigDiscovery = 'CLEAN';
 export type MqttConfigDiscoveryObjectIdGenerator = 'none' | 'device_name';
 export type MqttConfigDiscoveryUniqueIdGenerator = 'legacy' | 'mac';
 export type MqttConfigKeepalive = CorePositiveTimePeriodSeconds;
 export type MqttConfigLogTopicLevel = 'NONE' | 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'VERBOSE' | 'VERY_VERBOSE';
 
-export interface MqttConfigLogTopic extends MqttMQTT_MESSAGE_BASE {
+export interface MqttConfigLogTopic extends MqttMQTTMESSAGEBASE {
     level?: MqttConfigLogTopicLevel;
 }
 
 export type MqttConfigRebootTimeout = CorePositiveTimePeriodMilliseconds;
-export type MqttConfigShutdownMessage = MqttMQTT_MESSAGE_SCHEMA;
-export type MqttConfigWillMessage = MqttMQTT_MESSAGE_SCHEMA;
+export type MqttConfigShutdownMessage = MqttMQTTMESSAGESCHEMA;
+export type MqttConfigWillMessage = MqttMQTTMESSAGESCHEMA;
 
 export interface MqttConfig {
     birth_message?: MqttConfigBirthMessage;
@@ -66,12 +66,12 @@ export interface MqttConfig {
     will_message?: MqttConfigWillMessage;
 }
 
-export interface MqttMQTT_MESSAGE_BASE {
+export interface MqttMQTTMESSAGEBASE {
     qos?: any;
     retain?: boolean;
     topic: string;
 }
 
-export interface MqttMQTT_MESSAGE_SCHEMA extends MqttMQTT_MESSAGE_BASE {
+export interface MqttMQTTMESSAGESCHEMA extends MqttMQTTMESSAGEBASE {
     payload: string;
 }

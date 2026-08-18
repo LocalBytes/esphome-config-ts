@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMicroseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { CorePositiveTimePeriodMicroseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class UltrasonicSensor extends EsphomeComponent<UltrasonicSensorConfig> {
     componentName: string = "ultrasonic.sensor";
@@ -28,4 +28,4 @@ export type UltrasonicSensorConfig = {
         trigger_pin: Pin;
         unit_of_measurement?: any;
         update_interval?: any;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

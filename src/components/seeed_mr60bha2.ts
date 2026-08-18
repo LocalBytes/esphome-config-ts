@@ -9,15 +9,15 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class SeeedMr60bha2 extends EsphomeComponent<SeeedMr60bha2Config> {
     componentName: string = "seeed_mr60bha2";
 }
 
-export interface SeeedMr60bha2Config extends CoreCOMPONENT_SCHEMA {
+export interface SeeedMr60bha2Config extends CoreCOMPONENTSCHEMA {
     id?: ID;
     uart_id?: ID;
 }
@@ -26,7 +26,7 @@ export class SeeedMr60bha2BinarySensor extends EsphomeComponent<SeeedMr60bha2Bin
     componentName: string = "seeed_mr60bha2.binary_sensor";
 }
 
-export interface SeeedMr60bha2BinarySensorConfigHasTarget extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface SeeedMr60bha2BinarySensorConfigHasTarget extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     icon?: any;
 }
@@ -40,13 +40,13 @@ export class SeeedMr60bha2Sensor extends EsphomeComponent<SeeedMr60bha2SensorCon
     componentName: string = "seeed_mr60bha2.sensor";
 }
 
-export interface SeeedMr60bha2SensorConfigBreathRate extends Sensor_SENSOR_SCHEMA {
+export interface SeeedMr60bha2SensorConfigBreathRate extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
 }
 
-export interface SeeedMr60bha2SensorConfigDistance extends Sensor_SENSOR_SCHEMA {
+export interface SeeedMr60bha2SensorConfigDistance extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -54,14 +54,14 @@ export interface SeeedMr60bha2SensorConfigDistance extends Sensor_SENSOR_SCHEMA 
     unit_of_measurement?: any;
 }
 
-export interface SeeedMr60bha2SensorConfigHeartRate extends Sensor_SENSOR_SCHEMA {
+export interface SeeedMr60bha2SensorConfigHeartRate extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SeeedMr60bha2SensorConfigNumTargets extends Sensor_SENSOR_SCHEMA {
+export interface SeeedMr60bha2SensorConfigNumTargets extends SensorSENSORSCHEMA {
     icon?: any;
 }
 

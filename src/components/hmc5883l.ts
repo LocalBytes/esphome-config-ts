@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Hmc5883lSensor extends EsphomeComponent<Hmc5883lSensorConfig> {
     componentName: string = "hmc5883l.sensor";
@@ -20,14 +20,14 @@ export type Hmc5883lSensorConfigFieldStrengthX = Hmc5883lSensorFieldStrengthSche
 export type Hmc5883lSensorConfigFieldStrengthY = Hmc5883lSensorFieldStrengthSchema;
 export type Hmc5883lSensorConfigFieldStrengthZ = Hmc5883lSensorFieldStrengthSchema;
 
-export interface Hmc5883lSensorConfigHeading extends Sensor_SENSOR_SCHEMA {
+export interface Hmc5883lSensorConfigHeading extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Hmc5883lSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Hmc5883lSensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     field_strength_x?: Hmc5883lSensorConfigFieldStrengthX;
     field_strength_y?: Hmc5883lSensorConfigFieldStrengthY;
@@ -40,7 +40,7 @@ export interface Hmc5883lSensorConfig extends CoreCOMPONENT_SCHEMA {
     update_interval?: any;
 }
 
-export interface Hmc5883lSensorFieldStrengthSchema extends Sensor_SENSOR_SCHEMA {
+export interface Hmc5883lSensorFieldStrengthSchema extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;

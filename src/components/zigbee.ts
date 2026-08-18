@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { TimeTIME_SCHEMA } from "./time.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { TimeTIMESCHEMA } from "./time.js";
 
 export class Zigbee extends EsphomeComponent<ZigbeeConfig> {
     componentName: string = "zigbee";
@@ -20,7 +20,7 @@ export type ZigbeeConfigIeee802154VendorOui = 'random';
 export type ZigbeeConfigPowerSource = 'UNKNOWN' | 'MAINS_SINGLE_PHASE' | 'MAINS_THREE_PHASE' | 'BATTERY' | 'DC_SOURCE' | 'EMERGENCY_MAINS_CONST' | 'EMERGENCY_MAINS_TRANSF';
 export type ZigbeeConfigWipeOnBoot = 'once';
 
-export interface ZigbeeConfig extends CoreCOMPONENT_SCHEMA {
+export interface ZigbeeConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     ieee802154_vendor_oui?: ZigbeeConfigIeee802154VendorOui;
     model?: string;
@@ -39,4 +39,4 @@ export type ZigbeeTimeConfig = {
         id?: ID;
         update_interval?: any;
         zigbee_id?: ID;
-    } & TimeTIME_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TimeTIMESCHEMA & CoreCOMPONENTSCHEMA;

@@ -9,10 +9,10 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { UartUART_DEVICE_SCHEMA } from "./uart.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { UartUARTDEVICESCHEMA } from "./uart.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class Ufm01 extends EsphomeComponent<Ufm01Config> {
     componentName: string = "ufm01";
@@ -20,28 +20,28 @@ export class Ufm01 extends EsphomeComponent<Ufm01Config> {
 
 export type Ufm01Config = {
         id?: ID;
-    } & UartUART_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & UartUARTDEVICESCHEMA & CoreCOMPONENTSCHEMA;
 
 export class Ufm01BinarySensor extends EsphomeComponent<Ufm01BinarySensorConfig> {
     componentName: string = "ufm01.binary_sensor";
 }
 
-export interface Ufm01BinarySensorConfigEmptyTube extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface Ufm01BinarySensorConfigEmptyTube extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     entity_category?: any;
 }
 
-export interface Ufm01BinarySensorConfigFlowDirectionWrong extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface Ufm01BinarySensorConfigFlowDirectionWrong extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     entity_category?: any;
 }
 
-export interface Ufm01BinarySensorConfigFlowRateOutOfRange extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface Ufm01BinarySensorConfigFlowRateOutOfRange extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     entity_category?: any;
 }
 
-export interface Ufm01BinarySensorConfigUfcChipError extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface Ufm01BinarySensorConfigUfcChipError extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     entity_category?: any;
 }
@@ -58,14 +58,14 @@ export class Ufm01Sensor extends EsphomeComponent<Ufm01SensorConfig> {
     componentName: string = "ufm01.sensor";
 }
 
-export interface Ufm01SensorConfigAccumulatedFlow extends Sensor_SENSOR_SCHEMA {
+export interface Ufm01SensorConfigAccumulatedFlow extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ufm01SensorConfigFlow extends Sensor_SENSOR_SCHEMA {
+export interface Ufm01SensorConfigFlow extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -73,7 +73,7 @@ export interface Ufm01SensorConfigFlow extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Ufm01SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Ufm01SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;

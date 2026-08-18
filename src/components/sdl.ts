@@ -9,10 +9,10 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
-import type { TouchscreenTOUCHSCREEN_SCHEMA } from "./touchscreen.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
+import type { TouchscreenTOUCHSCREENSCHEMA } from "./touchscreen.js";
 
 export class SdlBinarySensor extends EsphomeComponent<SdlBinarySensorConfig> {
     componentName: string = "sdl.binary_sensor";
@@ -23,7 +23,7 @@ export type SdlBinarySensorConfig = {
         id?: any;
         key: SdlBinarySensorConfigKey;
         sdl_id?: ID;
-    } & BinarySensor_BINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BinarySensorBINARYSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class SdlDisplay extends EsphomeComponent<SdlDisplayConfig> {
     componentName: string = "sdl.display";
@@ -49,7 +49,7 @@ export interface SdlDisplayConfigWindowOptions {
     skip_taskbar?: boolean;
 }
 
-export interface SdlDisplayConfig extends DisplayFULL_DISPLAY_SCHEMA {
+export interface SdlDisplayConfig extends DisplayFULLDISPLAYSCHEMA {
     dimensions: SdlDisplayConfigDimensions;
     id?: ID;
     sdl_options?: any;
@@ -63,7 +63,7 @@ export class SdlTouchscreen extends EsphomeComponent<SdlTouchscreenConfig> {
     componentName: string = "sdl.touchscreen";
 }
 
-export interface SdlTouchscreenConfig extends TouchscreenTOUCHSCREEN_SCHEMA {
+export interface SdlTouchscreenConfig extends TouchscreenTOUCHSCREENSCHEMA {
     id?: ID;
     sdl_id?: ID;
 }

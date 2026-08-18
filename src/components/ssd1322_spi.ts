@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Ssd1322SpiDisplay extends EsphomeComponent<Ssd1322SpiDisplayConfig> {
     componentName: string = "ssd1322_spi.display";
@@ -33,4 +33,4 @@ export type Ssd1322SpiDisplayConfig = {
         update_interval?: any;
         lambda?: any;
         pages?: any;
-    } & DisplayFULL_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & DisplayFULLDISPLAYSCHEMA & CoreCOMPONENTSCHEMA;

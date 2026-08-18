@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Climate_CLIMATE_SCHEMA } from "./climate.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class BangBangClimate extends EsphomeComponent<BangBangClimateConfig> {
     componentName: string = "bang_bang.climate";
@@ -31,4 +31,4 @@ export type BangBangClimateConfig = {
         id?: ID;
         idle_action: object[];
         sensor: ID;
-    } & Climate_CLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & ClimateCLIMATESCHEMA & CoreCOMPONENTSCHEMA;

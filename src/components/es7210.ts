@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Es7210AudioAdc extends EsphomeComponent<Es7210AudioAdcConfig> {
     componentName: string = "es7210.audio_adc";
@@ -18,7 +18,7 @@ export class Es7210AudioAdc extends EsphomeComponent<Es7210AudioAdcConfig> {
 export type Es7210AudioAdcConfigBitsPerSample = '16' | '24' | '32';
 export type Es7210AudioAdcConfigMicGain = '0' | '3' | '6' | '9' | '12' | '15' | '18' | '21' | '24' | '27' | '30' | '33' | '36' | '34.5' | '37.5';
 
-export interface Es7210AudioAdcConfig extends CoreCOMPONENT_SCHEMA {
+export interface Es7210AudioAdcConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     bits_per_sample?: Es7210AudioAdcConfigBitsPerSample;
     i2c_id?: ID;

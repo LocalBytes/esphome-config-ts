@@ -9,19 +9,19 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Button_BUTTON_SCHEMA } from "./button.js";
-import type { Number_NUMBER_SCHEMA } from "./number.js";
-import type { Select_SELECT_SCHEMA } from "./select.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { ButtonBUTTONSCHEMA } from "./button.js";
+import type { NumberNUMBERSCHEMA } from "./number.js";
+import type { SelectSELECTSCHEMA } from "./select.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class Ld2420 extends EsphomeComponent<Ld2420Config> {
     componentName: string = "ld2420";
 }
 
-export interface Ld2420Config extends CoreCOMPONENT_SCHEMA {
+export interface Ld2420Config extends CoreCOMPONENTSCHEMA {
     id?: ID;
     uart_id?: ID;
 }
@@ -30,11 +30,11 @@ export class Ld2420BinarySensor extends EsphomeComponent<Ld2420BinarySensorConfi
     componentName: string = "ld2420.binary_sensor";
 }
 
-export interface Ld2420BinarySensorConfigHasTarget extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface Ld2420BinarySensorConfigHasTarget extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
 }
 
-export interface Ld2420BinarySensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Ld2420BinarySensorConfig extends CoreCOMPONENTSCHEMA {
     has_target?: Ld2420BinarySensorConfigHasTarget;
     id?: ID;
     ld2420_id?: ID;
@@ -44,26 +44,26 @@ export class Ld2420Button extends EsphomeComponent<Ld2420ButtonConfig> {
     componentName: string = "ld2420.button";
 }
 
-export interface Ld2420ButtonConfigApplyConfig extends Button_BUTTON_SCHEMA {
+export interface Ld2420ButtonConfigApplyConfig extends ButtonBUTTONSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420ButtonConfigFactoryReset extends Button_BUTTON_SCHEMA {
+export interface Ld2420ButtonConfigFactoryReset extends ButtonBUTTONSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420ButtonConfigRestartModule extends Button_BUTTON_SCHEMA {
+export interface Ld2420ButtonConfigRestartModule extends ButtonBUTTONSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420ButtonConfigRevertConfig extends Button_BUTTON_SCHEMA {
+export interface Ld2420ButtonConfigRevertConfig extends ButtonBUTTONSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -82,349 +82,349 @@ export class Ld2420Number extends EsphomeComponent<Ld2420NumberConfig> {
     componentName: string = "ld2420.number";
 }
 
-export interface Ld2420NumberConfigGate_0MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate0MoveThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_0StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate0StillThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_0 {
-    move_threshold: Ld2420NumberConfigGate_0MoveThreshold;
-    still_threshold: Ld2420NumberConfigGate_0StillThreshold;
+export interface Ld2420NumberConfigGate0 {
+    move_threshold: Ld2420NumberConfigGate0MoveThreshold;
+    still_threshold: Ld2420NumberConfigGate0StillThreshold;
 }
 
-export interface Ld2420NumberConfigGate_1MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate1MoveThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_1StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate1StillThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_1 {
-    move_threshold: Ld2420NumberConfigGate_1MoveThreshold;
-    still_threshold: Ld2420NumberConfigGate_1StillThreshold;
+export interface Ld2420NumberConfigGate1 {
+    move_threshold: Ld2420NumberConfigGate1MoveThreshold;
+    still_threshold: Ld2420NumberConfigGate1StillThreshold;
 }
 
-export interface Ld2420NumberConfigGate_10MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate10MoveThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_10StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate10StillThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_10 {
-    move_threshold: Ld2420NumberConfigGate_10MoveThreshold;
-    still_threshold: Ld2420NumberConfigGate_10StillThreshold;
+export interface Ld2420NumberConfigGate10 {
+    move_threshold: Ld2420NumberConfigGate10MoveThreshold;
+    still_threshold: Ld2420NumberConfigGate10StillThreshold;
 }
 
-export interface Ld2420NumberConfigGate_11MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate11MoveThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_11StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate11StillThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_11 {
-    move_threshold: Ld2420NumberConfigGate_11MoveThreshold;
-    still_threshold: Ld2420NumberConfigGate_11StillThreshold;
+export interface Ld2420NumberConfigGate11 {
+    move_threshold: Ld2420NumberConfigGate11MoveThreshold;
+    still_threshold: Ld2420NumberConfigGate11StillThreshold;
 }
 
-export interface Ld2420NumberConfigGate_12MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate12MoveThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_12StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate12StillThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_12 {
-    move_threshold: Ld2420NumberConfigGate_12MoveThreshold;
-    still_threshold: Ld2420NumberConfigGate_12StillThreshold;
+export interface Ld2420NumberConfigGate12 {
+    move_threshold: Ld2420NumberConfigGate12MoveThreshold;
+    still_threshold: Ld2420NumberConfigGate12StillThreshold;
 }
 
-export interface Ld2420NumberConfigGate_13MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate13MoveThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_13StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate13StillThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_13 {
-    move_threshold: Ld2420NumberConfigGate_13MoveThreshold;
-    still_threshold: Ld2420NumberConfigGate_13StillThreshold;
+export interface Ld2420NumberConfigGate13 {
+    move_threshold: Ld2420NumberConfigGate13MoveThreshold;
+    still_threshold: Ld2420NumberConfigGate13StillThreshold;
 }
 
-export interface Ld2420NumberConfigGate_14MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate14MoveThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_14StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate14StillThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_14 {
-    move_threshold: Ld2420NumberConfigGate_14MoveThreshold;
-    still_threshold: Ld2420NumberConfigGate_14StillThreshold;
+export interface Ld2420NumberConfigGate14 {
+    move_threshold: Ld2420NumberConfigGate14MoveThreshold;
+    still_threshold: Ld2420NumberConfigGate14StillThreshold;
 }
 
-export interface Ld2420NumberConfigGate_15MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate15MoveThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_15StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate15StillThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_15 {
-    move_threshold: Ld2420NumberConfigGate_15MoveThreshold;
-    still_threshold: Ld2420NumberConfigGate_15StillThreshold;
+export interface Ld2420NumberConfigGate15 {
+    move_threshold: Ld2420NumberConfigGate15MoveThreshold;
+    still_threshold: Ld2420NumberConfigGate15StillThreshold;
 }
 
-export interface Ld2420NumberConfigGate_2MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate2MoveThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_2StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate2StillThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_2 {
-    move_threshold: Ld2420NumberConfigGate_2MoveThreshold;
-    still_threshold: Ld2420NumberConfigGate_2StillThreshold;
+export interface Ld2420NumberConfigGate2 {
+    move_threshold: Ld2420NumberConfigGate2MoveThreshold;
+    still_threshold: Ld2420NumberConfigGate2StillThreshold;
 }
 
-export interface Ld2420NumberConfigGate_3MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate3MoveThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_3StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate3StillThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_3 {
-    move_threshold: Ld2420NumberConfigGate_3MoveThreshold;
-    still_threshold: Ld2420NumberConfigGate_3StillThreshold;
+export interface Ld2420NumberConfigGate3 {
+    move_threshold: Ld2420NumberConfigGate3MoveThreshold;
+    still_threshold: Ld2420NumberConfigGate3StillThreshold;
 }
 
-export interface Ld2420NumberConfigGate_4MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate4MoveThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_4StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate4StillThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_4 {
-    move_threshold: Ld2420NumberConfigGate_4MoveThreshold;
-    still_threshold: Ld2420NumberConfigGate_4StillThreshold;
+export interface Ld2420NumberConfigGate4 {
+    move_threshold: Ld2420NumberConfigGate4MoveThreshold;
+    still_threshold: Ld2420NumberConfigGate4StillThreshold;
 }
 
-export interface Ld2420NumberConfigGate_5MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate5MoveThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_5StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate5StillThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_5 {
-    move_threshold: Ld2420NumberConfigGate_5MoveThreshold;
-    still_threshold: Ld2420NumberConfigGate_5StillThreshold;
+export interface Ld2420NumberConfigGate5 {
+    move_threshold: Ld2420NumberConfigGate5MoveThreshold;
+    still_threshold: Ld2420NumberConfigGate5StillThreshold;
 }
 
-export interface Ld2420NumberConfigGate_6MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate6MoveThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_6StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate6StillThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_6 {
-    move_threshold: Ld2420NumberConfigGate_6MoveThreshold;
-    still_threshold: Ld2420NumberConfigGate_6StillThreshold;
+export interface Ld2420NumberConfigGate6 {
+    move_threshold: Ld2420NumberConfigGate6MoveThreshold;
+    still_threshold: Ld2420NumberConfigGate6StillThreshold;
 }
 
-export interface Ld2420NumberConfigGate_7MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate7MoveThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_7StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate7StillThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_7 {
-    move_threshold: Ld2420NumberConfigGate_7MoveThreshold;
-    still_threshold: Ld2420NumberConfigGate_7StillThreshold;
+export interface Ld2420NumberConfigGate7 {
+    move_threshold: Ld2420NumberConfigGate7MoveThreshold;
+    still_threshold: Ld2420NumberConfigGate7StillThreshold;
 }
 
-export interface Ld2420NumberConfigGate_8MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate8MoveThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_8StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate8StillThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_8 {
-    move_threshold: Ld2420NumberConfigGate_8MoveThreshold;
-    still_threshold: Ld2420NumberConfigGate_8StillThreshold;
+export interface Ld2420NumberConfigGate8 {
+    move_threshold: Ld2420NumberConfigGate8MoveThreshold;
+    still_threshold: Ld2420NumberConfigGate8StillThreshold;
 }
 
-export interface Ld2420NumberConfigGate_9MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate9MoveThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_9StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGate9StillThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGate_9 {
-    move_threshold: Ld2420NumberConfigGate_9MoveThreshold;
-    still_threshold: Ld2420NumberConfigGate_9StillThreshold;
+export interface Ld2420NumberConfigGate9 {
+    move_threshold: Ld2420NumberConfigGate9MoveThreshold;
+    still_threshold: Ld2420NumberConfigGate9StillThreshold;
 }
 
-export interface Ld2420NumberConfigGateMoveSensitivity extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGateMoveSensitivity extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGateSelect extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGateSelect extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigGateStillSensitivity extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigGateStillSensitivity extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigMaxGateDistance extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigMaxGateDistance extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigMinGateDistance extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigMinGateDistance extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigMoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigMoveThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2420NumberConfigPresenceTimeout extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigPresenceTimeout extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
     unit_of_measurement?: any;
 }
 
-export interface Ld2420NumberConfigStillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2420NumberConfigStillThreshold extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
 export interface Ld2420NumberConfig {
-    gate_0?: Ld2420NumberConfigGate_0;
-    gate_1?: Ld2420NumberConfigGate_1;
-    gate_10?: Ld2420NumberConfigGate_10;
-    gate_11?: Ld2420NumberConfigGate_11;
-    gate_12?: Ld2420NumberConfigGate_12;
-    gate_13?: Ld2420NumberConfigGate_13;
-    gate_14?: Ld2420NumberConfigGate_14;
-    gate_15?: Ld2420NumberConfigGate_15;
-    gate_2?: Ld2420NumberConfigGate_2;
-    gate_3?: Ld2420NumberConfigGate_3;
-    gate_4?: Ld2420NumberConfigGate_4;
-    gate_5?: Ld2420NumberConfigGate_5;
-    gate_6?: Ld2420NumberConfigGate_6;
-    gate_7?: Ld2420NumberConfigGate_7;
-    gate_8?: Ld2420NumberConfigGate_8;
-    gate_9?: Ld2420NumberConfigGate_9;
+    gate_0?: Ld2420NumberConfigGate0;
+    gate_1?: Ld2420NumberConfigGate1;
+    gate_10?: Ld2420NumberConfigGate10;
+    gate_11?: Ld2420NumberConfigGate11;
+    gate_12?: Ld2420NumberConfigGate12;
+    gate_13?: Ld2420NumberConfigGate13;
+    gate_14?: Ld2420NumberConfigGate14;
+    gate_15?: Ld2420NumberConfigGate15;
+    gate_2?: Ld2420NumberConfigGate2;
+    gate_3?: Ld2420NumberConfigGate3;
+    gate_4?: Ld2420NumberConfigGate4;
+    gate_5?: Ld2420NumberConfigGate5;
+    gate_6?: Ld2420NumberConfigGate6;
+    gate_7?: Ld2420NumberConfigGate7;
+    gate_8?: Ld2420NumberConfigGate8;
+    gate_9?: Ld2420NumberConfigGate9;
     gate_move_sensitivity?: Ld2420NumberConfigGateMoveSensitivity;
     gate_select?: Ld2420NumberConfigGateSelect;
     gate_still_sensitivity?: Ld2420NumberConfigGateStillSensitivity;
@@ -440,7 +440,7 @@ export class Ld2420Select extends EsphomeComponent<Ld2420SelectConfig> {
     componentName: string = "ld2420.select";
 }
 
-export interface Ld2420SelectConfigOperatingMode extends Select_SELECT_SCHEMA {
+export interface Ld2420SelectConfigOperatingMode extends SelectSELECTSCHEMA {
     entity_category?: any;
     id?: any;
 }
@@ -454,13 +454,13 @@ export class Ld2420Sensor extends EsphomeComponent<Ld2420SensorConfig> {
     componentName: string = "ld2420.sensor";
 }
 
-export interface Ld2420SensorConfigMovingDistance extends Sensor_SENSOR_SCHEMA {
+export interface Ld2420SensorConfigMovingDistance extends SensorSENSORSCHEMA {
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ld2420SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Ld2420SensorConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     ld2420_id?: ID;
     moving_distance?: Ld2420SensorConfigMovingDistance;
@@ -470,12 +470,12 @@ export class Ld2420TextSensor extends EsphomeComponent<Ld2420TextSensorConfig> {
     componentName: string = "ld2420.text_sensor";
 }
 
-export interface Ld2420TextSensorConfigFwVersion extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface Ld2420TextSensorConfigFwVersion extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
 
-export interface Ld2420TextSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Ld2420TextSensorConfig extends CoreCOMPONENTSCHEMA {
     fw_version?: Ld2420TextSensorConfigFwVersion;
     id?: ID;
     ld2420_id?: ID;

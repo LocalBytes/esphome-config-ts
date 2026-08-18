@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
 
 export class DfrobotSen0395 extends EsphomeComponent<DfrobotSen0395Config> {
     componentName: string = "dfrobot_sen0395";
@@ -24,7 +24,7 @@ export class DfrobotSen0395BinarySensor extends EsphomeComponent<DfrobotSen0395B
     componentName: string = "dfrobot_sen0395.binary_sensor";
 }
 
-export interface DfrobotSen0395BinarySensorConfig extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface DfrobotSen0395BinarySensorConfig extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     dfrobot_sen0395_id?: ID;
 }

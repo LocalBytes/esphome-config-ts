@@ -9,37 +9,37 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreENTITY_BASE_SCHEMA, CoreMQTT_COMPONENT_SCHEMA, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CoreENTITYBASESCHEMA, CoreMQTTCOMPONENTSCHEMA, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export abstract class Text extends EsphomeComponent {
     componentName: string = "text";
 }
 
-export interface TextOPERATION_BASE_SCHEMA {
+export interface TextOPERATIONBASESCHEMA {
     id: ID;
 }
 
-export type Text_TEXT_SCHEMAMode = 'TEXT' | 'PASSWORD';
+export type TextTEXTSCHEMAMode = 'TEXT' | 'PASSWORD';
 
-export interface Text_TEXT_SCHEMAWebServer {
+export interface TextTEXTSCHEMAWebServer {
     sorting_group_id?: ID;
     sorting_weight?: any;
     web_server_id?: ID;
 }
 
-export type Text_TEXT_SCHEMA = {
+export type TextTEXTSCHEMA = {
         id?: ID;
-        mode: Text_TEXT_SCHEMAMode;
+        mode: TextTEXTSCHEMAMode;
         mqtt_id?: any;
         on_value?: object[];
-        web_server?: Text_TEXT_SCHEMAWebServer;
+        web_server?: TextTEXTSCHEMAWebServer;
         name: string;
         icon?: any;
         internal?: any;
         disabled_by_default?: any;
         entity_category?: any;
-    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMPONENT_SCHEMA;
+    } & CoreENTITYBASESCHEMA & CoreMQTTCOMPONENTSCHEMA;
 
 export class TextTextSensor extends EsphomeComponent<TextTextSensorConfig> {
     componentName: string = "text.text_sensor";
@@ -48,4 +48,4 @@ export class TextTextSensor extends EsphomeComponent<TextTextSensorConfig> {
 export type TextTextSensorConfig = {
         id?: any;
         source_id: ID;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;

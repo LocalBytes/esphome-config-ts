@@ -9,22 +9,22 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreENTITY_BASE_SCHEMA } from "./esphome.js";
+import type { CoreENTITYBASESCHEMA } from "./esphome.js";
 
 export abstract class MediaPlayer extends EsphomeComponent {
     componentName: string = "media_player";
 }
 
-export interface MediaPlayerMEDIA_PLAYER_ACTION_SCHEMA {
+export interface MediaPlayerMEDIAPLAYERACTIONSCHEMA {
     announcement?: boolean;
     id?: ID;
 }
 
-export interface MediaPlayerMEDIA_PLAYER_CONDITION_SCHEMA {
+export interface MediaPlayerMEDIAPLAYERCONDITIONSCHEMA {
     id?: ID;
 }
 
-export interface MediaPlayer_MEDIA_PLAYER_SCHEMA extends CoreENTITY_BASE_SCHEMA {
+export interface MediaPlayerMEDIAPLAYERSCHEMA extends CoreENTITYBASESCHEMA {
     on_announcement?: object[];
     on_idle?: object[];
     on_pause?: object[];
@@ -40,7 +40,7 @@ export interface MediaPlayer_MEDIA_PLAYER_SCHEMA extends CoreENTITY_BASE_SCHEMA 
     entity_category?: any;
 }
 
-export interface MediaPlayer_MEDIA_URL_ACTION_SCHEMA {
+export interface MediaPlayerMEDIAURLACTIONSCHEMA {
     announcement?: boolean;
     id?: ID;
     media_url: string;

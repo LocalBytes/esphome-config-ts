@@ -9,28 +9,28 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreENTITY_BASE_SCHEMA, CoreMQTT_COMMAND_COMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreENTITYBASESCHEMA, CoreMQTTCOMMANDCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class AlarmControlPanel extends EsphomeComponent {
     componentName: string = "alarm_control_panel";
 }
 
-export interface AlarmControlPanelALARM_CONTROL_PANEL_ACTION_SCHEMA {
+export interface AlarmControlPanelALARMCONTROLPANELACTIONSCHEMA {
     code?: string;
     id?: ID;
 }
 
-export interface AlarmControlPanelALARM_CONTROL_PANEL_CONDITION_SCHEMA {
+export interface AlarmControlPanelALARMCONTROLPANELCONDITIONSCHEMA {
     id?: ID;
 }
 
-export interface AlarmControlPanel_ALARM_CONTROL_PANEL_SCHEMAWebServer {
+export interface AlarmControlPanelALARMCONTROLPANELSCHEMAWebServer {
     sorting_group_id?: ID;
     sorting_weight?: any;
     web_server_id?: ID;
 }
 
-export type AlarmControlPanel_ALARM_CONTROL_PANEL_SCHEMA = {
+export type AlarmControlPanelALARMCONTROLPANELSCHEMA = {
         mqtt_id?: any;
         on_armed_away?: object[];
         on_armed_home?: object[];
@@ -43,7 +43,7 @@ export type AlarmControlPanel_ALARM_CONTROL_PANEL_SCHEMA = {
         on_ready?: object[];
         on_state?: object[];
         on_triggered?: object[];
-        web_server?: AlarmControlPanel_ALARM_CONTROL_PANEL_SCHEMAWebServer;
+        web_server?: AlarmControlPanelALARMCONTROLPANELSCHEMAWebServer;
         id?: any;
         name?: any;
-    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMMAND_COMPONENT_SCHEMA;
+    } & CoreENTITYBASESCHEMA & CoreMQTTCOMMANDCOMPONENTSCHEMA;

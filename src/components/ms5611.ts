@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Ms5611Sensor extends EsphomeComponent<Ms5611SensorConfig> {
     componentName: string = "ms5611.sensor";
 }
 
-export interface Ms5611SensorConfigPressure extends Sensor_SENSOR_SCHEMA {
+export interface Ms5611SensorConfigPressure extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -24,14 +24,14 @@ export interface Ms5611SensorConfigPressure extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Ms5611SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Ms5611SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ms5611SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Ms5611SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: ID;

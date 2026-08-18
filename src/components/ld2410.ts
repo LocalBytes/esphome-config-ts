@@ -9,20 +9,20 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Button_BUTTON_SCHEMA } from "./button.js";
-import type { Number_NUMBER_SCHEMA } from "./number.js";
-import type { Select_SELECT_SCHEMA } from "./select.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { ButtonBUTTONSCHEMA } from "./button.js";
+import type { NumberNUMBERSCHEMA } from "./number.js";
+import type { SelectSELECTSCHEMA } from "./select.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class Ld2410 extends EsphomeComponent<Ld2410Config> {
     componentName: string = "ld2410";
 }
 
-export interface Ld2410Config extends CoreCOMPONENT_SCHEMA {
+export interface Ld2410Config extends CoreCOMPONENTSCHEMA {
     id?: ID;
     uart_id?: ID;
 }
@@ -31,25 +31,25 @@ export class Ld2410BinarySensor extends EsphomeComponent<Ld2410BinarySensorConfi
     componentName: string = "ld2410.binary_sensor";
 }
 
-export interface Ld2410BinarySensorConfigHasMovingTarget extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface Ld2410BinarySensorConfigHasMovingTarget extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     filters?: any;
     icon?: any;
 }
 
-export interface Ld2410BinarySensorConfigHasStillTarget extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface Ld2410BinarySensorConfigHasStillTarget extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     filters?: any;
     icon?: any;
 }
 
-export interface Ld2410BinarySensorConfigHasTarget extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface Ld2410BinarySensorConfigHasTarget extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     filters?: any;
     icon?: any;
 }
 
-export interface Ld2410BinarySensorConfigOutPinPresenceStatus extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface Ld2410BinarySensorConfigOutPinPresenceStatus extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     entity_category?: any;
     filters?: any;
@@ -69,20 +69,20 @@ export class Ld2410Button extends EsphomeComponent<Ld2410ButtonConfig> {
     componentName: string = "ld2410.button";
 }
 
-export interface Ld2410ButtonConfigFactoryReset extends Button_BUTTON_SCHEMA {
+export interface Ld2410ButtonConfigFactoryReset extends ButtonBUTTONSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2410ButtonConfigQueryParams extends Button_BUTTON_SCHEMA {
+export interface Ld2410ButtonConfigQueryParams extends ButtonBUTTONSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2410ButtonConfigRestart extends Button_BUTTON_SCHEMA {
+export interface Ld2410ButtonConfigRestart extends ButtonBUTTONSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -101,7 +101,7 @@ export class Ld2410Number extends EsphomeComponent<Ld2410NumberConfig> {
     componentName: string = "ld2410.number";
 }
 
-export interface Ld2410NumberConfigG0MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG0MoveThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -109,7 +109,7 @@ export interface Ld2410NumberConfigG0MoveThreshold extends Number_NUMBER_SCHEMA 
     unit_of_measurement?: any;
 }
 
-export interface Ld2410NumberConfigG0StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG0StillThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -122,7 +122,7 @@ export interface Ld2410NumberConfigG0 {
     still_threshold: Ld2410NumberConfigG0StillThreshold;
 }
 
-export interface Ld2410NumberConfigG1MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG1MoveThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -130,7 +130,7 @@ export interface Ld2410NumberConfigG1MoveThreshold extends Number_NUMBER_SCHEMA 
     unit_of_measurement?: any;
 }
 
-export interface Ld2410NumberConfigG1StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG1StillThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -143,7 +143,7 @@ export interface Ld2410NumberConfigG1 {
     still_threshold: Ld2410NumberConfigG1StillThreshold;
 }
 
-export interface Ld2410NumberConfigG2MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG2MoveThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -151,7 +151,7 @@ export interface Ld2410NumberConfigG2MoveThreshold extends Number_NUMBER_SCHEMA 
     unit_of_measurement?: any;
 }
 
-export interface Ld2410NumberConfigG2StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG2StillThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -164,7 +164,7 @@ export interface Ld2410NumberConfigG2 {
     still_threshold: Ld2410NumberConfigG2StillThreshold;
 }
 
-export interface Ld2410NumberConfigG3MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG3MoveThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -172,7 +172,7 @@ export interface Ld2410NumberConfigG3MoveThreshold extends Number_NUMBER_SCHEMA 
     unit_of_measurement?: any;
 }
 
-export interface Ld2410NumberConfigG3StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG3StillThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -185,7 +185,7 @@ export interface Ld2410NumberConfigG3 {
     still_threshold: Ld2410NumberConfigG3StillThreshold;
 }
 
-export interface Ld2410NumberConfigG4MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG4MoveThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -193,7 +193,7 @@ export interface Ld2410NumberConfigG4MoveThreshold extends Number_NUMBER_SCHEMA 
     unit_of_measurement?: any;
 }
 
-export interface Ld2410NumberConfigG4StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG4StillThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -206,7 +206,7 @@ export interface Ld2410NumberConfigG4 {
     still_threshold: Ld2410NumberConfigG4StillThreshold;
 }
 
-export interface Ld2410NumberConfigG5MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG5MoveThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -214,7 +214,7 @@ export interface Ld2410NumberConfigG5MoveThreshold extends Number_NUMBER_SCHEMA 
     unit_of_measurement?: any;
 }
 
-export interface Ld2410NumberConfigG5StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG5StillThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -227,7 +227,7 @@ export interface Ld2410NumberConfigG5 {
     still_threshold: Ld2410NumberConfigG5StillThreshold;
 }
 
-export interface Ld2410NumberConfigG6MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG6MoveThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -235,7 +235,7 @@ export interface Ld2410NumberConfigG6MoveThreshold extends Number_NUMBER_SCHEMA 
     unit_of_measurement?: any;
 }
 
-export interface Ld2410NumberConfigG6StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG6StillThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -248,7 +248,7 @@ export interface Ld2410NumberConfigG6 {
     still_threshold: Ld2410NumberConfigG6StillThreshold;
 }
 
-export interface Ld2410NumberConfigG7MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG7MoveThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -256,7 +256,7 @@ export interface Ld2410NumberConfigG7MoveThreshold extends Number_NUMBER_SCHEMA 
     unit_of_measurement?: any;
 }
 
-export interface Ld2410NumberConfigG7StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG7StillThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -269,7 +269,7 @@ export interface Ld2410NumberConfigG7 {
     still_threshold: Ld2410NumberConfigG7StillThreshold;
 }
 
-export interface Ld2410NumberConfigG8MoveThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG8MoveThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -277,7 +277,7 @@ export interface Ld2410NumberConfigG8MoveThreshold extends Number_NUMBER_SCHEMA 
     unit_of_measurement?: any;
 }
 
-export interface Ld2410NumberConfigG8StillThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigG8StillThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -290,28 +290,28 @@ export interface Ld2410NumberConfigG8 {
     still_threshold: Ld2410NumberConfigG8StillThreshold;
 }
 
-export interface Ld2410NumberConfigLightThreshold extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigLightThreshold extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2410NumberConfigMaxMoveDistanceGate extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigMaxMoveDistanceGate extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2410NumberConfigMaxStillDistanceGate extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigMaxStillDistanceGate extends NumberNUMBERSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2410NumberConfigTimeout extends Number_NUMBER_SCHEMA {
+export interface Ld2410NumberConfigTimeout extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
@@ -340,25 +340,25 @@ export class Ld2410Select extends EsphomeComponent<Ld2410SelectConfig> {
     componentName: string = "ld2410.select";
 }
 
-export interface Ld2410SelectConfigBaudRate extends Select_SELECT_SCHEMA {
+export interface Ld2410SelectConfigBaudRate extends SelectSELECTSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: any;
 }
 
-export interface Ld2410SelectConfigDistanceResolution extends Select_SELECT_SCHEMA {
+export interface Ld2410SelectConfigDistanceResolution extends SelectSELECTSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: any;
 }
 
-export interface Ld2410SelectConfigLightFunction extends Select_SELECT_SCHEMA {
+export interface Ld2410SelectConfigLightFunction extends SelectSELECTSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: any;
 }
 
-export interface Ld2410SelectConfigOutPinLevel extends Select_SELECT_SCHEMA {
+export interface Ld2410SelectConfigOutPinLevel extends SelectSELECTSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: any;
@@ -377,21 +377,21 @@ export class Ld2410Sensor extends EsphomeComponent<Ld2410SensorConfig> {
     componentName: string = "ld2410.sensor";
 }
 
-export interface Ld2410SensorConfigDetectionDistance extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigDetectionDistance extends SensorSENSORSCHEMA {
     device_class?: any;
     filters?: any;
     icon?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ld2410SensorConfigG0MoveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG0MoveEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ld2410SensorConfigG0StillEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG0StillEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
@@ -403,14 +403,14 @@ export interface Ld2410SensorConfigG0 {
     still_energy?: Ld2410SensorConfigG0StillEnergy;
 }
 
-export interface Ld2410SensorConfigG1MoveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG1MoveEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ld2410SensorConfigG1StillEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG1StillEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
@@ -422,14 +422,14 @@ export interface Ld2410SensorConfigG1 {
     still_energy?: Ld2410SensorConfigG1StillEnergy;
 }
 
-export interface Ld2410SensorConfigG2MoveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG2MoveEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ld2410SensorConfigG2StillEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG2StillEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
@@ -441,14 +441,14 @@ export interface Ld2410SensorConfigG2 {
     still_energy?: Ld2410SensorConfigG2StillEnergy;
 }
 
-export interface Ld2410SensorConfigG3MoveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG3MoveEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ld2410SensorConfigG3StillEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG3StillEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
@@ -460,14 +460,14 @@ export interface Ld2410SensorConfigG3 {
     still_energy?: Ld2410SensorConfigG3StillEnergy;
 }
 
-export interface Ld2410SensorConfigG4MoveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG4MoveEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ld2410SensorConfigG4StillEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG4StillEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
@@ -479,14 +479,14 @@ export interface Ld2410SensorConfigG4 {
     still_energy?: Ld2410SensorConfigG4StillEnergy;
 }
 
-export interface Ld2410SensorConfigG5MoveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG5MoveEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ld2410SensorConfigG5StillEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG5StillEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
@@ -498,14 +498,14 @@ export interface Ld2410SensorConfigG5 {
     still_energy?: Ld2410SensorConfigG5StillEnergy;
 }
 
-export interface Ld2410SensorConfigG6MoveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG6MoveEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ld2410SensorConfigG6StillEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG6StillEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
@@ -517,14 +517,14 @@ export interface Ld2410SensorConfigG6 {
     still_energy?: Ld2410SensorConfigG6StillEnergy;
 }
 
-export interface Ld2410SensorConfigG7MoveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG7MoveEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ld2410SensorConfigG7StillEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG7StillEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
@@ -536,14 +536,14 @@ export interface Ld2410SensorConfigG7 {
     still_energy?: Ld2410SensorConfigG7StillEnergy;
 }
 
-export interface Ld2410SensorConfigG8MoveEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG8MoveEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ld2410SensorConfigG8StillEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigG8StillEnergy extends SensorSENSORSCHEMA {
     entity_category?: any;
     filters?: any;
     icon?: any;
@@ -555,34 +555,34 @@ export interface Ld2410SensorConfigG8 {
     still_energy?: Ld2410SensorConfigG8StillEnergy;
 }
 
-export interface Ld2410SensorConfigLight extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigLight extends SensorSENSORSCHEMA {
     device_class?: any;
     entity_category?: any;
     filters?: any;
     icon?: any;
 }
 
-export interface Ld2410SensorConfigMovingDistance extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigMovingDistance extends SensorSENSORSCHEMA {
     device_class?: any;
     filters?: any;
     icon?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ld2410SensorConfigMovingEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigMovingEnergy extends SensorSENSORSCHEMA {
     filters?: any;
     icon?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ld2410SensorConfigStillDistance extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigStillDistance extends SensorSENSORSCHEMA {
     device_class?: any;
     filters?: any;
     icon?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ld2410SensorConfigStillEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ld2410SensorConfigStillEnergy extends SensorSENSORSCHEMA {
     filters?: any;
     icon?: any;
     unit_of_measurement?: any;
@@ -612,14 +612,14 @@ export class Ld2410Switch extends EsphomeComponent<Ld2410SwitchConfig> {
     componentName: string = "ld2410.switch";
 }
 
-export interface Ld2410SwitchConfigBluetooth extends Switch_SWITCH_SCHEMA {
+export interface Ld2410SwitchConfigBluetooth extends SwitchSWITCHSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface Ld2410SwitchConfigEngineeringMode extends Switch_SWITCH_SCHEMA {
+export interface Ld2410SwitchConfigEngineeringMode extends SwitchSWITCHSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -637,12 +637,12 @@ export class Ld2410TextSensor extends EsphomeComponent<Ld2410TextSensorConfig> {
     componentName: string = "ld2410.text_sensor";
 }
 
-export interface Ld2410TextSensorConfigMacAddress extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface Ld2410TextSensorConfigMacAddress extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
 
-export interface Ld2410TextSensorConfigVersion extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface Ld2410TextSensorConfigVersion extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }

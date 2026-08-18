@@ -9,16 +9,16 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { BthomeMithermometerBLE_DEVICE_SCHEMA } from "./bthome_mithermometer.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { BthomeMithermometerBLEDEVICESCHEMA } from "./bthome_mithermometer.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class XiaomiCgpr1BinarySensor extends EsphomeComponent<XiaomiCgpr1BinarySensorConfig> {
     componentName: string = "xiaomi_cgpr1.binary_sensor";
 }
 
-export interface XiaomiCgpr1BinarySensorConfigBatteryLevel extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiCgpr1BinarySensorConfigBatteryLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -26,7 +26,7 @@ export interface XiaomiCgpr1BinarySensorConfigBatteryLevel extends Sensor_SENSOR
     unit_of_measurement?: any;
 }
 
-export interface XiaomiCgpr1BinarySensorConfigIdleTime extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiCgpr1BinarySensorConfigIdleTime extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
@@ -34,7 +34,7 @@ export interface XiaomiCgpr1BinarySensorConfigIdleTime extends Sensor_SENSOR_SCH
     unit_of_measurement?: any;
 }
 
-export interface XiaomiCgpr1BinarySensorConfigIlluminance extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiCgpr1BinarySensorConfigIlluminance extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -49,4 +49,4 @@ export type XiaomiCgpr1BinarySensorConfig = {
         idle_time?: XiaomiCgpr1BinarySensorConfigIdleTime;
         illuminance?: XiaomiCgpr1BinarySensorConfigIlluminance;
         mac_address: string;
-    } & BinarySensor_BINARY_SENSOR_SCHEMA & BthomeMithermometerBLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BinarySensorBINARYSENSORSCHEMA & BthomeMithermometerBLEDEVICESCHEMA & CoreCOMPONENTSCHEMA;

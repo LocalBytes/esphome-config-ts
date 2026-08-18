@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Ltr390Sensor extends EsphomeComponent<Ltr390SensorConfig> {
     componentName: string = "ltr390.sensor";
 }
 
-export interface Ltr390SensorConfigAmbientLight extends Sensor_SENSOR_SCHEMA {
+export interface Ltr390SensorConfigAmbientLight extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -32,7 +32,7 @@ export interface Ltr390SensorConfigGain {
     uv: Ltr390SensorConfigGainUv;
 }
 
-export interface Ltr390SensorConfigLight extends Sensor_SENSOR_SCHEMA {
+export interface Ltr390SensorConfigLight extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -48,7 +48,7 @@ export interface Ltr390SensorConfigResolution {
     uv: Ltr390SensorConfigResolutionUv;
 }
 
-export interface Ltr390SensorConfigUv extends Sensor_SENSOR_SCHEMA {
+export interface Ltr390SensorConfigUv extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -56,7 +56,7 @@ export interface Ltr390SensorConfigUv extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Ltr390SensorConfigUvIndex extends Sensor_SENSOR_SCHEMA {
+export interface Ltr390SensorConfigUvIndex extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -64,7 +64,7 @@ export interface Ltr390SensorConfigUvIndex extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Ltr390SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Ltr390SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     ambient_light?: Ltr390SensorConfigAmbientLight;
     gain?: Ltr390SensorConfigGain;

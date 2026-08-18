@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class UsbHost extends EsphomeComponent<UsbHostConfig> {
     componentName: string = "usb_host";
 }
 
-export interface UsbHostConfigDevices extends CoreCOMPONENT_SCHEMA {
+export interface UsbHostConfigDevices extends CoreCOMPONENTSCHEMA {
     id?: ID;
     pid: string;
     vid: string;
@@ -23,7 +23,7 @@ export interface UsbHostConfigDevices extends CoreCOMPONENT_SCHEMA {
 
 export type UsbHostConfigMaxPacketSize = '64' | '128' | '256' | '512' | '1024';
 
-export interface UsbHostConfig extends CoreCOMPONENT_SCHEMA {
+export interface UsbHostConfig extends CoreCOMPONENTSCHEMA {
     devices?: UsbHostConfigDevices[];
     enable_hubs?: boolean;
     id?: ID;

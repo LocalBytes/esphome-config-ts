@@ -9,51 +9,51 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreENTITY_BASE_SCHEMA, CoreMQTT_COMMAND_COMPONENT_SCHEMA } from "./esphome.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreENTITYBASESCHEMA, CoreMQTTCOMMANDCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Light extends EsphomeComponent {
     componentName: string = "light";
 }
 
-export interface LightADDRESSABLE_LIGHT_SCHEMA extends LightRGB_LIGHT_SCHEMA {
+export interface LightADDRESSABLELIGHTSCHEMA extends LightRGBLIGHTSCHEMA {
     color_correct?: any;
     effects?: any;
     id?: any;
     power_supply?: ID;
 }
 
-export interface LightBINARY_LIGHT_SCHEMA extends LightLIGHT_SCHEMA {
+export interface LightBINARYLIGHTSCHEMA extends LightLIGHTSCHEMA {
     effects?: any;
 }
 
-export type LightBRIGHTNESS_ONLY_LIGHT_SCHEMADefaultTransitionLength = CorePositiveTimePeriodMilliseconds;
-export type LightBRIGHTNESS_ONLY_LIGHT_SCHEMAFlashTransitionLength = CorePositiveTimePeriodMilliseconds;
+export type LightBRIGHTNESSONLYLIGHTSCHEMADefaultTransitionLength = CorePositiveTimePeriodMilliseconds;
+export type LightBRIGHTNESSONLYLIGHTSCHEMAFlashTransitionLength = CorePositiveTimePeriodMilliseconds;
 
-export interface LightBRIGHTNESS_ONLY_LIGHT_SCHEMA extends LightLIGHT_SCHEMA {
-    default_transition_length?: LightBRIGHTNESS_ONLY_LIGHT_SCHEMADefaultTransitionLength;
+export interface LightBRIGHTNESSONLYLIGHTSCHEMA extends LightLIGHTSCHEMA {
+    default_transition_length?: LightBRIGHTNESSONLYLIGHTSCHEMADefaultTransitionLength;
     effects?: any;
-    flash_transition_length?: LightBRIGHTNESS_ONLY_LIGHT_SCHEMAFlashTransitionLength;
+    flash_transition_length?: LightBRIGHTNESSONLYLIGHTSCHEMAFlashTransitionLength;
     gamma_correct?: any;
 }
 
-export type LightLIGHT_SCHEMAInitialState = LightLIGHT_STATE_SCHEMA;
-export type LightLIGHT_SCHEMARestoreMode = 'RESTORE_DEFAULT_OFF' | 'RESTORE_DEFAULT_ON' | 'ALWAYS_OFF' | 'ALWAYS_ON' | 'RESTORE_INVERTED_DEFAULT_OFF' | 'RESTORE_INVERTED_DEFAULT_ON' | 'RESTORE_AND_OFF' | 'RESTORE_AND_ON';
+export type LightLIGHTSCHEMAInitialState = LightLIGHTSTATESCHEMA;
+export type LightLIGHTSCHEMARestoreMode = 'RESTORE_DEFAULT_OFF' | 'RESTORE_DEFAULT_ON' | 'ALWAYS_OFF' | 'ALWAYS_ON' | 'RESTORE_INVERTED_DEFAULT_OFF' | 'RESTORE_INVERTED_DEFAULT_ON' | 'RESTORE_AND_OFF' | 'RESTORE_AND_ON';
 
-export interface LightLIGHT_SCHEMAWebServer {
+export interface LightLIGHTSCHEMAWebServer {
     sorting_group_id?: ID;
     sorting_weight?: any;
     web_server_id?: ID;
 }
 
-export type LightLIGHT_SCHEMA = {
+export type LightLIGHTSCHEMA = {
         id?: ID;
-        initial_state?: LightLIGHT_SCHEMAInitialState;
+        initial_state?: LightLIGHTSCHEMAInitialState;
         mqtt_id?: any;
         on_state?: object[];
         on_turn_off?: object[];
         on_turn_on?: object[];
-        restore_mode?: LightLIGHT_SCHEMARestoreMode;
-        web_server?: LightLIGHT_SCHEMAWebServer;
+        restore_mode?: LightLIGHTSCHEMARestoreMode;
+        web_server?: LightLIGHTSCHEMAWebServer;
         name?: any;
         icon?: any;
         effects?: any;
@@ -73,15 +73,15 @@ export type LightLIGHT_SCHEMA = {
         color_temperature?: any;
         cold_white?: any;
         warm_white?: any;
-    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMMAND_COMPONENT_SCHEMA;
-export type LightLIGHT_STATE_SCHEMAColorMode = 'ON_OFF' | 'BRIGHTNESS' | 'WHITE' | 'COLOR_TEMPERATURE' | 'COLD_WARM_WHITE' | 'RGB' | 'RGB_WHITE' | 'RGB_COLOR_TEMPERATURE' | 'RGB_COLD_WARM_WHITE';
+    } & CoreENTITYBASESCHEMA & CoreMQTTCOMMANDCOMPONENTSCHEMA;
+export type LightLIGHTSTATESCHEMAColorMode = 'ON_OFF' | 'BRIGHTNESS' | 'WHITE' | 'COLOR_TEMPERATURE' | 'COLD_WARM_WHITE' | 'RGB' | 'RGB_WHITE' | 'RGB_COLOR_TEMPERATURE' | 'RGB_COLD_WARM_WHITE';
 
-export interface LightLIGHT_STATE_SCHEMA {
+export interface LightLIGHTSTATESCHEMA {
     blue?: any;
     brightness?: any;
     cold_white?: any;
     color_brightness?: any;
-    color_mode?: LightLIGHT_STATE_SCHEMAColorMode;
+    color_mode?: LightLIGHTSTATESCHEMAColorMode;
     color_temperature?: any;
     green?: any;
     red?: any;
@@ -90,6 +90,6 @@ export interface LightLIGHT_STATE_SCHEMA {
     white?: any;
 }
 
-export interface LightRGB_LIGHT_SCHEMA extends LightBRIGHTNESS_ONLY_LIGHT_SCHEMA {
+export interface LightRGBLIGHTSCHEMA extends LightBRIGHTNESSONLYLIGHTSCHEMA {
     effects?: any;
 }

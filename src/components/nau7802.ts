@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Nau7802 extends EsphomeComponent {
     componentName: string = "nau7802";
@@ -36,8 +36,8 @@ export type Nau7802SensorConfig = {
         samples_per_second?: Nau7802SensorConfigSamplesPerSecond;
         state_class?: any;
         update_interval?: any;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 
-export interface Nau7802SensorNAU7802_CALIBRATE_SCHEMA {
+export interface Nau7802SensorNAU7802CALIBRATESCHEMA {
     id?: ID;
 }

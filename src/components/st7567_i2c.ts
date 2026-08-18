@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { St7567BaseST7567_SCHEMA } from "./st7567_base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { St7567BaseST7567SCHEMA } from "./st7567_base.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class St7567I2cDisplay extends EsphomeComponent<St7567I2cDisplayConfig> {
     componentName: string = "st7567_i2c.display";
@@ -24,4 +24,4 @@ export type St7567I2cDisplayConfig = {
         pages?: any;
         lambda?: any;
         rotation?: any;
-    } & St7567BaseST7567_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & St7567BaseST7567SCHEMA & CoreCOMPONENTSCHEMA;

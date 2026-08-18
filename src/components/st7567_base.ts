@@ -9,21 +9,21 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class St7567Base extends EsphomeComponent {
     componentName: string = "st7567_base";
 }
 
-export interface St7567BaseST7567_SCHEMATransform {
+export interface St7567BaseST7567SCHEMATransform {
     mirror_x?: boolean;
     mirror_y?: boolean;
 }
 
-export type St7567BaseST7567_SCHEMA = {
+export type St7567BaseST7567SCHEMA = {
         invert_colors?: boolean;
         reset_pin?: Pin;
-        transform?: St7567BaseST7567_SCHEMATransform;
+        transform?: St7567BaseST7567SCHEMATransform;
         update_interval?: any;
-    } & DisplayFULL_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & DisplayFULLDISPLAYSCHEMA & CoreCOMPONENTSCHEMA;

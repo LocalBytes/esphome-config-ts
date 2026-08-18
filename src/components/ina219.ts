@@ -9,42 +9,42 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Ina219Sensor extends EsphomeComponent<Ina219SensorConfig> {
     componentName: string = "ina219.sensor";
 }
 
-export interface Ina219SensorConfigBusVoltage extends Sensor_SENSOR_SCHEMA {
+export interface Ina219SensorConfigBusVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ina219SensorConfigCurrent extends Sensor_SENSOR_SCHEMA {
+export interface Ina219SensorConfigCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ina219SensorConfigPower extends Sensor_SENSOR_SCHEMA {
+export interface Ina219SensorConfigPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ina219SensorConfigShuntVoltage extends Sensor_SENSOR_SCHEMA {
+export interface Ina219SensorConfigShuntVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ina219SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Ina219SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     bus_voltage?: Ina219SensorConfigBusVoltage;
     current?: Ina219SensorConfigCurrent;

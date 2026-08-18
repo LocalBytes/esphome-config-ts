@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Bmp581BaseConfig_BASE } from "./bmp581_base.js";
+import type { Bmp581BaseCONFIGSCHEMABASE } from "./bmp581_base.js";
 
 export class Bmp581I2cSensor extends EsphomeComponent<Bmp581I2cSensorConfig> {
     componentName: string = "bmp581_i2c.sensor";
 }
 
-export interface Bmp581I2cSensorConfig extends Bmp581BaseConfig_BASE {
+export interface Bmp581I2cSensorConfig extends Bmp581BaseCONFIGSCHEMABASE {
     address?: any;
     i2c_id?: ID;
     id?: any;

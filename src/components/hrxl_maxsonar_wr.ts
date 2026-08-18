@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class HrxlMaxsonarWrSensor extends EsphomeComponent<HrxlMaxsonarWrSensorConfig> {
     componentName: string = "hrxl_maxsonar_wr.sensor";
 }
 
-export interface HrxlMaxsonarWrSensorConfig extends Sensor_SENSOR_SCHEMA {
+export interface HrxlMaxsonarWrSensorConfig extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     id?: any;

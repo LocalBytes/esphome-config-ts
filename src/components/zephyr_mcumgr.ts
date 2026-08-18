@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { OtaBASE_OTA_SCHEMA } from "./ota.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { OtaBASEOTASCHEMA } from "./ota.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class ZephyrMcumgrOta extends EsphomeComponent<ZephyrMcumgrOtaConfig> {
     componentName: string = "zephyr_mcumgr.ota";
@@ -26,4 +26,4 @@ export interface ZephyrMcumgrOtaConfigTransport {
 export type ZephyrMcumgrOtaConfig = {
         id?: ID;
         transport?: ZephyrMcumgrOtaConfigTransport;
-    } & OtaBASE_OTA_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OtaBASEOTASCHEMA & CoreCOMPONENTSCHEMA;

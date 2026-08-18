@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
 
 export class Sm16716 extends EsphomeComponent<Sm16716Config> {
     componentName: string = "sm16716";
 }
 
-export interface Sm16716Config extends CoreCOMPONENT_SCHEMA {
+export interface Sm16716Config extends CoreCOMPONENTSCHEMA {
     clock_pin: Pin;
     data_pin: Pin;
     id?: ID;
@@ -32,4 +32,4 @@ export type Sm16716OutputConfig = {
         channel: number;
         id: string;
         sm16716_id?: ID;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;

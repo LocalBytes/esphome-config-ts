@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class Ads1115 extends EsphomeComponent<Ads1115Config> {
     componentName: string = "ads1115";
 }
 
-export interface Ads1115Config extends CoreCOMPONENT_SCHEMA {
+export interface Ads1115Config extends CoreCOMPONENTSCHEMA {
     address: string;
     continuous_mode?: boolean;
     i2c_id?: ID;
@@ -43,4 +43,4 @@ export type Ads1115SensorConfig = {
         state_class?: any;
         unit_of_measurement?: any;
         update_interval?: any;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

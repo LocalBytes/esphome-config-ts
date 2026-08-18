@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Xl9535 extends EsphomeComponent<Xl9535Config> {
     componentName: string = "xl9535";
 }
 
-export interface Xl9535Config extends CoreCOMPONENT_SCHEMA {
+export interface Xl9535Config extends CoreCOMPONENTSCHEMA {
     address?: any;
     i2c_id?: ID;
     id: string;

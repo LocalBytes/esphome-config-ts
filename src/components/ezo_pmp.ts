@@ -9,23 +9,23 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class EzoPmp extends EsphomeComponent<EzoPmpConfig> {
     componentName: string = "ezo_pmp";
 }
 
-export interface EzoPmpConfig extends CoreCOMPONENT_SCHEMA {
+export interface EzoPmpConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: ID;
     update_interval?: any;
 }
 
-export interface EzoPmpEZO_PMP_NO_ARGS_ACTION_SCHEMA {
+export interface EzoPmpEZOPMPNOARGSACTIONSCHEMA {
     id: ID;
 }
 
@@ -33,12 +33,12 @@ export class EzoPmpBinarySensor extends EsphomeComponent<EzoPmpBinarySensorConfi
     componentName: string = "ezo_pmp.binary_sensor";
 }
 
-export interface EzoPmpBinarySensorConfigIsPaused extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface EzoPmpBinarySensorConfigIsPaused extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     entity_category?: any;
 }
 
-export interface EzoPmpBinarySensorConfigPumpState extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface EzoPmpBinarySensorConfigPumpState extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     entity_category?: any;
 }
@@ -53,7 +53,7 @@ export class EzoPmpSensor extends EsphomeComponent<EzoPmpSensorConfig> {
     componentName: string = "ezo_pmp.sensor";
 }
 
-export interface EzoPmpSensorConfigAbsoluteTotalVolumeDosed extends Sensor_SENSOR_SCHEMA {
+export interface EzoPmpSensorConfigAbsoluteTotalVolumeDosed extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -61,7 +61,7 @@ export interface EzoPmpSensorConfigAbsoluteTotalVolumeDosed extends Sensor_SENSO
     unit_of_measurement?: any;
 }
 
-export interface EzoPmpSensorConfigCurrentVolumeDosed extends Sensor_SENSOR_SCHEMA {
+export interface EzoPmpSensorConfigCurrentVolumeDosed extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -69,7 +69,7 @@ export interface EzoPmpSensorConfigCurrentVolumeDosed extends Sensor_SENSOR_SCHE
     unit_of_measurement?: any;
 }
 
-export interface EzoPmpSensorConfigLastVolumeRequested extends Sensor_SENSOR_SCHEMA {
+export interface EzoPmpSensorConfigLastVolumeRequested extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -78,7 +78,7 @@ export interface EzoPmpSensorConfigLastVolumeRequested extends Sensor_SENSOR_SCH
     id?: ID;
 }
 
-export interface EzoPmpSensorConfigMaxFlowRate extends Sensor_SENSOR_SCHEMA {
+export interface EzoPmpSensorConfigMaxFlowRate extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -86,7 +86,7 @@ export interface EzoPmpSensorConfigMaxFlowRate extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface EzoPmpSensorConfigPumpVoltage extends Sensor_SENSOR_SCHEMA {
+export interface EzoPmpSensorConfigPumpVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -94,7 +94,7 @@ export interface EzoPmpSensorConfigPumpVoltage extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface EzoPmpSensorConfigTotalVolumeDosed extends Sensor_SENSOR_SCHEMA {
+export interface EzoPmpSensorConfigTotalVolumeDosed extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -117,11 +117,11 @@ export class EzoPmpTextSensor extends EsphomeComponent<EzoPmpTextSensorConfig> {
     componentName: string = "ezo_pmp.text_sensor";
 }
 
-export interface EzoPmpTextSensorConfigCalibrationStatus extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface EzoPmpTextSensorConfigCalibrationStatus extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
 }
 
-export interface EzoPmpTextSensorConfigDosingMode extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface EzoPmpTextSensorConfigDosingMode extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
 }
 

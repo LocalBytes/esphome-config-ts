@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
 
 export class MipiDsiDisplay extends EsphomeComponent<MipiDsiDisplayConfig> {
     componentName: string = "mipi_dsi.display";
@@ -32,7 +32,7 @@ export type MipiDsiDisplayConfigModel = 'CUSTOM' | 'JC1060P470' | 'JC4880P443' |
 export type MipiDsiDisplayConfigPixelMode = '16' | '24' | '16bit' | '24bit';
 export type MipiDsiDisplayConfigTransform = 'disabled';
 
-export interface MipiDsiDisplayConfig extends DisplayFULL_DISPLAY_SCHEMA {
+export interface MipiDsiDisplayConfig extends DisplayFULLDISPLAYSCHEMA {
     byte_order?: MipiDsiDisplayConfigByteOrder;
     color_depth?: MipiDsiDisplayConfigColorDepth;
     color_order?: MipiDsiDisplayConfigColorOrder;

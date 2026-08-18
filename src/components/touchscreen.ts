@@ -9,37 +9,37 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
 
 export abstract class Touchscreen extends EsphomeComponent {
     componentName: string = "touchscreen";
 }
 
-export interface TouchscreenCALIBRATION_SCHEMA {
+export interface TouchscreenCALIBRATIONSCHEMA {
     x_max: number;
     x_min: number;
     y_max: number;
     y_min: number;
 }
 
-export type TouchscreenTOUCHSCREEN_SCHEMACalibration = TouchscreenCALIBRATION_SCHEMA;
-export type TouchscreenTOUCHSCREEN_SCHEMATouchTimeout = CorePositiveTimePeriodMilliseconds;
+export type TouchscreenTOUCHSCREENSCHEMACalibration = TouchscreenCALIBRATIONSCHEMA;
+export type TouchscreenTOUCHSCREENSCHEMATouchTimeout = CorePositiveTimePeriodMilliseconds;
 
-export interface TouchscreenTOUCHSCREEN_SCHEMATransform {
+export interface TouchscreenTOUCHSCREENSCHEMATransform {
     mirror_x?: boolean;
     mirror_y?: boolean;
     swap_xy?: boolean;
 }
 
-export interface TouchscreenTOUCHSCREEN_SCHEMA extends CoreCOMPONENT_SCHEMA {
-    calibration?: TouchscreenTOUCHSCREEN_SCHEMACalibration;
+export interface TouchscreenTOUCHSCREENSCHEMA extends CoreCOMPONENTSCHEMA {
+    calibration?: TouchscreenTOUCHSCREENSCHEMACalibration;
     display?: ID;
     on_release?: object[];
     on_touch?: object[];
     on_update?: object[];
-    touch_timeout?: TouchscreenTOUCHSCREEN_SCHEMATouchTimeout;
-    transform?: TouchscreenTOUCHSCREEN_SCHEMATransform;
+    touch_timeout?: TouchscreenTOUCHSCREENSCHEMATouchTimeout;
+    transform?: TouchscreenTOUCHSCREENSCHEMATransform;
     update_interval?: any;
 }
 
@@ -57,4 +57,4 @@ export type TouchscreenBinarySensorConfig = {
         x_min: number;
         y_max: number;
         y_min: number;
-    } & BinarySensor_BINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BinarySensorBINARYSENSORSCHEMA & CoreCOMPONENTSCHEMA;

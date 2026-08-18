@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Fan_FAN_SCHEMA } from "./fan.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { FanFANSCHEMA } from "./fan.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class SpeedFan extends EsphomeComponent<SpeedFanConfig> {
     componentName: string = "speed.fan";
@@ -23,4 +23,4 @@ export type SpeedFanConfig = {
         output: ID;
         preset_modes?: any;
         speed_count?: number;
-    } & Fan_FAN_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & FanFANSCHEMA & CoreCOMPONENTSCHEMA;

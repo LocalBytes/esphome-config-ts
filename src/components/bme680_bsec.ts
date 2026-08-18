@@ -10,8 +10,8 @@
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMinutes } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class Bme680Bsec extends EsphomeComponent<Bme680BsecConfig> {
     componentName: string = "bme680_bsec";
@@ -37,21 +37,21 @@ export class Bme680BsecSensor extends EsphomeComponent<Bme680BsecSensorConfig> {
     componentName: string = "bme680_bsec.sensor";
 }
 
-export interface Bme680BsecSensorConfigBreathVocEquivalent extends Sensor_SENSOR_SCHEMA {
+export interface Bme680BsecSensorConfigBreathVocEquivalent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Bme680BsecSensorConfigCo2Equivalent extends Sensor_SENSOR_SCHEMA {
+export interface Bme680BsecSensorConfigCo2Equivalent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Bme680BsecSensorConfigGasResistance extends Sensor_SENSOR_SCHEMA {
+export interface Bme680BsecSensorConfigGasResistance extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
@@ -60,7 +60,7 @@ export interface Bme680BsecSensorConfigGasResistance extends Sensor_SENSOR_SCHEM
 
 export type Bme680BsecSensorConfigHumiditySampleRate = 'LP' | 'ULP';
 
-export interface Bme680BsecSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface Bme680BsecSensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -69,14 +69,14 @@ export interface Bme680BsecSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Bme680BsecSensorConfigIaq extends Sensor_SENSOR_SCHEMA {
+export interface Bme680BsecSensorConfigIaq extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Bme680BsecSensorConfigIaqAccuracy extends Sensor_SENSOR_SCHEMA {
+export interface Bme680BsecSensorConfigIaqAccuracy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
@@ -84,7 +84,7 @@ export interface Bme680BsecSensorConfigIaqAccuracy extends Sensor_SENSOR_SCHEMA 
 
 export type Bme680BsecSensorConfigPressureSampleRate = 'LP' | 'ULP';
 
-export interface Bme680BsecSensorConfigPressure extends Sensor_SENSOR_SCHEMA {
+export interface Bme680BsecSensorConfigPressure extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     sample_rate?: Bme680BsecSensorConfigPressureSampleRate;
@@ -94,7 +94,7 @@ export interface Bme680BsecSensorConfigPressure extends Sensor_SENSOR_SCHEMA {
 
 export type Bme680BsecSensorConfigTemperatureSampleRate = 'LP' | 'ULP';
 
-export interface Bme680BsecSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Bme680BsecSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -119,7 +119,7 @@ export class Bme680BsecTextSensor extends EsphomeComponent<Bme680BsecTextSensorC
     componentName: string = "bme680_bsec.text_sensor";
 }
 
-export interface Bme680BsecTextSensorConfigIaqAccuracy extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface Bme680BsecTextSensorConfigIaqAccuracy extends TextSensorTEXTSENSORSCHEMA {
     icon?: any;
 }
 

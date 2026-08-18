@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
 
 export class St7701sDisplay extends EsphomeComponent<St7701sDisplayConfig> {
     componentName: string = "st7701s.display";
@@ -37,7 +37,7 @@ export interface St7701sDisplayConfigTransform {
     mirror_y?: boolean;
 }
 
-export interface St7701sDisplayConfig extends DisplayFULL_DISPLAY_SCHEMA {
+export interface St7701sDisplayConfig extends DisplayFULLDISPLAYSCHEMA {
     color_order?: St7701sDisplayConfigColorOrder;
     cs_pin?: Pin;
     data_pins: St7701sDisplayConfigDataPins;

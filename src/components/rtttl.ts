@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Rtttl extends EsphomeComponent<RtttlConfig> {
     componentName: string = "rtttl";
 }
 
-export interface RtttlConfig extends CoreCOMPONENT_SCHEMA {
+export interface RtttlConfig extends CoreCOMPONENTSCHEMA {
     gain?: any;
     id?: ID;
     on_finished_playback?: object[];

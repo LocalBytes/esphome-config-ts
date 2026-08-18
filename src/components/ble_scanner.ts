@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class BleScannerTextSensor extends EsphomeComponent<BleScannerTextSensorConfig> {
     componentName: string = "ble_scanner.text_sensor";
@@ -19,4 +19,4 @@ export class BleScannerTextSensor extends EsphomeComponent<BleScannerTextSensorC
 export type BleScannerTextSensorConfig = {
         esp32_ble_id?: ID;
         id?: any;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;

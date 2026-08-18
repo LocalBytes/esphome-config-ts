@@ -39,7 +39,7 @@ export interface Bk72xxConfig {
     id?: ID;
 }
 
-export interface Bk72xxPIN_SCHEMA {
+export interface Bk72xxPINSCHEMA {
     allow_other_uses?: boolean;
     id?: ID;
     inverted?: boolean;

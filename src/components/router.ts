@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class RouterSpeaker extends EsphomeComponent<RouterSpeakerConfig> {
     componentName: string = "router.speaker";
 }
 
-export interface RouterSpeakerConfig extends CoreCOMPONENT_SCHEMA {
+export interface RouterSpeakerConfig extends CoreCOMPONENTSCHEMA {
     bits_per_sample: number;
     id?: ID;
     num_channels: number;

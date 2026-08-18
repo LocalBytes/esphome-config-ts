@@ -9,9 +9,9 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Button_BUTTON_SCHEMA } from "./button.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { ButtonBUTTONSCHEMA } from "./button.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
 
 export class SafeMode extends EsphomeComponent<SafeModeConfig> {
     componentName: string = "safe_mode";
@@ -20,7 +20,7 @@ export class SafeMode extends EsphomeComponent<SafeModeConfig> {
 export type SafeModeConfigBootIsGoodAfter = CorePositiveTimePeriodMilliseconds;
 export type SafeModeConfigRebootTimeout = CorePositiveTimePeriodMilliseconds;
 
-export interface SafeModeConfig extends CoreCOMPONENT_SCHEMA {
+export interface SafeModeConfig extends CoreCOMPONENTSCHEMA {
     boot_is_good_after?: SafeModeConfigBootIsGoodAfter;
     disabled?: boolean;
     id?: ID;
@@ -39,7 +39,7 @@ export type SafeModeButtonConfig = {
         icon?: any;
         id?: ID;
         safe_mode?: ID;
-    } & Button_BUTTON_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & ButtonBUTTONSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class SafeModeSwitch extends EsphomeComponent<SafeModeSwitchConfig> {
     componentName: string = "safe_mode.switch";
@@ -50,4 +50,4 @@ export type SafeModeSwitchConfig = {
         icon?: any;
         id?: ID;
         safe_mode?: ID;
-    } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA;

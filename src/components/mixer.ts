@@ -10,7 +10,7 @@
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds } from "./esphome.js";
-import type { SpeakerSPEAKER_SCHEMA } from "./speaker.js";
+import type { SpeakerSPEAKERSCHEMA } from "./speaker.js";
 
 export class MixerSpeaker extends EsphomeComponent<MixerSpeakerConfig> {
     componentName: string = "mixer.speaker";
@@ -20,7 +20,7 @@ export type MixerSpeakerConfigBitsPerSample = '8' | '16' | '24' | '32';
 export type MixerSpeakerConfigSourceSpeakersBufferDuration = CorePositiveTimePeriodMilliseconds;
 export type MixerSpeakerConfigSourceSpeakersTimeout = 'never';
 
-export interface MixerSpeakerConfigSourceSpeakers extends SpeakerSPEAKER_SCHEMA {
+export interface MixerSpeakerConfigSourceSpeakers extends SpeakerSPEAKERSCHEMA {
     buffer_duration?: MixerSpeakerConfigSourceSpeakersBufferDuration;
     id?: ID;
     timeout?: MixerSpeakerConfigSourceSpeakersTimeout;

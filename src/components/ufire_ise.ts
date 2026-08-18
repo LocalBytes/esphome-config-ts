@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class UfireIse extends EsphomeComponent {
     componentName: string = "ufire_ise";
@@ -20,7 +20,7 @@ export class UfireIseSensor extends EsphomeComponent<UfireIseSensorConfig> {
     componentName: string = "ufire_ise.sensor";
 }
 
-export interface UfireIseSensorConfigPh extends Sensor_SENSOR_SCHEMA {
+export interface UfireIseSensorConfigPh extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -28,14 +28,14 @@ export interface UfireIseSensorConfigPh extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface UfireIseSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface UfireIseSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface UfireIseSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface UfireIseSensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: ID;
@@ -45,7 +45,7 @@ export interface UfireIseSensorConfig extends CoreCOMPONENT_SCHEMA {
     update_interval?: any;
 }
 
-export interface UfireIseSensorUFIRE_ISE_CALIBRATE_PROBE_SCHEMA {
+export interface UfireIseSensorUFIREISECALIBRATEPROBESCHEMA {
     id?: ID;
     solution: string;
 }

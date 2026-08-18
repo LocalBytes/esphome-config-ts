@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { As3935AS3935_SCHEMA } from "./as3935.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { As3935AS3935SCHEMA } from "./as3935.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class As3935Spi extends EsphomeComponent<As3935SpiConfig> {
     componentName: string = "as3935_spi";
@@ -24,4 +24,4 @@ export type As3935SpiConfig = {
         release_device?: boolean;
         spi_id?: ID;
         spi_mode?: As3935SpiConfigSpiMode;
-    } & As3935AS3935_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & As3935AS3935SCHEMA & CoreCOMPONENTSCHEMA;

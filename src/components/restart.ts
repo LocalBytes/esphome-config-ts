@@ -9,9 +9,9 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Button_BUTTON_SCHEMA } from "./button.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
+import type { ButtonBUTTONSCHEMA } from "./button.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
 
 export class RestartButton extends EsphomeComponent<RestartButtonConfig> {
     componentName: string = "restart.button";
@@ -22,7 +22,7 @@ export type RestartButtonConfig = {
         entity_category?: any;
         icon?: any;
         id?: ID;
-    } & Button_BUTTON_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & ButtonBUTTONSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class RestartSwitch extends EsphomeComponent<RestartSwitchConfig> {
     componentName: string = "restart.switch";
@@ -32,4 +32,4 @@ export type RestartSwitchConfig = {
         entity_category?: any;
         icon?: any;
         id?: ID;
-    } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA;

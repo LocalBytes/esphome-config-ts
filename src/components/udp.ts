@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { PacketTransportTRANSPORT_SCHEMA } from "./packet_transport.js";
+import type { PacketTransportTRANSPORTSCHEMA } from "./packet_transport.js";
 
 export class Udp extends EsphomeComponent<UdpConfig> {
     componentName: string = "udp";
@@ -29,7 +29,7 @@ export interface UdpConfig {
     sensors?: any;
 }
 
-export interface UdpUDP_SCHEMA {
+export interface UdpUDPSCHEMA {
     udp_id?: ID;
 }
 
@@ -39,4 +39,4 @@ export class UdpPacketTransport extends EsphomeComponent<UdpPacketTransportConfi
 
 export type UdpPacketTransportConfig = {
         id?: ID;
-    } & PacketTransportTRANSPORT_SCHEMA & UdpUDP_SCHEMA;
+    } & PacketTransportTRANSPORTSCHEMA & UdpUDPSCHEMA;

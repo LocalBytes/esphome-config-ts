@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
 
 export abstract class Hub75 extends EsphomeComponent {
     componentName: string = "hub75";
@@ -26,7 +26,7 @@ export type Hub75DisplayConfigLayout = 'HORIZONTAL' | 'TOP_LEFT_DOWN' | 'TOP_RIG
 export type Hub75DisplayConfigRotation = '0' | '90' | '180' | '270';
 export type Hub75DisplayConfigShiftDriver = 'GENERIC' | 'FM6126A' | 'ICN2038S' | 'FM6124' | 'MBI5124' | 'DP3246';
 
-export interface Hub75DisplayConfig extends DisplayFULL_DISPLAY_SCHEMA {
+export interface Hub75DisplayConfig extends DisplayFULLDISPLAYSCHEMA {
     a_pin: Pin;
     b1_pin: Pin;
     b2_pin: Pin;

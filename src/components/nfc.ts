@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class NfcBinarySensor extends EsphomeComponent<NfcBinarySensorConfig> {
     componentName: string = "nfc.binary_sensor";
@@ -22,4 +22,4 @@ export type NfcBinarySensorConfig = {
         nfcc_id?: ID;
         tag_id?: string;
         uid?: any;
-    } & BinarySensor_BINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BinarySensorBINARYSENSORSCHEMA & CoreCOMPONENTSCHEMA;

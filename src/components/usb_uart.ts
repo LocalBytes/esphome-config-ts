@@ -15,27 +15,27 @@ export class UsbUart extends EsphomeComponent<UsbUartConfig> {
     componentName: string = "usb_uart";
 }
 
-export type UsbUartConfig = UsbUartConfigCDC_ACM | UsbUartConfigCH340 | UsbUartConfigCH34X | UsbUartConfigCP210X | UsbUartConfigESP_JTAG | UsbUartConfigFT2232 | UsbUartConfigFT232 | UsbUartConfigFT4232 | UsbUartConfigPL2303 | UsbUartConfigPL2303GB | UsbUartConfigPL2303GC | UsbUartConfigPL2303GE | UsbUartConfigPL2303GL | UsbUartConfigPL2303GS | UsbUartConfigPL2303GT | UsbUartConfigSTM32_VCP;
-export type UsbUartConfigCDC_ACMChannelsFlushTimeout = CorePositiveTimePeriodMilliseconds;
-export type UsbUartConfigCDC_ACMChannelsParity = 'NONE' | 'EVEN' | 'ODD' | 'MARK' | 'SPACE';
-export type UsbUartConfigCDC_ACMChannelsStopBits = '1' | '2' | '1.5';
+export type UsbUartConfig = UsbUartConfigCDCACM | UsbUartConfigCH340 | UsbUartConfigCH34X | UsbUartConfigCP210X | UsbUartConfigESPJTAG | UsbUartConfigFT2232 | UsbUartConfigFT232 | UsbUartConfigFT4232 | UsbUartConfigPL2303 | UsbUartConfigPL2303GB | UsbUartConfigPL2303GC | UsbUartConfigPL2303GE | UsbUartConfigPL2303GL | UsbUartConfigPL2303GS | UsbUartConfigPL2303GT | UsbUartConfigSTM32VCP;
+export type UsbUartConfigCDCACMChannelsFlushTimeout = CorePositiveTimePeriodMilliseconds;
+export type UsbUartConfigCDCACMChannelsParity = 'NONE' | 'EVEN' | 'ODD' | 'MARK' | 'SPACE';
+export type UsbUartConfigCDCACMChannelsStopBits = '1' | '2' | '1.5';
 
-export interface UsbUartConfigCDC_ACMChannels {
+export interface UsbUartConfigCDCACMChannels {
     baud_rate?: number;
     buffer_size?: number;
     data_bits?: number;
     debug?: boolean;
     debug_prefix?: string;
     dummy_receiver?: boolean;
-    flush_timeout?: UsbUartConfigCDC_ACMChannelsFlushTimeout;
+    flush_timeout?: UsbUartConfigCDCACMChannelsFlushTimeout;
     id?: ID;
-    parity?: UsbUartConfigCDC_ACMChannelsParity;
-    stop_bits?: UsbUartConfigCDC_ACMChannelsStopBits;
+    parity?: UsbUartConfigCDCACMChannelsParity;
+    stop_bits?: UsbUartConfigCDCACMChannelsStopBits;
 }
 
-export interface UsbUartConfigCDC_ACM {
+export interface UsbUartConfigCDCACM {
     type: "CDC_ACM" | "CDC_ACM";
-    channels: UsbUartConfigCDC_ACMChannels[];
+    channels: UsbUartConfigCDCACMChannels[];
     id?: ID;
     pid?: any;
     vid?: any;
@@ -116,26 +116,26 @@ export interface UsbUartConfigCP210X {
     vid?: any;
 }
 
-export type UsbUartConfigESP_JTAGChannelsFlushTimeout = CorePositiveTimePeriodMilliseconds;
-export type UsbUartConfigESP_JTAGChannelsParity = 'NONE' | 'EVEN' | 'ODD' | 'MARK' | 'SPACE';
-export type UsbUartConfigESP_JTAGChannelsStopBits = '1' | '2' | '1.5';
+export type UsbUartConfigESPJTAGChannelsFlushTimeout = CorePositiveTimePeriodMilliseconds;
+export type UsbUartConfigESPJTAGChannelsParity = 'NONE' | 'EVEN' | 'ODD' | 'MARK' | 'SPACE';
+export type UsbUartConfigESPJTAGChannelsStopBits = '1' | '2' | '1.5';
 
-export interface UsbUartConfigESP_JTAGChannels {
+export interface UsbUartConfigESPJTAGChannels {
     baud_rate?: number;
     buffer_size?: number;
     data_bits?: number;
     debug?: boolean;
     debug_prefix?: string;
     dummy_receiver?: boolean;
-    flush_timeout?: UsbUartConfigESP_JTAGChannelsFlushTimeout;
+    flush_timeout?: UsbUartConfigESPJTAGChannelsFlushTimeout;
     id?: ID;
-    parity?: UsbUartConfigESP_JTAGChannelsParity;
-    stop_bits?: UsbUartConfigESP_JTAGChannelsStopBits;
+    parity?: UsbUartConfigESPJTAGChannelsParity;
+    stop_bits?: UsbUartConfigESPJTAGChannelsStopBits;
 }
 
-export interface UsbUartConfigESP_JTAG {
+export interface UsbUartConfigESPJTAG {
     type: "ESP_JTAG" | "ESP_JTAG";
-    channels: UsbUartConfigESP_JTAGChannels[];
+    channels: UsbUartConfigESPJTAGChannels[];
     id?: ID;
     pid?: any;
     vid?: any;
@@ -391,26 +391,26 @@ export interface UsbUartConfigPL2303GT {
     vid?: any;
 }
 
-export type UsbUartConfigSTM32_VCPChannelsFlushTimeout = CorePositiveTimePeriodMilliseconds;
-export type UsbUartConfigSTM32_VCPChannelsParity = 'NONE' | 'EVEN' | 'ODD' | 'MARK' | 'SPACE';
-export type UsbUartConfigSTM32_VCPChannelsStopBits = '1' | '2' | '1.5';
+export type UsbUartConfigSTM32VCPChannelsFlushTimeout = CorePositiveTimePeriodMilliseconds;
+export type UsbUartConfigSTM32VCPChannelsParity = 'NONE' | 'EVEN' | 'ODD' | 'MARK' | 'SPACE';
+export type UsbUartConfigSTM32VCPChannelsStopBits = '1' | '2' | '1.5';
 
-export interface UsbUartConfigSTM32_VCPChannels {
+export interface UsbUartConfigSTM32VCPChannels {
     baud_rate?: number;
     buffer_size?: number;
     data_bits?: number;
     debug?: boolean;
     debug_prefix?: string;
     dummy_receiver?: boolean;
-    flush_timeout?: UsbUartConfigSTM32_VCPChannelsFlushTimeout;
+    flush_timeout?: UsbUartConfigSTM32VCPChannelsFlushTimeout;
     id?: ID;
-    parity?: UsbUartConfigSTM32_VCPChannelsParity;
-    stop_bits?: UsbUartConfigSTM32_VCPChannelsStopBits;
+    parity?: UsbUartConfigSTM32VCPChannelsParity;
+    stop_bits?: UsbUartConfigSTM32VCPChannelsStopBits;
 }
 
-export interface UsbUartConfigSTM32_VCP {
+export interface UsbUartConfigSTM32VCP {
     type: "STM32_VCP" | "STM32_VCP";
-    channels: UsbUartConfigSTM32_VCPChannels[];
+    channels: UsbUartConfigSTM32VCPChannels[];
     id?: ID;
     pid?: any;
     vid?: any;

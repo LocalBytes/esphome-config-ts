@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodSeconds, CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CorePositiveTimePeriodSeconds, CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Esp32BleTracker extends EsphomeComponent<Esp32BleTrackerConfig> {
     componentName: string = "esp32_ble_tracker";
@@ -27,7 +27,7 @@ export interface Esp32BleTrackerConfigScanParameters {
     window?: Esp32BleTrackerConfigScanParametersWindow;
 }
 
-export interface Esp32BleTrackerConfig extends CoreCOMPONENT_SCHEMA {
+export interface Esp32BleTrackerConfig extends CoreCOMPONENTSCHEMA {
     ble_id?: ID;
     id?: ID;
     max_connections?: number;

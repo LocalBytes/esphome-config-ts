@@ -9,16 +9,16 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { BthomeMithermometerBLE_DEVICE_SCHEMA } from "./bthome_mithermometer.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { BthomeMithermometerBLEDEVICESCHEMA } from "./bthome_mithermometer.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class XiaomiMjyd02ylaBinarySensor extends EsphomeComponent<XiaomiMjyd02ylaBinarySensorConfig> {
     componentName: string = "xiaomi_mjyd02yla.binary_sensor";
 }
 
-export interface XiaomiMjyd02ylaBinarySensorConfigBatteryLevel extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiMjyd02ylaBinarySensorConfigBatteryLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -26,21 +26,21 @@ export interface XiaomiMjyd02ylaBinarySensorConfigBatteryLevel extends Sensor_SE
     unit_of_measurement?: any;
 }
 
-export interface XiaomiMjyd02ylaBinarySensorConfigIdleTime extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiMjyd02ylaBinarySensorConfigIdleTime extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface XiaomiMjyd02ylaBinarySensorConfigIlluminance extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiMjyd02ylaBinarySensorConfigIlluminance extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface XiaomiMjyd02ylaBinarySensorConfigLight extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface XiaomiMjyd02ylaBinarySensorConfigLight extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
 }
 
@@ -53,4 +53,4 @@ export type XiaomiMjyd02ylaBinarySensorConfig = {
         illuminance?: XiaomiMjyd02ylaBinarySensorConfigIlluminance;
         light?: XiaomiMjyd02ylaBinarySensorConfigLight;
         mac_address: string;
-    } & BinarySensor_BINARY_SENSOR_SCHEMA & BthomeMithermometerBLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BinarySensorBINARYSENSORSCHEMA & BthomeMithermometerBLEDEVICESCHEMA & CoreCOMPONENTSCHEMA;

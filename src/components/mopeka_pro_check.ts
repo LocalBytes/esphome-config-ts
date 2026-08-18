@@ -9,29 +9,29 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { BthomeMithermometerBLE_DEVICE_SCHEMA } from "./bthome_mithermometer.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { BthomeMithermometerBLEDEVICESCHEMA } from "./bthome_mithermometer.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class MopekaProCheckSensor extends EsphomeComponent<MopekaProCheckSensorConfig> {
     componentName: string = "mopeka_pro_check.sensor";
 }
 
-export interface MopekaProCheckSensorConfigBatteryLevel extends Sensor_SENSOR_SCHEMA {
+export interface MopekaProCheckSensorConfigBatteryLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface MopekaProCheckSensorConfigDistance extends Sensor_SENSOR_SCHEMA {
+export interface MopekaProCheckSensorConfigDistance extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface MopekaProCheckSensorConfigIgnoredReads extends Sensor_SENSOR_SCHEMA {
+export interface MopekaProCheckSensorConfigIgnoredReads extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
@@ -39,7 +39,7 @@ export interface MopekaProCheckSensorConfigIgnoredReads extends Sensor_SENSOR_SC
     unit_of_measurement?: any;
 }
 
-export interface MopekaProCheckSensorConfigLevel extends Sensor_SENSOR_SCHEMA {
+export interface MopekaProCheckSensorConfigLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
@@ -48,7 +48,7 @@ export interface MopekaProCheckSensorConfigLevel extends Sensor_SENSOR_SCHEMA {
 
 export type MopekaProCheckSensorConfigMinimumSignalQuality = 'ZERO' | 'LOW' | 'MEDIUM' | 'HIGH';
 
-export interface MopekaProCheckSensorConfigSignalQuality extends Sensor_SENSOR_SCHEMA {
+export interface MopekaProCheckSensorConfigSignalQuality extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
@@ -57,7 +57,7 @@ export interface MopekaProCheckSensorConfigSignalQuality extends Sensor_SENSOR_S
 
 export type MopekaProCheckSensorConfigTankType = 'CUSTOM' | '20LB_V' | '30LB_V' | '40LB_V' | 'EUROPE_6KG' | 'EUROPE_11KG' | 'EUROPE_14KG';
 
-export interface MopekaProCheckSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface MopekaProCheckSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -78,4 +78,4 @@ export type MopekaProCheckSensorConfig = {
         signal_quality?: MopekaProCheckSensorConfigSignalQuality;
         tank_type: MopekaProCheckSensorConfigTankType;
         temperature?: MopekaProCheckSensorConfigTemperature;
-    } & BthomeMithermometerBLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BthomeMithermometerBLEDEVICESCHEMA & CoreCOMPONENTSCHEMA;

@@ -9,9 +9,9 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Climate_CLIMATE_SCHEMA } from "./climate.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { RemoteBaseREMOTE_TRANSMITTABLE_SCHEMA } from "./remote_base.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { RemoteBaseREMOTETRANSMITTABLESCHEMA } from "./remote_base.js";
 
 export class WhirlpoolClimate extends EsphomeComponent<WhirlpoolClimateConfig> {
     componentName: string = "whirlpool.climate";
@@ -26,4 +26,4 @@ export type WhirlpoolClimateConfig = {
         sensor?: ID;
         supports_cool?: boolean;
         supports_heat?: boolean;
-    } & Climate_CLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA & RemoteBaseREMOTE_TRANSMITTABLE_SCHEMA;
+    } & ClimateCLIMATESCHEMA & CoreCOMPONENTSCHEMA & RemoteBaseREMOTETRANSMITTABLESCHEMA;

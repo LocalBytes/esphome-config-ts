@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class CaptivePortal extends EsphomeComponent<CaptivePortalConfig> {
     componentName: string = "captive_portal";
@@ -17,7 +17,7 @@ export class CaptivePortal extends EsphomeComponent<CaptivePortalConfig> {
 
 export type CaptivePortalConfigCompression = 'gzip' | 'br';
 
-export interface CaptivePortalConfig extends CoreCOMPONENT_SCHEMA {
+export interface CaptivePortalConfig extends CoreCOMPONENTSCHEMA {
     compression?: CaptivePortalConfigCompression;
     id?: ID;
     web_server_base_id?: ID;

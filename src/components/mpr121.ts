@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
 
 export class Mpr121 extends EsphomeComponent<Mpr121Config> {
     componentName: string = "mpr121";
 }
 
-export interface Mpr121Config extends CoreCOMPONENT_SCHEMA {
+export interface Mpr121Config extends CoreCOMPONENTSCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: ID;
@@ -31,7 +31,7 @@ export class Mpr121BinarySensor extends EsphomeComponent<Mpr121BinarySensorConfi
     componentName: string = "mpr121.binary_sensor";
 }
 
-export interface Mpr121BinarySensorConfig extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface Mpr121BinarySensorConfig extends BinarySensorBINARYSENSORSCHEMA {
     channel: number;
     id?: any;
     mpr121_id?: ID;

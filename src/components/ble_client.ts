@@ -9,24 +9,24 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { OutputBINARY_OUTPUT_SCHEMA } from "./output.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { OutputBINARYOUTPUTSCHEMA } from "./output.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class BleClient extends EsphomeComponent<BleClientConfig> {
     componentName: string = "ble_client";
 }
 
-export interface BleClientBLE_CLIENT_SCHEMA {
+export interface BleClientBLECLIENTSCHEMA {
     ble_client_id?: ID;
 }
 
-export interface BleClientBLE_CONNECT_ACTION_SCHEMA {
+export interface BleClientBLECONNECTACTIONSCHEMA {
     id?: ID;
 }
 
-export interface BleClientConfig extends CoreCOMPONENT_SCHEMA {
+export interface BleClientConfig extends CoreCOMPONENTSCHEMA {
     auto_connect?: boolean;
     esp32_ble_id?: ID;
     id?: ID;
@@ -48,7 +48,7 @@ export type BleClientOutputConfig = {
         id: string;
         require_response?: boolean;
         service_uuid: string;
-    } & OutputBINARY_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA & BleClientBLE_CLIENT_SCHEMA;
+    } & OutputBINARYOUTPUTSCHEMA & CoreCOMPONENTSCHEMA & BleClientBLECLIENTSCHEMA;
 
 export class BleClientSensor extends EsphomeComponent<BleClientSensorConfig> {
     componentName: string = "ble_client.sensor";
@@ -86,7 +86,7 @@ export class BleClientSwitch extends EsphomeComponent<BleClientSwitchConfig> {
 export type BleClientSwitchConfig = {
         icon?: any;
         id?: ID;
-    } & Switch_SWITCH_SCHEMA & BleClientBLE_CLIENT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & BleClientBLECLIENTSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class BleClientTextSensor extends EsphomeComponent<BleClientTextSensorConfig> {
     componentName: string = "ble_client.text_sensor";
@@ -100,4 +100,4 @@ export type BleClientTextSensorConfig = {
         on_notify?: object[];
         service_uuid: string;
         update_interval?: any;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA & BleClientBLE_CLIENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA & BleClientBLECLIENTSCHEMA;

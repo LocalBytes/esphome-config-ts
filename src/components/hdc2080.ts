@@ -9,28 +9,28 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Hdc2080Sensor extends EsphomeComponent<Hdc2080SensorConfig> {
     componentName: string = "hdc2080.sensor";
 }
 
-export interface Hdc2080SensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface Hdc2080SensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Hdc2080SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Hdc2080SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Hdc2080SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Hdc2080SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     humidity?: Hdc2080SensorConfigHumidity;
     i2c_id?: ID;

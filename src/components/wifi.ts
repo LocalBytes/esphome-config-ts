@@ -16,12 +16,12 @@ export class Wifi extends EsphomeComponent<WifiConfig> {
 }
 
 export type WifiConfigBandMode = 'AUTO' | '2.4GHZ' | '5GHZ';
-export type WifiConfigEap = WifiEAP_AUTH_SCHEMA;
-export type WifiConfigManualIp = WifiSTA_MANUAL_IP_SCHEMA;
+export type WifiConfigEap = WifiEAPAUTHSCHEMA;
+export type WifiConfigManualIp = WifiSTAMANUALIPSCHEMA;
 export type WifiConfigMinAuthMode = 'WPA' | 'WPA2' | 'WPA3';
-export type WifiConfigNetworksEap = WifiEAP_AUTH_SCHEMA;
+export type WifiConfigNetworksEap = WifiEAPAUTHSCHEMA;
 
-export interface WifiConfigNetworks extends WifiWIFI_NETWORK_BASE {
+export interface WifiConfigNetworks extends WifiWIFINETWORKBASE {
     bssid?: any;
     eap?: WifiConfigNetworksEap;
     hidden?: boolean;
@@ -59,19 +59,19 @@ export interface WifiConfig {
     use_psram?: boolean;
 }
 
-export type WifiEAP_AUTH_SCHEMATtlsPhase_2 = 'pap' | 'chap' | 'mschap' | 'mschapv2' | 'eap';
+export type WifiEAPAUTHSCHEMATtlsPhase2 = 'pap' | 'chap' | 'mschap' | 'mschapv2' | 'eap';
 
-export interface WifiEAP_AUTH_SCHEMA {
+export interface WifiEAPAUTHSCHEMA {
     certificate?: any;
     certificate_authority?: any;
     identity?: string;
     key?: any;
     password?: string;
-    ttls_phase_2?: WifiEAP_AUTH_SCHEMATtlsPhase_2;
+    ttls_phase_2?: WifiEAPAUTHSCHEMATtlsPhase2;
     username?: string;
 }
 
-export interface WifiSTA_MANUAL_IP_SCHEMA {
+export interface WifiSTAMANUALIPSCHEMA {
     dns1?: any;
     dns2?: any;
     gateway: string;
@@ -79,12 +79,12 @@ export interface WifiSTA_MANUAL_IP_SCHEMA {
     subnet: string;
 }
 
-export type WifiWIFI_NETWORK_BASEManualIp = WifiSTA_MANUAL_IP_SCHEMA;
+export type WifiWIFINETWORKBASEManualIp = WifiSTAMANUALIPSCHEMA;
 
-export interface WifiWIFI_NETWORK_BASE {
+export interface WifiWIFINETWORKBASE {
     channel?: any;
     id?: ID;
-    manual_ip?: WifiWIFI_NETWORK_BASEManualIp;
+    manual_ip?: WifiWIFINETWORKBASEManualIp;
     password?: any;
     ssid?: any;
 }

@@ -9,11 +9,11 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Button_BUTTON_SCHEMA } from "./button.js";
-import type { Event_EVENT_SCHEMA } from "./event.js";
-import type { PacketTransportTRANSPORT_SCHEMA } from "./packet_transport.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { ButtonBUTTONSCHEMA } from "./button.js";
+import type { EventEVENTSCHEMA } from "./event.js";
+import type { PacketTransportTRANSPORTSCHEMA } from "./packet_transport.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
 
 export class Uart extends EsphomeComponent<UartConfig> {
     componentName: string = "uart";
@@ -23,7 +23,7 @@ export type UartConfigFlushTimeout = CorePositiveTimePeriodMilliseconds;
 export type UartConfigParity = 'NONE' | 'EVEN' | 'ODD';
 export type UartConfigStopBits = '1' | '2';
 
-export interface UartConfig extends CoreCOMPONENT_SCHEMA {
+export interface UartConfig extends CoreCOMPONENTSCHEMA {
     baud_rate: number;
     data_bits?: number;
     debug?: any;
@@ -40,7 +40,7 @@ export interface UartConfig extends CoreCOMPONENT_SCHEMA {
     tx_pin?: Pin;
 }
 
-export interface UartUART_DEVICE_SCHEMA {
+export interface UartUARTDEVICESCHEMA {
     uart_id?: ID;
 }
 
@@ -51,7 +51,7 @@ export class UartButton extends EsphomeComponent<UartButtonConfig> {
 export type UartButtonConfig = {
         data: string;
         id?: ID;
-    } & Button_BUTTON_SCHEMA & UartUART_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & ButtonBUTTONSCHEMA & UartUARTDEVICESCHEMA & CoreCOMPONENTSCHEMA;
 
 export class UartEvent extends EsphomeComponent<UartEventConfig> {
     componentName: string = "uart.event";
@@ -60,7 +60,7 @@ export class UartEvent extends EsphomeComponent<UartEventConfig> {
 export type UartEventConfig = {
         event_types: string;
         id?: any;
-    } & Event_EVENT_SCHEMA & UartUART_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & EventEVENTSCHEMA & UartUARTDEVICESCHEMA & CoreCOMPONENTSCHEMA;
 
 export class UartPacketTransport extends EsphomeComponent<UartPacketTransportConfig> {
     componentName: string = "uart.packet_transport";
@@ -68,7 +68,7 @@ export class UartPacketTransport extends EsphomeComponent<UartPacketTransportCon
 
 export type UartPacketTransportConfig = {
         id?: ID;
-    } & PacketTransportTRANSPORT_SCHEMA & UartUART_DEVICE_SCHEMA;
+    } & PacketTransportTRANSPORTSCHEMA & UartUARTDEVICESCHEMA;
 
 export class UartSwitch extends EsphomeComponent<UartSwitchConfig> {
     componentName: string = "uart.switch";
@@ -84,4 +84,4 @@ export type UartSwitchConfig = {
         data: UartSwitchConfigData;
         id?: ID;
         send_every?: UartSwitchConfigSendEvery;
-    } & Switch_SWITCH_SCHEMA & UartUART_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & UartUARTDEVICESCHEMA & CoreCOMPONENTSCHEMA;

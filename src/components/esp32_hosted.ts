@@ -9,20 +9,20 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Update_UPDATE_SCHEMA } from "./update.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { UpdateUPDATESCHEMA } from "./update.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Esp32Hosted extends EsphomeComponent<Esp32HostedConfig> {
     componentName: string = "esp32_hosted";
 }
 
-export type Esp32HostedBASE_SCHEMAVariant = 'ESP32' | 'ESP32C2' | 'ESP32C3' | 'ESP32C5' | 'ESP32C6' | 'ESP32C61' | 'ESP32H2' | 'ESP32H4' | 'ESP32H21' | 'ESP32P4' | 'ESP32S2' | 'ESP32S3' | 'ESP32S31';
+export type Esp32HostedBASESCHEMAVariant = 'ESP32' | 'ESP32C2' | 'ESP32C3' | 'ESP32C5' | 'ESP32C6' | 'ESP32C61' | 'ESP32H2' | 'ESP32H4' | 'ESP32H21' | 'ESP32P4' | 'ESP32S2' | 'ESP32S3' | 'ESP32S31';
 
-export interface Esp32HostedBASE_SCHEMA {
+export interface Esp32HostedBASESCHEMA {
     active_high: boolean;
     reset_pin: Pin;
     use_psram?: boolean;
-    variant: Esp32HostedBASE_SCHEMAVariant;
+    variant: Esp32HostedBASESCHEMAVariant;
 }
 
 export type Esp32HostedConfig = Esp32HostedConfigSdio | Esp32HostedConfigSpi;
@@ -59,11 +59,11 @@ export class Esp32HostedUpdate extends EsphomeComponent<Esp32HostedUpdateConfig>
     componentName: string = "esp32_hosted.update";
 }
 
-export type Esp32HostedUpdateBASE_SCHEMA = {
+export type Esp32HostedUpdateBASESCHEMA = {
         device_class?: any;
         id?: ID;
         update_interval?: any;
-    } & Update_UPDATE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & UpdateUPDATESCHEMA & CoreCOMPONENTSCHEMA;
 export type Esp32HostedUpdateConfig = Esp32HostedUpdateConfigEmbedded | Esp32HostedUpdateConfigHttp;
 
 export interface Esp32HostedUpdateConfigEmbedded {

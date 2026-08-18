@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class St7789vDisplay extends EsphomeComponent<St7789vDisplayConfig> {
     componentName: string = "st7789v.display";
@@ -38,4 +38,4 @@ export type St7789vDisplayConfig = {
         width?: number;
         lambda?: any;
         pages?: any;
-    } & DisplayFULL_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & DisplayFULLDISPLAYSCHEMA & CoreCOMPONENTSCHEMA;

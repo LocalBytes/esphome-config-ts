@@ -9,9 +9,9 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreTimePeriod, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Climate_CLIMATE_SCHEMA } from "./climate.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreTimePeriod, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
 
 export class MideaClimate extends EsphomeComponent<MideaClimateConfig> {
     componentName: string = "midea.climate";
@@ -20,7 +20,7 @@ export class MideaClimate extends EsphomeComponent<MideaClimateConfig> {
 export type MideaClimateConfigCustomFanModes = 'SILENT' | 'TURBO';
 export type MideaClimateConfigCustomPresets = 'FREEZE_PROTECTION';
 
-export interface MideaClimateConfigHumiditySetpoint extends Sensor_SENSOR_SCHEMA {
+export interface MideaClimateConfigHumiditySetpoint extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -28,7 +28,7 @@ export interface MideaClimateConfigHumiditySetpoint extends Sensor_SENSOR_SCHEMA
     unit_of_measurement?: any;
 }
 
-export interface MideaClimateConfigOutdoorTemperature extends Sensor_SENSOR_SCHEMA {
+export interface MideaClimateConfigOutdoorTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -38,7 +38,7 @@ export interface MideaClimateConfigOutdoorTemperature extends Sensor_SENSOR_SCHE
 
 export type MideaClimateConfigPeriod = CoreTimePeriod;
 
-export interface MideaClimateConfigPowerUsage extends Sensor_SENSOR_SCHEMA {
+export interface MideaClimateConfigPowerUsage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -67,8 +67,8 @@ export type MideaClimateConfig = {
         timeout?: MideaClimateConfigTimeout;
         transmitter_id?: ID;
         uart_id?: ID;
-    } & Climate_CLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & ClimateCLIMATESCHEMA & CoreCOMPONENTSCHEMA;
 
-export interface MideaClimateMIDEA_ACTION_BASE_SCHEMA {
+export interface MideaClimateMIDEAACTIONBASESCHEMA {
     id?: ID;
 }

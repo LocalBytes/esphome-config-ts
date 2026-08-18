@@ -9,9 +9,9 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Fan_FAN_SCHEMA } from "./fan.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { LightBINARY_LIGHT_SCHEMA } from "./light.js";
+import type { FanFANSCHEMA } from "./fan.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { LightBINARYLIGHTSCHEMA } from "./light.js";
 
 export class BinaryFan extends EsphomeComponent<BinaryFanConfig> {
     componentName: string = "binary.fan";
@@ -22,13 +22,13 @@ export type BinaryFanConfig = {
         id?: ID;
         oscillation_output?: ID;
         output: ID;
-    } & Fan_FAN_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & FanFANSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class BinaryLight extends EsphomeComponent<BinaryLightConfig> {
     componentName: string = "binary.light";
 }
 
-export interface BinaryLightConfig extends LightBINARY_LIGHT_SCHEMA {
+export interface BinaryLightConfig extends LightBINARYLIGHTSCHEMA {
     output: ID;
     output_id?: ID;
 }

@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Pn7160PN7160_SCHEMA } from "./pn7160.js";
+import type { Pn7160PN7160SCHEMA } from "./pn7160.js";
 
 export class Pn7160Spi extends EsphomeComponent<Pn7160SpiConfig> {
     componentName: string = "pn7160_spi";
@@ -17,7 +17,7 @@ export class Pn7160Spi extends EsphomeComponent<Pn7160SpiConfig> {
 
 export type Pn7160SpiConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 
-export interface Pn7160SpiConfig extends Pn7160PN7160_SCHEMA {
+export interface Pn7160SpiConfig extends Pn7160PN7160SCHEMA {
     cs_pin: Pin;
     data_rate?: any;
     id?: any;

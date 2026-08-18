@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Climate_CLIMATE_SCHEMA } from "./climate.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class CoolixClimate extends EsphomeComponent<CoolixClimateConfig> {
     componentName: string = "coolix.climate";
@@ -24,4 +24,4 @@ export type CoolixClimateConfig = {
         supports_cool?: boolean;
         supports_heat?: boolean;
         transmitter_id?: ID;
-    } & Climate_CLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & ClimateCLIMATESCHEMA & CoreCOMPONENTSCHEMA;

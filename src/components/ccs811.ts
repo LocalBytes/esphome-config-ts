@@ -9,15 +9,15 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Ccs811Sensor extends EsphomeComponent<Ccs811SensorConfig> {
     componentName: string = "ccs811.sensor";
 }
 
-export interface Ccs811SensorConfigEco2 extends Sensor_SENSOR_SCHEMA {
+export interface Ccs811SensorConfigEco2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -25,7 +25,7 @@ export interface Ccs811SensorConfigEco2 extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Ccs811SensorConfigTvoc extends Sensor_SENSOR_SCHEMA {
+export interface Ccs811SensorConfigTvoc extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -33,11 +33,11 @@ export interface Ccs811SensorConfigTvoc extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Ccs811SensorConfigVersion extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface Ccs811SensorConfigVersion extends TextSensorTEXTSENSORSCHEMA {
     icon?: any;
 }
 
-export interface Ccs811SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Ccs811SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     baseline?: any;
     eco2?: Ccs811SensorConfigEco2;

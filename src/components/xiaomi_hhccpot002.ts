@@ -9,22 +9,22 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { BthomeMithermometerBLE_DEVICE_SCHEMA } from "./bthome_mithermometer.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { BthomeMithermometerBLEDEVICESCHEMA } from "./bthome_mithermometer.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class XiaomiHhccpot002Sensor extends EsphomeComponent<XiaomiHhccpot002SensorConfig> {
     componentName: string = "xiaomi_hhccpot002.sensor";
 }
 
-export interface XiaomiHhccpot002SensorConfigConductivity extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiHhccpot002SensorConfigConductivity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface XiaomiHhccpot002SensorConfigMoisture extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiHhccpot002SensorConfigMoisture extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
@@ -36,4 +36,4 @@ export type XiaomiHhccpot002SensorConfig = {
         id?: ID;
         mac_address: string;
         moisture?: XiaomiHhccpot002SensorConfigMoisture;
-    } & BthomeMithermometerBLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BthomeMithermometerBLEDEVICESCHEMA & CoreCOMPONENTSCHEMA;

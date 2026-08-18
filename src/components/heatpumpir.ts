@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Climate_CLIMATE_SCHEMA } from "./climate.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class HeatpumpirClimate extends EsphomeComponent<HeatpumpirClimateConfig> {
     componentName: string = "heatpumpir.climate";
@@ -32,4 +32,4 @@ export type HeatpumpirClimateConfig = {
         supports_heat?: boolean;
         transmitter_id?: ID;
         vertical_default: HeatpumpirClimateConfigVerticalDefault;
-    } & Climate_CLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & ClimateCLIMATESCHEMA & CoreCOMPONENTSCHEMA;

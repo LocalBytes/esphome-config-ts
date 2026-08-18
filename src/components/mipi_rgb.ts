@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
 
 export class MipiRgbDisplay extends EsphomeComponent<MipiRgbDisplayConfig> {
     componentName: string = "mipi_rgb.display";
@@ -37,7 +37,7 @@ export type MipiRgbDisplayConfigModel = 'CUSTOM' | 'ESP32-8048S050' | 'ESP32-804
 export type MipiRgbDisplayConfigPixelMode = '16' | '18' | '16bit' | '18bit';
 export type MipiRgbDisplayConfigTransform = 'disabled';
 
-export interface MipiRgbDisplayConfig extends DisplayFULL_DISPLAY_SCHEMA {
+export interface MipiRgbDisplayConfig extends DisplayFULLDISPLAYSCHEMA {
     byte_order?: MipiRgbDisplayConfigByteOrder;
     color_order?: MipiRgbDisplayConfigColorOrder;
     data_pins: MipiRgbDisplayConfigDataPins;

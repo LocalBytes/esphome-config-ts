@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { LightBRIGHTNESS_ONLY_LIGHT_SCHEMA } from "./light.js";
+import type { LightBRIGHTNESSONLYLIGHTSCHEMA } from "./light.js";
 
 export class MonochromaticLight extends EsphomeComponent<MonochromaticLightConfig> {
     componentName: string = "monochromatic.light";
 }
 
-export interface MonochromaticLightConfig extends LightBRIGHTNESS_ONLY_LIGHT_SCHEMA {
+export interface MonochromaticLightConfig extends LightBRIGHTNESSONLYLIGHTSCHEMA {
     output: ID;
     output_id?: ID;
 }

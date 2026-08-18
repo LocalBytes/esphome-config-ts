@@ -9,51 +9,51 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class DisplayMenuBase extends EsphomeComponent {
     componentName: string = "display_menu_base";
 }
 
-export type DisplayMenuBaseDISPLAY_MENU_BASE_SCHEMAMode = 'rotary' | 'joystick';
-export type DisplayMenuBaseDISPLAY_MENU_BASE_SCHEMA = {
+export type DisplayMenuBaseDISPLAYMENUBASESCHEMAMode = 'rotary' | 'joystick';
+export type DisplayMenuBaseDISPLAYMENUBASESCHEMA = {
         active?: boolean;
-        mode?: DisplayMenuBaseDISPLAY_MENU_BASE_SCHEMAMode;
+        mode?: DisplayMenuBaseDISPLAYMENUBASESCHEMAMode;
         on_enter?: object[];
         on_leave?: object[];
         root_item_id?: ID;
-    } & CoreCOMPONENT_SCHEMA & DisplayMenuBaseMENU_TYPES;
+    } & CoreCOMPONENTSCHEMA & DisplayMenuBaseMENUTYPES;
 
-export interface DisplayMenuBaseMENU_ACTION_SCHEMA {
+export interface DisplayMenuBaseMENUACTIONSCHEMA {
     id?: ID;
 }
 
-export interface DisplayMenuBaseMENU_ITEM_COMMON_SCHEMA {
+export interface DisplayMenuBaseMENUITEMCOMMONSCHEMA {
     text?: string;
 }
 
-export interface DisplayMenuBaseMENU_ITEM_ENTER_LEAVE_SCHEMA extends DisplayMenuBaseMENU_ITEM_COMMON_SCHEMA {
+export interface DisplayMenuBaseMENUITEMENTERLEAVESCHEMA extends DisplayMenuBaseMENUITEMCOMMONSCHEMA {
     on_enter?: object[];
     on_leave?: object[];
 }
 
-export interface DisplayMenuBaseMENU_ITEM_ENTER_LEAVE_VALUE_SCHEMA extends DisplayMenuBaseMENU_ITEM_ENTER_LEAVE_SCHEMA {
+export interface DisplayMenuBaseMENUITEMENTERLEAVEVALUESCHEMA extends DisplayMenuBaseMENUITEMENTERLEAVESCHEMA {
     on_value?: object[];
 }
 
-export type DisplayMenuBaseMENU_TYPESItems = DisplayMenuBaseMENU_TYPESItemsBack | DisplayMenuBaseMENU_TYPESItemsCommand | DisplayMenuBaseMENU_TYPESItemsCustom | DisplayMenuBaseMENU_TYPESItemsLabel | DisplayMenuBaseMENU_TYPESItemsMenu | DisplayMenuBaseMENU_TYPESItemsNumber | DisplayMenuBaseMENU_TYPESItemsSelect | DisplayMenuBaseMENU_TYPESItemsSwitch;
+export type DisplayMenuBaseMENUTYPESItems = DisplayMenuBaseMENUTYPESItemsBack | DisplayMenuBaseMENUTYPESItemsCommand | DisplayMenuBaseMENUTYPESItemsCustom | DisplayMenuBaseMENUTYPESItemsLabel | DisplayMenuBaseMENUTYPESItemsMenu | DisplayMenuBaseMENUTYPESItemsNumber | DisplayMenuBaseMENUTYPESItemsSelect | DisplayMenuBaseMENUTYPESItemsSwitch;
 
-export interface DisplayMenuBaseMENU_TYPESItemsBack {
+export interface DisplayMenuBaseMENUTYPESItemsBack {
     type: "back" | "BACK";
     id?: ID;
 }
 
-export interface DisplayMenuBaseMENU_TYPESItemsCommand {
+export interface DisplayMenuBaseMENUTYPESItemsCommand {
     type: "command" | "COMMAND";
     on_value?: object[];
 }
 
-export interface DisplayMenuBaseMENU_TYPESItemsCustom {
+export interface DisplayMenuBaseMENUTYPESItemsCustom {
     type: "custom" | "CUSTOM";
     id?: ID;
     immediate_edit?: boolean;
@@ -62,17 +62,17 @@ export interface DisplayMenuBaseMENU_TYPESItemsCustom {
     value_lambda?: any;
 }
 
-export interface DisplayMenuBaseMENU_TYPESItemsLabel {
+export interface DisplayMenuBaseMENUTYPESItemsLabel {
     type: "label" | "LABEL";
     id?: ID;
 }
 
-export interface DisplayMenuBaseMENU_TYPESItemsMenu {
+export interface DisplayMenuBaseMENUTYPESItemsMenu {
     type: "menu" | "MENU";
     id?: ID;
 }
 
-export interface DisplayMenuBaseMENU_TYPESItemsNumber {
+export interface DisplayMenuBaseMENUTYPESItemsNumber {
     type: "number" | "NUMBER";
     format?: string;
     id?: ID;
@@ -81,7 +81,7 @@ export interface DisplayMenuBaseMENU_TYPESItemsNumber {
     value_lambda?: any;
 }
 
-export interface DisplayMenuBaseMENU_TYPESItemsSelect {
+export interface DisplayMenuBaseMENUTYPESItemsSelect {
     type: "select" | "SELECT";
     id?: ID;
     immediate_edit?: boolean;
@@ -89,7 +89,7 @@ export interface DisplayMenuBaseMENU_TYPESItemsSelect {
     value_lambda?: any;
 }
 
-export interface DisplayMenuBaseMENU_TYPESItemsSwitch {
+export interface DisplayMenuBaseMENUTYPESItemsSwitch {
     type: "switch" | "SWITCH";
     id?: ID;
     immediate_edit?: boolean;
@@ -99,6 +99,6 @@ export interface DisplayMenuBaseMENU_TYPESItemsSwitch {
     value_lambda?: any;
 }
 
-export interface DisplayMenuBaseMENU_TYPES {
-    items: DisplayMenuBaseMENU_TYPESItems[];
+export interface DisplayMenuBaseMENUTYPES {
+    items: DisplayMenuBaseMENUTYPESItems[];
 }

@@ -9,64 +9,64 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
-export class Mics_4514Sensor extends EsphomeComponent<Mics_4514SensorConfig> {
+export class Mics4514Sensor extends EsphomeComponent<Mics4514SensorConfig> {
     componentName: string = "mics_4514.sensor";
 }
 
-export interface Mics_4514SensorConfigAmmonia extends Sensor_SENSOR_SCHEMA {
+export interface Mics4514SensorConfigAmmonia extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Mics_4514SensorConfigCarbonMonoxide extends Sensor_SENSOR_SCHEMA {
+export interface Mics4514SensorConfigCarbonMonoxide extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Mics_4514SensorConfigEthanol extends Sensor_SENSOR_SCHEMA {
+export interface Mics4514SensorConfigEthanol extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Mics_4514SensorConfigHydrogen extends Sensor_SENSOR_SCHEMA {
+export interface Mics4514SensorConfigHydrogen extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Mics_4514SensorConfigMethane extends Sensor_SENSOR_SCHEMA {
+export interface Mics4514SensorConfigMethane extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Mics_4514SensorConfigNitrogenDioxide extends Sensor_SENSOR_SCHEMA {
+export interface Mics4514SensorConfigNitrogenDioxide extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Mics_4514SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Mics4514SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
-    ammonia?: Mics_4514SensorConfigAmmonia;
-    carbon_monoxide?: Mics_4514SensorConfigCarbonMonoxide;
-    ethanol?: Mics_4514SensorConfigEthanol;
-    hydrogen?: Mics_4514SensorConfigHydrogen;
+    ammonia?: Mics4514SensorConfigAmmonia;
+    carbon_monoxide?: Mics4514SensorConfigCarbonMonoxide;
+    ethanol?: Mics4514SensorConfigEthanol;
+    hydrogen?: Mics4514SensorConfigHydrogen;
     i2c_id?: ID;
     id?: ID;
-    methane?: Mics_4514SensorConfigMethane;
-    nitrogen_dioxide?: Mics_4514SensorConfigNitrogenDioxide;
+    methane?: Mics4514SensorConfigMethane;
+    nitrogen_dioxide?: Mics4514SensorConfigNitrogenDioxide;
     update_interval?: any;
 }

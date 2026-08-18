@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Hm3301Sensor extends EsphomeComponent<Hm3301SensorConfig> {
     componentName: string = "hm3301.sensor";
@@ -18,7 +18,7 @@ export class Hm3301Sensor extends EsphomeComponent<Hm3301SensorConfig> {
 
 export type Hm3301SensorConfigAqiCalculationType = 'CAQI' | 'AQI';
 
-export interface Hm3301SensorConfigAqi extends Sensor_SENSOR_SCHEMA {
+export interface Hm3301SensorConfigAqi extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     calculation_type: Hm3301SensorConfigAqiCalculationType;
     device_class?: any;
@@ -27,7 +27,7 @@ export interface Hm3301SensorConfigAqi extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Hm3301SensorConfigPm_10_0 extends Sensor_SENSOR_SCHEMA {
+export interface Hm3301SensorConfigPm100 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -35,7 +35,7 @@ export interface Hm3301SensorConfigPm_10_0 extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Hm3301SensorConfigPm_1_0 extends Sensor_SENSOR_SCHEMA {
+export interface Hm3301SensorConfigPm10 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -43,7 +43,7 @@ export interface Hm3301SensorConfigPm_1_0 extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Hm3301SensorConfigPm_2_5 extends Sensor_SENSOR_SCHEMA {
+export interface Hm3301SensorConfigPm25 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -51,13 +51,13 @@ export interface Hm3301SensorConfigPm_2_5 extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Hm3301SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Hm3301SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     aqi?: Hm3301SensorConfigAqi;
     i2c_id?: ID;
     id?: ID;
-    pm_10_0?: Hm3301SensorConfigPm_10_0;
-    pm_1_0?: Hm3301SensorConfigPm_1_0;
-    pm_2_5?: Hm3301SensorConfigPm_2_5;
+    pm_10_0?: Hm3301SensorConfigPm100;
+    pm_1_0?: Hm3301SensorConfigPm10;
+    pm_2_5?: Hm3301SensorConfigPm25;
     update_interval?: any;
 }

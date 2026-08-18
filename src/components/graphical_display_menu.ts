@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayMenuBaseDISPLAY_MENU_BASE_SCHEMA } from "./display_menu_base.js";
+import type { DisplayMenuBaseDISPLAYMENUBASESCHEMA } from "./display_menu_base.js";
 
 export class GraphicalDisplayMenu extends EsphomeComponent<GraphicalDisplayMenuConfig> {
     componentName: string = "graphical_display_menu";
 }
 
-export interface GraphicalDisplayMenuConfig extends DisplayMenuBaseDISPLAY_MENU_BASE_SCHEMA {
+export interface GraphicalDisplayMenuConfig extends DisplayMenuBaseDISPLAYMENUBASESCHEMA {
     background_color?: ID;
     display?: ID;
     font: ID;

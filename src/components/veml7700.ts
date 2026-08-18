@@ -9,27 +9,27 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Veml7700Sensor extends EsphomeComponent<Veml7700SensorConfig> {
     componentName: string = "veml7700.sensor";
 }
 
-export interface Veml7700SensorConfigActualGain extends Sensor_SENSOR_SCHEMA {
+export interface Veml7700SensorConfigActualGain extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
 }
 
-export interface Veml7700SensorConfigActualIntegrationTime extends Sensor_SENSOR_SCHEMA {
+export interface Veml7700SensorConfigActualIntegrationTime extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Veml7700SensorConfigAmbientLight extends Sensor_SENSOR_SCHEMA {
+export interface Veml7700SensorConfigAmbientLight extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -37,7 +37,7 @@ export interface Veml7700SensorConfigAmbientLight extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Veml7700SensorConfigAmbientLightCounts extends Sensor_SENSOR_SCHEMA {
+export interface Veml7700SensorConfigAmbientLightCounts extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -45,7 +45,7 @@ export interface Veml7700SensorConfigAmbientLightCounts extends Sensor_SENSOR_SC
     unit_of_measurement?: any;
 }
 
-export interface Veml7700SensorConfigFullSpectrum extends Sensor_SENSOR_SCHEMA {
+export interface Veml7700SensorConfigFullSpectrum extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -53,7 +53,7 @@ export interface Veml7700SensorConfigFullSpectrum extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Veml7700SensorConfigFullSpectrumCounts extends Sensor_SENSOR_SCHEMA {
+export interface Veml7700SensorConfigFullSpectrumCounts extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -63,7 +63,7 @@ export interface Veml7700SensorConfigFullSpectrumCounts extends Sensor_SENSOR_SC
 
 export type Veml7700SensorConfigGain = '1/8X' | '1/4X' | '1X' | '2X';
 
-export interface Veml7700SensorConfigInfrared extends Sensor_SENSOR_SCHEMA {
+export interface Veml7700SensorConfigInfrared extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -71,7 +71,7 @@ export interface Veml7700SensorConfigInfrared extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Veml7700SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Veml7700SensorConfig extends CoreCOMPONENTSCHEMA {
     actual_gain?: Veml7700SensorConfigActualGain;
     actual_integration_time?: Veml7700SensorConfigActualIntegrationTime;
     address?: any;

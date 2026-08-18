@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { MediaPlayer_MEDIA_PLAYER_SCHEMA } from "./media_player.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { MediaPlayerMEDIAPLAYERSCHEMA } from "./media_player.js";
 
 export abstract class SpeakerSource extends EsphomeComponent {
     componentName: string = "speaker_source";
@@ -20,8 +20,8 @@ export class SpeakerSourceMediaPlayer extends EsphomeComponent<SpeakerSourceMedi
     componentName: string = "speaker_source.media_player";
 }
 
-export type SpeakerSourceMediaPlayerConfigAnnouncementPipeline = SpeakerSourceMediaPlayerPIPELINE_SCHEMA;
-export type SpeakerSourceMediaPlayerConfigMediaPipeline = SpeakerSourceMediaPlayerPIPELINE_SCHEMA;
+export type SpeakerSourceMediaPlayerConfigAnnouncementPipeline = SpeakerSourceMediaPlayerPIPELINESCHEMA;
+export type SpeakerSourceMediaPlayerConfigMediaPipeline = SpeakerSourceMediaPlayerPIPELINESCHEMA;
 export type SpeakerSourceMediaPlayerConfig = {
         announcement_pipeline?: SpeakerSourceMediaPlayerConfigAnnouncementPipeline;
         id?: ID;
@@ -33,11 +33,11 @@ export type SpeakerSourceMediaPlayerConfig = {
         volume_initial?: any;
         volume_max?: any;
         volume_min?: any;
-    } & CoreCOMPONENT_SCHEMA & MediaPlayer_MEDIA_PLAYER_SCHEMA;
-export type SpeakerSourceMediaPlayerPIPELINE_SCHEMAFormat = 'NONE' | 'WAV' | 'MP3' | 'FLAC' | 'OPUS';
+    } & CoreCOMPONENTSCHEMA & MediaPlayerMEDIAPLAYERSCHEMA;
+export type SpeakerSourceMediaPlayerPIPELINESCHEMAFormat = 'NONE' | 'WAV' | 'MP3' | 'FLAC' | 'OPUS';
 
-export interface SpeakerSourceMediaPlayerPIPELINE_SCHEMA {
-    format?: SpeakerSourceMediaPlayerPIPELINE_SCHEMAFormat;
+export interface SpeakerSourceMediaPlayerPIPELINESCHEMA {
+    format?: SpeakerSourceMediaPlayerPIPELINESCHEMAFormat;
     id?: ID;
     num_channels?: number;
     sample_rate?: number;

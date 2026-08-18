@@ -9,11 +9,11 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriod, CorePositiveTimePeriodSeconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { DisplayBASIC_DISPLAY_SCHEMA } from "./display.js";
-import type { BleClientBLE_CLIENT_SCHEMA } from "./ble_client.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { BthomeMithermometerBLE_DEVICE_SCHEMA } from "./bthome_mithermometer.js";
+import type { CorePositiveTimePeriod, CorePositiveTimePeriodSeconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { DisplayBASICDISPLAYSCHEMA } from "./display.js";
+import type { BleClientBLECLIENTSCHEMA } from "./ble_client.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { BthomeMithermometerBLEDEVICESCHEMA } from "./bthome_mithermometer.js";
 
 export class PvvxMithermometerDisplay extends EsphomeComponent<PvvxMithermometerDisplayConfig> {
     componentName: string = "pvvx_mithermometer.display";
@@ -29,13 +29,13 @@ export type PvvxMithermometerDisplayConfig = {
         update_interval?: any;
         validity_period?: PvvxMithermometerDisplayConfigValidityPeriod;
         lambda?: any;
-    } & DisplayBASIC_DISPLAY_SCHEMA & BleClientBLE_CLIENT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & DisplayBASICDISPLAYSCHEMA & BleClientBLECLIENTSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class PvvxMithermometerSensor extends EsphomeComponent<PvvxMithermometerSensorConfig> {
     componentName: string = "pvvx_mithermometer.sensor";
 }
 
-export interface PvvxMithermometerSensorConfigBatteryLevel extends Sensor_SENSOR_SCHEMA {
+export interface PvvxMithermometerSensorConfigBatteryLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -43,7 +43,7 @@ export interface PvvxMithermometerSensorConfigBatteryLevel extends Sensor_SENSOR
     unit_of_measurement?: any;
 }
 
-export interface PvvxMithermometerSensorConfigBatteryVoltage extends Sensor_SENSOR_SCHEMA {
+export interface PvvxMithermometerSensorConfigBatteryVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -51,14 +51,14 @@ export interface PvvxMithermometerSensorConfigBatteryVoltage extends Sensor_SENS
     unit_of_measurement?: any;
 }
 
-export interface PvvxMithermometerSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface PvvxMithermometerSensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface PvvxMithermometerSensorConfigSignalStrength extends Sensor_SENSOR_SCHEMA {
+export interface PvvxMithermometerSensorConfigSignalStrength extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -66,7 +66,7 @@ export interface PvvxMithermometerSensorConfigSignalStrength extends Sensor_SENS
     unit_of_measurement?: any;
 }
 
-export interface PvvxMithermometerSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface PvvxMithermometerSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -81,4 +81,4 @@ export type PvvxMithermometerSensorConfig = {
         mac_address: string;
         signal_strength?: PvvxMithermometerSensorConfigSignalStrength;
         temperature?: PvvxMithermometerSensorConfigTemperature;
-    } & BthomeMithermometerBLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BthomeMithermometerBLEDEVICESCHEMA & CoreCOMPONENTSCHEMA;

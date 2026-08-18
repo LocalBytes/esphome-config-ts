@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodSeconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Climate_CLIMATE_SCHEMA } from "./climate.js";
+import type { CorePositiveTimePeriodSeconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
 
 export class ThermostatClimate extends EsphomeComponent<ThermostatClimateConfig> {
     componentName: string = "thermostat.climate";
@@ -114,4 +114,4 @@ export type ThermostatClimateConfig = {
         swing_vertical_action?: object[];
         target_humidity_change_action?: object[];
         target_temperature_change_action?: object[];
-    } & Climate_CLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & ClimateCLIMATESCHEMA & CoreCOMPONENTSCHEMA;

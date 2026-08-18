@@ -14,11 +14,11 @@ export abstract class AudioDac extends EsphomeComponent {
     componentName: string = "audio_dac";
 }
 
-export interface AudioDacMUTE_ACTION_SCHEMA {
+export interface AudioDacMUTEACTIONSCHEMA {
     id?: ID;
 }
 
-export interface AudioDacSET_VOLUME_ACTION_SCHEMA {
+export interface AudioDacSETVOLUMEACTIONSCHEMA {
     id?: ID;
     volume: string;
 }

@@ -10,7 +10,7 @@
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMicroseconds } from "./esphome.js";
-import type { LightADDRESSABLE_LIGHT_SCHEMA } from "./light.js";
+import type { LightADDRESSABLELIGHTSCHEMA } from "./light.js";
 
 export class BekenSpiLedStripLight extends EsphomeComponent<BekenSpiLedStripLightConfig> {
     componentName: string = "beken_spi_led_strip.light";
@@ -20,7 +20,7 @@ export type BekenSpiLedStripLightConfigChipset = 'WS2812' | 'SK6812' | 'APA106' 
 export type BekenSpiLedStripLightConfigMaxRefreshRate = CorePositiveTimePeriodMicroseconds;
 export type BekenSpiLedStripLightConfigRgbOrder = 'RGB' | 'RBG' | 'GRB' | 'GBR' | 'BGR' | 'BRG';
 
-export interface BekenSpiLedStripLightConfig extends LightADDRESSABLE_LIGHT_SCHEMA {
+export interface BekenSpiLedStripLightConfig extends LightADDRESSABLELIGHTSCHEMA {
     chipset: BekenSpiLedStripLightConfigChipset;
     is_rgbw?: boolean;
     is_wrgb?: boolean;

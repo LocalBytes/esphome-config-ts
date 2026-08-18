@@ -9,48 +9,48 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Bme280Base extends EsphomeComponent {
     componentName: string = "bme280_base";
 }
 
-export type Bme280BaseCONFIG_SCHEMA_BASEHumidityOversampling = 'NONE' | '1X' | '2X' | '4X' | '8X' | '16X';
+export type Bme280BaseCONFIGSCHEMABASEHumidityOversampling = 'NONE' | '1X' | '2X' | '4X' | '8X' | '16X';
 
-export interface Bme280BaseCONFIG_SCHEMA_BASEHumidity extends Sensor_SENSOR_SCHEMA {
+export interface Bme280BaseCONFIGSCHEMABASEHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-    oversampling?: Bme280BaseCONFIG_SCHEMA_BASEHumidityOversampling;
+    oversampling?: Bme280BaseCONFIGSCHEMABASEHumidityOversampling;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export type Bme280BaseCONFIG_SCHEMA_BASEIirFilter = 'OFF' | '2X' | '4X' | '8X' | '16X';
-export type Bme280BaseCONFIG_SCHEMA_BASEPressureOversampling = 'NONE' | '1X' | '2X' | '4X' | '8X' | '16X';
+export type Bme280BaseCONFIGSCHEMABASEIirFilter = 'OFF' | '2X' | '4X' | '8X' | '16X';
+export type Bme280BaseCONFIGSCHEMABASEPressureOversampling = 'NONE' | '1X' | '2X' | '4X' | '8X' | '16X';
 
-export interface Bme280BaseCONFIG_SCHEMA_BASEPressure extends Sensor_SENSOR_SCHEMA {
+export interface Bme280BaseCONFIGSCHEMABASEPressure extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-    oversampling?: Bme280BaseCONFIG_SCHEMA_BASEPressureOversampling;
+    oversampling?: Bme280BaseCONFIGSCHEMABASEPressureOversampling;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export type Bme280BaseCONFIG_SCHEMA_BASETemperatureOversampling = 'NONE' | '1X' | '2X' | '4X' | '8X' | '16X';
+export type Bme280BaseCONFIGSCHEMABASETemperatureOversampling = 'NONE' | '1X' | '2X' | '4X' | '8X' | '16X';
 
-export interface Bme280BaseCONFIG_SCHEMA_BASETemperature extends Sensor_SENSOR_SCHEMA {
+export interface Bme280BaseCONFIGSCHEMABASETemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-    oversampling?: Bme280BaseCONFIG_SCHEMA_BASETemperatureOversampling;
+    oversampling?: Bme280BaseCONFIGSCHEMABASETemperatureOversampling;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Bme280BaseCONFIG_SCHEMA_BASE extends CoreCOMPONENT_SCHEMA {
-    humidity?: Bme280BaseCONFIG_SCHEMA_BASEHumidity;
-    iir_filter?: Bme280BaseCONFIG_SCHEMA_BASEIirFilter;
-    pressure?: Bme280BaseCONFIG_SCHEMA_BASEPressure;
-    temperature?: Bme280BaseCONFIG_SCHEMA_BASETemperature;
+export interface Bme280BaseCONFIGSCHEMABASE extends CoreCOMPONENTSCHEMA {
+    humidity?: Bme280BaseCONFIGSCHEMABASEHumidity;
+    iir_filter?: Bme280BaseCONFIGSCHEMABASEIirFilter;
+    pressure?: Bme280BaseCONFIGSCHEMABASEPressure;
+    temperature?: Bme280BaseCONFIGSCHEMABASETemperature;
     update_interval?: any;
 }

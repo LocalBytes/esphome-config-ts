@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { PacketTransportTRANSPORT_SCHEMA } from "./packet_transport.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { PacketTransportTRANSPORTSCHEMA } from "./packet_transport.js";
 
 export class Sx127x extends EsphomeComponent<Sx127xConfig> {
     componentName: string = "sx127x";
@@ -25,7 +25,7 @@ export type Sx127xConfigPreamblePolarity = '85' | '170';
 export type Sx127xConfigShaping = 'CUTOFF_BR_X_2' | 'CUTOFF_BR_X_1' | 'GAUSSIAN_BT_0_3' | 'GAUSSIAN_BT_0_5' | 'GAUSSIAN_BT_1_0' | 'NONE';
 export type Sx127xConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 
-export interface Sx127xConfig extends CoreCOMPONENT_SCHEMA {
+export interface Sx127xConfig extends CoreCOMPONENTSCHEMA {
     auto_cal?: boolean;
     bandwidth?: Sx127xConfigBandwidth;
     bitrate?: number;
@@ -60,7 +60,7 @@ export interface Sx127xConfig extends CoreCOMPONENT_SCHEMA {
     sync_value?: any[];
 }
 
-export interface Sx127xNO_ARGS_ACTION_SCHEMA {
+export interface Sx127xNOARGSACTIONSCHEMA {
     id?: ID;
 }
 
@@ -68,7 +68,7 @@ export class Sx127xPacketTransport extends EsphomeComponent<Sx127xPacketTranspor
     componentName: string = "sx127x.packet_transport";
 }
 
-export interface Sx127xPacketTransportConfig extends PacketTransportTRANSPORT_SCHEMA {
+export interface Sx127xPacketTransportConfig extends PacketTransportTRANSPORTSCHEMA {
     id?: ID;
     sx127x_id?: ID;
 }

@@ -9,20 +9,20 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Button_BUTTON_SCHEMA } from "./button.js";
-import type { Number_NUMBER_SCHEMA } from "./number.js";
-import type { Select_SELECT_SCHEMA } from "./select.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { ButtonBUTTONSCHEMA } from "./button.js";
+import type { NumberNUMBERSCHEMA } from "./number.js";
+import type { SelectSELECTSCHEMA } from "./select.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class SeeedMr24hpc1 extends EsphomeComponent<SeeedMr24hpc1Config> {
     componentName: string = "seeed_mr24hpc1";
 }
 
-export interface SeeedMr24hpc1Config extends CoreCOMPONENT_SCHEMA {
+export interface SeeedMr24hpc1Config extends CoreCOMPONENTSCHEMA {
     id?: ID;
     uart_id?: ID;
 }
@@ -31,7 +31,7 @@ export class SeeedMr24hpc1BinarySensor extends EsphomeComponent<SeeedMr24hpc1Bin
     componentName: string = "seeed_mr24hpc1.binary_sensor";
 }
 
-export interface SeeedMr24hpc1BinarySensorConfigHasTarget extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface SeeedMr24hpc1BinarySensorConfigHasTarget extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     icon?: any;
 }
@@ -45,13 +45,13 @@ export class SeeedMr24hpc1Button extends EsphomeComponent<SeeedMr24hpc1ButtonCon
     componentName: string = "seeed_mr24hpc1.button";
 }
 
-export interface SeeedMr24hpc1ButtonConfigCustomSetEnd extends Button_BUTTON_SCHEMA {
+export interface SeeedMr24hpc1ButtonConfigCustomSetEnd extends ButtonBUTTONSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface SeeedMr24hpc1ButtonConfigRestart extends Button_BUTTON_SCHEMA {
+export interface SeeedMr24hpc1ButtonConfigRestart extends ButtonBUTTONSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -68,44 +68,44 @@ export class SeeedMr24hpc1Number extends EsphomeComponent<SeeedMr24hpc1NumberCon
     componentName: string = "seeed_mr24hpc1.number";
 }
 
-export interface SeeedMr24hpc1NumberConfigCustomMode extends Number_NUMBER_SCHEMA {
+export interface SeeedMr24hpc1NumberConfigCustomMode extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
 }
 
-export interface SeeedMr24hpc1NumberConfigCustomUnmanTime extends Number_NUMBER_SCHEMA {
-    entity_category?: any;
-    icon?: any;
-    id?: ID;
-    unit_of_measurement?: any;
-}
-
-export interface SeeedMr24hpc1NumberConfigExistenceThreshold extends Number_NUMBER_SCHEMA {
-    entity_category?: any;
-    id?: ID;
-}
-
-export interface SeeedMr24hpc1NumberConfigMotionThreshold extends Number_NUMBER_SCHEMA {
-    entity_category?: any;
-    id?: ID;
-}
-
-export interface SeeedMr24hpc1NumberConfigMotionToRest extends Number_NUMBER_SCHEMA {
+export interface SeeedMr24hpc1NumberConfigCustomUnmanTime extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
     unit_of_measurement?: any;
 }
 
-export interface SeeedMr24hpc1NumberConfigMotionTrigger extends Number_NUMBER_SCHEMA {
+export interface SeeedMr24hpc1NumberConfigExistenceThreshold extends NumberNUMBERSCHEMA {
+    entity_category?: any;
+    id?: ID;
+}
+
+export interface SeeedMr24hpc1NumberConfigMotionThreshold extends NumberNUMBERSCHEMA {
+    entity_category?: any;
+    id?: ID;
+}
+
+export interface SeeedMr24hpc1NumberConfigMotionToRest extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
     unit_of_measurement?: any;
 }
 
-export interface SeeedMr24hpc1NumberConfigSensitivity extends Number_NUMBER_SCHEMA {
+export interface SeeedMr24hpc1NumberConfigMotionTrigger extends NumberNUMBERSCHEMA {
+    entity_category?: any;
+    icon?: any;
+    id?: ID;
+    unit_of_measurement?: any;
+}
+
+export interface SeeedMr24hpc1NumberConfigSensitivity extends NumberNUMBERSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
@@ -126,23 +126,23 @@ export class SeeedMr24hpc1Select extends EsphomeComponent<SeeedMr24hpc1SelectCon
     componentName: string = "seeed_mr24hpc1.select";
 }
 
-export interface SeeedMr24hpc1SelectConfigExistenceBoundary extends Select_SELECT_SCHEMA {
+export interface SeeedMr24hpc1SelectConfigExistenceBoundary extends SelectSELECTSCHEMA {
     entity_category?: any;
     id?: any;
 }
 
-export interface SeeedMr24hpc1SelectConfigMotionBoundary extends Select_SELECT_SCHEMA {
+export interface SeeedMr24hpc1SelectConfigMotionBoundary extends SelectSELECTSCHEMA {
     entity_category?: any;
     id?: any;
 }
 
-export interface SeeedMr24hpc1SelectConfigSceneMode extends Select_SELECT_SCHEMA {
+export interface SeeedMr24hpc1SelectConfigSceneMode extends SelectSELECTSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: any;
 }
 
-export interface SeeedMr24hpc1SelectConfigUnmanTime extends Select_SELECT_SCHEMA {
+export interface SeeedMr24hpc1SelectConfigUnmanTime extends SelectSELECTSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: any;
@@ -160,26 +160,18 @@ export class SeeedMr24hpc1Sensor extends EsphomeComponent<SeeedMr24hpc1SensorCon
     componentName: string = "seeed_mr24hpc1.sensor";
 }
 
-export interface SeeedMr24hpc1SensorConfigCustomModeNum extends Sensor_SENSOR_SCHEMA {
+export interface SeeedMr24hpc1SensorConfigCustomModeNum extends SensorSENSORSCHEMA {
     icon?: any;
 }
 
-export interface SeeedMr24hpc1SensorConfigCustomMotionDistance extends Sensor_SENSOR_SCHEMA {
+export interface SeeedMr24hpc1SensorConfigCustomMotionDistance extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SeeedMr24hpc1SensorConfigCustomMotionSpeed extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    icon?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface SeeedMr24hpc1SensorConfigCustomPresenceOfDetection extends Sensor_SENSOR_SCHEMA {
+export interface SeeedMr24hpc1SensorConfigCustomMotionSpeed extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -187,17 +179,25 @@ export interface SeeedMr24hpc1SensorConfigCustomPresenceOfDetection extends Sens
     unit_of_measurement?: any;
 }
 
-export interface SeeedMr24hpc1SensorConfigCustomSpatialMotionValue extends Sensor_SENSOR_SCHEMA {
+export interface SeeedMr24hpc1SensorConfigCustomPresenceOfDetection extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface SeeedMr24hpc1SensorConfigCustomSpatialMotionValue extends SensorSENSORSCHEMA {
     device_class?: any;
     icon?: any;
 }
 
-export interface SeeedMr24hpc1SensorConfigCustomSpatialStaticValue extends Sensor_SENSOR_SCHEMA {
+export interface SeeedMr24hpc1SensorConfigCustomSpatialStaticValue extends SensorSENSORSCHEMA {
     device_class?: any;
     icon?: any;
 }
 
-export interface SeeedMr24hpc1SensorConfigMovementSigns extends Sensor_SENSOR_SCHEMA {
+export interface SeeedMr24hpc1SensorConfigMovementSigns extends SensorSENSORSCHEMA {
     icon?: any;
 }
 
@@ -216,7 +216,7 @@ export class SeeedMr24hpc1Switch extends EsphomeComponent<SeeedMr24hpc1SwitchCon
     componentName: string = "seeed_mr24hpc1.switch";
 }
 
-export interface SeeedMr24hpc1SwitchConfigUnderlyingOpenFunction extends Switch_SWITCH_SCHEMA {
+export interface SeeedMr24hpc1SwitchConfigUnderlyingOpenFunction extends SwitchSWITCHSCHEMA {
     device_class?: any;
     entity_category?: any;
     icon?: any;
@@ -232,42 +232,42 @@ export class SeeedMr24hpc1TextSensor extends EsphomeComponent<SeeedMr24hpc1TextS
     componentName: string = "seeed_mr24hpc1.text_sensor";
 }
 
-export interface SeeedMr24hpc1TextSensorConfigCustomModeEnd extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface SeeedMr24hpc1TextSensorConfigCustomModeEnd extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
 
-export interface SeeedMr24hpc1TextSensorConfigHardwareModel extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface SeeedMr24hpc1TextSensorConfigHardwareModel extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
 
-export interface SeeedMr24hpc1TextSensorConfigHardwareVersion extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface SeeedMr24hpc1TextSensorConfigHardwareVersion extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
 
-export interface SeeedMr24hpc1TextSensorConfigHeartBeat extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface SeeedMr24hpc1TextSensorConfigHeartBeat extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
 
-export interface SeeedMr24hpc1TextSensorConfigKeepAway extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface SeeedMr24hpc1TextSensorConfigKeepAway extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
 
-export interface SeeedMr24hpc1TextSensorConfigMotionStatus extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface SeeedMr24hpc1TextSensorConfigMotionStatus extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
 
-export interface SeeedMr24hpc1TextSensorConfigProductId extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface SeeedMr24hpc1TextSensorConfigProductId extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
 
-export interface SeeedMr24hpc1TextSensorConfigProductModel extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface SeeedMr24hpc1TextSensorConfigProductModel extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }

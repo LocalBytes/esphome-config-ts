@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
 
 export class Sm2135 extends EsphomeComponent<Sm2135Config> {
     componentName: string = "sm2135";
@@ -19,7 +19,7 @@ export class Sm2135 extends EsphomeComponent<Sm2135Config> {
 export type Sm2135ConfigCwCurrent = '10mA' | '15mA' | '20mA' | '25mA' | '30mA' | '35mA' | '40mA' | '45mA' | '50mA' | '55mA' | '60mA';
 export type Sm2135ConfigRgbCurrent = '10mA' | '15mA' | '20mA' | '25mA' | '30mA' | '35mA' | '40mA' | '45mA';
 
-export interface Sm2135Config extends CoreCOMPONENT_SCHEMA {
+export interface Sm2135Config extends CoreCOMPONENTSCHEMA {
     clock_pin: Pin;
     cw_current?: Sm2135ConfigCwCurrent;
     data_pin: Pin;
@@ -36,4 +36,4 @@ export type Sm2135OutputConfig = {
         channel: number;
         id: string;
         sm2135_id?: ID;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;

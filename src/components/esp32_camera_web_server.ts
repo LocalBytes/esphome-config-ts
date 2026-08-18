@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Esp32CameraWebServer extends EsphomeComponent<Esp32CameraWebServerConfig> {
     componentName: string = "esp32_camera_web_server";
@@ -17,7 +17,7 @@ export class Esp32CameraWebServer extends EsphomeComponent<Esp32CameraWebServerC
 
 export type Esp32CameraWebServerConfigMode = 'STREAM' | 'SNAPSHOT';
 
-export interface Esp32CameraWebServerConfig extends CoreCOMPONENT_SCHEMA {
+export interface Esp32CameraWebServerConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     mode: Esp32CameraWebServerConfigMode;
     port: number;

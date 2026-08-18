@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Sgp4xSensor extends EsphomeComponent<Sgp4xSensorConfig> {
     componentName: string = "sgp4x.sensor";
@@ -52,7 +52,7 @@ export interface Sgp4xSensorConfigVoc {
     state_class?: any;
 }
 
-export interface Sgp4xSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Sgp4xSensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     compensation?: Sgp4xSensorConfigCompensation;
     i2c_id?: ID;

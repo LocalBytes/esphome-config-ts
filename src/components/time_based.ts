@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Cover_COVER_SCHEMA } from "./cover.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { CoverCOVERSCHEMA } from "./cover.js";
 
 export class TimeBasedCover extends EsphomeComponent<TimeBasedCoverConfig> {
     componentName: string = "time_based.cover";
@@ -28,4 +28,4 @@ export type TimeBasedCoverConfig = {
         open_action: object[];
         open_duration: TimeBasedCoverConfigOpenDuration;
         stop_action: object[];
-    } & Cover_COVER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & CoverCOVERSCHEMA & CoreCOMPONENTSCHEMA;

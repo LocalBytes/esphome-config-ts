@@ -9,43 +9,43 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Button_BUTTON_SCHEMA } from "./button.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { ButtonBUTTONSCHEMA } from "./button.js";
 import type { CorePositiveTimePeriodMilliseconds } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class HaierBinarySensor extends EsphomeComponent<HaierBinarySensorConfig> {
     componentName: string = "haier.binary_sensor";
 }
 
-export interface HaierBinarySensorConfigCompressorStatus extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface HaierBinarySensorConfigCompressorStatus extends BinarySensorBINARYSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
 
-export interface HaierBinarySensorConfigDefrostStatus extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface HaierBinarySensorConfigDefrostStatus extends BinarySensorBINARYSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
 
-export interface HaierBinarySensorConfigFourWayValveStatus extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface HaierBinarySensorConfigFourWayValveStatus extends BinarySensorBINARYSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
 
-export interface HaierBinarySensorConfigIndoorElectricHeatingStatus extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface HaierBinarySensorConfigIndoorElectricHeatingStatus extends BinarySensorBINARYSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
 
-export interface HaierBinarySensorConfigIndoorFanStatus extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface HaierBinarySensorConfigIndoorFanStatus extends BinarySensorBINARYSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
 
-export interface HaierBinarySensorConfigOutdoorFanStatus extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface HaierBinarySensorConfigOutdoorFanStatus extends BinarySensorBINARYSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
@@ -64,12 +64,12 @@ export class HaierButton extends EsphomeComponent<HaierButtonConfig> {
     componentName: string = "haier.button";
 }
 
-export interface HaierButtonConfigSelfCleaning extends Button_BUTTON_SCHEMA {
+export interface HaierButtonConfigSelfCleaning extends ButtonBUTTONSCHEMA {
     icon?: any;
     id?: ID;
 }
 
-export interface HaierButtonConfigSteriCleaning extends Button_BUTTON_SCHEMA {
+export interface HaierButtonConfigSteriCleaning extends ButtonBUTTONSCHEMA {
     icon?: any;
     id?: ID;
 }
@@ -129,11 +129,11 @@ export interface HaierClimateConfigSMARTAIR2 {
     wifi_signal?: boolean;
 }
 
-export interface HaierClimateHAIER_BASE_ACTION_SCHEMA {
+export interface HaierClimateHAIERBASEACTIONSCHEMA {
     id?: ID;
 }
 
-export interface HaierClimateHAIER_HON_BASE_ACTION_SCHEMA {
+export interface HaierClimateHAIERHONBASEACTIONSCHEMA {
     id?: ID;
 }
 
@@ -141,7 +141,7 @@ export class HaierSensor extends EsphomeComponent<HaierSensorConfig> {
     componentName: string = "haier.sensor";
 }
 
-export interface HaierSensorConfigCompressorCurrent extends Sensor_SENSOR_SCHEMA {
+export interface HaierSensorConfigCompressorCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -150,7 +150,7 @@ export interface HaierSensorConfigCompressorCurrent extends Sensor_SENSOR_SCHEMA
     unit_of_measurement?: any;
 }
 
-export interface HaierSensorConfigCompressorFrequency extends Sensor_SENSOR_SCHEMA {
+export interface HaierSensorConfigCompressorFrequency extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -159,7 +159,7 @@ export interface HaierSensorConfigCompressorFrequency extends Sensor_SENSOR_SCHE
     unit_of_measurement?: any;
 }
 
-export interface HaierSensorConfigExpansionValveOpenDegree extends Sensor_SENSOR_SCHEMA {
+export interface HaierSensorConfigExpansionValveOpenDegree extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
@@ -167,7 +167,7 @@ export interface HaierSensorConfigExpansionValveOpenDegree extends Sensor_SENSOR
     unit_of_measurement?: any;
 }
 
-export interface HaierSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface HaierSensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -175,16 +175,7 @@ export interface HaierSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface HaierSensorConfigIndoorCoilTemperature extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    entity_category?: any;
-    icon?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface HaierSensorConfigOutdoorCoilTemperature extends Sensor_SENSOR_SCHEMA {
+export interface HaierSensorConfigIndoorCoilTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -193,7 +184,7 @@ export interface HaierSensorConfigOutdoorCoilTemperature extends Sensor_SENSOR_S
     unit_of_measurement?: any;
 }
 
-export interface HaierSensorConfigOutdoorDefrostTemperature extends Sensor_SENSOR_SCHEMA {
+export interface HaierSensorConfigOutdoorCoilTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -202,7 +193,7 @@ export interface HaierSensorConfigOutdoorDefrostTemperature extends Sensor_SENSO
     unit_of_measurement?: any;
 }
 
-export interface HaierSensorConfigOutdoorInAirTemperature extends Sensor_SENSOR_SCHEMA {
+export interface HaierSensorConfigOutdoorDefrostTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -211,7 +202,7 @@ export interface HaierSensorConfigOutdoorInAirTemperature extends Sensor_SENSOR_
     unit_of_measurement?: any;
 }
 
-export interface HaierSensorConfigOutdoorOutAirTemperature extends Sensor_SENSOR_SCHEMA {
+export interface HaierSensorConfigOutdoorInAirTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -220,7 +211,16 @@ export interface HaierSensorConfigOutdoorOutAirTemperature extends Sensor_SENSOR
     unit_of_measurement?: any;
 }
 
-export interface HaierSensorConfigOutdoorTemperature extends Sensor_SENSOR_SCHEMA {
+export interface HaierSensorConfigOutdoorOutAirTemperature extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    entity_category?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface HaierSensorConfigOutdoorTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -228,7 +228,7 @@ export interface HaierSensorConfigOutdoorTemperature extends Sensor_SENSOR_SCHEM
     unit_of_measurement?: any;
 }
 
-export interface HaierSensorConfigPower extends Sensor_SENSOR_SCHEMA {
+export interface HaierSensorConfigPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -256,27 +256,27 @@ export class HaierSwitch extends EsphomeComponent<HaierSwitchConfig> {
     componentName: string = "haier.switch";
 }
 
-export interface HaierSwitchConfigBeeper extends Switch_SWITCH_SCHEMA {
+export interface HaierSwitchConfigBeeper extends SwitchSWITCHSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
     restore_mode?: any;
 }
 
-export interface HaierSwitchConfigDisplay extends Switch_SWITCH_SCHEMA {
+export interface HaierSwitchConfigDisplay extends SwitchSWITCHSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
     restore_mode?: any;
 }
 
-export interface HaierSwitchConfigHealthMode extends Switch_SWITCH_SCHEMA {
+export interface HaierSwitchConfigHealthMode extends SwitchSWITCHSCHEMA {
     icon?: any;
     id?: ID;
     restore_mode?: any;
 }
 
-export interface HaierSwitchConfigQuietMode extends Switch_SWITCH_SCHEMA {
+export interface HaierSwitchConfigQuietMode extends SwitchSWITCHSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: ID;
@@ -295,17 +295,17 @@ export class HaierTextSensor extends EsphomeComponent<HaierTextSensorConfig> {
     componentName: string = "haier.text_sensor";
 }
 
-export interface HaierTextSensorConfigApplianceName extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface HaierTextSensorConfigApplianceName extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
 
-export interface HaierTextSensorConfigCleaningStatus extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface HaierTextSensorConfigCleaningStatus extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
 
-export interface HaierTextSensorConfigProtocolVersion extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface HaierTextSensorConfigProtocolVersion extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }

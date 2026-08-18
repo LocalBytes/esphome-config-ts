@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Sht4xSensor extends EsphomeComponent<Sht4xSensorConfig> {
     componentName: string = "sht4x.sensor";
@@ -19,7 +19,7 @@ export class Sht4xSensor extends EsphomeComponent<Sht4xSensorConfig> {
 export type Sht4xSensorConfigHeaterPower = 'High' | 'Med' | 'Low';
 export type Sht4xSensorConfigHeaterTime = 'Long' | 'Short';
 
-export interface Sht4xSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface Sht4xSensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -29,7 +29,7 @@ export interface Sht4xSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
 
 export type Sht4xSensorConfigPrecision = 'High' | 'Med' | 'Low';
 
-export interface Sht4xSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Sht4xSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -37,7 +37,7 @@ export interface Sht4xSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Sht4xSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Sht4xSensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     heater_max_duty?: any;
     heater_power?: Sht4xSensorConfigHeaterPower;

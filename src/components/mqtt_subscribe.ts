@@ -9,9 +9,9 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class MqttSubscribeSensor extends EsphomeComponent<MqttSubscribeSensorConfig> {
     componentName: string = "mqtt_subscribe.sensor";
@@ -23,7 +23,7 @@ export type MqttSubscribeSensorConfig = {
         mqtt_parent_id?: ID;
         qos?: any;
         topic: string;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class MqttSubscribeTextSensor extends EsphomeComponent<MqttSubscribeTextSensorConfig> {
     componentName: string = "mqtt_subscribe.text_sensor";
@@ -34,4 +34,4 @@ export type MqttSubscribeTextSensorConfig = {
         mqtt_parent_id?: ID;
         qos?: any;
         topic: string;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;

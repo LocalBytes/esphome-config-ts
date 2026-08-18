@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Mpu6886Sensor extends EsphomeComponent<Mpu6886SensorConfig> {
     componentName: string = "mpu6886.sensor";
@@ -23,14 +23,14 @@ export type Mpu6886SensorConfigGyroX = Mpu6886SensorGyroSchema;
 export type Mpu6886SensorConfigGyroY = Mpu6886SensorGyroSchema;
 export type Mpu6886SensorConfigGyroZ = Mpu6886SensorGyroSchema;
 
-export interface Mpu6886SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Mpu6886SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Mpu6886SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Mpu6886SensorConfig extends CoreCOMPONENTSCHEMA {
     accel_x?: Mpu6886SensorConfigAccelX;
     accel_y?: Mpu6886SensorConfigAccelY;
     accel_z?: Mpu6886SensorConfigAccelZ;
@@ -44,14 +44,14 @@ export interface Mpu6886SensorConfig extends CoreCOMPONENT_SCHEMA {
     update_interval?: any;
 }
 
-export interface Mpu6886SensorAccelSchema extends Sensor_SENSOR_SCHEMA {
+export interface Mpu6886SensorAccelSchema extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Mpu6886SensorGyroSchema extends Sensor_SENSOR_SCHEMA {
+export interface Mpu6886SensorGyroSchema extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;

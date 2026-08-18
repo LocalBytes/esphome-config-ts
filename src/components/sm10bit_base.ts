@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Sm10bitBase extends EsphomeComponent {
     componentName: string = "sm10bit_base";
 }
 
-export interface Sm10bitBaseSM10BIT_BASE_CONFIG_SCHEMA extends CoreCOMPONENT_SCHEMA {
+export interface Sm10bitBaseSM10BITBASECONFIGSCHEMA extends CoreCOMPONENTSCHEMA {
     clock_pin: Pin;
     data_pin: Pin;
     max_power_color_channels?: number;

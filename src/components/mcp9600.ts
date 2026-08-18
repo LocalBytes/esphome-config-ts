@@ -9,21 +9,21 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Mcp9600Sensor extends EsphomeComponent<Mcp9600SensorConfig> {
     componentName: string = "mcp9600.sensor";
 }
 
-export interface Mcp9600SensorConfigColdJunction extends Sensor_SENSOR_SCHEMA {
+export interface Mcp9600SensorConfigColdJunction extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Mcp9600SensorConfigHotJunction extends Sensor_SENSOR_SCHEMA {
+export interface Mcp9600SensorConfigHotJunction extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -32,7 +32,7 @@ export interface Mcp9600SensorConfigHotJunction extends Sensor_SENSOR_SCHEMA {
 
 export type Mcp9600SensorConfigThermocoupleType = 'K' | 'J' | 'T' | 'N' | 'S' | 'E' | 'B' | 'R';
 
-export interface Mcp9600SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Mcp9600SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     cold_junction?: Mcp9600SensorConfigColdJunction;
     hot_junction?: Mcp9600SensorConfigHotJunction;

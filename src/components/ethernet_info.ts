@@ -9,48 +9,48 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class EthernetInfoTextSensor extends EsphomeComponent<EthernetInfoTextSensorConfig> {
     componentName: string = "ethernet_info.text_sensor";
 }
 
-export interface EthernetInfoTextSensorConfigDnsAddress extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface EthernetInfoTextSensorConfigDnsAddress extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     id?: any;
 }
 
-export interface EthernetInfoTextSensorConfigIpAddressAddress_0 extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface EthernetInfoTextSensorConfigIpAddressAddress0 extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
 }
 
-export interface EthernetInfoTextSensorConfigIpAddressAddress_1 extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface EthernetInfoTextSensorConfigIpAddressAddress1 extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
 }
 
-export interface EthernetInfoTextSensorConfigIpAddressAddress_2 extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface EthernetInfoTextSensorConfigIpAddressAddress2 extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
 }
 
-export interface EthernetInfoTextSensorConfigIpAddressAddress_3 extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface EthernetInfoTextSensorConfigIpAddressAddress3 extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
 }
 
-export interface EthernetInfoTextSensorConfigIpAddressAddress_4 extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface EthernetInfoTextSensorConfigIpAddressAddress4 extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
 }
 
-export interface EthernetInfoTextSensorConfigIpAddress extends TextSensor_TEXT_SENSOR_SCHEMA {
-    address_0?: EthernetInfoTextSensorConfigIpAddressAddress_0;
-    address_1?: EthernetInfoTextSensorConfigIpAddressAddress_1;
-    address_2?: EthernetInfoTextSensorConfigIpAddressAddress_2;
-    address_3?: EthernetInfoTextSensorConfigIpAddressAddress_3;
-    address_4?: EthernetInfoTextSensorConfigIpAddressAddress_4;
+export interface EthernetInfoTextSensorConfigIpAddress extends TextSensorTEXTSENSORSCHEMA {
+    address_0?: EthernetInfoTextSensorConfigIpAddressAddress0;
+    address_1?: EthernetInfoTextSensorConfigIpAddressAddress1;
+    address_2?: EthernetInfoTextSensorConfigIpAddressAddress2;
+    address_3?: EthernetInfoTextSensorConfigIpAddressAddress3;
+    address_4?: EthernetInfoTextSensorConfigIpAddressAddress4;
     entity_category?: any;
     id?: any;
 }
 
-export interface EthernetInfoTextSensorConfigMacAddress extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface EthernetInfoTextSensorConfigMacAddress extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     id?: any;
 }

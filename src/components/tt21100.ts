@@ -9,9 +9,9 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { TouchscreenTOUCHSCREEN_SCHEMA } from "./touchscreen.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { TouchscreenTOUCHSCREENSCHEMA } from "./touchscreen.js";
 
 export class Tt21100BinarySensor extends EsphomeComponent<Tt21100BinarySensorConfig> {
     componentName: string = "tt21100.binary_sensor";
@@ -21,13 +21,13 @@ export type Tt21100BinarySensorConfig = {
         id?: any;
         index: number;
         tt21100_id?: ID;
-    } & BinarySensor_BINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BinarySensorBINARYSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class Tt21100Touchscreen extends EsphomeComponent<Tt21100TouchscreenConfig> {
     componentName: string = "tt21100.touchscreen";
 }
 
-export interface Tt21100TouchscreenConfig extends TouchscreenTOUCHSCREEN_SCHEMA {
+export interface Tt21100TouchscreenConfig extends TouchscreenTOUCHSCREENSCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: ID;

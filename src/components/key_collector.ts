@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class KeyCollector extends EsphomeComponent<KeyCollectorConfig> {
     componentName: string = "key_collector";
@@ -18,7 +18,7 @@ export class KeyCollector extends EsphomeComponent<KeyCollectorConfig> {
 
 export type KeyCollectorConfigTimeout = CorePositiveTimePeriodMilliseconds;
 
-export interface KeyCollectorConfig extends CoreCOMPONENT_SCHEMA {
+export interface KeyCollectorConfig extends CoreCOMPONENTSCHEMA {
     allowed_keys?: string;
     back_keys?: string;
     clear_keys?: string;
@@ -40,7 +40,7 @@ export class KeyCollectorTextSensor extends EsphomeComponent<KeyCollectorTextSen
     componentName: string = "key_collector.text_sensor";
 }
 
-export interface KeyCollectorTextSensorConfig extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface KeyCollectorTextSensorConfig extends TextSensorTEXTSENSORSCHEMA {
     id?: any;
     source_id?: ID;
 }

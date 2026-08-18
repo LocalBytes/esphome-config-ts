@@ -9,36 +9,36 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Motion extends EsphomeComponent {
     componentName: string = "motion";
 }
 
-export interface MotionCALIBRATE_ACTION_SCHEMA {
+export interface MotionCALIBRATEACTIONSCHEMA {
     id?: ID;
     on_error?: object[];
     on_success?: object[];
     save?: boolean;
 }
 
-export interface MotionCLEAR_ACTION_SCHEMA {
+export interface MotionCLEARACTIONSCHEMA {
     id?: ID;
     save?: boolean;
 }
 
-export interface MotionSENSOR_SCHEMA {
+export interface MotionSENSORSCHEMA {
     motion_id?: ID;
 }
 
-export interface Motion_CONFIG_SCHEMAAxisMap {
+export interface MotionCONFIGSCHEMAAxisMap {
     x: string;
     y: string;
     z: string;
 }
 
-export interface Motion_CONFIG_SCHEMA extends CoreCOMPONENT_SCHEMA {
-    axis_map?: Motion_CONFIG_SCHEMAAxisMap;
+export interface MotionCONFIGSCHEMA extends CoreCOMPONENTSCHEMA {
+    axis_map?: MotionCONFIGSCHEMAAxisMap;
     transform_matrix?: any;
     update_interval?: any;
 }
@@ -137,4 +137,4 @@ export interface MotionSensorConfigRoll {
     unit_of_measurement?: any;
 }
 
-export type MotionSensorSENSOR_SCHEMA = MotionSENSOR_SCHEMA;
+export type MotionSensorSENSORSCHEMA = MotionSENSORSCHEMA;

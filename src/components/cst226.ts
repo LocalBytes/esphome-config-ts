@@ -9,9 +9,9 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
-import type { TouchscreenCALIBRATION_SCHEMA } from "./touchscreen.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { CoreCOMPONENTSCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
+import type { TouchscreenCALIBRATIONSCHEMA } from "./touchscreen.js";
 
 export class Cst226BinarySensor extends EsphomeComponent<Cst226BinarySensorConfig> {
     componentName: string = "cst226.binary_sensor";
@@ -20,13 +20,13 @@ export class Cst226BinarySensor extends EsphomeComponent<Cst226BinarySensorConfi
 export type Cst226BinarySensorConfig = {
         cst226_id?: ID;
         id?: any;
-    } & BinarySensor_BINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BinarySensorBINARYSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class Cst226Touchscreen extends EsphomeComponent<Cst226TouchscreenConfig> {
     componentName: string = "cst226.touchscreen";
 }
 
-export type Cst226TouchscreenConfigCalibration = TouchscreenCALIBRATION_SCHEMA;
+export type Cst226TouchscreenConfigCalibration = TouchscreenCALIBRATIONSCHEMA;
 export type Cst226TouchscreenConfigTouchTimeout = CorePositiveTimePeriodMilliseconds;
 
 export interface Cst226TouchscreenConfigTransform {
@@ -35,7 +35,7 @@ export interface Cst226TouchscreenConfigTransform {
     swap_xy?: boolean;
 }
 
-export interface Cst226TouchscreenConfig extends CoreCOMPONENT_SCHEMA {
+export interface Cst226TouchscreenConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     calibration?: Cst226TouchscreenConfigCalibration;
     display?: ID;

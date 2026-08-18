@@ -9,98 +9,98 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Ina2xxBase extends EsphomeComponent {
     componentName: string = "ina2xx_base";
 }
 
-export type Ina2xxBaseINA2XX_SCHEMAAdcAveraging = '1' | '4' | '16' | '64' | '128' | '256' | '512' | '1024';
+export type Ina2xxBaseINA2XXSCHEMAAdcAveraging = '1' | '4' | '16' | '64' | '128' | '256' | '512' | '1024';
 
-export interface Ina2xxBaseINA2XX_SCHEMAAdcTime {
+export interface Ina2xxBaseINA2XXSCHEMAAdcTime {
     bus_voltage?: any;
     shunt_voltage?: any;
     temperature?: any;
 }
 
-export interface Ina2xxBaseINA2XX_SCHEMABusVoltage extends Sensor_SENSOR_SCHEMA {
+export interface Ina2xxBaseINA2XXSCHEMABusVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ina2xxBaseINA2XX_SCHEMACharge extends Sensor_SENSOR_SCHEMA {
+export interface Ina2xxBaseINA2XXSCHEMACharge extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ina2xxBaseINA2XX_SCHEMAChargeCoulombs extends Sensor_SENSOR_SCHEMA {
+export interface Ina2xxBaseINA2XXSCHEMAChargeCoulombs extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ina2xxBaseINA2XX_SCHEMACurrent extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface Ina2xxBaseINA2XX_SCHEMAEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Ina2xxBaseINA2XXSCHEMACurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ina2xxBaseINA2XX_SCHEMAEnergyJoules extends Sensor_SENSOR_SCHEMA {
+export interface Ina2xxBaseINA2XXSCHEMAEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ina2xxBaseINA2XX_SCHEMAPower extends Sensor_SENSOR_SCHEMA {
+export interface Ina2xxBaseINA2XXSCHEMAEnergyJoules extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ina2xxBaseINA2XX_SCHEMAShuntVoltage extends Sensor_SENSOR_SCHEMA {
+export interface Ina2xxBaseINA2XXSCHEMAPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ina2xxBaseINA2XX_SCHEMATemperature extends Sensor_SENSOR_SCHEMA {
+export interface Ina2xxBaseINA2XXSCHEMAShuntVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ina2xxBaseINA2XX_SCHEMA extends CoreCOMPONENT_SCHEMA {
-    adc_averaging?: Ina2xxBaseINA2XX_SCHEMAAdcAveraging;
+export interface Ina2xxBaseINA2XXSCHEMATemperature extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface Ina2xxBaseINA2XXSCHEMA extends CoreCOMPONENTSCHEMA {
+    adc_averaging?: Ina2xxBaseINA2XXSCHEMAAdcAveraging;
     adc_range?: number;
-    adc_time?: Ina2xxBaseINA2XX_SCHEMAAdcTime;
-    bus_voltage?: Ina2xxBaseINA2XX_SCHEMABusVoltage;
-    charge?: Ina2xxBaseINA2XX_SCHEMACharge;
-    charge_coulombs?: Ina2xxBaseINA2XX_SCHEMAChargeCoulombs;
-    current?: Ina2xxBaseINA2XX_SCHEMACurrent;
-    energy?: Ina2xxBaseINA2XX_SCHEMAEnergy;
-    energy_joules?: Ina2xxBaseINA2XX_SCHEMAEnergyJoules;
+    adc_time?: Ina2xxBaseINA2XXSCHEMAAdcTime;
+    bus_voltage?: Ina2xxBaseINA2XXSCHEMABusVoltage;
+    charge?: Ina2xxBaseINA2XXSCHEMACharge;
+    charge_coulombs?: Ina2xxBaseINA2XXSCHEMAChargeCoulombs;
+    current?: Ina2xxBaseINA2XXSCHEMACurrent;
+    energy?: Ina2xxBaseINA2XXSCHEMAEnergy;
+    energy_joules?: Ina2xxBaseINA2XXSCHEMAEnergyJoules;
     max_current: string;
-    power?: Ina2xxBaseINA2XX_SCHEMAPower;
+    power?: Ina2xxBaseINA2XXSCHEMAPower;
     reset_on_boot?: boolean;
     shunt_resistance: string;
-    shunt_voltage?: Ina2xxBaseINA2XX_SCHEMAShuntVoltage;
-    temperature?: Ina2xxBaseINA2XX_SCHEMATemperature;
+    shunt_voltage?: Ina2xxBaseINA2XXSCHEMAShuntVoltage;
+    temperature?: Ina2xxBaseINA2XXSCHEMATemperature;
     temperature_coefficient?: number;
     update_interval?: any;
 }

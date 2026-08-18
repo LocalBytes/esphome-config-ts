@@ -9,26 +9,26 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
 
 export class QspiDbiDisplay extends EsphomeComponent<QspiDbiDisplayConfig> {
     componentName: string = "qspi_dbi.display";
 }
 
-export interface QspiDbiDisplayBASE_SCHEMADimensions {
+export interface QspiDbiDisplayBASESCHEMADimensions {
     height: string;
     offset_height?: any;
     offset_width?: any;
     width: string;
 }
 
-export type QspiDbiDisplayBASE_SCHEMASpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
+export type QspiDbiDisplayBASESCHEMASpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 
-export interface QspiDbiDisplayBASE_SCHEMA extends DisplayFULL_DISPLAY_SCHEMA {
+export interface QspiDbiDisplayBASESCHEMA extends DisplayFULLDISPLAYSCHEMA {
     brightness?: number;
     cs_pin?: Pin;
     data_rate?: any;
-    dimensions: QspiDbiDisplayBASE_SCHEMADimensions;
+    dimensions: QspiDbiDisplayBASESCHEMADimensions;
     draw_from_origin?: boolean;
     enable_pin?: Pin;
     id?: ID;
@@ -36,7 +36,7 @@ export interface QspiDbiDisplayBASE_SCHEMA extends DisplayFULL_DISPLAY_SCHEMA {
     release_device?: boolean;
     reset_pin?: Pin;
     spi_id?: ID;
-    spi_mode?: QspiDbiDisplayBASE_SCHEMASpiMode;
+    spi_mode?: QspiDbiDisplayBASESCHEMASpiMode;
 }
 
 export type QspiDbiDisplayConfig = QspiDbiDisplayConfigAXS15231 | QspiDbiDisplayConfigCUSTOM | QspiDbiDisplayConfigJC3636W518 | QspiDbiDisplayConfigJC4832W535 | QspiDbiDisplayConfigRM67162 | QspiDbiDisplayConfigRM690B0;

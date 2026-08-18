@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class CombinationSensor extends EsphomeComponent<CombinationSensorConfig> {
     componentName: string = "combination.sensor";
@@ -22,7 +22,7 @@ export interface CombinationSensorConfigKalmanSources {
     source: ID;
 }
 
-export type CombinationSensorConfigKalmanStdDev = Sensor_SENSOR_SCHEMA;
+export type CombinationSensorConfigKalmanStdDev = SensorSENSORSCHEMA;
 
 export interface CombinationSensorConfigKalman {
     type: "kalman" | "KALMAN";
@@ -44,7 +44,7 @@ export interface CombinationSensorConfigLinear {
     sources: CombinationSensorConfigLinearSources[];
 }
 
-export type CombinationSensorConfigMaxSources = CombinationSensorSENSOR_ONLY_SOURCE_SCHEMA;
+export type CombinationSensorConfigMaxSources = CombinationSensorSENSORONLYSOURCESCHEMA;
 
 export interface CombinationSensorConfigMax {
     type: "max" | "MAX";
@@ -52,7 +52,7 @@ export interface CombinationSensorConfigMax {
     sources: CombinationSensorConfigMaxSources[];
 }
 
-export type CombinationSensorConfigMeanSources = CombinationSensorSENSOR_ONLY_SOURCE_SCHEMA;
+export type CombinationSensorConfigMeanSources = CombinationSensorSENSORONLYSOURCESCHEMA;
 
 export interface CombinationSensorConfigMean {
     type: "mean" | "MEAN";
@@ -60,7 +60,7 @@ export interface CombinationSensorConfigMean {
     sources: CombinationSensorConfigMeanSources[];
 }
 
-export type CombinationSensorConfigMedianSources = CombinationSensorSENSOR_ONLY_SOURCE_SCHEMA;
+export type CombinationSensorConfigMedianSources = CombinationSensorSENSORONLYSOURCESCHEMA;
 
 export interface CombinationSensorConfigMedian {
     type: "median" | "MEDIAN";
@@ -68,7 +68,7 @@ export interface CombinationSensorConfigMedian {
     sources: CombinationSensorConfigMedianSources[];
 }
 
-export type CombinationSensorConfigMinSources = CombinationSensorSENSOR_ONLY_SOURCE_SCHEMA;
+export type CombinationSensorConfigMinSources = CombinationSensorSENSORONLYSOURCESCHEMA;
 
 export interface CombinationSensorConfigMin {
     type: "min" | "MIN";
@@ -76,7 +76,7 @@ export interface CombinationSensorConfigMin {
     sources: CombinationSensorConfigMinSources[];
 }
 
-export type CombinationSensorConfigMostRecentlyUpdatedSources = CombinationSensorSENSOR_ONLY_SOURCE_SCHEMA;
+export type CombinationSensorConfigMostRecentlyUpdatedSources = CombinationSensorSENSORONLYSOURCESCHEMA;
 
 export interface CombinationSensorConfigMostRecentlyUpdated {
     type: "most_recently_updated" | "MOST_RECENTLY_UPDATED";
@@ -84,7 +84,7 @@ export interface CombinationSensorConfigMostRecentlyUpdated {
     sources: CombinationSensorConfigMostRecentlyUpdatedSources[];
 }
 
-export type CombinationSensorConfigRangeSources = CombinationSensorSENSOR_ONLY_SOURCE_SCHEMA;
+export type CombinationSensorConfigRangeSources = CombinationSensorSENSORONLYSOURCESCHEMA;
 
 export interface CombinationSensorConfigRange {
     type: "range" | "RANGE";
@@ -92,7 +92,7 @@ export interface CombinationSensorConfigRange {
     sources: CombinationSensorConfigRangeSources[];
 }
 
-export type CombinationSensorConfigSumSources = CombinationSensorSENSOR_ONLY_SOURCE_SCHEMA;
+export type CombinationSensorConfigSumSources = CombinationSensorSENSORONLYSOURCESCHEMA;
 
 export interface CombinationSensorConfigSum {
     type: "sum" | "SUM";
@@ -100,6 +100,6 @@ export interface CombinationSensorConfigSum {
     sources: CombinationSensorConfigSumSources[];
 }
 
-export interface CombinationSensorSENSOR_ONLY_SOURCE_SCHEMA {
+export interface CombinationSensorSENSORONLYSOURCESCHEMA {
     source: ID;
 }

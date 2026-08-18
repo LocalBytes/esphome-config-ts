@@ -9,25 +9,25 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Button_BUTTON_SCHEMA } from "./button.js";
-import type { Lock_LOCK_SCHEMA } from "./lock.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { ButtonBUTTONSCHEMA } from "./button.js";
+import type { LockLOCKSCHEMA } from "./lock.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
 
 export abstract class Output extends EsphomeComponent {
     componentName: string = "output";
 }
 
-export interface OutputBINARY_OUTPUT_ACTION_SCHEMA {
+export interface OutputBINARYOUTPUTACTIONSCHEMA {
     id: ID;
 }
 
-export interface OutputBINARY_OUTPUT_SCHEMA {
+export interface OutputBINARYOUTPUTSCHEMA {
     inverted?: boolean;
     power_supply?: ID;
 }
 
-export interface OutputFLOAT_OUTPUT_SCHEMA extends OutputBINARY_OUTPUT_SCHEMA {
+export interface OutputFLOATOUTPUTSCHEMA extends OutputBINARYOUTPUTSCHEMA {
     max_power?: any;
     min_power?: any;
     zero_means_zero?: boolean;
@@ -42,7 +42,7 @@ export type OutputButtonConfig = {
         duration: OutputButtonConfigDuration;
         id?: ID;
         output: ID;
-    } & Button_BUTTON_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & ButtonBUTTONSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class OutputLock extends EsphomeComponent<OutputLockConfig> {
     componentName: string = "output.lock";
@@ -51,7 +51,7 @@ export class OutputLock extends EsphomeComponent<OutputLockConfig> {
 export type OutputLockConfig = {
         id?: ID;
         output: ID;
-    } & Lock_LOCK_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & LockLOCKSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class OutputSwitch extends EsphomeComponent<OutputSwitchConfig> {
     componentName: string = "output.switch";
@@ -60,4 +60,4 @@ export class OutputSwitch extends EsphomeComponent<OutputSwitchConfig> {
 export type OutputSwitchConfig = {
         id?: ID;
         output: ID;
-    } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA;

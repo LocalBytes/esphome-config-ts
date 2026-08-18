@@ -9,18 +9,18 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMicroseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { LightADDRESSABLE_LIGHT_SCHEMA } from "./light.js";
+import type { CorePositiveTimePeriodMicroseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { LightADDRESSABLELIGHTSCHEMA } from "./light.js";
 
 export abstract class FastledBase extends EsphomeComponent {
     componentName: string = "fastled_base";
 }
 
-export type FastledBaseBASE_SCHEMAMaxRefreshRate = CorePositiveTimePeriodMicroseconds;
-export type FastledBaseBASE_SCHEMARgbOrder = 'RGB' | 'RBG' | 'GRB' | 'GBR' | 'BRG' | 'BGR';
-export type FastledBaseBASE_SCHEMA = {
-        max_refresh_rate?: FastledBaseBASE_SCHEMAMaxRefreshRate;
+export type FastledBaseBASESCHEMAMaxRefreshRate = CorePositiveTimePeriodMicroseconds;
+export type FastledBaseBASESCHEMARgbOrder = 'RGB' | 'RBG' | 'GRB' | 'GBR' | 'BRG' | 'BGR';
+export type FastledBaseBASESCHEMA = {
+        max_refresh_rate?: FastledBaseBASESCHEMAMaxRefreshRate;
         num_leds: number;
         output_id?: ID;
-        rgb_order?: FastledBaseBASE_SCHEMARgbOrder;
-    } & LightADDRESSABLE_LIGHT_SCHEMA & CoreCOMPONENT_SCHEMA;
+        rgb_order?: FastledBaseBASESCHEMARgbOrder;
+    } & LightADDRESSABLELIGHTSCHEMA & CoreCOMPONENTSCHEMA;

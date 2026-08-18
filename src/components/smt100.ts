@@ -9,47 +9,47 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Smt100Sensor extends EsphomeComponent<Smt100SensorConfig> {
     componentName: string = "smt100.sensor";
 }
 
-export interface Smt100SensorConfigCounts extends Sensor_SENSOR_SCHEMA {
+export interface Smt100SensorConfigCounts extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Smt100SensorConfigMoisture extends Sensor_SENSOR_SCHEMA {
+export interface Smt100SensorConfigMoisture extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Smt100SensorConfigPermittivity extends Sensor_SENSOR_SCHEMA {
+export interface Smt100SensorConfigPermittivity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Smt100SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface Smt100SensorConfigVoltage extends Sensor_SENSOR_SCHEMA {
+export interface Smt100SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Smt100SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Smt100SensorConfigVoltage extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface Smt100SensorConfig extends CoreCOMPONENTSCHEMA {
     counts?: Smt100SensorConfigCounts;
     id?: ID;
     moisture?: Smt100SensorConfigMoisture;

@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { TimeTIME_SCHEMA } from "./time.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { TimeTIMESCHEMA } from "./time.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class SntpTime extends EsphomeComponent<SntpTimeConfig> {
     componentName: string = "sntp.time";
@@ -19,4 +19,4 @@ export class SntpTime extends EsphomeComponent<SntpTimeConfig> {
 export type SntpTimeConfig = {
         id?: ID;
         servers?: any[];
-    } & TimeTIME_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TimeTIMESCHEMA & CoreCOMPONENTSCHEMA;

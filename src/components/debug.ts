@@ -9,15 +9,15 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class Debug extends EsphomeComponent<DebugConfig> {
     componentName: string = "debug";
 }
 
-export interface DebugConfig extends CoreCOMPONENT_SCHEMA {
+export interface DebugConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     update_interval?: any;
 }
@@ -26,7 +26,7 @@ export class DebugSensor extends EsphomeComponent<DebugSensorConfig> {
     componentName: string = "debug.sensor";
 }
 
-export interface DebugSensorConfigBlock extends Sensor_SENSOR_SCHEMA {
+export interface DebugSensorConfigBlock extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
@@ -34,7 +34,7 @@ export interface DebugSensorConfigBlock extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface DebugSensorConfigCpuFrequency extends Sensor_SENSOR_SCHEMA {
+export interface DebugSensorConfigCpuFrequency extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -43,7 +43,7 @@ export interface DebugSensorConfigCpuFrequency extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface DebugSensorConfigFragmentation extends Sensor_SENSOR_SCHEMA {
+export interface DebugSensorConfigFragmentation extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
@@ -51,7 +51,7 @@ export interface DebugSensorConfigFragmentation extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface DebugSensorConfigFree extends Sensor_SENSOR_SCHEMA {
+export interface DebugSensorConfigFree extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
@@ -59,7 +59,7 @@ export interface DebugSensorConfigFree extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface DebugSensorConfigLoopTime extends Sensor_SENSOR_SCHEMA {
+export interface DebugSensorConfigLoopTime extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
@@ -67,7 +67,7 @@ export interface DebugSensorConfigLoopTime extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface DebugSensorConfigMinFree extends Sensor_SENSOR_SCHEMA {
+export interface DebugSensorConfigMinFree extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
@@ -75,7 +75,7 @@ export interface DebugSensorConfigMinFree extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface DebugSensorConfigPsram extends Sensor_SENSOR_SCHEMA {
+export interface DebugSensorConfigPsram extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
@@ -98,12 +98,12 @@ export class DebugTextSensor extends EsphomeComponent<DebugTextSensorConfig> {
     componentName: string = "debug.text_sensor";
 }
 
-export interface DebugTextSensorConfigDevice extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface DebugTextSensorConfigDevice extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }
 
-export interface DebugTextSensorConfigResetReason extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface DebugTextSensorConfigResetReason extends TextSensorTEXTSENSORSCHEMA {
     entity_category?: any;
     icon?: any;
 }

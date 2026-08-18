@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { OtaBASE_OTA_SCHEMA } from "./ota.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { OtaBASEOTASCHEMA } from "./ota.js";
 
 export class WebServer extends EsphomeComponent<WebServerConfig> {
     componentName: string = "web_server";
@@ -31,7 +31,7 @@ export interface WebServerConfigSortingGroups {
 
 export type WebServerConfigVersion = '1' | '2' | '3';
 
-export interface WebServerConfig extends CoreCOMPONENT_SCHEMA {
+export interface WebServerConfig extends CoreCOMPONENTSCHEMA {
     auth?: WebServerConfigAuth;
     compression?: WebServerConfigCompression;
     css_include?: any;
@@ -56,4 +56,4 @@ export class WebServerOta extends EsphomeComponent<WebServerOtaConfig> {
 
 export type WebServerOtaConfig = {
         id?: ID;
-    } & OtaBASE_OTA_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OtaBASEOTASCHEMA & CoreCOMPONENTSCHEMA;

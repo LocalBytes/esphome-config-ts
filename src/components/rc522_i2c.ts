@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Rc522RC522_SCHEMA } from "./rc522.js";
+import type { Rc522RC522SCHEMA } from "./rc522.js";
 
 export class Rc522I2c extends EsphomeComponent<Rc522I2cConfig> {
     componentName: string = "rc522_i2c";
 }
 
-export interface Rc522I2cConfig extends Rc522RC522_SCHEMA {
+export interface Rc522I2cConfig extends Rc522RC522SCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: any;

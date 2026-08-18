@@ -14,7 +14,7 @@ export abstract class Ota extends EsphomeComponent {
     componentName: string = "ota";
 }
 
-export interface OtaBASE_OTA_SCHEMA {
+export interface OtaBASEOTASCHEMA {
     on_abort?: object[];
     on_begin?: object[];
     on_end?: object[];

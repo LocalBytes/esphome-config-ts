@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
 
 export class Dac7678 extends EsphomeComponent<Dac7678Config> {
     componentName: string = "dac7678";
 }
 
-export interface Dac7678Config extends CoreCOMPONENT_SCHEMA {
+export interface Dac7678Config extends CoreCOMPONENTSCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: ID;
@@ -27,7 +27,7 @@ export class Dac7678Output extends EsphomeComponent<Dac7678OutputConfig> {
     componentName: string = "dac7678.output";
 }
 
-export interface Dac7678OutputConfig extends OutputFLOAT_OUTPUT_SCHEMA {
+export interface Dac7678OutputConfig extends OutputFLOATOUTPUTSCHEMA {
     channel: number;
     dac7678_id?: ID;
     id: string;

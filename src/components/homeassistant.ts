@@ -9,24 +9,24 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Number_NUMBER_SCHEMA } from "./number.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
-import type { TimeTIME_SCHEMA } from "./time.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { NumberNUMBERSCHEMA } from "./number.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
+import type { TimeTIMESCHEMA } from "./time.js";
 
 export abstract class Homeassistant extends EsphomeComponent {
     componentName: string = "homeassistant";
 }
 
-export interface HomeassistantHOME_ASSISTANT_IMPORT_CONTROL_SCHEMA {
+export interface HomeassistantHOMEASSISTANTIMPORTCONTROLSCHEMA {
     entity_id: string;
     internal?: boolean;
 }
 
-export interface HomeassistantHOME_ASSISTANT_IMPORT_SCHEMA {
+export interface HomeassistantHOMEASSISTANTIMPORTSCHEMA {
     attribute?: string;
     entity_id: string;
     internal?: boolean;
@@ -40,7 +40,7 @@ export type HomeassistantBinarySensorConfig = {
         id?: any;
         entity_id: string;
         attribute?: any;
-    } & BinarySensor_BINARY_SENSOR_SCHEMA & HomeassistantHOME_ASSISTANT_IMPORT_SCHEMA;
+    } & BinarySensorBINARYSENSORSCHEMA & HomeassistantHOMEASSISTANTIMPORTSCHEMA;
 
 export class HomeassistantNumber extends EsphomeComponent<HomeassistantNumberConfig> {
     componentName: string = "homeassistant.number";
@@ -48,7 +48,7 @@ export class HomeassistantNumber extends EsphomeComponent<HomeassistantNumberCon
 
 export type HomeassistantNumberConfig = {
         id?: ID;
-    } & Number_NUMBER_SCHEMA & HomeassistantHOME_ASSISTANT_IMPORT_CONTROL_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & NumberNUMBERSCHEMA & HomeassistantHOMEASSISTANTIMPORTCONTROLSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class HomeassistantSensor extends EsphomeComponent<HomeassistantSensorConfig> {
     componentName: string = "homeassistant.sensor";
@@ -59,7 +59,7 @@ export type HomeassistantSensorConfig = {
         id?: any;
         entity_id: string;
         attribute?: any;
-    } & Sensor_SENSOR_SCHEMA & HomeassistantHOME_ASSISTANT_IMPORT_SCHEMA;
+    } & SensorSENSORSCHEMA & HomeassistantHOMEASSISTANTIMPORTSCHEMA;
 
 export class HomeassistantSwitch extends EsphomeComponent<HomeassistantSwitchConfig> {
     componentName: string = "homeassistant.switch";
@@ -68,7 +68,7 @@ export class HomeassistantSwitch extends EsphomeComponent<HomeassistantSwitchCon
 export type HomeassistantSwitchConfig = {
         id?: ID;
         entity_id: string;
-    } & Switch_SWITCH_SCHEMA & HomeassistantHOME_ASSISTANT_IMPORT_CONTROL_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & HomeassistantHOMEASSISTANTIMPORTCONTROLSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class HomeassistantTextSensor extends EsphomeComponent<HomeassistantTextSensorConfig> {
     componentName: string = "homeassistant.text_sensor";
@@ -76,7 +76,7 @@ export class HomeassistantTextSensor extends EsphomeComponent<HomeassistantTextS
 
 export type HomeassistantTextSensorConfig = {
         id?: any;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & HomeassistantHOME_ASSISTANT_IMPORT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & HomeassistantHOMEASSISTANTIMPORTSCHEMA;
 
 export class HomeassistantTime extends EsphomeComponent<HomeassistantTimeConfig> {
     componentName: string = "homeassistant.time";
@@ -84,4 +84,4 @@ export class HomeassistantTime extends EsphomeComponent<HomeassistantTimeConfig>
 
 export type HomeassistantTimeConfig = {
         id?: ID;
-    } & TimeTIME_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TimeTIMESCHEMA & CoreCOMPONENTSCHEMA;

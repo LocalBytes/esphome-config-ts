@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class BleNus extends EsphomeComponent<BleNusConfig> {
     componentName: string = "ble_nus";
@@ -17,7 +17,7 @@ export class BleNus extends EsphomeComponent<BleNusConfig> {
 
 export type BleNusConfigType = 'logs' | 'uart';
 
-export interface BleNusConfig extends CoreCOMPONENT_SCHEMA {
+export interface BleNusConfig extends CoreCOMPONENTSCHEMA {
     debug?: any;
     id?: ID;
     rx_buffer_size?: number;

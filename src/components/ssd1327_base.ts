@@ -9,17 +9,17 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Ssd1327Base extends EsphomeComponent {
     componentName: string = "ssd1327_base";
 }
 
-export type Ssd1327BaseSSD1327_SCHEMAModel = 'SSD1327_128X128';
-export type Ssd1327BaseSSD1327_SCHEMA = {
+export type Ssd1327BaseSSD1327SCHEMAModel = 'SSD1327_128X128';
+export type Ssd1327BaseSSD1327SCHEMA = {
         brightness?: any;
-        model: Ssd1327BaseSSD1327_SCHEMAModel;
+        model: Ssd1327BaseSSD1327SCHEMAModel;
         reset_pin?: Pin;
         update_interval?: any;
-    } & DisplayFULL_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & DisplayFULLDISPLAYSCHEMA & CoreCOMPONENTSCHEMA;

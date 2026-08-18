@@ -10,7 +10,7 @@
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
 import type { CorePositiveTimePeriodMilliseconds } from "./esphome.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
 
 export class EpaperSpiDisplay extends EsphomeComponent<EpaperSpiDisplayConfig> {
     componentName: string = "epaper_spi.display";
@@ -30,7 +30,7 @@ export interface EpaperSpiDisplayConfigTransform {
     mirror_y: boolean;
 }
 
-export interface EpaperSpiDisplayConfig extends DisplayFULL_DISPLAY_SCHEMA {
+export interface EpaperSpiDisplayConfig extends DisplayFULLDISPLAYSCHEMA {
     busy_pin?: Pin;
     cs_pin: Pin;
     data_rate?: any;

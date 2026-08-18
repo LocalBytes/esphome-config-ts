@@ -9,18 +9,18 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Number_NUMBER_SCHEMA } from "./number.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { NumberNUMBERSCHEMA } from "./number.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
 
 export class Opentherm extends EsphomeComponent<OpenthermConfig> {
     componentName: string = "opentherm";
 }
 
-export interface OpenthermConfig extends CoreCOMPONENT_SCHEMA {
+export interface OpenthermConfig extends CoreCOMPONENTSCHEMA {
     before_process_response?: object[];
     before_send?: object[];
     ch2_active?: boolean;
@@ -55,86 +55,86 @@ export class OpenthermBinarySensor extends EsphomeComponent<OpenthermBinarySenso
     componentName: string = "opentherm.binary_sensor";
 }
 
-export interface OpenthermBinarySensorConfigAirPressureFault extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface OpenthermBinarySensorConfigAirPressureFault extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
 }
 
-export interface OpenthermBinarySensorConfigCh2Active extends BinarySensor_BINARY_SENSOR_SCHEMA {
-    device_class?: any;
-    icon?: any;
-}
-
-export type OpenthermBinarySensorConfigCh2Present = BinarySensor_BINARY_SENSOR_SCHEMA;
-
-export interface OpenthermBinarySensorConfigChActive extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface OpenthermBinarySensorConfigCh2Active extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     icon?: any;
 }
 
-export type OpenthermBinarySensorConfigControlTypeOnOff = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type OpenthermBinarySensorConfigControllerPumpControlAllowed = BinarySensor_BINARY_SENSOR_SCHEMA;
+export type OpenthermBinarySensorConfigCh2Present = BinarySensorBINARYSENSORSCHEMA;
 
-export interface OpenthermBinarySensorConfigCoolingActive extends BinarySensor_BINARY_SENSOR_SCHEMA {
-    device_class?: any;
-}
-
-export type OpenthermBinarySensorConfigCoolingSupported = BinarySensor_BINARY_SENSOR_SCHEMA;
-
-export interface OpenthermBinarySensorConfigDhwActive extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface OpenthermBinarySensorConfigChActive extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     icon?: any;
 }
 
-export type OpenthermBinarySensorConfigDhwPresent = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type OpenthermBinarySensorConfigDhwSetpointRw = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type OpenthermBinarySensorConfigDhwSetpointTransferEnabled = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type OpenthermBinarySensorConfigDhwStorageTank = BinarySensor_BINARY_SENSOR_SCHEMA;
+export type OpenthermBinarySensorConfigControlTypeOnOff = BinarySensorBINARYSENSORSCHEMA;
+export type OpenthermBinarySensorConfigControllerPumpControlAllowed = BinarySensorBINARYSENSORSCHEMA;
 
-export interface OpenthermBinarySensorConfigDiagnosticIndication extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface OpenthermBinarySensorConfigCoolingActive extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
 }
 
-export interface OpenthermBinarySensorConfigElectricityProduction extends BinarySensor_BINARY_SENSOR_SCHEMA {
-    device_class?: any;
-}
+export type OpenthermBinarySensorConfigCoolingSupported = BinarySensorBINARYSENSORSCHEMA;
 
-export interface OpenthermBinarySensorConfigFaultIndication extends BinarySensor_BINARY_SENSOR_SCHEMA {
-    device_class?: any;
-}
-
-export interface OpenthermBinarySensorConfigFlameFault extends BinarySensor_BINARY_SENSOR_SCHEMA {
-    device_class?: any;
-}
-
-export interface OpenthermBinarySensorConfigFlameOn extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface OpenthermBinarySensorConfigDhwActive extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     icon?: any;
 }
 
-export type OpenthermBinarySensorConfigHeatMode = BinarySensor_BINARY_SENSOR_SCHEMA;
+export type OpenthermBinarySensorConfigDhwPresent = BinarySensorBINARYSENSORSCHEMA;
+export type OpenthermBinarySensorConfigDhwSetpointRw = BinarySensorBINARYSENSORSCHEMA;
+export type OpenthermBinarySensorConfigDhwSetpointTransferEnabled = BinarySensorBINARYSENSORSCHEMA;
+export type OpenthermBinarySensorConfigDhwStorageTank = BinarySensorBINARYSENSORSCHEMA;
 
-export interface OpenthermBinarySensorConfigLockoutReset extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface OpenthermBinarySensorConfigDiagnosticIndication extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
 }
 
-export interface OpenthermBinarySensorConfigLowWaterPressure extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface OpenthermBinarySensorConfigElectricityProduction extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
 }
 
-export type OpenthermBinarySensorConfigMaxChSetpointRw = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type OpenthermBinarySensorConfigMaxChSetpointTransferEnabled = BinarySensor_BINARY_SENSOR_SCHEMA;
-
-export interface OpenthermBinarySensorConfigServiceRequest extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface OpenthermBinarySensorConfigFaultIndication extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
 }
 
-export type OpenthermBinarySensorConfigWaterFilling = BinarySensor_BINARY_SENSOR_SCHEMA;
-
-export interface OpenthermBinarySensorConfigWaterOverTemp extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface OpenthermBinarySensorConfigFlameFault extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
 }
 
-export interface OpenthermBinarySensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface OpenthermBinarySensorConfigFlameOn extends BinarySensorBINARYSENSORSCHEMA {
+    device_class?: any;
+    icon?: any;
+}
+
+export type OpenthermBinarySensorConfigHeatMode = BinarySensorBINARYSENSORSCHEMA;
+
+export interface OpenthermBinarySensorConfigLockoutReset extends BinarySensorBINARYSENSORSCHEMA {
+    device_class?: any;
+}
+
+export interface OpenthermBinarySensorConfigLowWaterPressure extends BinarySensorBINARYSENSORSCHEMA {
+    device_class?: any;
+}
+
+export type OpenthermBinarySensorConfigMaxChSetpointRw = BinarySensorBINARYSENSORSCHEMA;
+export type OpenthermBinarySensorConfigMaxChSetpointTransferEnabled = BinarySensorBINARYSENSORSCHEMA;
+
+export interface OpenthermBinarySensorConfigServiceRequest extends BinarySensorBINARYSENSORSCHEMA {
+    device_class?: any;
+}
+
+export type OpenthermBinarySensorConfigWaterFilling = BinarySensorBINARYSENSORSCHEMA;
+
+export interface OpenthermBinarySensorConfigWaterOverTemp extends BinarySensorBINARYSENSORSCHEMA {
+    device_class?: any;
+}
+
+export interface OpenthermBinarySensorConfig extends CoreCOMPONENTSCHEMA {
     air_pressure_fault?: OpenthermBinarySensorConfigAirPressureFault;
     ch2_active?: OpenthermBinarySensorConfigCh2Active;
     ch2_present?: OpenthermBinarySensorConfigCh2Present;
@@ -176,7 +176,7 @@ export type OpenthermNumberConfigCoolingControl = {
         restore_value?: boolean;
         step?: any;
         unit_of_measurement?: any;
-    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & NumberNUMBERSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermNumberConfigMaxRelModLevel = {
         id?: ID;
         initial_value?: any;
@@ -185,7 +185,7 @@ export type OpenthermNumberConfigMaxRelModLevel = {
         restore_value?: boolean;
         step?: any;
         unit_of_measurement?: any;
-    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & NumberNUMBERSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermNumberConfigMaxTSet = {
         auto_max_value?: boolean;
         auto_min_value?: boolean;
@@ -196,7 +196,7 @@ export type OpenthermNumberConfigMaxTSet = {
         restore_value?: boolean;
         step?: any;
         unit_of_measurement?: any;
-    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & NumberNUMBERSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermNumberConfigOtcHcRatio = {
         auto_max_value?: boolean;
         auto_min_value?: boolean;
@@ -207,7 +207,7 @@ export type OpenthermNumberConfigOtcHcRatio = {
         restore_value?: boolean;
         step?: any;
         unit_of_measurement?: any;
-    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & NumberNUMBERSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermNumberConfigTDhwSet = {
         auto_max_value?: boolean;
         auto_min_value?: boolean;
@@ -218,7 +218,7 @@ export type OpenthermNumberConfigTDhwSet = {
         restore_value?: boolean;
         step?: any;
         unit_of_measurement?: any;
-    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & NumberNUMBERSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermNumberConfigTRoom = {
         id?: ID;
         initial_value?: any;
@@ -227,7 +227,7 @@ export type OpenthermNumberConfigTRoom = {
         restore_value?: boolean;
         step?: any;
         unit_of_measurement?: any;
-    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & NumberNUMBERSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermNumberConfigTRoomSet = {
         id?: ID;
         initial_value?: any;
@@ -236,7 +236,7 @@ export type OpenthermNumberConfigTRoomSet = {
         restore_value?: boolean;
         step?: any;
         unit_of_measurement?: any;
-    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & NumberNUMBERSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermNumberConfigTRoomSetCh2 = {
         id?: ID;
         initial_value?: any;
@@ -245,7 +245,7 @@ export type OpenthermNumberConfigTRoomSetCh2 = {
         restore_value?: boolean;
         step?: any;
         unit_of_measurement?: any;
-    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & NumberNUMBERSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermNumberConfigTSet = {
         auto_max_value?: boolean;
         id?: ID;
@@ -255,7 +255,7 @@ export type OpenthermNumberConfigTSet = {
         restore_value?: boolean;
         step?: any;
         unit_of_measurement?: any;
-    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & NumberNUMBERSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermNumberConfigTSetCh2 = {
         auto_max_value?: boolean;
         id?: ID;
@@ -265,9 +265,9 @@ export type OpenthermNumberConfigTSetCh2 = {
         restore_value?: boolean;
         step?: any;
         unit_of_measurement?: any;
-    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & NumberNUMBERSCHEMA & CoreCOMPONENTSCHEMA;
 
-export interface OpenthermNumberConfig extends CoreCOMPONENT_SCHEMA {
+export interface OpenthermNumberConfig extends CoreCOMPONENTSCHEMA {
     cooling_control?: OpenthermNumberConfigCoolingControl;
     max_rel_mod_level?: OpenthermNumberConfigMaxRelModLevel;
     max_t_set?: OpenthermNumberConfigMaxTSet;
@@ -289,62 +289,62 @@ export type OpenthermOutputConfigCoolingControl = {
         id?: ID;
         max_value?: any;
         min_value?: any;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermOutputConfigMaxRelModLevel = {
         id?: ID;
         max_value?: any;
         min_value?: any;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermOutputConfigMaxTSet = {
         auto_max_value?: boolean;
         auto_min_value?: boolean;
         id?: ID;
         max_value?: any;
         min_value?: any;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermOutputConfigOtcHcRatio = {
         auto_max_value?: boolean;
         auto_min_value?: boolean;
         id?: ID;
         max_value?: any;
         min_value?: any;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermOutputConfigTDhwSet = {
         auto_max_value?: boolean;
         auto_min_value?: boolean;
         id?: ID;
         max_value?: any;
         min_value?: any;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermOutputConfigTRoom = {
         id?: ID;
         max_value?: any;
         min_value?: any;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermOutputConfigTRoomSet = {
         id?: ID;
         max_value?: any;
         min_value?: any;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermOutputConfigTRoomSetCh2 = {
         id?: ID;
         max_value?: any;
         min_value?: any;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermOutputConfigTSet = {
         auto_max_value?: boolean;
         id?: ID;
         max_value?: any;
         min_value?: any;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermOutputConfigTSetCh2 = {
         auto_max_value?: boolean;
         id?: ID;
         max_value?: any;
         min_value?: any;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;
 
-export interface OpenthermOutputConfig extends CoreCOMPONENT_SCHEMA {
+export interface OpenthermOutputConfig extends CoreCOMPONENTSCHEMA {
     cooling_control?: OpenthermOutputConfigCoolingControl;
     max_rel_mod_level?: OpenthermOutputConfigMaxRelModLevel;
     max_t_set?: OpenthermOutputConfigMaxTSet;
@@ -364,7 +364,7 @@ export class OpenthermSensor extends EsphomeComponent<OpenthermSensorConfig> {
 
 export type OpenthermSensorConfigBurnerOperationHoursDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigBurnerOperationHours extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigBurnerOperationHours extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigBurnerOperationHoursDataType;
     icon?: any;
@@ -373,7 +373,7 @@ export interface OpenthermSensorConfigBurnerOperationHours extends Sensor_SENSOR
 
 export type OpenthermSensorConfigBurnerStartsDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigBurnerStarts extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigBurnerStarts extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigBurnerStartsDataType;
     icon?: any;
@@ -382,7 +382,7 @@ export interface OpenthermSensorConfigBurnerStarts extends Sensor_SENSOR_SCHEMA 
 
 export type OpenthermSensorConfigChPressureDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigChPressure extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigChPressure extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigChPressureDataType;
     device_class?: any;
@@ -392,7 +392,7 @@ export interface OpenthermSensorConfigChPressure extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigChPumpOperationHoursDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigChPumpOperationHours extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigChPumpOperationHours extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigChPumpOperationHoursDataType;
     icon?: any;
@@ -401,7 +401,7 @@ export interface OpenthermSensorConfigChPumpOperationHours extends Sensor_SENSOR
 
 export type OpenthermSensorConfigChPumpStartsDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigChPumpStarts extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigChPumpStarts extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigChPumpStartsDataType;
     icon?: any;
@@ -410,7 +410,7 @@ export interface OpenthermSensorConfigChPumpStarts extends Sensor_SENSOR_SCHEMA 
 
 export type OpenthermSensorConfigDeviceIdDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigDeviceId extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigDeviceId extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigDeviceIdDataType;
     state_class?: any;
@@ -418,7 +418,7 @@ export interface OpenthermSensorConfigDeviceId extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigDeviceTypeDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigDeviceType extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigDeviceType extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigDeviceTypeDataType;
     state_class?: any;
@@ -426,7 +426,7 @@ export interface OpenthermSensorConfigDeviceType extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigDeviceVersionDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigDeviceVersion extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigDeviceVersion extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigDeviceVersionDataType;
     state_class?: any;
@@ -434,7 +434,7 @@ export interface OpenthermSensorConfigDeviceVersion extends Sensor_SENSOR_SCHEMA
 
 export type OpenthermSensorConfigDhwBurnerOperationHoursDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigDhwBurnerOperationHours extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigDhwBurnerOperationHours extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigDhwBurnerOperationHoursDataType;
     icon?: any;
@@ -443,7 +443,7 @@ export interface OpenthermSensorConfigDhwBurnerOperationHours extends Sensor_SEN
 
 export type OpenthermSensorConfigDhwBurnerStartsDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigDhwBurnerStarts extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigDhwBurnerStarts extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigDhwBurnerStartsDataType;
     icon?: any;
@@ -452,7 +452,7 @@ export interface OpenthermSensorConfigDhwBurnerStarts extends Sensor_SENSOR_SCHE
 
 export type OpenthermSensorConfigDhwFlowRateDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigDhwFlowRate extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigDhwFlowRate extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigDhwFlowRateDataType;
     icon?: any;
@@ -462,7 +462,7 @@ export interface OpenthermSensorConfigDhwFlowRate extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigDhwPumpValveOperationHoursDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigDhwPumpValveOperationHours extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigDhwPumpValveOperationHours extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigDhwPumpValveOperationHoursDataType;
     icon?: any;
@@ -471,7 +471,7 @@ export interface OpenthermSensorConfigDhwPumpValveOperationHours extends Sensor_
 
 export type OpenthermSensorConfigDhwPumpValveStartsDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigDhwPumpValveStarts extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigDhwPumpValveStarts extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigDhwPumpValveStartsDataType;
     icon?: any;
@@ -480,7 +480,7 @@ export interface OpenthermSensorConfigDhwPumpValveStarts extends Sensor_SENSOR_S
 
 export type OpenthermSensorConfigFanSpeedDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigFanSpeed extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigFanSpeed extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigFanSpeedDataType;
     icon?: any;
@@ -490,7 +490,7 @@ export interface OpenthermSensorConfigFanSpeed extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigFanSpeedSetpointDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigFanSpeedSetpoint extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigFanSpeedSetpoint extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigFanSpeedSetpointDataType;
     icon?: any;
@@ -500,7 +500,7 @@ export interface OpenthermSensorConfigFanSpeedSetpoint extends Sensor_SENSOR_SCH
 
 export type OpenthermSensorConfigFlameCurrentDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigFlameCurrent extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigFlameCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigFlameCurrentDataType;
     device_class?: any;
@@ -510,7 +510,7 @@ export interface OpenthermSensorConfigFlameCurrent extends Sensor_SENSOR_SCHEMA 
 
 export type OpenthermSensorConfigMaxCapacityDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigMaxCapacity extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigMaxCapacity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigMaxCapacityDataType;
     state_class?: any;
@@ -519,7 +519,7 @@ export interface OpenthermSensorConfigMaxCapacity extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigMaxTSetDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigMaxTSet extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigMaxTSet extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigMaxTSetDataType;
     device_class?: any;
@@ -529,7 +529,7 @@ export interface OpenthermSensorConfigMaxTSet extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigMaxTSetLbDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigMaxTSetLb extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigMaxTSetLb extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigMaxTSetLbDataType;
     device_class?: any;
@@ -539,7 +539,7 @@ export interface OpenthermSensorConfigMaxTSetLb extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigMaxTSetUbDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigMaxTSetUb extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigMaxTSetUb extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigMaxTSetUbDataType;
     device_class?: any;
@@ -549,7 +549,7 @@ export interface OpenthermSensorConfigMaxTSetUb extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigMinModLevelDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigMinModLevel extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigMinModLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigMinModLevelDataType;
     icon?: any;
@@ -559,7 +559,7 @@ export interface OpenthermSensorConfigMinModLevel extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigOemDiagnosticCodeDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigOemDiagnosticCode extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigOemDiagnosticCode extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigOemDiagnosticCodeDataType;
     state_class?: any;
@@ -567,7 +567,7 @@ export interface OpenthermSensorConfigOemDiagnosticCode extends Sensor_SENSOR_SC
 
 export type OpenthermSensorConfigOemFaultCodeDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigOemFaultCode extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigOemFaultCode extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigOemFaultCodeDataType;
     state_class?: any;
@@ -575,7 +575,7 @@ export interface OpenthermSensorConfigOemFaultCode extends Sensor_SENSOR_SCHEMA 
 
 export type OpenthermSensorConfigOpenthermVersionDeviceDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigOpenthermVersionDevice extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigOpenthermVersionDevice extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigOpenthermVersionDeviceDataType;
     state_class?: any;
@@ -583,7 +583,7 @@ export interface OpenthermSensorConfigOpenthermVersionDevice extends Sensor_SENS
 
 export type OpenthermSensorConfigOtcHcRatioLbDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigOtcHcRatioLb extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigOtcHcRatioLb extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigOtcHcRatioLbDataType;
     state_class?: any;
@@ -591,7 +591,7 @@ export interface OpenthermSensorConfigOtcHcRatioLb extends Sensor_SENSOR_SCHEMA 
 
 export type OpenthermSensorConfigOtcHcRatioUbDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigOtcHcRatioUb extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigOtcHcRatioUb extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigOtcHcRatioUbDataType;
     state_class?: any;
@@ -599,7 +599,7 @@ export interface OpenthermSensorConfigOtcHcRatioUb extends Sensor_SENSOR_SCHEMA 
 
 export type OpenthermSensorConfigRelModLevelDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigRelModLevel extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigRelModLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigRelModLevelDataType;
     icon?: any;
@@ -609,7 +609,7 @@ export interface OpenthermSensorConfigRelModLevel extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigTBoilerDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigTBoiler extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigTBoiler extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigTBoilerDataType;
     device_class?: any;
@@ -619,7 +619,7 @@ export interface OpenthermSensorConfigTBoiler extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigTCollectorDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigTCollector extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigTCollector extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigTCollectorDataType;
     device_class?: any;
@@ -629,7 +629,7 @@ export interface OpenthermSensorConfigTCollector extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigTDhwDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigTDhw extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigTDhw extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigTDhwDataType;
     device_class?: any;
@@ -639,7 +639,7 @@ export interface OpenthermSensorConfigTDhw extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigTDhw2DataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigTDhw2 extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigTDhw2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigTDhw2DataType;
     device_class?: any;
@@ -649,7 +649,7 @@ export interface OpenthermSensorConfigTDhw2 extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigTDhwSetDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigTDhwSet extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigTDhwSet extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigTDhwSetDataType;
     device_class?: any;
@@ -659,7 +659,7 @@ export interface OpenthermSensorConfigTDhwSet extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigTDhwSetLbDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigTDhwSetLb extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigTDhwSetLb extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigTDhwSetLbDataType;
     device_class?: any;
@@ -669,7 +669,7 @@ export interface OpenthermSensorConfigTDhwSetLb extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigTDhwSetUbDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigTDhwSetUb extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigTDhwSetUb extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigTDhwSetUbDataType;
     device_class?: any;
@@ -679,7 +679,7 @@ export interface OpenthermSensorConfigTDhwSetUb extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigTExhaustDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigTExhaust extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigTExhaust extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigTExhaustDataType;
     device_class?: any;
@@ -689,7 +689,7 @@ export interface OpenthermSensorConfigTExhaust extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigTFlowCh2DataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigTFlowCh2 extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigTFlowCh2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigTFlowCh2DataType;
     device_class?: any;
@@ -699,7 +699,7 @@ export interface OpenthermSensorConfigTFlowCh2 extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigTOutsideDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigTOutside extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigTOutside extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigTOutsideDataType;
     device_class?: any;
@@ -709,7 +709,7 @@ export interface OpenthermSensorConfigTOutside extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigTRetDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigTRet extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigTRet extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigTRetDataType;
     device_class?: any;
@@ -719,7 +719,7 @@ export interface OpenthermSensorConfigTRet extends Sensor_SENSOR_SCHEMA {
 
 export type OpenthermSensorConfigTStorageDataType = 'u16' | 's8_lb' | 'u8_hb' | 'u8_lb' | 'u8_lb_60' | 'u8_hb_60' | 'f88' | 's16' | 's8_hb';
 
-export interface OpenthermSensorConfigTStorage extends Sensor_SENSOR_SCHEMA {
+export interface OpenthermSensorConfigTStorage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     data_type?: OpenthermSensorConfigTStorageDataType;
     device_class?: any;
@@ -727,7 +727,7 @@ export interface OpenthermSensorConfigTStorage extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface OpenthermSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface OpenthermSensorConfig extends CoreCOMPONENTSCHEMA {
     burner_operation_hours?: OpenthermSensorConfigBurnerOperationHours;
     burner_starts?: OpenthermSensorConfigBurnerStarts;
     ch_pressure?: OpenthermSensorConfigChPressure;
@@ -777,33 +777,33 @@ export class OpenthermSwitch extends EsphomeComponent<OpenthermSwitchConfig> {
 export type OpenthermSwitchConfigCh2Active = {
         id?: ID;
         restore_mode?: any;
-    } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermSwitchConfigChEnable = {
         id?: ID;
         restore_mode?: any;
-    } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermSwitchConfigCoolingEnable = {
         id?: ID;
         restore_mode?: any;
-    } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermSwitchConfigDhwBlock = {
         id?: ID;
         restore_mode?: any;
-    } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermSwitchConfigDhwEnable = {
         id?: ID;
         restore_mode?: any;
-    } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermSwitchConfigOtcActive = {
         id?: ID;
         restore_mode?: any;
-    } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthermSwitchConfigSummerModeActive = {
         id?: ID;
         restore_mode?: any;
-    } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA;
 
-export interface OpenthermSwitchConfig extends CoreCOMPONENT_SCHEMA {
+export interface OpenthermSwitchConfig extends CoreCOMPONENTSCHEMA {
     ch2_active?: OpenthermSwitchConfigCh2Active;
     ch_enable?: OpenthermSwitchConfigChEnable;
     cooling_enable?: OpenthermSwitchConfigCoolingEnable;

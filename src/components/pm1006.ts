@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Pm1006Sensor extends EsphomeComponent<Pm1006SensorConfig> {
     componentName: string = "pm1006.sensor";
 }
 
-export interface Pm1006SensorConfigPm_2_5 extends Sensor_SENSOR_SCHEMA {
+export interface Pm1006SensorConfigPm25 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -24,9 +24,9 @@ export interface Pm1006SensorConfigPm_2_5 extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Pm1006SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Pm1006SensorConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
-    pm_2_5?: Pm1006SensorConfigPm_2_5;
+    pm_2_5?: Pm1006SensorConfigPm25;
     uart_id?: ID;
     update_interval?: any;
 }

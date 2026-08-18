@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Bme280BaseConfig_BASE } from "./bme280_base.js";
+import type { Bme280BaseCONFIGSCHEMABASE } from "./bme280_base.js";
 
 export class Bme280I2cSensor extends EsphomeComponent<Bme280I2cSensorConfig> {
     componentName: string = "bme280_i2c.sensor";
 }
 
-export interface Bme280I2cSensorConfig extends Bme280BaseConfig_BASE {
+export interface Bme280I2cSensorConfig extends Bme280BaseCONFIGSCHEMABASE {
     address?: any;
     i2c_id?: ID;
     id?: ID;

@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CorePositiveTimePeriodSeconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CorePositiveTimePeriodSeconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Hc8 extends EsphomeComponent {
     componentName: string = "hc8";
@@ -20,7 +20,7 @@ export class Hc8Sensor extends EsphomeComponent<Hc8SensorConfig> {
     componentName: string = "hc8.sensor";
 }
 
-export interface Hc8SensorConfigCo2 extends Sensor_SENSOR_SCHEMA {
+export interface Hc8SensorConfigCo2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -30,7 +30,7 @@ export interface Hc8SensorConfigCo2 extends Sensor_SENSOR_SCHEMA {
 
 export type Hc8SensorConfigWarmupTime = CorePositiveTimePeriodSeconds;
 
-export interface Hc8SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Hc8SensorConfig extends CoreCOMPONENTSCHEMA {
     co2?: Hc8SensorConfigCo2;
     id?: ID;
     uart_id?: ID;

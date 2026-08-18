@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class Cd74hc4067 extends EsphomeComponent<Cd74hc4067Config> {
     componentName: string = "cd74hc4067";
@@ -18,7 +18,7 @@ export class Cd74hc4067 extends EsphomeComponent<Cd74hc4067Config> {
 
 export type Cd74hc4067ConfigDelay = CorePositiveTimePeriodMilliseconds;
 
-export interface Cd74hc4067Config extends CoreCOMPONENT_SCHEMA {
+export interface Cd74hc4067Config extends CoreCOMPONENTSCHEMA {
     delay?: Cd74hc4067ConfigDelay;
     id?: ID;
     pin_s0: Pin;
@@ -42,4 +42,4 @@ export type Cd74hc4067SensorConfig = {
         state_class?: any;
         unit_of_measurement?: any;
         update_interval?: any;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

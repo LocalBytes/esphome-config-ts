@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
 
 export class MipiSpiDisplay extends EsphomeComponent<MipiSpiDisplayConfig> {
     componentName: string = "mipi_spi.display";
@@ -34,7 +34,7 @@ export type MipiSpiDisplayConfigPixelMode = '16bit' | '18bit';
 export type MipiSpiDisplayConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 export type MipiSpiDisplayConfigTransform = 'disabled';
 
-export interface MipiSpiDisplayConfig extends DisplayFULL_DISPLAY_SCHEMA {
+export interface MipiSpiDisplayConfig extends DisplayFULLDISPLAYSCHEMA {
     buffer_size?: any;
     bus_mode?: MipiSpiDisplayConfigBusMode;
     byte_order?: MipiSpiDisplayConfigByteOrder;

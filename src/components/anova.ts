@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Climate_CLIMATE_SCHEMA } from "./climate.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class AnovaClimate extends EsphomeComponent<AnovaClimateConfig> {
     componentName: string = "anova.climate";
@@ -22,4 +22,4 @@ export type AnovaClimateConfig = {
         id?: ID;
         unit_of_measurement: AnovaClimateConfigUnitOfMeasurement;
         update_interval?: any;
-    } & Climate_CLIMATE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & ClimateCLIMATESCHEMA & CoreCOMPONENTSCHEMA;

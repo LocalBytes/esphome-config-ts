@@ -9,18 +9,18 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Api extends EsphomeComponent<ApiConfig> {
     componentName: string = "api";
 }
 
-export type ApiConfigActions = ApiACTIONS_SCHEMA;
+export type ApiConfigActions = any;
 export type ApiConfigBatchDelay = CorePositiveTimePeriodMilliseconds;
 export type ApiConfigRebootTimeout = CorePositiveTimePeriodMilliseconds;
-export type ApiConfigServices = ApiACTIONS_SCHEMA;
+export type ApiConfigServices = any;
 
-export interface ApiConfig extends CoreCOMPONENT_SCHEMA {
+export interface ApiConfig extends CoreCOMPONENTSCHEMA {
     actions?: ApiConfigActions;
     batch_delay?: ApiConfigBatchDelay;
     custom_services?: boolean;
@@ -38,26 +38,26 @@ export interface ApiConfig extends CoreCOMPONENT_SCHEMA {
     services?: ApiConfigServices;
 }
 
-export type ApiHOMEASSISTANT_ACTION_ACTION_SCHEMAData = ApiKEY_VALUE_SCHEMA;
-export type ApiHOMEASSISTANT_ACTION_ACTION_SCHEMADataTemplate = ApiKEY_VALUE_SCHEMA;
+export type ApiHOMEASSISTANTACTIONACTIONSCHEMAData = ApiKEYVALUESCHEMA;
+export type ApiHOMEASSISTANTACTIONACTIONSCHEMADataTemplate = ApiKEYVALUESCHEMA;
 
-export interface ApiHOMEASSISTANT_ACTION_ACTION_SCHEMAVariables {
+export interface ApiHOMEASSISTANTACTIONACTIONSCHEMAVariables {
     string?: any;
 }
 
-export interface ApiHOMEASSISTANT_ACTION_ACTION_SCHEMA {
+export interface ApiHOMEASSISTANTACTIONACTIONSCHEMA {
     action: string;
     capture_response?: boolean;
-    data?: ApiHOMEASSISTANT_ACTION_ACTION_SCHEMAData;
-    data_template?: ApiHOMEASSISTANT_ACTION_ACTION_SCHEMADataTemplate;
+    data?: ApiHOMEASSISTANTACTIONACTIONSCHEMAData;
+    data_template?: ApiHOMEASSISTANTACTIONACTIONSCHEMADataTemplate;
     id?: ID;
     on_error?: object[];
     on_success?: object[];
     response_template?: string;
     service?: string;
-    variables?: ApiHOMEASSISTANT_ACTION_ACTION_SCHEMAVariables;
+    variables?: ApiHOMEASSISTANTACTIONACTIONSCHEMAVariables;
 }
 
-export interface ApiKEY_VALUE_SCHEMA {
+export interface ApiKEYVALUESCHEMA {
     string: string;
 }

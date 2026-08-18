@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Bmp280BaseConfig_BASE } from "./bmp280_base.js";
+import type { Bmp280BaseCONFIGSCHEMABASE } from "./bmp280_base.js";
 
 export class Bmp280SpiSensor extends EsphomeComponent<Bmp280SpiSensorConfig> {
     componentName: string = "bmp280_spi.sensor";
@@ -17,7 +17,7 @@ export class Bmp280SpiSensor extends EsphomeComponent<Bmp280SpiSensorConfig> {
 
 export type Bmp280SpiSensorConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 
-export interface Bmp280SpiSensorConfig extends Bmp280BaseConfig_BASE {
+export interface Bmp280SpiSensorConfig extends Bmp280BaseCONFIGSCHEMABASE {
     cs_pin: Pin;
     data_rate?: any;
     id?: ID;

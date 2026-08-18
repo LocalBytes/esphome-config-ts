@@ -9,28 +9,28 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Sht3xdSensor extends EsphomeComponent<Sht3xdSensorConfig> {
     componentName: string = "sht3xd.sensor";
 }
 
-export interface Sht3xdSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface Sht3xdSensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Sht3xdSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Sht3xdSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Sht3xdSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Sht3xdSensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     heater_enabled?: boolean;
     humidity?: Sht3xdSensorConfigHumidity;

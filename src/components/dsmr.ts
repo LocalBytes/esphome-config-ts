@@ -9,9 +9,9 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class Dsmr extends EsphomeComponent<DsmrConfig> {
     componentName: string = "dsmr";
@@ -20,7 +20,7 @@ export class Dsmr extends EsphomeComponent<DsmrConfig> {
 export type DsmrConfigReceiveTimeout = CorePositiveTimePeriodMilliseconds;
 export type DsmrConfigRequestInterval = CorePositiveTimePeriodMilliseconds;
 
-export interface DsmrConfig extends CoreCOMPONENT_SCHEMA {
+export interface DsmrConfig extends CoreCOMPONENTSCHEMA {
     crc_check?: boolean;
     decryption_key?: any;
     gas_mbus_id?: number;
@@ -38,883 +38,883 @@ export class DsmrSensor extends EsphomeComponent<DsmrSensorConfig> {
     componentName: string = "dsmr.sensor";
 }
 
-export interface DsmrSensorConfigAbsPower extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigAbsPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigActiveDemandAbs extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigActiveDemandAbs extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigActiveDemandNet extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigActiveDemandNet extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigActiveDemandPower extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigActiveDemandPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigActiveEnergyExportCurrentAverageDemand extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigActiveEnergyExportCurrentAverageDemand extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigActiveEnergyExportLastCompletedDemand extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigActiveEnergyExportLastCompletedDemand extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigActiveEnergyImportCurrentAverageDemand extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigActiveEnergyImportCurrentAverageDemand extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigActiveEnergyImportLastCompletedDemand extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigActiveEnergyImportLastCompletedDemand extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigActiveEnergyImportMaximumDemandLast_13Months extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigActiveEnergyImportMaximumDemandLast13Months extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigActiveEnergyImportMaximumDemandRunningMonth extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigActiveEnergyImportMaximumDemandRunningMonth extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigApparentDeliveryPower extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigApparentDeliveryPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigApparentDeliveryPowerL1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigApparentDeliveryPowerL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigApparentDeliveryPowerL2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigApparentDeliveryPowerL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigApparentDeliveryPowerL3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigApparentDeliveryPowerL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigApparentEnergyExportCurrentAverageDemand extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigApparentEnergyExportCurrentAverageDemand extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigApparentEnergyExportLastCompletedDemand extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigApparentEnergyExportLastCompletedDemand extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigApparentEnergyImportCurrentAverageDemand extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigApparentEnergyImportCurrentAverageDemand extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigApparentEnergyImportLastCompletedDemand extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigApparentEnergyImportLastCompletedDemand extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigApparentReturnPower extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigApparentReturnPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigApparentReturnPowerL1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigApparentReturnPowerL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigApparentReturnPowerL2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigApparentReturnPowerL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigApparentReturnPowerL3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigApparentReturnPowerL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigCurrent extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigCurrentFuseL1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigCurrentFuseL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigCurrentFuseL2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigCurrentFuseL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigCurrentFuseL3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigCurrentFuseL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigCurrentL1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigCurrentL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigCurrentL2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigCurrentL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigCurrentL3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigCurrentL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigCurrentN extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigCurrentN extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigCurrentSum extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigCurrentSum extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigElectricityFailures extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigElectricityFailures extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigElectricityLongFailures extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigElectricityLongFailures extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigElectricitySagsL1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigElectricitySagsL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigElectricitySagsL2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigElectricitySagsL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigElectricitySagsL3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigElectricitySagsL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigElectricitySwellsL1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigElectricitySwellsL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigElectricitySwellsL2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigElectricitySwellsL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigElectricitySwellsL3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigElectricitySwellsL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigElectricityThreshold extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigElectricityThreshold extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyDeliveredLux extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyDeliveredLux extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyDeliveredTariff1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyDeliveredTariff1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyDeliveredTariff1Ch extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyDeliveredTariff1Ch extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyDeliveredTariff1Il extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyDeliveredTariff1Il extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyDeliveredTariff2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyDeliveredTariff2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyDeliveredTariff2Ch extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyDeliveredTariff2Ch extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyDeliveredTariff2Il extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyDeliveredTariff2Il extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyDeliveredTariff3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyDeliveredTariff3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyDeliveredTariff3Il extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyDeliveredTariff3Il extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyDeliveredTariff4 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyDeliveredTariff4 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyReturnedLux extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyReturnedLux extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyReturnedTariff1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyReturnedTariff1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyReturnedTariff1Ch extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyReturnedTariff1Ch extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyReturnedTariff1Il extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyReturnedTariff1Il extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyReturnedTariff2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyReturnedTariff2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyReturnedTariff2Ch extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyReturnedTariff2Ch extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyReturnedTariff2Il extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyReturnedTariff2Il extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyReturnedTariff3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyReturnedTariff3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyReturnedTariff3Il extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyReturnedTariff3Il extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigEnergyReturnedTariff4 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigEnergyReturnedTariff4 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigFrequency extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigFrequency extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigGasDelivered extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigGasDelivered extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigGasDeliveredBe extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigGasDeliveredBe extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigGasDeliveredGj extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigGasDeliveredGj extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigGasDeviceType extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigGasDeviceType extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigGasValvePosition extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigGasValvePosition extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigMinPowerFactor extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigMinPowerFactor extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigPeriod_3ForInstantaneousValues extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigPeriod3ForInstantaneousValues extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigPowerDelivered extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigPowerDelivered extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigPowerDeliveredCh extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigPowerDeliveredCh extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigPowerDeliveredL1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigPowerDeliveredL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigPowerDeliveredL2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigPowerDeliveredL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigPowerDeliveredL3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigPowerDeliveredL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigPowerFactor extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigPowerFactor extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigPowerFactorL1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigPowerFactorL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigPowerFactorL2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigPowerFactorL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigPowerFactorL3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigPowerFactorL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigPowerReturned extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigPowerReturned extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigPowerReturnedCh extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigPowerReturnedCh extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigPowerReturnedL1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigPowerReturnedL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigPowerReturnedL2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigPowerReturnedL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigPowerReturnedL3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigPowerReturnedL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactiveEnergyDeliveredTariff1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactiveEnergyDeliveredTariff1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactiveEnergyDeliveredTariff2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactiveEnergyDeliveredTariff2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactiveEnergyDeliveredTariff3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactiveEnergyDeliveredTariff3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactiveEnergyDeliveredTariff4 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactiveEnergyDeliveredTariff4 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactiveEnergyExportCurrentAverageDemand extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactiveEnergyExportCurrentAverageDemand extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactiveEnergyExportLastCompletedDemand extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactiveEnergyExportLastCompletedDemand extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactiveEnergyImportCurrentAverageDemand extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactiveEnergyImportCurrentAverageDemand extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactiveEnergyImportLastCompletedDemand extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactiveEnergyImportLastCompletedDemand extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactiveEnergyReturnedTariff1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactiveEnergyReturnedTariff1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactiveEnergyReturnedTariff2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactiveEnergyReturnedTariff2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactiveEnergyReturnedTariff3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactiveEnergyReturnedTariff3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactiveEnergyReturnedTariff4 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactiveEnergyReturnedTariff4 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactivePowerDelivered extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactivePowerDelivered extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactivePowerDeliveredL1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactivePowerDeliveredL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactivePowerDeliveredL2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactivePowerDeliveredL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactivePowerDeliveredL3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactivePowerDeliveredL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactivePowerReturned extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactivePowerReturned extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactivePowerReturnedL1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactivePowerReturnedL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactivePowerReturnedL2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactivePowerReturnedL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigReactivePowerReturnedL3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigReactivePowerReturnedL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigSubDelivered extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigSubDelivered extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigSubDeviceType extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigSubDeviceType extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigSubValvePosition extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigSubValvePosition extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigThermalDelivered extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigThermalDelivered extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigThermalDeviceType extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigThermalDeviceType extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigThermalValvePosition extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigThermalValvePosition extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigTotalExportedEnergy extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigTotalExportedEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigTotalImportedEnergy extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigTotalImportedEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltage extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageAvgL1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageAvgL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageAvgL2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageAvgL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageAvgL3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageAvgL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageL1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageL2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageL3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageSagL1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageSagL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageSagL2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageSagL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageSagL3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageSagL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageSagTimeL1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageSagTimeL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageSagTimeL2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageSagTimeL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageSagTimeL3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageSagTimeL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageSwellL1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageSwellL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageSwellL2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageSwellL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageSwellL3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageSwellL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageSwellTimeL1 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageSwellTimeL1 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageSwellTimeL2 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageSwellTimeL2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigVoltageSwellTimeL3 extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigVoltageSwellTimeL3 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigWaterDelivered extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigWaterDelivered extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface DsmrSensorConfigWaterDeviceType extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigWaterDeviceType extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfigWaterValvePosition extends Sensor_SENSOR_SCHEMA {
+export interface DsmrSensorConfigWaterValvePosition extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     state_class?: any;
 }
 
-export interface DsmrSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface DsmrSensorConfig extends CoreCOMPONENTSCHEMA {
     abs_power?: DsmrSensorConfigAbsPower;
     active_demand_abs?: DsmrSensorConfigActiveDemandAbs;
     active_demand_net?: DsmrSensorConfigActiveDemandNet;
@@ -923,7 +923,7 @@ export interface DsmrSensorConfig extends CoreCOMPONENT_SCHEMA {
     active_energy_export_last_completed_demand?: DsmrSensorConfigActiveEnergyExportLastCompletedDemand;
     active_energy_import_current_average_demand?: DsmrSensorConfigActiveEnergyImportCurrentAverageDemand;
     active_energy_import_last_completed_demand?: DsmrSensorConfigActiveEnergyImportLastCompletedDemand;
-    active_energy_import_maximum_demand_last_13_months?: DsmrSensorConfigActiveEnergyImportMaximumDemandLast_13Months;
+    active_energy_import_maximum_demand_last_13_months?: DsmrSensorConfigActiveEnergyImportMaximumDemandLast13Months;
     active_energy_import_maximum_demand_running_month?: DsmrSensorConfigActiveEnergyImportMaximumDemandRunningMonth;
     apparent_delivery_power?: DsmrSensorConfigApparentDeliveryPower;
     apparent_delivery_power_l1?: DsmrSensorConfigApparentDeliveryPowerL1;
@@ -983,7 +983,7 @@ export interface DsmrSensorConfig extends CoreCOMPONENT_SCHEMA {
     gas_device_type?: DsmrSensorConfigGasDeviceType;
     gas_valve_position?: DsmrSensorConfigGasValvePosition;
     min_power_factor?: DsmrSensorConfigMinPowerFactor;
-    period_3_for_instantaneous_values?: DsmrSensorConfigPeriod_3ForInstantaneousValues;
+    period_3_for_instantaneous_values?: DsmrSensorConfigPeriod3ForInstantaneousValues;
     power_delivered?: DsmrSensorConfigPowerDelivered;
     power_delivered_ch?: DsmrSensorConfigPowerDeliveredCh;
     power_delivered_l1?: DsmrSensorConfigPowerDeliveredL1;
@@ -1054,35 +1054,35 @@ export class DsmrTextSensor extends EsphomeComponent<DsmrTextSensorConfig> {
     componentName: string = "dsmr.text_sensor";
 }
 
-export type DsmrTextSensorConfigElectricityFailureLog = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigElectricityFailureLogIl = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigElectricitySwitchPosition = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigElectricityTariff = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigElectricityTariffIl = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigEquipmentId = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigFwCoreChecksum = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigFwCoreVersion = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigFwModuleChecksum = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigFwModuleVersion = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigGasDeliveredText = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigGasEquipmentId = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigGasEquipmentIdBe = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigIdentification = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigMessageLong = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigMessageShort = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigP1Version = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigP1VersionBe = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigSubEquipmentId = TextSensor_TEXT_SENSOR_SCHEMA;
+export type DsmrTextSensorConfigElectricityFailureLog = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigElectricityFailureLogIl = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigElectricitySwitchPosition = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigElectricityTariff = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigElectricityTariffIl = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigEquipmentId = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigFwCoreChecksum = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigFwCoreVersion = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigFwModuleChecksum = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigFwModuleVersion = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigGasDeliveredText = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigGasEquipmentId = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigGasEquipmentIdBe = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigIdentification = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigMessageLong = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigMessageShort = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigP1Version = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigP1VersionBe = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigSubEquipmentId = TextSensorTEXTSENSORSCHEMA;
 
-export interface DsmrTextSensorConfigTelegram extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface DsmrTextSensorConfigTelegram extends TextSensorTEXTSENSORSCHEMA {
     internal?: any;
 }
 
-export type DsmrTextSensorConfigThermalEquipmentId = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigTimestamp = TextSensor_TEXT_SENSOR_SCHEMA;
-export type DsmrTextSensorConfigWaterEquipmentId = TextSensor_TEXT_SENSOR_SCHEMA;
+export type DsmrTextSensorConfigThermalEquipmentId = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigTimestamp = TextSensorTEXTSENSORSCHEMA;
+export type DsmrTextSensorConfigWaterEquipmentId = TextSensorTEXTSENSORSCHEMA;
 
-export interface DsmrTextSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface DsmrTextSensorConfig extends CoreCOMPONENTSCHEMA {
     dsmr_id?: ID;
     electricity_failure_log?: DsmrTextSensorConfigElectricityFailureLog;
     electricity_failure_log_il?: DsmrTextSensorConfigElectricityFailureLogIl;

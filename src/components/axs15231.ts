@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { TouchscreenCALIBRATION_SCHEMA } from "./touchscreen.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { TouchscreenCALIBRATIONSCHEMA } from "./touchscreen.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Axs15231Touchscreen extends EsphomeComponent<Axs15231TouchscreenConfig> {
     componentName: string = "axs15231.touchscreen";
 }
 
-export type Axs15231TouchscreenConfigCalibration = TouchscreenCALIBRATION_SCHEMA;
+export type Axs15231TouchscreenConfigCalibration = TouchscreenCALIBRATIONSCHEMA;
 export type Axs15231TouchscreenConfigTouchTimeout = CorePositiveTimePeriodMilliseconds;
 
 export interface Axs15231TouchscreenConfigTransform {
@@ -25,7 +25,7 @@ export interface Axs15231TouchscreenConfigTransform {
     swap_xy?: boolean;
 }
 
-export interface Axs15231TouchscreenConfig extends CoreCOMPONENT_SCHEMA {
+export interface Axs15231TouchscreenConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     calibration?: Axs15231TouchscreenConfigCalibration;
     display?: ID;

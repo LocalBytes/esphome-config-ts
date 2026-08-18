@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMicroseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { CorePositiveTimePeriodMicroseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export abstract class PulseCounter extends EsphomeComponent {
     componentName: string = "pulse_counter";
@@ -30,7 +30,7 @@ export interface PulseCounterSensorConfigCountMode {
 
 export type PulseCounterSensorConfigInternalFilter = CorePositiveTimePeriodMicroseconds;
 
-export interface PulseCounterSensorConfigTotal extends Sensor_SENSOR_SCHEMA {
+export interface PulseCounterSensorConfigTotal extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
@@ -49,4 +49,4 @@ export type PulseCounterSensorConfig = {
         unit_of_measurement?: any;
         update_interval?: any;
         use_pcnt?: boolean;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

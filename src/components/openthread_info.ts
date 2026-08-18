@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class OpenthreadInfoTextSensor extends EsphomeComponent<OpenthreadInfoTextSensorConfig> {
     componentName: string = "openthread_info.text_sensor";
@@ -20,52 +20,52 @@ export type OpenthreadInfoTextSensorConfigChannel = {
         entity_category?: any;
         id?: any;
         update_interval?: any;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthreadInfoTextSensorConfigEui64 = {
         entity_category?: any;
         id?: any;
         update_interval?: any;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthreadInfoTextSensorConfigExtAddr = {
         entity_category?: any;
         id?: any;
         update_interval?: any;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthreadInfoTextSensorConfigExtPanId = {
         entity_category?: any;
         id?: any;
         update_interval?: any;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthreadInfoTextSensorConfigIpAddress = {
         entity_category?: any;
         id?: any;
         update_interval?: any;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthreadInfoTextSensorConfigNetworkKey = {
         entity_category?: any;
         id?: any;
         update_interval?: any;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthreadInfoTextSensorConfigNetworkName = {
         entity_category?: any;
         id?: any;
         update_interval?: any;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthreadInfoTextSensorConfigPanId = {
         entity_category?: any;
         id?: any;
         update_interval?: any;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthreadInfoTextSensorConfigRloc16 = {
         entity_category?: any;
         id?: any;
         update_interval?: any;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 export type OpenthreadInfoTextSensorConfigRole = {
         entity_category?: any;
         id?: any;
         update_interval?: any;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 
 export interface OpenthreadInfoTextSensorConfig {
     channel?: OpenthreadInfoTextSensorConfigChannel;

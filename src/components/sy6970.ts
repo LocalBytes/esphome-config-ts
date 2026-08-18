@@ -9,16 +9,16 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class Sy6970 extends EsphomeComponent<Sy6970Config> {
     componentName: string = "sy6970";
 }
 
-export interface Sy6970Config extends CoreCOMPONENT_SCHEMA {
+export interface Sy6970Config extends CoreCOMPONENTSCHEMA {
     address?: any;
     charge_current?: number;
     charge_enabled?: boolean;
@@ -36,17 +36,17 @@ export class Sy6970BinarySensor extends EsphomeComponent<Sy6970BinarySensorConfi
     componentName: string = "sy6970.binary_sensor";
 }
 
-export interface Sy6970BinarySensorConfigChargeDone extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface Sy6970BinarySensorConfigChargeDone extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     id?: any;
 }
 
-export interface Sy6970BinarySensorConfigCharging extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface Sy6970BinarySensorConfigCharging extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     id?: any;
 }
 
-export interface Sy6970BinarySensorConfigVbusConnected extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface Sy6970BinarySensorConfigVbusConnected extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     id?: any;
 }
@@ -62,7 +62,7 @@ export class Sy6970Sensor extends EsphomeComponent<Sy6970SensorConfig> {
     componentName: string = "sy6970.sensor";
 }
 
-export interface Sy6970SensorConfigBatteryVoltage extends Sensor_SENSOR_SCHEMA {
+export interface Sy6970SensorConfigBatteryVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     id?: any;
@@ -70,7 +70,7 @@ export interface Sy6970SensorConfigBatteryVoltage extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Sy6970SensorConfigChargeCurrent extends Sensor_SENSOR_SCHEMA {
+export interface Sy6970SensorConfigChargeCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     id?: any;
@@ -78,7 +78,7 @@ export interface Sy6970SensorConfigChargeCurrent extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Sy6970SensorConfigPrechargeCurrent extends Sensor_SENSOR_SCHEMA {
+export interface Sy6970SensorConfigPrechargeCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     id?: any;
@@ -86,7 +86,7 @@ export interface Sy6970SensorConfigPrechargeCurrent extends Sensor_SENSOR_SCHEMA
     unit_of_measurement?: any;
 }
 
-export interface Sy6970SensorConfigSystemVoltage extends Sensor_SENSOR_SCHEMA {
+export interface Sy6970SensorConfigSystemVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     id?: any;
@@ -94,7 +94,7 @@ export interface Sy6970SensorConfigSystemVoltage extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Sy6970SensorConfigVbusVoltage extends Sensor_SENSOR_SCHEMA {
+export interface Sy6970SensorConfigVbusVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     id?: any;
@@ -115,15 +115,15 @@ export class Sy6970TextSensor extends EsphomeComponent<Sy6970TextSensorConfig> {
     componentName: string = "sy6970.text_sensor";
 }
 
-export interface Sy6970TextSensorConfigBusStatus extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface Sy6970TextSensorConfigBusStatus extends TextSensorTEXTSENSORSCHEMA {
     id?: any;
 }
 
-export interface Sy6970TextSensorConfigChargeStatus extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface Sy6970TextSensorConfigChargeStatus extends TextSensorTEXTSENSORSCHEMA {
     id?: any;
 }
 
-export interface Sy6970TextSensorConfigNtcStatus extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface Sy6970TextSensorConfigNtcStatus extends TextSensorTEXTSENSORSCHEMA {
     id?: any;
 }
 

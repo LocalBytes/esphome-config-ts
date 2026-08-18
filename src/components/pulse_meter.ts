@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export abstract class PulseMeter extends EsphomeComponent {
     componentName: string = "pulse_meter";
@@ -21,14 +21,14 @@ export class PulseMeterSensor extends EsphomeComponent<PulseMeterSensorConfig> {
 
 export type PulseMeterSensorConfigInternalFilterMode = 'EDGE' | 'PULSE';
 
-export interface PulseMeterSensorConfigTotal extends Sensor_SENSOR_SCHEMA {
+export interface PulseMeterSensorConfigTotal extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface PulseMeterSensorConfig extends Sensor_SENSOR_SCHEMA {
+export interface PulseMeterSensorConfig extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     id?: any;

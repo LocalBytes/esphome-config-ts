@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Qmc5883lSensor extends EsphomeComponent<Qmc5883lSensorConfig> {
     componentName: string = "qmc5883l.sensor";
@@ -20,21 +20,21 @@ export type Qmc5883lSensorConfigFieldStrengthX = Qmc5883lSensorFieldStrengthSche
 export type Qmc5883lSensorConfigFieldStrengthY = Qmc5883lSensorFieldStrengthSchema;
 export type Qmc5883lSensorConfigFieldStrengthZ = Qmc5883lSensorFieldStrengthSchema;
 
-export interface Qmc5883lSensorConfigHeading extends Sensor_SENSOR_SCHEMA {
+export interface Qmc5883lSensorConfigHeading extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Qmc5883lSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Qmc5883lSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Qmc5883lSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Qmc5883lSensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     data_rate?: any;
     drdy_pin?: Pin;
@@ -50,7 +50,7 @@ export interface Qmc5883lSensorConfig extends CoreCOMPONENT_SCHEMA {
     update_interval?: any;
 }
 
-export interface Qmc5883lSensorFieldStrengthSchema extends Sensor_SENSOR_SCHEMA {
+export interface Qmc5883lSensorFieldStrengthSchema extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;

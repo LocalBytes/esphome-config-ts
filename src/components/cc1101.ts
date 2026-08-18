@@ -14,7 +14,7 @@ export class Cc1101 extends EsphomeComponent<Cc1101Config> {
     componentName: string = "cc1101";
 }
 
-export interface Cc1101CC1101_ACTION_SCHEMA {
+export interface Cc1101CC1101ACTIONSCHEMA {
     id?: ID;
 }
 

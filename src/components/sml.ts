@@ -9,15 +9,15 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class Sml extends EsphomeComponent<SmlConfig> {
     componentName: string = "sml";
 }
 
-export interface SmlConfig extends CoreCOMPONENT_SCHEMA {
+export interface SmlConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     on_data?: object[];
     uart_id?: ID;
@@ -32,7 +32,7 @@ export type SmlSensorConfig = {
         obis_code: string;
         server_id?: string;
         sml_id?: ID;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class SmlTextSensor extends EsphomeComponent<SmlTextSensorConfig> {
     componentName: string = "sml.text_sensor";
@@ -45,4 +45,4 @@ export type SmlTextSensorConfig = {
         obis_code: string;
         server_id?: string;
         sml_id?: ID;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;

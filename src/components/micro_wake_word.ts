@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class MicroWakeWord extends EsphomeComponent<MicroWakeWordConfig> {
     componentName: string = "micro_wake_word";
@@ -23,9 +23,9 @@ export interface MicroWakeWordConfigMicrophone {
     microphone?: ID;
 }
 
-export type MicroWakeWordConfigModels = MicroWakeWordMODEL_SCHEMA;
+export type MicroWakeWordConfigModels = MicroWakeWordMODELSCHEMA;
 
-export interface MicroWakeWordConfig extends CoreCOMPONENT_SCHEMA {
+export interface MicroWakeWordConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     microphone?: MicroWakeWordConfigMicrophone;
     models: MicroWakeWordConfigModels[];
@@ -35,36 +35,36 @@ export interface MicroWakeWordConfig extends CoreCOMPONENT_SCHEMA {
     vad?: any;
 }
 
-export interface MicroWakeWordMICRO_WAKE_WORD_ACTION_SCHEMA {
+export interface MicroWakeWordMICROWAKEWORDACTIONSCHEMA {
     id?: ID;
 }
 
-export interface MicroWakeWordMICRO_WAKE_WORLD_MODEL_ACTION_SCHEMA {
+export interface MicroWakeWordMICROWAKEWORLDMODELACTIONSCHEMA {
     id: ID;
 }
 
-export type MicroWakeWordMODEL_SCHEMAModel = MicroWakeWordMODEL_SCHEMAModelGit | MicroWakeWordMODEL_SCHEMAModelHttp | MicroWakeWordMODEL_SCHEMAModelLocal;
+export type MicroWakeWordMODELSCHEMAModel = MicroWakeWordMODELSCHEMAModelGit | MicroWakeWordMODELSCHEMAModelHttp | MicroWakeWordMODELSCHEMAModelLocal;
 
-export interface MicroWakeWordMODEL_SCHEMAModelGit {
+export interface MicroWakeWordMODELSCHEMAModelGit {
     type: "git" | "GIT";
     file: string;
     refresh?: string;
 }
 
-export interface MicroWakeWordMODEL_SCHEMAModelHttp {
+export interface MicroWakeWordMODELSCHEMAModelHttp {
     type: "http" | "HTTP";
     url: string;
 }
 
-export interface MicroWakeWordMODEL_SCHEMAModelLocal {
+export interface MicroWakeWordMODELSCHEMAModelLocal {
     type: "local" | "LOCAL";
     path: string;
 }
 
-export interface MicroWakeWordMODEL_SCHEMA {
+export interface MicroWakeWordMODELSCHEMA {
     id?: ID;
     internal?: boolean;
-    model?: MicroWakeWordMODEL_SCHEMAModel;
+    model?: MicroWakeWordMODELSCHEMAModel;
     probability_cutoff?: any;
     raw_data_id?: ID;
     sliding_window_size?: number;

@@ -14,11 +14,11 @@ export class AudioFile extends EsphomeComponent<AudioFileConfig> {
     componentName: string = "audio_file";
 }
 
-export interface AudioFileConfig extends AudioFileMEDIA_FILE_TYPE_SCHEMA {
+export interface AudioFileConfig extends AudioFileMEDIAFILETYPESCHEMA {
     id: string;
 }
 
-export interface AudioFileMEDIA_FILE_TYPE_SCHEMA {
+export interface AudioFileMEDIAFILETYPESCHEMA {
     file: string;
     id: string;
     raw_data_id?: ID;

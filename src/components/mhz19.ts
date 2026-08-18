@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CorePositiveTimePeriodSeconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CorePositiveTimePeriodSeconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Mhz19 extends EsphomeComponent {
     componentName: string = "mhz19";
@@ -20,7 +20,7 @@ export class Mhz19Sensor extends EsphomeComponent<Mhz19SensorConfig> {
     componentName: string = "mhz19.sensor";
 }
 
-export interface Mhz19SensorConfigCo2 extends Sensor_SENSOR_SCHEMA {
+export interface Mhz19SensorConfigCo2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -30,7 +30,7 @@ export interface Mhz19SensorConfigCo2 extends Sensor_SENSOR_SCHEMA {
 
 export type Mhz19SensorConfigDetectionRange = '2000' | '5000' | '10000';
 
-export interface Mhz19SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Mhz19SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -39,7 +39,7 @@ export interface Mhz19SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
 
 export type Mhz19SensorConfigWarmupTime = CorePositiveTimePeriodSeconds;
 
-export interface Mhz19SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Mhz19SensorConfig extends CoreCOMPONENTSCHEMA {
     automatic_baseline_calibration?: boolean;
     co2?: Mhz19SensorConfigCo2;
     detection_range?: Mhz19SensorConfigDetectionRange;
@@ -50,6 +50,6 @@ export interface Mhz19SensorConfig extends CoreCOMPONENT_SCHEMA {
     warmup_time?: Mhz19SensorConfigWarmupTime;
 }
 
-export interface Mhz19SensorNO_ARGS_ACTION_SCHEMA {
+export interface Mhz19SensorNOARGSACTIONSCHEMA {
     id: ID;
 }

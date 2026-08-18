@@ -9,22 +9,22 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { BthomeMithermometerBLE_DEVICE_SCHEMA } from "./bthome_mithermometer.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { BthomeMithermometerBLEDEVICESCHEMA } from "./bthome_mithermometer.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class XiaomiMiscaleSensor extends EsphomeComponent<XiaomiMiscaleSensorConfig> {
     componentName: string = "xiaomi_miscale.sensor";
 }
 
-export interface XiaomiMiscaleSensorConfigImpedance extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiMiscaleSensorConfigImpedance extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface XiaomiMiscaleSensorConfigWeight extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiMiscaleSensorConfigWeight extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -38,4 +38,4 @@ export type XiaomiMiscaleSensorConfig = {
         impedance?: XiaomiMiscaleSensorConfigImpedance;
         mac_address: string;
         weight?: XiaomiMiscaleSensorConfigWeight;
-    } & BthomeMithermometerBLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BthomeMithermometerBLEDEVICESCHEMA & CoreCOMPONENTSCHEMA;

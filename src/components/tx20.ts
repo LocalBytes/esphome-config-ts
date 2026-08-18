@@ -9,21 +9,21 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Tx20Sensor extends EsphomeComponent<Tx20SensorConfig> {
     componentName: string = "tx20.sensor";
 }
 
-export interface Tx20SensorConfigWindDirectionDegrees extends Sensor_SENSOR_SCHEMA {
+export interface Tx20SensorConfigWindDirectionDegrees extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Tx20SensorConfigWindSpeed extends Sensor_SENSOR_SCHEMA {
+export interface Tx20SensorConfigWindSpeed extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -31,7 +31,7 @@ export interface Tx20SensorConfigWindSpeed extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Tx20SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Tx20SensorConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     pin: Pin;
     wind_direction_degrees?: Tx20SensorConfigWindDirectionDegrees;

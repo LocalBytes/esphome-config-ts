@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Cover_COVER_SCHEMA } from "./cover.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { CoverCOVERSCHEMA } from "./cover.js";
 
 export class He60rCover extends EsphomeComponent<He60rCoverConfig> {
     componentName: string = "he60r.cover";
@@ -23,4 +23,4 @@ export type He60rCoverConfig = {
         id?: ID;
         open_duration?: He60rCoverConfigOpenDuration;
         uart_id?: ID;
-    } & Cover_COVER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & CoverCOVERSCHEMA & CoreCOMPONENTSCHEMA;

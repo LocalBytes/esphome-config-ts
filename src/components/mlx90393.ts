@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Mlx90393Sensor extends EsphomeComponent<Mlx90393SensorConfig> {
     componentName: string = "mlx90393.sensor";
@@ -19,7 +19,7 @@ export class Mlx90393Sensor extends EsphomeComponent<Mlx90393SensorConfig> {
 export type Mlx90393SensorConfigGain = '1X' | '1_25X' | '1_67X' | '2X' | '2_5X' | '3X' | '3_75X' | '5X';
 export type Mlx90393SensorConfigHallconf = '0' | '12';
 
-export interface Mlx90393SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Mlx90393SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -30,7 +30,7 @@ export interface Mlx90393SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
 
 export type Mlx90393SensorConfigXAxisResolution = 'DIV_8' | 'DIV_4' | 'DIV_2' | 'DIV_1';
 
-export interface Mlx90393SensorConfigXAxis extends Sensor_SENSOR_SCHEMA {
+export interface Mlx90393SensorConfigXAxis extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     resolution?: Mlx90393SensorConfigXAxisResolution;
@@ -40,7 +40,7 @@ export interface Mlx90393SensorConfigXAxis extends Sensor_SENSOR_SCHEMA {
 
 export type Mlx90393SensorConfigYAxisResolution = 'DIV_8' | 'DIV_4' | 'DIV_2' | 'DIV_1';
 
-export interface Mlx90393SensorConfigYAxis extends Sensor_SENSOR_SCHEMA {
+export interface Mlx90393SensorConfigYAxis extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     resolution?: Mlx90393SensorConfigYAxisResolution;
@@ -50,7 +50,7 @@ export interface Mlx90393SensorConfigYAxis extends Sensor_SENSOR_SCHEMA {
 
 export type Mlx90393SensorConfigZAxisResolution = 'DIV_8' | 'DIV_4' | 'DIV_2' | 'DIV_1';
 
-export interface Mlx90393SensorConfigZAxis extends Sensor_SENSOR_SCHEMA {
+export interface Mlx90393SensorConfigZAxis extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     resolution?: Mlx90393SensorConfigZAxisResolution;
@@ -58,7 +58,7 @@ export interface Mlx90393SensorConfigZAxis extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Mlx90393SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Mlx90393SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     drdy_pin?: Pin;
     filter?: number;

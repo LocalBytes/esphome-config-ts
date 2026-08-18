@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Number_NUMBER_SCHEMA } from "./number.js";
-import type { Select_SELECT_SCHEMA } from "./select.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { NumberNUMBERSCHEMA } from "./number.js";
+import type { SelectSELECTSCHEMA } from "./select.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class ModbusController extends EsphomeComponent<ModbusControllerConfig> {
     componentName: string = "modbus_controller";
@@ -23,7 +23,7 @@ export class ModbusController extends EsphomeComponent<ModbusControllerConfig> {
 
 export type ModbusControllerConfigCommandThrottle = CorePositiveTimePeriodMilliseconds;
 
-export interface ModbusControllerConfig extends CoreCOMPONENT_SCHEMA {
+export interface ModbusControllerConfig extends CoreCOMPONENTSCHEMA {
     address: string;
     allow_duplicate_commands?: boolean;
     command_throttle?: ModbusControllerConfigCommandThrottle;
@@ -58,7 +58,7 @@ export type ModbusControllerBinarySensorConfigRegisterType = 'custom' | 'coil' |
 export type ModbusControllerBinarySensorConfig = {
         id?: any;
         register_type?: ModbusControllerBinarySensorConfigRegisterType;
-    } & BinarySensor_BINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA & ModbusControllerModbusItemBaseSchema;
+    } & BinarySensorBINARYSENSORSCHEMA & CoreCOMPONENTSCHEMA & ModbusControllerModbusItemBaseSchema;
 
 export class ModbusControllerNumber extends EsphomeComponent<ModbusControllerNumberConfig> {
     componentName: string = "modbus_controller.number";
@@ -76,7 +76,7 @@ export type ModbusControllerNumberConfig = {
         use_write_multiple?: boolean;
         value_type?: ModbusControllerNumberConfigValueType;
         write_lambda?: any;
-    } & Number_NUMBER_SCHEMA & ModbusControllerModbusItemBaseSchema;
+    } & NumberNUMBERSCHEMA & ModbusControllerModbusItemBaseSchema;
 
 export class ModbusControllerOutput extends EsphomeComponent<ModbusControllerOutputConfig> {
     componentName: string = "modbus_controller.output";
@@ -122,7 +122,7 @@ export type ModbusControllerSelectConfig = {
         use_write_multiple?: boolean;
         value_type?: ModbusControllerSelectConfigValueType;
         write_lambda?: any;
-    } & Select_SELECT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SelectSELECTSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class ModbusControllerSensor extends EsphomeComponent<ModbusControllerSensorConfig> {
     componentName: string = "modbus_controller.sensor";
@@ -135,7 +135,7 @@ export type ModbusControllerSensorConfig = {
         register_count?: number;
         register_type?: ModbusControllerSensorConfigRegisterType;
         value_type?: ModbusControllerSensorConfigValueType;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA & ModbusControllerModbusItemBaseSchema;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA & ModbusControllerModbusItemBaseSchema;
 
 export class ModbusControllerSwitch extends EsphomeComponent<ModbusControllerSwitchConfig> {
     componentName: string = "modbus_controller.switch";
@@ -149,7 +149,7 @@ export type ModbusControllerSwitchConfig = {
         restore_mode?: any;
         use_write_multiple?: boolean;
         write_lambda?: any;
-    } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA & ModbusControllerModbusItemBaseSchema;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA & ModbusControllerModbusItemBaseSchema;
 
 export class ModbusControllerTextSensor extends EsphomeComponent<ModbusControllerTextSensorConfig> {
     componentName: string = "modbus_controller.text_sensor";
@@ -163,4 +163,4 @@ export type ModbusControllerTextSensorConfig = {
         register_count?: number;
         register_type?: ModbusControllerTextSensorConfigRegisterType;
         response_size?: any;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA & ModbusControllerModbusItemBaseSchema;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA & ModbusControllerModbusItemBaseSchema;

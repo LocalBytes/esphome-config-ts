@@ -9,21 +9,21 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Aht10Sensor extends EsphomeComponent<Aht10SensorConfig> {
     componentName: string = "aht10.sensor";
 }
 
-export interface Aht10SensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface Aht10SensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Aht10SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Aht10SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -32,7 +32,7 @@ export interface Aht10SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
 
 export type Aht10SensorConfigVariant = 'AHT10' | 'AHT20';
 
-export interface Aht10SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Aht10SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     humidity?: Aht10SensorConfigHumidity;
     i2c_id?: ID;

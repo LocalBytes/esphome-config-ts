@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Pca9554 extends EsphomeComponent<Pca9554Config> {
     componentName: string = "pca9554";
@@ -17,7 +17,7 @@ export class Pca9554 extends EsphomeComponent<Pca9554Config> {
 
 export type Pca9554ConfigPinCount = '4' | '8' | '16';
 
-export interface Pca9554Config extends CoreCOMPONENT_SCHEMA {
+export interface Pca9554Config extends CoreCOMPONENTSCHEMA {
     address?: any;
     i2c_id?: ID;
     id: string;

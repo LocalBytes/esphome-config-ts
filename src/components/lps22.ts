@@ -9,21 +9,21 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Lps22Sensor extends EsphomeComponent<Lps22SensorConfig> {
     componentName: string = "lps22.sensor";
 }
 
-export interface Lps22SensorConfigPressure extends Sensor_SENSOR_SCHEMA {
+export interface Lps22SensorConfigPressure extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Lps22SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Lps22SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -31,7 +31,7 @@ export interface Lps22SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Lps22SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Lps22SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: ID;

@@ -9,10 +9,10 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
-import type { OutputBINARY_OUTPUT_SCHEMA } from "./output.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { CoreCOMPONENTSCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
+import type { OutputBINARYOUTPUTSCHEMA } from "./output.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
 
 export class GpioBinarySensor extends EsphomeComponent<GpioBinarySensorConfig> {
     componentName: string = "gpio.binary_sensor";
@@ -24,13 +24,13 @@ export type GpioBinarySensorConfig = {
         interrupt_type?: GpioBinarySensorConfigInterruptType;
         pin: Pin;
         use_interrupt?: boolean;
-    } & BinarySensor_BINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BinarySensorBINARYSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class GpioOneWire extends EsphomeComponent<GpioOneWireConfig> {
     componentName: string = "gpio.one_wire";
 }
 
-export interface GpioOneWireConfig extends CoreCOMPONENT_SCHEMA {
+export interface GpioOneWireConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     pin: Pin;
 }
@@ -42,7 +42,7 @@ export class GpioOutput extends EsphomeComponent<GpioOutputConfig> {
 export type GpioOutputConfig = {
         id: string;
         pin: Pin;
-    } & OutputBINARY_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputBINARYOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class GpioSwitch extends EsphomeComponent<GpioSwitchConfig> {
     componentName: string = "gpio.switch";
@@ -54,4 +54,4 @@ export type GpioSwitchConfig = {
         interlock?: ID[];
         interlock_wait_time?: GpioSwitchConfigInterlockWaitTime;
         pin: Pin;
-    } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA;

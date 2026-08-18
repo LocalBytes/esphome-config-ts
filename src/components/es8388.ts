@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Select_SELECT_SCHEMA } from "./select.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SelectSELECTSCHEMA } from "./select.js";
 
 export class Es8388AudioDac extends EsphomeComponent<Es8388AudioDacConfig> {
     componentName: string = "es8388.audio_dac";
 }
 
-export interface Es8388AudioDacConfig extends CoreCOMPONENT_SCHEMA {
+export interface Es8388AudioDacConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: ID;
@@ -26,13 +26,13 @@ export class Es8388Select extends EsphomeComponent<Es8388SelectConfig> {
     componentName: string = "es8388.select";
 }
 
-export interface Es8388SelectConfigAdcInputMic extends Select_SELECT_SCHEMA {
+export interface Es8388SelectConfigAdcInputMic extends SelectSELECTSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: any;
 }
 
-export interface Es8388SelectConfigDacOutput extends Select_SELECT_SCHEMA {
+export interface Es8388SelectConfigDacOutput extends SelectSELECTSCHEMA {
     entity_category?: any;
     icon?: any;
     id?: any;

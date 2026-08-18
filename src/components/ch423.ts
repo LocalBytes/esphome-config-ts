@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Ch423 extends EsphomeComponent<Ch423Config> {
     componentName: string = "ch423";
 }
 
-export interface Ch423Config extends CoreCOMPONENT_SCHEMA {
+export interface Ch423Config extends CoreCOMPONENTSCHEMA {
     i2c_id?: ID;
     id?: ID;
 }

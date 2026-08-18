@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Sfa30Sensor extends EsphomeComponent<Sfa30SensorConfig> {
     componentName: string = "sfa30.sensor";
 }
 
-export interface Sfa30SensorConfigFormaldehyde extends Sensor_SENSOR_SCHEMA {
+export interface Sfa30SensorConfigFormaldehyde extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -24,7 +24,7 @@ export interface Sfa30SensorConfigFormaldehyde extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Sfa30SensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface Sfa30SensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -32,7 +32,7 @@ export interface Sfa30SensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Sfa30SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Sfa30SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -40,7 +40,7 @@ export interface Sfa30SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Sfa30SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Sfa30SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     formaldehyde?: Sfa30SensorConfigFormaldehyde;
     humidity?: Sfa30SensorConfigHumidity;

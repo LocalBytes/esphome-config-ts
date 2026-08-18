@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class AbsoluteHumiditySensor extends EsphomeComponent<AbsoluteHumiditySensorConfig> {
     componentName: string = "absolute_humidity.sensor";
@@ -26,4 +26,4 @@ export type AbsoluteHumiditySensorConfig = {
         state_class?: any;
         temperature: ID;
         unit_of_measurement?: any;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;

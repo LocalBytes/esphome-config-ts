@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class AtcMithermometerSensor extends EsphomeComponent<AtcMithermometerSensorConfig> {
     componentName: string = "atc_mithermometer.sensor";
 }
 
-export interface AtcMithermometerSensorConfigBatteryLevel extends Sensor_SENSOR_SCHEMA {
+export interface AtcMithermometerSensorConfigBatteryLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -24,7 +24,7 @@ export interface AtcMithermometerSensorConfigBatteryLevel extends Sensor_SENSOR_
     unit_of_measurement?: any;
 }
 
-export interface AtcMithermometerSensorConfigBatteryVoltage extends Sensor_SENSOR_SCHEMA {
+export interface AtcMithermometerSensorConfigBatteryVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -32,14 +32,14 @@ export interface AtcMithermometerSensorConfigBatteryVoltage extends Sensor_SENSO
     unit_of_measurement?: any;
 }
 
-export interface AtcMithermometerSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface AtcMithermometerSensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface AtcMithermometerSensorConfigSignalStrength extends Sensor_SENSOR_SCHEMA {
+export interface AtcMithermometerSensorConfigSignalStrength extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -47,14 +47,14 @@ export interface AtcMithermometerSensorConfigSignalStrength extends Sensor_SENSO
     unit_of_measurement?: any;
 }
 
-export interface AtcMithermometerSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface AtcMithermometerSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface AtcMithermometerSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface AtcMithermometerSensorConfig extends CoreCOMPONENTSCHEMA {
     battery_level?: AtcMithermometerSensorConfigBatteryLevel;
     battery_voltage?: AtcMithermometerSensorConfigBatteryVoltage;
     esp32_ble_id?: ID;

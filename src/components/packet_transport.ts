@@ -9,48 +9,48 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodSeconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { CorePositiveTimePeriodSeconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export abstract class PacketTransport extends EsphomeComponent {
     componentName: string = "packet_transport";
 }
 
-export interface PacketTransportENCRYPTION_SCHEMAEncryption {
+export interface PacketTransportENCRYPTIONSCHEMAEncryption {
     key: string;
 }
 
-export interface PacketTransportENCRYPTION_SCHEMA {
-    encryption?: PacketTransportENCRYPTION_SCHEMAEncryption;
+export interface PacketTransportENCRYPTIONSCHEMA {
+    encryption?: PacketTransportENCRYPTIONSCHEMAEncryption;
 }
 
-export interface PacketTransportPROVIDER_SCHEMA extends PacketTransportENCRYPTION_SCHEMA {
+export interface PacketTransportPROVIDERSCHEMA extends PacketTransportENCRYPTIONSCHEMA {
     name: string;
 }
 
-export interface PacketTransportTRANSPORT_SCHEMABinarySensors {
+export interface PacketTransportTRANSPORTSCHEMABinarySensors {
     broadcast_id?: any;
     id: ID;
 }
 
-export type PacketTransportTRANSPORT_SCHEMAPingPongRecycleTime = CorePositiveTimePeriodSeconds;
-export type PacketTransportTRANSPORT_SCHEMAProviders = PacketTransportPROVIDER_SCHEMA;
+export type PacketTransportTRANSPORTSCHEMAPingPongRecycleTime = CorePositiveTimePeriodSeconds;
+export type PacketTransportTRANSPORTSCHEMAProviders = PacketTransportPROVIDERSCHEMA;
 
-export interface PacketTransportTRANSPORT_SCHEMASensors {
+export interface PacketTransportTRANSPORTSCHEMASensors {
     broadcast_id?: any;
     id: ID;
 }
 
-export type PacketTransportTRANSPORT_SCHEMA = {
-        binary_sensors?: PacketTransportTRANSPORT_SCHEMABinarySensors[];
+export type PacketTransportTRANSPORTSCHEMA = {
+        binary_sensors?: PacketTransportTRANSPORTSCHEMABinarySensors[];
         ping_pong_enable?: boolean;
-        ping_pong_recycle_time?: PacketTransportTRANSPORT_SCHEMAPingPongRecycleTime;
-        providers?: PacketTransportTRANSPORT_SCHEMAProviders[];
+        ping_pong_recycle_time?: PacketTransportTRANSPORTSCHEMAPingPongRecycleTime;
+        providers?: PacketTransportTRANSPORTSCHEMAProviders[];
         rolling_code_enable?: boolean;
-        sensors?: PacketTransportTRANSPORT_SCHEMASensors[];
+        sensors?: PacketTransportTRANSPORTSCHEMASensors[];
         update_interval?: any;
-    } & CoreCOMPONENT_SCHEMA & PacketTransportENCRYPTION_SCHEMA;
+    } & CoreCOMPONENTSCHEMA & PacketTransportENCRYPTIONSCHEMA;
 
 export class PacketTransportBinarySensor extends EsphomeComponent<PacketTransportBinarySensorConfig> {
     componentName: string = "packet_transport.binary_sensor";
@@ -75,7 +75,7 @@ export interface PacketTransportBinarySensorConfigStatus {
     internal?: any;
 }
 
-export interface PacketTransportBinarySensorSTATUS_SENSOR_SCHEMA extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface PacketTransportBinarySensorSTATUSSENSORSCHEMA extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     entity_category?: any;
     provider: string;
@@ -86,7 +86,7 @@ export class PacketTransportSensor extends EsphomeComponent<PacketTransportSenso
     componentName: string = "packet_transport.sensor";
 }
 
-export interface PacketTransportSensorConfig extends Sensor_SENSOR_SCHEMA {
+export interface PacketTransportSensorConfig extends SensorSENSORSCHEMA {
     provider: string;
     remote_id?: string;
     transport_id?: ID;

@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Spa06BaseConfig_BASE } from "./spa06_base.js";
+import type { Spa06BaseCONFIGSCHEMABASE } from "./spa06_base.js";
 
 export class Spa06I2cSensor extends EsphomeComponent<Spa06I2cSensorConfig> {
     componentName: string = "spa06_i2c.sensor";
 }
 
-export interface Spa06I2cSensorConfig extends Spa06BaseConfig_BASE {
+export interface Spa06I2cSensorConfig extends Spa06BaseCONFIGSCHEMABASE {
     address?: any;
     i2c_id?: ID;
     id?: any;

@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export abstract class SoundLevel extends EsphomeComponent {
     componentName: string = "sound_level";
@@ -30,21 +30,21 @@ export interface SoundLevelSensorConfigMicrophone {
     microphone?: ID;
 }
 
-export interface SoundLevelSensorConfigPeak extends Sensor_SENSOR_SCHEMA {
+export interface SoundLevelSensorConfigPeak extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SoundLevelSensorConfigRms extends Sensor_SENSOR_SCHEMA {
+export interface SoundLevelSensorConfigRms extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface SoundLevelSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface SoundLevelSensorConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     measurement_duration?: SoundLevelSensorConfigMeasurementDuration;
     microphone?: SoundLevelSensorConfigMicrophone;
@@ -53,6 +53,6 @@ export interface SoundLevelSensorConfig extends CoreCOMPONENT_SCHEMA {
     rms?: SoundLevelSensorConfigRms;
 }
 
-export interface SoundLevelSensorSOUND_LEVEL_ACTION_SCHEMA {
+export interface SoundLevelSensorSOUNDLEVELACTIONSCHEMA {
     id?: ID;
 }

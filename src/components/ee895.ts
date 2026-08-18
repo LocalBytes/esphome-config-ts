@@ -9,35 +9,35 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Ee895Sensor extends EsphomeComponent<Ee895SensorConfig> {
     componentName: string = "ee895.sensor";
 }
 
-export interface Ee895SensorConfigCo2 extends Sensor_SENSOR_SCHEMA {
+export interface Ee895SensorConfigCo2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ee895SensorConfigPressure extends Sensor_SENSOR_SCHEMA {
+export interface Ee895SensorConfigPressure extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ee895SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Ee895SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Ee895SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Ee895SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     co2?: Ee895SensorConfigCo2;
     i2c_id?: ID;

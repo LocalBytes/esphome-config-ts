@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Pzemdc extends EsphomeComponent {
     componentName: string = "pzemdc";
@@ -20,35 +20,35 @@ export class PzemdcSensor extends EsphomeComponent<PzemdcSensorConfig> {
     componentName: string = "pzemdc.sensor";
 }
 
-export interface PzemdcSensorConfigCurrent extends Sensor_SENSOR_SCHEMA {
+export interface PzemdcSensorConfigCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface PzemdcSensorConfigEnergy extends Sensor_SENSOR_SCHEMA {
+export interface PzemdcSensorConfigEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface PzemdcSensorConfigPower extends Sensor_SENSOR_SCHEMA {
+export interface PzemdcSensorConfigPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface PzemdcSensorConfigVoltage extends Sensor_SENSOR_SCHEMA {
+export interface PzemdcSensorConfigVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface PzemdcSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface PzemdcSensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     current?: PzemdcSensorConfigCurrent;
     energy?: PzemdcSensorConfigEnergy;

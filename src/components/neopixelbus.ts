@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { LightADDRESSABLE_LIGHT_SCHEMA } from "./light.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { LightADDRESSABLELIGHTSCHEMA } from "./light.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class NeopixelbusLight extends EsphomeComponent<NeopixelbusLightConfig> {
     componentName: string = "neopixelbus.light";
@@ -27,4 +27,4 @@ export type NeopixelbusLightConfig = {
         pin?: Pin;
         type?: any;
         variant: NeopixelbusLightConfigVariant;
-    } & LightADDRESSABLE_LIGHT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & LightADDRESSABLELIGHTSCHEMA & CoreCOMPONENTSCHEMA;

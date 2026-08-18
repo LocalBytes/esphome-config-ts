@@ -9,15 +9,15 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { BthomeMithermometerBLE_DEVICE_SCHEMA } from "./bthome_mithermometer.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { BthomeMithermometerBLEDEVICESCHEMA } from "./bthome_mithermometer.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class XiaomiJqjcy01ymSensor extends EsphomeComponent<XiaomiJqjcy01ymSensorConfig> {
     componentName: string = "xiaomi_jqjcy01ym.sensor";
 }
 
-export interface XiaomiJqjcy01ymSensorConfigBatteryLevel extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiJqjcy01ymSensorConfigBatteryLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -25,21 +25,21 @@ export interface XiaomiJqjcy01ymSensorConfigBatteryLevel extends Sensor_SENSOR_S
     unit_of_measurement?: any;
 }
 
-export interface XiaomiJqjcy01ymSensorConfigFormaldehyde extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiJqjcy01ymSensorConfigFormaldehyde extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface XiaomiJqjcy01ymSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiJqjcy01ymSensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface XiaomiJqjcy01ymSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiJqjcy01ymSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -53,4 +53,4 @@ export type XiaomiJqjcy01ymSensorConfig = {
         id?: ID;
         mac_address: string;
         temperature?: XiaomiJqjcy01ymSensorConfigTemperature;
-    } & BthomeMithermometerBLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BthomeMithermometerBLEDEVICESCHEMA & CoreCOMPONENTSCHEMA;

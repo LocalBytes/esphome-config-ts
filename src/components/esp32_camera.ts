@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreENTITY_BASE_SCHEMA, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreENTITYBASESCHEMA, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Esp32Camera extends EsphomeComponent<Esp32CameraConfig> {
     componentName: string = "esp32_camera";
@@ -74,4 +74,4 @@ export type Esp32CameraConfig = {
         internal?: any;
         disabled_by_default?: any;
         entity_category?: any;
-    } & CoreENTITY_BASE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & CoreENTITYBASESCHEMA & CoreCOMPONENTSCHEMA;

@@ -9,17 +9,17 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Tm1651 extends EsphomeComponent<Tm1651Config> {
     componentName: string = "tm1651";
 }
 
-export interface Tm1651BINARY_OUTPUT_ACTION_SCHEMA {
+export interface Tm1651BINARYOUTPUTACTIONSCHEMA {
     id: ID;
 }
 
-export interface Tm1651Config extends CoreCOMPONENT_SCHEMA {
+export interface Tm1651Config extends CoreCOMPONENTSCHEMA {
     clk_pin: Pin;
     dio_pin: Pin;
     id?: ID;

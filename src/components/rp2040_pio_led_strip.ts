@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { LightADDRESSABLE_LIGHT_SCHEMA } from "./light.js";
+import type { LightADDRESSABLELIGHTSCHEMA } from "./light.js";
 
 export class Rp2040PioLedStripLight extends EsphomeComponent<Rp2040PioLedStripLightConfig> {
     componentName: string = "rp2040_pio_led_strip.light";
@@ -19,7 +19,7 @@ export type Rp2040PioLedStripLightConfigChipset = 'WS2812' | 'WS2812B' | 'SK6812
 export type Rp2040PioLedStripLightConfigPio = '0' | '1';
 export type Rp2040PioLedStripLightConfigRgbOrder = 'RGB' | 'RBG' | 'GRB' | 'GBR' | 'BGR' | 'BRG';
 
-export interface Rp2040PioLedStripLightConfig extends LightADDRESSABLE_LIGHT_SCHEMA {
+export interface Rp2040PioLedStripLightConfig extends LightADDRESSABLELIGHTSCHEMA {
     bit0_high?: any;
     bit0_low?: any;
     bit1_high?: any;

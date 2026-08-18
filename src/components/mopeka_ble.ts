@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { BthomeMithermometerBLE_DEVICE_SCHEMA } from "./bthome_mithermometer.js";
+import type { BthomeMithermometerBLEDEVICESCHEMA } from "./bthome_mithermometer.js";
 
 export class MopekaBle extends EsphomeComponent<MopekaBleConfig> {
     componentName: string = "mopeka_ble";
 }
 
-export interface MopekaBleConfig extends BthomeMithermometerBLE_DEVICE_SCHEMA {
+export interface MopekaBleConfig extends BthomeMithermometerBLEDEVICESCHEMA {
     id?: ID;
     show_sensors_without_sync?: boolean;
 }

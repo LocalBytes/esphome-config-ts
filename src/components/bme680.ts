@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Bme680Sensor extends EsphomeComponent<Bme680SensorConfig> {
     componentName: string = "bme680.sensor";
 }
 
-export interface Bme680SensorConfigGasResistance extends Sensor_SENSOR_SCHEMA {
+export interface Bme680SensorConfigGasResistance extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
@@ -32,7 +32,7 @@ export interface Bme680SensorConfigHeater {
 
 export type Bme680SensorConfigHumidityOversampling = 'NONE' | '1X' | '2X' | '4X' | '8X' | '16X';
 
-export interface Bme680SensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface Bme680SensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     oversampling?: Bme680SensorConfigHumidityOversampling;
@@ -43,7 +43,7 @@ export interface Bme680SensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
 export type Bme680SensorConfigIirFilter = 'OFF' | '1X' | '3X' | '7X' | '15X' | '31X' | '63X' | '127X';
 export type Bme680SensorConfigPressureOversampling = 'NONE' | '1X' | '2X' | '4X' | '8X' | '16X';
 
-export interface Bme680SensorConfigPressure extends Sensor_SENSOR_SCHEMA {
+export interface Bme680SensorConfigPressure extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     oversampling?: Bme680SensorConfigPressureOversampling;
@@ -53,7 +53,7 @@ export interface Bme680SensorConfigPressure extends Sensor_SENSOR_SCHEMA {
 
 export type Bme680SensorConfigTemperatureOversampling = 'NONE' | '1X' | '2X' | '4X' | '8X' | '16X';
 
-export interface Bme680SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Bme680SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     oversampling?: Bme680SensorConfigTemperatureOversampling;
@@ -61,7 +61,7 @@ export interface Bme680SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Bme680SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Bme680SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     gas_resistance?: Bme680SensorConfigGasResistance;
     heater?: Bme680SensorConfigHeater;

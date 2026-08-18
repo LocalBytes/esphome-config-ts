@@ -9,40 +9,40 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Spa06Base extends EsphomeComponent {
     componentName: string = "spa06_base";
 }
 
-export type Spa06BaseCONFIG_SCHEMA_BASEPressureOversampling = 'NONE' | '2X' | '4X' | '8X' | '16X' | '32X' | '64X' | '128X';
-export type Spa06BaseCONFIG_SCHEMA_BASEPressureSampleRate = '1' | '2' | '4' | '8' | '16' | '25' | '32' | '50' | '64' | '100' | '128' | '200' | '25p16' | '25p8' | '25p4' | '25p2';
+export type Spa06BaseCONFIGSCHEMABASEPressureOversampling = 'NONE' | '2X' | '4X' | '8X' | '16X' | '32X' | '64X' | '128X';
+export type Spa06BaseCONFIGSCHEMABASEPressureSampleRate = '1' | '2' | '4' | '8' | '16' | '25' | '32' | '50' | '64' | '100' | '128' | '200' | '25p16' | '25p8' | '25p4' | '25p2';
 
-export interface Spa06BaseCONFIG_SCHEMA_BASEPressure extends Sensor_SENSOR_SCHEMA {
+export interface Spa06BaseCONFIGSCHEMABASEPressure extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-    oversampling?: Spa06BaseCONFIG_SCHEMA_BASEPressureOversampling;
-    sample_rate?: Spa06BaseCONFIG_SCHEMA_BASEPressureSampleRate;
+    oversampling?: Spa06BaseCONFIGSCHEMABASEPressureOversampling;
+    sample_rate?: Spa06BaseCONFIGSCHEMABASEPressureSampleRate;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export type Spa06BaseCONFIG_SCHEMA_BASETemperatureOversampling = 'NONE' | '2X' | '4X' | '8X' | '16X' | '32X' | '64X' | '128X';
-export type Spa06BaseCONFIG_SCHEMA_BASETemperatureSampleRate = '1' | '2' | '4' | '8' | '16' | '25' | '32' | '50' | '64' | '100' | '128' | '200' | '25p16' | '25p8' | '25p4' | '25p2';
+export type Spa06BaseCONFIGSCHEMABASETemperatureOversampling = 'NONE' | '2X' | '4X' | '8X' | '16X' | '32X' | '64X' | '128X';
+export type Spa06BaseCONFIGSCHEMABASETemperatureSampleRate = '1' | '2' | '4' | '8' | '16' | '25' | '32' | '50' | '64' | '100' | '128' | '200' | '25p16' | '25p8' | '25p4' | '25p2';
 
-export interface Spa06BaseCONFIG_SCHEMA_BASETemperature extends Sensor_SENSOR_SCHEMA {
+export interface Spa06BaseCONFIGSCHEMABASETemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
-    oversampling?: Spa06BaseCONFIG_SCHEMA_BASETemperatureOversampling;
-    sample_rate?: Spa06BaseCONFIG_SCHEMA_BASETemperatureSampleRate;
+    oversampling?: Spa06BaseCONFIGSCHEMABASETemperatureOversampling;
+    sample_rate?: Spa06BaseCONFIGSCHEMABASETemperatureSampleRate;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Spa06BaseCONFIG_SCHEMA_BASE extends CoreCOMPONENT_SCHEMA {
+export interface Spa06BaseCONFIGSCHEMABASE extends CoreCOMPONENTSCHEMA {
     id?: ID;
-    pressure?: Spa06BaseCONFIG_SCHEMA_BASEPressure;
-    temperature?: Spa06BaseCONFIG_SCHEMA_BASETemperature;
+    pressure?: Spa06BaseCONFIGSCHEMABASEPressure;
+    temperature?: Spa06BaseCONFIGSCHEMABASETemperature;
     update_interval?: any;
 }

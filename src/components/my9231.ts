@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
 
 export class My9231 extends EsphomeComponent<My9231Config> {
     componentName: string = "my9231";
@@ -18,7 +18,7 @@ export class My9231 extends EsphomeComponent<My9231Config> {
 
 export type My9231ConfigBitDepth = '8' | '12' | '14' | '16';
 
-export interface My9231Config extends CoreCOMPONENT_SCHEMA {
+export interface My9231Config extends CoreCOMPONENTSCHEMA {
     bit_depth?: My9231ConfigBitDepth;
     clock_pin: Pin;
     data_pin: Pin;
@@ -35,4 +35,4 @@ export type My9231OutputConfig = {
         channel: number;
         id: string;
         my9231_id?: ID;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;

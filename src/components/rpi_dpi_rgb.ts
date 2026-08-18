@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
 
 export class RpiDpiRgbDisplay extends EsphomeComponent<RpiDpiRgbDisplayConfig> {
     componentName: string = "rpi_dpi_rgb.display";
@@ -30,7 +30,7 @@ export interface RpiDpiRgbDisplayConfigDimensions {
     width: number;
 }
 
-export interface RpiDpiRgbDisplayConfig extends DisplayFULL_DISPLAY_SCHEMA {
+export interface RpiDpiRgbDisplayConfig extends DisplayFULLDISPLAYSCHEMA {
     color_order?: RpiDpiRgbDisplayConfigColorOrder;
     data_pins: RpiDpiRgbDisplayConfigDataPins;
     de_pin: Pin;

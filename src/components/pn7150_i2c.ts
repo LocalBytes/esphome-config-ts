@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Pn7150I2c extends EsphomeComponent<Pn7150I2cConfig> {
     componentName: string = "pn7150_i2c";
@@ -17,7 +17,7 @@ export class Pn7150I2c extends EsphomeComponent<Pn7150I2cConfig> {
 
 export type Pn7150I2cConfigTagTtl = CorePositiveTimePeriodMilliseconds;
 
-export interface Pn7150I2cConfig extends CoreCOMPONENT_SCHEMA {
+export interface Pn7150I2cConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     emulation_message?: string;
     i2c_id?: ID;

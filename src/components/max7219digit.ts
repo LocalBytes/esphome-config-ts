@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { DisplayBASIC_DISPLAY_SCHEMA } from "./display.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { DisplayBASICDISPLAYSCHEMA } from "./display.js";
 
 export abstract class Max7219digit extends EsphomeComponent {
     componentName: string = "max7219digit";
@@ -48,14 +48,14 @@ export type Max7219digitDisplayConfig = {
         spi_mode?: Max7219digitDisplayConfigSpiMode;
         update_interval?: any;
         lambda?: any;
-    } & DisplayBASIC_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & DisplayBASICDISPLAYSCHEMA & CoreCOMPONENTSCHEMA;
 
-export interface Max7219digitDisplayMAX7219_OFF_ACTION_SCHEMA {
+export interface Max7219digitDisplayMAX7219OFFACTIONSCHEMA {
     id?: ID;
     state?: any;
 }
 
-export interface Max7219digitDisplayMAX7219_ON_ACTION_SCHEMA {
+export interface Max7219digitDisplayMAX7219ONACTIONSCHEMA {
     id?: ID;
     state?: any;
 }

@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Esp32BleServer extends EsphomeComponent<Esp32BleServerConfig> {
     componentName: string = "esp32_ble_server";
@@ -108,7 +108,7 @@ export interface Esp32BleServerConfigServices {
     uuid: string;
 }
 
-export interface Esp32BleServerConfig extends CoreCOMPONENT_SCHEMA {
+export interface Esp32BleServerConfig extends CoreCOMPONENTSCHEMA {
     appearance?: number;
     ble_id?: ID;
     firmware_version?: Esp32BleServerConfigFirmwareVersion;

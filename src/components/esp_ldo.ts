@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class EspLdo extends EsphomeComponent<EspLdoConfig> {
     componentName: string = "esp_ldo";
@@ -17,7 +17,7 @@ export class EspLdo extends EsphomeComponent<EspLdoConfig> {
 
 export type EspLdoConfigChannel = '1' | '2' | '3' | '4';
 
-export interface EspLdoConfig extends CoreCOMPONENT_SCHEMA {
+export interface EspLdoConfig extends CoreCOMPONENTSCHEMA {
     adjustable?: boolean;
     allow_internal_channel?: boolean;
     channel: EspLdoConfigChannel;

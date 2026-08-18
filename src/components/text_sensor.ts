@@ -9,31 +9,31 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreENTITY_BASE_SCHEMA, CoreMQTT_COMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreENTITYBASESCHEMA, CoreMQTTCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class TextSensor extends EsphomeComponent {
     componentName: string = "text_sensor";
 }
 
-export type TextSensor_TEXT_SENSOR_SCHEMADeviceClass = 'date' | '' | 'timestamp';
+export type TextSensorTEXTSENSORSCHEMADeviceClass = 'date' | '' | 'timestamp';
 
-export interface TextSensor_TEXT_SENSOR_SCHEMAWebServer {
+export interface TextSensorTEXTSENSORSCHEMAWebServer {
     sorting_group_id?: ID;
     sorting_weight?: any;
     web_server_id?: ID;
 }
 
-export type TextSensor_TEXT_SENSOR_SCHEMA = {
-        device_class?: TextSensor_TEXT_SENSOR_SCHEMADeviceClass;
+export type TextSensorTEXTSENSORSCHEMA = {
+        device_class?: TextSensorTEXTSENSORSCHEMADeviceClass;
         filters?: any[];
         id?: ID;
         mqtt_id?: any;
         on_raw_value?: object[];
         on_value?: object[];
-        web_server?: TextSensor_TEXT_SENSOR_SCHEMAWebServer;
+        web_server?: TextSensorTEXTSENSORSCHEMAWebServer;
         name?: any;
         icon?: any;
         internal?: any;
         disabled_by_default?: any;
         entity_category?: any;
-    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMPONENT_SCHEMA;
+    } & CoreENTITYBASESCHEMA & CoreMQTTCOMPONENTSCHEMA;

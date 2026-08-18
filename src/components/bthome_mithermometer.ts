@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class BthomeMithermometer extends EsphomeComponent {
     componentName: string = "bthome_mithermometer";
 }
 
-export interface BthomeMithermometerBLE_DEVICE_SCHEMA {
+export interface BthomeMithermometerBLEDEVICESCHEMA {
     esp32_ble_id?: ID;
 }
 
@@ -24,7 +24,7 @@ export class BthomeMithermometerSensor extends EsphomeComponent<BthomeMithermome
     componentName: string = "bthome_mithermometer.sensor";
 }
 
-export interface BthomeMithermometerSensorConfigBatteryLevel extends Sensor_SENSOR_SCHEMA {
+export interface BthomeMithermometerSensorConfigBatteryLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -32,7 +32,7 @@ export interface BthomeMithermometerSensorConfigBatteryLevel extends Sensor_SENS
     unit_of_measurement?: any;
 }
 
-export interface BthomeMithermometerSensorConfigBatteryVoltage extends Sensor_SENSOR_SCHEMA {
+export interface BthomeMithermometerSensorConfigBatteryVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -41,14 +41,14 @@ export interface BthomeMithermometerSensorConfigBatteryVoltage extends Sensor_SE
     unit_of_measurement?: any;
 }
 
-export interface BthomeMithermometerSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface BthomeMithermometerSensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface BthomeMithermometerSensorConfigSignalStrength extends Sensor_SENSOR_SCHEMA {
+export interface BthomeMithermometerSensorConfigSignalStrength extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -56,7 +56,7 @@ export interface BthomeMithermometerSensorConfigSignalStrength extends Sensor_SE
     unit_of_measurement?: any;
 }
 
-export interface BthomeMithermometerSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface BthomeMithermometerSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -72,4 +72,4 @@ export type BthomeMithermometerSensorConfig = {
         mac_address: string;
         signal_strength?: BthomeMithermometerSensorConfigSignalStrength;
         temperature?: BthomeMithermometerSensorConfigTemperature;
-    } & BthomeMithermometerBLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BthomeMithermometerBLEDEVICESCHEMA & CoreCOMPONENTSCHEMA;

@@ -9,16 +9,16 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
-import type { DisplayBASIC_DISPLAY_SCHEMA } from "./display.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { CoreCOMPONENTSCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
+import type { DisplayBASICDISPLAYSCHEMA } from "./display.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class NextionBinarySensor extends EsphomeComponent<NextionBinarySensorConfig> {
     componentName: string = "nextion.binary_sensor";
 }
 
-export interface NextionBinarySensorCONFIG_BINARY_SENSOR_SCHEMA {
+export interface NextionBinarySensorCONFIGBINARYSENSORSCHEMA {
     background_color?: ID;
     component_name?: any;
     foreground_color?: ID;
@@ -38,7 +38,7 @@ export type NextionBinarySensorConfig = {
         background_color?: any;
         foreground_color?: any;
         visible?: any;
-    } & BinarySensor_BINARY_SENSOR_SCHEMA & NextionBinarySensorCONFIG_BINARY_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BinarySensorBINARYSENSORSCHEMA & NextionBinarySensorCONFIGBINARYSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class NextionDisplay extends EsphomeComponent<NextionDisplayConfig> {
     componentName: string = "nextion.display";
@@ -81,7 +81,7 @@ export type NextionDisplayConfig = {
         update_interval?: any;
         wake_up_page?: number;
         lambda?: any;
-    } & DisplayBASIC_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & DisplayBASICDISPLAYSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class NextionSensor extends EsphomeComponent<NextionSensorConfig> {
     componentName: string = "nextion.sensor";
@@ -97,9 +97,9 @@ export type NextionSensorConfig = {
         wave_max_length?: number;
         wave_max_value?: number;
         waveform_send_last_value?: boolean;
-    } & Sensor_SENSOR_SCHEMA & NextionSensorCONFIG_SENSOR_COMPONENT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & NextionSensorCONFIGSENSORCOMPONENTSCHEMA & CoreCOMPONENTSCHEMA;
 
-export interface NextionSensorCONFIG_SENSOR_COMPONENT_SCHEMA extends NextionBinarySensorCONFIG_BINARY_SENSOR_SCHEMA {
+export interface NextionSensorCONFIGSENSORCOMPONENTSCHEMA extends NextionBinarySensorCONFIGBINARYSENSORSCHEMA {
     font_id?: number;
 }
 
@@ -107,7 +107,7 @@ export class NextionSwitch extends EsphomeComponent<NextionSwitchConfig> {
     componentName: string = "nextion.switch";
 }
 
-export interface NextionSwitchConfig extends NextionSensorCONFIG_SENSOR_COMPONENT_SCHEMA {
+export interface NextionSwitchConfig extends NextionSensorCONFIGSENSORCOMPONENTSCHEMA {
     background_pressed_color?: ID;
     foreground_pressed_color?: ID;
     id?: ID;

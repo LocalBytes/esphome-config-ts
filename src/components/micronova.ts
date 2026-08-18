@@ -9,12 +9,12 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Button_BUTTON_SCHEMA } from "./button.js";
-import type { Number_NUMBER_SCHEMA } from "./number.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { ButtonBUTTONSCHEMA } from "./button.js";
+import type { NumberNUMBERSCHEMA } from "./number.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class Micronova extends EsphomeComponent<MicronovaConfig> {
     componentName: string = "micronova";
@@ -30,7 +30,7 @@ export class MicronovaButton extends EsphomeComponent<MicronovaButtonConfig> {
     componentName: string = "micronova.button";
 }
 
-export interface MicronovaButtonConfigCustomButton extends Button_BUTTON_SCHEMA {
+export interface MicronovaButtonConfigCustomButton extends ButtonBUTTONSCHEMA {
     id?: ID;
     memory_address: string;
     memory_data: string;
@@ -54,7 +54,7 @@ export type MicronovaNumberConfigPowerLevel = {
         memory_location?: any;
         micronova_id?: ID;
         update_interval?: any;
-    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & NumberNUMBERSCHEMA & CoreCOMPONENTSCHEMA;
 export type MicronovaNumberConfigThermostatTemperature = {
         device_class?: any;
         id?: ID;
@@ -64,7 +64,7 @@ export type MicronovaNumberConfigThermostatTemperature = {
         step?: any;
         unit_of_measurement?: any;
         update_interval?: any;
-    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & NumberNUMBERSCHEMA & CoreCOMPONENTSCHEMA;
 
 export interface MicronovaNumberConfig {
     micronova_id?: ID;
@@ -85,7 +85,7 @@ export type MicronovaSensorConfigFanSpeed = {
         state_class?: any;
         unit_of_measurement?: any;
         update_interval?: any;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 export type MicronovaSensorConfigFumesTemperature = {
         accuracy_decimals?: any;
         device_class?: any;
@@ -96,14 +96,14 @@ export type MicronovaSensorConfigFumesTemperature = {
         state_class?: any;
         unit_of_measurement?: any;
         update_interval?: any;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 export type MicronovaSensorConfigMemoryAddressSensor = {
         id?: any;
         memory_address: string;
         memory_location: string;
         micronova_id?: ID;
         update_interval?: any;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 export type MicronovaSensorConfigRoomTemperature = {
         accuracy_decimals?: any;
         device_class?: any;
@@ -114,7 +114,7 @@ export type MicronovaSensorConfigRoomTemperature = {
         state_class?: any;
         unit_of_measurement?: any;
         update_interval?: any;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 export type MicronovaSensorConfigStovePower = {
         accuracy_decimals?: any;
         id?: any;
@@ -123,7 +123,7 @@ export type MicronovaSensorConfigStovePower = {
         micronova_id?: ID;
         state_class?: any;
         update_interval?: any;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 export type MicronovaSensorConfigWaterPressure = {
         accuracy_decimals?: any;
         device_class?: any;
@@ -134,7 +134,7 @@ export type MicronovaSensorConfigWaterPressure = {
         state_class?: any;
         unit_of_measurement?: any;
         update_interval?: any;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 export type MicronovaSensorConfigWaterTemperature = {
         accuracy_decimals?: any;
         device_class?: any;
@@ -145,7 +145,7 @@ export type MicronovaSensorConfigWaterTemperature = {
         state_class?: any;
         unit_of_measurement?: any;
         update_interval?: any;
-    } & Sensor_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SensorSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 
 export interface MicronovaSensorConfig {
     fan_speed?: MicronovaSensorConfigFanSpeed;
@@ -171,7 +171,7 @@ export type MicronovaSwitchConfigStove = {
         memory_location?: any;
         micronova_id?: ID;
         update_interval?: any;
-    } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA;
 
 export interface MicronovaSwitchConfig {
     micronova_id?: ID;
@@ -188,7 +188,7 @@ export type MicronovaTextSensorConfigStoveState = {
         memory_location?: any;
         micronova_id?: ID;
         update_interval?: any;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & CoreCOMPONENTSCHEMA;
 
 export interface MicronovaTextSensorConfig {
     micronova_id?: ID;

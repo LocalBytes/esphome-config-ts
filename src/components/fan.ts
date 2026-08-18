@@ -9,25 +9,25 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreENTITY_BASE_SCHEMA, CoreMQTT_COMMAND_COMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreENTITYBASESCHEMA, CoreMQTTCOMMANDCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Fan extends EsphomeComponent {
     componentName: string = "fan";
 }
 
-export interface FanFAN_ACTION_SCHEMA {
+export interface FanFANACTIONSCHEMA {
     id: ID;
 }
 
-export type Fan_FAN_SCHEMARestoreMode = 'NO_RESTORE' | 'ALWAYS_OFF' | 'ALWAYS_ON' | 'RESTORE_DEFAULT_OFF' | 'RESTORE_DEFAULT_ON' | 'RESTORE_INVERTED_DEFAULT_OFF' | 'RESTORE_INVERTED_DEFAULT_ON';
+export type FanFANSCHEMARestoreMode = 'NO_RESTORE' | 'ALWAYS_OFF' | 'ALWAYS_ON' | 'RESTORE_DEFAULT_OFF' | 'RESTORE_DEFAULT_ON' | 'RESTORE_INVERTED_DEFAULT_OFF' | 'RESTORE_INVERTED_DEFAULT_ON';
 
-export interface Fan_FAN_SCHEMAWebServer {
+export interface FanFANSCHEMAWebServer {
     sorting_group_id?: ID;
     sorting_weight?: any;
     web_server_id?: ID;
 }
 
-export type Fan_FAN_SCHEMA = {
+export type FanFANSCHEMA = {
         direction_command_topic?: any;
         direction_state_topic?: any;
         mqtt_id?: any;
@@ -40,16 +40,16 @@ export type Fan_FAN_SCHEMA = {
         on_turn_on?: object[];
         oscillation_command_topic?: any;
         oscillation_state_topic?: any;
-        restore_mode?: Fan_FAN_SCHEMARestoreMode;
+        restore_mode?: FanFANSCHEMARestoreMode;
         speed_command_topic?: any;
         speed_level_command_topic?: any;
         speed_level_state_topic?: any;
         speed_state_topic?: any;
-        web_server?: Fan_FAN_SCHEMAWebServer;
+        web_server?: FanFANSCHEMAWebServer;
         id?: any;
         name?: any;
         icon?: any;
         internal?: any;
         disabled_by_default?: any;
         entity_category?: any;
-    } & CoreENTITY_BASE_SCHEMA & CoreMQTT_COMMAND_COMPONENT_SCHEMA;
+    } & CoreENTITYBASESCHEMA & CoreMQTTCOMMANDCOMPONENTSCHEMA;

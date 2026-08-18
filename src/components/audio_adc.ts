@@ -14,7 +14,7 @@ export abstract class AudioAdc extends EsphomeComponent {
     componentName: string = "audio_adc";
 }
 
-export interface AudioAdcSET_MIC_GAIN_ACTION_SCHEMA {
+export interface AudioAdcSETMICGAINACTIONSCHEMA {
     id?: ID;
     mic_gain: string;
 }

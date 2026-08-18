@@ -9,22 +9,22 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class Teleinfo extends EsphomeComponent<TeleinfoConfig> {
     componentName: string = "teleinfo";
 }
 
-export interface TeleinfoConfig extends CoreCOMPONENT_SCHEMA {
+export interface TeleinfoConfig extends CoreCOMPONENTSCHEMA {
     historical_mode?: boolean;
     id?: ID;
     uart_id?: ID;
     update_interval?: any;
 }
 
-export interface TeleinfoTELEINFO_LISTENER_SCHEMA {
+export interface TeleinfoTELEINFOLISTENERSCHEMA {
     tag_name: string;
     teleinfo_id?: ID;
 }
@@ -40,7 +40,7 @@ export type TeleinfoSensorConfig = {
         id?: any;
         state_class?: any;
         unit_of_measurement?: any;
-    } & Sensor_SENSOR_SCHEMA & TeleinfoTELEINFO_LISTENER_SCHEMA;
+    } & SensorSENSORSCHEMA & TeleinfoTELEINFOLISTENERSCHEMA;
 
 export class TeleinfoTextSensor extends EsphomeComponent<TeleinfoTextSensorConfig> {
     componentName: string = "teleinfo.text_sensor";
@@ -48,4 +48,4 @@ export class TeleinfoTextSensor extends EsphomeComponent<TeleinfoTextSensorConfi
 
 export type TeleinfoTextSensorConfig = {
         id?: any;
-    } & TextSensor_TEXT_SENSOR_SCHEMA & TeleinfoTELEINFO_LISTENER_SCHEMA;
+    } & TextSensorTEXTSENSORSCHEMA & TeleinfoTELEINFOLISTENERSCHEMA;

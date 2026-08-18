@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { DisplayBASIC_DISPLAY_SCHEMA } from "./display.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { DisplayBASICDISPLAYSCHEMA } from "./display.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Max7219Display extends EsphomeComponent<Max7219DisplayConfig> {
     componentName: string = "max7219.display";
@@ -29,4 +29,4 @@ export type Max7219DisplayConfig = {
         spi_mode?: Max7219DisplayConfigSpiMode;
         update_interval?: any;
         lambda?: any;
-    } & DisplayBASIC_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & DisplayBASICDISPLAYSCHEMA & CoreCOMPONENTSCHEMA;

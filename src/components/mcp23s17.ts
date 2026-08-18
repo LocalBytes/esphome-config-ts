@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Mcp23s17 extends EsphomeComponent<Mcp23s17Config> {
     componentName: string = "mcp23s17";
@@ -17,7 +17,7 @@ export class Mcp23s17 extends EsphomeComponent<Mcp23s17Config> {
 
 export type Mcp23s17ConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 
-export interface Mcp23s17Config extends CoreCOMPONENT_SCHEMA {
+export interface Mcp23s17Config extends CoreCOMPONENTSCHEMA {
     cs_pin: Pin;
     data_rate?: any;
     deviceaddress?: number;

@@ -9,15 +9,15 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { LightBRIGHTNESS_ONLY_LIGHT_SCHEMA } from "./light.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { LightBRIGHTNESSONLYLIGHTSCHEMA } from "./light.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class ShellyDimmerLight extends EsphomeComponent<ShellyDimmerLightConfig> {
     componentName: string = "shelly_dimmer.light";
 }
 
-export interface ShellyDimmerLightConfigCurrent extends Sensor_SENSOR_SCHEMA {
+export interface ShellyDimmerLightConfigCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -31,14 +31,14 @@ export interface ShellyDimmerLightConfigFirmware {
     version: string;
 }
 
-export interface ShellyDimmerLightConfigPower extends Sensor_SENSOR_SCHEMA {
+export interface ShellyDimmerLightConfigPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface ShellyDimmerLightConfigVoltage extends Sensor_SENSOR_SCHEMA {
+export interface ShellyDimmerLightConfigVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -60,4 +60,4 @@ export type ShellyDimmerLightConfig = {
         update_interval?: any;
         voltage?: ShellyDimmerLightConfigVoltage;
         warmup_brightness?: number;
-    } & LightBRIGHTNESS_ONLY_LIGHT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & LightBRIGHTNESSONLYLIGHTSCHEMA & CoreCOMPONENTSCHEMA;

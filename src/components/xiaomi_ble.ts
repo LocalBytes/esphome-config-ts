@@ -9,12 +9,12 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { BthomeMithermometerBLE_DEVICE_SCHEMA } from "./bthome_mithermometer.js";
+import type { BthomeMithermometerBLEDEVICESCHEMA } from "./bthome_mithermometer.js";
 
 export class XiaomiBle extends EsphomeComponent<XiaomiBleConfig> {
     componentName: string = "xiaomi_ble";
 }
 
-export interface XiaomiBleConfig extends BthomeMithermometerBLE_DEVICE_SCHEMA {
+export interface XiaomiBleConfig extends BthomeMithermometerBLEDEVICESCHEMA {
     id?: ID;
 }

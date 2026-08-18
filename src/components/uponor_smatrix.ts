@@ -9,10 +9,10 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { UartUART_DEVICE_SCHEMA } from "./uart.js";
-import type { Climate_CLIMATE_SCHEMA } from "./climate.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { UartUARTDEVICESCHEMA } from "./uart.js";
+import type { ClimateCLIMATESCHEMA } from "./climate.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class UponorSmatrix extends EsphomeComponent<UponorSmatrixConfig> {
     componentName: string = "uponor_smatrix";
@@ -23,9 +23,9 @@ export type UponorSmatrixConfig = {
         time_device_address?: any;
         time_id?: ID;
         uart_id?: ID;
-    } & CoreCOMPONENT_SCHEMA & UartUART_DEVICE_SCHEMA;
+    } & CoreCOMPONENTSCHEMA & UartUARTDEVICESCHEMA;
 
-export interface UponorSmatrixUPONOR_SMATRIX_DEVICE_SCHEMA {
+export interface UponorSmatrixUPONORSMATRIXDEVICESCHEMA {
     address: string;
     uponor_smatrix_id?: ID;
 }
@@ -36,34 +36,34 @@ export class UponorSmatrixClimate extends EsphomeComponent<UponorSmatrixClimateC
 
 export type UponorSmatrixClimateConfig = {
         id?: ID;
-    } & Climate_CLIMATE_SCHEMA & UponorSmatrixUPONOR_SMATRIX_DEVICE_SCHEMA;
+    } & ClimateCLIMATESCHEMA & UponorSmatrixUPONORSMATRIXDEVICESCHEMA;
 
 export class UponorSmatrixSensor extends EsphomeComponent<UponorSmatrixSensorConfig> {
     componentName: string = "uponor_smatrix.sensor";
 }
 
-export interface UponorSmatrixSensorConfigExternalTemperature extends Sensor_SENSOR_SCHEMA {
+export interface UponorSmatrixSensorConfigExternalTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface UponorSmatrixSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface UponorSmatrixSensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface UponorSmatrixSensorConfigTargetTemperature extends Sensor_SENSOR_SCHEMA {
+export interface UponorSmatrixSensorConfigTargetTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface UponorSmatrixSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface UponorSmatrixSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -76,4 +76,4 @@ export type UponorSmatrixSensorConfig = {
         id?: ID;
         target_temperature?: UponorSmatrixSensorConfigTargetTemperature;
         temperature?: UponorSmatrixSensorConfigTemperature;
-    } & CoreCOMPONENT_SCHEMA & UponorSmatrixUPONOR_SMATRIX_DEVICE_SCHEMA;
+    } & CoreCOMPONENTSCHEMA & UponorSmatrixUPONORSMATRIXDEVICESCHEMA;

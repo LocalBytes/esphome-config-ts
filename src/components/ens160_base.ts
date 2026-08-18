@@ -9,26 +9,26 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Ens160Base extends EsphomeComponent {
     componentName: string = "ens160_base";
 }
 
-export interface Ens160BaseCONFIG_SCHEMA_BASEAqi extends Sensor_SENSOR_SCHEMA {
+export interface Ens160BaseCONFIGSCHEMABASEAqi extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
     state_class?: any;
 }
 
-export interface Ens160BaseCONFIG_SCHEMA_BASECompensation {
+export interface Ens160BaseCONFIGSCHEMABASECompensation {
     humidity: ID;
     temperature: ID;
 }
 
-export interface Ens160BaseCONFIG_SCHEMA_BASEEco2 extends Sensor_SENSOR_SCHEMA {
+export interface Ens160BaseCONFIGSCHEMABASEEco2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -36,7 +36,7 @@ export interface Ens160BaseCONFIG_SCHEMA_BASEEco2 extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Ens160BaseCONFIG_SCHEMA_BASETvoc extends Sensor_SENSOR_SCHEMA {
+export interface Ens160BaseCONFIGSCHEMABASETvoc extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -44,10 +44,10 @@ export interface Ens160BaseCONFIG_SCHEMA_BASETvoc extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Ens160BaseCONFIG_SCHEMA_BASE extends CoreCOMPONENT_SCHEMA {
-    aqi?: Ens160BaseCONFIG_SCHEMA_BASEAqi;
-    compensation?: Ens160BaseCONFIG_SCHEMA_BASECompensation;
-    eco2?: Ens160BaseCONFIG_SCHEMA_BASEEco2;
-    tvoc?: Ens160BaseCONFIG_SCHEMA_BASETvoc;
+export interface Ens160BaseCONFIGSCHEMABASE extends CoreCOMPONENTSCHEMA {
+    aqi?: Ens160BaseCONFIGSCHEMABASEAqi;
+    compensation?: Ens160BaseCONFIGSCHEMABASECompensation;
+    eco2?: Ens160BaseCONFIGSCHEMABASEEco2;
+    tvoc?: Ens160BaseCONFIGSCHEMABASETvoc;
     update_interval?: any;
 }

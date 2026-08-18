@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodNanoseconds, CorePositiveTimePeriodMicroseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { LightADDRESSABLE_LIGHT_SCHEMA } from "./light.js";
+import type { CorePositiveTimePeriodNanoseconds, CorePositiveTimePeriodMicroseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { LightADDRESSABLELIGHTSCHEMA } from "./light.js";
 
 export class Esp32RmtLedStripLight extends EsphomeComponent<Esp32RmtLedStripLightConfig> {
     componentName: string = "esp32_rmt_led_strip.light";
@@ -43,4 +43,4 @@ export type Esp32RmtLedStripLightConfig = {
         rmt_symbols?: number;
         use_dma?: boolean;
         use_psram?: boolean;
-    } & LightADDRESSABLE_LIGHT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & LightADDRESSABLELIGHTSCHEMA & CoreCOMPONENTSCHEMA;

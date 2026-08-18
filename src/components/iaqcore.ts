@@ -9,28 +9,28 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class IaqcoreSensor extends EsphomeComponent<IaqcoreSensorConfig> {
     componentName: string = "iaqcore.sensor";
 }
 
-export interface IaqcoreSensorConfigCo2 extends Sensor_SENSOR_SCHEMA {
+export interface IaqcoreSensorConfigCo2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface IaqcoreSensorConfigTvoc extends Sensor_SENSOR_SCHEMA {
+export interface IaqcoreSensorConfigTvoc extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface IaqcoreSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface IaqcoreSensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     co2?: IaqcoreSensorConfigCo2;
     i2c_id?: ID;

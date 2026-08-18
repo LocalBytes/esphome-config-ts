@@ -9,15 +9,15 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class Sim800l extends EsphomeComponent<Sim800lConfig> {
     componentName: string = "sim800l";
 }
 
-export interface Sim800lConfig extends CoreCOMPONENT_SCHEMA {
+export interface Sim800lConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     on_call_connected?: object[];
     on_call_disconnected?: object[];
@@ -32,7 +32,7 @@ export class Sim800lBinarySensor extends EsphomeComponent<Sim800lBinarySensorCon
     componentName: string = "sim800l.binary_sensor";
 }
 
-export interface Sim800lBinarySensorConfigRegistered extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface Sim800lBinarySensorConfigRegistered extends BinarySensorBINARYSENSORSCHEMA {
     device_class?: any;
     entity_category?: any;
 }
@@ -46,7 +46,7 @@ export class Sim800lSensor extends EsphomeComponent<Sim800lSensorConfig> {
     componentName: string = "sim800l.sensor";
 }
 
-export interface Sim800lSensorConfigRssi extends Sensor_SENSOR_SCHEMA {
+export interface Sim800lSensorConfigRssi extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;

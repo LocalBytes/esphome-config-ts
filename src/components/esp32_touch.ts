@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CorePositiveTimePeriod, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
+import type { CorePositiveTimePeriodMilliseconds, CorePositiveTimePeriod, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
 
 export class Esp32Touch extends EsphomeComponent<Esp32TouchConfig> {
     componentName: string = "esp32_touch";
@@ -24,7 +24,7 @@ export type Esp32TouchConfigMeasurementDuration = CorePositiveTimePeriod;
 export type Esp32TouchConfigSleepDuration = CorePositiveTimePeriod;
 export type Esp32TouchConfigSmoothMode = 'OFF' | 'IIR_2' | 'IIR_4' | 'IIR_8';
 
-export interface Esp32TouchConfig extends CoreCOMPONENT_SCHEMA {
+export interface Esp32TouchConfig extends CoreCOMPONENTSCHEMA {
     debounce_count?: number;
     denoise_cap_level?: Esp32TouchConfigDenoiseCapLevel;
     denoise_grade?: Esp32TouchConfigDenoiseGrade;
@@ -48,7 +48,7 @@ export class Esp32TouchBinarySensor extends EsphomeComponent<Esp32TouchBinarySen
     componentName: string = "esp32_touch.binary_sensor";
 }
 
-export interface Esp32TouchBinarySensorConfig extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface Esp32TouchBinarySensorConfig extends BinarySensorBINARYSENSORSCHEMA {
     esp32_touch_id?: ID;
     id?: any;
     pin: string;

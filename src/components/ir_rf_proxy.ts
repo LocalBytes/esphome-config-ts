@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreENTITY_BASE_SCHEMA, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreENTITYBASESCHEMA, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class IrRfProxyInfrared extends EsphomeComponent<IrRfProxyInfraredConfig> {
     componentName: string = "ir_rf_proxy.infrared";
@@ -21,7 +21,7 @@ export type IrRfProxyInfraredConfig = {
         receiver_frequency?: any;
         remote_receiver_id?: ID;
         remote_transmitter_id?: ID;
-    } & CoreENTITY_BASE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & CoreENTITYBASESCHEMA & CoreCOMPONENTSCHEMA;
 
 export class IrRfProxyRadioFrequency extends EsphomeComponent<IrRfProxyRadioFrequencyConfig> {
     componentName: string = "ir_rf_proxy.radio_frequency";
@@ -33,4 +33,4 @@ export type IrRfProxyRadioFrequencyConfig = {
         on_control?: object[];
         remote_receiver_id?: ID;
         remote_transmitter_id?: ID;
-    } & CoreENTITY_BASE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & CoreENTITYBASESCHEMA & CoreCOMPONENTSCHEMA;

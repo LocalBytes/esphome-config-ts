@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Spa06BaseConfig_BASE } from "./spa06_base.js";
+import type { Spa06BaseCONFIGSCHEMABASE } from "./spa06_base.js";
 
 export class Spa06SpiSensor extends EsphomeComponent<Spa06SpiSensorConfig> {
     componentName: string = "spa06_spi.sensor";
@@ -17,7 +17,7 @@ export class Spa06SpiSensor extends EsphomeComponent<Spa06SpiSensorConfig> {
 
 export type Spa06SpiSensorConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 
-export interface Spa06SpiSensorConfig extends Spa06BaseConfig_BASE {
+export interface Spa06SpiSensorConfig extends Spa06BaseCONFIGSCHEMABASE {
     cs_pin: Pin;
     data_rate?: any;
     id?: any;

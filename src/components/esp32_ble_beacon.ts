@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Esp32BleBeacon extends EsphomeComponent<Esp32BleBeaconConfig> {
     componentName: string = "esp32_ble_beacon";
@@ -20,7 +20,7 @@ export type Esp32BleBeaconConfigMinInterval = CorePositiveTimePeriodMilliseconds
 export type Esp32BleBeaconConfigTxPower = '0' | '3' | '6' | '9' | '-12' | '-9' | '-6' | '-3';
 export type Esp32BleBeaconConfigType = 'IBEACON';
 
-export interface Esp32BleBeaconConfig extends CoreCOMPONENT_SCHEMA {
+export interface Esp32BleBeaconConfig extends CoreCOMPONENTSCHEMA {
     ble_id?: ID;
     id?: ID;
     major?: number;

@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Ens160BaseConfig_BASE } from "./ens160_base.js";
+import type { Ens160BaseCONFIGSCHEMABASE } from "./ens160_base.js";
 
 export class Ens160I2cSensor extends EsphomeComponent<Ens160I2cSensorConfig> {
     componentName: string = "ens160_i2c.sensor";
 }
 
-export interface Ens160I2cSensorConfig extends Ens160BaseConfig_BASE {
+export interface Ens160I2cSensorConfig extends Ens160BaseCONFIGSCHEMABASE {
     address?: any;
     i2c_id?: ID;
     id?: ID;

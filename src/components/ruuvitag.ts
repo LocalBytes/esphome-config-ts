@@ -9,43 +9,43 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { BthomeMithermometerBLE_DEVICE_SCHEMA } from "./bthome_mithermometer.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { BthomeMithermometerBLEDEVICESCHEMA } from "./bthome_mithermometer.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class RuuvitagSensor extends EsphomeComponent<RuuvitagSensorConfig> {
     componentName: string = "ruuvitag.sensor";
 }
 
-export interface RuuvitagSensorConfigAcceleration extends Sensor_SENSOR_SCHEMA {
+export interface RuuvitagSensorConfigAcceleration extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface RuuvitagSensorConfigAccelerationX extends Sensor_SENSOR_SCHEMA {
+export interface RuuvitagSensorConfigAccelerationX extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface RuuvitagSensorConfigAccelerationY extends Sensor_SENSOR_SCHEMA {
+export interface RuuvitagSensorConfigAccelerationY extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface RuuvitagSensorConfigAccelerationZ extends Sensor_SENSOR_SCHEMA {
+export interface RuuvitagSensorConfigAccelerationZ extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface RuuvitagSensorConfigBatteryVoltage extends Sensor_SENSOR_SCHEMA {
+export interface RuuvitagSensorConfigBatteryVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -53,40 +53,40 @@ export interface RuuvitagSensorConfigBatteryVoltage extends Sensor_SENSOR_SCHEMA
     unit_of_measurement?: any;
 }
 
-export interface RuuvitagSensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface RuuvitagSensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface RuuvitagSensorConfigMeasurementSequenceNumber extends Sensor_SENSOR_SCHEMA {
+export interface RuuvitagSensorConfigMeasurementSequenceNumber extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
 }
 
-export interface RuuvitagSensorConfigMovementCounter extends Sensor_SENSOR_SCHEMA {
+export interface RuuvitagSensorConfigMovementCounter extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
 }
 
-export interface RuuvitagSensorConfigPressure extends Sensor_SENSOR_SCHEMA {
+export interface RuuvitagSensorConfigPressure extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface RuuvitagSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface RuuvitagSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface RuuvitagSensorConfigTxPower extends Sensor_SENSOR_SCHEMA {
+export interface RuuvitagSensorConfigTxPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -108,4 +108,4 @@ export type RuuvitagSensorConfig = {
         pressure?: RuuvitagSensorConfigPressure;
         temperature?: RuuvitagSensorConfigTemperature;
         tx_power?: RuuvitagSensorConfigTxPower;
-    } & BthomeMithermometerBLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BthomeMithermometerBLEDEVICESCHEMA & CoreCOMPONENTSCHEMA;

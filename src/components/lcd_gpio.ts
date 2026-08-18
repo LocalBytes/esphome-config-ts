@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { LcdBaseLCD_SCHEMA } from "./lcd_base.js";
+import type { LcdBaseLCDSCHEMA } from "./lcd_base.js";
 
 export class LcdGpioDisplay extends EsphomeComponent<LcdGpioDisplayConfig> {
     componentName: string = "lcd_gpio.display";
 }
 
-export interface LcdGpioDisplayConfig extends LcdBaseLCD_SCHEMA {
+export interface LcdGpioDisplayConfig extends LcdBaseLCDSCHEMA {
     data_pins: string;
     enable_pin: Pin;
     id?: ID;

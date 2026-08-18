@@ -9,15 +9,15 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class SunGtil2 extends EsphomeComponent<SunGtil2Config> {
     componentName: string = "sun_gtil2";
 }
 
-export interface SunGtil2Config extends CoreCOMPONENT_SCHEMA {
+export interface SunGtil2Config extends CoreCOMPONENTSCHEMA {
     id?: ID;
     uart_id?: ID;
 }
@@ -26,7 +26,7 @@ export class SunGtil2Sensor extends EsphomeComponent<SunGtil2SensorConfig> {
     componentName: string = "sun_gtil2.sensor";
 }
 
-export interface SunGtil2SensorConfigAcPower extends Sensor_SENSOR_SCHEMA {
+export interface SunGtil2SensorConfigAcPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -34,7 +34,7 @@ export interface SunGtil2SensorConfigAcPower extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface SunGtil2SensorConfigAcVoltage extends Sensor_SENSOR_SCHEMA {
+export interface SunGtil2SensorConfigAcVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -42,7 +42,7 @@ export interface SunGtil2SensorConfigAcVoltage extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface SunGtil2SensorConfigDcPower extends Sensor_SENSOR_SCHEMA {
+export interface SunGtil2SensorConfigDcPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -50,7 +50,7 @@ export interface SunGtil2SensorConfigDcPower extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface SunGtil2SensorConfigDcVoltage extends Sensor_SENSOR_SCHEMA {
+export interface SunGtil2SensorConfigDcVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -58,7 +58,7 @@ export interface SunGtil2SensorConfigDcVoltage extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface SunGtil2SensorConfigLimiterPower extends Sensor_SENSOR_SCHEMA {
+export interface SunGtil2SensorConfigLimiterPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -66,7 +66,7 @@ export interface SunGtil2SensorConfigLimiterPower extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface SunGtil2SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface SunGtil2SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -74,7 +74,7 @@ export interface SunGtil2SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface SunGtil2SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface SunGtil2SensorConfig extends CoreCOMPONENTSCHEMA {
     ac_power?: SunGtil2SensorConfigAcPower;
     ac_voltage?: SunGtil2SensorConfigAcVoltage;
     dc_power?: SunGtil2SensorConfigDcPower;
@@ -88,15 +88,15 @@ export class SunGtil2TextSensor extends EsphomeComponent<SunGtil2TextSensorConfi
     componentName: string = "sun_gtil2.text_sensor";
 }
 
-export interface SunGtil2TextSensorConfigSerialNumber extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface SunGtil2TextSensorConfigSerialNumber extends TextSensorTEXTSENSORSCHEMA {
     id?: any;
 }
 
-export interface SunGtil2TextSensorConfigState extends TextSensor_TEXT_SENSOR_SCHEMA {
+export interface SunGtil2TextSensorConfigState extends TextSensorTEXTSENSORSCHEMA {
     id?: any;
 }
 
-export interface SunGtil2TextSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface SunGtil2TextSensorConfig extends CoreCOMPONENTSCHEMA {
     serial_number?: SunGtil2TextSensorConfigSerialNumber;
     state?: SunGtil2TextSensorConfigState;
     sun_gtil2_id?: ID;

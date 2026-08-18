@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Ssd1306BaseSSD1306_SCHEMA } from "./ssd1306_base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { Ssd1306BaseSSD1306SCHEMA } from "./ssd1306_base.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Ssd1306SpiDisplay extends EsphomeComponent<Ssd1306SpiDisplayConfig> {
     componentName: string = "ssd1306_spi.display";
@@ -25,4 +25,4 @@ export type Ssd1306SpiDisplayConfig = {
         release_device?: boolean;
         spi_id?: ID;
         spi_mode?: Ssd1306SpiDisplayConfigSpiMode;
-    } & Ssd1306BaseSSD1306_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & Ssd1306BaseSSD1306SCHEMA & CoreCOMPONENTSCHEMA;

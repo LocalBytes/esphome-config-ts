@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class AirthingsWaveBase extends EsphomeComponent {
     componentName: string = "airthings_wave_base";
 }
 
-export interface AirthingsWaveBaseBASE_SCHEMABatteryVoltage extends Sensor_SENSOR_SCHEMA {
+export interface AirthingsWaveBaseBASESCHEMABatteryVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -24,41 +24,41 @@ export interface AirthingsWaveBaseBASE_SCHEMABatteryVoltage extends Sensor_SENSO
     unit_of_measurement?: any;
 }
 
-export interface AirthingsWaveBaseBASE_SCHEMAHumidity extends Sensor_SENSOR_SCHEMA {
+export interface AirthingsWaveBaseBASESCHEMAHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface AirthingsWaveBaseBASE_SCHEMAPressure extends Sensor_SENSOR_SCHEMA {
+export interface AirthingsWaveBaseBASESCHEMAPressure extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface AirthingsWaveBaseBASE_SCHEMATemperature extends Sensor_SENSOR_SCHEMA {
+export interface AirthingsWaveBaseBASESCHEMATemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface AirthingsWaveBaseBASE_SCHEMATvoc extends Sensor_SENSOR_SCHEMA {
+export interface AirthingsWaveBaseBASESCHEMATvoc extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface AirthingsWaveBaseBASE_SCHEMA extends CoreCOMPONENT_SCHEMA {
+export interface AirthingsWaveBaseBASESCHEMA extends CoreCOMPONENTSCHEMA {
     battery_update_interval?: any;
-    battery_voltage?: AirthingsWaveBaseBASE_SCHEMABatteryVoltage;
+    battery_voltage?: AirthingsWaveBaseBASESCHEMABatteryVoltage;
     ble_client_id?: ID;
-    humidity?: AirthingsWaveBaseBASE_SCHEMAHumidity;
-    pressure?: AirthingsWaveBaseBASE_SCHEMAPressure;
-    temperature?: AirthingsWaveBaseBASE_SCHEMATemperature;
-    tvoc?: AirthingsWaveBaseBASE_SCHEMATvoc;
+    humidity?: AirthingsWaveBaseBASESCHEMAHumidity;
+    pressure?: AirthingsWaveBaseBASESCHEMAPressure;
+    temperature?: AirthingsWaveBaseBASESCHEMATemperature;
+    tvoc?: AirthingsWaveBaseBASESCHEMATvoc;
     update_interval?: any;
 }

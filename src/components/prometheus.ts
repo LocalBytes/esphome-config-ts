@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Prometheus extends EsphomeComponent<PrometheusConfig> {
     componentName: string = "prometheus";
@@ -24,7 +24,7 @@ export interface PrometheusConfigRelabel {
     string: PrometheusConfigRelabelString;
 }
 
-export interface PrometheusConfig extends CoreCOMPONENT_SCHEMA {
+export interface PrometheusConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     include_internal?: boolean;
     relabel?: PrometheusConfigRelabel;

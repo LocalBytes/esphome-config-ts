@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { WeikaiWKBASE_SCHEMA } from "./weikai.js";
+import type { WeikaiWKBASESCHEMA } from "./weikai.js";
 
 export class Wk2132Spi extends EsphomeComponent<Wk2132SpiConfig> {
     componentName: string = "wk2132_spi";
@@ -17,7 +17,7 @@ export class Wk2132Spi extends EsphomeComponent<Wk2132SpiConfig> {
 
 export type Wk2132SpiConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 
-export interface Wk2132SpiConfig extends WeikaiWKBASE_SCHEMA {
+export interface Wk2132SpiConfig extends WeikaiWKBASESCHEMA {
     cs_pin: Pin;
     data_rate?: any;
     id?: any;

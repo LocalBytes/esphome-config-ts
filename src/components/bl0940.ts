@@ -9,10 +9,10 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Button_BUTTON_SCHEMA } from "./button.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Number_NUMBER_SCHEMA } from "./number.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { ButtonBUTTONSCHEMA } from "./button.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { NumberNUMBERSCHEMA } from "./number.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class Bl0940Button extends EsphomeComponent<Bl0940ButtonConfig> {
     componentName: string = "bl0940.button";
@@ -23,13 +23,13 @@ export type Bl0940ButtonConfig = {
         entity_category?: any;
         icon?: any;
         id?: ID;
-    } & Button_BUTTON_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & ButtonBUTTONSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class Bl0940Number extends EsphomeComponent<Bl0940NumberConfig> {
     componentName: string = "bl0940.number";
 }
 
-export type Bl0940NumberCALIBRATION_SCHEMA = {
+export type Bl0940NumberCALIBRATIONSCHEMA = {
         entity_category?: any;
         id?: ID;
         max_value?: any;
@@ -38,11 +38,11 @@ export type Bl0940NumberCALIBRATION_SCHEMA = {
         restore_value?: boolean;
         step?: any;
         unit_of_measurement?: any;
-    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
-export type Bl0940NumberConfigCurrentCalibration = Bl0940NumberCALIBRATION_SCHEMA;
-export type Bl0940NumberConfigEnergyCalibration = Bl0940NumberCALIBRATION_SCHEMA;
-export type Bl0940NumberConfigPowerCalibration = Bl0940NumberCALIBRATION_SCHEMA;
-export type Bl0940NumberConfigVoltageCalibration = Bl0940NumberCALIBRATION_SCHEMA;
+    } & NumberNUMBERSCHEMA & CoreCOMPONENTSCHEMA;
+export type Bl0940NumberConfigCurrentCalibration = Bl0940NumberCALIBRATIONSCHEMA;
+export type Bl0940NumberConfigEnergyCalibration = Bl0940NumberCALIBRATIONSCHEMA;
+export type Bl0940NumberConfigPowerCalibration = Bl0940NumberCALIBRATIONSCHEMA;
+export type Bl0940NumberConfigVoltageCalibration = Bl0940NumberCALIBRATIONSCHEMA;
 
 export interface Bl0940NumberConfig {
     bl0940_id?: ID;
@@ -57,49 +57,49 @@ export class Bl0940Sensor extends EsphomeComponent<Bl0940SensorConfig> {
     componentName: string = "bl0940.sensor";
 }
 
-export interface Bl0940SensorConfigCurrent extends Sensor_SENSOR_SCHEMA {
+export interface Bl0940SensorConfigCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Bl0940SensorConfigEnergy extends Sensor_SENSOR_SCHEMA {
+export interface Bl0940SensorConfigEnergy extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Bl0940SensorConfigExternalTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Bl0940SensorConfigExternalTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Bl0940SensorConfigInternalTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Bl0940SensorConfigInternalTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Bl0940SensorConfigPower extends Sensor_SENSOR_SCHEMA {
+export interface Bl0940SensorConfigPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Bl0940SensorConfigVoltage extends Sensor_SENSOR_SCHEMA {
+export interface Bl0940SensorConfigVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Bl0940SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Bl0940SensorConfig extends CoreCOMPONENTSCHEMA {
     current?: Bl0940SensorConfigCurrent;
     current_reference?: any;
     energy?: Bl0940SensorConfigEnergy;

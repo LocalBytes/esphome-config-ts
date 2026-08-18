@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class OnlineImage extends EsphomeComponent<OnlineImageConfig> {
     componentName: string = "online_image";
@@ -22,7 +22,7 @@ export interface OnlineImageConfigRequestHeaders {
     string: string;
 }
 
-export interface OnlineImageConfig extends CoreCOMPONENT_SCHEMA {
+export interface OnlineImageConfig extends CoreCOMPONENTSCHEMA {
     buffer_size?: number;
     byte_order?: OnlineImageConfigByteOrder;
     format: OnlineImageConfigFormat;

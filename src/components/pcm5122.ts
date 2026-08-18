@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Pcm5122 extends EsphomeComponent {
     componentName: string = "pcm5122";
@@ -21,7 +21,7 @@ export class Pcm5122AudioDac extends EsphomeComponent<Pcm5122AudioDacConfig> {
 
 export type Pcm5122AudioDacConfigBitsPerSample = '16' | '24' | '32';
 
-export interface Pcm5122AudioDacConfig extends CoreCOMPONENT_SCHEMA {
+export interface Pcm5122AudioDacConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     bits_per_sample?: Pcm5122AudioDacConfigBitsPerSample;
     i2c_id?: ID;

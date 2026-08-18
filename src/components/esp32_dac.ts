@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Esp32DacOutput extends EsphomeComponent<Esp32DacOutputConfig> {
     componentName: string = "esp32_dac.output";
@@ -19,4 +19,4 @@ export class Esp32DacOutput extends EsphomeComponent<Esp32DacOutputConfig> {
 export type Esp32DacOutputConfig = {
         id: string;
         pin: Pin;
-    } & OutputFLOAT_OUTPUT_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & OutputFLOATOUTPUTSCHEMA & CoreCOMPONENTSCHEMA;

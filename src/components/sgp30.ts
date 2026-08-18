@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Sgp30Sensor extends EsphomeComponent<Sgp30SensorConfig> {
     componentName: string = "sgp30.sensor";
@@ -26,7 +26,7 @@ export interface Sgp30SensorConfigCompensation {
     temperature_source: ID;
 }
 
-export interface Sgp30SensorConfigEco2 extends Sensor_SENSOR_SCHEMA {
+export interface Sgp30SensorConfigEco2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -34,13 +34,13 @@ export interface Sgp30SensorConfigEco2 extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Sgp30SensorConfigEco2Baseline extends Sensor_SENSOR_SCHEMA {
+export interface Sgp30SensorConfigEco2Baseline extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
 }
 
-export interface Sgp30SensorConfigTvoc extends Sensor_SENSOR_SCHEMA {
+export interface Sgp30SensorConfigTvoc extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -48,13 +48,13 @@ export interface Sgp30SensorConfigTvoc extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Sgp30SensorConfigTvocBaseline extends Sensor_SENSOR_SCHEMA {
+export interface Sgp30SensorConfigTvocBaseline extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
 }
 
-export interface Sgp30SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Sgp30SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     baseline?: Sgp30SensorConfigBaseline;
     compensation?: Sgp30SensorConfigCompensation;

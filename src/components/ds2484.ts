@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Ds2484OneWire extends EsphomeComponent<Ds2484OneWireConfig> {
     componentName: string = "ds2484.one_wire";
 }
 
-export interface Ds2484OneWireConfig extends CoreCOMPONENT_SCHEMA {
+export interface Ds2484OneWireConfig extends CoreCOMPONENTSCHEMA {
     active_pullup?: boolean;
     address?: any;
     i2c_id?: ID;

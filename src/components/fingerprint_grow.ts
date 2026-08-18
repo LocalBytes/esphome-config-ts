@@ -9,9 +9,9 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class FingerprintGrow extends EsphomeComponent<FingerprintGrowConfig> {
     componentName: string = "fingerprint_grow";
@@ -19,7 +19,7 @@ export class FingerprintGrow extends EsphomeComponent<FingerprintGrowConfig> {
 
 export type FingerprintGrowConfigIdlePeriodToSleep = CorePositiveTimePeriodMilliseconds;
 
-export interface FingerprintGrowConfig extends CoreCOMPONENT_SCHEMA {
+export interface FingerprintGrowConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     idle_period_to_sleep?: FingerprintGrowConfigIdlePeriodToSleep;
     new_password?: number;
@@ -42,7 +42,7 @@ export class FingerprintGrowBinarySensor extends EsphomeComponent<FingerprintGro
     componentName: string = "fingerprint_grow.binary_sensor";
 }
 
-export interface FingerprintGrowBinarySensorConfig extends BinarySensor_BINARY_SENSOR_SCHEMA {
+export interface FingerprintGrowBinarySensorConfig extends BinarySensorBINARYSENSORSCHEMA {
     fingerprint_grow_id?: ID;
     icon?: any;
 }
@@ -51,37 +51,37 @@ export class FingerprintGrowSensor extends EsphomeComponent<FingerprintGrowSenso
     componentName: string = "fingerprint_grow.sensor";
 }
 
-export interface FingerprintGrowSensorConfigCapacity extends Sensor_SENSOR_SCHEMA {
+export interface FingerprintGrowSensorConfigCapacity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
 }
 
-export interface FingerprintGrowSensorConfigFingerprintCount extends Sensor_SENSOR_SCHEMA {
+export interface FingerprintGrowSensorConfigFingerprintCount extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
 }
 
-export interface FingerprintGrowSensorConfigLastConfidence extends Sensor_SENSOR_SCHEMA {
+export interface FingerprintGrowSensorConfigLastConfidence extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
 }
 
-export interface FingerprintGrowSensorConfigLastFingerId extends Sensor_SENSOR_SCHEMA {
+export interface FingerprintGrowSensorConfigLastFingerId extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
 }
 
-export interface FingerprintGrowSensorConfigSecurityLevel extends Sensor_SENSOR_SCHEMA {
+export interface FingerprintGrowSensorConfigSecurityLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
     icon?: any;
 }
 
-export interface FingerprintGrowSensorConfigStatus extends Sensor_SENSOR_SCHEMA {
+export interface FingerprintGrowSensorConfigStatus extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     entity_category?: any;
 }

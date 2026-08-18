@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { TimeTIME_SCHEMA } from "./time.js";
+import type { TimeTIMESCHEMA } from "./time.js";
 
 export abstract class Pcf85063 extends EsphomeComponent {
     componentName: string = "pcf85063";
@@ -19,7 +19,7 @@ export class Pcf85063Time extends EsphomeComponent<Pcf85063TimeConfig> {
     componentName: string = "pcf85063.time";
 }
 
-export interface Pcf85063TimeConfig extends TimeTIME_SCHEMA {
+export interface Pcf85063TimeConfig extends TimeTIMESCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: ID;

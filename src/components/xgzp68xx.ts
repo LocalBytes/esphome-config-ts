@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Xgzp68xxSensor extends EsphomeComponent<Xgzp68xxSensorConfig> {
     componentName: string = "xgzp68xx.sensor";
@@ -18,7 +18,7 @@ export class Xgzp68xxSensor extends EsphomeComponent<Xgzp68xxSensorConfig> {
 
 export type Xgzp68xxSensorConfigPressureOversampling = '256X' | '512X' | '1024X' | '2048X' | '4096X' | '8192X' | '16384X' | '32768X';
 
-export interface Xgzp68xxSensorConfigPressure extends Sensor_SENSOR_SCHEMA {
+export interface Xgzp68xxSensorConfigPressure extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     oversampling?: Xgzp68xxSensorConfigPressureOversampling;
@@ -26,14 +26,14 @@ export interface Xgzp68xxSensorConfigPressure extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Xgzp68xxSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Xgzp68xxSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Xgzp68xxSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Xgzp68xxSensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: ID;

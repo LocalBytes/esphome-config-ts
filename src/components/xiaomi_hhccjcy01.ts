@@ -9,15 +9,15 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { BthomeMithermometerBLE_DEVICE_SCHEMA } from "./bthome_mithermometer.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { BthomeMithermometerBLEDEVICESCHEMA } from "./bthome_mithermometer.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class XiaomiHhccjcy01Sensor extends EsphomeComponent<XiaomiHhccjcy01SensorConfig> {
     componentName: string = "xiaomi_hhccjcy01.sensor";
 }
 
-export interface XiaomiHhccjcy01SensorConfigBatteryLevel extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiHhccjcy01SensorConfigBatteryLevel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     entity_category?: any;
@@ -25,28 +25,28 @@ export interface XiaomiHhccjcy01SensorConfigBatteryLevel extends Sensor_SENSOR_S
     unit_of_measurement?: any;
 }
 
-export interface XiaomiHhccjcy01SensorConfigConductivity extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiHhccjcy01SensorConfigConductivity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface XiaomiHhccjcy01SensorConfigIlluminance extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiHhccjcy01SensorConfigIlluminance extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface XiaomiHhccjcy01SensorConfigMoisture extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiHhccjcy01SensorConfigMoisture extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     icon?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface XiaomiHhccjcy01SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface XiaomiHhccjcy01SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -61,4 +61,4 @@ export type XiaomiHhccjcy01SensorConfig = {
         mac_address: string;
         moisture?: XiaomiHhccjcy01SensorConfigMoisture;
         temperature?: XiaomiHhccjcy01SensorConfigTemperature;
-    } & BthomeMithermometerBLE_DEVICE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & BthomeMithermometerBLEDEVICESCHEMA & CoreCOMPONENTSCHEMA;

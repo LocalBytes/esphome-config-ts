@@ -9,13 +9,13 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { TouchscreenTOUCHSCREEN_SCHEMA } from "./touchscreen.js";
+import type { TouchscreenTOUCHSCREENSCHEMA } from "./touchscreen.js";
 
 export class Ft5x06Touchscreen extends EsphomeComponent<Ft5x06TouchscreenConfig> {
     componentName: string = "ft5x06.touchscreen";
 }
 
-export interface Ft5x06TouchscreenConfig extends TouchscreenTOUCHSCREEN_SCHEMA {
+export interface Ft5x06TouchscreenConfig extends TouchscreenTOUCHSCREENSCHEMA {
     address?: any;
     i2c_id?: ID;
     id?: ID;

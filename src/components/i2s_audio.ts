@@ -9,9 +9,9 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { MicrophoneMICROPHONE_SCHEMA } from "./microphone.js";
-import type { CoreCOMPONENT_SCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
-import type { SpeakerSPEAKER_SCHEMA } from "./speaker.js";
+import type { MicrophoneMICROPHONESCHEMA } from "./microphone.js";
+import type { CoreCOMPONENTSCHEMA, CorePositiveTimePeriodMilliseconds } from "./esphome.js";
+import type { SpeakerSPEAKERSCHEMA } from "./speaker.js";
 
 export class I2sAudio extends EsphomeComponent<I2sAudioConfig> {
     componentName: string = "i2s_audio";
@@ -28,21 +28,21 @@ export class I2sAudioMicrophone extends EsphomeComponent<I2sAudioMicrophoneConfi
     componentName: string = "i2s_audio.microphone";
 }
 
-export type I2sAudioMicrophoneBASE_SCHEMABitsPerSample = '8' | '16' | '24' | '32';
-export type I2sAudioMicrophoneBASE_SCHEMAChannel = 'mono' | 'left' | 'right' | 'stereo';
-export type I2sAudioMicrophoneBASE_SCHEMAI2sMode = 'primary' | 'secondary';
-export type I2sAudioMicrophoneBASE_SCHEMAMclkMultiple = '128' | '256' | '384' | '512';
-export type I2sAudioMicrophoneBASE_SCHEMA = {
-        bits_per_sample: I2sAudioMicrophoneBASE_SCHEMABitsPerSample;
-        channel?: I2sAudioMicrophoneBASE_SCHEMAChannel;
+export type I2sAudioMicrophoneBASESCHEMABitsPerSample = '8' | '16' | '24' | '32';
+export type I2sAudioMicrophoneBASESCHEMAChannel = 'mono' | 'left' | 'right' | 'stereo';
+export type I2sAudioMicrophoneBASESCHEMAI2sMode = 'primary' | 'secondary';
+export type I2sAudioMicrophoneBASESCHEMAMclkMultiple = '128' | '256' | '384' | '512';
+export type I2sAudioMicrophoneBASESCHEMA = {
+        bits_per_sample: I2sAudioMicrophoneBASESCHEMABitsPerSample;
+        channel?: I2sAudioMicrophoneBASESCHEMAChannel;
         correct_dc_offset?: boolean;
         i2s_audio_id?: ID;
-        i2s_mode?: I2sAudioMicrophoneBASE_SCHEMAI2sMode;
+        i2s_mode?: I2sAudioMicrophoneBASESCHEMAI2sMode;
         id?: ID;
-        mclk_multiple?: I2sAudioMicrophoneBASE_SCHEMAMclkMultiple;
+        mclk_multiple?: I2sAudioMicrophoneBASESCHEMAMclkMultiple;
         sample_rate?: any;
         use_apll?: boolean;
-    } & MicrophoneMICROPHONE_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & MicrophoneMICROPHONESCHEMA & CoreCOMPONENTSCHEMA;
 export type I2sAudioMicrophoneConfig = I2sAudioMicrophoneConfigExternal | I2sAudioMicrophoneConfigInternal;
 
 export interface I2sAudioMicrophoneConfigExternal {
@@ -60,24 +60,24 @@ export class I2sAudioSpeaker extends EsphomeComponent<I2sAudioSpeakerConfig> {
     componentName: string = "i2s_audio.speaker";
 }
 
-export type I2sAudioSpeakerBASE_SCHEMABitsPerSample = '8' | '16' | '24' | '32';
-export type I2sAudioSpeakerBASE_SCHEMABufferDuration = CorePositiveTimePeriodMilliseconds;
-export type I2sAudioSpeakerBASE_SCHEMAChannel = 'mono' | 'left' | 'right' | 'stereo';
-export type I2sAudioSpeakerBASE_SCHEMAI2sMode = 'primary' | 'secondary';
-export type I2sAudioSpeakerBASE_SCHEMAMclkMultiple = '128' | '256' | '384' | '512';
-export type I2sAudioSpeakerBASE_SCHEMATimeout = 'never';
-export type I2sAudioSpeakerBASE_SCHEMA = {
-        bits_per_sample: I2sAudioSpeakerBASE_SCHEMABitsPerSample;
-        buffer_duration?: I2sAudioSpeakerBASE_SCHEMABufferDuration;
-        channel?: I2sAudioSpeakerBASE_SCHEMAChannel;
+export type I2sAudioSpeakerBASESCHEMABitsPerSample = '8' | '16' | '24' | '32';
+export type I2sAudioSpeakerBASESCHEMABufferDuration = CorePositiveTimePeriodMilliseconds;
+export type I2sAudioSpeakerBASESCHEMAChannel = 'mono' | 'left' | 'right' | 'stereo';
+export type I2sAudioSpeakerBASESCHEMAI2sMode = 'primary' | 'secondary';
+export type I2sAudioSpeakerBASESCHEMAMclkMultiple = '128' | '256' | '384' | '512';
+export type I2sAudioSpeakerBASESCHEMATimeout = 'never';
+export type I2sAudioSpeakerBASESCHEMA = {
+        bits_per_sample: I2sAudioSpeakerBASESCHEMABitsPerSample;
+        buffer_duration?: I2sAudioSpeakerBASESCHEMABufferDuration;
+        channel?: I2sAudioSpeakerBASESCHEMAChannel;
         i2s_audio_id?: ID;
-        i2s_mode?: I2sAudioSpeakerBASE_SCHEMAI2sMode;
+        i2s_mode?: I2sAudioSpeakerBASESCHEMAI2sMode;
         id?: ID;
-        mclk_multiple?: I2sAudioSpeakerBASE_SCHEMAMclkMultiple;
+        mclk_multiple?: I2sAudioSpeakerBASESCHEMAMclkMultiple;
         sample_rate?: any;
-        timeout?: I2sAudioSpeakerBASE_SCHEMATimeout;
+        timeout?: I2sAudioSpeakerBASESCHEMATimeout;
         use_apll?: boolean;
-    } & SpeakerSPEAKER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SpeakerSPEAKERSCHEMA & CoreCOMPONENTSCHEMA;
 export type I2sAudioSpeakerConfig = I2sAudioSpeakerConfigExternal | I2sAudioSpeakerConfigInternal;
 export type I2sAudioSpeakerConfigExternalI2sCommFmt = 'stand_i2s' | 'stand_msb' | 'stand_pcm_short' | 'stand_pcm_long' | 'stand_max' | 'i2s_msb' | 'i2s_lsb' | 'pcm' | 'pcm_short' | 'pcm_long';
 

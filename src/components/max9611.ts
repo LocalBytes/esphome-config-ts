@@ -9,14 +9,14 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Max9611Sensor extends EsphomeComponent<Max9611SensorConfig> {
     componentName: string = "max9611.sensor";
 }
 
-export interface Max9611SensorConfigCurrent extends Sensor_SENSOR_SCHEMA {
+export interface Max9611SensorConfigCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -25,28 +25,28 @@ export interface Max9611SensorConfigCurrent extends Sensor_SENSOR_SCHEMA {
 
 export type Max9611SensorConfigGain = '8X' | '4X' | '1X';
 
-export interface Max9611SensorConfigPower extends Sensor_SENSOR_SCHEMA {
+export interface Max9611SensorConfigPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Max9611SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Max9611SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Max9611SensorConfigVoltage extends Sensor_SENSOR_SCHEMA {
+export interface Max9611SensorConfigVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Max9611SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Max9611SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     current?: Max9611SensorConfigCurrent;
     gain: Max9611SensorConfigGain;

@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CorePositiveTimePeriodSeconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CorePositiveTimePeriodSeconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class Scd30 extends EsphomeComponent {
     componentName: string = "scd30";
@@ -20,7 +20,7 @@ export class Scd30Sensor extends EsphomeComponent<Scd30SensorConfig> {
     componentName: string = "scd30.sensor";
 }
 
-export interface Scd30SensorConfigCo2 extends Sensor_SENSOR_SCHEMA {
+export interface Scd30SensorConfigCo2 extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -28,14 +28,14 @@ export interface Scd30SensorConfigCo2 extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface Scd30SensorConfigHumidity extends Sensor_SENSOR_SCHEMA {
+export interface Scd30SensorConfigHumidity extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface Scd30SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface Scd30SensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
@@ -44,7 +44,7 @@ export interface Scd30SensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
 
 export type Scd30SensorConfigUpdateInterval = CorePositiveTimePeriodSeconds;
 
-export interface Scd30SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface Scd30SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     altitude_compensation?: number;
     ambient_pressure_compensation?: any;

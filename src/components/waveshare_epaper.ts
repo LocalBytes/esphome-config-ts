@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { DisplayFULL_DISPLAY_SCHEMA } from "./display.js";
+import type { CorePositiveTimePeriodMilliseconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { DisplayFULLDISPLAYSCHEMA } from "./display.js";
 
 export class WaveshareEpaperDisplay extends EsphomeComponent<WaveshareEpaperDisplayConfig> {
     componentName: string = "waveshare_epaper.display";
@@ -36,4 +36,4 @@ export type WaveshareEpaperDisplayConfig = {
         rotation?: any;
         lambda?: any;
         pages?: any;
-    } & DisplayFULL_DISPLAY_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & DisplayFULLDISPLAYSCHEMA & CoreCOMPONENTSCHEMA;

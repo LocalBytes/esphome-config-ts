@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Ens160BaseConfig_BASE } from "./ens160_base.js";
+import type { Ens160BaseCONFIGSCHEMABASE } from "./ens160_base.js";
 
 export class Ens160SpiSensor extends EsphomeComponent<Ens160SpiSensorConfig> {
     componentName: string = "ens160_spi.sensor";
@@ -17,7 +17,7 @@ export class Ens160SpiSensor extends EsphomeComponent<Ens160SpiSensorConfig> {
 
 export type Ens160SpiSensorConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 
-export interface Ens160SpiSensorConfig extends Ens160BaseConfig_BASE {
+export interface Ens160SpiSensorConfig extends Ens160BaseCONFIGSCHEMABASE {
     cs_pin: Pin;
     data_rate?: any;
     id?: ID;

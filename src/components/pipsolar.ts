@@ -9,24 +9,24 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { BinarySensor_BINARY_SENSOR_SCHEMA } from "./binary_sensor.js";
-import type { OutputFLOAT_OUTPUT_SCHEMA } from "./output.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
-import type { TextSensor_TEXT_SENSOR_SCHEMA } from "./text_sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { BinarySensorBINARYSENSORSCHEMA } from "./binary_sensor.js";
+import type { OutputFLOATOUTPUTSCHEMA } from "./output.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
+import type { TextSensorTEXTSENSORSCHEMA } from "./text_sensor.js";
 
 export class Pipsolar extends EsphomeComponent<PipsolarConfig> {
     componentName: string = "pipsolar";
 }
 
-export interface PipsolarConfig extends CoreCOMPONENT_SCHEMA {
+export interface PipsolarConfig extends CoreCOMPONENTSCHEMA {
     id?: ID;
     uart_id?: ID;
     update_interval?: any;
 }
 
-export interface PipsolarPIPSOLAR_COMPONENT_SCHEMA {
+export interface PipsolarPIPSOLARCOMPONENTSCHEMA {
     pipsolar_id: ID;
 }
 
@@ -34,64 +34,64 @@ export class PipsolarBinarySensor extends EsphomeComponent<PipsolarBinarySensorC
     componentName: string = "pipsolar.binary_sensor";
 }
 
-export type PipsolarBinarySensorConfigAcChargingStatus = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigAddSbuPriorityVersion = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigAlarmOnWhenPrimarySourceInterrupt = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigBacklightOn = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigBatteryVoltageToSteadyWhileCharging = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigChargingStatus = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigChargingToFloatingMode = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigConfigurationStatus = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigDustproofInstalled = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultBatteryOpen = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultBatteryShort = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultBusOver = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultBusSoftFail = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultBusUnder = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultCode = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultCodeRecord = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultCurrentSensorFailed = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultDcDcOverCurrent = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultInverterFault = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultInverterOverCurrent = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultInverterSoftFailed = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultInverterVoltageTooHigh = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultInverterVoltageTooLow = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultMpptOverload = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultOpDcVoltageOver = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultOpvshort = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultSelfTestFailed = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigFaultsPresent = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigLcdEscapeToDefault = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigLoadStatus = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigOverTemperatureRestartFunction = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigOverloadBypassFunction = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigOverloadRestartFunction = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigPowerSaving = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigSccChargingStatus = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigSccFirmwareVersion = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigSilenceBuzzerOpenBuzzer = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigSwitchOn = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningBatteryDerating = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningBatteryEqualization = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningBatteryLowAlarm = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningBatteryTooLowToCharge = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningBatteryUnderShutdown = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningBatteryVoltageHigh = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningEepromFailed = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningFanLock = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningHighAcInputDuringBusSoftStart = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningLineFail = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningLowPvEnergy = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningMpptOverload = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningOverLoad = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningOverTemperature = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningPowerLimit = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningPowerLoss = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningPvVoltageHigh = BinarySensor_BINARY_SENSOR_SCHEMA;
-export type PipsolarBinarySensorConfigWarningsPresent = BinarySensor_BINARY_SENSOR_SCHEMA;
+export type PipsolarBinarySensorConfigAcChargingStatus = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigAddSbuPriorityVersion = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigAlarmOnWhenPrimarySourceInterrupt = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigBacklightOn = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigBatteryVoltageToSteadyWhileCharging = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigChargingStatus = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigChargingToFloatingMode = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigConfigurationStatus = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigDustproofInstalled = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultBatteryOpen = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultBatteryShort = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultBusOver = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultBusSoftFail = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultBusUnder = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultCode = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultCodeRecord = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultCurrentSensorFailed = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultDcDcOverCurrent = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultInverterFault = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultInverterOverCurrent = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultInverterSoftFailed = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultInverterVoltageTooHigh = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultInverterVoltageTooLow = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultMpptOverload = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultOpDcVoltageOver = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultOpvshort = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultSelfTestFailed = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigFaultsPresent = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigLcdEscapeToDefault = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigLoadStatus = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigOverTemperatureRestartFunction = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigOverloadBypassFunction = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigOverloadRestartFunction = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigPowerSaving = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigSccChargingStatus = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigSccFirmwareVersion = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigSilenceBuzzerOpenBuzzer = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigSwitchOn = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningBatteryDerating = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningBatteryEqualization = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningBatteryLowAlarm = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningBatteryTooLowToCharge = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningBatteryUnderShutdown = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningBatteryVoltageHigh = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningEepromFailed = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningFanLock = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningHighAcInputDuringBusSoftStart = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningLineFail = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningLowPvEnergy = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningMpptOverload = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningOverLoad = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningOverTemperature = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningPowerLimit = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningPowerLoss = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningPvVoltageHigh = BinarySensorBINARYSENSORSCHEMA;
+export type PipsolarBinarySensorConfigWarningsPresent = BinarySensorBINARYSENSORSCHEMA;
 
-export interface PipsolarBinarySensorConfig extends PipsolarPIPSOLAR_COMPONENT_SCHEMA {
+export interface PipsolarBinarySensorConfig extends PipsolarPIPSOLARCOMPONENTSCHEMA {
     ac_charging_status?: PipsolarBinarySensorConfigAcChargingStatus;
     add_sbu_priority_version?: PipsolarBinarySensorConfigAddSbuPriorityVersion;
     alarm_on_when_primary_source_interrupt?: PipsolarBinarySensorConfigAlarmOnWhenPrimarySourceInterrupt;
@@ -154,52 +154,52 @@ export class PipsolarOutput extends EsphomeComponent<PipsolarOutputConfig> {
     componentName: string = "pipsolar.output";
 }
 
-export interface PipsolarOutputConfigBatteryFloatVoltage extends OutputFLOAT_OUTPUT_SCHEMA {
+export interface PipsolarOutputConfigBatteryFloatVoltage extends OutputFLOATOUTPUTSCHEMA {
     id: string;
     possible_values?: any[];
 }
 
-export interface PipsolarOutputConfigBatteryRechargeVoltage extends OutputFLOAT_OUTPUT_SCHEMA {
+export interface PipsolarOutputConfigBatteryRechargeVoltage extends OutputFLOATOUTPUTSCHEMA {
     id: string;
     possible_values?: any[];
 }
 
-export interface PipsolarOutputConfigBatteryRedischargeVoltage extends OutputFLOAT_OUTPUT_SCHEMA {
+export interface PipsolarOutputConfigBatteryRedischargeVoltage extends OutputFLOATOUTPUTSCHEMA {
     id: string;
     possible_values?: any[];
 }
 
-export interface PipsolarOutputConfigBatteryType extends OutputFLOAT_OUTPUT_SCHEMA {
+export interface PipsolarOutputConfigBatteryType extends OutputFLOATOUTPUTSCHEMA {
     id: string;
     possible_values?: any[];
 }
 
-export interface PipsolarOutputConfigBatteryUnderVoltage extends OutputFLOAT_OUTPUT_SCHEMA {
+export interface PipsolarOutputConfigBatteryUnderVoltage extends OutputFLOATOUTPUTSCHEMA {
     id: string;
     possible_values?: any[];
 }
 
-export interface PipsolarOutputConfigChargerSourcePriority extends OutputFLOAT_OUTPUT_SCHEMA {
+export interface PipsolarOutputConfigChargerSourcePriority extends OutputFLOATOUTPUTSCHEMA {
     id: string;
     possible_values?: any[];
 }
 
-export interface PipsolarOutputConfigCurrentMaxAcChargingCurrent extends OutputFLOAT_OUTPUT_SCHEMA {
+export interface PipsolarOutputConfigCurrentMaxAcChargingCurrent extends OutputFLOATOUTPUTSCHEMA {
     id: string;
     possible_values?: any[];
 }
 
-export interface PipsolarOutputConfigCurrentMaxChargingCurrent extends OutputFLOAT_OUTPUT_SCHEMA {
+export interface PipsolarOutputConfigCurrentMaxChargingCurrent extends OutputFLOATOUTPUTSCHEMA {
     id: string;
     possible_values?: any[];
 }
 
-export interface PipsolarOutputConfigOutputSourcePriority extends OutputFLOAT_OUTPUT_SCHEMA {
+export interface PipsolarOutputConfigOutputSourcePriority extends OutputFLOATOUTPUTSCHEMA {
     id: string;
     possible_values?: any[];
 }
 
-export interface PipsolarOutputConfig extends PipsolarPIPSOLAR_COMPONENT_SCHEMA {
+export interface PipsolarOutputConfig extends PipsolarPIPSOLARCOMPONENTSCHEMA {
     battery_float_voltage?: PipsolarOutputConfigBatteryFloatVoltage;
     battery_recharge_voltage?: PipsolarOutputConfigBatteryRechargeVoltage;
     battery_redischarge_voltage?: PipsolarOutputConfigBatteryRedischargeVoltage;
@@ -215,50 +215,21 @@ export class PipsolarSensor extends EsphomeComponent<PipsolarSensorConfig> {
     componentName: string = "pipsolar.sensor";
 }
 
-export interface PipsolarSensorConfigAcOutputActivePower extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigAcOutputActivePower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigAcOutputApparentPower extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigAcOutputApparentPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigAcOutputFrequency extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    icon?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface PipsolarSensorConfigAcOutputRatingActivePower extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface PipsolarSensorConfigAcOutputRatingApparentPower extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface PipsolarSensorConfigAcOutputRatingCurrent extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface PipsolarSensorConfigAcOutputRatingFrequency extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigAcOutputFrequency extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -266,35 +237,28 @@ export interface PipsolarSensorConfigAcOutputRatingFrequency extends Sensor_SENS
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigAcOutputRatingVoltage extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigAcOutputRatingActivePower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigAcOutputVoltage extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigAcOutputRatingApparentPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigBatteryBulkVoltage extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigAcOutputRatingCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigBatteryCapacityPercent extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface PipsolarSensorConfigBatteryChargingCurrent extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigAcOutputRatingFrequency extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -302,7 +266,35 @@ export interface PipsolarSensorConfigBatteryChargingCurrent extends Sensor_SENSO
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigBatteryDischargeCurrent extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigAcOutputRatingVoltage extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface PipsolarSensorConfigAcOutputVoltage extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface PipsolarSensorConfigBatteryBulkVoltage extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface PipsolarSensorConfigBatteryCapacityPercent extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface PipsolarSensorConfigBatteryChargingCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -310,43 +302,7 @@ export interface PipsolarSensorConfigBatteryDischargeCurrent extends Sensor_SENS
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigBatteryFloatVoltage extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface PipsolarSensorConfigBatteryRatingVoltage extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface PipsolarSensorConfigBatteryRechargeVoltage extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface PipsolarSensorConfigBatteryRedischargeVoltage extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-}
-
-export interface PipsolarSensorConfigBatteryType extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-}
-
-export interface PipsolarSensorConfigBatteryUnderVoltage extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface PipsolarSensorConfigBatteryVoltage extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigBatteryDischargeCurrent extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -354,51 +310,43 @@ export interface PipsolarSensorConfigBatteryVoltage extends Sensor_SENSOR_SCHEMA
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigBatteryVoltageOffsetForFansOn extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigBatteryFloatVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigBatteryVoltageScc extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigBatteryRatingVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigBusVoltage extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    icon?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface PipsolarSensorConfigChargerSourcePriority extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-}
-
-export interface PipsolarSensorConfigCurrentMaxAcChargingCurrent extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigBatteryRechargeVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigCurrentMaxChargingCurrent extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigBatteryRedischargeVoltage extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+}
+
+export interface PipsolarSensorConfigBatteryType extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+}
+
+export interface PipsolarSensorConfigBatteryUnderVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigEepromVersion extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-}
-
-export interface PipsolarSensorConfigGridFrequency extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigBatteryVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -406,62 +354,21 @@ export interface PipsolarSensorConfigGridFrequency extends Sensor_SENSOR_SCHEMA 
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigGridRatingCurrent extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigBatteryVoltageOffsetForFansOn extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigGridRatingVoltage extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigBatteryVoltageScc extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigGridVoltage extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface PipsolarSensorConfigInputVoltageRange extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-}
-
-export interface PipsolarSensorConfigInverterHeatSinkTemperature extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    device_class?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface PipsolarSensorConfigMachineType extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-}
-
-export interface PipsolarSensorConfigOutputLoadPercent extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-    icon?: any;
-    state_class?: any;
-    unit_of_measurement?: any;
-}
-
-export interface PipsolarSensorConfigOutputMode extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-}
-
-export interface PipsolarSensorConfigOutputSourcePriority extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-}
-
-export interface PipsolarSensorConfigParallelMaxNum extends Sensor_SENSOR_SCHEMA {
-    accuracy_decimals?: any;
-}
-
-export interface PipsolarSensorConfigPvChargingPower extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigBusVoltage extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -469,7 +376,29 @@ export interface PipsolarSensorConfigPvChargingPower extends Sensor_SENSOR_SCHEM
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigPvInputCurrentForBattery extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigChargerSourcePriority extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+}
+
+export interface PipsolarSensorConfigCurrentMaxAcChargingCurrent extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface PipsolarSensorConfigCurrentMaxChargingCurrent extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface PipsolarSensorConfigEepromVersion extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+}
+
+export interface PipsolarSensorConfigGridFrequency extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -477,7 +406,62 @@ export interface PipsolarSensorConfigPvInputCurrentForBattery extends Sensor_SEN
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigPvInputVoltage extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigGridRatingCurrent extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface PipsolarSensorConfigGridRatingVoltage extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface PipsolarSensorConfigGridVoltage extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface PipsolarSensorConfigInputVoltageRange extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+}
+
+export interface PipsolarSensorConfigInverterHeatSinkTemperature extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface PipsolarSensorConfigMachineType extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+}
+
+export interface PipsolarSensorConfigOutputLoadPercent extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface PipsolarSensorConfigOutputMode extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+}
+
+export interface PipsolarSensorConfigOutputSourcePriority extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+}
+
+export interface PipsolarSensorConfigParallelMaxNum extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+}
+
+export interface PipsolarSensorConfigPvChargingPower extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -485,19 +469,35 @@ export interface PipsolarSensorConfigPvInputVoltage extends Sensor_SENSOR_SCHEMA
     unit_of_measurement?: any;
 }
 
-export interface PipsolarSensorConfigPvOkConditionForParallel extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigPvInputCurrentForBattery extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface PipsolarSensorConfigPvInputVoltage extends SensorSENSORSCHEMA {
+    accuracy_decimals?: any;
+    device_class?: any;
+    icon?: any;
+    state_class?: any;
+    unit_of_measurement?: any;
+}
+
+export interface PipsolarSensorConfigPvOkConditionForParallel extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
 }
 
-export interface PipsolarSensorConfigPvPowerBalance extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigPvPowerBalance extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
 }
 
-export interface PipsolarSensorConfigTopology extends Sensor_SENSOR_SCHEMA {
+export interface PipsolarSensorConfigTopology extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
 }
 
-export interface PipsolarSensorConfig extends PipsolarPIPSOLAR_COMPONENT_SCHEMA {
+export interface PipsolarSensorConfig extends PipsolarPIPSOLARCOMPONENTSCHEMA {
     ac_output_active_power?: PipsolarSensorConfigAcOutputActivePower;
     ac_output_apparent_power?: PipsolarSensorConfigAcOutputApparentPower;
     ac_output_frequency?: PipsolarSensorConfigAcOutputFrequency;
@@ -548,15 +548,15 @@ export class PipsolarSwitch extends EsphomeComponent<PipsolarSwitchConfig> {
     componentName: string = "pipsolar.switch";
 }
 
-export type PipsolarSwitchConfigInputVoltageRange = PipsolarSwitchPIPSWITCH_SCHEMA;
-export type PipsolarSwitchConfigOutputSourcePriorityBattery = PipsolarSwitchPIPSWITCH_SCHEMA;
-export type PipsolarSwitchConfigOutputSourcePriorityHybrid = PipsolarSwitchPIPSWITCH_SCHEMA;
-export type PipsolarSwitchConfigOutputSourcePrioritySolar = PipsolarSwitchPIPSWITCH_SCHEMA;
-export type PipsolarSwitchConfigOutputSourcePriorityUtility = PipsolarSwitchPIPSWITCH_SCHEMA;
-export type PipsolarSwitchConfigPvOkConditionForParallel = PipsolarSwitchPIPSWITCH_SCHEMA;
-export type PipsolarSwitchConfigPvPowerBalance = PipsolarSwitchPIPSWITCH_SCHEMA;
+export type PipsolarSwitchConfigInputVoltageRange = PipsolarSwitchPIPSWITCHSCHEMA;
+export type PipsolarSwitchConfigOutputSourcePriorityBattery = PipsolarSwitchPIPSWITCHSCHEMA;
+export type PipsolarSwitchConfigOutputSourcePriorityHybrid = PipsolarSwitchPIPSWITCHSCHEMA;
+export type PipsolarSwitchConfigOutputSourcePrioritySolar = PipsolarSwitchPIPSWITCHSCHEMA;
+export type PipsolarSwitchConfigOutputSourcePriorityUtility = PipsolarSwitchPIPSWITCHSCHEMA;
+export type PipsolarSwitchConfigPvOkConditionForParallel = PipsolarSwitchPIPSWITCHSCHEMA;
+export type PipsolarSwitchConfigPvPowerBalance = PipsolarSwitchPIPSWITCHSCHEMA;
 
-export interface PipsolarSwitchConfig extends PipsolarPIPSOLAR_COMPONENT_SCHEMA {
+export interface PipsolarSwitchConfig extends PipsolarPIPSOLARCOMPONENTSCHEMA {
     input_voltage_range?: PipsolarSwitchConfigInputVoltageRange;
     output_source_priority_battery?: PipsolarSwitchConfigOutputSourcePriorityBattery;
     output_source_priority_hybrid?: PipsolarSwitchConfigOutputSourcePriorityHybrid;
@@ -566,25 +566,25 @@ export interface PipsolarSwitchConfig extends PipsolarPIPSOLAR_COMPONENT_SCHEMA 
     pv_power_balance?: PipsolarSwitchConfigPvPowerBalance;
 }
 
-export type PipsolarSwitchPIPSWITCH_SCHEMA = {
+export type PipsolarSwitchPIPSWITCHSCHEMA = {
         icon?: any;
         id?: ID;
-    } & Switch_SWITCH_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & SwitchSWITCHSCHEMA & CoreCOMPONENTSCHEMA;
 
 export class PipsolarTextSensor extends EsphomeComponent<PipsolarTextSensorConfig> {
     componentName: string = "pipsolar.text_sensor";
 }
 
-export type PipsolarTextSensorConfigDeviceMode = TextSensor_TEXT_SENSOR_SCHEMA;
-export type PipsolarTextSensorConfigLastQflag = TextSensor_TEXT_SENSOR_SCHEMA;
-export type PipsolarTextSensorConfigLastQmn = TextSensor_TEXT_SENSOR_SCHEMA;
-export type PipsolarTextSensorConfigLastQmod = TextSensor_TEXT_SENSOR_SCHEMA;
-export type PipsolarTextSensorConfigLastQpigs = TextSensor_TEXT_SENSOR_SCHEMA;
-export type PipsolarTextSensorConfigLastQpiri = TextSensor_TEXT_SENSOR_SCHEMA;
-export type PipsolarTextSensorConfigLastQpiws = TextSensor_TEXT_SENSOR_SCHEMA;
-export type PipsolarTextSensorConfigLastQt = TextSensor_TEXT_SENSOR_SCHEMA;
+export type PipsolarTextSensorConfigDeviceMode = TextSensorTEXTSENSORSCHEMA;
+export type PipsolarTextSensorConfigLastQflag = TextSensorTEXTSENSORSCHEMA;
+export type PipsolarTextSensorConfigLastQmn = TextSensorTEXTSENSORSCHEMA;
+export type PipsolarTextSensorConfigLastQmod = TextSensorTEXTSENSORSCHEMA;
+export type PipsolarTextSensorConfigLastQpigs = TextSensorTEXTSENSORSCHEMA;
+export type PipsolarTextSensorConfigLastQpiri = TextSensorTEXTSENSORSCHEMA;
+export type PipsolarTextSensorConfigLastQpiws = TextSensorTEXTSENSORSCHEMA;
+export type PipsolarTextSensorConfigLastQt = TextSensorTEXTSENSORSCHEMA;
 
-export interface PipsolarTextSensorConfig extends PipsolarPIPSOLAR_COMPONENT_SCHEMA {
+export interface PipsolarTextSensorConfig extends PipsolarPIPSOLARCOMPONENTSCHEMA {
     device_mode?: PipsolarTextSensorConfigDeviceMode;
     last_qflag?: PipsolarTextSensorConfigLastQflag;
     last_qmn?: PipsolarTextSensorConfigLastQmn;

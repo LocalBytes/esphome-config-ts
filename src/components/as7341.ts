@@ -9,26 +9,26 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
 
 export class As7341Sensor extends EsphomeComponent<As7341SensorConfig> {
     componentName: string = "as7341.sensor";
 }
 
-export type As7341SensorConfigClear = As7341SensorSENSOR_SCHEMA;
-export type As7341SensorConfigF1 = As7341SensorSENSOR_SCHEMA;
-export type As7341SensorConfigF2 = As7341SensorSENSOR_SCHEMA;
-export type As7341SensorConfigF3 = As7341SensorSENSOR_SCHEMA;
-export type As7341SensorConfigF4 = As7341SensorSENSOR_SCHEMA;
-export type As7341SensorConfigF5 = As7341SensorSENSOR_SCHEMA;
-export type As7341SensorConfigF6 = As7341SensorSENSOR_SCHEMA;
-export type As7341SensorConfigF7 = As7341SensorSENSOR_SCHEMA;
-export type As7341SensorConfigF8 = As7341SensorSENSOR_SCHEMA;
+export type As7341SensorConfigClear = As7341SensorSENSORSCHEMA;
+export type As7341SensorConfigF1 = As7341SensorSENSORSCHEMA;
+export type As7341SensorConfigF2 = As7341SensorSENSORSCHEMA;
+export type As7341SensorConfigF3 = As7341SensorSENSORSCHEMA;
+export type As7341SensorConfigF4 = As7341SensorSENSORSCHEMA;
+export type As7341SensorConfigF5 = As7341SensorSENSORSCHEMA;
+export type As7341SensorConfigF6 = As7341SensorSENSORSCHEMA;
+export type As7341SensorConfigF7 = As7341SensorSENSORSCHEMA;
+export type As7341SensorConfigF8 = As7341SensorSENSORSCHEMA;
 export type As7341SensorConfigGain = 'X0.5' | 'X1' | 'X2' | 'X4' | 'X8' | 'X16' | 'X32' | 'X64' | 'X128' | 'X256' | 'X512';
-export type As7341SensorConfigNir = As7341SensorSENSOR_SCHEMA;
+export type As7341SensorConfigNir = As7341SensorSENSORSCHEMA;
 
-export interface As7341SensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface As7341SensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     astep?: number;
     atime?: number;
@@ -48,7 +48,7 @@ export interface As7341SensorConfig extends CoreCOMPONENT_SCHEMA {
     update_interval?: any;
 }
 
-export interface As7341SensorSENSOR_SCHEMA extends Sensor_SENSOR_SCHEMA {
+export interface As7341SensorSENSORSCHEMA extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;

@@ -9,8 +9,8 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Sensor_SENSOR_SCHEMA } from "./sensor.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { SensorSENSORSCHEMA } from "./sensor.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export abstract class UfireEc extends EsphomeComponent {
     componentName: string = "ufire_ec";
@@ -20,7 +20,7 @@ export class UfireEcSensor extends EsphomeComponent<UfireEcSensorConfig> {
     componentName: string = "ufire_ec.sensor";
 }
 
-export interface UfireEcSensorConfigEc extends Sensor_SENSOR_SCHEMA {
+export interface UfireEcSensorConfigEc extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     icon?: any;
@@ -28,14 +28,14 @@ export interface UfireEcSensorConfigEc extends Sensor_SENSOR_SCHEMA {
     unit_of_measurement?: any;
 }
 
-export interface UfireEcSensorConfigTemperature extends Sensor_SENSOR_SCHEMA {
+export interface UfireEcSensorConfigTemperature extends SensorSENSORSCHEMA {
     accuracy_decimals?: any;
     device_class?: any;
     state_class?: any;
     unit_of_measurement?: any;
 }
 
-export interface UfireEcSensorConfig extends CoreCOMPONENT_SCHEMA {
+export interface UfireEcSensorConfig extends CoreCOMPONENTSCHEMA {
     address?: any;
     ec?: UfireEcSensorConfigEc;
     i2c_id?: ID;

@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class Ads1118 extends EsphomeComponent<Ads1118Config> {
     componentName: string = "ads1118";
@@ -17,7 +17,7 @@ export class Ads1118 extends EsphomeComponent<Ads1118Config> {
 
 export type Ads1118ConfigSpiMode = '0' | '1' | '2' | '3' | 'MODE0' | 'MODE1' | 'MODE2' | 'MODE3';
 
-export interface Ads1118Config extends CoreCOMPONENT_SCHEMA {
+export interface Ads1118Config extends CoreCOMPONENTSCHEMA {
     cs_pin: Pin;
     data_rate?: any;
     id?: ID;

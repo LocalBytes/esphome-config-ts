@@ -9,7 +9,7 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { CorePositiveTimePeriod, CoreCOMPONENT_SCHEMA } from "./esphome.js";
+import type { CorePositiveTimePeriod, CoreCOMPONENTSCHEMA } from "./esphome.js";
 
 export class I2c extends EsphomeComponent<I2cConfig> {
     componentName: string = "i2c";
@@ -17,7 +17,7 @@ export class I2c extends EsphomeComponent<I2cConfig> {
 
 export type I2cConfigTimeout = CorePositiveTimePeriod;
 
-export interface I2cConfig extends CoreCOMPONENT_SCHEMA {
+export interface I2cConfig extends CoreCOMPONENTSCHEMA {
     device?: any;
     frequency?: any;
     id?: ID;

@@ -16,7 +16,7 @@ export class Image extends EsphomeComponent<ImageConfig> {
 
 export type ImageConfigByteOrder = 'BIG_ENDIAN' | 'LITTLE_ENDIAN';
 export type ImageConfigDither = 'NONE' | 'FLOYDSTEINBERG';
-export type ImageConfigFile = ImageTYPED_FILE_SCHEMA;
+export type ImageConfigFile = ImageTYPEDFILESCHEMA;
 
 export interface ImageConfig {
     byte_order?: ImageConfigByteOrder;
@@ -30,29 +30,29 @@ export interface ImageConfig {
     type: string;
 }
 
-export type ImageTYPED_FILE_SCHEMA = ImageTYPED_FILE_SCHEMALocal | ImageTYPED_FILE_SCHEMAMdi | ImageTYPED_FILE_SCHEMAMdil | ImageTYPED_FILE_SCHEMAMemory | ImageTYPED_FILE_SCHEMAWeb;
+export type ImageTYPEDFILESCHEMA = ImageTYPEDFILESCHEMALocal | ImageTYPEDFILESCHEMAMdi | ImageTYPEDFILESCHEMAMdil | ImageTYPEDFILESCHEMAMemory | ImageTYPEDFILESCHEMAWeb;
 
-export interface ImageTYPED_FILE_SCHEMALocal {
+export interface ImageTYPEDFILESCHEMALocal {
     source: "local" | "LOCAL";
     path: string;
 }
 
-export interface ImageTYPED_FILE_SCHEMAMdi {
+export interface ImageTYPEDFILESCHEMAMdi {
     source: "mdi" | "MDI";
     icon: string;
 }
 
-export interface ImageTYPED_FILE_SCHEMAMdil {
+export interface ImageTYPEDFILESCHEMAMdil {
     source: "mdil" | "MDIL";
     icon: string;
 }
 
-export interface ImageTYPED_FILE_SCHEMAMemory {
+export interface ImageTYPEDFILESCHEMAMemory {
     source: "memory" | "MEMORY";
     icon: string;
 }
 
-export interface ImageTYPED_FILE_SCHEMAWeb {
+export interface ImageTYPEDFILESCHEMAWeb {
     source: "web" | "WEB";
     url: string;
 }

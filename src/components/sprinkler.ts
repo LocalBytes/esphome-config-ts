@@ -9,21 +9,21 @@
  * © Allport-IT Ltd (t/a Local Bytes)
  **/
 import { type ID, type Pin, EsphomeComponent } from "@/lib/base.js";
-import type { Switch_SWITCH_SCHEMA } from "./switch.js";
-import type { CorePositiveTimePeriodSeconds, CoreCOMPONENT_SCHEMA } from "./esphome.js";
-import type { Number_NUMBER_SCHEMA } from "./number.js";
+import type { SwitchSWITCHSCHEMA } from "./switch.js";
+import type { CorePositiveTimePeriodSeconds, CoreCOMPONENTSCHEMA } from "./esphome.js";
+import type { NumberNUMBERSCHEMA } from "./number.js";
 
 export class Sprinkler extends EsphomeComponent<SprinklerConfig> {
     componentName: string = "sprinkler";
 }
 
-export interface SprinklerConfigAutoAdvanceSwitch extends Switch_SWITCH_SCHEMA {
+export interface SprinklerConfigAutoAdvanceSwitch extends SwitchSWITCHSCHEMA {
     entity_category?: any;
     id?: ID;
     restore_mode?: any;
 }
 
-export interface SprinklerConfigMainSwitch extends Switch_SWITCH_SCHEMA {
+export interface SprinklerConfigMainSwitch extends SwitchSWITCHSCHEMA {
     id?: ID;
 }
 
@@ -37,13 +37,13 @@ export type SprinklerConfigMultiplierNumber = {
         restore_value?: boolean;
         set_action?: object[];
         step?: any;
-    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & NumberNUMBERSCHEMA & CoreCOMPONENTSCHEMA;
 export type SprinklerConfigPumpStartPumpDelay = CorePositiveTimePeriodSeconds;
 export type SprinklerConfigPumpStartValveDelay = CorePositiveTimePeriodSeconds;
 export type SprinklerConfigPumpStopPumpDelay = CorePositiveTimePeriodSeconds;
 export type SprinklerConfigPumpStopValveDelay = CorePositiveTimePeriodSeconds;
 
-export interface SprinklerConfigQueueEnableSwitch extends Switch_SWITCH_SCHEMA {
+export interface SprinklerConfigQueueEnableSwitch extends SwitchSWITCHSCHEMA {
     entity_category?: any;
     id?: ID;
     restore_mode?: any;
@@ -58,15 +58,15 @@ export type SprinklerConfigRepeatNumber = {
         restore_value?: boolean;
         set_action?: object[];
         step?: number;
-    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & NumberNUMBERSCHEMA & CoreCOMPONENTSCHEMA;
 
-export interface SprinklerConfigReverseSwitch extends Switch_SWITCH_SCHEMA {
+export interface SprinklerConfigReverseSwitch extends SwitchSWITCHSCHEMA {
     entity_category?: any;
     id?: ID;
     restore_mode?: any;
 }
 
-export interface SprinklerConfigStandbySwitch extends Switch_SWITCH_SCHEMA {
+export interface SprinklerConfigStandbySwitch extends SwitchSWITCHSCHEMA {
     entity_category?: any;
     id?: ID;
     restore_mode?: any;
@@ -75,7 +75,7 @@ export interface SprinklerConfigStandbySwitch extends Switch_SWITCH_SCHEMA {
 export type SprinklerConfigValveOpenDelay = CorePositiveTimePeriodSeconds;
 export type SprinklerConfigValveOverlap = CorePositiveTimePeriodSeconds;
 
-export interface SprinklerConfigValvesEnableSwitch extends Switch_SWITCH_SCHEMA {
+export interface SprinklerConfigValvesEnableSwitch extends SwitchSWITCHSCHEMA {
     entity_category?: any;
     id?: ID;
     restore_mode?: any;
@@ -93,9 +93,9 @@ export type SprinklerConfigValvesRunDurationNumber = {
         set_action?: object[];
         step?: number;
         unit_of_measurement: SprinklerConfigValvesRunDurationNumberUnitOfMeasurement;
-    } & Number_NUMBER_SCHEMA & CoreCOMPONENT_SCHEMA;
+    } & NumberNUMBERSCHEMA & CoreCOMPONENTSCHEMA;
 
-export interface SprinklerConfigValvesValveSwitch extends Switch_SWITCH_SCHEMA {
+export interface SprinklerConfigValvesValveSwitch extends SwitchSWITCHSCHEMA {
     id?: ID;
 }
 
@@ -108,7 +108,7 @@ export interface SprinklerConfigValves {
     valve_switch_id?: ID;
 }
 
-export interface SprinklerConfig extends CoreCOMPONENT_SCHEMA {
+export interface SprinklerConfig extends CoreCOMPONENTSCHEMA {
     auto_advance_switch?: SprinklerConfigAutoAdvanceSwitch;
     id?: ID;
     main_switch?: SprinklerConfigMainSwitch;
@@ -131,6 +131,6 @@ export interface SprinklerConfig extends CoreCOMPONENT_SCHEMA {
     valves: SprinklerConfigValves[];
 }
 
-export interface SprinklerSPRINKLER_ACTION_SCHEMA {
+export interface SprinklerSPRINKLERACTIONSCHEMA {
     id: ID;
 }

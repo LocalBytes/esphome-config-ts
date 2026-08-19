@@ -2,14 +2,17 @@
   "name": "esphome-config-ts",
   "version": "0.2.0",
   "type": "module",
-  "esphome-config-ts": {
-    "version": "2026.7"
+  "scripts": {
+    "dev:watch": "tsdown --watch",
+    "prepare": "tsdown ./src/generator/generate.ts && node ./dist/generate.mjs && tsdown"
   },
   "devDependencies": {
-    "@tsconfig/recommended": "^1.0.13",
+    "@tsconfig/node-lts": "^24.0.1",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^25.9.5",
-    "ts-morph": "^28.0.0",
+    "@types/unzipper": "^0.10.11",
+    "oxfmt": "^0.63.0",
+    "tsdown": "^0.22.14",
     "typescript": "^7.0.2"
   },
   "dependencies": {
@@ -17,5 +20,12 @@
     "unzipper": "^0.12.5",
     "zod": "^4.4.3"
   },
-  "packageManager": "pnpm@12.0.0-rc.6"
+  "packageManager": "pnpm@12.0.0-rc.6",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./components": "./dist/components.mjs",
+    "./generate": "./dist/generate.mjs",
+    "./yaml": "./dist/yaml.mjs",
+    "./package.json": "./package.json"
+  }
 }

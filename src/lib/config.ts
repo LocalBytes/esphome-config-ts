@@ -1,13 +1,13 @@
 import {BaseComponent, type SynthComponent} from "@/lib/base.js";
 
-import espHomeYaml from "@/yaml/index.js";
+import espHomeYaml from "@/yaml/esphome-yaml.js";
 import {type ArrayMaybe, ensureArray} from "@/lib/utils.js";
-import {Api, CaptivePortal, Logger, Ota, WebServer, Wifi} from "@/components/index.js";
+import {ApiPlatform, CaptivePortalPlatform, EsphomeOta, LoggerPlatform, WebServerPlatform, WifiPlatform} from "@/components/index.js";
 
 export class Configuration {
     components: BaseComponent[] = [];
 
-    updateComponent(component: ArrayMaybe<BaseComponent>) {
+    updateComponent(component: ArrayMaybe<BaseComponent>): this {
         let components = ensureArray(component);
 
         components.forEach(component => {
@@ -22,22 +22,19 @@ export class Configuration {
         return this;
     }
 
-    addComponent(component: ArrayMaybe<BaseComponent>) {
+    addComponent(component: ArrayMaybe<BaseComponent>): this {
         this.components.push(...(ensureArray(component)));
         return this;
     }
 
-    addDefaults() {
+    addDefaults(): this {
         return this
-            .addComponent(new Wifi({ap: {}}))
-            .addComponent(new CaptivePortal({}))
-            .addComponent(new Logger({logs: {}}))
-            .addComponent(new WebServer({}))
-            .addComponent(new Api({}))
-            // @ts-ignore Ota is abstract post-schema-update; needs a concrete platform subclass.
-            .addComponent(new (Ota as any)({
-                platform: "esphome",
-            }));
+            .addComponent(new WifiPlatform({ap: {}}))
+            .addComponent(new CaptivePortalPlatform({}))
+            .addComponent(new LoggerPlatform({logs: {}}))
+            .addComponent(new WebServerPlatform({}))
+            .addComponent(new ApiPlatform({}))
+            .addComponent(new EsphomeOta({}));
     }
 
     synth(): object {

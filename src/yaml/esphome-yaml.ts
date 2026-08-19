@@ -1,8 +1,6 @@
 import * as yaml from "js-yaml";
 import type { TagDefinition } from "js-yaml";
-import { extendYamlType } from "./extend.js";
-import { lambdaYamlType } from "./lambda.js";
-import { secretYamlType } from "./secret.js";
+import { extendYamlType, lambdaYamlType, secretYamlType } from "./scalars.js";
 
 export const yamlTypes: readonly TagDefinition[] = [
     extendYamlType,

@@ -136,7 +136,7 @@ function synthesizeComponent(key: string, config: any): SynthesizedFile | undefi
   const source =`
   import { z } from "zod";
   import { EsphomeComponent, type TimePeriod, TimePeriodSchema, type Pin, PinSchema } from "@/lib/base.js";
-  import { Lambda } from "@/yaml/lambda.js";
+  import { Lambda } from "@/yaml/scalars.js";
 
   export type ${configType} = ${field.ts};
   export const ${schemaConst}: z.ZodType<${configType}> = ${field.zod};

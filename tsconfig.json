@@ -5,6 +5,9 @@
     "isolatedDeclarations": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": [
+      "./dist/global.d.ts"
+    ]
   }
 }

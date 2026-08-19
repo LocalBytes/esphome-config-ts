@@ -1,4 +1,5 @@
-import * as yaml from "js-yaml";
+import { defineScalarTag } from "js-yaml";
+import type { ScalarTagDefinition } from "js-yaml";
 
 export class Secret {
     content: string;
@@ -8,11 +9,10 @@ export class Secret {
     }
 }
 
-export const secret = (content: string) => new Secret(content);
+export const secret = (content: string): Secret => new Secret(content);
 
-export const secretYamlType = new yaml.Type("!secret", {
-    kind: "scalar",
-    construct: (data: string) => secret(data),
-    represent: (data: object) => (data as unknown as Secret).content,
-    instanceOf: Secret,
-})
+export const secretYamlType: ScalarTagDefinition<Secret> = defineScalarTag("!secret", {
+    resolve: (source) => secret(source),
+    identify: (data) => data instanceof Secret,
+    represent: (data) => (data as Secret).content,
+});

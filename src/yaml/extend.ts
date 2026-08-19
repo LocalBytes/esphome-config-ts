@@ -1,4 +1,5 @@
-import * as yaml from "js-yaml";
+import { defineScalarTag } from "js-yaml";
+import type { ScalarTagDefinition } from "js-yaml";
 
 export class Extend {
     content: string;
@@ -8,11 +9,10 @@ export class Extend {
     }
 }
 
-export const extend = (content: string) => new Extend(content);
+export const extend = (content: string): Extend => new Extend(content);
 
-export const extendYamlType = new yaml.Type("!extend", {
-    kind: "scalar",
-    construct: (data: string) => extend(data),
-    represent: (data: object) => (data as unknown as Extend).content,
-    instanceOf: Extend,
-})
+export const extendYamlType: ScalarTagDefinition<Extend> = defineScalarTag("!extend", {
+    resolve: (source) => extend(source),
+    identify: (data) => data instanceof Extend,
+    represent: (data) => (data as Extend).content,
+});

@@ -2,6 +2,9 @@
   "name": "esphome-config-ts",
   "version": "0.2.1-next",
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": "./dist/index.mjs",
     "./components": "./dist/components.mjs",

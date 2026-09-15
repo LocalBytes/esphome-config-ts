@@ -1,39 +1,24 @@
-// noinspection ES6PreferShortImport
-
-import { Configuration, VirtualComponent } from "../dist/lib/index.js";
-import {
-  Api,
-  CaptivePortal,
-  Esp32,
-  Esphome,
-  Logger,
-  MatrixKeypad,
-  Ota,
-  WebServer,
-  Wifi,
-} from "../dist/components/index.js";
-
-class Button extends VirtualComponent {
-  synth() {
-    return [];
-  }
-}
+import { Configuration } from "@/lib/config.ts";
+import { EsphomePlatform } from "@/components/EsphomePlatform.ts";
+import { WifiPlatform } from "@/components/WifiPlatform.ts";
+import { CaptivePortalPlatform } from "@/components/CaptivePortalPlatform.ts";
+import { LoggerPlatform } from "@/components/LoggerPlatform.ts";
+import { MatrixKeypadPlatform } from "@/components/MatrixKeypadPlatform.ts";
+import { ApiPlatform } from "@/components/ApiPlatform.ts";
+import { WebServerPlatform } from "@/components/WebServerPlatform.ts";
+import { EsphomeOta } from "@/components/EsphomeOta.ts";
+import { Esp32Platform } from "@/components/Esp32Platform.ts";
 
 let config = new Configuration();
 
-//TODO: Figure out why this is expecting build_path
-// @ts-ignore
 config.addComponent(
-  new Esphome({
+  new EsphomePlatform({
     name: "macropad",
-    platformio_options: {
-      "board_build.flash_mode": "dio",
-    },
   }),
 );
 
 config.addComponent(
-  new Esp32({
+  new Esp32Platform({
     board: "esp32-c3-devkitm-1",
     framework: {
       type: "esp-idf",
@@ -43,26 +28,26 @@ config.addComponent(
 );
 
 config.addComponent(
-  new Wifi({
+  new WifiPlatform({
     id: "wifi",
     ap: { ssid: "LocalBytes MacroPad" },
   }),
 );
-config.addComponent(new CaptivePortal({ id: "captive_portal" }));
+config.addComponent(new CaptivePortalPlatform({ id: "captive_portal" }));
 
 config.addComponent(
-  new Logger({
+  new LoggerPlatform({
     id: "logger",
     logs: {},
   }),
 );
 
-config.addComponent(new WebServer({ id: "webserver" }));
-config.addComponent(new Api({ id: "api" }));
-config.addComponent(new Ota({ id: "ota" }));
+config.addComponent(new WebServerPlatform({}));
+config.addComponent(new ApiPlatform({}));
+config.addComponent(new EsphomeOta({}));
 
 config.addComponent(
-  new MatrixKeypad({
+  new MatrixKeypadPlatform({
     id: "keypad",
     keys: "ABCDEFGHIJKLMNOPQRSTUVWXY",
     columns: [21, 20, 3, 7].map((pin) => ({ pin: `GPIO${pin}` })),

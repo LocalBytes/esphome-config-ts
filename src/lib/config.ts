@@ -1,14 +1,14 @@
-import {BaseComponent, type SynthComponent} from "@/lib/base.js";
+import { BaseComponent, type SynthComponent } from "@/lib/base.js";
 
-import {dump as dumpEsphomeYaml} from "@/yaml/esphome-yaml.js";
-import {type ArrayMaybe, ensureArray} from "@/lib/utils.js";
+import { dump as dumpEsphomeYaml } from "@/yaml/esphome-yaml.js";
+import { type ArrayMaybe, ensureArray } from "@/lib/utils.js";
 // Imported directly, not via the "@/components" barrel - see the same note in lib/base.ts.
-import {ApiPlatform} from "@/components/ApiPlatform.js";
-import {CaptivePortalPlatform} from "@/components/CaptivePortalPlatform.js";
-import {EsphomeOta} from "@/components/EsphomeOta.js";
-import {LoggerPlatform} from "@/components/LoggerPlatform.js";
-import {WebServerPlatform} from "@/components/WebServerPlatform.js";
-import {WifiPlatform} from "@/components/WifiPlatform.js";
+import { ApiPlatform } from "@/components/ApiPlatform.js";
+import { CaptivePortalPlatform } from "@/components/CaptivePortalPlatform.js";
+import { EsphomeOta } from "@/components/EsphomeOta.js";
+import { LoggerPlatform } from "@/components/LoggerPlatform.js";
+import { WebServerPlatform } from "@/components/WebServerPlatform.js";
+import { WifiPlatform } from "@/components/WifiPlatform.js";
 
 // Domains with no "platform" key (so not already forced into array form by the reduce below)
 // that are still list-typed in ESPHome even with a single entry - e.g. `script:`/`globals:`
@@ -39,9 +39,9 @@ export class Configuration {
   }
 
   addDefaults(): this {
-    return this.addComponent(new WifiPlatform({ap: {}}))
+    return this.addComponent(new WifiPlatform({ ap: {} }))
       .addComponent(new CaptivePortalPlatform({}))
-      .addComponent(new LoggerPlatform({logs: {}}))
+      .addComponent(new LoggerPlatform({ logs: {} }))
       .addComponent(new WebServerPlatform({}))
       .addComponent(new ApiPlatform({}))
       .addComponent(new EsphomeOta({}));
@@ -50,7 +50,7 @@ export class Configuration {
   synth(): object {
     return this.synthRecursive(this.components).reduce(
       (acc, cur) => {
-        let {_domain: domain, ...rest} = cur;
+        let { _domain: domain, ...rest } = cur;
 
         if (acc[domain] != null && !Array.isArray(acc[domain])) {
           acc[domain] = [acc[domain], rest];

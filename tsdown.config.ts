@@ -1,4 +1,4 @@
-import { defineConfig } from "tsdown/config";
+import { defineConfig, type UserConfig } from "tsdown/config";
 import { barrelPlugin } from "./src/generator/tsdown-plugin-barrel.ts";
 
 export default defineConfig({
@@ -13,4 +13,4 @@ export default defineConfig({
       components: "src/components",
     }),
   ],
-})
+} satisfies UserConfig);

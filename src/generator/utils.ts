@@ -1,6 +1,7 @@
-export const toCamel = (s: string) => s.replace(/[-_.]+([a-zA-Z0-9])/g, g => g[g.length - 1].toUpperCase());
-export const ucfirst = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
-export const toUpperCamel = (s: string) => ucfirst(toCamel(s));
+export const toCamel = (s: string): string =>
+  s.replace(/[-_.]+([a-zA-Z0-9])/g, (g) => g[g.length - 1].toUpperCase());
+export const ucfirst = (s: string): string => s.charAt(0).toUpperCase() + s.slice(1);
+export const toUpperCamel = (s: string): string => ucfirst(toCamel(s));
 
 export function nameForKey(key: string): string {
   if (key.includes(".")) {

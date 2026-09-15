@@ -15,23 +15,13 @@ const esphomeYamlSortKeys = (a: any, b: any): number => {
     return lookup(a) - lookup(b);
 }
 
-const esphomeYamlSchema: yaml.Schema = yaml.CORE_SCHEMA.withTags(yamlTypes);
-const esphomeYamlDump = (data: any, opts?: yaml.DumpOptions): string => yaml.dump(data, {
-    schema: esphomeYamlSchema,
+export const schema: yaml.Schema = yaml.CORE_SCHEMA.withTags(yamlTypes);
+
+export const dump = (data: any, opts?: yaml.DumpOptions): string => yaml.dump(data, {
+    schema,
     sortKeys: esphomeYamlSortKeys,
     lineWidth: -1,
     ...opts
 });
-const esphomeYamlParse = (data: string): unknown => yaml.load(data, {schema: esphomeYamlSchema})
 
-const espHomeYaml: {
-    schema: yaml.Schema;
-    dump: (data: any, opts?: yaml.DumpOptions) => string;
-    parse: (data: string) => unknown;
-} = {
-    schema: esphomeYamlSchema,
-    dump: esphomeYamlDump,
-    parse: esphomeYamlParse
-}
-
-export default espHomeYaml;
+export const parse = (data: string): unknown => yaml.load(data, {schema});

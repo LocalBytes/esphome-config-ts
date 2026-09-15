@@ -1,6 +1,6 @@
 import {BaseComponent, type SynthComponent} from "@/lib/base.js";
 
-import espHomeYaml from "@/yaml/esphome-yaml.js";
+import {dump as dumpEsphomeYaml} from "@/yaml/esphome-yaml.js";
 import {type ArrayMaybe, ensureArray} from "@/lib/utils.js";
 import {ApiPlatform, CaptivePortalPlatform, EsphomeOta, LoggerPlatform, WebServerPlatform, WifiPlatform} from "@/components/index.js";
 
@@ -63,7 +63,7 @@ export class Configuration {
     }
 
     synthYaml(): string {
-        return espHomeYaml.dump(this.synth());
+        return dumpEsphomeYaml(this.synth());
     }
 
     private synthRecursive(components: BaseComponent[]): Array<SynthComponent> {

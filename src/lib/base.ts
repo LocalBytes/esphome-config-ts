@@ -1,6 +1,11 @@
 import {z} from "zod";
 import type {Configuration} from "@/lib/config.js";
-import {type Esp32Pin, Esp32PinSchema, type Esp8266Pin, Esp8266PinSchema, type Rp2040Pin, Rp2040PinSchema, type HostPin, HostPinSchema} from "@/components/index.js";
+// Imported directly, not via the "@/components" barrel - that barrel imports EsphomeComponent
+// (below), which would make this a real import cycle with all generated components.
+import {type Esp32Pin, Esp32PinSchema} from "@/components/Esp32Pin.js";
+import {type Esp8266Pin, Esp8266PinSchema} from "@/components/Esp8266Pin.js";
+import {type Rp2040Pin, Rp2040PinSchema} from "@/components/Rp2040Pin.js";
+import {type HostPin, HostPinSchema} from "@/components/HostPin.js";
 
 export type ID = string;
 

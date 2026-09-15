@@ -2,7 +2,18 @@ import {BaseComponent, type SynthComponent} from "@/lib/base.js";
 
 import {dump as dumpEsphomeYaml} from "@/yaml/esphome-yaml.js";
 import {type ArrayMaybe, ensureArray} from "@/lib/utils.js";
-import {ApiPlatform, CaptivePortalPlatform, EsphomeOta, LoggerPlatform, WebServerPlatform, WifiPlatform} from "@/components/index.js";
+// Imported directly, not via the "@/components" barrel - see the same note in lib/base.ts.
+import {ApiPlatform} from "@/components/ApiPlatform.js";
+import {CaptivePortalPlatform} from "@/components/CaptivePortalPlatform.js";
+import {EsphomeOta} from "@/components/EsphomeOta.js";
+import {LoggerPlatform} from "@/components/LoggerPlatform.js";
+import {WebServerPlatform} from "@/components/WebServerPlatform.js";
+import {WifiPlatform} from "@/components/WifiPlatform.js";
+
+// Domains with no "platform" key (so not already forced into array form by the reduce below)
+// that are still list-typed in ESPHome even with a single entry - e.g. `script:`/`globals:`
+// always take a list, unlike `esphome:`/`wifi:`/etc. which are genuinely single mappings.
+const LIST_DOMAINS = new Set(["script", "globals", "interval"]);
 
 export class Configuration {
     components: BaseComponent[] = [];
@@ -48,10 +59,9 @@ export class Configuration {
                     return acc;
                 }
 
-                if (!rest.platform) {
-                    // Core services don't have multiple instances, and expect a mapping.
-                    // These are identifiable based on the lack of a platform.
-                    // However, some do (like, script
+                if (!rest.platform && !LIST_DOMAINS.has(domain)) {
+                    // Core services (esphome, wifi, logger, ...) don't have multiple instances
+                    // and expect a mapping, not a list.
                     acc[domain] = rest;
                     return acc;
                 }

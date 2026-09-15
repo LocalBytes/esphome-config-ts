@@ -1,7 +1,22 @@
+import {z} from "zod";
 import type {Configuration} from "@/lib/config.js";
+// Imported directly, not via the "@/components" barrel - that barrel imports EsphomeComponent
+// (below), which would make this a real import cycle with all generated components.
+import {type Esp32Pin, Esp32PinSchema} from "@/components/Esp32Pin.js";
+import {type Esp8266Pin, Esp8266PinSchema} from "@/components/Esp8266Pin.js";
+import {type Rp2040Pin, Rp2040PinSchema} from "@/components/Rp2040Pin.js";
+import {type HostPin, HostPinSchema} from "@/components/HostPin.js";
 
 export type ID = string;
-export type Pin = string;
+
+export type Pin = string | number | Esp32Pin | Esp8266Pin | Rp2040Pin | HostPin;
+export const PinSchema: z.ZodType<Pin> = z.union([z.string(), z.number(), Esp32PinSchema, Esp8266PinSchema, Rp2040PinSchema, HostPinSchema]);
+
+export type TimePeriod<TObj = unknown> = string | TObj;
+
+export function TimePeriodSchema<T extends z.ZodTypeAny>(objSchema: T): z.ZodType<TimePeriod<z.infer<T>>> {
+  return z.union([z.string(), objSchema]);
+}
 
 export type ComponentName = `${string}.${string}`;
 
@@ -16,7 +31,7 @@ export abstract class BaseComponent<TConfig extends Object = {}> {
         this.config = config;
     }
 
-    addTo(config: Configuration, update: boolean = false) {
+    addTo(config: Configuration, update: boolean = false): this {
         config[update ? "updateComponent" : "addComponent"](this);
         return this;
     }

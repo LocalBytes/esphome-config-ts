@@ -5,6 +5,7 @@ export default defineConfig({
   dts: true,
   entry: { generate: "./src/generator/generate.ts" },
   exports: true,
+  sourcemap: true,
   plugins: [
     barrelPlugin({
       lib: "src/lib",

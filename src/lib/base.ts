@@ -30,9 +30,9 @@ export function TimePeriodSchema<T extends z.ZodTypeAny>(
 export type ComponentName = `${string}.${string}`;
 
 export type SynthPreamble = { _domain: string; platform?: string };
-export type SynthComponent<TConfig extends Object = {}> = SynthPreamble & TConfig;
+export type SynthComponent<TConfig extends object = {}> = SynthPreamble & TConfig;
 
-export abstract class BaseComponent<TConfig extends Object = {}> {
+export abstract class BaseComponent<TConfig extends object = {}> {
   config: TConfig;
   abstract componentName: ComponentName | string;
 
@@ -48,7 +48,7 @@ export abstract class BaseComponent<TConfig extends Object = {}> {
   abstract synth(): Array<SynthComponent | BaseComponent>;
 }
 
-export abstract class EsphomeComponent<TConfig extends Object = {}> extends BaseComponent<TConfig> {
+export abstract class EsphomeComponent<TConfig extends object = {}> extends BaseComponent<TConfig> {
   constructor(config: TConfig) {
     super(config);
   }
@@ -70,7 +70,7 @@ export abstract class EsphomeComponent<TConfig extends Object = {}> extends Base
   }
 }
 
-export abstract class VirtualComponent<TConfig extends Object = {}> extends BaseComponent<TConfig> {
+export abstract class VirtualComponent<TConfig extends object = {}> extends BaseComponent<TConfig> {
   componentName = "virtual";
 
   abstract synth(): Array<SynthComponent | BaseComponent>;

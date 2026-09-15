@@ -13,7 +13,9 @@
     "dev:watch": "tsdown --watch",
     "prepare": "tsdown ./src/generator/generate.ts && node ./dist/generate.mjs && tsdown",
     "fmt": "oxfmt .",
-    "fmt:check": "oxfmt --check ."
+    "fmt:check": "oxfmt --check .",
+    "lint": "oxlint . && oxfmt --check .",
+    "lint:fix": "oxlint --fix . && oxfmt ."
   },
   "dependencies": {
     "js-yaml": "^5.3.0",
@@ -26,6 +28,7 @@
     "@types/node": "^25.9.5",
     "@types/unzipper": "^0.10.11",
     "oxfmt": "^0.63.0",
+    "oxlint": "^1.83.0",
     "tsdown": "^0.22.14",
     "typescript": "^7.0.2"
   },

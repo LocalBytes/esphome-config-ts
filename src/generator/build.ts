@@ -1,4 +1,4 @@
-import {defaultExpr, filePathForKey, nameForKey, toUpperCamel} from "@/generator/utils.js";
+import { defaultExpr, filePathForKey, nameForKey, toUpperCamel } from "@/generator/utils.js";
 
 export type SynthesizedFile = { path: string; source: string; key: string; name: string };
 
@@ -8,25 +8,32 @@ export function setRegistry(files: Record<string, any>): void {
   registry = files;
 }
 
-function resolveExtendsRef(ref: string): { config_vars?: Record<string, any>; extends?: string[] } | undefined {
+function resolveExtendsRef(
+  ref: string,
+): { config_vars?: Record<string, any>; extends?: string[] } | undefined {
   const dot = ref.indexOf(".");
   if (dot === -1) return undefined;
   const namespace = ref.slice(0, dot);
   const key = ref.slice(dot + 1);
 
-  const schemas = namespace === "core"
-    ? registry.esphome?.core?.schemas
-    : registry[namespace]?.[namespace]?.schemas;
+  const schemas =
+    namespace === "core"
+      ? registry.esphome?.core?.schemas
+      : registry[namespace]?.[namespace]?.schemas;
 
   return schemas?.[key]?.schema;
 }
 
 let resolvedRefs: Set<string> = new Set();
 
-function resolveConfigVars(schema: {
-  config_vars?: Record<string, any>;
-  extends?: string[]
-} | undefined): Record<string, any> {
+function resolveConfigVars(
+  schema:
+    | {
+        config_vars?: Record<string, any>;
+        extends?: string[];
+      }
+    | undefined,
+): Record<string, any> {
   const merged: Record<string, any> = {};
 
   for (const ref of schema?.extends ?? []) {
@@ -40,7 +47,8 @@ function resolveConfigVars(schema: {
   return merged;
 }
 
-const TIME_PERIOD_REF = /^core\.(positive_)?time_period(_microseconds|_milliseconds|_minutes|_nanoseconds|_seconds)?$/;
+const TIME_PERIOD_REF =
+  /^core\.(positive_)?time_period(_microseconds|_milliseconds|_minutes|_nanoseconds|_seconds)?$/;
 
 type FieldType = { ts: string; zod: string };
 
@@ -48,8 +56,8 @@ type FieldType = { ts: string; zod: string };
 // config_vars entry literally named "string".
 function dictValueType(cv: any): FieldType {
   const valueCv = Object.values(cv.schema?.config_vars ?? {})[0] ?? {};
-  const value = typeForConfigVar({...valueCv, key: "Required", default: undefined});
-  return {ts: `Record<string, ${value.ts}>`, zod: `z.record(z.string(), ${value.zod})`};
+  const value = typeForConfigVar({ ...valueCv, key: "Required", default: undefined });
+  return { ts: `Record<string, ${value.ts}>`, zod: `z.record(z.string(), ${value.zod})` };
 }
 
 function typedUnionType(cv: any): FieldType {
@@ -64,58 +72,64 @@ function typedUnionType(cv: any): FieldType {
   });
   return variants.length
     ? {
-      ts: variants.map(v => v.ts).join(" | "),
-      zod: `z.discriminatedUnion(${JSON.stringify(cv.typed_key)}, [${variants.map(v => v.zod).join(", ")}])`,
-    }
-    : {ts: "any", zod: "z.any()"};
+        ts: variants.map((v) => v.ts).join(" | "),
+        zod: `z.discriminatedUnion(${JSON.stringify(cv.typed_key)}, [${variants.map((v) => v.zod).join(", ")}])`,
+      }
+    : { ts: "any", zod: "z.any()" };
 }
 
 function typeForConfigVar(cv: any): FieldType {
   let type: FieldType = (() => {
     switch (cv?.type) {
       case "string":
-        return {ts: "string", zod: "z.string()"};
+        return { ts: "string", zod: "z.string()" };
       case "integer":
-        return {ts: "number", zod: "z.number().int()"};
+        return { ts: "number", zod: "z.number().int()" };
       case "boolean":
-        return {ts: "boolean", zod: "z.boolean()"};
+        return { ts: "boolean", zod: "z.boolean()" };
       case "enum": {
         const values = Object.keys(cv.values ?? {});
         return values.length
-          ? {ts: values.map(v => JSON.stringify(v)).join(" | "), zod: `z.enum(${JSON.stringify(values)})`}
-          : {ts: "string", zod: "z.string()"};
+          ? {
+              ts: values.map((v) => JSON.stringify(v)).join(" | "),
+              zod: `z.enum(${JSON.stringify(values)})`,
+            }
+          : { ts: "string", zod: "z.string()" };
       }
       case "pin":
         return cv.schema?.config_vars
           ? objectTypeFor(resolveConfigVars(cv.schema))
-          : {ts: "Pin", zod: "PinSchema"};
+          : { ts: "Pin", zod: "PinSchema" };
       case "schema": {
         if (cv.key_type) return dictValueType(cv);
         const obj = objectTypeFor(resolveConfigVars(cv.schema));
         return (cv.schema?.extends ?? []).some((ref: string) => TIME_PERIOD_REF.test(ref))
-          ? {ts: `TimePeriod<${obj.ts}>`, zod: `TimePeriodSchema(${obj.zod})`}
+          ? { ts: `TimePeriod<${obj.ts}>`, zod: `TimePeriodSchema(${obj.zod})` }
           : obj;
       }
       case "typed":
         return typedUnionType(cv);
       case "trigger":
       case "registry":
-        return {ts: "Record<string, any>[]", zod: "z.array(z.record(z.string(), z.any()))"};
+        return { ts: "Record<string, any>[]", zod: "z.array(z.record(z.string(), z.any()))" };
       case "use_id":
-        return {ts: "string", zod: "z.string()"};
+        return { ts: "string", zod: "z.string()" };
       default:
-        return {ts: "any", zod: "z.any()"};
+        return { ts: "any", zod: "z.any()" };
     }
   })();
 
   if (cv?.templatable) {
-    type = {ts: `(${type.ts} | Lambda)`, zod: `z.union([${type.zod}, z.instanceof(Lambda)])`};
+    type = { ts: `(${type.ts} | Lambda)`, zod: `z.union([${type.zod}, z.instanceof(Lambda)])` };
   }
   if (cv?.is_list && cv?.type !== "trigger" && cv?.type !== "registry") {
-    type = {ts: `${type.ts}[]`, zod: `z.array(${type.zod})`};
+    type = { ts: `${type.ts}[]`, zod: `z.array(${type.zod})` };
   }
 
-  type = {ts: type.ts, zod: type.zod + defaultExpr(cv?.default) + (cv?.key !== "Required" ? ".optional()" : "")};
+  type = {
+    ts: type.ts,
+    zod: type.zod + defaultExpr(cv?.default) + (cv?.key !== "Required" ? ".optional()" : ""),
+  };
 
   return type;
 }
@@ -124,18 +138,22 @@ function objectTypeFor(configVars: Record<string, any>): FieldType {
   const fields = Object.entries(configVars).map(([name, cv]) => {
     const field = typeForConfigVar(cv);
     const optional = cv?.key !== "Required" ? "?" : "";
-    return {ts: `  ${JSON.stringify(name)}${optional}: ${field.ts};`, zod: `  ${JSON.stringify(name)}: ${field.zod},`};
+    return {
+      ts: `  ${JSON.stringify(name)}${optional}: ${field.ts};`,
+      zod: `  ${JSON.stringify(name)}: ${field.zod},`,
+    };
   });
 
   return {
-    ts: `{\n${fields.map(f => f.ts).join("\n")}\n}`,
-    zod: `z.object({\n${fields.map(f => f.zod).join("\n")}\n})`,
+    ts: `{\n${fields.map((f) => f.ts).join("\n")}\n}`,
+    zod: `z.object({\n${fields.map((f) => f.zod).join("\n")}\n})`,
   };
 }
 
 function synthesizeComponent(key: string, config: any): SynthesizedFile | undefined {
   const configSchema = config?.schemas?.CONFIG_SCHEMA;
-  if (!configSchema || (configSchema.type !== "schema" && configSchema.type !== "typed")) return undefined;
+  if (!configSchema || (configSchema.type !== "schema" && configSchema.type !== "typed"))
+    return undefined;
 
   const name = nameForKey(key);
   const schemaConst = `${name}ConfigSchema`;
@@ -148,7 +166,7 @@ function synthesizeComponent(key: string, config: any): SynthesizedFile | undefi
   })();
 
   // language=TypeScript
-  const source =`
+  const source = `
   import { z } from "zod";
   import { EsphomeComponent, type TimePeriod, TimePeriodSchema, type Pin, PinSchema } from "@/lib/base.js";
   import { Lambda } from "@/yaml/scalars.js";
@@ -165,7 +183,7 @@ function synthesizeComponent(key: string, config: any): SynthesizedFile | undefi
   }
   `;
 
-  return {path: filePathForKey(key), source, key, name};
+  return { path: filePathForKey(key), source, key, name };
 }
 
 export function synthesizeFile(data: Record<string, any>): SynthesizedFile[] {
@@ -189,5 +207,5 @@ export type ${name} = ${field.ts};
 export const ${schemaConst}: z.ZodType<${name}> = ${field.zod};
 `;
 
-  return {path: `${name}.ts`, source, key: `${platform}.pin`, name};
+  return { path: `${name}.ts`, source, key: `${platform}.pin`, name };
 }

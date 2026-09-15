@@ -16,71 +16,71 @@ import {WifiPlatform} from "@/components/WifiPlatform.js";
 const LIST_DOMAINS = new Set(["script", "globals", "interval"]);
 
 export class Configuration {
-    components: BaseComponent[] = [];
+  components: BaseComponent[] = [];
 
-    updateComponent(component: ArrayMaybe<BaseComponent>): this {
-        let components = ensureArray(component);
+  updateComponent(component: ArrayMaybe<BaseComponent>): this {
+    let components = ensureArray(component);
 
-        components.forEach(component => {
-            let index = this.components.findIndex(c => c.componentName === component.componentName);
-            if (index !== -1) {
-                this.components[index] = component;
-            } else {
-                this.addComponent(component);
-            }
-        });
+    components.forEach((component) => {
+      let index = this.components.findIndex((c) => c.componentName === component.componentName);
+      if (index !== -1) {
+        this.components[index] = component;
+      } else {
+        this.addComponent(component);
+      }
+    });
 
-        return this;
-    }
+    return this;
+  }
 
-    addComponent(component: ArrayMaybe<BaseComponent>): this {
-        this.components.push(...(ensureArray(component)));
-        return this;
-    }
+  addComponent(component: ArrayMaybe<BaseComponent>): this {
+    this.components.push(...ensureArray(component));
+    return this;
+  }
 
-    addDefaults(): this {
-        return this
-            .addComponent(new WifiPlatform({ap: {}}))
-            .addComponent(new CaptivePortalPlatform({}))
-            .addComponent(new LoggerPlatform({logs: {}}))
-            .addComponent(new WebServerPlatform({}))
-            .addComponent(new ApiPlatform({}))
-            .addComponent(new EsphomeOta({}));
-    }
+  addDefaults(): this {
+    return this.addComponent(new WifiPlatform({ap: {}}))
+      .addComponent(new CaptivePortalPlatform({}))
+      .addComponent(new LoggerPlatform({logs: {}}))
+      .addComponent(new WebServerPlatform({}))
+      .addComponent(new ApiPlatform({}))
+      .addComponent(new EsphomeOta({}));
+  }
 
-    synth(): object {
-        return this
-            .synthRecursive(this.components)
-            .reduce((acc, cur) => {
-                let {_domain: domain, ...rest} = cur;
+  synth(): object {
+    return this.synthRecursive(this.components).reduce(
+      (acc, cur) => {
+        let {_domain: domain, ...rest} = cur;
 
-                if (acc[domain] != null && !Array.isArray(acc[domain])) {
-                    acc[domain] = [acc[domain], rest];
-                    return acc;
-                }
+        if (acc[domain] != null && !Array.isArray(acc[domain])) {
+          acc[domain] = [acc[domain], rest];
+          return acc;
+        }
 
-                if (!rest.platform && !LIST_DOMAINS.has(domain)) {
-                    // Core services (esphome, wifi, logger, ...) don't have multiple instances
-                    // and expect a mapping, not a list.
-                    acc[domain] = rest;
-                    return acc;
-                }
+        if (!rest.platform && !LIST_DOMAINS.has(domain)) {
+          // Core services (esphome, wifi, logger, ...) don't have multiple instances
+          // and expect a mapping, not a list.
+          acc[domain] = rest;
+          return acc;
+        }
 
-                acc[domain] ??= [];
-                acc[domain].push(rest);
-                return acc;
-            }, {} as Record<string, any>);
-    }
+        acc[domain] ??= [];
+        acc[domain].push(rest);
+        return acc;
+      },
+      {} as Record<string, any>,
+    );
+  }
 
-    synthYaml(): string {
-        return dumpEsphomeYaml(this.synth());
-    }
+  synthYaml(): string {
+    return dumpEsphomeYaml(this.synth());
+  }
 
-    private synthRecursive(components: BaseComponent[]): Array<SynthComponent> {
-        return components.flatMap(component => {
-            return component.synth().flatMap(result => {
-                return result instanceof BaseComponent ? this.synthRecursive([result]) : [result];
-            });
-        });
-    }
+  private synthRecursive(components: BaseComponent[]): Array<SynthComponent> {
+    return components.flatMap((component) => {
+      return component.synth().flatMap((result) => {
+        return result instanceof BaseComponent ? this.synthRecursive([result]) : [result];
+      });
+    });
+  }
 }

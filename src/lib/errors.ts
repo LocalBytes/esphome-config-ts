@@ -1,9 +1,9 @@
 export class InvalidConfigError extends Error {
-    private config: null | object;
+  private config: null | object;
 
-    constructor(message: string, config: null | object = null) {
-        super(message);
-        this.name = "InvalidConfig";
-        this.config = config;
-    }
+  constructor(message: string, config: null | object = null) {
+    super(message);
+    this.name = "InvalidConfig";
+    this.config = config;
+  }
 }

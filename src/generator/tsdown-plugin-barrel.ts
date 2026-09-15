@@ -7,12 +7,17 @@ import type { TsdownPlugin } from "tsdown";
 const VIRTUAL_PREFIX = "virtual:barrel/";
 
 export function barrelPlugin(dirs: Record<string, string>): TsdownPlugin {
-  const aliasIds = new Map<string, string>(Object.keys(dirs).flatMap(name => [[`@/${name}/index.js`, name], [`@/${name}`, name]]));
+  const aliasIds = new Map<string, string>(
+    Object.keys(dirs).flatMap((name) => [
+      [`@/${name}/index.js`, name],
+      [`@/${name}`, name],
+    ]),
+  );
   let root = process.cwd();
 
   async function barrelFiles(name: string): Promise<string[]> {
     return (await readdir(resolvePath(root, dirs[name]!)).catch(() => []))
-      .filter(f => f.endsWith(".ts") && !f.endsWith(".d.ts"))
+      .filter((f) => f.endsWith(".ts") && !f.endsWith(".d.ts"))
       .sort();
   }
 
@@ -26,7 +31,9 @@ export function barrelPlugin(dirs: Record<string, string>): TsdownPlugin {
       const existing = (() => {
         if (typeof config.entry === "string") return Object.fromEntries([toNamed(config.entry)]);
         if (Array.isArray(config.entry)) {
-          return Object.fromEntries(config.entry.filter((e): e is string => typeof e === "string").map(toNamed));
+          return Object.fromEntries(
+            config.entry.filter((e): e is string => typeof e === "string").map(toNamed),
+          );
         }
         return config.entry ?? {};
       })();
@@ -34,25 +41,43 @@ export function barrelPlugin(dirs: Record<string, string>): TsdownPlugin {
       return {
         entry: {
           ...existing,
-          ...Object.fromEntries(Object.keys(dirs).map(name => [name === "lib" ? "index" : name, VIRTUAL_PREFIX + name])),
+          ...Object.fromEntries(
+            Object.keys(dirs).map((name) => [
+              name === "lib" ? "index" : name,
+              VIRTUAL_PREFIX + name,
+            ]),
+          ),
         },
       };
     },
 
     async buildStart() {
-      const declarations = await Promise.all(Object.keys(dirs).map(async name => {
-        const files = await barrelFiles(name);
-        const body = files.map(f => `  export * from ${JSON.stringify(`./${dirs[name]}/${f.replace(/\.ts$/, ".js")}`)};`).join("\n");
-        return [
-          `declare module "@/${name}/index.js" {\n${body}\n}`,
-          `declare module "@/${name}" {\n${body}\n}`,
-        ].join("\n\n");
-      }));
-      this.emitFile({ type: "asset", fileName: "global.d.ts", source: declarations.join("\n\n") + "\n" });
+      const declarations = await Promise.all(
+        Object.keys(dirs).map(async (name) => {
+          const files = await barrelFiles(name);
+          const body = files
+            .map(
+              (f) =>
+                `  export * from ${JSON.stringify(`./${dirs[name]}/${f.replace(/\.ts$/, ".js")}`)};`,
+            )
+            .join("\n");
+          return [
+            `declare module "@/${name}/index.js" {\n${body}\n}`,
+            `declare module "@/${name}" {\n${body}\n}`,
+          ].join("\n\n");
+        }),
+      );
+      this.emitFile({
+        type: "asset",
+        fileName: "global.d.ts",
+        source: declarations.join("\n\n") + "\n",
+      });
     },
 
     resolveId: {
-      filter: { id: new RegExp(`^${VIRTUAL_PREFIX}|^@/(${Object.keys(dirs).join("|")})(/index\\.js)?$`) },
+      filter: {
+        id: new RegExp(`^${VIRTUAL_PREFIX}|^@/(${Object.keys(dirs).join("|")})(/index\\.js)?$`),
+      },
       handler(id: string) {
         if (id.startsWith(VIRTUAL_PREFIX)) {
           const name = id.slice(VIRTUAL_PREFIX.length);
@@ -63,7 +88,8 @@ export function barrelPlugin(dirs: Record<string, string>): TsdownPlugin {
         }
 
         const name = aliasIds.get(id);
-        if (name && name in dirs && existsSync(resolvePath(root, dirs[name]!))) return "\0" + VIRTUAL_PREFIX + name + ".ts";
+        if (name && name in dirs && existsSync(resolvePath(root, dirs[name]!)))
+          return "\0" + VIRTUAL_PREFIX + name + ".ts";
       },
     },
 
@@ -75,7 +101,7 @@ export function barrelPlugin(dirs: Record<string, string>): TsdownPlugin {
         const files = await barrelFiles(name);
 
         return files
-          .map(f => `export * from ${JSON.stringify(pathToFileURL(resolvePath(dir, f)).href)};`)
+          .map((f) => `export * from ${JSON.stringify(pathToFileURL(resolvePath(dir, f)).href)};`)
           .join("\n");
       },
     },

@@ -2,9 +2,23 @@
   "name": "esphome-config-ts",
   "version": "0.2.0",
   "type": "module",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./components": "./dist/components.mjs",
+    "./generate": "./dist/generate.mjs",
+    "./yaml": "./dist/yaml.mjs",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "dev:watch": "tsdown --watch",
-    "prepare": "tsdown ./src/generator/generate.ts && node ./dist/generate.mjs && tsdown"
+    "prepare": "tsdown ./src/generator/generate.ts && node ./dist/generate.mjs && tsdown",
+    "fmt": "oxfmt .",
+    "fmt:check": "oxfmt --check ."
+  },
+  "dependencies": {
+    "js-yaml": "^5.3.0",
+    "unzipper": "^0.12.5",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@tsconfig/node-lts": "^24.0.1",
@@ -15,17 +29,5 @@
     "tsdown": "^0.22.14",
     "typescript": "^7.0.2"
   },
-  "dependencies": {
-    "js-yaml": "^5.3.0",
-    "unzipper": "^0.12.5",
-    "zod": "^4.4.3"
-  },
-  "packageManager": "pnpm@12.0.0-rc.6",
-  "exports": {
-    ".": "./dist/index.mjs",
-    "./components": "./dist/components.mjs",
-    "./generate": "./dist/generate.mjs",
-    "./yaml": "./dist/yaml.mjs",
-    "./package.json": "./package.json"
-  }
+  "packageManager": "pnpm@12.0.0-rc.6"
 }

@@ -7,17 +7,22 @@ import { setRegistry, synthesizeFile, synthesizePin } from "@/generator/build.js
 const PIN_PLATFORMS = ["esp32", "esp8266", "rp2040", "host"];
 
 const CFG = {
-  version: "2026.6.0"
+  version: "2026.6.0",
 };
 
 const cachePath = path.join(os.tmpdir(), `esphome-schema-${CFG.version}.zip`);
 
 let zipBuffer: Buffer;
-if (await fs.access(cachePath).then(() => true, () => false)) {
+if (
+  await fs.access(cachePath).then(
+    () => true,
+    () => false,
+  )
+) {
   console.log("Using cached schema:", cachePath);
   zipBuffer = await fs.readFile(cachePath);
 } else {
-  const url = `https://schema.esphome.io/${CFG.version}/schema.zip`
+  const url = `https://schema.esphome.io/${CFG.version}/schema.zip`;
   console.log("Fetching: ", url);
 
   const schemaResponse = await fetch(url);
@@ -30,10 +35,10 @@ if (await fs.access(cachePath).then(() => true, () => false)) {
 }
 
 const dest = path.join(import.meta.dirname, "../src/components");
-await fs.rm(dest, {recursive: true, force: true});
-await fs.mkdir(dest, {recursive: true});
+await fs.rm(dest, { recursive: true, force: true });
+await fs.mkdir(dest, { recursive: true });
 
-const schemaBundle = await unzipper.Open.buffer(zipBuffer)
+const schemaBundle = await unzipper.Open.buffer(zipBuffer);
 
 const registry: Record<string, any> = {};
 for (const file of schemaBundle.files) {
@@ -46,7 +51,8 @@ setRegistry(registry);
 const usedNames = new Set<string>();
 const domainVariants = new Map<string, { name: string; modulePath: string }[]>();
 
-let written = 0, skipped = 0;
+let written = 0,
+  skipped = 0;
 for (const [outName, data] of Object.entries(registry)) {
   try {
     const results = synthesizeFile(data);
@@ -70,14 +76,18 @@ for (const [outName, data] of Object.entries(registry)) {
 }
 
 for (const [domain, variants] of domainVariants) {
-  const ucDomain = domain.charAt(0).toUpperCase() + domain.slice(1).replace(/_([a-z])/g, (_, c) => c.toUpperCase());
+  const ucDomain =
+    domain.charAt(0).toUpperCase() +
+    domain.slice(1).replace(/_([a-z])/g, (_, c) => c.toUpperCase());
   if (variants.length < 2 || usedNames.has(ucDomain)) continue;
 
-  const imports = variants.map(v => `import { ${v.name} } from ${JSON.stringify(v.modulePath)};`).join("\n");
+  const imports = variants
+    .map((v) => `import { ${v.name} } from ${JSON.stringify(v.modulePath)};`)
+    .join("\n");
   const source = `${imports}
 
-export { ${variants.map(v => v.name).join(", ")} };
-export type ${ucDomain} = ${variants.map(v => v.name).join(" | ")};
+export { ${variants.map((v) => v.name).join(", ")} };
+export type ${ucDomain} = ${variants.map((v) => v.name).join(" | ")};
 `;
 
   await fs.writeFile(path.join(dest, `${ucDomain}.ts`), source);

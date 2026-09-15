@@ -44,6 +44,32 @@ const TIME_PERIOD_REF = /^core\.(positive_)?time_period(_microseconds|_milliseco
 
 type FieldType = { ts: string; zod: string };
 
+// key_type marks an open string-keyed dict; ESPHome represents the value type as a single
+// config_vars entry literally named "string".
+function dictValueType(cv: any): FieldType {
+  const valueCv = Object.values(cv.schema?.config_vars ?? {})[0] ?? {};
+  const value = typeForConfigVar({...valueCv, key: "Required", default: undefined});
+  return {ts: `Record<string, ${value.ts}>`, zod: `z.record(z.string(), ${value.zod})`};
+}
+
+function typedUnionType(cv: any): FieldType {
+  const variants = Object.entries(cv.types ?? {}).map(([variantName, schema]: [string, any]) => {
+    const base = objectTypeFor(resolveConfigVars(schema));
+    const discriminant = JSON.stringify(cv.typed_key);
+    const literal = JSON.stringify(variantName);
+    return {
+      ts: `(${base.ts} & { ${discriminant}: ${literal} })`,
+      zod: `${base.zod}.extend({ ${discriminant}: z.literal(${literal}) })`,
+    };
+  });
+  return variants.length
+    ? {
+      ts: variants.map(v => v.ts).join(" | "),
+      zod: `z.discriminatedUnion(${JSON.stringify(cv.typed_key)}, [${variants.map(v => v.zod).join(", ")}])`,
+    }
+    : {ts: "any", zod: "z.any()"};
+}
+
 function typeForConfigVar(cv: any): FieldType {
   let type: FieldType = (() => {
     switch (cv?.type) {
@@ -64,28 +90,14 @@ function typeForConfigVar(cv: any): FieldType {
           ? objectTypeFor(resolveConfigVars(cv.schema))
           : {ts: "Pin", zod: "PinSchema"};
       case "schema": {
+        if (cv.key_type) return dictValueType(cv);
         const obj = objectTypeFor(resolveConfigVars(cv.schema));
         return (cv.schema?.extends ?? []).some((ref: string) => TIME_PERIOD_REF.test(ref))
           ? {ts: `TimePeriod<${obj.ts}>`, zod: `TimePeriodSchema(${obj.zod})`}
           : obj;
       }
-      case "typed": {
-        const variants = Object.entries(cv.types ?? {}).map(([variantName, schema]: [string, any]) => {
-          const base = objectTypeFor(resolveConfigVars(schema));
-          const discriminant = JSON.stringify(cv.typed_key);
-          const literal = JSON.stringify(variantName);
-          return {
-            ts: `(${base.ts} & { ${discriminant}: ${literal} })`,
-            zod: `${base.zod}.extend({ ${discriminant}: z.literal(${literal}) })`,
-          };
-        });
-        return variants.length
-          ? {
-            ts: variants.map(v => v.ts).join(" | "),
-            zod: `z.discriminatedUnion(${JSON.stringify(cv.typed_key)}, [${variants.map(v => v.zod).join(", ")}])`,
-          }
-          : {ts: "any", zod: "z.any()"};
-      }
+      case "typed":
+        return typedUnionType(cv);
       case "trigger":
       case "registry":
         return {ts: "Record<string, any>[]", zod: "z.array(z.record(z.string(), z.any()))"};
@@ -99,7 +111,7 @@ function typeForConfigVar(cv: any): FieldType {
   if (cv?.templatable) {
     type = {ts: `(${type.ts} | Lambda)`, zod: `z.union([${type.zod}, z.instanceof(Lambda)])`};
   }
-  if (cv?.is_list) {
+  if (cv?.is_list && cv?.type !== "trigger" && cv?.type !== "registry") {
     type = {ts: `${type.ts}[]`, zod: `z.array(${type.zod})`};
   }
 
@@ -123,14 +135,17 @@ function objectTypeFor(configVars: Record<string, any>): FieldType {
 
 function synthesizeComponent(key: string, config: any): SynthesizedFile | undefined {
   const configSchema = config?.schemas?.CONFIG_SCHEMA;
-  if (!configSchema || configSchema.type !== "schema") return undefined;
+  if (!configSchema || (configSchema.type !== "schema" && configSchema.type !== "typed")) return undefined;
 
   const name = nameForKey(key);
   const schemaConst = `${name}ConfigSchema`;
   const configType = `${name}Config`;
   resolvedRefs = new Set();
-  const configVars = resolveConfigVars(configSchema.schema);
-  const field = objectTypeFor(configVars);
+  const field = (() => {
+    if (configSchema.type === "typed") return typedUnionType(configSchema);
+    if (configSchema.key_type) return dictValueType(configSchema);
+    return objectTypeFor(resolveConfigVars(configSchema.schema));
+  })();
 
   // language=TypeScript
   const source =`

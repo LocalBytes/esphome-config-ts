@@ -7,7 +7,7 @@ import { setRegistry, synthesizeFile, synthesizePin } from "@/generator/build.js
 const PIN_PLATFORMS = ["esp32", "esp8266", "rp2040", "host"];
 
 const CFG = {
-  version: "2026.6.0",
+  version: "2026.9.0",
 };
 
 const cachePath = path.join(os.tmpdir(), `esphome-schema-${CFG.version}.zip`);
